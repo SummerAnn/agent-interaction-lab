@@ -1,18 +1,18 @@
 # Agent Society
 
-Testbed and experimental data for "Information Cascades in LLM Agent Societies: How Shared State Amplifies False Beliefs" (ICLR 2027 submission).
+Testbed and experimental data for "Information Cascades: When Shared Memory Creates False Consensus in Multi-Agent Systems" (ICLR 2027 submission).
 
-**[Read the paper (PDF)](paper/paper.pdf)**
+**[Read the paper (PDF)](agent_society_overleaf_peer_review/paper.pdf)**
 
 ![Agent Society terminal interface](testbed_image/main.png)
 
 ## What this is
 
-Agent Society is a testbed for studying how false beliefs spread through groups of LLM agents that share a persistent written memory. We compare three communication formats (shared memory, live debate, and personal memory) across 7 models from 4 providers and 10 tasks.
+Agent Society is a testbed for studying how information moves through groups of LLM agents that share a persistent written memory. The paper compares shared memory, live debate, and personal memory in six-agent groups. The main design covers six models and four question families, with a seventh model in a supporting experiment.
 
-The key finding: when agents communicate through shared memory, false beliefs spread to 87% of honest agents. When the same agents debate face to face, the spread is 0%. The same mechanism that makes shared memory valuable for correcting honest mistakes makes it dangerous for amplifying persistent false entries.
+The paper finds that shared memory can circulate corrections or turn repeated false claims into apparent consensus. In the central matched comparison, four liar agents repeat a false claim while two neutral agents judge it for themselves. Across the same 12 speaking orders, neutral-agent false endorsement is 91.7% with shared memory and 0% with both personal memory and live debate. Broader results show that the effect depends on the model and question, so the paper does not claim that one communication method is always best.
 
-![Core result](paper/fig/fig1.png)
+![Neutral-agent false endorsement across tasks](agent_society_overleaf_peer_review/fig/fig_task_protocols.png)
 
 ## Quick start
 
@@ -54,9 +54,9 @@ This launches the interactive terminal with a menu for running experiments, insp
 
 ![Browsing scenarios with claims and evidence cards](testbed_image/memory.png)
 
-### Try the core experiment yourself
+### Try the central comparison yourself
 
-Want to see the 87% contagion result from the paper? Here is exactly how.
+Want to reproduce the paper's central matched comparison? The model, question, six agents, instructions, speaking order, and call budget remain fixed across the three communication methods. Across 12 balanced speaking orders, neutral-agent false endorsement is 91.7% with shared memory and 0% with both personal memory and live debate.
 
 **Option 1. Interactive terminal (recommended)**
 
@@ -65,7 +65,7 @@ npm run multiagent:society
 ```
 
 1. Select **Run setup** from the menu
-2. Browse to `part2-more-seeds-v1` (this is the core ego depletion experiment)
+2. Browse to `part2-neutral-fairness-memory-v2` for shared and personal memory, or `part2-neutral-fairness-chat-v3` for live debate
 3. The testbed shows you the scenario, agents, and condition
 4. Press enter to run. You will see agents writing to shared memory in real time
 5. When it finishes, the results view shows final stances, FE, and the full memory trace
@@ -73,18 +73,19 @@ npm run multiagent:society
 **Option 2. One command**
 
 ```bash
-npx tsx src/experiments/grid.ts experiments/part2-more-seeds-v1.json
+npx tsx src/experiments/grid.ts experiments/part2-neutral-fairness-memory-v2.json
+npx tsx src/experiments/grid.ts experiments/part2-neutral-fairness-chat-v3.json
 ```
 
-This runs ego depletion across shared memory, debate, and personal memory with seeds 6-10. Each run takes about 30 seconds with Claude Haiku. When done, open any trace database to see exactly what happened.
+Together these configs run the matched shared-memory, personal-memory, and live-debate conditions. Each uses the same 12 balanced orders, one focal claim, 18 model calls, temperature 0, and Claude Haiku 4.5.
 
 **Option 3. Look at existing data without running anything**
 
 Every result is already in `output/`. Pick any trace database and query it.
 
 ```bash
-# Find a shared memory run on ego depletion
-ls output/ | grep "part2_more_seeds" | head -3
+# Find a primary shared-memory run on ego depletion
+ls output/ | grep "part2_neutral_fairness_memory_v2" | head -3
 
 # Open it and check the final stances
 sqlite3 output/<pick-one>/trace.db \
@@ -93,7 +94,7 @@ sqlite3 output/<pick-one>/trace.db \
    AND step_index=(SELECT MAX(step_index) FROM agent_claim_states);"
 ```
 
-You will see analyst_1 through analyst_4 at endorse(0.85-0.88), analyst_5 at uncertain(0.48), and analyst_6 at endorse(0.72-0.75). That is the contagion.
+The four liar agents are assigned to endorse the false claim. The primary outcome asks whether either of the two neutral agents also endorses it. The exact table-to-run manifest in `agent_society_overleaf_peer_review/RUN_MANIFEST.md` lists every included trace.
 
 ### CLI commands
 
@@ -124,27 +125,23 @@ This runs all combinations of scenarios x conditions x seeds defined in the expe
 
 ## Replicating paper results
 
-Every result in the paper comes from a specific experiment config in `experiments/`. Config filenames use internal naming that differs from the paper terminology.
+Every result in the paper comes from a specific experiment config in `experiments/`. Config filenames use internal naming that differs from the paper terminology. Older internal IDs remain unchanged so that saved runs and manifest entries keep resolving. The paper consistently uses the reader-facing role names liar agent, neutral agent, specialist agent, and social agent.
 
 **Naming conventions in the config files.**
-The experiment files use prefixes like `part2-` which refer to internal development phases, not paper sections. In the paper, "Part 1" experiments are the honest-mistake results (Section 4, "Sharing Corrects Honest Mistakes") where one agent starts with a wrong belief but can change its mind. "Part 2" experiments are the deliberate-lie results (Section 5, "Sharing Spreads Deliberate Lies") where 4 agents persistently write false entries. Configs starting with `blind-` or `cross-model-` run the same setup across multiple models. Configs starting with `amplifier-` or `mitigation-` test specific record formats or defenses.
+The experiment files use prefixes like `part2-` that refer to internal development phases, not paper sections. Configs starting with `blind-` or `cross-model-` run comparisons across multiple models. Configs starting with `amplifier-` or `mitigation-` test record formats or defenses.
 
-Here is how the main results map to configs.
+The generated table-to-run manifest is the exact source for every reported cohort. The shorter list below gives entry points for the main and confound-critical experiments.
 
 | Paper result | Experiment config | What it runs |
 |---|---|---|
-| Table 1 (core channel comparison) | `part2-more-seeds-v1.json` + `part2-personal-vs-shared-v1.json` | Ego depletion, 3 formats, 30 seeds |
-| Table 2 (ambiguity gradient) | `part2-ambiguity-gradient-v1.json` + `part2-more-topics-v1.json` | 6 familiar topics, shared memory |
-| Table 3 (cross-model) | `blind-all-models-familiar-v1.json` + `cross-model-fair-comparison-v1.json` | 7 models, shared + debate |
-| Table 4 (mitigation hierarchy) | `part2-decay-v1.json`, `part2-verification-v1.json`, `part2-correction-timing-v1.json`, `part2-force-write-v2.json`, `part2-independence-aware-v1.json` | 8 defenses |
-| Confidence bias (Section 5.2) | `part2-consensus-v1.json` | 3:3 ratio, mild vs committed liars |
-| Liar ratio (Section 5.2) | `part2-majority-liar-v1.json` + `part2-one-liar-v1.json` + `part2-5of6-liars-v1.json` | 1/6 through 5/6 liars |
-| Exit timing (Section 5.2) | `part2-exit-timing-v1.json` | Liars leave at step 1, 3, 6, 12 |
-| SciTaT (Section 5.3) | `part2-scitat-contagion-v1.json` | Screened unfamiliar tasks |
-| GSM8K / GSM-Hard | `blind-cross-model-gsm8k-v1.json` + `gsm-hard-contagion-v1.json` | Math tasks |
-| Scale effects | `part2-30agent-v1.json` + `part2-40agent-v1.json` + `part2-100agent-v1.json` | 20-100 agents |
-| Village topology | `part2-village-structure-v2.json` | Star, chain, ring topologies |
-| Hidden profiles | `amplifier-majority-wrong-haiku-v1.json` | Evidence board vs mixed record |
+| Central liar--neutral comparison | `part2-neutral-fairness-memory-v2.json` + `part2-neutral-fairness-chat-v3.json` | Ego depletion, 3 formats, 12 balanced orders |
+| Familiar-science boundaries | `part2-neutral-crosstopic-memory-v1.json` + `part2-neutral-crosstopic-chat-v1.json` | 6 topics with neutral agents |
+| Liar-agent ratio | `part2-neutral-ratio{1,2,3,4}-standardized-{memory,chat}-v{2,3}.json` | 1/6 through 4/6 liar agents, three 12-order repeats |
+| Matched defenses | `part2-neutral-defense-suite-v2.json` | 7 conditions with neutral agents |
+| Model and task boundaries | `part2-neutral-crossmodel-*.json` + `part2-neutral-fairness-crossmodel-multitask-*.json` | Matched memory and debate comparisons |
+| Screened SciTaT replication | `part2-neutral-scitat-expanded-memory-*.json` + `part2-neutral-scitat-expanded-chat-*.json` | 18 screened items with neutral agents |
+| Origin tracking | `provenance-defense-v1.json` + `provenance-ablation-v1.json` + `provenance-cross-model-v1.json` | Topic, ablation, and model checks |
+| Honest mistakes | `rerun-distributed-evidence-v3.json` + `amplifier-majority-wrong-haiku-v1.json` | Revisable errors and record formats |
 
 To replicate a specific result, run the corresponding experiment config through the grid runner:
 
@@ -180,19 +177,19 @@ src/                    # Testbed source code (TypeScript)
   experiments/          # Grid runner for factorial experiments
     grid.ts             # Runs all scenario x condition x seed combos
 
-experiments/            # 58 experiment configurations (JSON)
-conditions/             # 14 condition files (shared memory, debate, etc.)
-scenarios/              # 86 scenario definitions (claims + evidence)
-rosters/                # 36 agent roster configurations
+experiments/            # Experiment configurations (JSON)
+conditions/             # Communication formats and interventions
+scenarios/              # Claims and evidence settings
+rosters/                # Agent assignments and speaking orders
 run-configs/            # Run configuration templates
 
-output/                 # 2,252 traced runs (SQLite databases)
+output/                 # Traced runs (SQLite databases)
 
 scripts/                # Analysis and conversion scripts
 tests/                  # Test suite (vitest)
 db/schema.sql           # Database schema
 
-paper/               # Paper source files
+agent_society_overleaf_peer_review/  # Complete paper source bundle
   paper.tex             # Main text
   appendix_results.tex  # Supplementary material
   fig/                  # Figures
@@ -207,7 +204,7 @@ paper/               # Paper source files
 | Personal memory (agent reasons alone) | Same as memory mode with `personal_memory` condition |
 | 5 memory formats (agent_judgment, evidence_board, mixed_record, source_aware, independence_aware) | `src/memory/retrieve.ts` |
 | Evidence visibility filtering (visibleToAgentIds, availableFromStep) | `src/scenario/access.ts` |
-| Agent prompts (specialist, regular, liar roles) | `src/llm/prompts.ts` |
+| Agent prompts (liar, neutral, specialist, and social roles) | `src/llm/prompts.ts` |
 | Metrics (FE, contagion, soft contagion, diversity, consensus) | `src/metrics/compute.ts` |
 | Run finalization and summary | `src/engine/finalize.ts` |
 | Factorial experiment grids | `src/experiments/grid.ts` |
@@ -254,7 +251,7 @@ The database contains:
 
 Here are example queries you can run on any trace database to extract the same results reported in the paper.
 
-**Did the honest agent adopt the false belief?**
+**Did a neutral agent adopt the false belief?**
 ```sql
 SELECT agent_id, stance, confidence
 FROM agent_claim_states
@@ -317,16 +314,16 @@ Key `memory.mode` values:
 Scenarios define the claims, evidence, and ground truth. Each scenario has:
 - **Claims** with truth labels (`true`, `false`, `mixed`)
 - **Evidence cards** with effect directions and visibility rules
-- **A focus claim** (the false claim that liars endorse)
+- **A focus claim** (the false claim that liar agents endorse)
 
 ### Rosters (who the agents are)
 
 Rosters define agent roles, models, and behavioral parameters:
-- `role` -- `contamination_agent` (liar), `specialist_agent`, `regular_agent`
+- `role` -- legacy code IDs that map to the paper's reader-facing roles
 - `model` -- which LLM to use
 - `socialWeight` -- how much the agent weighs peer entries (1.0 = fully influenced, 0.35 = resistant)
-- `falseClaimBias` -- initial lean toward the false claim (0.85+ for liars, 0.05 for honest)
-- `writesMemoryThreshold` -- minimum confidence to write (0.30 for honest, 0.00 for liars)
+- `falseClaimBias` -- initial lean toward the false claim
+- `writesMemoryThreshold` -- minimum confidence required to write a memory entry
 
 ## Creating your own experiment
 
@@ -351,7 +348,7 @@ Example minimal experiment:
 }
 ```
 
-This runs ego depletion with 4/6 liars in both shared memory and debate across 3 seeds (6 total runs).
+This runs ego depletion with 4/6 liar agents in both shared memory and debate across 3 seeds (6 total runs).
 
 ```bash
 npx tsx src/experiments/grid.ts experiments/my_experiment.json

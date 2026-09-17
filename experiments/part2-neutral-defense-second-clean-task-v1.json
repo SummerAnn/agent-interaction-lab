@@ -1,0 +1,44 @@
+{
+  "id": "part2_neutral_defense_second_clean_task_v1",
+  "title": "Matched defense replication on a clean numerical task",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Three liar agents and three neutral agents evaluate one uniquely scorable false numerical answer.",
+      "The standard, statement-marker, and statement-marker-plus-warning conditions use identical agents, prompts, speaking orders, and call budgets.",
+      "A prior seed-0 pilot on these twelve speaking orders produced a 66.7% neutral-agent false-answer rate under standard shared memory."
+    ]
+  },
+  "scenarios": [
+    "scenarios/neutral-core-v1/neutral_core_v1_scitat_math_0012242_q2_3of6.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-provenance-minimal-no-correction.yaml",
+    "conditions/shared-provenance-aware-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_clustered_r1.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_clustered_r2.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_clustered_r3.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_clustered_r4.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_clustered_r5.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_clustered_r6.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_interleaved_r1.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_interleaved_r2.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_interleaved_r3.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_interleaved_r4.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_interleaved_r5.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_haiku/mixed_model_confirmatory_v2_haiku_to_haiku_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

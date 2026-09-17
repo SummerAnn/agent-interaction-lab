@@ -1,0 +1,16 @@
+{
+  "id": "real_source_debt_label_shuffle_no_source_b_v1",
+  "title": "Reference: source-findings mapping B without cards",
+  "domain": "economics-methods",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["real_source_packet", "reference", "no_source", "label_shuffle"],
+  "provenance": {"kind": "adapted", "note": "No-source screen with an arbitrary label assignment. The model receives no mapping from W labels to sources."},
+  "sources": [], "sourceCards": [], "focusClaimId": "candidate_b_correct",
+  "groupDecision": {"candidateClaimIds": ["candidate_b_swap_one", "candidate_b_correct", "candidate_b_swap_two"], "correctClaimId": "candidate_b_correct", "instruction": "Choose the source-to-finding summary you judge most plausible. The W labels are arbitrary. No source cards are available in this reference run. Do not claim to cite evidence you were not given.", "evidenceAccess": "none"},
+  "claims": [
+    {"id": "candidate_b_swap_one", "text": "W1 reported lower growth above 90 percent. W2 reported no single threshold in a survey. W3 reported no causal effect after addressing endogeneity. W4 reported calculation problems and a 2.2 percent high-debt average.", "truthLabel": "false"},
+    {"id": "candidate_b_correct", "text": "W1 reported no causal effect after addressing endogeneity. W2 reported no single threshold in a survey. W3 reported lower growth above 90 percent. W4 reported calculation problems and a 2.2 percent high-debt average.", "truthLabel": "true"},
+    {"id": "candidate_b_swap_two", "text": "W1 reported no causal effect after addressing endogeneity. W2 reported calculation problems and a 2.2 percent high-debt average. W3 reported lower growth above 90 percent. W4 reported no single threshold in a survey.", "truthLabel": "false"}
+  ],
+  "evidence": [], "scheduledInterventions": [], "initialBeliefStates": [], "initialMemoryEntries": []
+}

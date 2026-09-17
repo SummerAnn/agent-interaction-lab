@@ -1,0 +1,66 @@
+{
+  "id": "bounded_cascade_v3_packet_19_one_card",
+  "title": "Bounded cascade packet 19 (one_card)",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "late_evidence",
+    "post_late_turnover",
+    "one_card"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls; model names and correct answer positions rotate."
+  },
+  "focusClaimId": "explanation_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_a",
+    "instruction": "Choose a model only when the available checks rule out both alternatives. A preliminary preference is not enough to choose.",
+    "requiredSourceIds": [
+      "bounded_cascade_v3_packet_19_one_card_late_rules_out_early",
+      "bounded_cascade_v3_packet_19_one_card_late_rules_out_other"
+    ],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "Model Delta best explains the recorded pattern.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_b",
+      "text": "Model Kestrel best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "Model Marrow best explains the recorded pattern.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_cascade_v3_packet_19_one_card_late_rules_out_early",
+      "text": "A later blinded check rules out Model Kestrel. It does not choose between the other two models.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.9
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

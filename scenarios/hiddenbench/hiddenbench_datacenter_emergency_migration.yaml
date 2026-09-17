@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_datacenter_emergency_migration",
+  "title": "HiddenBench: datacenter_emergency_migration",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 36 (datacenter_emergency_migration). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_datacenter_gamma",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_datacenter_alpha",
+      "answer_datacenter_beta",
+      "answer_datacenter_gamma"
+    ],
+    "correctClaimId": "answer_datacenter_gamma",
+    "instruction": "You are IT administrators for a large company whose main datacenter has been crippled by a sudden fire. As a team, you must decide where to immediately re-route all mission-critical operations. Three separate backup datacenters are pre-configured as potential failover sites: Datacenter Alpha, Datacenter Beta, and Datacenter Gamma. Each location has hosted your traffic before, each is in a different city, and each uses different hardware and vendors for redundancy. Time is of the essence. Each of you has access to certain technical updates from your own department, but must consult together to make the final decision. You will be rewarded for successfully directing operations to the only datacenter that can safely take the load right now.\n\nShared information known to all participants:\n- Datacenter Beta is fully online, was just upgraded last month, and currently has low utilization.\n- Staff at Datacenter Alpha confirmed that their on-call engineers are present and have no scheduled maintenance today.\n- Datacenter Gamma is in a region with a minor flood warning but has never experienced significant downtime from weather.\n- Latency and cost are similar for all three options.\n\nChoose the best answer from: Datacenter Alpha, Datacenter Beta, Datacenter Gamma."
+  },
+  "claims": [
+    {
+      "id": "answer_datacenter_alpha",
+      "text": "Datacenter Alpha",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_datacenter_beta",
+      "text": "Datacenter Beta",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_datacenter_gamma",
+      "text": "Datacenter Gamma",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Datacenter Beta's recent upgrade involved new security software, and only yesterday a major vulnerability was discovered—which is not yet patched at Beta, but is patched everywhere else.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Due to a national internet routing issue affecting the city's main ISP, Beta faces possible external connectivity problems for at least several more hours.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Datacenter Alpha's main power feed was cut by the fire near your main site, and is currently running only on backup generators, with a maximum of 12 hours' capacity left.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Gamma's flood defenses have been inspected within the last week and confirmed fully operational; the actual flooding is minor and poses no threat to access or uptime.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

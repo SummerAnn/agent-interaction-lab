@@ -1,0 +1,39 @@
+{
+  "id": "part2_neutral_fairness_mistral8b_multitask_chat_v1",
+  "title": "Neutral fairness: mistral8b, MMR + SciTaT + GSM, chat",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Cross-task generalization for an OpenRouter-routed model.",
+      "Same neutral fairness rosters as ego depletion run.",
+      "MMR (1 item), SciTaT (2 items), GSM8K (3 items)."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml",
+    "scenarios/scitat-blind/blind_scitat_1210_8343v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1505_03365v1_q2_contagion.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_01.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_02.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_03.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r1_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r2_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r3_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r4_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r5_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r6_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r1_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r2_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r3_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r4_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r5_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r6_mistral8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

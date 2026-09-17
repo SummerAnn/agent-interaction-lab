@@ -1,0 +1,23 @@
+{
+  "id": "real_source_debt_label_shuffle_no_source_reference_v1",
+  "title": "Reference: shuffled source labels without cards",
+  "benchmarkMeta": {
+    "status": "reference_control",
+    "locked": true,
+    "notes": [
+      "Each of three otherwise matched questions assigns the four real findings to arbitrary W labels differently.",
+      "The correct candidate moves from first to second to third position.",
+      "A valid source-use task must not be near-perfect before agents receive the mapping cards."
+    ]
+  },
+  "scenarios": [
+    "scenarios/real-source-debt-label-shuffle-no-source-a-v1.yaml",
+    "scenarios/real-source-debt-label-shuffle-no-source-b-v1.yaml",
+    "scenarios/real-source-debt-label-shuffle-no-source-c-v1.yaml"
+  ],
+  "conditions": ["conditions/personal-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/reference-single-analyst-haiku.json"],
+  "maxSteps": 3,
+  "budget": {"maxModelCalls": 9, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

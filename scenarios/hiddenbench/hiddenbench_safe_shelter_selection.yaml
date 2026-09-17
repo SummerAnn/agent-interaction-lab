@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_safe_shelter_selection",
+  "title": "HiddenBench: Safe Shelter Selection",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 29 (Safe Shelter Selection). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_riverside_park",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_mountain_lodge",
+      "answer_riverside_park",
+      "answer_summerfield_school"
+    ],
+    "correctClaimId": "answer_riverside_park",
+    "instruction": "You and three other council members must quickly choose which of three locations in your region should be officially designated as the emergency shelter for an oncoming storm. The shelter must be accessible, safe, free of environmental hazards, and have the capacity for hundreds of people. Only one site truly qualifies. Each site is in a different direction, and time is short. The three options: (a) Mountain Lodge, (b) Riverside Park, (c) Summerfield School. Your decision is urgent, as buses will soon be dispatched to one location only.\n\nShared information known to all participants:\n- All main roads to each shelter remain open as of the last public update, 20 minutes ago.\n- Mountain Lodge's bridge was inspected last month and passed safety checks; there are no weather alerts for the area.\n- Riverside Park has undergone recent upgrades to its facilities to accommodate large groups.\n- Summerfield School is regularly used for community gatherings and has backup generators.\n\nChoose the best answer from: Mountain Lodge, Riverside Park, Summerfield School."
+  },
+  "claims": [
+    {
+      "id": "answer_mountain_lodge",
+      "text": "Mountain Lodge",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_riverside_park",
+      "text": "Riverside Park",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_summerfield_school",
+      "text": "Summerfield School",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Due to minor flooding on Oakcrest road, buses can only reach Riverside Park from the north side.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A landslide warning was just issued for Summerfield's region by the National Weather Service, effective immediately.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "There is a confirmed chemical spill in the storage building next to Mountain Lodge reported just now by authorities; the substance is hazardous if inhaled and cleanup will take at least 12 hours to complete.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A tree has fallen on the north lane to Riverside Park, but the south lane remains clear according to a police report released five minutes ago.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,51 @@
+{
+  "id": "bounded_signal_packet_27_no_card_v1",
+  "title": "Generated water-treatment study packet 27: no-card control",
+  "domain": "generated water-treatment study packet",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "none"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Procedurally generated before model calls; answer and label positions vary by packet."
+  },
+  "focusClaimId": "explanation_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_c",
+    "instruction": "Choose an explanation only if the supplied material supports it. Do not infer an answer from the labels.",
+    "requiredSourceIds": [
+      "bounded_signal_packet_27_no_card_v1_rules_out_early_1",
+      "bounded_signal_packet_27_no_card_v1_rules_out_other_1"
+    ],
+    "evidenceAccess": "none"
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "a sensor drift artifact best accounts for the observed reduction in a contaminant.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "The tested intervention best accounts for the observed reduction in a contaminant.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "a change in the incoming-water mix best accounts for the observed reduction in a contaminant.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

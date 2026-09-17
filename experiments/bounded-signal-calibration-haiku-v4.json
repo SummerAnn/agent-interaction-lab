@@ -1,0 +1,37 @@
+{
+  "id": "bounded_signal_calibration_haiku_v4",
+  "title": "Bounded-record task calibration: neutral model names",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": [
+      "Small task-repair check. Run the 30-packet version only if no-card and one-card controls abstain while full-packet controls choose correctly."
+    ]
+  },
+  "scenarios": [
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_1_none.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_1_one_card.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_1_full_packet.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_2_none.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_2_one_card.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_2_full_packet.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_3_none.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_3_one_card.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_3_full_packet.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    1
+  ],
+  "rosterPaths": [
+    "rosters/bounded-record-control-haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 4,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  }
+}

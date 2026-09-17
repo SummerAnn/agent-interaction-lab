@@ -1,0 +1,19 @@
+{
+  "id": "quick_audit_study8_post_exit_sanity_2026_08_29",
+  "title": "Quick audit: Study 8 post-exit trigger sanity check",
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-trigger-post-exit.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-observer-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json",
+    "rosters/distributed-source-exit-observer-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

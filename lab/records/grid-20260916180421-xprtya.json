@@ -1,0 +1,77 @@
+{
+  "projectRoot": ".",
+  "kind": "grid",
+  "title": "Post-exit scaling at N=6",
+  "question": "Post-exit scaling at N=6",
+  "note": "Factorial benchmark grid run.",
+  "command": "experiment output/post_exit_scaling_v1_n6.json",
+  "tags": [
+    "grid",
+    "benchmark"
+  ],
+  "scenarios": [
+    "post_exit_scaling_ego_v1"
+  ],
+  "conditions": [
+    "shared_memory_post_exit_cleared",
+    "shared_memory_post_exit_retained"
+  ],
+  "rosters": [
+    "post_exit_scaling_v1_n6"
+  ],
+  "models": [
+    "claude-haiku-4-5-20251001"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "runIds": [
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed0",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed1",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed2",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed3",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed4",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed5",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed0",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed1",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed2",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed3",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed4",
+    "post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed5"
+  ],
+  "primaryOutputPath": "output/post_exit_scaling_v1_n6-grid-results.json",
+  "extraOutputPaths": [
+    "output/post_exit_scaling_v1_n6-figure-provenance.json",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed0/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed1/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed2/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed3/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed4/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_post_exit_scaling_v1_n6-shared_memory_post_exit_retained-seed5/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed0/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed1/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed2/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed3/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed4/trace.db",
+    "output/post_exit_scaling_v1_n6_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_post_exit_scaling_v1_n6-shared_memory_post_exit_cleared-seed5/trace.db"
+  ],
+  "manifestPath": null,
+  "requestedManifestPath": null,
+  "benchmarkMeta": {
+    "status": "exploratory",
+    "locked": false
+  },
+  "metrics": {
+    "completedCells": 12,
+    "manipulationCheckPassRate": 1
+  },
+  "provenance": null,
+  "citations": null,
+  "id": "grid-20260916180421-xprtya",
+  "createdAt": "2026-09-16T18:04:21.805Z"
+}

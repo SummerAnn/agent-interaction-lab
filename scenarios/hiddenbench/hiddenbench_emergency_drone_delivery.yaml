@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_drone_delivery",
+  "title": "HiddenBench: emergency_drone_delivery",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 55 (emergency_drone_delivery). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_hospital",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_park",
+      "answer_school",
+      "answer_hospital"
+    ],
+    "correctClaimId": "answer_hospital",
+    "instruction": "A medical crisis has struck your town. An organ for a critical transplant is being delivered by special drone within the next hour. The drone pilot has requested you (the town’s response coordinators) select the landing site. There are three designated landing zones: the large public Park, the rooftop Helipad at the School, and the open lot at the Hospital. The organ must reach the patient in less than 30 minutes after landing. You have 10 minutes to decide as a group where the drone should land. Only one landing site is currently safe and available for use.\n\nShared information known to all participants:\n- The Park’s open field is usually large enough for drone landings and has the simplest access for ground vehicles.\n- The School helipad was recently resurfaced and is officially cleared for use by civil defense.\n- The Hospital’s open lot is often kept clear, but part of it is currently being used for construction storage, possibly limiting space.\n- Volunteer drivers are already stationed at all three sites for fast delivery to the hospital, but only one group can be dispatched once the location is set.\n\nChoose the best answer from: Park, School, Hospital."
+  },
+  "claims": [
+    {
+      "id": "answer_park",
+      "text": "Park",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_school",
+      "text": "School",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hospital",
+      "text": "Hospital",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The school’s helipad is within 100 meters of a student sports event happening this afternoon; school policy strictly forbids landings during any outdoor student activity (violating this could delay the transplant with legal complications).",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Construction equipment in the hospital lot currently blocks the main vehicle entrance, but a back alleyway (unmarked on most maps) has just been cleared for ambulances and emergency deliveries only.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Due to a malfunction, the park’s main floodlights cannot be turned on and the drone cannot safely land there after sunset. The delivery is arriving shortly after dusk.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Local authorities just issued an airspace closure over the Park due to a nearby unauthorized drone incursion—the area is off limits to all drones for the rest of the day.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2302_13709v1_q1_one_piece_table_1",
+  "title": "SciTaT 2302.13709v1-q1 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table tab:spec",
+      "citation": "SciTaT item 2302.13709v1-q1",
+      "summary": "Control system specifications.\n\\textbf{Yaw axis motor} | MITSUBISHI HK-KT-43W\nServo amplifier | MITSUBISHI MR-J5-40A\nRated power | \\SI{400}{W}\nRated torque | \\SI{1.3}{Nm}\nRated Speed | \\SI{3000}{rpm}\nRated Current | \\SI{2.6}{A}\nMoment of inertia $\\bar{J}_{1}$ | ${0.410\\times10^{-4}}$\\si{kgm^2}\nTorque coefficient $\\bar{K}_{t1}$ | $\\SI{0.5}{Nm/A}$\nPulse per rotation | \\SI{131072}{pulses/rev}\n\\textbf{Pitch axis motor} | MITSUBISHI HK-KT-7M3W\nServo amplifier | MITSUBISHI MR-J5-70A\nRated power | \\SI{750}{W}\nRated torque | \\SI{2.4}{Nm}\nRated Speed | \\SI{3000}{rpm}\nRated Current | \\SI{4.7}{A}\nMoment of inertia $\\bar{J}_{2}$ | ${1.37\\times10^{-4}}$\\si{kgm^2}\nTorque coefficient $\\bar{K}_{t2}$ | $\\SI{0.5106}{Nm/A}$\nPulse per rotation | \\SI{131072}{pulses/rev}\n\\textbf{PC} | \nCPU | Intel Core i7-10700K (\\SI{5.1}{GHz})\nMemory | \\SI{16}{GB}\nOS | CentOS 8.3\nD/A Board | Interface PEX-340216 (\\SI{16}{bit})\nCounterboard | Interface PEX-632104 (\\SI{32}{bit})",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the equations of motion provided in Section \\ref{sec:modeling}, how many cells in TABLE~\\ref{tab:spec} contain the values for nominal parameters $\\bar{J}_j$ and $\\bar{K}_j$ for the yaw and pitch motors? Calculate the total count of such cells.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2302.13709v1-q1",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Control system specifications.\n\\textbf{Yaw axis motor} | MITSUBISHI HK-KT-43W\nServo amplifier | MITSUBISHI MR-J5-40A\nRated power | \\SI{400}{W}\nRated torque | \\SI{1.3}{Nm}\nRated Speed | \\SI{3000}{rpm}\nRated Current | \\SI{2.6}{A}\nMoment of inertia $\\bar{J}_{1}$ | ${0.410\\times10^{-4}}$\\si{kgm^2}\nTorque coefficient $\\bar{K}_{t1}$ | $\\SI{0.5}{Nm/A}$\nPulse per rotation | \\SI{131072}{pulses/rev}\n\\textbf{Pitch axis motor} | MITSUBISHI HK-KT-7M3W\nServo amplifier | MITSUBISHI MR-J5-70A\nRated power | \\SI{750}{W}\nRated torque | \\SI{2.4}{Nm}\nRated Speed | \\SI{3000}{rpm}\nRated Current | \\SI{4.7}{A}\nMoment of inertia $\\bar{J}_{2}$ | ${1.37\\times10^{-4}}$\\si{kgm^2}\nTorque coefficient $\\bar{K}_{t2}$ | $\\SI{0.5106}{Nm/A}$\nPulse per rotation | \\SI{131072}{pulses/rev}\n\\textbf{PC} | \nCPU | Intel Core i7-10700K (\\SI{5.1}{GHz})\nMemory | \\SI{16}{GB}\nOS | CentOS 8.3\nD/A Board | Interface PEX-340216 (\\SI{16}{bit})\nCounterboard | Interface PEX-632104 (\\SI{32}{bit})",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

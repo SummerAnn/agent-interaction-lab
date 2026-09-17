@@ -1,0 +1,56 @@
+{
+  "id": "part2_neutral_core_remaining_chat_v1",
+  "title": "Neutral prompt across the remaining twelve core tasks: fixed-round debate",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Completes the balanced neutral-prompt replication across the 18-item core suite.",
+      "These twelve tasks supplement the six familiar-science topics in part2-neutral-crosstopic-v1.",
+      "Each math claim includes the problem statement and proposed false answer in the focal prompt.",
+      "SciTaT pilot claims include the question and proposed answer but no source material, matching a no-context test.",
+      "Twelve explicit orders balance every agent twice in every speaking position.",
+      "Every cell has 18 focal-claim calls, three per agent, no correction intervention, and temperature 0."
+    ]
+  },
+  "scenarios": [
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_01.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_02.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_03.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_04.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_05.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsmhard_01.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsmhard_02.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsmhard_03.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsmhard_04.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsmhard_05.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_scitat_1512_01642_q2.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_scitat_math_0012242_q2.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r6_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r6_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

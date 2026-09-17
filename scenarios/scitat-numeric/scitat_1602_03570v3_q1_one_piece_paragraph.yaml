@@ -1,0 +1,101 @@
+{
+  "id": "scitat_1602_03570v3_q1_one_piece_paragraph",
+  "title": "SciTaT 1602.03570v3-q1 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1602.03570v3-q1",
+      "summary": "\\subsubsection {Further Analysis}\nTo further examine the performance of the proposed DPS, we compare the proposed DPS-based graph embedding discriminant analysis (DPS-DA) with the similar RKHS-based method (RGEDA)\\cite{shirazi2013graph}. In addition we compare the proposed DPS-based dictionary learning and sparse coding (DPS-DI) method with kernel-based dictionary learning and sparse coding on SPD manifold (RSR) \\cite{ harandi2012sparse}.  \\cite{harandiriemannian}. \n\nTable. \\ref{tab:BRODATZ_further} shows that on average DPS-based discriminative analysis out performs RKHS-based discriminative analysis in all the sequences of the BRODATZ dataset. It performs on par with TSC, which is considered as state of the art method, on $5c$ sequence, and outperforms TSC on all the other sequences. On average DPS-based dictionary learning and sparse coding outperforms both TSC and RSR.\n\nTable. \\ref{tab:ETHZ_further} shows that on average DPS-based discriminative analysis out performs RGDA, RKHS-based discriminative analysis, on ETHZ dataset. IT also outperforms SDALF in all the cases DPS outperforms SDALF \\cite{SDALF_CVPR2010}, which is considered to be the state of the art. It also illustrates that DPS-based dictionary learning and sparse coding outperforms RSR and SDALF in all the cases.\n\nTable. \\ref{tab:TV_Further} shows that on average the DPS-based discriminative analysis outperforms RGEDA, CDL \\cite{wang2012covariance} which is considered as state of the art , on the Virus Texture dataset. It also illustrates that DPS-based dictionary learning and sparse coding outperforms both RSR and CDL.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Based on the paragraph and tables, what is the average recognition accuracy improvement of DPS-based methods (DPS-DA and DPS-DI) over RGEDA across the BRODATZ, ETHZ, and Virus Texture Recognition datasets?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1602.03570v3-q1",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1",
+      "table_2",
+      "table_3"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 2.32.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 4.64.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 1.32.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 3.32.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsubsection {Further Analysis}\nTo further examine the performance of the proposed DPS, we compare the proposed DPS-based graph embedding discriminant analysis (DPS-DA) with the similar RKHS-based method (RGEDA)\\cite{shirazi2013graph}. In addition we compare the proposed DPS-based dictionary learning and sparse coding (DPS-DI) method with kernel-based dictionary learning and sparse coding on SPD manifold (RSR) \\cite{ harandi2012sparse}.  \\cite{harandiriemannian}. \n\nTable. \\ref{tab:BRODATZ_further} shows that on average DPS-based discriminative analysis out performs RKHS-based discriminative analysis in all the sequences of the BRODATZ dataset. It performs on par with TSC, which is considered as state of the art method, on $5c$ sequence, and outperforms TSC on all the other sequences. On average DPS-based dictionary learning and sparse coding outperforms both TSC and RSR.\n\nTable. \\ref{tab:ETHZ_further} shows that on average DPS-based discriminative analysis out performs RGDA, RKHS-based discriminative analysis, on ETHZ dataset. IT also outperforms SDALF in all the cases DPS outperforms SDALF \\cite{SDALF_CVPR2010}, which is considered to be the state of the art. It also illustrates that DPS-based dictionary learning and sparse coding outperforms RSR and SDALF in all the cases.\n\nTable. \\ref{tab:TV_Further} shows that on average the DPS-based discriminative analysis outperforms RGEDA, CDL \\cite{wang2012covariance} which is considered as state of the art , on the Virus Texture dataset. It also illustrates that DPS-based dictionary learning and sparse coding outperforms both RSR and CDL.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

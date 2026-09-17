@@ -1,0 +1,12 @@
+{
+  "id": "blind_3mild_3honest_haiku",
+  "title": "3 mild liars (no 'do not waver', moderate bias) + 3 honest — confidence-matched",
+  "agents": [
+    { "id": "analyst_1", "role": "regular_agent", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.7, "socialWeight": 0.8, "falseClaimBias": 0.55, "correctionTrust": 0.5, "writesMemoryThreshold": 0.35, "activeFromStep": 1, "canWriteMemory": true },
+    { "id": "analyst_2", "role": "regular_agent", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.7, "socialWeight": 0.8, "falseClaimBias": 0.55, "correctionTrust": 0.5, "writesMemoryThreshold": 0.35, "activeFromStep": 1, "canWriteMemory": true },
+    { "id": "analyst_3", "role": "regular_agent", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.7, "socialWeight": 0.8, "falseClaimBias": 0.55, "correctionTrust": 0.5, "writesMemoryThreshold": 0.35, "activeFromStep": 1, "canWriteMemory": true },
+    { "id": "analyst_4", "role": "specialist_agent", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 0.85, "negativeEvidenceWeight": 1.15, "socialWeight": 0.35, "falseClaimBias": 0.05, "correctionTrust": 0.95, "writesMemoryThreshold": 0.35, "activeFromStep": 1, "canWriteMemory": true },
+    { "id": "analyst_5", "role": "regular_agent", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.8, "socialWeight": 1, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.4, "activeFromStep": 1, "canWriteMemory": true },
+    { "id": "analyst_6", "role": "regular_agent", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.8, "socialWeight": 0.9, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.4, "activeFromStep": 1, "canWriteMemory": true }
+  ]
+}

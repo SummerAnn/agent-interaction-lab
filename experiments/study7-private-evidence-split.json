@@ -1,0 +1,28 @@
+{
+  "id": "study7_private_evidence_split",
+  "title": "Study 7: What changes when truth is split across agents?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study7_private_evidence_memory_screen",
+    "locked": true,
+    "notes": [
+      "Supporting benchmark for private-evidence stress tests."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml",
+    "conditions/shared-memory-noisy-verification.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

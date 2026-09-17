@@ -1,0 +1,25 @@
+{
+  "id": "part2_rag_pipeline_v2",
+  "title": "RAG pipeline v2: unfamiliar API topic (model can't verify from training)",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "v1 used drug interactions (Claude knows the answer = no contagion, like MMR).",
+      "v2 uses a fictional API deprecation — model has NO training knowledge.",
+      "Should behave like SciTaT: record spreads false belief, chat preserves uncertainty.",
+      "Tests both familiar-RAG (v1) and unfamiliar-RAG (v2) to match the ambiguity gradient."
+    ]
+  },
+  "scenarios": [
+    "scenarios/rag-pipeline/rag_api_deprecation_v1.yaml",
+    "scenarios/rag-pipeline/rag_drug_interaction_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

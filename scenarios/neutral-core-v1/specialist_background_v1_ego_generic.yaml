@@ -1,0 +1,61 @@
+{
+  "id": "specialist_background_v1_ego_generic",
+  "title": "Ego depletion specialist preparation: generic",
+  "scenarioType": "claim_benchmark",
+  "domain": "reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "specialist_background",
+    "private_memory",
+    "background_generic",
+    "balanced_order"
+  ],
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [
+    {
+      "id": "claim_ego_depletion",
+      "text": "Willpower operates like a depletable resource, so performing one self-control task significantly impairs the next task.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [
+    {
+      "id": "analyst_5_generic_private_note",
+      "agentId": "analyst_5",
+      "claimId": "claim_ego_depletion",
+      "stance": "uncertain",
+      "confidence": 0.2,
+      "visibility": "personal",
+      "sourceType": "seed",
+      "text": "Before a research discussion, separate claims from evidence. Check whether reports are independent, examine study design, sample size, preregistration, measurement quality, and alternative explanations. Repetition and confidence are not substitutes for evidence."
+    }
+  ]
+}

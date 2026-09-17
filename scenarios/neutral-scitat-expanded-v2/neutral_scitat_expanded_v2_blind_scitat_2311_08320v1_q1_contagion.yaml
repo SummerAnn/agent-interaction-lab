@@ -1,0 +1,51 @@
+{
+  "id": "neutral_scitat_expanded_v2_blind_scitat_2311_08320v1_q1_contagion",
+  "title": "blind_scitat_2311_08320v1_q1_contagion: neutral no-context replication",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "expanded_scitat_replication",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "option_a",
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "Based on the paragraph, if the interrupt latency for a system using register banking is 20 cycles and the interrupt latency for a system using a full hardware solution is 1.5 cycles, by what percentage does the full hardware solution reduce the interrupt latency compared to the register banking approach?\n\nProposed answer to evaluate: The numeric answer is 111.0%.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

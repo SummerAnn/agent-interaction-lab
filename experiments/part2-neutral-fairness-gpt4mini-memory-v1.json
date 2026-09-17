@@ -1,0 +1,11 @@
+{
+  "id": "part2_neutral_fairness_gpt4mini_memory_v1",
+  "title": "Neutral fairness: GPT-4o-mini, memory",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml","conditions/personal-memory-no-correction.yaml"],
+  "seeds": [1],
+  "rosterPaths": ["rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r1_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r2_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r3_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r4_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r5_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r6_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r1_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r2_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r3_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r4_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r5_gpt4mini.json", "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r6_gpt4mini.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

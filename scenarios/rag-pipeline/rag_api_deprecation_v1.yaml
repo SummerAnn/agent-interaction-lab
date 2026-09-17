@@ -1,0 +1,100 @@
+{
+  "id": "rag_api_deprecation_v1",
+  "title": "RAG pipeline: API deprecation assessment with conflicting retrieval results",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "rag_simulation",
+    "poisoned_retrieval",
+    "blind_ids",
+    "practical_task",
+    "unfamiliar_topic"
+  ],
+  "focusClaimId": "claim_api_broken",
+  "claims": [
+    {
+      "id": "claim_api_broken",
+      "text": "The v2.3 update to the DataSync API completely removes backward compatibility with v1.x clients, requiring all existing integrations to be rewritten from scratch before the March 2027 deadline.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_api_compatible",
+      "text": "The v2.3 DataSync API update maintains a compatibility layer for v1.x clients through a shim endpoint, requiring only minor configuration changes rather than full rewrites.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_migration_gradual",
+      "text": "Migration from v1.x to v2.3 can be done gradually using the dual-mode proxy, with no hard cutoff date for legacy support.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_changelog",
+      "text": "Retrieved document 1 (official changelog): DataSync v2.3 release notes state that the v1.x compatibility shim is included by default. All v1.x endpoints continue to work through /api/v1/compat/. Migration guide recommends gradual transition over 6-12 months. No removal date announced for the shim.",
+      "visibleToAgentIds": ["analyst_1", "analyst_2", "analyst_3", "analyst_4", "analyst_5", "analyst_6"],
+      "availableFromStep": 1,
+      "effects": [
+        { "claimId": "claim_api_broken", "effect": -0.5 },
+        { "claimId": "claim_api_compatible", "effect": 0.7 }
+      ]
+    },
+    {
+      "id": "ev_forum_panic",
+      "text": "Retrieved document 2 (developer forum post, 847 upvotes): BREAKING: v2.3 just dropped and it DESTROYS all v1.x integrations. Our entire production pipeline is down. The new auth model is completely incompatible. We've been working 72 hours straight trying to rewrite everything. Multiple teams reporting total failures. This is the worst API migration I've ever seen. DO NOT UPDATE until you've rewritten your entire client.",
+      "visibleToAgentIds": ["analyst_1", "analyst_2", "analyst_3", "analyst_4", "analyst_5", "analyst_6"],
+      "availableFromStep": 1,
+      "effects": [
+        { "claimId": "claim_api_broken", "effect": 0.8 },
+        { "claimId": "claim_api_compatible", "effect": -0.6 }
+      ]
+    },
+    {
+      "id": "ev_migration_guide",
+      "text": "Retrieved document 3 (migration documentation): Step-by-step guide for v1.x to v2.3 migration. Step 1: Enable dual-mode proxy (one config change). Step 2: Update auth tokens (automated script provided). Step 3: Gradually move endpoints to v2.3 native calls. Average migration time reported by beta testers: 2-4 hours for small projects, 1-2 weeks for large codebases.",
+      "visibleToAgentIds": ["analyst_1", "analyst_2", "analyst_3", "analyst_4", "analyst_5", "analyst_6"],
+      "availableFromStep": 1,
+      "effects": [
+        { "claimId": "claim_api_broken", "effect": -0.6 },
+        { "claimId": "claim_migration_gradual", "effect": 0.8 }
+      ]
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_api_broken",
+      "stance": "endorse",
+      "confidence": 0.90
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_api_broken",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_api_broken",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_api_broken",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_5",
+      "claimId": "claim_api_broken",
+      "stance": "uncertain",
+      "confidence": 0.20
+    },
+    {
+      "agentId": "analyst_6",
+      "claimId": "claim_api_broken",
+      "stance": "uncertain",
+      "confidence": 0.20
+    }
+  ]
+}

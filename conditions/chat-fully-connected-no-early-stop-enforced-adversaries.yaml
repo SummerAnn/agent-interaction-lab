@@ -1,0 +1,18 @@
+{
+  "id": "chat_fully_connected_no_early_stop_enforced_adversaries",
+  "title": "Chat debate with fixed rounds and enforced persistent adversaries",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

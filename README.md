@@ -1,37 +1,40 @@
-# Agent Society
+# Agent Interaction Lab
 
 Testbed and experimental data for "Information Cascades: When Shared Memory Creates False Consensus in Multi-Agent Systems" (ICLR 2027 submission).
 
-**[Read the paper (PDF)](agent_society_overleaf_peer_review/paper.pdf)**
+**[Read the paper (PDF)](paper/paper.pdf)**
 
-![Agent Society terminal interface](testbed_image/main.png)
+![Agent Interaction Lab terminal interface](testbed_image/main.png)
 
 ## What this is
 
-Agent Society is a testbed for studying how information moves through groups of LLM agents that share a persistent written memory. The paper compares shared memory, live debate, and personal memory in six-agent groups. The main design covers six models and four question families, with a seventh model in a supporting experiment.
+Agent Interaction Lab is a testbed for studying how information moves through groups of LLM agents that share a persistent written memory. The paper compares shared memory, live debate, and personal memory in six-agent groups. The main design covers six models and four question families, with a seventh model in a supporting experiment.
+
+Unlike population-scale social simulators, Agent Interaction Lab is built for controlled causal comparisons. A matched run holds the agents, task, order, and call budget fixed while changing a communication or memory rule, and the audit trail records what every agent retrieved, wrote, and answered.
 
 The paper finds that shared memory can circulate corrections or turn repeated false claims into apparent consensus. In the central matched comparison, four liar agents repeat a false claim while two neutral agents judge it for themselves. Across the same 12 speaking orders, neutral-agent false endorsement is 91.7% with shared memory and 0% with both personal memory and live debate. Broader results show that the effect depends on the model and question, so the paper does not claim that one communication method is always best.
 
-![Neutral-agent false endorsement across tasks](agent_society_overleaf_peer_review/fig/fig_task_protocols.png)
+![Neutral-agent false endorsement across tasks](paper/fig/fig_task_protocols_v2.png)
 
 ## Quick start
 
 ```bash
 npm install
 cp .env.example .env
-# Add your API keys to .env (ANTHROPIC_API_KEY, OPENAI_API_KEY, etc.)
+# Add the keys you need to .env (ANTHROPIC_API_KEY, OPENAI_API_KEY,
+# or OPENROUTER_API_KEY). The TUI tests a key before saving it.
 ```
 
 ### Interactive terminal
 
 ```bash
-npm run multiagent:society
+npm run agentlab
 ```
 
 This launches the interactive terminal with a menu for running experiments, inspecting results, comparing runs, and browsing configurations. The menu options are:
 
-1. **Run setup** -- launch one run with custom seed, rounds, budget, or agent count
-2. **Build experiment** -- create or edit experiment configurations
+1. **Run config** -- choose a YAML run config and optionally override its seed, rounds, budget, or agent count
+2. **Paper guide & evidence** -- see the matched design, headline result, cascade trajectory, trace map, and latest audit status
 3. **Inspect memory** -- browse what agents wrote and retrieved
 4. **Batch seeds** -- run the same setup across multiple seeds
 5. **Compare runs** -- side-by-side results for two configurations
@@ -39,8 +42,12 @@ This launches the interactive terminal with a menu for running experiments, insp
 7. **Experiment archive** -- browse completed experiment grids
 8. **Browse setups** -- explore available scenarios, conditions, and rosters
 9. **Provider setup** -- configure API keys for each model provider
-10. **Run command** -- execute a CLI command directly
+10. **Run command** -- verify the release, inspect a claimed trace, rerun an exact paper experiment, or run a YAML config
 11. **Explain** -- read documentation about how the testbed works
+
+### Paper verification and reproduction
+
+![Paper verification, trace inspection, and released experiment menu](testbed_image/reproduce-paper.png)
 
 ### Live debate view
 
@@ -61,14 +68,14 @@ Want to reproduce the paper's central matched comparison? The model, question, s
 **Option 1. Interactive terminal (recommended)**
 
 ```bash
-npm run multiagent:society
+npm run agentlab
 ```
 
-1. Select **Run setup** from the menu
-2. Browse to `part2-neutral-fairness-memory-v2` for shared and personal memory, or `part2-neutral-fairness-chat-v3` for live debate
-3. The testbed shows you the scenario, agents, and condition
-4. Press enter to run. You will see agents writing to shared memory in real time
-5. When it finishes, the results view shows final stances, FE, and the full memory trace
+1. Select **Paper guide & evidence** to review the matched design, key numbers, cascade trajectory, and exact manifest map
+2. Select **Run command**
+3. Choose **Central memory comparison** or **Central live-debate comparison**
+4. Review the preflight screen, including the scenarios, conditions, rosters, seeds, model calls, and estimated cost
+5. Confirm the run. The live view shows agent statements and memory operations, and the result view shows final stances and the trace location
 
 **Option 2. One command**
 
@@ -94,7 +101,7 @@ sqlite3 output/<pick-one>/trace.db \
    AND step_index=(SELECT MAX(step_index) FROM agent_claim_states);"
 ```
 
-The four liar agents are assigned to endorse the false claim. The primary outcome asks whether either of the two neutral agents also endorses it. The exact table-to-run manifest in `agent_society_overleaf_peer_review/RUN_MANIFEST.md` lists every included trace.
+The four liar agents are assigned to endorse the false claim. The primary outcome asks whether either of the two neutral agents also endorses it. The exact table-to-run manifest in `paper/RUN_MANIFEST.md` lists every included trace.
 
 ### CLI commands
 
@@ -125,6 +132,30 @@ This runs all combinations of scenarios x conditions x seeds defined in the expe
 
 ## Replicating paper results
 
+The paper's 6,334 claimed runs are divided into three non-overlapping manifests:
+
+- `paper/run_manifest.json`: 5,542 runs used by the base table calculator
+- `paper/new_appendix_run_manifest.json`: 576 late-appendix runs
+- `paper/open_model_visibility_manifest.json`: 216 open-model replication runs
+
+Run the quick coverage and calculation audit without hashing every large trace:
+
+```bash
+npm run verify:release:quick
+```
+
+Before sharing or submitting the release, run the full audit:
+
+```bash
+npm run verify:release
+```
+
+Full mode rebuilds the base table manifest, independently recomputes the late
+appendix aggregates, verifies all 6,334 summary and trace checksums, runs SQLite
+integrity checks, checks completion and call counts, and validates the released
+experiment dependencies. The durable report is written to
+`analysis/release_audit.md` and `analysis/release_audit.json`.
+
 Every result in the paper comes from a specific experiment config in `experiments/`. Config filenames use internal naming that differs from the paper terminology. Older internal IDs remain unchanged so that saved runs and manifest entries keep resolving. The paper consistently uses the reader-facing role names liar agent, neutral agent, specialist agent, and social agent.
 
 **Naming conventions in the config files.**
@@ -152,6 +183,9 @@ npx tsx src/experiments/grid.ts experiments/part2-ambiguity-gradient-v1.json
 The output appears in `output/` as SQLite trace databases. Each database contains every agent's belief state at every step, every memory entry written, every retrieval, and every LLM call.
 
 ## Repository structure
+
+`paper/` is the canonical submission bundle. See
+[`docs/repository-layout.md`](docs/repository-layout.md) for a fuller map.
 
 ```
 src/                    # Testbed source code (TypeScript)
@@ -184,16 +218,27 @@ rosters/                # Agent assignments and speaking orders
 run-configs/            # Run configuration templates
 
 output/                 # Traced runs (SQLite databases)
+analysis/               # Derived analyses and validation reports
 
 scripts/                # Analysis and conversion scripts
 tests/                  # Test suite (vitest)
 db/schema.sql           # Database schema
 
-agent_society_overleaf_peer_review/  # Complete paper source bundle
+paper/                  # Canonical paper source, PDF, figures, and manifests
   paper.tex             # Main text
   appendix_results.tex  # Supplementary material
   fig/                  # Figures
+
+docs/                   # Architecture and repository documentation
 ```
+
+## Project name and stable identifiers
+
+The testbed is named **Agent Interaction Lab**. The repository slug,
+`agent-society`, and older internal experiment identifiers are retained so that
+published links, manifests, and saved run paths continue to resolve. They should
+be treated as stable compatibility identifiers rather than the displayed project
+name.
 
 ## How the code maps to the paper
 

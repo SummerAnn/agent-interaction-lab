@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_safe_haven_decision",
+  "title": "HiddenBench: safe_haven_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 42 (safe_haven_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_eagle_ridge_lodge",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_mason_s_cabin",
+      "answer_riverside_shelter",
+      "answer_eagle_ridge_lodge"
+    ],
+    "correctClaimId": "answer_eagle_ridge_lodge",
+    "instruction": "A wildfire is rapidly approaching the rural town of Pine Valley. Local authorities have ordered an immediate evacuation. As leaders of four volunteer teams, you and your peers must select the safest shelter to which all residents can be moved within the next 3 hours. There are three potential shelters:\n- Mason's Cabin: A sturdy mountain cabin known for surviving past storms.\n- Riverside Shelter: A newly-renovated community center near the river.\n- Eagle Ridge Lodge: A ski lodge atop a ridge, further from town but equipped as an emergency relief site.\nThe weather forecast reports shifting winds. Phone networks are unstable, and you must make this decision via a brief radio conference.\n\nShared information known to all participants:\n- Riverside Shelter is currently the easiest route from town, and emergency food deliveries are expected to arrive there in 2 hours.\n- Eagle Ridge Lodge sits at the highest elevation and is the furthest drive. It has backup generators, but there's uncertainty if they've been refueled for this season.\n- Mason's Cabin is closer to town but lies at the end of a single dirt access road.\n- The bridge by Riverside Shelter was inspected last week and found in good condition.\n\nChoose the best answer from: Mason's Cabin, Riverside Shelter, Eagle Ridge Lodge."
+  },
+  "claims": [
+    {
+      "id": "answer_mason_s_cabin",
+      "text": "Mason's Cabin",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_riverside_shelter",
+      "text": "Riverside Shelter",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_eagle_ridge_lodge",
+      "text": "Eagle Ridge Lodge",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The local clinic's doctors and ambulance are stranded on the west side of the river, unable to reach Riverside Shelter due to road closures upstream.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "An inspection team confirmed this morning that Eagle Ridge Lodge's backup generators are fully fueled and operational, despite earlier uncertainty.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A rockslide earlier today has partially blocked the dirt road to Mason's Cabin, making it impossible for buses or emergency vehicles to pass, and clearing will take more than 24 hours.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Fire crews have warned that embers are landing near Riverside Shelter, and a change in wind could cause a rapid spread toward the bridge within the next few hours.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

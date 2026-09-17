@@ -199,7 +199,12 @@ async function callOpenAICompatible(
 
     if (!res.ok) {
       const body = await res.text();
-      throw makeStatusError("OpenAI API error", res.status, body);
+      const providerLabel = provider.type === "openrouter"
+        ? "OpenRouter"
+        : provider.type === "openai-compat"
+          ? "OpenAI-compatible provider"
+          : "OpenAI";
+      throw makeStatusError(`${providerLabel} API error`, res.status, body);
     }
 
     const data = await res.json() as {

@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2207_12990v1_q1_one_piece_paragraph",
+  "title": "SciTaT 2207.12990v1-q1 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2207.12990v1-q1",
+      "summary": "The degree to which the statistics of turbulent signals converge as\nthe domain and/or resolution are modified provides a means of\nquantifying the inaccuracies associated to domain shape, size and\ndiscretisation. Here we have used the kinetic energy ($E$), inner\n($\\tau_{\\rm i}$) and outer ($\\tau_{\\rm o}$) torque, and azimuthal\npropagation speed ($c_{\\theta}$) signals in the comparison of full\ndomain and narrow-long domain results. The simulations were run for 20\nviscous time units past all foreseeable transients to reach the\nstatistically steady turbulent state and then run for an additional 30\nand 100 viscous time units, for the full and narrow-long domain\nrespectively, to collect statistics. A similar resolution density was\nkept from one domain to the other. All signals were positively checked\nfor stationarity via the augmented Dickey-Fuller test\n\\citep{DiFu79,DiFu81} and the mean and root-mean-square of the\nfluctuation component (standard deviation) computed. Using stationary\nbootstrapping \\citep{PoRo94}, 95\\% confidence intervals for the two\nstatistics estimators have been determined with automatic block size\noptimisation \\citep{PoWhi04,PaPoWhi09}. Since fluctuation amplitude\ndepends on domain size (note that a system of infinite aspect ratio\nwould present no fluctuations on account of the averaging properties\nof normalised aggregate quantities as we are monitoring here), the\nsignal variance needs to be scaled accordingly. This is the same as\nassuming that the signal fully decorrelates over the height of the\ndomain, and that the variance is therefore the composition of the\nvariances of as many independent, randomly distributed, identical\nsignals as times the narrow domain fits in the full\ndomain. Fluctuation amplitudes are therefore dependent on domain size,\nand must be scaled. Results are summarised in table~\\ref{tab:stats}.\n\nThe runs are long enough for the mean to be converged to within $1\\%$\nfor all time series. The uncertainty in the root-mean-square is\nlarger, ranging from $3\\%$ to $9\\%$. In any case, it is sufficient to\nclaim, with $95\\%$ certainty, that the narrow and long parallelogram\ndomain produces results that are quantitatively different from the\nfull domain. Taking the mean of the statistic (mean or\nroot-mean-square) as the best estimate, however, bounds the inaccuracy\nto within $5\\%$ for the mean and $10\\%$ for the root-mean-square,\nwhich is fair but not extremely precise. While the narrow long domain of figure~\\ref{figdomain}b provides reasonable quantitative agreement, wider parallelogram domains would be required to further enhance accuracy, particularly so regarding second-order statistics.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_c",
+    "instruction": "How many signals have their mean values differing by more than 2\\% between the full domain and the long narrow domain as referenced in the paragraph?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2207.12990v1-q1",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "The degree to which the statistics of turbulent signals converge as\nthe domain and/or resolution are modified provides a means of\nquantifying the inaccuracies associated to domain shape, size and\ndiscretisation. Here we have used the kinetic energy ($E$), inner\n($\\tau_{\\rm i}$) and outer ($\\tau_{\\rm o}$) torque, and azimuthal\npropagation speed ($c_{\\theta}$) signals in the comparison of full\ndomain and narrow-long domain results. The simulations were run for 20\nviscous time units past all foreseeable transients to reach the\nstatistically steady turbulent state and then run for an additional 30\nand 100 viscous time units, for the full and narrow-long domain\nrespectively, to collect statistics. A similar resolution density was\nkept from one domain to the other. All signals were positively checked\nfor stationarity via the augmented Dickey-Fuller test\n\\citep{DiFu79,DiFu81} and the mean and root-mean-square of the\nfluctuation component (standard deviation) computed. Using stationary\nbootstrapping \\citep{PoRo94}, 95\\% confidence intervals for the two\nstatistics estimators have been determined with automatic block size\noptimisation \\citep{PoWhi04,PaPoWhi09}. Since fluctuation amplitude\ndepends on domain size (note that a system of infinite aspect ratio\nwould present no fluctuations on account of the averaging properties\nof normalised aggregate quantities as we are monitoring here), the\nsignal variance needs to be scaled accordingly. This is the same as\nassuming that the signal fully decorrelates over the height of the\ndomain, and that the variance is therefore the composition of the\nvariances of as many independent, randomly distributed, identical\nsignals as times the narrow domain fits in the full\ndomain. Fluctuation amplitudes are therefore dependent on domain size,\nand must be scaled. Results are summarised in table~\\ref{tab:stats}.\n\nThe runs are long enough for the mean to be converged to within $1\\%$\nfor all time series. The uncertainty in the root-mean-square is\nlarger, ranging from $3\\%$ to $9\\%$. In any case, it is sufficient to\nclaim, with $95\\%$ certainty, that the narrow and long parallelogram\ndomain produces results that are quantitatively different from the\nfull domain. Taking the mean of the statistic (mean or\nroot-mean-square) as the best estimate, however, bounds the inaccuracy\nto within $5\\%$ for the mean and $10\\%$ for the root-mean-square,\nwhich is fair but not extremely precise. While the narrow long domain of figure~\\ref{figdomain}b provides reasonable quantitative agreement, wider parallelogram domains would be required to further enhance accuracy, particularly so regarding second-order statistics.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_c",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

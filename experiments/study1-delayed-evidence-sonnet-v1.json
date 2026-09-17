@@ -1,0 +1,11 @@
+{
+  "id": "study1_delayed_evidence_sonnet_v1_output_complete",
+  "title": "Study 1: delayed counter-evidence and record form with Sonnet",
+  "benchmarkMeta": {"status":"paper_replication","claimId":"study1_delayed_evidence_sonnet","locked":true,"notes":["Exact match to study1_delayed_evidence_v3_output_complete except model family.","Source-aware and mixed records receive identical evidence, roster structure, order schedules, turns, and call budgets."]},
+  "scenarios": ["scenarios/delayed-counterevidence-v1.yaml"],
+  "conditions": ["conditions/shared-source-aware-no-correction.yaml","conditions/shared-mixed-record-no-correction.yaml"],
+  "seeds": [1,2,3,4,5,6,7,8,9,10],
+  "rosterPaths": ["rosters/distributed-baseline-6-sonnet.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls":54,"maxOutputTokensPerCall":256,"temperature":0}
+}

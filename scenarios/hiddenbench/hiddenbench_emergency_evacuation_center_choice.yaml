@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_evacuation_center_choice",
+  "title": "HiddenBench: emergency_evacuation_center_choice",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 46 (emergency_evacuation_center_choice). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_riverside_school_gym",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_riverside_school_gym",
+      "answer_hillside_community_center",
+      "answer_downtown_library_hall"
+    ],
+    "correctClaimId": "answer_riverside_school_gym",
+    "instruction": "You are a member of an emergency coordination team tasked with directing a group of visitors to the safest available evacuation center after a sudden chemical spill in your town. Three centers are prepared: Riverside School Gym, Hillside Community Center, and Downtown Library Hall. A recent flood warning has complicated the situation, and you must make a group decision swiftly.\n\nShared information known to all participants:\n- All three evacuation centers have enough space to hold the evacuees.\n- Hillside Community Center has working power and backup generators.\n- Riverside School Gym is closer to the river and sometimes floods during heavy rain.\n- Downtown Library Hall is farther from the spill and on high ground, but it's older and less often used for emergencies.\n- Local authorities recommend against Riverside School Gym if there’s a flooding risk.\n\nChoose the best answer from: Riverside School Gym, Hillside Community Center, Downtown Library Hall."
+  },
+  "claims": [
+    {
+      "id": "answer_riverside_school_gym",
+      "text": "Riverside School Gym",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_hillside_community_center",
+      "text": "Hillside Community Center",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_downtown_library_hall",
+      "text": "Downtown Library Hall",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A water main break means that the Hillside Community Center currently has no potable water or restrooms available.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Tests of local air quality show that the air inside the Downtown Library Hall has high levels of chemical vapor due to faulty air intake filters.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Fire department reports confirm that the Riverside School Gym is fully dry and the latest flood warning only applies downstream, not to this facility.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The road leading to Hillside Community Center is blocked due to a large fallen tree; there is no way to detour as of this hour.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

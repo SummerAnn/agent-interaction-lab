@@ -1,0 +1,14 @@
+{
+  "id": "shared_memory_post_exit_retained_v2",
+  "title": "Shared memory retains statements after liar agents exit",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 48,
+    "departedAgentEntries": "retain"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

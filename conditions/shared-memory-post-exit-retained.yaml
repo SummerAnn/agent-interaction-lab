@@ -1,0 +1,14 @@
+{
+  "id": "shared_memory_post_exit_retained",
+  "title": "Shared memory retains statements after authors exit",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "departedAgentEntries": "retain"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

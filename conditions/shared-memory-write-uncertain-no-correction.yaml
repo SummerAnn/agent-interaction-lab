@@ -1,0 +1,14 @@
+{
+  "id": "shared_memory_write_uncertain_no_correction",
+  "title": "Standard shared memory that also records uncertain answers",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": true
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

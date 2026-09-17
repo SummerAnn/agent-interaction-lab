@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_missing_medicine_delivery",
+  "title": "HiddenBench: Missing Medicine Delivery",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 65 (Missing Medicine Delivery). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_school_gym",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_pharmacy",
+      "answer_clinic",
+      "answer_school_gym"
+    ],
+    "correctClaimId": "answer_school_gym",
+    "instruction": "You are staff members at a small town's emergency management center. Yesterday, a medical drone dropped off a package of vital medicines intended for vulnerable families amid a local outbreak. There are three main drop-off points: the Pharmacy, the Clinic, and the School Gym (which is currently serving as a relief shelter). However, owing to a record-keeping error, it is unclear where the drone left the package. You urgently need to locate the medicines to distribute them. Each staff member has received a different piece of eyewitness or logistical information. You must quickly agree on where to send the retrieval team. Only one location is correct, so careful communication and reasoning are critical.\n\nShared information known to all participants:\n- The Pharmacy is the established primary delivery point for urgent medicines and was originally designated to receive the package.\n- Staff at the Clinic and School Gym both have prior experience handling medical packages dropped by drones.\n- Security cameras at all three locations are malfunctioning—the footage is unavailable.\n- The drone made the drop-off at 7:30am to avoid crowds.\n\nChoose the best answer from: Pharmacy, Clinic, School Gym."
+  },
+  "claims": [
+    {
+      "id": "answer_pharmacy",
+      "text": "Pharmacy",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_clinic",
+      "text": "Clinic",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_school_gym",
+      "text": "School Gym",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A staff member at the Pharmacy discovered the medicine cart had been stolen from the loading dock before 7:00am, and was not replaced until after 9:00am.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "According to the Pharmacy owner, the front entrance was locked for inventory from 7am-8am, and no deliveries were expected during that hour.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A temporary detour was in effect on the road to the Clinic at 7:30am, and morning deliveries were redirected to other sites until after 9am.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A neighbor reported seeing a package-carrying drone hover over the School Gym briefly at 7:30am, but did not see anyone retrieve a package.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

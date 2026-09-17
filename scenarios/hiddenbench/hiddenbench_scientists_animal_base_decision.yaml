@@ -1,0 +1,87 @@
+{
+  "id": "hiddenbench_scientists_animal_base_decision",
+  "title": "HiddenBench: scientists_animal_base_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 17 (scientists_animal_base_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_plateau_camp_d",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_deep_jungle_site_a",
+      "answer_riverbank_clearing_b",
+      "answer_hilltop_overlook_c",
+      "answer_plateau_camp_d"
+    ],
+    "correctClaimId": "answer_plateau_camp_d",
+    "instruction": "You are part of an international science team sent to set up a temporary research base in a remote part of West Africa, where a rare animal species was just sighted. You have limited daylight to choose the safest and most practical base location. Conditions include dense jungle, a wide river, and an open high plateau. The animal has not been studied before and is believed to be evasive. Four potential base sites are available: A) Deep Jungle Site, B) Riverbank Clearing, C) Hilltop Overlook, and D) Plateau Camp. You must select a base that is both accessible and safe from environmental and wildlife hazards. Time is short. If your group chooses the site that allows you to safely set up and observe the animal, your research will be a global breakthrough.\n\nShared information known to all participants:\n- Riverbank Clearing (Site B) is closest to multiple sighting locations and is described in a local guidebook as level ground with easy river access.\n- Local villagers say the Deep Jungle Site (A) has abundant fresh water and thick forest canopy, which is good for shade, though it's further from the roads.\n- Hilltop Overlook (C) has decent views and radio line-of-sight but rumors mention occasional landslides after rain.\n- Plateau Camp (D) is the most open and furthest from the animal's reported territory, making sightings potentially less likely.\n\nChoose the best answer from: Deep Jungle Site (A), Riverbank Clearing (B), Hilltop Overlook (C), Plateau Camp (D)."
+  },
+  "claims": [
+    {
+      "id": "answer_deep_jungle_site_a",
+      "text": "Deep Jungle Site (A)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_riverbank_clearing_b",
+      "text": "Riverbank Clearing (B)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hilltop_overlook_c",
+      "text": "Hilltop Overlook (C)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_plateau_camp_d",
+      "text": "Plateau Camp (D)",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Last week's rain caused mudslides that blocked the only road leading to Hilltop Overlook (Site C), making it unreachable by vehicle for days.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Local herders reported that the Deep Jungle Site (A) has become impassable due to recent flooding—current too strong for safe wading or boat access.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Plateau Camp (Site D) is the only area where the wind patterns don't carry biting insects from the swamp—other locations will have severe insect problems at dusk.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Park rangers set up camera traps last month and recorded nocturnal predators frequenting the Riverbank Clearing (Site B), making it highly dangerous at night.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

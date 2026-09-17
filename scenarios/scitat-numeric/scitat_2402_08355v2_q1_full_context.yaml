@@ -1,0 +1,120 @@
+{
+  "id": "scitat_2402_08355v2_q1_full_context",
+  "title": "SciTaT 2402.08355v2-q1 (full context)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2402.08355v2-q1",
+      "summary": "\\subsubsection *{SOAP}\nWe used the implementation of the DScribe package \\cite{Himanen2020,dscribe2} for the SOAP \\cite{Bartok2013} descriptor. The studied parameter grid is presented in Table \\ref{tab:soap}.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:soap",
+      "citation": "SciTaT item 2402.08355v2-q1",
+      "summary": "The SOAP parameter grid. Where applicable, the selected parameter value is shown in bold.\nParameter | Values\nr cut | $6.5~\\text{\\AA}$\nn max | 4,5,6,7,{\\bf 8}\nl max | 4,5,6,7,{\\bf 8}\nsigma | 0.25,{\\bf 0.5},0.75,1.0$~\\text{\\AA}$\nrbf | gto\nweighting | pow\nc | {\\bf 0.25},0.5,1.0,2.0,4.0\nd | 0.25,0.5,{\\bf 1.0},2.0,4.0\nm | {\\bf 2},4,6,8\nr0 | 1,2,3,{\\bf 4}",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_d",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_d",
+    "instruction": "How many parameter values in Table \\ref{tab:soap} are in bold, and how many unique parameter categories are mentioned in the paragraph? Calculate the total sum.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2402.08355v2-q1",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 20.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 14.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 34.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 17.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsubsection *{SOAP}\nWe used the implementation of the DScribe package \\cite{Himanen2020,dscribe2} for the SOAP \\cite{Bartok2013} descriptor. The studied parameter grid is presented in Table \\ref{tab:soap}.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "The SOAP parameter grid. Where applicable, the selected parameter value is shown in bold.\nParameter | Values\nr cut | $6.5~\\text{\\AA}$\nn max | 4,5,6,7,{\\bf 8}\nl max | 4,5,6,7,{\\bf 8}\nsigma | 0.25,{\\bf 0.5},0.75,1.0$~\\text{\\AA}$\nrbf | gto\nweighting | pow\nc | {\\bf 0.25},0.5,1.0,2.0,4.0\nd | 0.25,0.5,{\\bf 1.0},2.0,4.0\nm | {\\bf 2},4,6,8\nr0 | 1,2,3,{\\bf 4}",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

@@ -1,0 +1,57 @@
+{
+  "id": "part2_neutral_crossmodel_memory_v1",
+  "title": "Neutral prompt across Anthropic models: shared and personal memory",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Neutral-prompt cross-model replication on ego depletion.",
+      "Twelve predeclared orders per model; each agent appears twice in every position.",
+      "Six orders cluster adversaries and six interleave them with targets.",
+      "No evidence card is visible and no intervention is scheduled.",
+      "Every cell has 18 focal-claim calls, three per agent, at temperature 0."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_focus_only_no_intervention_v2.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r6.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r6.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r6.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_supply_drop",
+  "title": "HiddenBench: emergency_supply_drop",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 10 (emergency_supply_drop). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_warehouse_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_warehouse_a",
+      "answer_warehouse_b",
+      "answer_warehouse_c"
+    ],
+    "correctClaimId": "answer_warehouse_c",
+    "instruction": "You are emergency logistics coordinators tasked with directing a supply plane loaded with water, food, and medicine to land at one of three regional warehouses after severe flooding hit the area. All main roads are partially blocked, but the pilot can reach any warehouse—they just need a quick decision on where it's safest to land and ensure supplies reach local communities promptly. Your team must choose the best landing site from among the three warehouses: Warehouse A (north side, near a river crossing); Warehouse B (central, next to a chemical plant, with upgraded access roads); or Warehouse C (south side, closest to temporary shelters but farthest by road). Only one warehouse is accessible, safe, and able to distribute the supplies. If you select the correct warehouse, the community receives help. If not, valuable supplies will be delayed or lost.\n\nShared information known to all participants:\n- Warehouse B has recently received upgrades to access roads, making it the fastest to reach from the airstrip, and past flights have favored this site.\n- Warehouse A and Warehouse C both have large paved landing zones, but only Warehouse B is adjacent to an emergency response center.\n- Flood maps show that the chemical plant near Warehouse B has not reported any issues yet, and the weather is currently clear.\n\nChoose the best answer from: Warehouse A, Warehouse B, Warehouse C."
+  },
+  "claims": [
+    {
+      "id": "answer_warehouse_a",
+      "text": "Warehouse A",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_warehouse_b",
+      "text": "Warehouse B",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_warehouse_c",
+      "text": "Warehouse C",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The bridge near Warehouse A has completely collapsed in the flooding, making it impossible for trucks to move supplies out from there.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Helicopter pilots report seeing standing water and large debris still blocking the main approach to Warehouse A, making landing physically possible but resupply distribution impossible.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Although Warehouse C is farthest from the airstrip, elevated service roads leading to the temporary shelters have just been confirmed as open by emergency agencies.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Warehouse B has had minor chemical leaks in the past, and after the flood, sensors are detecting rising levels of noxious gases (risk of poisoning for those unloading/unpacking the plane).",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

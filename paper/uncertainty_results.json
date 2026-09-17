@@ -1,0 +1,316 @@
+{
+  "method": {
+    "name": "paired schedule-block nonparametric bootstrap",
+    "bootstrap_draws": 100000,
+    "random_seed": 2027,
+    "interval": "2.5th and 97.5th percentiles",
+    "interpretation": "Sensitivity across the evaluated order schedules, conditional on the fixed tasks, models, prompts, and configurations. Not a population confidence interval over tasks or models."
+  },
+  "source_manifest": "run_manifest.json",
+  "source_manifest_sha256": "2bf1d3a648f6125d0621fbbddc5756b9c3ff993aff39ce43a7bf9f5f505ddc4a",
+  "results": [
+    {
+      "id": "neutral_shared_minus_personal",
+      "label": "Neutral roster: shared minus personal",
+      "table_label": "tab:neutral_fairness",
+      "row_a": "All shared",
+      "row_b": "All personal",
+      "schedule_block_count": 12,
+      "block_key": "roster",
+      "fixed_task_count": 1,
+      "delta_fe_t": 0.9166666666666666,
+      "schedule_block_bootstrap_95_interval": [
+        0.75,
+        1.0
+      ],
+      "leave_one_schedule_out_range": [
+        0.9090909090909091,
+        1.0
+      ],
+      "per_schedule_differences": {
+        "neutral_fairness_v2_clustered_r1_haiku": 1.0,
+        "neutral_fairness_v2_clustered_r2_haiku": 1.0,
+        "neutral_fairness_v2_clustered_r3_haiku": 1.0,
+        "neutral_fairness_v2_clustered_r4_haiku": 1.0,
+        "neutral_fairness_v2_clustered_r5_haiku": 1.0,
+        "neutral_fairness_v2_clustered_r6_haiku": 1.0,
+        "neutral_fairness_v2_interleaved_r1_haiku": 1.0,
+        "neutral_fairness_v2_interleaved_r2_haiku": 1.0,
+        "neutral_fairness_v2_interleaved_r3_haiku": 1.0,
+        "neutral_fairness_v2_interleaved_r4_haiku": 1.0,
+        "neutral_fairness_v2_interleaved_r5_haiku": 1.0,
+        "neutral_fairness_v2_interleaved_r6_haiku": 0.0
+      }
+    },
+    {
+      "id": "ratio_2of6_shared_minus_personal",
+      "label": "2/6 adversaries: shared minus personal",
+      "table_label": "tab:adversary_ratio",
+      "row_a": "2/6 shared",
+      "row_b": "2/6 personal",
+      "schedule_block_count": 36,
+      "block_key": "seed_roster",
+      "fixed_task_count": 1,
+      "delta_fe_t": 0.125,
+      "schedule_block_bootstrap_95_interval": [
+        0.034722222222222224,
+        0.22916666666666666
+      ],
+      "leave_one_schedule_out_range": [
+        0.1,
+        0.12857142857142856
+      ],
+      "per_schedule_differences": {
+        "seed0::neutral_ratio_standardized_v2_2of6_clustered_r1": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_clustered_r2": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_clustered_r3": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_clustered_r4": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_clustered_r5": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_clustered_r6": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_interleaved_r1": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_interleaved_r2": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_interleaved_r3": 0.25,
+        "seed0::neutral_ratio_standardized_v2_2of6_interleaved_r4": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_interleaved_r5": 0.0,
+        "seed0::neutral_ratio_standardized_v2_2of6_interleaved_r6": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_clustered_r1": 0.75,
+        "seed1::neutral_ratio_standardized_v2_2of6_clustered_r2": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_clustered_r3": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_clustered_r4": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_clustered_r5": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_clustered_r6": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_interleaved_r1": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_interleaved_r2": 1.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_interleaved_r3": 0.5,
+        "seed1::neutral_ratio_standardized_v2_2of6_interleaved_r4": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_interleaved_r5": 0.0,
+        "seed1::neutral_ratio_standardized_v2_2of6_interleaved_r6": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_clustered_r1": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_clustered_r2": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_clustered_r3": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_clustered_r4": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_clustered_r5": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_clustered_r6": 1.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_interleaved_r1": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_interleaved_r2": 1.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_interleaved_r3": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_interleaved_r4": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_interleaved_r5": 0.0,
+        "seed2::neutral_ratio_standardized_v2_2of6_interleaved_r6": 0.0
+      }
+    },
+    {
+      "id": "ratio_3of6_shared_minus_personal",
+      "label": "3/6 adversaries: shared minus personal",
+      "table_label": "tab:adversary_ratio",
+      "row_a": "3/6 shared",
+      "row_b": "3/6 personal",
+      "schedule_block_count": 36,
+      "block_key": "seed_roster",
+      "fixed_task_count": 1,
+      "delta_fe_t": 0.925925925925926,
+      "schedule_block_bootstrap_95_interval": [
+        0.8425925925925926,
+        0.9907407407407407
+      ],
+      "leave_one_schedule_out_range": [
+        0.9238095238095236,
+        0.9523809523809522
+      ],
+      "per_schedule_differences": {
+        "seed0::neutral_ratio_standardized_v2_3of6_clustered_r1": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_clustered_r2": 0.6666666666666666,
+        "seed0::neutral_ratio_standardized_v2_3of6_clustered_r3": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_clustered_r4": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_clustered_r5": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_clustered_r6": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_interleaved_r1": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_interleaved_r2": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_interleaved_r3": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_interleaved_r4": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_interleaved_r5": 1.0,
+        "seed0::neutral_ratio_standardized_v2_3of6_interleaved_r6": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_clustered_r1": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_clustered_r2": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_clustered_r3": 0.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_clustered_r4": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_clustered_r5": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_clustered_r6": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_interleaved_r1": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_interleaved_r2": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_interleaved_r3": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_interleaved_r4": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_interleaved_r5": 1.0,
+        "seed1::neutral_ratio_standardized_v2_3of6_interleaved_r6": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_clustered_r1": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_clustered_r2": 0.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_clustered_r3": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_clustered_r4": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_clustered_r5": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_clustered_r6": 0.6666666666666666,
+        "seed2::neutral_ratio_standardized_v2_3of6_interleaved_r1": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_interleaved_r2": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_interleaved_r3": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_interleaved_r4": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_interleaved_r5": 1.0,
+        "seed2::neutral_ratio_standardized_v2_3of6_interleaved_r6": 1.0
+      }
+    },
+    {
+      "id": "origin_tracking_naive_minus_aware",
+      "label": "Origin tracking: naive minus aware",
+      "table_label": "tab:provenance_ablation",
+      "row_a": "Overall | Naive",
+      "row_b": "Overall | Aware",
+      "schedule_block_count": 5,
+      "block_key": "seed",
+      "fixed_task_count": 6,
+      "delta_fe_t": 0.15,
+      "schedule_block_bootstrap_95_interval": [
+        0.1,
+        0.2
+      ],
+      "leave_one_schedule_out_range": [
+        0.12500000000000003,
+        0.16666666666666669
+      ],
+      "per_schedule_differences": {
+        "1": 0.25,
+        "2": 0.16666666666666669,
+        "3": 0.16666666666666669,
+        "4": 0.08333333333333333,
+        "5": 0.08333333333333333
+      }
+    },
+    {
+      "id": "origin_package_naive_minus_provenance_aware",
+      "label": "Origin package: naive minus provenance aware",
+      "table_label": "tab:provenance_defense",
+      "row_a": "Overall | Naive",
+      "row_b": "Overall | Provenance aware",
+      "schedule_block_count": 5,
+      "block_key": "seed",
+      "fixed_task_count": 6,
+      "delta_fe_t": 0.16666666666666669,
+      "schedule_block_bootstrap_95_interval": [
+        0.11666666666666667,
+        0.21666666666666665
+      ],
+      "leave_one_schedule_out_range": [
+        0.14583333333333334,
+        0.1875
+      ],
+      "per_schedule_differences": {
+        "1": 0.16666666666666669,
+        "2": 0.25,
+        "3": 0.16666666666666669,
+        "4": 0.16666666666666666,
+        "5": 0.08333333333333333
+      }
+    },
+    {
+      "id": "origin_warning_minimal_minus_aware",
+      "label": "Added warning: minimal minus aware",
+      "table_label": "tab:provenance_ablation",
+      "row_a": "Overall | Minimal",
+      "row_b": "Overall | Aware",
+      "schedule_block_count": 5,
+      "block_key": "seed",
+      "fixed_task_count": 6,
+      "delta_fe_t": 0.1,
+      "schedule_block_bootstrap_95_interval": [
+        0.03333333333333334,
+        0.16666666666666669
+      ],
+      "leave_one_schedule_out_range": [
+        0.08333333333333333,
+        0.125
+      ],
+      "per_schedule_differences": {
+        "1": 0.16666666666666669,
+        "2": 0.16666666666666669,
+        "3": 0.16666666666666669,
+        "4": 0.0,
+        "5": 0.0
+      }
+    },
+    {
+      "id": "scitat_haiku_shared_minus_personal",
+      "label": "SciTaT Haiku: shared minus personal",
+      "table_label": "tab:scitat_v2",
+      "row_a": "Haiku shared",
+      "row_b": "Haiku personal",
+      "schedule_block_count": 5,
+      "block_key": "seed",
+      "fixed_task_count": 18,
+      "delta_fe_t": 0.9166666666666666,
+      "schedule_block_bootstrap_95_interval": [
+        0.8944444444444445,
+        0.9444444444444444
+      ],
+      "leave_one_schedule_out_range": [
+        0.9027777777777777,
+        0.923611111111111
+      ],
+      "per_schedule_differences": {
+        "1": 0.9722222222222222,
+        "2": 0.8888888888888888,
+        "3": 0.9166666666666666,
+        "4": 0.8888888888888888,
+        "5": 0.9166666666666666
+      }
+    },
+    {
+      "id": "scitat_ministral_shared_minus_personal",
+      "label": "SciTaT Ministral: shared minus personal",
+      "table_label": "tab:scitat_v2",
+      "row_a": "Mistral shared",
+      "row_b": "Mistral personal",
+      "schedule_block_count": 5,
+      "block_key": "seed",
+      "fixed_task_count": 18,
+      "delta_fe_t": 0.4666666666666666,
+      "schedule_block_bootstrap_95_interval": [
+        0.41111111111111115,
+        0.5277777777777778
+      ],
+      "leave_one_schedule_out_range": [
+        0.43750000000000006,
+        0.48611111111111116
+      ],
+      "per_schedule_differences": {
+        "1": 0.5833333333333333,
+        "2": 0.4166666666666667,
+        "3": 0.47222222222222215,
+        "4": 0.47222222222222227,
+        "5": 0.3888888888888889
+      }
+    },
+    {
+      "id": "scitat_llama_shared_minus_personal",
+      "label": "SciTaT Llama: shared minus personal",
+      "table_label": "tab:scitat_v2",
+      "row_a": "Llama shared",
+      "row_b": "Llama personal",
+      "schedule_block_count": 5,
+      "block_key": "seed",
+      "fixed_task_count": 18,
+      "delta_fe_t": 0.1833333333333333,
+      "schedule_block_bootstrap_95_interval": [
+        0.1277777777777777,
+        0.22777777777777777
+      ],
+      "leave_one_schedule_out_range": [
+        0.16666666666666663,
+        0.20833333333333331
+      ],
+      "per_schedule_differences": {
+        "1": 0.25,
+        "2": 0.19444444444444442,
+        "3": 0.08333333333333326,
+        "4": 0.2222222222222222,
+        "5": 0.16666666666666663
+      }
+    }
+  ]
+}

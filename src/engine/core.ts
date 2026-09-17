@@ -313,6 +313,7 @@ export function persistMemoryEntry(dbPath: string, runId: string, entry: MemoryE
     visibility: entry.visibility,
     source_type: entry.sourceType,
     entry_text: entry.text,
+    derived_from_entry_id: entry.derivedFromEntryId ?? null,
   });
 }
 
@@ -439,6 +440,10 @@ export function persistStepMetrics(
     netEndorsement: metrics.netEndorsement,
     meanConfidence: metrics.meanConfidence,
     disagreementLevel: metrics.disagreementLevel,
+    honestFalseEndorsementRate: metrics.honestFalseEndorsementRate,
+    honestEndorseCount: metrics.honestEndorseCount,
+    honestAgentCount: metrics.honestAgentCount,
+    corroborationInflation: metrics.corroborationInflation ?? 0,
   })) {
     insertRow(dbPath, "metric_records", {
       run_id: runId,

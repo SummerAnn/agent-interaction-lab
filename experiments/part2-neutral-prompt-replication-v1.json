@@ -1,0 +1,30 @@
+{
+  "id": "part2_neutral_prompt_replication_v1",
+  "title": "Neutral-prompt replication: does contagion require the 'swayed by majority' prompt?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Codex audit: 'The regular agent is explicitly told it relies heavily on peers.'",
+      "This experiment runs the same setup with neutral honest-agent prompts.",
+      "If contagion persists with neutral prompts, the finding is robust.",
+      "If it disappears, the effect is prompted, not emergent.",
+      "Both rosters use same liars (contamination_agent, do not waver).",
+      "Only honest agents differ: specialist+regular vs neutral+neutral."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-majority-wrong-4of6-neutral-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

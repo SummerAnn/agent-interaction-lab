@@ -1,0 +1,56 @@
+{
+  "id": "ambiguous_evidence_productivity_v1",
+  "title": "Ambiguous evidence: factory productivity after workflow change",
+  "domain": "synthetic workplace study packet",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["hidden_profile", "private_evidence", "ambiguous_evidence", "majority_wrong", "delayed_evidence", "source_detachment"],
+  "provenance": {
+    "kind": "new",
+    "note": "Controlled synthetic task. Each card is individually ambiguous: consistent with the correct answer and at least one wrong answer. Only combining both cards narrows to one explanation. Three analysts begin favoring one wrong explanation."
+  },
+  "focusClaimId": "candidate_equipment",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_workflow", "candidate_equipment", "candidate_demand"],
+    "correctClaimId": "candidate_workflow",
+    "requiredSourceIds": ["productivity_adopter_gains", "productivity_comparison_groups"],
+    "instruction": "A manufacturing plant reports 15% higher output in the quarter after introducing a new workflow process. Three explanations have been proposed. Choose the explanation best supported by the evidence you can access. If you name a source card, use only an ID you received."
+  },
+  "claims": [
+    {"id": "candidate_workflow", "text": "The new workflow process improved productivity.", "truthLabel": "true"},
+    {"id": "candidate_equipment", "text": "New equipment installed the same month increased production capacity.", "truthLabel": "false"},
+    {"id": "candidate_demand", "text": "A seasonal demand increase motivated workers to produce more.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {
+      "id": "productivity_adopter_gains",
+      "text": "Departments that adopted the new workflow produced 15% more units than their own pre-adoption baseline. However, these departments also received new equipment during the same month. Both changes were introduced together as part of the same improvement initiative.",
+      "visibleToAgentIds": ["analyst_3"],
+      "availableFromStep": 2,
+      "effects": [
+        {"claimId": "candidate_workflow", "effect": 0.4},
+        {"claimId": "candidate_equipment", "effect": 0.3}
+      ]
+    },
+    {
+      "id": "productivity_comparison_groups",
+      "text": "Departments that received the new equipment but were not selected for the workflow pilot showed no change in output compared to their pre-period baseline. Seasonal order volume was the same across all departments during the study period.",
+      "visibleToAgentIds": ["analyst_4"],
+      "availableFromStep": 2,
+      "effects": [
+        {"claimId": "candidate_equipment", "effect": -0.7},
+        {"claimId": "candidate_demand", "effect": -0.7},
+        {"claimId": "candidate_workflow", "effect": 0.3}
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId": "analyst_1", "claimId": "candidate_equipment", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_1", "claimId": "candidate_workflow", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_equipment", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_workflow", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_equipment", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_workflow", "stance": "reject", "confidence": 0.75}
+  ],
+  "initialMemoryEntries": []
+}

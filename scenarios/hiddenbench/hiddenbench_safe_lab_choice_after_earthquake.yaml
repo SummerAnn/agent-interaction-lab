@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_safe_lab_choice_after_earthquake",
+  "title": "HiddenBench: Safe Lab Choice After Earthquake",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 45 (Safe Lab Choice After Earthquake). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_lab_gamma",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_lab_alpha",
+      "answer_lab_beta",
+      "answer_lab_gamma"
+    ],
+    "correctClaimId": "answer_lab_gamma",
+    "instruction": "You are four scientists tasked by the government to analyze a dangerous new virus as quickly as possible to inform emergency pandemic responses. Three laboratories—Lab Alpha, Lab Beta, and Lab Gamma—are available. An earthquake struck earlier today, causing possible damage throughout the facility. Time is critical: you must start the research within the next several hours.\n\nEach lab has unique equipment and safety features, but you must choose only one. All labs are typically considered safe, but the earthquake may have altered the situation. If you choose the only truly safe and operational lab, the research can proceed. If not, vital evidence could be lost, causing setbacks to containment efforts.\n\nShared information known to all participants:\n- Lab Alpha contains specialized virology equipment but is located in the basement.\n- Lab Beta is on the second floor and was recently reinforced for earthquakes; all chemical storage in Beta remains secure after the quake.\n- Lab Gamma is on the top floor, farther from emergency exits, but has an independent air filtration system that passed government inspection last month.\n- Power is restored to all labs except Gamma, which is still on emergency battery backup.\n\nChoose the best answer from: Lab Alpha, Lab Beta, Lab Gamma."
+  },
+  "claims": [
+    {
+      "id": "answer_lab_alpha",
+      "text": "Lab Alpha",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lab_beta",
+      "text": "Lab Beta",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lab_gamma",
+      "text": "Lab Gamma",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Structural engineers found a major crack in a supporting beam underneath Beta’s floor that worsened since initial inspections—unexpected aftershocks are expected within the next 24 hours.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "All scheduled deliveries of reagents for virus research were mistakenly routed to Gamma and have now arrived there—but have not been delivered to the other labs, which now lack key supplies.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The emergency battery in Gamma has enough charge to last twelve more hours, which is enough for the critical first phase of the experiment, and the air system continues to operate independently regardless of main power.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Water is leaking into Lab Alpha from cracks in the basement wall, creating a risk of flooding and electrical hazards.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

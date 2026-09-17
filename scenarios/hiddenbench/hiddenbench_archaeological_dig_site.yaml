@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_archaeological_dig_site",
+  "title": "HiddenBench: archaeological_dig_site",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 57 (archaeological_dig_site). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_site_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_site_a",
+      "answer_site_b",
+      "answer_site_c"
+    ],
+    "correctClaimId": "answer_site_c",
+    "instruction": "You and three colleagues are archaeologists tasked with selecting a site to salvage crucial artifacts before construction begins. There are tight time constraints: you can only pick one location, and you must choose by the end of the hour. There are three candidate sites: Site A, Site B, and Site C. You must maximize your chances of a successful recovery, as failure means the artifacts may be lost forever.\n\nShared information known to all participants:\n- Site A: Riverbank, frequent flooding in spring, unknown artifact depth.\n- Site B: Plateau, stable ground, topsoil is soft and undisturbed.\n- Site C: Woods edge, soil is rocky, some evidence of rodent burrows.\n- The main developer has announced all construction will start tomorrow, but precise order is unknown.\n\nChoose the best answer from: Site A, Site B, Site C."
+  },
+  "claims": [
+    {
+      "id": "answer_site_a",
+      "text": "Site A",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_site_b",
+      "text": "Site B",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_site_c",
+      "text": "Site C",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "In a recent survey, Site C’s rodent burrows were found to be abandoned, with no damage to deep soil layers.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "You overheard that Site A is predicted to flood tonight due to sudden rain upstream.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "You have seen construction crews preparing explosive charges at Site B because blasting for foundations is scheduled for the morning.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Site A’s access road is being closed off for bridge repairs overnight and won't reopen for two days.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

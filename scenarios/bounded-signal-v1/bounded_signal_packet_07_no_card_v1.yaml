@@ -1,0 +1,51 @@
+{
+  "id": "bounded_signal_packet_07_no_card_v1",
+  "title": "Generated biomarker assay packet 07: no-card control",
+  "domain": "generated biomarker assay packet",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "none"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Procedurally generated before model calls; answer and label positions vary by packet."
+  },
+  "focusClaimId": "explanation_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_a",
+    "instruction": "Choose an explanation only if the supplied material supports it. Do not infer an answer from the labels.",
+    "requiredSourceIds": [
+      "bounded_signal_packet_07_no_card_v1_rules_out_early_1",
+      "bounded_signal_packet_07_no_card_v1_rules_out_other_1"
+    ],
+    "evidenceAccess": "none"
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "a plate-processing artifact best accounts for the observed biomarker shift.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_b",
+      "text": "The tested intervention best accounts for the observed biomarker shift.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "a baseline participant-composition difference best accounts for the observed biomarker shift.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

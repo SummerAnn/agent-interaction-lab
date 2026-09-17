@@ -1,0 +1,15 @@
+{
+  "id": "bounded_evidence_fifo",
+  "title": "Four-slot source record, oldest entry removed",
+  "memory": {
+    "mode": "shared",
+    "record": "evidence_board",
+    "maxRetrievedEntries": 2,
+    "maxStoredEntries": 4,
+    "evictionPolicy": "fifo"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

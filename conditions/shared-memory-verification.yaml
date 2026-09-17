@@ -1,0 +1,15 @@
+{
+  "id": "shared_memory_verification",
+  "title": "Shared memory with GT verification",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "verification": {
+      "mode": "reliable",
+      "noiseLevel": 0
+    }
+  }
+}

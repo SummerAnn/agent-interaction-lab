@@ -1,0 +1,25 @@
+{
+  "id": "part2_rag_minimal_v1",
+  "title": "Minimal RAG validation: no evidence cards, agents only see peer summaries in record",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Uses the no-evidence ego depletion scenario.",
+      "Agents have NO documents — only the shared record and training knowledge.",
+      "This IS the RAG test: peer entries = upstream summaries.",
+      "Tests with Llama (should show contagion even on familiar topics).",
+      "If Llama falls here, it validates: pipeline summaries spread false beliefs."
+    ]
+  },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_no_evidence_v1.yaml"],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-majority-wrong-4of6-llama8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -3,7 +3,7 @@ import { z } from "zod";
 export const truthLabelSchema = z.enum(["true", "false", "mixed"]);
 export const stanceLabelSchema = z.enum(["endorse", "reject", "uncertain"]);
 export const memoryModeSchema = z.enum(["personal", "shared"]);
-export const memoryRecordSchema = z.enum(["agent_judgment", "evidence_board", "mixed_record", "source_aware", "independence_aware"]).default("agent_judgment");
+export const memoryRecordSchema = z.enum(["agent_judgment", "evidence_board", "mixed_record", "source_aware", "independence_aware", "provenance_aware", "provenance_minimal", "lineage_collapsed"]).default("agent_judgment");
 export const memoryEvictionPolicySchema = z.enum(["fifo", "least_retrieved", "source_preserving"]);
 export const correctionVisibilitySchema = z.enum(["global"]);
 export const scenarioTypeSchema = z.enum(["claim_benchmark", "open_discussion"]).default("claim_benchmark");
@@ -208,6 +208,8 @@ export const collusionSchema = z.object({
 export const interactionSchema = z.object({
   mode: interactionModeSchema,
   chatRounds: z.number().int().positive().default(3),
+  adaptiveStopping: z.boolean().optional(),
+  adversaryCommitment: z.enum(["prompted", "enforced"]).optional(),
   // Bounded task chat uses one speaker per turn. The database retains the
   // full trace, while these limits control only what later agents can see.
   maxStoredMessages: z.number().int().positive().optional(),
@@ -219,6 +221,8 @@ export const interactionSchema = z.object({
 }).default({
   mode: "memory",
   chatRounds: 3,
+  adaptiveStopping: true,
+  adversaryCommitment: "prompted",
   topology: "fully-connected",
   chatStyle: "claim-debate",
   collusion: {
@@ -243,6 +247,10 @@ export const conditionSchema = z.object({
     maxStoredEntries: z.number().int().positive().optional(),
     evictionPolicy: memoryEvictionPolicySchema.optional(),
     reservedSourceEntries: z.number().int().nonnegative().optional(),
+    // Shared records normally retain statements after their author leaves.
+    // Exit-persistence studies can remove those statements at departure while
+    // holding the rest of the memory condition fixed.
+    departedAgentEntries: z.enum(["retain", "remove"]).default("retain"),
     decay: decaySchema,
   }),
   interaction: interactionSchema,
@@ -345,6 +353,7 @@ export type MemoryEntry = {
   visibility: "shared" | "personal";
   sourceType: "seed" | "agent" | "evidence" | "mixed";
   text: string;
+  derivedFromEntryId?: string;
 };
 
 export type BeliefStateRecord = {
@@ -398,6 +407,10 @@ export type StepMetrics = {
   netEndorsement: number;
   meanConfidence: number;
   disagreementLevel: number;
+  honestFalseEndorsementRate: number;
+  honestEndorseCount: number;
+  honestAgentCount: number;
+  corroborationInflation: number | null;
 };
 
 export type RunSummary = {
@@ -414,6 +427,8 @@ export type RunSummary = {
   maxSteps: number;
   completedSteps: number;
   falseClaimEndorsementRate: number;
+  honestFalseEndorsementRate: number;
+  finalCorroborationInflation: number | null;
   finalConfidenceWeightedFalseEndorsement: number;
   finalFalseClaimRejectRate: number;
   finalUncertainRate: number;

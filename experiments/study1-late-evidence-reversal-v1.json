@@ -1,0 +1,22 @@
+{
+  "id": "study1_late_evidence_reversal_v1",
+  "title": "Study 1: late counter-evidence after early false belief",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1_record_design_late_evidence_reversal",
+    "locked": true,
+    "notes": [
+      "Built after the v1 delayed-evidence trace report found zero agents that both endorsed the false claim before step 7 and later received a counter-source.",
+      "All agents receive the same two late counter-sources at step 7. The only changed variable is whether the shared record is source-aware or mixed."
+    ]
+  },
+  "scenarios": ["scenarios/delayed-counterevidence-reversal-v1.yaml"],
+  "conditions": [
+    "conditions/shared-source-aware-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

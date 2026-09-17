@@ -83,6 +83,15 @@ function isStable(messages: ChatMessage[], agents: AgentSpec[], minRounds: numbe
   return true;
 }
 
+export function privateMemoryEntriesForAgent(
+  entries: MemoryEntry[],
+  agentId: string,
+): MemoryEntry[] {
+  return entries.filter(
+    (entry) => entry.visibility === "personal" && entry.agentId === agentId,
+  );
+}
+
 // --- Main debate runner ---
 
 export type ChatDebateResult = {
@@ -114,13 +123,15 @@ export async function runChatDebate(
   options: {
     chatRounds: number;
     topology: Topology;
+    adaptiveStopping?: boolean;
+    privateMemoryEntries?: MemoryEntry[];
     onMessage?: OnChatMessage;
     maxInputTokens?: number;
     maxOutputTokens?: number;
     temperature?: number;
   },
 ): Promise<ChatDebateResult> {
-  const { chatRounds, topology, onMessage } = options;
+  const { chatRounds, topology, adaptiveStopping = true, onMessage } = options;
   const allMessages: ChatMessage[] = [];
   const finalStances = new Map<string, { stance: StanceLabel; confidence: number; reasoning: string }>();
   const usageLogs: ChatDebateResult["usageLogs"] = [];
@@ -130,7 +141,7 @@ export async function runChatDebate(
     const isFinalRound = round === chatRounds;
 
     // Check adaptive stopping after round 2
-    if (round > 2 && isStable(allMessages, agents, round)) {
+    if (adaptiveStopping && round > 2 && isStable(allMessages, agents, round)) {
       stoppedEarly = true;
       // Copy last round's stances as final
       for (const agent of agents) {
@@ -151,6 +162,10 @@ export async function runChatDebate(
     for (const agent of agents) {
       const provider = providerMap.get(agent.id)!;
       const visibleMessages = filterByTopology(allMessages, agent, agents, topology);
+      const privateMemoryEntries = privateMemoryEntriesForAgent(
+        options.privateMemoryEntries ?? [],
+        agent.id,
+      );
 
       const activeCorrections = activeInterventions
         .filter((i) => i.claimId === claim.id)
@@ -164,6 +179,7 @@ export async function runChatDebate(
         condition,
         priorMessages: visibleMessages,
         activeCorrections,
+        privateMemoryEntries,
         round,
         totalRounds: chatRounds,
         isFinalRound,
@@ -204,7 +220,21 @@ export async function runChatDebate(
           `[chat] model call failed: scenario=${scenario.id} claim=${claim.id} agent=${agent.id} role=${agent.role} model=${provider.model} round=${round}/${chatRounds}: ${message}`,
         );
       }
-      const parsed = parseChatResponse(rawResponse);
+      let parsed = parseChatResponse(rawResponse);
+      if (
+        condition.interaction.adversaryCommitment === "enforced" &&
+        agent.role === "contamination_agent" &&
+        claim.id === scenario.focusClaimId
+      ) {
+        parsed = {
+          ...parsed,
+          message: "I continue to endorse this claim. I consider the underlying effect real, and the objections raised so far do not overturn it.",
+          stance: "endorse",
+          confidence: Math.max(0.9, parsed.confidence),
+          citedSourceIds: [],
+          referencedClaimIds: [claim.id],
+        };
+      }
 
       const chatMsg: ChatMessage = {
         round,

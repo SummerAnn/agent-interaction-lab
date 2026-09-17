@@ -1,0 +1,17 @@
+{
+  "id": "chat_fully_connected_no_early_stop",
+  "title": "Chat debate (fully connected, fixed three rounds)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

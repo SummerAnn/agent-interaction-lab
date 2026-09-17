@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_laboratory_theft_deduction",
+  "title": "HiddenBench: Laboratory Theft Deduction",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 13 (Laboratory Theft Deduction). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_lab_gamma",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_lab_alpha",
+      "answer_lab_beta",
+      "answer_lab_gamma"
+    ],
+    "correctClaimId": "answer_lab_gamma",
+    "instruction": "You are members of a security review panel at a major university, investigating the theft of a prototype device from a tightly controlled building. The theft took place during a two-hour window last night, and records show only three labs had access to the secure vault. University leadership wants you to identify the lab responsible for the theft before pressing charges. You have limited time to reach a consensus based on access records and witness reports. If you choose correctly, the investigation can proceed with minimal fallout. A wrong accusation will damage innocent reputations. After discussing with the three other panel members, you must jointly decide which lab committed the theft. You must be sure, as each lab head has powerful legal representation and will dispute any shaky accusations.\n\nShared information known to all participants:\n- The theft could only have occurred using a specialized code machine. Only Lab Alpha is openly recorded as having this tool.\n- All labs reported their staff were present on site during the night, and security footage showed movement in all three corridors during the time of the theft.\n- Lab Alpha has a history of security violations, including code access issues in the past month.\n\nChoose the best answer from: Lab Alpha, Lab Beta, Lab Gamma."
+  },
+  "claims": [
+    {
+      "id": "answer_lab_alpha",
+      "text": "Lab Alpha",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lab_beta",
+      "text": "Lab Beta",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lab_gamma",
+      "text": "Lab Gamma",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Security camera logs show Lab Alpha’s code machine was checked in and never left their lab during the two-hour window.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A technician’s badge from Lab Beta was used to enter the building, but building entry and exit logs show no one from Beta ever left until the morning shift change—so they could not have moved the item outside.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Lab Gamma’s staff reported one person missing from headcount, but building security specifically reports only three badge entries for Gamma during the time window—matching authorized access for device maintenance at the vault.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A janitor’s log shows all staff from Lab Alpha, including the lead technician, were visible in their break room for the entire two-hour period, and the break room is in a different building than the secure vault.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

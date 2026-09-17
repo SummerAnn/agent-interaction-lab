@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_event_relocation",
+  "title": "HiddenBench: Emergency Event Relocation",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 63 (Emergency Event Relocation). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_garden_hall",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_garden_hall",
+      "answer_river_pavilion",
+      "answer_mountain_lodge"
+    ],
+    "correctClaimId": "answer_garden_hall",
+    "instruction": "Your team is in charge of relocating a major university event due to an unexpected power failure at the original venue. You must choose a new location from three options within the campus, each with pros and cons. Time is tight: the event is in two hours, so you must act quickly. Each possible venue must accommodate 200 attendees and provide shelter in case of sudden rain. All venues are prepared and have been used for similar events in the past. You'll lose significant event funding if your choice proves unsafe or unusable.\n\nShared information known to all participants:\n- Garden Hall has a small roof leak reported overnight, but staff have placed buckets to catch any water. The main hall was not inspected this morning because staff prioritized the Pavilion and Lodge.\n- River Pavilion is fully set up, and security has confirmed it is dry and free of flooding. Pavilion staff are onsite, kitchens are stocked, and all technical equipment has been tested as working post-storm.\n- Mountain Lodge is on high ground and has backup power. However, heavy snow has been falling since last night, and it's uncertain whether the road will stay open.\n\nChoose the best answer from: Garden Hall, River Pavilion, Mountain Lodge."
+  },
+  "claims": [
+    {
+      "id": "answer_garden_hall",
+      "text": "Garden Hall",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_river_pavilion",
+      "text": "River Pavilion",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_mountain_lodge",
+      "text": "Mountain Lodge",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The access road to Mountain Lodge was completely blocked by fallen trees at 8am, and campus maintenance does not expect it to be cleared today. Also, the roof leak at Garden Hall is only over the storage closet; the main hall is confirmed dry and ready.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A Pavilion staff member disclosed privately that mold was discovered under the kitchen sink during setup; he worries it could affect food safety if it gets stirred up during cooking.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "River Pavilion's kitchen experienced a brief electrical short circuit this morning; staff report the smell of burning wires lingered but cleared quickly.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Maintenance at River Pavilion discovered areas under the wooden floor feel spongy; one floorboard was discovered to be cracked, but staff covered the area with a mat for now.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

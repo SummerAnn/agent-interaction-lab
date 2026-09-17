@@ -1,0 +1,42 @@
+{
+  "id": "part2_neutral_fairness_chat_v3",
+  "title": "Neutral fairness replication: balanced order, fixed three-round debate",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "No-intervention fairness replication for the neutral-prompt primary result.",
+      "Twelve predeclared roster orders place each agent twice in every position.",
+      "Six schedules rotate a clustered order and six rotate an interleaved order.",
+      "Adaptive stopping is disabled so all agents speak in all three rounds.",
+      "Every cell uses exactly 18 focal-claim model calls at temperature 0."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_focus_only_no_intervention_v2.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r6_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r6_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

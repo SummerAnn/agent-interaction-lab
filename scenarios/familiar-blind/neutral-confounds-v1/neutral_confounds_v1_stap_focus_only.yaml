@@ -1,0 +1,69 @@
+{
+  "id": "neutral_confounds_v1_stap_focus_only",
+  "title": "STAP cells: focal claim only, neutral prompt",
+  "domain": "stem-cell-biology-fraud",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "shared_memory",
+    "fraud_retraction",
+    "delayed_correction",
+    "global_evidence",
+    "neutral_prompt",
+    "balanced_order",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "sources": [
+    {
+      "label": "Obokata et al. (2014) Nature [RETRACTED]: STAP cells",
+      "url": "https://doi.org/10.1038/nature12968"
+    },
+    {
+      "label": "RIKEN investigation committee report (2014)"
+    },
+    {
+      "label": "Nature editorial (2014): retraction notice",
+      "url": "https://doi.org/10.1038/nature13656"
+    },
+    {
+      "label": "7-lab replication failure documented by Nature News (2014)"
+    }
+  ],
+  "focusClaimId": "claim_stap_works",
+  "claims": [
+    {
+      "id": "claim_stap_works",
+      "text": "Soaking somatic cells in weak acid for 30 minutes reliably converts them to pluripotent stem cells (STAP cells), as demonstrated by Oct4-GFP expression and chimera contribution.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

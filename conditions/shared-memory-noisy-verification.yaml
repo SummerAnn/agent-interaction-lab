@@ -1,0 +1,15 @@
+{
+  "id": "shared_memory_noisy_verification",
+  "title": "Shared memory with noisy GT verification 30%",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "verification": {
+      "mode": "noisy",
+      "noiseLevel": 0.3
+    }
+  }
+}

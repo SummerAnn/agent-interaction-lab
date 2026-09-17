@@ -1,0 +1,19 @@
+{
+  "id": "quick_audit_study1_source_exit_2026_08_28",
+  "title": "Quick audit: Study 1 false-memory persistence after source exit",
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

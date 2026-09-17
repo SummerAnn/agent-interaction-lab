@@ -1,0 +1,87 @@
+{
+  "id": "hiddenbench_sensor_placement_decision",
+  "title": "HiddenBench: sensor_placement_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 53 (sensor_placement_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_mountain_ridge",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_ocean_bluff",
+      "answer_mountain_ridge",
+      "answer_river_valley",
+      "answer_forest_edge"
+    ],
+    "correctClaimId": "answer_mountain_ridge",
+    "instruction": "You are scientists on a team tasked with locating a critical weather sensor in an area prone to sudden climate events. The sensor must be accessible for service teams and avoid any known hazards during the next week of volatile weather. There are four candidate sites: Ocean Bluff, Mountain Ridge, River Valley, and Forest Edge. After a drone survey, site descriptions and general hazard forecasts were shared, but further details are limited. Your team must choose the best location to maximize data collection and ensure the sensor's survival and accessibility. Only one site is truly feasible.\n\nShared information known to all participants:\n- Ocean Bluff is on stable ground, directly accessible by the main road, and currently clear of debris.\n- Mountain Ridge is elevated but requires a winding path for access, which is reported to be passable now.\n- River Valley is usually dry in the summer, and there have been no recent floods reported.\n- Forest Edge is on flat land and the access road appears to be open according to survey images.\n\nChoose the best answer from: Ocean Bluff, Mountain Ridge, River Valley, Forest Edge."
+  },
+  "claims": [
+    {
+      "id": "answer_ocean_bluff",
+      "text": "Ocean Bluff",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_mountain_ridge",
+      "text": "Mountain Ridge",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_river_valley",
+      "text": "River Valley",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_forest_edge",
+      "text": "Forest Edge",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Recent rockslides have made Mountain Ridge's path potentially dangerous for heavy equipment, but light vehicles can still navigate with caution.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The River Valley's soil test from yesterday showed dangerous instability—heavy equipment could get stuck or trigger further collapse if used there.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A new wildlife restriction at Forest Edge will prohibit all vehicle access starting tomorrow, making repairs impossible if something fails.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Ocean Bluff is predicted to experience severe coastal flooding within the week, making access impossible for several days.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

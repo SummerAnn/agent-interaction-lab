@@ -1,0 +1,31 @@
+{
+  "id": "study1_gt_verification",
+  "title": "Study 1a: What changes when shared memory gets GT verification under split evidence?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1_gt_verification_under_split_evidence",
+    "locked": true,
+    "notes": [
+      "Shared-memory follow-up with no scheduled correction so GT verification quality is the only changed factor."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-gt-verification-no-correction.yaml",
+    "conditions/shared-memory-noisy-gt-verification-30-no-correction.yaml",
+    "conditions/shared-memory-noisy-gt-verification-50-no-correction.yaml",
+    "conditions/shared-memory-noisy-gt-verification-70-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "study1_memory_benchmark",
+  "title": "Study 1: Which memory rules help or hurt truth recovery when evidence is split across agents?",
+  "benchmarkMeta": {
+    "status": "canonical",
+    "claimId": "study1_memory_under_split_evidence",
+    "locked": true,
+    "notes": [
+      "Main paper-facing benchmark for the memory comparison under distributed evidence."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml",
+    "conditions/shared-memory-noisy-verification.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

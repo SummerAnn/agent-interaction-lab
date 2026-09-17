@@ -1,0 +1,31 @@
+{
+  "id": "part2_mitigations_crossmodel_v1",
+  "title": "Top 3 mitigations across 5 models (Llama, Mistral, Sonnet, Opus, GPT-4o-mini)",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Tests truth labels, debate, and chain topology across non-Haiku models.",
+      "Same ego depletion task, same 4-liar roster, same seeds as Haiku mitigations.",
+      "Fills the audit gap: mitigations were Haiku-only, reviewers will ask about generalization.",
+      "Also includes shared memory baseline for each model as comparison."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-gt-verification-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/chat-chain.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-llama8b.json",
+    "rosters/blind-majority-wrong-4of6-mistral8b.json",
+    "rosters/blind-majority-wrong-4of6-sonnet.json",
+    "rosters/blind-majority-wrong-4of6-opus.json",
+    "rosters/blind-majority-wrong-4of6-gpt4mini.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "scitat_1601_07336v1_q1_one_piece_paragraph",
+  "title": "SciTaT 1601.07336v1-q1 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1601.07336v1-q1",
+      "summary": "By applying the different methods, we presented the classification results in Table \\ref{Tab3}.  As well, the tuned parameters are reported for the results achieved by other methods. The bold numbers highlight the best results. From the results, we can observe that the proposed approach outperforms other methods in most cases while, on average, RSRS achieved the second best performance based on Stein kernel. This can be interpreted by the Stein distance may better suit some subset of Brodatz dataset, i.e., `5v2' and`5v3'. As for SRC, it conducts classification as a baseline due to the lack of consideration of the intrinsic geometry structure within data.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Based on the paragraph, find the difference in average accuracy between the proposed approach and the method described as achieving the second best performance.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1601.07336v1-q1",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 2.09.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 1.09.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 3.09.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 4.18.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "By applying the different methods, we presented the classification results in Table \\ref{Tab3}.  As well, the tuned parameters are reported for the results achieved by other methods. The bold numbers highlight the best results. From the results, we can observe that the proposed approach outperforms other methods in most cases while, on average, RSRS achieved the second best performance based on Stein kernel. This can be interpreted by the Stein distance may better suit some subset of Brodatz dataset, i.e., `5v2' and`5v3'. As for SRC, it conducts classification as a baseline due to the lack of consideration of the intrinsic geometry structure within data.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

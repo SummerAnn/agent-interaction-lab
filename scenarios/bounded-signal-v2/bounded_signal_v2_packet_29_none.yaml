@@ -1,0 +1,54 @@
+{
+  "id": "bounded_signal_v2_packet_29_none",
+  "title": "Neutral model packet bounded_signal_v2_packet_29_none",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "control",
+    "neutral_model_names",
+    "counterbalanced",
+    "none"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls. Candidate names, answer positions, excluded alternatives, and card wording rotate across packets."
+  },
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_b",
+      "explanation_c",
+      "explanation_a"
+    ],
+    "correctClaimId": "explanation_b",
+    "instruction": "A recorded pattern may be explained by one of three named models. Choose a model only when the supplied checks rule out both alternatives.",
+    "requiredSourceIds": [
+      "bounded_signal_v2_packet_29_none_rules_out_early_1",
+      "bounded_signal_v2_packet_29_none_rules_out_other_1"
+    ],
+    "evidenceAccess": "none",
+    "allowAbstain": true
+  },
+  "claims": [
+    {
+      "id": "explanation_b",
+      "text": "Model Indigo best explains the recorded pattern.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_c",
+      "text": "Model Lark best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_a",
+      "text": "Model Halo best explains the recorded pattern.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

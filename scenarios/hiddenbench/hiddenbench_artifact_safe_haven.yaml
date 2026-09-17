@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_artifact_safe_haven",
+  "title": "HiddenBench: artifact_safe_haven",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 15 (artifact_safe_haven). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_downtown_police_station",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_city_bank",
+      "answer_university_library",
+      "answer_downtown_police_station"
+    ],
+    "correctClaimId": "answer_downtown_police_station",
+    "instruction": "A priceless ancient artifact has just been unearthed in your city. Authorities task your team with deciding where to safely store it for 24 hours until the national museum can collect it. The city is experiencing rising river levels after days of storms, and several neighborhoods have intermittent power outages. You must quickly agree on the safest location for the artifact. The options are:\n- City Bank: Modern steel vault, backup generator, but in an area at risk for power outages and flooding.\n- University Library: Centrally located, 24/7 security, and not known to flood.\n- Downtown Police Station: High security, but rumored to be crowded due to emergency shelter duties.\n\nShared information known to all participants:\n- The University Library is built on higher ground and has never experienced flooding, making it a trusted location for safe storage of rare books and documents.\n- The City Bank's vault is rated for both fire and water, and a backup generator was recently installed.\n- The Downtown Police Station is acting as a temporary shelter and has significantly more traffic than usual, including people seeking refuge from flooded homes.\n\nChoose the best answer from: City Bank, University Library, Downtown Police Station."
+  },
+  "claims": [
+    {
+      "id": "answer_city_bank",
+      "text": "City Bank",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_university_library",
+      "text": "University Library",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_downtown_police_station",
+      "text": "Downtown Police Station",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A government memo sent to police leadership confirms that a secure evidence room—separate from the public shelter area—remains unused and can be made accessible for artifact storage immediately.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The University Library's 24/7 security detail will be off-site for a mandatory citywide training drill tonight, and only basic staff will remain during the night.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The road to the University Library is blocked by downed trees from the storm and will not be open for at least another 24 hours.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Power company officials confirm that the City Bank's backup generator is due for repairs and has not functioned during recent outages.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

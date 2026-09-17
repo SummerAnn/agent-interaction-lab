@@ -1,0 +1,33 @@
+{
+  "id": "study4_agent_composition_benchmark",
+  "title": "Study 4: Which population mixes are robust and which ones tip into false consensus?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study4_population_mix",
+    "locked": true,
+    "notes": [
+      "Supporting benchmark for roster composition.",
+      "Keeps memory rule fixed and varies the population mix only."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml",
+    "scenarios/room-temp-superconductor-v1.yaml",
+    "scenarios/stap-cells-v1.yaml",
+    "scenarios/climate-attribution-v1.yaml",
+    "scenarios/truthfulqa-misconceptions-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json",
+    "rosters/contamination-heavy-6-haiku.json",
+    "rosters/specialist-heavy-6-haiku.json",
+    "rosters/regular-heavy-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

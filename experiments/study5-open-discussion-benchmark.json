@@ -1,0 +1,52 @@
+{
+  "id": "study5_open_discussion",
+  "title": "Study 5: How do source grounded open discussions behave?",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "claimId": "study5_open_discussion",
+    "locked": false,
+    "notes": [
+      "Pilot open-discussion benchmark with richer source use.",
+      "Useful for citation fidelity and premature-consensus analysis."
+    ]
+  },
+  "provenance": {
+    "kind": "adapted",
+    "note": "This is our open discussion track built on top of the controlled benchmark."
+  },
+  "citations": {
+    "motivation": [
+      {
+        "title": "Physics of Agents: Statistical Mechanics Predicts Collective Behavior of AI Agents",
+        "url": "https://arxiv.org/abs/2608.16578",
+        "note": "large group patterns such as consensus and polarization"
+      }
+    ],
+    "mechanism": [
+      {
+        "title": "Source grounded scientific discussion benchmark design",
+        "note": "this study tests richer discussion with direct citation, questioning, critique, and summaries"
+      }
+    ],
+    "metric": [
+      {
+        "title": "discussion accuracy, citation fidelity, and premature consensus",
+        "note": "the main open discussion evaluator targets"
+      }
+    ]
+  },
+  "scenarios": [
+    "scenarios/open-discussion-ego-depletion-v1.yaml",
+    "scenarios/open-discussion-wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-open-discussion.yaml",
+    "conditions/chat-open-discussion-star.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 4,
+  "budget": { "maxModelCalls": 96 }
+}

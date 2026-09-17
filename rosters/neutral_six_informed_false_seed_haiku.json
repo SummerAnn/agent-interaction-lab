@@ -1,0 +1,91 @@
+{
+  "id": "neutral_six_informed_false_seed_haiku",
+  "title": "Six neutral agents: One neutral agent makes one informed false statement",
+  "agents": [
+    {
+      "id": "agent_1",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0.55,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.3,
+      "activeFromStep": 1,
+      "canWriteMemory": true,
+      "seedStatementPolicy": {
+        "kind": "informed_false_statement",
+        "claimId": "claim_wrong_answer",
+        "targetStance": "endorse",
+        "fromStep": 1,
+        "untilStep": 1
+      }
+    },
+    {
+      "id": "agent_2",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0.55,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.3,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "agent_3",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0.55,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.3,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "agent_4",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0.55,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.3,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "agent_5",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0.55,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.3,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "agent_6",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0.55,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.3,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    }
+  ]
+}

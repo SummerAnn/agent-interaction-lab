@@ -1,0 +1,19 @@
+{
+  "id": "quick_audit_study1_memory",
+  "title": "Quick audit: Study 1 memory spread",
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml"
+  ],
+  "seeds": [1, 2],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

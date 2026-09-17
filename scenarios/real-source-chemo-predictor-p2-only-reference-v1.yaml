@@ -1,0 +1,13 @@
+{
+  "id": "real_source_chemo_predictor_p2_only_reference_v1",
+  "title": "Reference: chemotherapy-predictor question with the retraction card only",
+  "domain": "research-integrity", "mechanismFamily": "source_grounded_deliberation", "mechanismTags": ["real_source_packet", "reference", "single_card_ablation", "source_quality_conflict"],
+  "provenance": {"kind": "adapted", "note": "Tests whether the formal retraction card alone settles the proposed conclusion."},
+  "sources": [{"id":"potti_2011","label":"Potti et al. (2011) retraction","url":"https://www.nature.com/articles/nm0111-135"}],
+  "sourceCards": [{"id":"P2","title":"Formal retraction","citation":"Potti et al. (2011)","summary":"States that crucial validation experiments could not be reproduced and corrupted validation data precluded conclusions about the signatures.","url":"https://www.nature.com/articles/nm0111-135"}],
+  "focusClaimId":"candidate_qualified",
+  "groupDecision":{"candidateClaimIds":["candidate_validated","candidate_qualified","candidate_never_useful"],"correctClaimId":"candidate_qualified","instruction":"Use only the provided source card. Choose the statement best supported about these specific 2006 chemotherapy-response signatures. Cite P labels that support your choice. Do not turn a problem with these retracted signatures into a claim about every genomic method.","evidenceAccess":"full_packet"},
+  "claims":[{"id":"candidate_qualified","text":"The 2006 report described a proposed method, but the later record does not support treating these specific chemotherapy-response signatures as validated.","truthLabel":"true"},{"id":"candidate_validated","text":"The sources establish that these specific chemotherapy-response signatures were validated for directing chemotherapy choice.","truthLabel":"false"},{"id":"candidate_never_useful","text":"The sources show that genomic information can never help predict treatment response.","truthLabel":"false"}],
+  "evidence":[{"id":"P2","text":"[P2 | Potti et al., 2011 retraction] The authors stated that they could not reproduce crucial validation experiments for these chemotherapy-response signatures. They wrote that corrupted validation data prevented conclusions regarding the signatures and formally retracted the paper. This source is about these signatures, not every genomic method.","visibleToAgentIds":["analyst_1"],"effects":[{"claimId":"candidate_validated","effect":-0.95},{"claimId":"candidate_qualified","effect":0.9}]}],
+  "scheduledInterventions":[],"initialBeliefStates":[],"initialMemoryEntries":[]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "rerun_chat_source_exit_v3",
+  "title": "Rerun: chat mode source exit with fixed parser",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Chat version of the source-exit study.",
+      "Same scenarios and rosters as memory-mode rerun-source-exit-v3.",
+      "Fully-connected topology so all agents can discuss.",
+      "Tests whether discussion can overcome source loss better than record-reading."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

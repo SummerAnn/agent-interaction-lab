@@ -1,0 +1,27 @@
+{
+  "id": "real_source_debt_label_shuffle_mixed_record_v1",
+  "title": "Real-source private evidence: matched mixed-record pilot",
+  "benchmarkMeta": {
+    "status": "paper_candidate",
+    "locked": true,
+    "notes": [
+      "This uses the same three shuffled debt packets, four neutral analysts, order schedules, prompt, and budget as the completed evidence-board grid.",
+      "The only changed variable is that analysts may retrieve earlier analyst conclusions in addition to original source cards.",
+      "This pilot has no deliberately seeded wrong beliefs. It tests whether opinion sharing changes a real source-combination task before a harder stress setting is designed."
+    ]
+  },
+  "scenarios": [
+    "scenarios/real-source-debt-label-shuffle-private-a-v1.yaml",
+    "scenarios/real-source-debt-label-shuffle-private-b-v1.yaml",
+    "scenarios/real-source-debt-label-shuffle-private-c-v1.yaml"
+  ],
+  "conditions": ["conditions/shared-mixed-record-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {
+    "maxModelCalls": 24,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "shared_memory_trigger_post_exit",
+  "title": "Shared memory with post-exit correction trigger",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": {
+      "mode": "endorsement_threshold",
+      "threshold": 0.15,
+      "minStep": 4
+    }
+  }
+}

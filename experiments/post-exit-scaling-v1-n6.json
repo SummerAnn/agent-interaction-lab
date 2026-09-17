@@ -1,0 +1,32 @@
+{
+  "id": "post_exit_scaling_v1_n6",
+  "title": "Post-exit scaling at N=6",
+  "benchmarkMeta": {
+    "status": "exploratory",
+    "locked": false
+  },
+  "scenarios": [
+    "scenarios/post-exit-scaling-ego-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-post-exit-retained.yaml",
+    "conditions/shared-memory-post-exit-cleared.yaml"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "rosterPaths": [
+    "rosters/post-exit-scaling-v1/post_exit_scaling_v1_n6.json"
+  ],
+  "maxSteps": 9,
+  "budget": {
+    "maxModelCalls": 9,
+    "maxOutputTokensPerCall": 160,
+    "temperature": 0
+  }
+}

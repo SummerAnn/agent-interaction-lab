@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_supply_distribution",
+  "title": "HiddenBench: emergency_supply_distribution",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 51 (emergency_supply_distribution). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_charlie_storage",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_alpha_storage",
+      "answer_bravo_storage",
+      "answer_charlie_storage"
+    ],
+    "correctClaimId": "answer_charlie_storage",
+    "instruction": "You are the logistics team for Disaster Aid Response, assigned to distribute urgent relief supplies to a small city after a severe ice storm. Three local storage sites (Alpha, Bravo, Charlie) hold different types of supplies. Your warehouse lost power several hours ago. You have one truck available, and must pick only ONE storage site to visit, loading all needed supplies in a single trip. Speed is important: another storm front may arrive within hours. The goal is to restock the local hospital and shelters with food and medicine before conditions worsen. Each of the three sites has previously reported being stocked as of two days ago. However, access and storage conditions may have changed after the ice storm. Only one site actually contains usable and deliverable supplies now. Which site should you dispatch the truck to?\n\nShared information known to all participants:\n- Alpha Storage is the closest and is known to have backup generators for refrigeration; it is also reported to contain both food and medical supplies.\n- Bravo Storage is about 10km away, and only accessible via a steep road; it mostly stores canned food and dry goods.\n- Charlie Storage is furthest away and sits behind a rail crossing where the barrier arms sometimes get stuck during storms, causing delays.\n- Reports after the storm say that all three facilities experienced brief power outages, but the status of their backup systems was unconfirmed as of yesterday.\n\nChoose the best answer from: Alpha Storage, Bravo Storage, Charlie Storage."
+  },
+  "claims": [
+    {
+      "id": "answer_alpha_storage",
+      "text": "Alpha Storage",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_bravo_storage",
+      "text": "Bravo Storage",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_charlie_storage",
+      "text": "Charlie Storage",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Bravo Storage's power is still out, but it only contains canned/dry goods (which are not urgently needed for the hospital or shelters), and neither food needing refrigeration nor medicine.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The temperature at Alpha Storage rose above safe refrigeration levels overnight; most perishable food there has begun to spoil.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The road to Charlie Storage is passable after a city technician manually raised the crossing arms this morning; no delays are currently reported.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Alpha Storage's backup generator failed during the last refueling attempt and cannot be restarted without parts from out of town.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

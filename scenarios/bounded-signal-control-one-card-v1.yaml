@@ -1,0 +1,27 @@
+{
+  "id": "bounded_signal_control_one_card_v1",
+  "title": "Generated signal task: one-card control",
+  "domain": "synthetic study diagnosis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["generated_signal", "control", "one_card"],
+  "provenance": {"kind": "new", "note": "The single card rules out C but leaves A and B unresolved."},
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": ["explanation_a", "explanation_b", "explanation_c"],
+    "correctClaimId": "explanation_b",
+    "instruction": "A study has three possible explanations, named A, B, and C. Choose the explanation supported by the supplied material. A card that rules out one explanation does not by itself prove either remaining explanation.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet"
+  },
+  "claims": [
+    {"id": "explanation_a", "text": "Explanation A best accounts for the result.", "truthLabel": "false"},
+    {"id": "explanation_b", "text": "Explanation B best accounts for the result.", "truthLabel": "true"},
+    {"id": "explanation_c", "text": "Explanation C best accounts for the result.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {"id": "signal_rules_out_c", "text": "The comparison groups had the same measured starting profile before the study. This makes Explanation C unlikely, but it does not distinguish Explanation A from Explanation B.", "effects": [{"claimId": "explanation_c", "effect": -0.85}]}
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "part2_neutral_write_rule_ablation_v1",
+  "title": "Matched uncertain-answer memory-write ablation",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Three liar agents and three neutral agents evaluate the ego-depletion claim.",
+      "The two conditions differ only in whether uncertain answers are saved to shared memory.",
+      "Every condition uses the same twelve balanced speaking orders, three provider repeats, eighteen calls, and temperature zero."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_ego_3of6.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-write-uncertain-no-correction.yaml"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "rosterPaths": [
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r1.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r2.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r3.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r4.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r5.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r6.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r1.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r2.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r3.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r4.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r5.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

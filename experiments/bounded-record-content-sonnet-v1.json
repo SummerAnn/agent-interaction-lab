@@ -1,0 +1,70 @@
+{
+  "id": "bounded_record_content_sonnet_v1",
+  "title": "Bounded shared record: source cards versus source cards plus conclusions (Sonnet)",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "claimId": "bounded_record_content",
+    "notes": [
+      "Matched Sonnet replication of bounded_record_content_haiku_v1.",
+      "The task packets, agent count, private-card allocation, record capacity, retrieval window, order, and call cap are unchanged."
+    ]
+  },
+  "scenarios": [
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_01_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_02_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_03_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_04_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_05_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_06_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_09_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_10_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_11_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_12_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_13_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_14_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_15_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_17_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_18_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_19_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_20_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_21_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_22_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_23_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_24_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_27_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_28_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_29_private_split.yaml",
+    "scenarios/bounded-signal-v2-private/bounded_signal_v2_packet_30_private_split.yaml"
+  ],
+  "conditions": [
+    "conditions/bounded-evidence-fifo.yaml",
+    "conditions/bounded-mixed-fifo.yaml"
+  ],
+  "seeds": [
+    1
+  ],
+  "rosterPaths": [
+    "rosters/bounded-record-12-sonnet.json"
+  ],
+  "turnOrder": [
+    "analyst_01",
+    "analyst_02",
+    "analyst_03",
+    "analyst_04",
+    "analyst_05",
+    "analyst_06",
+    "analyst_07",
+    "analyst_08",
+    "analyst_09",
+    "analyst_10",
+    "analyst_11",
+    "analyst_12"
+  ],
+  "maxSteps": 12,
+  "budget": {
+    "maxModelCalls": 48,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

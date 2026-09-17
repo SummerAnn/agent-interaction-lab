@@ -1,0 +1,14 @@
+{
+  "id": "shared_memory_post_exit_cleared",
+  "title": "Shared memory removes statements when authors exit",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "departedAgentEntries": "remove"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

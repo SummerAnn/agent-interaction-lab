@@ -1,0 +1,56 @@
+{
+  "id": "ambiguous_evidence_tutoring_v1",
+  "title": "Ambiguous evidence: test scores after peer tutoring program",
+  "domain": "synthetic education study packet",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["hidden_profile", "private_evidence", "ambiguous_evidence", "majority_wrong", "delayed_evidence", "source_detachment"],
+  "provenance": {
+    "kind": "new",
+    "note": "Controlled synthetic task. Each card is individually ambiguous: consistent with the correct answer and at least one wrong answer. Only combining both cards narrows to one explanation. Three analysts begin favoring one wrong explanation."
+  },
+  "focusClaimId": "candidate_textbook",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_tutoring", "candidate_textbook", "candidate_teachers"],
+    "correctClaimId": "candidate_tutoring",
+    "requiredSourceIds": ["tutoring_participant_scores", "tutoring_comparison_classes"],
+    "instruction": "A school district reports 12% higher standardized test scores in classes that participated in a new peer tutoring program. Three explanations have been proposed. Choose the explanation best supported by the evidence you can access. If you name a source card, use only an ID you received."
+  },
+  "claims": [
+    {"id": "candidate_tutoring", "text": "The peer tutoring program improved learning outcomes.", "truthLabel": "true"},
+    {"id": "candidate_textbook", "text": "A new textbook adopted the same semester improved learning outcomes.", "truthLabel": "false"},
+    {"id": "candidate_teachers", "text": "More experienced teachers assigned to the participating classes improved outcomes.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {
+      "id": "tutoring_participant_scores",
+      "text": "Classes participating in the peer tutoring program scored 12% higher on the standardized test than their scores from the previous year. These classes also received a new textbook at the start of the same semester. Both changes happened at the same time.",
+      "visibleToAgentIds": ["analyst_3"],
+      "availableFromStep": 2,
+      "effects": [
+        {"claimId": "candidate_tutoring", "effect": 0.4},
+        {"claimId": "candidate_textbook", "effect": 0.3}
+      ]
+    },
+    {
+      "id": "tutoring_comparison_classes",
+      "text": "Non-participating classes in the same district that received the new textbook but not the tutoring program showed no improvement on the same standardized test. Teacher experience levels were comparable across participating and non-participating classes.",
+      "visibleToAgentIds": ["analyst_4"],
+      "availableFromStep": 2,
+      "effects": [
+        {"claimId": "candidate_textbook", "effect": -0.7},
+        {"claimId": "candidate_teachers", "effect": -0.7},
+        {"claimId": "candidate_tutoring", "effect": 0.3}
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId": "analyst_1", "claimId": "candidate_textbook", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_1", "claimId": "candidate_tutoring", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_textbook", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_tutoring", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_textbook", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_tutoring", "stance": "reject", "confidence": 0.75}
+  ],
+  "initialMemoryEntries": []
+}

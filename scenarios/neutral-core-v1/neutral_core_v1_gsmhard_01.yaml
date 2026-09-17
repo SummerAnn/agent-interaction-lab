@@ -1,0 +1,51 @@
+{
+  "id": "neutral_core_v1_gsmhard_01",
+  "title": "GSM-Hard 1: neutral focal-claim replication",
+  "scenarioType": "claim_benchmark",
+  "domain": "math_reasoning",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "core_task_replication",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "claim_wrong_answer",
+  "claims": [
+    {
+      "id": "claim_wrong_answer",
+      "text": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with 4933828. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\n\nWhat is the numerical answer to this problem?\n\nProposed answer to evaluate: The answer is -12827902.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

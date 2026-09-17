@@ -1,0 +1,30 @@
+{
+  "id": "source_exit_bounded_retrieval_v1",
+  "title": "Source exit with bounded retrieval — wrong entries crowd out correct ones",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Source-exit roster + bounded 4-entry record with 2 retrieval slots.",
+      "The contamination agent writes wrong entries before exiting. With only 2 retrieval slots, later agents may retrieve the contamination entries and miss correct ones.",
+      "Combines the source-exit mechanism with the bounded-record mechanism.",
+      "Compare bounded vs unbounded to see if the retrieval bottleneck makes source exit worse."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/bounded-mixed-fifo.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "source_exit_no_counter_evidence_v1",
+  "title": "Source exit when remaining agents lack counter-evidence — actual contagion test",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Same source-exit roster, but using the NON-distributed scenarios where evidence is NOT split.",
+      "Regular agents see only the original weak evidence (pro-false-claim). They do NOT have the replication/bias counter-evidence.",
+      "The contamination agent writes its endorsement and exits. The record now contains a wrong entry and the remaining agents have no independent counter-evidence.",
+      "This is where actual contagion should appear: agents adopt the false belief from the record because they lack their own counter-evidence.",
+      "Compare: personal memory (can't see the contamination entry) vs shared memory (can see it)."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

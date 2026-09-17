@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_power_outage_island",
+  "title": "HiddenBench: power_outage_island",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 61 (power_outage_island). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_communication_tower",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_main_generator_room",
+      "answer_water_pump_facility",
+      "answer_communication_tower"
+    ],
+    "correctClaimId": "answer_communication_tower",
+    "instruction": "You are a four-person technical team sent to a remote research island. Overnight, power was lost across critical systems, affecting experiments and communications. Your mission: identify the location where the root cause began, so specialist engineers can be dispatched directly. Time is critical—delays could risk irrevocable damage to ongoing research and local wildlife preservation efforts. The potential sources are: 1) the Main Generator Room, 2) the Water Pump Facility, or 3) the Communication Tower. All sites are on different parts of the island and hard to reach. You must choose exactly one source location for the engineers' immediate response.\n\nShared information known to all participants:\n- Power readings indicate the main generator is offline. Emergency lights in the lab are still on, running on backup batteries.\n- Multiple research loggers lost connection to the network exactly at midnight; this is when the main generator alarms sounded.\n- Earlier in the evening, an engineer found nothing unusual in the Main Generator Room.\n- Security logs reveal that a storm struck the island at 11:30pm, with a single bolt of lightning recorded striking close to the Main Generator Room.\n\nChoose the best answer from: Main Generator Room, Water Pump Facility, Communication Tower."
+  },
+  "claims": [
+    {
+      "id": "answer_main_generator_room",
+      "text": "Main Generator Room",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_water_pump_facility",
+      "text": "Water Pump Facility",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_communication_tower",
+      "text": "Communication Tower",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "When backup generators were switched on, communication remained down island-wide, but water pumps worked.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "After midnight, instruments in the water pump facility still reported water flow until 1:15am, despite the generator already being offline.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Engineering records show the Communication Tower has a separate lightning grounding system, but the system's surge indicator was triggered during the night.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A technician dispatched to the generator room after dawn found no evidence of a fire, breach, or power relay issue.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

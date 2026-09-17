@@ -1,0 +1,31 @@
+{
+  "id": "rerun_memory_poisoning_v3",
+  "title": "Rerun: memory poisoning stress test with fixed parser",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Clean rerun of false memory seeding at three strengths.",
+      "Personal vs shared vs shared+verification under low/medium/high poisoning."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-poison-low-v1.yaml",
+    "scenarios/ego-depletion-poison-medium-v1.yaml",
+    "scenarios/ego-depletion-poison-high-v1.yaml",
+    "scenarios/wakefield-poison-low-v1.yaml",
+    "scenarios/wakefield-poison-medium-v1.yaml",
+    "scenarios/wakefield-poison-high-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-gt-verification-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

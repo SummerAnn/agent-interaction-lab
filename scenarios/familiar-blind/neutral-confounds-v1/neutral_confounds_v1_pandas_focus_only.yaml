@@ -1,0 +1,71 @@
+{
+  "id": "neutral_confounds_v1_pandas_focus_only",
+  "title": "PANDAS diagnosis: focal claim only, neutral prompt",
+  "domain": "medical-differential-diagnosis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "anchoring_risk",
+    "medical_reasoning",
+    "shared_memory",
+    "source_grounding",
+    "neutral_prompt",
+    "balanced_order",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "sources": [
+    {
+      "label": "Swedo et al. (1998) Am. J. Psychiatry: PANDAS criteria",
+      "url": "https://doi.org/10.1176/ajp.155.2.264"
+    },
+    {
+      "label": "Williams et al. (2019) Lancet Psychiatry: systematic review",
+      "url": "https://doi.org/10.1016/S2215-0366(18)30474-5"
+    },
+    {
+      "label": "Ask WhAI (2025): multi-agent diagnostic belief probing",
+      "url": "https://arxiv.org/abs/2511.14780"
+    },
+    {
+      "label": "MeDxAgent (2026): multi-agent consultation for diagnosis",
+      "url": "https://arxiv.org/abs/2606.03416"
+    }
+  ],
+  "focusClaimId": "claim_pandas_dx",
+  "claims": [
+    {
+      "id": "claim_pandas_dx",
+      "text": "The patient's acute-onset OCD and motor tics following group A streptococcal pharyngitis are best explained by PANDAS (Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal infections), requiring antibiotic prophylaxis and IVIG.",
+      "truthLabel": "mixed"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

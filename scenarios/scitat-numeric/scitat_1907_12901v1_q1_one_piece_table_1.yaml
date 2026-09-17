@@ -1,0 +1,99 @@
+{
+  "id": "scitat_1907_12901v1_q1_one_piece_table_1",
+  "title": "SciTaT 1907.12901v1-q1 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table table:comp",
+      "citation": "SciTaT item 1907.12901v1-q1",
+      "summary": "Comparisons of different event selection methods\nSelection method | \\#\\_Links | FIC | CEC\nNO-SELECTION | 32(total) | 470/500~(0.94) | 101/500~(0.202)\nSEL1 (FIC) | 8 | 500/500~(1) | 0/500~(0)\nSEL2 (CEC) | 16 | 441/500~(0.882) | 200/500~(0.4)\nSEL3 \\cite{amrein2015system} | 16 | 466/500~(0.932) | 0/500~(0)",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_d",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_d",
+    "instruction": "Based on the paragraph above, count the number of selection methods (including NO-SELECTION) that achieve a FIC metric value greater than or equal to 0.9.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1907.12901v1-q1",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 2.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 6.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Comparisons of different event selection methods\nSelection method | \\#\\_Links | FIC | CEC\nNO-SELECTION | 32(total) | 470/500~(0.94) | 101/500~(0.202)\nSEL1 (FIC) | 8 | 500/500~(1) | 0/500~(0)\nSEL2 (CEC) | 16 | 441/500~(0.882) | 200/500~(0.4)\nSEL3 \\cite{amrein2015system} | 16 | 466/500~(0.932) | 0/500~(0)",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

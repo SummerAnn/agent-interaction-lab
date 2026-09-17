@@ -1,0 +1,28 @@
+{
+  "id": "amplifier_neutral_roster_haiku_v1",
+  "title": "Confound test: neutral uniform roster, 4/6 wrong, evidence board vs mixed record",
+  "benchmarkMeta": {
+    "status": "confound-test",
+    "locked": true,
+    "notes": [
+      "Same scenarios, conditions, seeds, and initial beliefs as amplifier_majority_wrong_haiku_v1.",
+      "Changed variable: all 6 agents have identical neutral weights (no contamination bias, no specialist advantage).",
+      "If the evidence-board vs mixed-record gap disappears, the amplifier result was driven by role heterogeneity.",
+      "If the gap persists, the finding is about record design, not agent roles."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-majority-wrong-v1.yaml",
+    "scenarios/distributed-wakefield-majority-wrong-v1.yaml",
+    "scenarios/distributed-climate-majority-wrong-v1.yaml",
+    "scenarios/distributed-superconductor-majority-wrong-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/neutral-uniform-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

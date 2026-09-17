@@ -1,0 +1,22 @@
+{
+  "id": "seed_enforcement_memory_smoke_v1",
+  "title": "Seed enforcement smoke check: shared memory",
+  "projectRoot": ".",
+  "provenance": {
+    "kind": "adapted",
+    "note": "One-cell trace check for the explicit informed-false memory intervention. Not an experiment result."
+  },
+  "scenarios": ["scenarios/paired-seed/paired_seed_ego_informed_false_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "rosterPaths": ["rosters/paired_seed_ego_informed_false_haiku_v1.json"],
+  "turnOrder": ["analyst_1", "analyst_2", "analyst_3", "analyst_4", "analyst_5", "analyst_6"],
+  "seeds": [1],
+  "maxSteps": 6,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

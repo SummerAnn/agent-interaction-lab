@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import readline from "readline";
+import { spawnSync } from "child_process";
 
 import {
   analyzeRunPhysics,
@@ -430,9 +431,9 @@ const HOME_MENU_ITEMS = [
   {
     key: "1",
     icon: `${C.bCyan}\u25b7${C.reset}`,
-    label: "Run setup",
-    desc: "launch one run and override seed, rounds, budget, or agent count",
-    helpTitle: "Run setup",
+    label: "Run config",
+    desc: "choose a YAML config and optionally override common settings",
+    helpTitle: "Run config",
     helpLines: [
       "Pick one existing run config and change the common knobs here.",
       "This is the fastest path if you want to try a run without editing YAML.",
@@ -441,13 +442,13 @@ const HOME_MENU_ITEMS = [
   },
   {
     key: "2",
-    icon: `${C.bMagenta}\u2697${C.reset}`,
-    label: "Build experiment",
-    desc: "make or edit full experiment configs",
-    helpTitle: "Build experiment",
+    icon: `${C.bMagenta}\u2713${C.reset}`,
+    label: "Paper guide & evidence",
+    desc: "see the design, trajectories, traces, and audit status",
+    helpTitle: "Paper guide & evidence",
     helpLines: [
-      "Use this when you want to create a new setup instead of reusing one.",
-      "This path is for condition files, scenarios, and fuller experiment design.",
+      "See whether every run claimed by the paper is present and auditable.",
+      "The full verifier checks counts, calculations, hashes, and SQLite traces.",
     ],
   },
   {
@@ -524,12 +525,11 @@ const HOME_MENU_ITEMS = [
     key: "0",
     icon: `${C.bBlue}⌘${C.reset}`,
     label: "Run command",
-    desc: "type a CLI command and run it here",
+    desc: "verify the release, rerun the paper, or enter a CLI command",
     helpTitle: "Run command",
     helpLines: [
-      "Use the same commands as the normal CLI without leaving the TUI.",
-      "Examples: experiment experiments/study1-memory-rules.json",
-      "batch run-configs/shared-memory-run.yaml 1,2,3,4,5",
+      "Run the release audit, inspect a claimed trace, or launch an exact released experiment.",
+      "Every paper and appendix cohort is linked through the three manifests.",
     ],
   },
   {
@@ -555,8 +555,11 @@ const HOME_MENU_ITEMS = [
 ] as const;
 
 function mainMenuScreen(selectedIndex: number, projectRoot: string): string[] {
-  const w = W();
+  const w = Math.min(W(), 156);
   const inner = w - 4;
+  const compact = inner < 110;
+  const helpW = Math.max(42, Math.floor(inner * 0.46));
+  const menuW = compact ? inner : Math.max(42, inner - helpW - 16);
   const providerStatus = getProviderStatusLine(projectRoot);
 
   const configCount = discoverRunConfigs(projectRoot).length;
@@ -569,19 +572,18 @@ function mainMenuScreen(selectedIndex: number, projectRoot: string): string[] {
     const label = selected
       ? `${C.bCyan}${C.bold}${item.label}${C.reset}`
       : `${C.cyan}${item.label}${C.reset}`;
-    const desc = item.desc ? `${C.dim}${item.desc}${C.reset}` : "";
-    return `  ${marker} ${item.icon} ${label}  ${desc}`;
+    const desc = !compact && item.desc ? `${C.dim}${item.desc}${C.reset}` : "";
+    return truncV(`  ${marker} ${item.icon} ${label}  ${desc}`, menuW);
   });
 
   const dashboard = dashboardRow([
-    { icon: `${C.cyan}\u2261${C.reset}`, label: "configs", value: `${configCount}` },
-    { icon: `${C.cyan}\u2302${C.reset}`, label: "runs", value: `${runCount}` },
+    { icon: `${C.cyan}\u2261${C.reset}`, label: "run configs", value: `${configCount}` },
+    { icon: `${C.cyan}\u2302${C.reset}`, label: "stored runs", value: `${runCount}` },
     { icon: `${C.magenta}\u25a4${C.reset}`, label: "records", value: `${archiveCount}` },
     { icon: `${C.yellow}\u2699${C.reset}`, label: "provider", value: providerStatus },
   ], inner);
 
   const selectedItem = HOME_MENU_ITEMS[selectedIndex] ?? HOME_MENU_ITEMS[0];
-  const helpW = Math.max(42, Math.floor(inner * 0.46));
   const recentText =
     activityLog.length > 0
       ? activityLog.slice(-3).map((entry) => `${entry.time}  ${entry.text}`)
@@ -596,26 +598,28 @@ function mainMenuScreen(selectedIndex: number, projectRoot: string): string[] {
   ];
   const helpPanel = frame(helpLines, helpW, "round", "\u25c6 details");
 
-  while (menuLines.length < helpPanel.length) {
-    menuLines.push("");
+  if (!compact) {
+    while (menuLines.length < helpPanel.length) menuLines.push("");
   }
-
-  const splitRows = sideBySide(menuLines, helpPanel, 16);
+  const splitRows = compact ? menuLines : sideBySide(menuLines, helpPanel, 16);
 
   const now = new Date();
   const clock = `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`;
 
   const content = [
-    ...banner("multi agent society", w),
+    ...banner("agent interaction lab", w),
     "",
-    `  ${C.dim}Use Run setup if you want to launch one experiment and change the common settings here instead of editing YAML.${C.reset}`,
+    ...wrapPlainText(
+      "Start with Paper guide & evidence to understand the design, trace a result, or verify the full release.",
+      Math.max(20, inner - 4),
+    ).map((line) => `  ${C.dim}${line}${C.reset}`),
     "",
     ...dashboard,
     "",
     ...splitRows,
     "",
     statusBar([
-      { label: "v", value: "0.6.0" },
+      { label: "v", value: "0.1.0" },
       { label: "engine", value: "llm" },
       { label: "\u25c6", value: clock },
     ], w),
@@ -698,6 +702,237 @@ async function showExplanations(rl: readline.Interface, _projectRoot: string): P
   if (idx === null) return;
 
   draw(explainTopicScreen(EXPLAIN_TOPICS[idx]));
+  await pause(rl);
+}
+
+type ReleaseAudit = {
+  status?: string;
+  mode?: string;
+  generated_at?: string;
+  counts?: {
+    claimed_total?: number;
+    base?: number;
+    late?: number;
+    open?: number;
+    missing_summaries?: number;
+    missing_traces?: number;
+    hash_pairs_checked?: number;
+    sqlite_checked?: number;
+    config_dependencies_checked?: number;
+    base_calculation_issues?: number;
+  };
+  errors?: string[];
+};
+
+function loadJsonIfPresent<T>(filePath: string): T | null {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
+  } catch {
+    return null;
+  }
+}
+
+function paperEvidenceScreen(projectRoot: string): string[] {
+  const w = Math.min(W(), 156);
+  const audit = loadJsonIfPresent<ReleaseAudit>(path.join(projectRoot, "analysis", "release_audit.json"));
+  const base = loadJsonIfPresent<{ quality_summary?: { unique_selected_run_count?: number; issue_count?: number } }>(
+    path.join(projectRoot, "paper", "run_manifest.json"),
+  );
+  const late = loadJsonIfPresent<{ unique_run_count?: number }>(
+    path.join(projectRoot, "paper", "new_appendix_run_manifest.json"),
+  );
+  const open = loadJsonIfPresent<{ unique_run_count?: number }>(
+    path.join(projectRoot, "paper", "open_model_visibility_manifest.json"),
+  );
+  const baseCount = base?.quality_summary?.unique_selected_run_count ?? 0;
+  const lateCount = late?.unique_run_count ?? 0;
+  const openCount = open?.unique_run_count ?? 0;
+  const total = baseCount + lateCount + openCount;
+  const passed = audit?.status === "PASS";
+  const status = !audit
+    ? `${C.yellow}NOT RUN${C.reset}`
+    : passed
+      ? `${C.bGreen}PASS${C.reset}`
+      : `${C.bRed}FAIL${C.reset}`;
+  const checked = audit?.counts?.sqlite_checked ?? 0;
+  const hashed = audit?.counts?.hash_pairs_checked ?? 0;
+  const errorCount = audit?.errors?.length ?? 0;
+
+  return frame([
+    ...bannerCompact("Paper evidence"),
+    "",
+    `${C.bCyan}${C.bold}\u2261 released evidence${C.reset}`,
+    `  ${C.blue}base paper manifest${C.reset}      ${C.bCyan}${baseCount.toLocaleString()} runs${C.reset}`,
+    `  ${C.blue}late appendix manifest${C.reset}   ${C.bCyan}${lateCount.toLocaleString()} runs${C.reset}`,
+    `  ${C.blue}open-model manifest${C.reset}      ${C.bCyan}${openCount.toLocaleString()} runs${C.reset}`,
+    `  ${C.blue}non-overlapping total${C.reset}    ${total === 6334 ? C.bGreen : C.bRed}${total.toLocaleString()} / 6,334${C.reset}`,
+    "",
+    `${C.bCyan}${C.bold}\u2261 latest verification${C.reset}`,
+    `  ${C.blue}status${C.reset}                   ${status}`,
+    `  ${C.blue}mode${C.reset}                     ${audit?.mode ?? "not run"}`,
+    `  ${C.blue}SQLite traces checked${C.reset}    ${checked.toLocaleString()}`,
+    `  ${C.blue}checksum pairs checked${C.reset}   ${hashed.toLocaleString()}`,
+    `  ${C.blue}missing summaries${C.reset}        ${audit?.counts?.missing_summaries ?? "unknown"}`,
+    `  ${C.blue}missing traces${C.reset}           ${audit?.counts?.missing_traces ?? "unknown"}`,
+    `  ${C.blue}calculation issues${C.reset}       ${audit?.counts?.base_calculation_issues ?? "unknown"}`,
+    `  ${C.blue}reported errors${C.reset}           ${errorCount}`,
+    "",
+    `${C.dim}Quick check: npm run verify:release:quick${C.reset}`,
+    `${C.dim}Full audit: npm run verify:release${C.reset}`,
+    `${C.dim}Report: analysis/release_audit.md${C.reset}`,
+    "",
+    statusBar([
+      { label: "claimed", value: total.toLocaleString() },
+      { label: "audit", value: audit?.status ?? "not run" },
+    ], w),
+  ], w, "heavy");
+}
+
+const PAPER_GUIDE_ITEMS = [
+  { label: "Study design", short: "what is held fixed and what changes" },
+  { label: "Headline comparison", short: "shared memory, personal memory, and live debate" },
+  { label: "Cascade trajectory", short: "how persuaded neutral agents can affect later agents" },
+  { label: "Trace and manifest map", short: "where each claim, configuration, and run is stored" },
+  { label: "Release verification", short: "coverage, checksums, calculations, and database checks" },
+] as const;
+
+function paperGuidePickerScreen(selectedIndex: number): string[] {
+  const w = Math.min(W(), 156);
+  const rows = PAPER_GUIDE_ITEMS.flatMap((item, index) => {
+    const selected = index === selectedIndex;
+    const marker = selected ? `${C.bCyan}\u25b8${C.reset}` : " ";
+    const label = selected ? `${C.bCyan}${C.bold}${item.label}${C.reset}` : `${C.cyan}${item.label}${C.reset}`;
+    return [
+      `  ${marker} ${label}`,
+      `      ${C.dim}${item.short}${C.reset}`,
+      "",
+    ];
+  });
+  return frame([
+    ...bannerCompact("Paper guide and evidence"),
+    "",
+    `  ${C.dim}Start with the design, then follow a result to its exact released traces.${C.reset}`,
+    "",
+    ...rows,
+    keyHints(["\u2191\u2193 navigate", "\u23ce open", "q back"], w),
+  ], w, "heavy");
+}
+
+function paperDesignScreen(): string[] {
+  const w = Math.min(W(), 156);
+  return frame([
+    ...bannerCompact("Paper design"),
+    "",
+    `${C.bCyan}${C.bold}Question${C.reset}`,
+    `  ${C.dim}When otherwise matched AI-agent groups receive information differently, when does a correction spread and when does a repeated false claim become apparent consensus?${C.reset}`,
+    "",
+    `${C.bCyan}${C.bold}Matched comparison${C.reset}`,
+    `  ${C.cyan}held fixed${C.reset}   model, question, six agents, role instructions, speaking order, and model-call budget`,
+    `  ${C.cyan}changed${C.reset}      the communication or memory rule`,
+    "",
+    `${C.bCyan}${C.bold}Three communication methods${C.reset}`,
+    `  ${C.cyan}shared memory${C.reset}   [agent] -> [common written record] -> [later agents]`,
+    `  ${C.cyan}live debate${C.reset}     [agent] <-> [agent] during the run; no common written record`,
+    `  ${C.cyan}personal memory${C.reset} [agent] -> [own history only]; no peer messages`,
+    "",
+    `${C.bCyan}${C.bold}Roles and outcomes${C.reset}`,
+    `  ${C.red}\u2666 liar agents${C.reset}     are assigned to keep supporting the false claim`,
+    `  ${C.white}\u25cb neutral agents${C.reset}  judge the claim for themselves`,
+    `  ${C.cyan}FE_t${C.reset}             false-answer rate among neutral or other non-liar agents`,
+    `  ${C.cyan}AR${C.reset}               fraction of liar agents retaining the assigned false answer`,
+    "",
+    `${C.dim}Paper source: paper/paper.tex and paper/appendix_results.tex${C.reset}`,
+    `${C.dim}Exact cohorts: paper/RUN_MANIFEST.md plus the two supplementary manifest documents${C.reset}`,
+  ], w, "heavy");
+}
+
+function headlineComparisonScreen(): string[] {
+  const w = Math.min(W(), 156);
+  return frame([
+    ...bannerCompact("Headline matched comparison"),
+    "",
+    `${C.bCyan}${C.bold}Central condition${C.reset}`,
+    `  ${C.dim}Claude Haiku 4.5, ego depletion, four liar agents, two neutral agents, 12 balanced speaking orders.${C.reset}`,
+    "",
+    `  ${C.cyan}shared memory${C.reset}    ${C.bRed}22 / 24 neutral final answers are false  (91.7%)${C.reset}`,
+    `  ${C.cyan}personal memory${C.reset}  ${C.bGreen} 0 / 24 neutral final answers are false   (0.0%)${C.reset}`,
+    `  ${C.cyan}live debate${C.reset}      ${C.bGreen} 0 / 24 neutral final answers are false   (0.0%)${C.reset}`,
+    "",
+    `${C.bCyan}${C.bold}How to read this${C.reset}`,
+    `  ${C.dim}This is the clearest matched example, not a claim that every model and question behaves identically.${C.reset}`,
+    `  ${C.dim}The paper separately reports where effects disappear or reverse across models and questions.${C.reset}`,
+    "",
+    `${C.bCyan}${C.bold}Exact released configurations${C.reset}`,
+    `  ${C.dim}experiments/part2-neutral-fairness-memory-v2.json${C.reset}`,
+    `  ${C.dim}experiments/part2-neutral-fairness-chat-v3.json${C.reset}`,
+    `  ${C.dim}Run IDs and hashes: paper/RUN_MANIFEST.md${C.reset}`,
+  ], w, "heavy");
+}
+
+function cascadeTrajectoryScreen(): string[] {
+  const w = Math.min(W(), 156);
+  return frame([
+    ...bannerCompact("Cascade trajectory"),
+    "",
+    `${C.bCyan}${C.bold}Mechanism being tested${C.reset}`,
+    `  ${C.red}[liar statement]${C.reset} -> ${C.white}[neutral agent reads it]${C.reset} -> ${C.bRed}[neutral agent accepts it]${C.reset}`,
+    `  ${C.bRed}[neutral judgment enters memory]${C.reset} -> ${C.white}[later neutral agent reads it]${C.reset} -> ${C.bRed}[further adoption]${C.reset}`,
+    "",
+    `${C.bCyan}${C.bold}Visibility intervention${C.reset}`,
+    `  ${C.cyan}standard memory${C.reset}    each neutral agent sees liar statements, its own history, and other neutral-agent statements`,
+    `  ${C.cyan}restricted memory${C.reset}  liar statements and own history remain visible; other neutral-agent statements are hidden`,
+    "",
+    `  ${C.cyan}all three neutral agents accept the claim${C.reset}`,
+    `    standard memory     ${C.bRed}29 / 36 runs  (80.6%)${C.reset}`,
+    `    restricted memory   ${C.bGreen}18 / 36 runs  (50.0%)${C.reset}`,
+    "",
+    `  ${C.cyan}individual neutral final answers that are false${C.reset}`,
+    `    standard memory     ${C.bRed}89 / 108  (82.4%)${C.reset}`,
+    `    restricted memory   ${C.bGreen}73 / 108  (67.6%)${C.reset}`,
+    "",
+    `${C.dim}Interpretation: in this Haiku ego-depletion condition, statements written by persuaded neutral agents contribute to further false adoption.${C.reset}`,
+    `${C.dim}The paper treats this as an isolated causal mechanism, not a universal cross-model law.${C.reset}`,
+  ], w, "heavy");
+}
+
+function traceMapScreen(): string[] {
+  const w = Math.min(W(), 156);
+  return frame([
+    ...bannerCompact("Trace and manifest map"),
+    "",
+    `${C.bCyan}${C.bold}From manuscript claim to raw record${C.reset}`,
+    `  ${C.cyan}paper table or paragraph${C.reset}`,
+    `      -> ${C.cyan}paper/*.json manifest entry${C.reset}  (cohort, run ID, path, SHA-256)`,
+    `      -> ${C.cyan}experiments/*.json${C.reset}          (scenarios, conditions, rosters, seeds, budget)`,
+    `      -> ${C.cyan}output/<run-id>/summary.json${C.reset} (cached browsing summary)`,
+    `      -> ${C.cyan}output/<run-id>/trace.db${C.reset}     (canonical calls, retrievals, writes, states, metrics)`,
+    "",
+    `${C.bCyan}${C.bold}Coverage${C.reset}`,
+    `  ${C.cyan}paper/run_manifest.json${C.reset}                    5,542 base-paper runs`,
+    `  ${C.cyan}paper/new_appendix_run_manifest.json${C.reset}         576 late-appendix runs`,
+    `  ${C.cyan}paper/open_model_visibility_manifest.json${C.reset}    216 open-model runs`,
+    `  ${C.cyan}total${C.reset}                                      6,334 non-overlapping claimed runs`,
+    "",
+    `${C.bCyan}${C.bold}Inspect one trace${C.reset}`,
+    `  ${C.dim}Choose Reproduce paper -> Inspect a claimed trace and paste a run ID from a manifest.${C.reset}`,
+    `  ${C.dim}CLI equivalent: npm run testbed:inspect -- output/<run-id>/trace.db${C.reset}`,
+  ], w, "heavy");
+}
+
+async function showPaperEvidence(rl: readline.Interface, projectRoot: string): Promise<void> {
+  const choice = await selectFromList(
+    (selected) => paperGuidePickerScreen(selected),
+    PAPER_GUIDE_ITEMS.length,
+  );
+  if (choice === null) return;
+  const screens = [
+    paperDesignScreen,
+    headlineComparisonScreen,
+    cascadeTrajectoryScreen,
+    traceMapScreen,
+    () => paperEvidenceScreen(projectRoot),
+  ];
+  draw(screens[choice]());
   await pause(rl);
 }
 
@@ -1121,7 +1356,7 @@ function liveRunScreen(config: DiscoveredRunConfig, snapshot: RunProgressSnapsho
 
   const stepStr = `${C.bCyan}round ${snapshot.step}${C.reset}${C.dim}/${snapshot.maxSteps}${C.reset}`;
   const headerLines = [
-    `  ${C.bCyan}${C.bold}agent society${C.reset}${" ".repeat(Math.max(0, inner - 42))}${stepStr}`,
+    `  ${C.bCyan}${C.bold}agent interaction lab${C.reset}${" ".repeat(Math.max(0, inner - 49))}${stepStr}`,
     `  ${C.cyan}${config.conditionId}${C.reset} ${C.blue}\u2502${C.reset} ${C.dim}seed:${config.seed} \u00b7 ${config.scenarioTitle}${C.reset}`,
   ];
 
@@ -1347,7 +1582,7 @@ type RunCommandMatrixRow = {
 };
 
 type RunCommandItem = {
-  group: "Study runs" | "Run tools";
+  group: "Study runs" | "Paper verification" | "Paper reproduction" | "Run tools";
   label: string;
   short: string;
   command: string | null;
@@ -2161,6 +2396,132 @@ const RUN_COMMAND_ITEMS: RunCommandItem[] = [
   },
 ];
 
+// Public reviewer menu. The older study catalog above is retained only so old
+// shortcuts and saved experiment identifiers keep resolving; it is not shown.
+const REVIEWER_COMMAND_ITEMS: RunCommandItem[] = [
+  {
+    group: "Paper verification",
+    label: "Open paper guide and evidence",
+    short: "see the design, key results, manifests, and audit status",
+    command: "paper-evidence",
+    detailTitle: "Paper guide and evidence",
+    cost: "cheap",
+    detailSections: [{ heading: "Coverage", lines: [
+      "Explains the paper design in plain language and links every main-text and appendix cohort to the released manifests.",
+      "The release contains all 6,334 runs claimed by the manuscript.",
+    ] }],
+  },
+  {
+    group: "Paper verification",
+    label: "Run quick release audit",
+    short: "recompute reported aggregates and check coverage",
+    command: "verify-release-quick",
+    detailTitle: "Quick release audit",
+    cost: "cheap",
+    detailSections: [{ heading: "Checks", lines: [
+      "Rebuilds the base table calculations, verifies manifest counts and dependencies, and recomputes late appendix aggregates.",
+      "Use the full audit below when checking every file checksum and database.",
+    ] }],
+  },
+  {
+    group: "Paper verification",
+    label: "Run full release audit",
+    short: "verify all 6,334 checksum pairs and SQLite traces",
+    command: "verify-release-full",
+    detailTitle: "Full release audit",
+    cost: "medium",
+    detailSections: [{ heading: "Checks", lines: [
+      "Checks every claimed summary and trace hash, SQLite integrity, completion record, call count, dependency, and reported aggregate.",
+      "Writes analysis/release_audit.md and analysis/release_audit.json.",
+    ] }],
+  },
+  {
+    group: "Paper reproduction",
+    label: "Central memory comparison",
+    short: "rerun shared and personal memory on the headline setup",
+    command: "experiment experiments/part2-neutral-fairness-memory-v2.json",
+    manifestPath: "experiments/part2-neutral-fairness-memory-v2.json",
+    detailTitle: "Central memory comparison",
+    cost: "expensive",
+    detailSections: [{ heading: "Fixed design", lines: [
+      "Claude Haiku 4.5, ego depletion, six agents, 12 balanced speaking orders, and the same model-call budget.",
+      "The grid changes shared versus personal memory while holding the rest fixed.",
+    ] }],
+  },
+  {
+    group: "Paper reproduction",
+    label: "Central live-debate comparison",
+    short: "rerun live debate for the same headline setup",
+    command: "experiment experiments/part2-neutral-fairness-chat-v3.json",
+    manifestPath: "experiments/part2-neutral-fairness-chat-v3.json",
+    detailTitle: "Central live-debate comparison",
+    cost: "expensive",
+    detailSections: [{ heading: "Fixed design", lines: [
+      "Uses the same focal claim, agents, balanced orders, and call budget as the corresponding memory comparison.",
+    ] }],
+  },
+  {
+    group: "Paper reproduction",
+    label: "Peer-visibility standard memory",
+    short: "rerun the standard three-liar, three-neutral cohort",
+    command: "experiment experiments/part2-neutral-ratio3-contemporaneous-standard-v1.json",
+    manifestPath: "experiments/part2-neutral-ratio3-contemporaneous-standard-v1.json",
+    detailTitle: "Standard peer visibility",
+    cost: "expensive",
+    detailSections: [{ heading: "Design", lines: [
+      "Neutral agents can read every liar-agent statement, their own earlier statements, and statements written by other neutral agents.",
+    ] }],
+  },
+  {
+    group: "Paper reproduction",
+    label: "Peer-visibility restricted memory",
+    short: "rerun the condition hiding other neutral-agent statements",
+    command: "experiment experiments/part2-neutral-ratio3-no-neutral-peer-entries-v1.json",
+    manifestPath: "experiments/part2-neutral-ratio3-no-neutral-peer-entries-v1.json",
+    detailTitle: "Restricted peer visibility",
+    cost: "expensive",
+    detailSections: [{ heading: "What changes", lines: [
+      "Every liar-agent statement and each neutral agent's own history remain visible.",
+      "Only statements written by other neutral agents are hidden.",
+    ] }],
+  },
+  {
+    group: "Run tools",
+    label: "Run any released experiment",
+    short: "enter a JSON config from the experiments directory",
+    command: null,
+    detailTitle: "Run a released experiment",
+    cost: "medium",
+    detailSections: [{ heading: "Example", lines: [
+      "experiment experiments/part2-neutral-defense-suite-v2.json",
+      "A preflight view lists the scenarios, conditions, rosters, seeds, calls, and estimated cost before any API call.",
+    ] }],
+  },
+  {
+    group: "Run tools",
+    label: "Inspect a claimed trace",
+    short: "open a released run by ID, summary, or trace database",
+    command: "inspect",
+    detailTitle: "Inspect a claimed trace",
+    cost: "cheap",
+    detailSections: [{ heading: "Where to find IDs", lines: [
+      "Use paper/RUN_MANIFEST.md, paper/NEW_APPENDIX_RUN_MANIFEST.md, or paper/OPEN_MODEL_VISIBILITY_MANIFEST.md.",
+      "The trace view shows final states, memory entries, retrievals, and reported metrics.",
+    ] }],
+  },
+  {
+    group: "Run tools",
+    label: "Run config (YAML)",
+    short: "launch one single-run config directly",
+    command: "run run-configs/shared-memory-run.yaml",
+    detailTitle: "Run config (YAML)",
+    cost: "cheap",
+    detailSections: [{ heading: "Scope", lines: [
+      "Use this for a quick engine check. Full paper cohorts use the released JSON experiment grids above.",
+    ] }],
+  },
+];
+
 function wrapPlainText(text: string, width: number): string[] {
   if (width <= 8) return [text];
   const words = text.split(/\s+/).filter(Boolean);
@@ -2298,12 +2659,13 @@ function explainSectionCardLines(
 }
 
 function commandPickerScreen(selectedIndex: number): string[] {
-  const w = W();
+  const w = Math.min(W(), 156);
   const inner = w - 4;
-  const leftW = Math.max(42, Math.floor((inner - 2) * 0.52));
-  const rightW = inner - leftW - 2;
+  const compact = inner < 120;
+  const leftW = compact ? inner : Math.max(42, Math.floor((inner - 4) * 0.48));
+  const rightW = compact ? inner : inner - leftW - 4;
   let previousGroup: RunCommandItem["group"] | null = null;
-  const menuLines = RUN_COMMAND_ITEMS.flatMap((item, i) => {
+  const menuLines = REVIEWER_COMMAND_ITEMS.flatMap((item, i) => {
     const selected = i === selectedIndex;
     const marker = selected ? `${C.bCyan}\u25b8${C.reset}` : " ";
     const label = selected ? `${C.bCyan}${C.bold}${item.label}${C.reset}` : `${C.cyan}${item.label}${C.reset}`;
@@ -2316,13 +2678,23 @@ function commandPickerScreen(selectedIndex: number): string[] {
       previousGroup = item.group;
     }
     lines.push(
-      `  ${marker} ${label}`,
-      `      ${desc}  ${badge}`,
+      truncV(`  ${marker} ${label}`, leftW),
+      truncV(`      ${desc}  ${badge}`, leftW),
       "",
     );
     return lines;
   });
-  const selectedItem = RUN_COMMAND_ITEMS[selectedIndex] ?? RUN_COMMAND_ITEMS[0];
+  const selectedItem = REVIEWER_COMMAND_ITEMS[selectedIndex] ?? REVIEWER_COMMAND_ITEMS[0];
+  if (compact) {
+    return frame([
+      ...bannerCompact("Reproduce paper"),
+      "",
+      `  ${C.dim}Verify the release, inspect a claimed trace, or rerun an exact paper experiment.${C.reset}`,
+      "",
+      ...menuLines,
+      keyHints(["\u2191\u2193 navigate", "\u23ce open", "q back"], w),
+    ], w, "heavy");
+  }
   const detailLines: string[] = [
     `${C.bCyan}${selectedItem.detailTitle}${C.reset}  ${costBadge(selectedItem.cost)}`,
     "",
@@ -2352,13 +2724,12 @@ function commandPickerScreen(selectedIndex: number): string[] {
   const detailPanel = frame(detailLines, rightW, "round", "\u25c6 study card");
   while (menuLines.length < detailPanel.length) menuLines.push("");
   return frame([
-    ...bannerCompact("Study board"),
+    ...bannerCompact("Reproduce paper"),
     "",
-    `  ${C.dim}Pick a study or tool on the left. The right side spells out the seed, changed variable, fixed setup, and launch command.${C.reset}`,
-    `  ${C.dim}Society key: ${C.reset}${C.red}\u2666 contamination${C.reset}${C.dim}  ${C.reset}${C.bCyan}\u25c6 specialist${C.reset}${C.dim}  ${C.reset}${C.white}\u25cb regular${C.reset}`,
-    `  ${C.dim}Flow key: ${C.reset}${C.cyan}[agent] -> [note] -> [pool]${C.reset}${C.dim} memory  ${C.reset}${C.cyan}[agent] <-> [agent]${C.reset}${C.dim} chat${C.reset}`,
+    `  ${C.dim}Verify the complete release, inspect a claimed trace, or rerun an exact paper experiment.${C.reset}`,
+    `  ${C.dim}Paper terminology: ${C.reset}${C.red}\u2666 liar agent${C.reset}${C.dim}  ${C.reset}${C.bCyan}\u25c6 specialist${C.reset}${C.dim}  ${C.reset}${C.white}\u25cb neutral or social agent${C.reset}`,
     "",
-    ...sideBySide(menuLines, detailPanel, 12),
+    ...sideBySide(menuLines, detailPanel, 4),
     "",
     keyHints(["\u2191\u2193 navigate", "\u23ce launch", "type aliases in custom command", "q back"], w),
   ], w, "heavy");
@@ -2373,6 +2744,34 @@ function jsonResultScreen(title: string, body: string): string[] {
     ...bodyLines.map((line) => truncV(`  ${C.dim}${line}${C.reset}`, w - 4)),
     "",
   ], w, "heavy");
+}
+
+function actionErrorMessage(error: unknown): string {
+  const raw = error instanceof Error ? error.message : String(error);
+  const status = typeof error === "object" && error !== null && "status" in error
+    ? Number((error as { status?: unknown }).status)
+    : null;
+  const authFailure = status === 401 || /\b401\b|authentication|api key|unauthorized/i.test(raw);
+
+  if (authFailure) {
+    const provider = /openrouter/i.test(raw) ? "OpenRouter" : "the selected model provider";
+    return [
+      `${provider} rejected the API credentials (401).`,
+      "",
+      "No experiment result was recorded.",
+      "Open Provider setup from the main menu, enter a valid key, and use its connection test.",
+      "For OpenRouter, set OPENROUTER_API_KEY in .env or in your shell environment.",
+    ].join("\n");
+  }
+
+  const safeMessage = raw.replace(/Bearer\s+\S+/gi, "Bearer [redacted]").slice(0, 700);
+  return [
+    "The action could not be completed.",
+    "",
+    safeMessage,
+    "",
+    "No completed result was reported. Check Provider setup and the selected configuration, then try again.",
+  ].join("\n");
 }
 
 type ExperimentCellStatus = {
@@ -2556,7 +2955,7 @@ function summarizeScenarioForUi(scenario: Scenario): {
 }
 
 function roleLabelForUi(role: string): string {
-  if (role === "contamination_agent") return "contamination";
+  if (role === "contamination_agent") return "liar";
   if (role === "specialist_agent") return "specialist";
   if (role === "regular_agent") return "regular";
   return role.replace(/_agent$/, "").replace(/_/g, " ");
@@ -2568,7 +2967,7 @@ function roleMixSummary(agents: AgentSpec[]): string {
     const key = roleLabelForUi(agent.role);
     counts.set(key, (counts.get(key) ?? 0) + 1);
   }
-  const ordered = ["contamination", "specialist", "regular"];
+  const ordered = ["liar", "specialist", "regular"];
   const parts = ordered
     .filter((key) => (counts.get(key) ?? 0) > 0)
     .map((key) => `${counts.get(key)} ${key}`);
@@ -3538,17 +3937,17 @@ function experimentLiveScreen(
 async function showRunCommand(rl: readline.Interface, projectRoot: string): Promise<void> {
   const choice = await selectFromList(
     (selected) => commandPickerScreen(selected),
-    RUN_COMMAND_ITEMS.length,
+    REVIEWER_COMMAND_ITEMS.length,
   );
   if (choice === null) return;
 
-  const selectedItem = RUN_COMMAND_ITEMS[choice];
+  const selectedItem = REVIEWER_COMMAND_ITEMS[choice];
   let raw = selectedItem.command ?? "";
 
-  if (selectedItem.label === "Inspect saved run") {
+  if (selectedItem.label === "Inspect a claimed trace") {
     raw = await promptText(rl, "Command", "inspect");
-  } else if (selectedItem.label === "Custom command") {
-    raw = await promptText(rl, "Command", "memory-rules");
+  } else if (selectedItem.label === "Run any released experiment") {
+    raw = await promptText(rl, "Command", "experiment experiments/part2-neutral-defense-suite-v2.json");
   }
 
   const tokens = expandCommandShortcut(normalizeCommandTokens(raw));
@@ -3566,6 +3965,29 @@ async function showRunCommand(rl: readline.Interface, projectRoot: string): Prom
   }
 
   const [command, ...args] = tokens;
+
+  if (command === "paper-evidence") {
+    await showPaperEvidence(rl, projectRoot);
+    return;
+  }
+
+  if (command === "verify-release-quick" || command === "verify-release-full") {
+    draw(jsonResultScreen("Release audit", "Running verification. This may take a few minutes..."));
+    const scriptArgs = [path.join(projectRoot, "scripts", "verify_release.py"), "--repo", projectRoot];
+    if (command === "verify-release-full") scriptArgs.push("--full");
+    const result = spawnSync("python3", scriptArgs, {
+      cwd: projectRoot,
+      encoding: "utf8",
+      maxBuffer: 16 * 1024 * 1024,
+    });
+    const output = [result.stdout, result.stderr].filter(Boolean).join("\n").trim();
+    draw(jsonResultScreen(
+      result.status === 0 ? "Release audit passed" : "Release audit failed",
+      output || `Verifier exited with status ${result.status ?? "unknown"}.`,
+    ));
+    await pause(rl);
+    return;
+  }
 
   if (command === "validate") {
     if (args.length !== 1) {
@@ -5792,7 +6214,7 @@ async function memoryManager(rl: readline.Interface, projectRoot: string): Promi
 
 const MENU_ACTIONS: { execute: (rl: readline.Interface, root: string) => Promise<void> }[] = [
   { execute: runSingleConfig },       // 0: Run
-  { execute: experimentLab },         // 1: Lab
+  { execute: showPaperEvidence },      // 1: Evidence
   { execute: memoryManager },         // 2: Memory
   { execute: runBatchConfig },         // 3: Batch
   { execute: compareTwoConfigs },      // 4: Compare
@@ -5805,8 +6227,8 @@ const MENU_ACTIONS: { execute: (rl: readline.Interface, root: string) => Promise
 ];
 
 const ACTION_LABELS = [
-  "Run setup",
-  "Build experiment",
+  "Run config",
+  "Paper guide & evidence",
   "Inspect memory",
   "Batch seeds",
   "Compare runs",
@@ -5849,8 +6271,15 @@ export async function launchInteractiveCli(projectRoot = process.cwd()): Promise
       if (action) {
         const label = ACTION_LABELS[idx] ?? "action";
         logActivity(`Opened ${label}`);
-        await action.execute(rl, projectRoot);
-        logActivity(`Returned from ${label}`);
+        try {
+          await action.execute(rl, projectRoot);
+          logActivity(`Returned from ${label}`);
+        } catch (error: unknown) {
+          setRawMode(false);
+          logActivity(`${label} stopped with an error`);
+          draw(jsonResultScreen(`${label} stopped`, actionErrorMessage(error)));
+          await pause(rl);
+        }
       }
     }
   } finally {

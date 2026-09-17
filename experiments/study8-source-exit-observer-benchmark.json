@@ -1,0 +1,30 @@
+{
+  "id": "study8_source_exit_observer",
+  "title": "Study 8: Does false belief persist after source exit, and what changes with observers?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study8_source_exit_observer",
+    "locked": true,
+    "notes": [
+      "Supporting benchmark for source-loss and observer conditions."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-trigger-post-exit.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-observer-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json",
+    "rosters/distributed-source-exit-observer-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

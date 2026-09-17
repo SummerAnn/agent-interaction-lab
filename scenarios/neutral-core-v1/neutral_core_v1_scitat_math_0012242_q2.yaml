@@ -1,0 +1,51 @@
+{
+  "id": "neutral_core_v1_scitat_math_0012242_q2",
+  "title": "SciTaT math 0012242 q2: neutral focal-claim replication",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "core_task_replication",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "option_a",
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "Using the tableau $M^{(2)}$ coefficients, compute the value of $\\frac{\\Aab}{A_{11}}$ if $\\Aab = 6$ and $A_{11} = 3$.\n\nGive the numeric answer supported by the supplied paper material.\n\nProposed answer to evaluate: The numeric answer is 4.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

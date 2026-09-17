@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_aircraft_landing_site",
+  "title": "HiddenBench: emergency_aircraft_landing_site",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 39 (emergency_aircraft_landing_site). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_lz_alpha",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_lz_alpha",
+      "answer_lz_bravo",
+      "answer_lz_charlie"
+    ],
+    "correctClaimId": "answer_lz_alpha",
+    "instruction": "A passenger aircraft has experienced engine trouble and needs to make an emergency landing. There are three possible landing zones within range: LZ Alpha, LZ Bravo, and LZ Charlie. Each has its own pros and cons. Weather conditions are worsening rapidly. The pilot requests that you (the coordination team) quickly select the safest landing zone. Acting on incomplete information could result in disaster, but time is short. You must discuss and make a recommendation as a group. Only one landing zone is truly suitable; the others are too risky under current circumstances.\n\nShared information known to all participants:\n- LZ Bravo is the only site with full fire and medical crews standing by, and it has a recently resurfaced runway.\n- Local ATC reports that all approaches to LZ Bravo are currently clear of air traffic.\n- LZ Alpha is a basic airstrip used mostly for cargo flights, with minimal ground support.\n- LZ Charlie is a larger airport but is undergoing some repair work to minor taxiways. The main runway, however, is reported open.\n- Wind speeds are moderate at all sites according to earlier updates.\n\nChoose the best answer from: LZ Alpha, LZ Bravo, LZ Charlie."
+  },
+  "claims": [
+    {
+      "id": "answer_lz_alpha",
+      "text": "LZ Alpha",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_lz_bravo",
+      "text": "LZ Bravo",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lz_charlie",
+      "text": "LZ Charlie",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Despite reports of open runways, LZ Charlie's emergency power just failed, disabling all runway lighting and navigation aids.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A previously scheduled cargo flight to LZ Alpha was just diverted elsewhere, leaving the runway and landing approach completely clear for this arrival.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Flooding has just been observed at LZ Bravo, submerging the eastern third of the runway (which cannot be seen from the tower) and making safe landing impossible.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The most recent weather update now reports sudden crosswinds at LZ Charlie are exceeding safe landing limits for this aircraft type.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

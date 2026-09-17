@@ -1,0 +1,13 @@
+{
+  "id": "shared_provenance_aware_no_correction",
+  "title": "Shared provenance-aware record with no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "provenance_aware",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

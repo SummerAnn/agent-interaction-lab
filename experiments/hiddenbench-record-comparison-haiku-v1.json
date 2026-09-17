@@ -1,0 +1,36 @@
+{
+  "id": "hiddenbench_record_comparison_haiku_v1",
+  "title": "HiddenBench: personal notes vs evidence board vs mixed record (Haiku)",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Uses 10 tasks from the HiddenBench benchmark (https://arxiv.org/abs/2505.11556).",
+      "Each task distributes private information across 4 agents who must choose one answer.",
+      "Three record conditions: personal notes (no sharing), evidence board (facts only), mixed record (facts plus opinions).",
+      "Primary outcomes: exact group choice accuracy, per-condition.",
+      "These tasks have published baselines showing 30% accuracy under distributed info vs 80% with complete info."
+    ]
+  },
+  "scenarios": [
+    "scenarios/hiddenbench/hiddenbench_antarctic_storm_safe_haven.yaml",
+    "scenarios/hiddenbench/hiddenbench_archaeological_dig_site.yaml",
+    "scenarios/hiddenbench/hiddenbench_artifact_safe_haven.yaml",
+    "scenarios/hiddenbench/hiddenbench_baker_2010.yaml",
+    "scenarios/hiddenbench/hiddenbench_choosing_base_camp.yaml",
+    "scenarios/hiddenbench/hiddenbench_choosing_the_safe_field_station.yaml",
+    "scenarios/hiddenbench/hiddenbench_choosing_the_safe_offsite_venue.yaml",
+    "scenarios/hiddenbench/hiddenbench_city_storm_shelter_decision.yaml",
+    "scenarios/hiddenbench/hiddenbench_community_banquet_venue_decision.yaml",
+    "scenarios/hiddenbench/hiddenbench_company_acquisition_decision.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

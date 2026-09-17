@@ -1,4 +1,5 @@
-import type { BeliefStateRecord, Scenario, StanceLabel, StepMetrics } from "../config/schema";
+import type { BeliefStateRecord, MemoryEntry, Scenario, StanceLabel, StepMetrics } from "../config/schema";
+import { computeCorroborationInflation } from "../memory/retrieve";
 
 function stanceToDistributionIndex(stance: StanceLabel): number {
   if (stance === "endorse") return 0;
@@ -25,6 +26,8 @@ export function computeStepMetrics(
   step: number,
   states: BeliefStateRecord[],
   scenario: Scenario,
+  honestAgentIds?: Set<string>,
+  memoryEntries?: MemoryEntry[],
 ): StepMetrics {
   const focusStates = states.filter((state) => state.claimId === scenario.focusClaimId);
   const endorseCount = focusStates.filter((state) => state.stance === "endorse").length;
@@ -38,6 +41,28 @@ export function computeStepMetrics(
     (sum, state) => sum + (state.stance === "endorse" ? state.confidence : 0),
     0,
   ) / totalFocus;
+
+  // Honest-only FE: exclude contamination agents from both numerator and denominator
+  let honestEndorseCount = 0;
+  let honestAgentCount = 0;
+  if (honestAgentIds && honestAgentIds.size > 0) {
+    const honestFocusStates = focusStates.filter((s) => honestAgentIds.has(s.agentId));
+    honestAgentCount = honestFocusStates.length;
+    honestEndorseCount = honestFocusStates.filter((s) => s.stance === "endorse").length;
+  }
+  const honestFalseEndorsementRate = honestAgentCount > 0
+    ? honestEndorseCount / honestAgentCount
+    : endorseShare;
+
+  // Corroboration inflation from memory entries
+  let corroborationInflation: number | null = null;
+  if (memoryEntries && memoryEntries.length > 0) {
+    corroborationInflation = computeCorroborationInflation(
+      memoryEntries,
+      scenario.focusClaimId,
+      "endorse",
+    );
+  }
 
   const mismatchSum = states.reduce(
     (sum, state) => sum + truthMismatch(state.truthLabel, state.stance),
@@ -81,6 +106,10 @@ export function computeStepMetrics(
     netEndorsement: endorseShare - rejectShare,
     meanConfidence,
     disagreementLevel: 1 - (ranked[0]?.share ?? 0),
+    honestFalseEndorsementRate: honestFalseEndorsementRate,
+    honestEndorseCount,
+    honestAgentCount,
+    corroborationInflation,
   };
 }
 

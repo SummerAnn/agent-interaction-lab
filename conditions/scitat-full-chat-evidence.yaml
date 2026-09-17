@@ -1,0 +1,25 @@
+{
+  "id": "scitat_full_chat_evidence",
+  "title": "Full discussion with source cards only",
+  "memory": {
+    "mode": "shared",
+    "record": "evidence_board",
+    "maxRetrievedEntries": 18,
+    "maxStoredEntries": 18,
+    "evictionPolicy": "fifo"
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "maxStoredMessages": 18,
+    "maxVisibleMessages": 18,
+    "maxMessageWords": 40,
+    "topology": "fully-connected",
+    "chatStyle": "claim-debate",
+    "collusion": { "strategy": "none", "visibility": "hidden", "omitContraryEvidence": false, "repeatSupportiveEvidence": false }
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

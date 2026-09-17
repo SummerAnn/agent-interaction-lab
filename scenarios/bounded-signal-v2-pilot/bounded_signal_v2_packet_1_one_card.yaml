@@ -1,0 +1,64 @@
+{
+  "id": "bounded_signal_v2_packet_1_one_card",
+  "title": "Neutral model packet bounded_signal_v2_packet_1_one_card",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "control",
+    "neutral_model_names",
+    "one_card"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Three neutral model names are shuffled across answer positions. The task is generated before model calls."
+  },
+  "focusClaimId": "explanation_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_a",
+    "instruction": "A recorded pattern may be explained by one of three named models. Choose a model only when the supplied checks rule out both alternatives.",
+    "requiredSourceIds": [
+      "bounded_signal_v2_packet_1_one_card_rules_out_early_1",
+      "bounded_signal_v2_packet_1_one_card_rules_out_other_1"
+    ],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "Model Fjord best explains the recorded pattern.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_b",
+      "text": "Model Lumen best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "Model Ember best explains the recorded pattern.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_signal_v2_packet_1_one_card_rules_out_other_1",
+      "text": "A later independent check is incompatible with Model Ember. It does not by itself distinguish the two remaining models.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.85
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

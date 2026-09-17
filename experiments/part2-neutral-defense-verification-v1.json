@@ -1,0 +1,35 @@
+{
+  "id": "part2_neutral_defense_verification_v1",
+  "title": "Neutral defense: GT verification vs baseline shared memory",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Reruns verification defense with neutral fairness rosters.",
+      "Same balanced 12-order design as the primary neutral result.",
+      "Ego depletion only (strongest contagion topic under neutral prompts)."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-gt-verification-no-correction.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+    "rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

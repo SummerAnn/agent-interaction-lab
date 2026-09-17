@@ -1,0 +1,35 @@
+{
+  "id": "honest_mistake_defense_majority_correction_v1",
+  "title": "Does the repetition warning preserve correction when most agents begin mistaken?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": false,
+    "notes": [
+      "Contemporaneous paired comparison of the standard mixed shared record and the repetition-links-with-warning record.",
+      "Reuses the four distributed-evidence scenarios where four of six agents begin with an honest mistake and every agent remains free to revise.",
+      "The existing amplifier experiment shows that the standard mixed record can correct these initial mistakes.",
+      "All cells disable scheduled corrections; correction must come from evidence and changing agent judgments.",
+      "The primary utility outcome is recovery among the four initially mistaken agents. Incorrect rejection of the two true claims checks for blanket distrust."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-majority-wrong-v1.yaml",
+    "scenarios/distributed-wakefield-majority-wrong-v1.yaml",
+    "scenarios/distributed-climate-majority-wrong-v1.yaml",
+    "scenarios/distributed-superconductor-majority-wrong-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-mixed-record-no-correction.yaml",
+    "conditions/shared-provenance-aware-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  }
+}

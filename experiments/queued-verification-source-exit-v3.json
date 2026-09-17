@@ -1,0 +1,29 @@
+{
+  "id": "verification_source_exit_v3",
+  "title": "QUEUED: Can verification overcome source exit lock-in?",
+  "benchmarkMeta": {
+    "status": "queued",
+    "locked": false,
+    "notes": [
+      "Source exit roster + verification condition.",
+      "Tests whether verified-true correction can overcome loss of the correcting source.",
+      "Launch only if source exit shows lock-in on Haiku."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-gt-verification-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

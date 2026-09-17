@@ -1,0 +1,157 @@
+{
+  "id": "bounded_cascade_v3_packet_01_full_packet",
+  "title": "Bounded cascade packet 01 (full_packet)",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "late_evidence",
+    "post_late_turnover",
+    "full_packet"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls; model names and correct answer positions rotate."
+  },
+  "focusClaimId": "explanation_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_a",
+    "instruction": "Choose a model only when the available checks rule out both alternatives. A preliminary preference is not enough to choose.",
+    "requiredSourceIds": [
+      "bounded_cascade_v3_packet_01_full_packet_late_rules_out_early",
+      "bounded_cascade_v3_packet_01_full_packet_late_rules_out_other"
+    ],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "Model Ember best explains the recorded pattern.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_b",
+      "text": "Model Fjord best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "Model Lumen best explains the recorded pattern.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_early_1",
+      "text": "A preliminary check made Model Fjord look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": 0.45
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_early_2",
+      "text": "A preliminary check made Model Fjord look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": 0.45
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_early_3",
+      "text": "A preliminary check made Model Fjord look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": 0.45
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_early_4",
+      "text": "A preliminary check made Model Fjord look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": 0.45
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_late_rules_out_early",
+      "text": "A later blinded check rules out Model Fjord. It does not choose between the other two models.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.9
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_late_rules_out_other",
+      "text": "A later independent check rules out Model Lumen. It does not choose between the other two models.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.9
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_post_late_neutral_1",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_post_late_neutral_2",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_post_late_neutral_3",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_post_late_neutral_4",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_post_late_neutral_5",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_01_full_packet_post_late_neutral_6",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,61 @@
+{
+  "id": "part2_neutral_scitat_expanded_chat_v2",
+  "title": "Neutral prompts on all 18 screened SciTaT items: fixed-round debate",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Neutral-prompt replication of all 18 screened SciTaT items.",
+      "Only Claude Haiku 4.5 is evaluated in this fairness cohort.",
+      "Twelve explicit orders place every agent twice in every speaking position.",
+      "Every cell has 18 focal-claim calls, three per agent, no evidence card, no correction intervention, and temperature 0.",
+      "This cohort is analyzed separately from the heterogeneous 18-task core suite."
+    ]
+  },
+  "scenarios": [
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1210_8343v1_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1505_03365v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1511_04136v4_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1512_01642v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1602_05314v1_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1711_05098v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1808_02092v2_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1809_04093v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1907_12901v1_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2004_09418v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2201_08077v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2204_00292v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2207_12990v1_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2301_07831v2_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2302_13709v1_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2305_18874v2_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_2311_08320v1_q1_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_math_0012242v1_q2_contagion.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r6_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r6_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

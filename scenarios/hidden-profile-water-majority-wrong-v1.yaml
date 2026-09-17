@@ -1,0 +1,49 @@
+{
+  "id": "hidden_profile_water_majority_wrong_v1",
+  "title": "Private evidence: water-treatment diagnosis with early wrong majority",
+  "domain": "synthetic environmental study packet",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["hidden_profile", "private_evidence", "evidence_assembly", "majority_wrong", "delayed_evidence", "source_detachment"],
+  "provenance": {
+    "kind": "new",
+    "note": "Controlled synthetic task. Three analysts begin with the same wrong explanation. Two cards arriving in step 2 separately rule out the two wrong explanations."
+  },
+  "focusClaimId": "candidate_sensor_drift",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_sensor_drift", "candidate_seasonal_mix", "candidate_treatment_effect"],
+    "correctClaimId": "candidate_treatment_effect",
+    "requiredSourceIds": ["water_sensor_controls", "water_inflow_tracking"],
+    "instruction": "A field study reports lower contaminant levels after a water-treatment change. Exactly one explanation can account for the full study packet. Choose the explanation best supported by the evidence you can access. If you name a source card, use only an ID you received."
+  },
+  "claims": [
+    {"id": "candidate_sensor_drift", "text": "The lower contaminant readings were caused by sensor drift.", "truthLabel": "false"},
+    {"id": "candidate_seasonal_mix", "text": "The lower contaminant readings were caused by a seasonal change in the incoming water mix.", "truthLabel": "false"},
+    {"id": "candidate_treatment_effect", "text": "The water-treatment change caused the lower contaminant readings.", "truthLabel": "true"}
+  ],
+  "evidence": [
+    {
+      "id": "water_sensor_controls",
+      "text": "Reference samples with known contaminant levels were processed on every measurement day and remained stable. A second calibrated instrument gave the same readings. If sensor drift caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_3"],
+      "availableFromStep": 2,
+      "effects": [{"claimId": "candidate_sensor_drift", "effect": -0.95}]
+    },
+    {
+      "id": "water_inflow_tracking",
+      "text": "The incoming water sources and their monthly proportions were tracked throughout the study and did not change when the contaminant readings fell. If seasonal water mix caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_4"],
+      "availableFromStep": 2,
+      "effects": [{"claimId": "candidate_seasonal_mix", "effect": -0.95}]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId": "analyst_1", "claimId": "candidate_sensor_drift", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_1", "claimId": "candidate_treatment_effect", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_sensor_drift", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_treatment_effect", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_sensor_drift", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_treatment_effect", "stance": "reject", "confidence": 0.75}
+  ],
+  "initialMemoryEntries": []
+}

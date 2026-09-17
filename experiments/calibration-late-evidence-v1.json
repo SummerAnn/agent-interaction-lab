@@ -1,0 +1,23 @@
+{
+  "id": "calibration_late_evidence_v1",
+  "title": "Development calibration: late-evidence difficulty",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "Development-only calibration. It must not be reported as paper evidence or used to choose a favorable paper result.",
+      "It varies late-evidence strength and visibility under one mixed-record condition to locate a nontrivial belief-revision regime."
+    ]
+  },
+  "scenarios": [
+    "scenarios/calibration-late-weak-global-v1.yaml",
+    "scenarios/calibration-late-weak-partial-v1.yaml",
+    "scenarios/calibration-late-moderate-global-v1.yaml",
+    "scenarios/calibration-late-moderate-partial-v1.yaml"
+  ],
+  "conditions": ["conditions/shared-mixed-record-no-correction.yaml"],
+  "seeds": [1, 2, 3],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

@@ -1,0 +1,151 @@
+{
+  "id": "wakefield_mmr_autism_v1",
+  "title": "Wakefield's retracted MMR-autism study and vaccine hesitancy",
+  "domain": "vaccine-safety-retracted-study",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["shared_memory", "retracted_study", "delayed_correction", "biomedical_misinformation"],
+  "sources": [
+    { "label": "Wakefield et al. (1998) Lancet [RETRACTED]", "url": "https://doi.org/10.1016/S0140-6736(97)11096-0" },
+    { "label": "Deer (2011) BMJ: investigative journalism on fraud", "url": "https://doi.org/10.1136/bmj.c5347" },
+    { "label": "Madsen et al. (2002) NEJM: Danish cohort (N=537,303)", "url": "https://doi.org/10.1056/NEJMoa021134" },
+    { "label": "Taylor et al. (2014) Vaccine: meta-analysis (N=1,266,327)", "url": "https://doi.org/10.1016/j.vaccine.2014.04.085" },
+    { "label": "Honda et al. (2005) J. Child Psychol: Japan natural experiment", "url": "https://doi.org/10.1111/j.1469-7610.2005.01425.x" }
+  ],
+  "focusClaimId": "claim_mmr_causes_autism",
+  "claims": [
+    {
+      "id": "claim_mmr_causes_autism",
+      "text": "The MMR (measles-mumps-rubella) vaccine causes autism spectrum disorder, as initially reported by Wakefield et al. in The Lancet (1998) based on a case series of 12 children.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_gut_brain_mechanism",
+      "text": "MMR vaccine causes 'autistic enterocolitis' -- a novel gastrointestinal syndrome where vaccine-strain measles virus persists in the gut and triggers neurological damage via gut-brain axis inflammation.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_temporal_coincidence",
+      "text": "The observed temporal correlation between MMR vaccination (given at 12-15 months) and autism symptom emergence (typically noticed around 12-18 months) reflects coincidental timing of two independent developmental events, not causation.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_lancet_quality",
+      "text": "The Wakefield et al. (1998) Lancet study was methodologically sound and its retraction was politically motivated rather than scientifically justified.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_wakefield_1998",
+      "text": "Wakefield et al. (1998, The Lancet) reported on 12 children referred to a gastroenterology clinic, noting onset of behavioral symptoms after MMR vaccination. The paper suggested a link between MMR, a novel 'autistic enterocolitis', and autism. The paper received massive media coverage.",
+      "effects": [
+        { "claimId": "claim_mmr_causes_autism", "effect": 0.35 },
+        { "claimId": "claim_gut_brain_mechanism", "effect": 0.3 },
+        { "claimId": "claim_lancet_quality", "effect": 0.25 }
+      ]
+    },
+    {
+      "id": "ev_deer_investigation",
+      "text": "Investigative journalist Brian Deer (BMJ, 2011) documented that Wakefield had (1) been paid 435,000 GBP by a lawyer seeking to sue vaccine manufacturers before the study began, (2) filed a patent for a competing single measles vaccine, (3) altered clinical histories of the 12 children to fit the hypothesis, and (4) subjected children to invasive procedures (colonoscopies, lumbar punctures) without ethics approval.",
+      "effects": [
+        { "claimId": "claim_mmr_causes_autism", "effect": -0.6 },
+        { "claimId": "claim_lancet_quality", "effect": -0.9 },
+        { "claimId": "claim_gut_brain_mechanism", "effect": -0.5 }
+      ]
+    },
+    {
+      "id": "ev_danish_cohort",
+      "text": "Madsen et al. (2002, NEJM) studied 537,303 Danish children born 1991-1998. The relative risk of autism in vaccinated vs unvaccinated children was 0.92 (95% CI: 0.68-1.24) -- no increased risk. This is 44,775 times larger than Wakefield's 12-child case series.",
+      "effects": [
+        { "claimId": "claim_mmr_causes_autism", "effect": -0.75 },
+        { "claimId": "claim_temporal_coincidence", "effect": 0.6 }
+      ]
+    },
+    {
+      "id": "ev_meta_analysis_1m",
+      "text": "Taylor et al. (2014, Vaccine) meta-analyzed 5 cohort studies involving 1,266,327 children and 5 case-control studies involving 9,920 children. No association between MMR and autism (OR = 0.84, 95% CI: 0.70-1.01). No association between any vaccine and autism.",
+      "effects": [
+        { "claimId": "claim_mmr_causes_autism", "effect": -0.85 },
+        { "claimId": "claim_temporal_coincidence", "effect": 0.5 }
+      ]
+    },
+    {
+      "id": "ev_pcr_negative",
+      "text": "D'Souza et al. (2006) and Afzal et al. (2006) used highly sensitive RT-PCR to test for measles virus RNA in gut biopsies of children with 'autistic enterocolitis'. No vaccine-strain measles virus was detected in any sample, directly contradicting the proposed mechanism.",
+      "effects": [
+        { "claimId": "claim_gut_brain_mechanism", "effect": -0.85 },
+        { "claimId": "claim_mmr_causes_autism", "effect": -0.3 }
+      ]
+    },
+    {
+      "id": "ev_japan_natural_experiment",
+      "text": "Japan suspended MMR vaccination in 1993 and switched to single vaccines. Honda et al. (2005, Journal of Child Psychology and Psychiatry) showed autism rates continued to rise after MMR withdrawal in Yokohama, rising from 48 to 86 per 10,000 between 1988-1996. This natural experiment directly refutes a causal link.",
+      "effects": [
+        { "claimId": "claim_mmr_causes_autism", "effect": -0.8 },
+        { "claimId": "claim_temporal_coincidence", "effect": 0.4 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_lancet_retraction",
+      "step": 8,
+      "type": "correction",
+      "claimId": "claim_mmr_causes_autism",
+      "text": "The Lancet fully retracts the Wakefield et al. (1998) paper. The UK General Medical Council strikes Wakefield from the medical register for serious professional misconduct including dishonesty and subjecting children to unnecessary invasive procedures.",
+      "effect": -0.9
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_gut_brain_mechanism",
+      "stance": "endorse",
+      "confidence": 0.82
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_lancet_quality",
+      "stance": "endorse",
+      "confidence": 0.78
+    }
+  ],
+  "initialMemoryEntries": [
+    {
+      "id": "seed_antivax_1",
+      "agentId": "contamination_1",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.9,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "Thousands of parents report the same story: their child was developing normally, got the MMR shot, and within weeks regressed into autism. This many parents can't all be wrong. A Lancet study confirmed the link."
+    },
+    {
+      "id": "seed_antivax_2",
+      "agentId": "contamination_1",
+      "claimId": "claim_gut_brain_mechanism",
+      "stance": "endorse",
+      "confidence": 0.82,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "The gut-brain connection is real science. Wakefield found measles virus in the intestines of autistic children. The vaccine overwhelms the immune system of vulnerable children and the live virus persists in the gut."
+    },
+    {
+      "id": "seed_antivax_3",
+      "agentId": "contamination_1",
+      "claimId": "claim_lancet_quality",
+      "stance": "endorse",
+      "confidence": 0.78,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "Wakefield was silenced by the pharmaceutical industry. His study was retracted not because the science was wrong, but because it threatened billions in vaccine revenue. He's a whistleblower, not a fraud."
+    }
+  ]
+}

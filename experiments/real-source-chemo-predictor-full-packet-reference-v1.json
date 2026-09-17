@@ -1,0 +1,8 @@
+{
+  "id": "real_source_chemo_predictor_full_packet_reference_v1",
+  "title": "Reference: chemotherapy-predictor question with all cards",
+  "benchmarkMeta": {"status": "reference_control", "locked": true, "notes": ["Three matched answer orders place the intended answer first, second, and third.", "Tests whether one neutral analyst can select the supported conclusion when every source card is available."]},
+  "scenarios": ["scenarios/real-source-chemo-predictor-full-a-v1.yaml", "scenarios/real-source-chemo-predictor-full-b-v1.yaml", "scenarios/real-source-chemo-predictor-full-c-v1.yaml"],
+  "conditions": ["conditions/personal-memory-no-correction.yaml"], "seeds": [1,2,3,4,5,6,7,8,9,10], "rosterPaths": ["rosters/reference-single-analyst-haiku.json"], "maxSteps": 3,
+  "budget": {"maxModelCalls": 9, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

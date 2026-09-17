@@ -1,0 +1,21 @@
+{
+  "id": "hidden_profile_heldout_haiku_v1",
+  "title": "Held-out private-evidence tasks: personal notes versus evidence board",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "Pre-specified after the elimination pilot passed its information-pooling gate.",
+      "Primary outcome: exact group choice. The evidence board must improve correct choice in both held-out packets before a cross-model replication is interpreted."
+    ]
+  },
+  "scenarios": [
+    "scenarios/hidden-profile-safety-training-heldout-v1.yaml",
+    "scenarios/hidden-profile-water-treatment-heldout-v1.yaml"
+  ],
+  "conditions": ["conditions/personal-memory-no-correction.yaml", "conditions/shared-evidence-board-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

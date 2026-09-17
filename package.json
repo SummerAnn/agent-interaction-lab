@@ -1,5 +1,5 @@
 {
-  "name": "multiagentworld",
+  "name": "agent-interaction-lab",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,11 @@
     "testbed:compare": "node --import tsx src/cli.ts compare",
     "testbed:batch": "node --import tsx src/cli.ts batch",
     "testbed:inspect": "node --import tsx src/cli.ts inspect",
+    "agentlab": "node --import tsx src/cli.ts interactive",
     "multiagent:society": "node --import tsx src/cli.ts interactive",
+    "verify:paper-tables": "python3 scripts/build_iclr_run_manifest.py --repo . --output-dir paper --tex-dir paper",
+    "verify:release": "python3 scripts/verify_release.py --repo . --full",
+    "verify:release:quick": "python3 scripts/verify_release.py --repo .",
     "test": "vitest run",
     "test:watch": "vitest"
   },

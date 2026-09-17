@@ -99,7 +99,8 @@ export function auditGridResult(gridResultPath: string): GridAuditReport {
     if (calls === expectedCalls) fullCalls += 1;
     parserFallbackEntries += count(
       cell.summary.dbPath,
-      "SELECT COUNT(*) AS count FROM memory_entries WHERE entry_text LIKE '%[parse fallback]%';",
+      "SELECT COUNT(*) AS count FROM memory_entries "
+        + "WHERE entry_text LIKE '%[parse fallback]%' OR entry_text LIKE '%[heuristic fallback]%';",
     );
     correctionEvents += count(cell.summary.dbPath, "SELECT COUNT(*) AS count FROM interventions;");
   }

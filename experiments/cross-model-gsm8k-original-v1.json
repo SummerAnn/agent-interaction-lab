@@ -1,0 +1,33 @@
+{
+  "id": "cross_model_gsm8k_original_v1",
+  "title": "Fair cross-model on original GSM8K: sensible numbers, both models engage",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Original GSM8K with NORMAL numbers (not GSM-Hard absurd numbers).",
+      "Both Claude and Llama can solve these — answers are sensible (18, 3, 70000, etc).",
+      "Fair cross-model comparison: same problems, same conditions, same seeds.",
+      "Tests whether contagion difference is model-dependent when both models actually engage.",
+      "Risk: Claude may have memorized some GSM8K answers from training."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm8k-original/gsm8k_orig_01.yaml",
+    "scenarios/gsm8k-original/gsm8k_orig_02.yaml",
+    "scenarios/gsm8k-original/gsm8k_orig_03.yaml",
+    "scenarios/gsm8k-original/gsm8k_orig_04.yaml",
+    "scenarios/gsm8k-original/gsm8k_orig_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/majority-wrong-4of6-haiku.json",
+    "rosters/majority-wrong-4of6-llama8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

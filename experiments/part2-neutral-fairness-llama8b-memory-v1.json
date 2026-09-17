@@ -1,0 +1,14 @@
+{
+  "id": "part2_neutral_fairness_llama8b_memory_v1",
+  "title": "Neutral fairness: llama8b, shared memory + personal memory",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_v1.yaml"],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": ["rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r1_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r2_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r3_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r4_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r5_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r6_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r1_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r2_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r3_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r4_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r5_llama8b.json", "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r6_llama8b.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

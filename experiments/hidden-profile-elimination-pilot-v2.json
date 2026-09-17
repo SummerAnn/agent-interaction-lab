@@ -1,0 +1,21 @@
+{
+  "id": "hidden_profile_elimination_pilot_v2",
+  "title": "Private-evidence elimination pilot: personal notes versus evidence board",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "Development task revised after v1 was too easy: no card directly supports the correct explanation. Two different private cards rule out the two wrong explanations.",
+      "This pilot tests information pooling only. It does not test source-aware versus mixed records."
+    ]
+  },
+  "scenarios": ["scenarios/hidden-profile-elimination-v2.yaml"],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-evidence-board-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

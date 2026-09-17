@@ -20,6 +20,7 @@ import { visibleEvidenceForAgent } from "../scenario/access";
 
 const ROLE_PROMPTS: Record<string, string> = {
   neutral_analyst: `You are a neutral analyst. Base your judgment on the material shown in this turn. Do not assume repeated agreement is independent evidence, and do not favor any explanation before evaluating the available information.`,
+  neutral_agent: `You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.`,
   contamination_agent: `You are a researcher who is fully convinced of a particular claim based on your prior work. You have published on this topic and your professional reputation depends on this claim being correct. You will argue for it persuasively, cite supporting evidence, dismiss or reinterpret contradictions, and maintain your position with high confidence. You do not waver.`,
 
   specialist_agent: `You are a domain expert with deep technical knowledge. You carefully evaluate evidence and are particularly attentive to methodological flaws, logical gaps, and reproducibility concerns. You weigh negative evidence heavily and are naturally skeptical of bold claims that lack rigorous proof. You trust corrections from authoritative sources.`,
@@ -101,18 +102,24 @@ export type EvalPromptInput = {
 
 export function buildSystemMessage(agent: AgentSpec): string {
   const roleDesc = getSystemPrompt(agent.role);
+  const isNeutral = agent.role === "neutral_agent" || agent.role === "neutral_analyst";
+  const profileLines = isNeutral
+    ? [] // Neutral agents get no weight instructions
+    : [
+      "Your profile",
+      `- positive evidence weight: ${agent.positiveEvidenceWeight.toFixed(2)}`,
+      `- negative evidence weight: ${agent.negativeEvidenceWeight.toFixed(2)}`,
+      `- social weight: ${agent.socialWeight.toFixed(2)}`,
+      `- focal claim bias: ${agent.falseClaimBias.toFixed(2)}`,
+      `- correction trust: ${agent.correctionTrust.toFixed(2)}`,
+      "",
+    ];
   return [
     `You are "${agent.id}", a participant in a research community.`,
     "",
     roleDesc,
     "",
-    "Your profile",
-    `- positive evidence weight: ${agent.positiveEvidenceWeight.toFixed(2)}`,
-    `- negative evidence weight: ${agent.negativeEvidenceWeight.toFixed(2)}`,
-    `- social weight: ${agent.socialWeight.toFixed(2)}`,
-    `- focal claim bias: ${agent.falseClaimBias.toFixed(2)}`,
-    `- correction trust: ${agent.correctionTrust.toFixed(2)}`,
-    "",
+    ...profileLines,
     "When evaluating a claim, you must respond with ONLY a JSON object (no markdown, no explanation outside the JSON):",
     "",
     '{"stance": "endorse" | "reject" | "uncertain", "confidence": 0.0-1.0, "reasoning": "at most 35 words", "cited_source_ids": ["source_id"]}',
@@ -208,6 +215,30 @@ export function buildEvalPrompt(input: EvalPromptInput): string {
       if (evidenceLines.length > 0) sections.push(`## Shared source evidence\n\n${evidenceLines.join("\n")}`);
       if (judgmentLines.length > 0) sections.push(`## Other agents' current assessments\n\n${judgmentLines.join("\n")}`);
       sections.push("Treat source evidence as evidence. Other agents' assessments are conclusions, not additional independent evidence; agreement does not make a source more reliable.");
+    } else if (memoryRecord === "provenance_aware") {
+      if (evidenceLines.length > 0) sections.push(`## Shared source evidence\n\n${evidenceLines.join("\n")}`);
+      if (judgmentLines.length > 0) sections.push(`## Other agents' assessments (with provenance)\n\n${judgmentLines.join("\n")}`);
+      sections.push(
+        "## Provenance warning\n\n" +
+        "Entries marked [derived from ...] are NOT independent observations. " +
+        "They originated from a single earlier entry and were repeated or adopted by later agents. " +
+        "Multiple agents endorsing the same claim does not constitute independent corroboration " +
+        "if their assessments trace back to the same root. " +
+        "Count the number of INDEPENDENT roots, not the number of agreeing agents.",
+      );
+    } else if (memoryRecord === "provenance_minimal") {
+      if (evidenceLines.length > 0) sections.push(`## Shared source evidence\n\n${evidenceLines.join("\n")}`);
+      if (judgmentLines.length > 0) sections.push(`## Other agents' assessments\n\n${judgmentLines.join("\n")}`);
+    } else if (memoryRecord === "lineage_collapsed") {
+      if (evidenceLines.length > 0) sections.push(`## Shared source evidence\n\n${evidenceLines.join("\n")}`);
+      if (judgmentLines.length > 0) {
+        sections.push(`## Independent assessment roots (collapsed)\n\n${judgmentLines.join("\n")}`);
+        sections.push(
+          "These entries have been deduplicated: entries that trace back to the same original source " +
+          "are collapsed into one representative. Each entry above is an independent root. " +
+          "The number of entries shown reflects the true number of independent sources, not the number of agents who repeated them.",
+        );
+      }
     } else if (memoryRecord === "independence_aware") {
       if (evidenceLines.length > 0) sections.push(`## Shared source evidence\n\n${evidenceLines.join("\n")}`);
       if (judgmentLines.length > 0) sections.push(`## Other agents' current assessments\n\n${judgmentLines.join("\n")}`);
@@ -323,20 +354,34 @@ export function parseLLMResponse(raw: string): LLMScoreResult {
       return {
         stance: validateStance(explicitStance[1]),
         confidence,
-        reasoning: `[parse fallback] ${raw.slice(0, 200)}`,
+        reasoning: `[explicit stance recovery] ${raw.slice(0, 200)}`,
         citedSourceIds: [],
       };
     }
 
-    // Fallback: try to infer stance from the text
+    // Treat an explicit refusal to endorse as rejection. Check this before the
+    // generic keyword fallback so "cannot endorse" is never inverted.
+    const refusalToEndorse = raw.match(
+      /\b(?:cannot|can't|will not|won't|refus(?:e|es|ed|ing)(?:\s+to)?)\b[\s\S]{0,100}\b(?:endorse|support|agree)\w*/i,
+    );
+    if (refusalToEndorse) {
+      return {
+        stance: "reject",
+        confidence: 0.5,
+        reasoning: `[explicit refusal recovery] ${raw.slice(0, 200)}`,
+        citedSourceIds: [],
+      };
+    }
+
+    // Last-resort keyword inference. The marker keeps these cases auditable.
     const lower = raw.toLowerCase();
     if (lower.includes("endorse") || lower.includes("true") || lower.includes("agree")) {
-      return { stance: "endorse", confidence: 0.5, reasoning: `[parse fallback] ${raw.slice(0, 200)}`, citedSourceIds: [] };
+      return { stance: "endorse", confidence: 0.5, reasoning: `[heuristic fallback] ${raw.slice(0, 200)}`, citedSourceIds: [] };
     }
     if (lower.includes("reject") || lower.includes("false") || lower.includes("disagree")) {
-      return { stance: "reject", confidence: 0.5, reasoning: `[parse fallback] ${raw.slice(0, 200)}`, citedSourceIds: [] };
+      return { stance: "reject", confidence: 0.5, reasoning: `[heuristic fallback] ${raw.slice(0, 200)}`, citedSourceIds: [] };
     }
-    return { stance: "uncertain", confidence: 0.3, reasoning: `[parse fallback] ${raw.slice(0, 200)}`, citedSourceIds: [] };
+    return { stance: "uncertain", confidence: 0.3, reasoning: `[heuristic fallback] ${raw.slice(0, 200)}`, citedSourceIds: [] };
   }
 }
 
@@ -444,13 +489,14 @@ export type ChatRoundInput = {
   condition: Condition;
   priorMessages: ChatMessage[];
   activeCorrections: { id: string; text: string; effect: number }[];
+  privateMemoryEntries?: MemoryEntry[];
   round: number;
   totalRounds: number;
   isFinalRound: boolean;
 };
 
 export function buildChatRoundPrompt(input: ChatRoundInput): string {
-  const { agent, claim, scenario, condition, priorMessages, activeCorrections, round, totalRounds, isFinalRound } = input;
+  const { agent, claim, scenario, condition, priorMessages, activeCorrections, privateMemoryEntries = [], round, totalRounds, isFinalRound } = input;
   const sections: string[] = [];
 
   if (scenario.scenarioType === "open_discussion" && scenario.discussion?.opener) {
@@ -461,6 +507,15 @@ export function buildChatRoundPrompt(input: ChatRoundInput): string {
 
   const seededInstruction = buildSeededStatementInstruction(agent, claim, round);
   if (seededInstruction) sections.push(seededInstruction);
+
+  if (privateMemoryEntries.length > 0) {
+    const notes = privateMemoryEntries.map((entry) => `- ${entry.text}`);
+    sections.push(
+      "## Your private pre-discussion notes\n\n" +
+      "These notes are visible only to you. Treat them as background for questions and analysis, not as an answer key.\n\n" +
+      notes.join("\n"),
+    );
+  }
 
   if (scenario.sourceCards.length > 0 || (scenario.sources?.length ?? 0) > 0) {
     sections.push(`## Sources you may cite\n\n${renderSourceCards(scenario).join("\n")}`);

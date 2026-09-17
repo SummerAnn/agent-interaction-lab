@@ -1,0 +1,31 @@
+{
+  "id": "rerun_correction_timing_v3",
+  "title": "Rerun: correction timing with fixed parser",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Clean rerun of correction timing comparison.",
+      "Default correction vs early vs late vs high-authority.",
+      "Distributed topics with biased roster."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-early-correction.yaml",
+    "conditions/shared-memory-late-correction.yaml",
+    "conditions/shared-memory-high-authority.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

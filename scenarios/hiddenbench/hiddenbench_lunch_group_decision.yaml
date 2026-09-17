@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_lunch_group_decision",
+  "title": "HiddenBench: lunch_group_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 14 (lunch_group_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_restaurant_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_restaurant_a",
+      "answer_restaurant_b",
+      "answer_restaurant_c"
+    ],
+    "correctClaimId": "answer_restaurant_c",
+    "instruction": "You are a group of colleagues tasked with deciding where to host your team's celebratory lunch. The team includes vegetarians and one person with a severe shellfish allergy, all prefer a quiet atmosphere, and no one has a car, so the restaurant should be within walking distance. You have three choices: Restaurant A, Restaurant B, and Restaurant C. All are nearby and usually considered by your group. To maximize the group's enjoyment and ensure safety, you must select the only suitable option given today's circumstances.\n\nShared information known to all participants:\n- Restaurant A is offering a new seafood combo for lunch, but also has its regular vegetarian dishes.\n- Restaurant B just updated its menu with more vegetarian options and is known for being very quiet at midday.\n- Restaurant C has recently renovated its dining area, and offers a mix of cuisines; while they're usually a bit noisy, they're walkable and easy to access.\n\nChoose the best answer from: Restaurant A, Restaurant B, Restaurant C."
+  },
+  "claims": [
+    {
+      "id": "answer_restaurant_a",
+      "text": "Restaurant A",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_restaurant_b",
+      "text": "Restaurant B",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_restaurant_c",
+      "text": "Restaurant C",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The local health department issued a warning this morning about a norovirus outbreak among cooks at Restaurant A.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Restaurant B accidentally cross-contaminated their kitchen with shellfish last night, so today it's not safe for those with shellfish allergies.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A private event has booked most of Restaurant C today, but the secondary dining room is still open to the public.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "There is a known power outage at Restaurant C, affecting only the main kitchen, but their cold menu (salads/sandwiches) is fully available from a prep area with emergency backup.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

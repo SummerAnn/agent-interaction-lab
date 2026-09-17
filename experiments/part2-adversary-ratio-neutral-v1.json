@@ -1,0 +1,28 @@
+{
+  "id": "part2_adversary_ratio_neutral_v1",
+  "title": "Adversary ratio with neutral prompts: 1/6, 2/6, 4/6 liars",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Codex: 'Four of six adversaries is too extreme to be the paper's primary result.'",
+      "Tests 1, 2, and 4 adversaries with neutral honest-agent prompts.",
+      "If contagion only appears at 4/6, the paper's result depends on adversary ratio.",
+      "If it appears at 1/6 or 2/6, the finding is more robust."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/blind-minority-wrong-1of6-neutral-haiku.json",
+    "rosters/blind-minority-wrong-2of6-neutral-haiku.json",
+    "rosters/blind-majority-wrong-4of6-neutral-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

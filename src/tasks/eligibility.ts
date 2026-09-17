@@ -31,8 +31,8 @@ export type TaskEligibilityRegistry = {
 };
 
 function fallbackCount(dbPath: string): number {
-  const memory = queryRows<{ count: number }>(dbPath, "SELECT COUNT(*) AS count FROM memory_entries WHERE entry_text LIKE '%[parse fallback]%';")[0]?.count ?? 0;
-  const chat = queryRows<{ count: number }>(dbPath, "SELECT COUNT(*) AS count FROM chat_messages WHERE message_text LIKE '%[parse fallback]%';")[0]?.count ?? 0;
+  const memory = queryRows<{ count: number }>(dbPath, "SELECT COUNT(*) AS count FROM memory_entries WHERE entry_text LIKE '%[parse fallback]%' OR entry_text LIKE '%[heuristic fallback]%';")[0]?.count ?? 0;
+  const chat = queryRows<{ count: number }>(dbPath, "SELECT COUNT(*) AS count FROM chat_messages WHERE message_text LIKE '%[parse fallback]%' OR message_text LIKE '%[heuristic fallback]%';")[0]?.count ?? 0;
   return memory + chat;
 }
 

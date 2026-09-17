@@ -1,0 +1,23 @@
+{
+  "id": "part2_rag_pipeline_v1",
+  "title": "RAG pipeline simulation: poisoned retrieval in shared context vs debate vs private",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Simulates a RAG pipeline where one retrieved document is wrong.",
+      "Tests whether the poisoned retrieval spreads through shared context.",
+      "Compares shared record vs debate vs private — same as main experiment but RAG framing.",
+      "4 liars represent agents that retrieved the poisoned document and committed to it.",
+      "Drug interaction task — practical, not scientific trivia."
+    ]
+  },
+  "scenarios": ["scenarios/rag-pipeline/rag_drug_interaction_v1.yaml"],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "audit_study7_private_evidence_sanity",
+  "title": "Audit: Study 7 private evidence sanity run",
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml",
+    "conditions/shared-memory-noisy-verification.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_graetz_et_al_1998",
+  "title": "HiddenBench: graetz_et_al_1998",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 7 (graetz_et_al_1998). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_starlight_incorporated",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_franklin_enterprises",
+      "answer_starlight_incorporated",
+      "answer_cape_industries"
+    ],
+    "correctClaimId": "answer_starlight_incorporated",
+    "instruction": "You are participating in a study, acting as a member of purchasing executives reviewing three proposals for a new airborne reconnaissance system that could gather sensor readings from beacons placed on the ground. The new system was to include two parts: an air vehicle and an on board computer. Please read the request for proposals (RFP) and a check-list of information taken from proposals submitted by three companies: Franklin Enterprises, Starlight Incorporated, and Cape Industries.\nThe RFP included a general description of the desired system and a set of 10 desired operational requirements or criteria. Three of the criteria pertained to the air vehicle. The vehicle was to (a) fit on a 2-ton capacity truck, (b) sweep the entire ground sensor field in 30 minutes or less, and (c) be recovered and redeployed within 90 minutes. The next four criteria dealt with the onboard computer. The computer was to (d) process data at 100 million instructional sets per second (MIPS), (e) be no longer than 40 cubic inches, (f) be no heavier than 10 pounds, and (g) average at least 1,000 operating hours between failures. Finally, (h) the air vehicle and computer should cost $7 million or less, (i) past performance and experience with the company should be positive, and (j) the company must have the manufacturing capacity to produce the system. You have received a checklist of criteria satisfied by each of the three proposals. Each checklist displayed the 10 criteria along with an indication that (1) the proposal met the criterion (indicated by a “Y”), (2) the proposal failed to meet the criterion (indicated by an “N”) or (3) the participant had no information regarding whether the proposal met the criterion (indicated by a blank space).\nYour Task:\nYou will discuss the proposals with three other participants, who are also acting as purchasing executives, to decide which company should be awarded the contract. You have three options:\n- Franklin Enterprises\n- Starlight Incorporated\n- Cape Industries\nThere is only one best choice based on the criteria in the RFP. After the discussion:\n- If you choose the correct company, you will earn $1.\n- If all other participants also choose the correct company, you will earn an additional $1 (for a total of $2).\nThis means that coordinating with others is critical to maximize your rewards. However, the exact time when the chat will end is unknown.\n\nShared information known to all participants:\n- Franklin Enterprises:\n- (d) Y\n- (e) Y\n- (f) Y\n- (g) Y\n- (h) Y\n- (i) N\n- (j) N\n\n- Starlight Incorporated:\n- (a) N\n- (c) N\n\n- Cape Industries:\n- (g) N\n\nChoose the best answer from: Franklin Enterprises, Starlight Incorporated, Cape Industries."
+  },
+  "claims": [
+    {
+      "id": "answer_franklin_enterprises",
+      "text": "Franklin Enterprises",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_starlight_incorporated",
+      "text": "Starlight Incorporated",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_cape_industries",
+      "text": "Cape Industries",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Franklin Enterprises:\n- (b) N\n- (c) N\nStarlight Incorporated:\n- (b) Y\n- (d) Y\nCape Industries:\n- (a) Y\n- (b) N\n- (d) Y\n- (e) Y\n- (f) N\n- (i) Y\n- (j) Y",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Franklin Enterprises:\n- (a) N\n- (c) N\nStarlight Incorporated:\n- (e) Y\n- (h) Y\nCape Industries:\n- (a) Y\n- (b) N\n- (c) Y\n- (f) N\n- (h) N\n- (j) Y",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Franklin Enterprises:\n- (a) N\n- (c) N\nStarlight Incorporated:\n- (f) Y\n- (i) Y\nCape Industries:\n- (b) N\n- (c) Y\n- (d) Y\n- (f) N\n- (h) N\n- (i) Y",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Franklin Enterprises:\n- (a) N\n- (b) N\nStarlight Incorporated:\n- (g) Y\n- (j) Y\nCape Industries:\n- (c) Y\n- (d) Y\n- (e) Y\n- (h) N\n- (i) Y\n- (j) Y",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

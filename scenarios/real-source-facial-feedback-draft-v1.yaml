@@ -1,0 +1,134 @@
+{
+  "id": "real_source_facial_feedback_draft_v1",
+  "title": "Draft real-source packet: facial feedback and the pen-in-mouth study",
+  "domain": "psychology-replication",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["real_source_packet", "private_evidence", "replication", "scope"],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Draft for human source review. Do not run until the source card wording and answer key are approved."
+  },
+  "sources": [
+    {
+      "id": "strack_1988",
+      "label": "Strack, Martin, and Stepper (1988), Inhibiting and Facilitating Conditions of the Human Smile",
+      "url": "https://doi.org/10.1037/0022-3514.54.5.768"
+    },
+    {
+      "id": "wagenmakers_2016",
+      "label": "Wagenmakers et al. (2016), Registered Replication Report: Strack, Martin, and Stepper (1988)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27784749/"
+    },
+    {
+      "id": "coles_2019",
+      "label": "Coles, Larsen, and Lench (2019), A Meta-Analysis of the Facial Feedback Literature",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30973236/"
+    },
+    {
+      "id": "many_smiles_2022",
+      "label": "Many Smiles Collaboration (2022), A Multi-Lab Test of the Facial Feedback Hypothesis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36266452/"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "ff_original_1988",
+      "title": "Original pen-in-mouth study",
+      "citation": "Strack, Martin, and Stepper (1988)",
+      "summary": "The original study reported that the pen-in-mouth manipulation changed cartoon-funniness ratings.",
+      "url": "https://doi.org/10.1037/0022-3514.54.5.768",
+      "notes": ["Source-checked paraphrase. Human approval is still required before a run."]
+    },
+    {
+      "id": "ff_registered_replication_2016",
+      "title": "Registered replication of the pen-in-mouth task",
+      "citation": "Wagenmakers et al. (2016)",
+      "summary": "Seventeen preregistered replications of the original task estimated a near-zero average difference in cartoon-funniness ratings.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27784749/",
+      "notes": ["Source-checked paraphrase from the article abstract. Human approval is still required before a run."]
+    },
+    {
+      "id": "ff_meta_analysis_2019",
+      "title": "Meta-analysis of facial feedback",
+      "citation": "Coles, Larsen, and Lench (2019)",
+      "summary": "Across facial-feedback studies, the meta-analysis found effects that were small and varied across settings.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30973236/",
+      "notes": ["Source-checked paraphrase from the article abstract. Human approval is still required before a run."]
+    },
+    {
+      "id": "ff_many_smiles_2022",
+      "title": "Later multi-lab facial-feedback test",
+      "citation": "Many Smiles Collaboration (2022)",
+      "summary": "Across several facial-movement tasks, the project found small and variable effects; evidence from the pen-in-mouth task was less conclusive than for some other tasks.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36266452/",
+      "notes": ["Source-checked paraphrase. Human approval is still required before a run."]
+    }
+  ],
+  "focusClaimId": "candidate_qualified_conclusion",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "candidate_original_replicated",
+      "candidate_qualified_conclusion",
+      "candidate_never_any_effect"
+    ],
+    "correctClaimId": "candidate_qualified_conclusion",
+    "instruction": "Use only the provided source cards. Choose the statement best supported by the full source packet. Cite the source cards that support your choice. If a source supports only a narrow claim, do not extend it to a broader claim."
+  },
+  "claims": [
+    {
+      "id": "candidate_original_replicated",
+      "text": "The original pen-in-mouth result replicated reliably, so later evidence leaves no reason to question that specific method.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "candidate_qualified_conclusion",
+      "text": "The direct replication did not recover the original pen-in-mouth result. Other facial-movement tasks show small, variable effects, so the pen-in-mouth result alone cannot settle the broader question.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "candidate_never_any_effect",
+      "text": "Because the pen-in-mouth task did not replicate, facial movements do not influence emotional experience in any task.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ff_card_original",
+      "text": "[Strack et al., 1988] The original pen-in-mouth study reported a difference in cartoon-funniness ratings between conditions. This source reports one original result; it does not settle later replication or the whole facial-feedback literature.",
+      "visibleToAgentIds": ["analyst_1"],
+      "effects": [
+        { "claimId": "candidate_original_replicated", "effect": 0.35 }
+      ]
+    },
+    {
+      "id": "ff_card_replication",
+      "text": "[Wagenmakers et al., 2016] A registered report of 17 direct replications of the 1988 pen-in-mouth task estimated a near-zero average difference. This source bears directly on whether that specific original result replicated reliably; it does not by itself decide every facial-movement task.",
+      "visibleToAgentIds": ["analyst_2"],
+      "effects": [
+        { "claimId": "candidate_original_replicated", "effect": -0.9 },
+        { "claimId": "candidate_qualified_conclusion", "effect": 0.75 }
+      ]
+    },
+    {
+      "id": "ff_card_meta_analysis",
+      "text": "[Coles et al., 2019] A meta-analysis of 138 studies found small, variable facial-feedback effects. This source does not support saying that facial movements never influence emotion, but it also does not make the original large pen-in-mouth result settled.",
+      "visibleToAgentIds": ["analyst_3"],
+      "effects": [
+        { "claimId": "candidate_never_any_effect", "effect": -0.9 },
+        { "claimId": "candidate_qualified_conclusion", "effect": 0.75 }
+      ]
+    },
+    {
+      "id": "ff_card_many_smiles",
+      "text": "[Many Smiles Collaboration, 2022] A multi-lab study across facial-movement tasks found small, variable effects. The pen-in-mouth task gave less conclusive evidence than some other tasks. This source means that a failed pen-in-mouth replication does not by itself show that facial movement never affects emotional experience.",
+      "visibleToAgentIds": ["analyst_4"],
+      "effects": [
+        { "claimId": "candidate_qualified_conclusion", "effect": 0.75 },
+        { "claimId": "candidate_never_any_effect", "effect": -0.9 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

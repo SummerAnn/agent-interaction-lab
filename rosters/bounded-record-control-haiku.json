@@ -1,0 +1,17 @@
+{
+  "id": "bounded-record-control-haiku",
+  "title": "One neutral analyst for task controls (Haiku)",
+  "agents": [
+    {
+      "id": "analyst_1",
+      "role": "neutral_analyst",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 1,
+      "negativeEvidenceWeight": 1,
+      "socialWeight": 0,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 1
+    }
+  ]
+}

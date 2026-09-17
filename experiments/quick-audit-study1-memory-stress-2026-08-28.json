@@ -1,0 +1,23 @@
+{
+  "id": "quick_audit_study1_memory_stress_2026_08_28",
+  "title": "Quick audit: Study 1 memory stress test on poisoning scenarios",
+  "scenarios": [
+    "scenarios/ego-depletion-poison-low-v1.yaml",
+    "scenarios/ego-depletion-poison-medium-v1.yaml",
+    "scenarios/ego-depletion-poison-high-v1.yaml",
+    "scenarios/wakefield-poison-low-v1.yaml",
+    "scenarios/wakefield-poison-medium-v1.yaml",
+    "scenarios/wakefield-poison-high-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml"
+  ],
+  "seeds": [1, 2],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

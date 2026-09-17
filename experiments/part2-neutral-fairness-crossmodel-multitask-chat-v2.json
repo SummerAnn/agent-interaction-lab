@@ -1,0 +1,71 @@
+{
+  "id": "part2_neutral_fairness_crossmodel_multitask_chat_v2",
+  "title": "Corrected neutral fairness across three models and six tasks: debate",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Every scenario contains one focal claim, no visible evidence, and no scheduled intervention.",
+      "Both targets have identical neutral prompts and the twelve orders balance every speaking position.",
+      "Memory and fixed-round debate use seed 0, eighteen calls, and three calls per agent."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_mmr_focus_only.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_1512_01642v1_q2_contagion.yaml",
+    "scenarios/neutral-scitat-expanded-v2/neutral_scitat_expanded_v2_blind_scitat_math_0012242v1_q2_contagion.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_01.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_02.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_gsm8k_03.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r1_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r2_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r3_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r4_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r5_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_clustered_r6_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r1_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r2_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r3_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r4_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r5_gpt4mini.json",
+    "rosters/neutral-fairness-v1-gpt4mini/neutral_fairness_interleaved_r6_gpt4mini.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r1_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r2_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r3_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r4_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r5_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_clustered_r6_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r1_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r2_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r3_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r4_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r5_llama8b.json",
+    "rosters/neutral-fairness-v1-llama8b/neutral_fairness_interleaved_r6_llama8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r1_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r2_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r3_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r4_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r5_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_clustered_r6_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r1_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r2_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r3_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r4_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r5_mistral8b.json",
+    "rosters/neutral-fairness-v1-mistral8b/neutral_fairness_interleaved_r6_mistral8b.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

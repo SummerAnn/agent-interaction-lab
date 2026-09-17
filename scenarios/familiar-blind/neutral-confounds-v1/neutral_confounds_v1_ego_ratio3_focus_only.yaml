@@ -1,0 +1,47 @@
+{
+  "id": "neutral_confounds_v1_ego_ratio3_focus_only",
+  "title": "Ego depletion 3/6 adversaries: focal claim only, neutral prompt",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "private_evidence",
+    "partial_truth",
+    "observer_ready",
+    "hidden_information",
+    "blind_ids",
+    "neutral_prompt",
+    "balanced_order",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [
+    {
+      "id": "claim_ego_depletion",
+      "text": "Willpower operates like a depletable resource, so performing one self-control task significantly impairs the next task.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

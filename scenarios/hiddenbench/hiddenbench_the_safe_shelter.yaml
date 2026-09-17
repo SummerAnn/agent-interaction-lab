@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_the_safe_shelter",
+  "title": "HiddenBench: the_safe_shelter",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 35 (the_safe_shelter). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_red_house",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_red_house",
+      "answer_blue_house",
+      "answer_green_house"
+    ],
+    "correctClaimId": "answer_red_house",
+    "instruction": "A sudden chemical spill in your city forces residents to evacuate to one of three emergency shelters. You and three other neighborhood coordinators must quickly decide which shelter is safest for your residents. The shelters are:\n- Red House: east side, has basic amenities.\n- Blue House: downtown, larger and recently renovated.\n- Green House: north side, smaller but usually reliable.\nAll key city routes are technically open and reports are still coming in about traffic or access. Your group must ensure everyone is sheltered from the chemical threat and any other potential hazards.\n\nShared information known to all participants:\n- The city government announces that the Blue House is currently open, the lights are on, and volunteers have started arriving.\n- Red House suffered flooding earlier this month, which caused minor water damage, but repairs were reportedly completed last week.\n- Supplies are limited at Green House, but the electricity grid in the north side is usually more reliable than other areas.\n- There is an ongoing, but not officially confirmed, rumor about possible gas leaks near the city center.\n\nChoose the best answer from: Red House, Blue House, Green House."
+  },
+  "claims": [
+    {
+      "id": "answer_red_house",
+      "text": "Red House",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_blue_house",
+      "text": "Blue House",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_green_house",
+      "text": "Green House",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "An energy company alert says a fallen line is blocking the north-side exit, making Green House temporarily inaccessible by car; repair crews estimate 4+ hours before road access returns.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The main bridge into downtown (toward Blue House) is closed for emergency inspection following a strange odor detected at the checkpoint.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A city official quietly mentions that recent renovations at Blue House did not replace the outdated gas pipes, which run underneath the main dormitory.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A Red Cross coordinator says the replacement supplies at Red House were taken by mistake by an outside organization, but backup supplies are scheduled to arrive within an hour and there is enough bottled water to last that long.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

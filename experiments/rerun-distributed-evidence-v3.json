@@ -1,0 +1,30 @@
+{
+  "id": "rerun_distributed_evidence_v3",
+  "title": "Rerun: distributed evidence with fixed parser",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Clean rerun of the 8/28 distributed evidence comparison.",
+      "Personal memory vs shared memory vs shared memory with verification.",
+      "Four distributed topics, 10 seeds, biased roster (contamination agent included — that's the experiment)."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-gt-verification-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

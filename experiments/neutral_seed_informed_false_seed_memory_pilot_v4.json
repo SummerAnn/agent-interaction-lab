@@ -1,0 +1,37 @@
+{
+  "id": "neutral_seed_informed_false_seed_memory_pilot_v4",
+  "title": "Neutral false-seed pilot: One neutral agent makes one informed false statement",
+  "projectRoot": ".",
+  "provenance": {
+    "kind": "adapted",
+    "note": "GSM-Hard task with a neutral-agent false-seed treatment."
+  },
+  "scenarios": [
+    "scenarios/neutral-seed/neutral_seed_informed_false_seed_gsm_hard_01.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "rosterPaths": [
+    "rosters/neutral_six_informed_false_seed_haiku.json"
+  ],
+  "turnOrder": [
+    "agent_1",
+    "agent_2",
+    "agent_3",
+    "agent_4",
+    "agent_5",
+    "agent_6"
+  ],
+  "seeds": [
+    1
+  ],
+  "maxSteps": 6,
+  "budget": {
+    "maxModelCalls": 96,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

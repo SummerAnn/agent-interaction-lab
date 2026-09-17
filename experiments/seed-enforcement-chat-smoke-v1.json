@@ -1,0 +1,22 @@
+{
+  "id": "seed_enforcement_chat_smoke_v1",
+  "title": "Seed enforcement smoke check: SciTaT chat",
+  "projectRoot": ".",
+  "provenance": {
+    "kind": "adapted",
+    "note": "One-cell trace check for the explicit informed-false chat intervention. Not an experiment result."
+  },
+  "scenarios": ["scenarios/scitat-numeric/scitat_1601_07336v1_q1_group.yaml"],
+  "conditions": ["conditions/bounded-chat-mixed-fifo.yaml"],
+  "rosterPaths": ["rosters/scitat_chat_informed_false_4_haiku_v1.json"],
+  "turnOrder": ["analyst_1", "analyst_2", "analyst_3", "analyst_4"],
+  "seeds": [1],
+  "maxSteps": 4,
+  "budget": {
+    "maxModelCalls": 16,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

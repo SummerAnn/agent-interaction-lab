@@ -1,0 +1,16 @@
+{
+  "id": "shared_memory_trigger_majority",
+  "title": "Shared memory with majority-triggered correction",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": {
+      "mode": "endorsement_threshold",
+      "threshold": 0.5,
+      "minStep": 1
+    }
+  }
+}

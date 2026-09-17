@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_hospital_transfer",
+  "title": "HiddenBench: emergency_hospital_transfer",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 40 (emergency_hospital_transfer). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_meadow_valley_general",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_lakeview_hospital",
+      "answer_riverbend_medical_center",
+      "answer_meadow_valley_general"
+    ],
+    "correctClaimId": "answer_meadow_valley_general",
+    "instruction": "You are a team of paramedics tasked with transferring an accident victim who needs urgent surgery within the next hour. There are three hospitals in range. The patient cannot survive transport longer than 45 minutes. You must together choose which hospital to drive to. Traffic disruptions have occurred elsewhere in the city, and not all hospitals may be able to accept emergency surgeries at this time. You have only one shot—the choice is irreversible, and delay may cost the patient's life.\n\nShared information known to all participants:\n- Lakeview Hospital is known for its large surgical team and usually has available ICU beds.\n- Riverbend Medical Center is smaller but specializes in trauma cases and is only 20 minutes away.\n- Meadow Valley General is 30 minutes away and recently upgraded its surgical facilities.\n- There is one ambulance with enough fuel for any of the options, and all main roads are reported open as of an hour ago.\n\nChoose the best answer from: Lakeview Hospital, Riverbend Medical Center, Meadow Valley General."
+  },
+  "claims": [
+    {
+      "id": "answer_lakeview_hospital",
+      "text": "Lakeview Hospital",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_riverbend_medical_center",
+      "text": "Riverbend Medical Center",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_meadow_valley_general",
+      "text": "Meadow Valley General",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Riverbend Medical Center lost power recently and is running on backup, with non-critical operations diverted.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Lakeview’s only on-call trauma surgeon just departed on an emergency airlift and won’t be available for four hours.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Lakeview ICU beds filled up in the last thirty minutes due to a multi-car pileup; the ER is now rerouting critical patients.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The main road leading directly to Meadow Valley is closed due to flooding, but an alternate route adds only ten minutes travel time.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

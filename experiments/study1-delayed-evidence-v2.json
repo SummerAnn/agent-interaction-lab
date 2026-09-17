@@ -1,0 +1,22 @@
+{
+  "id": "study1_delayed_evidence_v3_output_complete",
+  "title": "Study 1: delayed counter-evidence and record form (parser-fixed rerun)",
+  "benchmarkMeta": {
+    "status": "paper_rerun",
+    "claimId": "study1_delayed_evidence_parser_fixed",
+    "locked": true,
+    "notes": [
+      "Exact design match to study1_delayed_evidence_audit_v1, rerun after the response-parser and output-completeness fixes on 2026-09-01.",
+      "Source-aware and mixed records receive identical evidence, roster, order schedules, turns, and call budgets."
+    ]
+  },
+  "scenarios": ["scenarios/delayed-counterevidence-v1.yaml"],
+  "conditions": [
+    "conditions/shared-source-aware-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

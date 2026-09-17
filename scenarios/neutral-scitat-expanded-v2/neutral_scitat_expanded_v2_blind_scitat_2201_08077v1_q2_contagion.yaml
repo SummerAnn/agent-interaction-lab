@@ -1,0 +1,51 @@
+{
+  "id": "neutral_scitat_expanded_v2_blind_scitat_2201_08077v1_q2_contagion",
+  "title": "blind_scitat_2201_08077v1_q2_contagion: neutral no-context replication",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "expanded_scitat_replication",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "option_a",
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "How many cells in the table have eigenvalues smaller than $10^{-10}$?\n\nProposed answer to evaluate: The numeric answer is 19.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

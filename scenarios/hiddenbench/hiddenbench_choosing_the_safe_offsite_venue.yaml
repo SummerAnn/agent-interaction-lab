@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_choosing_the_safe_offsite_venue",
+  "title": "HiddenBench: Choosing the Safe Offsite Venue",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 44 (Choosing the Safe Offsite Venue). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_hilltop_retreat",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_downtown_hotel",
+      "answer_riverside_conference_center",
+      "answer_hilltop_retreat"
+    ],
+    "correctClaimId": "answer_hilltop_retreat",
+    "instruction": "You are part of a four-person team planning a critical company offsite event set for tomorrow. The event must proceed as scheduled, and all the most important clients and company leaders are set to attend. However, a city-wide transport crisis has just broken out: major subway lines are shut down, roads are jammed due to a multi-car pileup, and forecasts predict severe weather later in the day.\n\nYou have three potential venues ready to go. Each provides similar meeting facilities and catering, but due to the evolving crisis, it is vital to pick the venue that everyone can actually reach, that will not become isolated, and where basic services (food, power) will be reliable. Your team's decision is final and must be made quickly.\n\nShared information known to all participants:\n- Downtown Hotel is on the main metro line with many taxis queued up nearby.\n- The Riverside Conference Center has backup power and is outside of the most congested traffic zones.\n- Hilltop Retreat is accessible by two highways and has plenty of parking, though it lacks standard public transport connections.\n- All venues currently have food for 100 attendees and backup generators.\n\nChoose the best answer from: Downtown Hotel, Riverside Conference Center, Hilltop Retreat."
+  },
+  "claims": [
+    {
+      "id": "answer_downtown_hotel",
+      "text": "Downtown Hotel",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_riverside_conference_center",
+      "text": "Riverside Conference Center",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hilltop_retreat",
+      "text": "Hilltop Retreat",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The city power company advises that the Downtown Hotel's generator needs immediate refueling, and with traffic at a standstill, fuel can't reach it in time. The hotel risks blackouts if the outage lasts more than an hour.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The main bridge to Riverside Conference Center has just been shut for emergency repairs due to a crack found after an aftershock earlier today.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "An urgent news report says that flooding has started at key subway stations serving Downtown Hotel, and authorities expect the metro line to close soon.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The alternate highway to Hilltop Retreat is partially blocked by fallen trees: only the main highway remains open, and it is slow, but passable with caution.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

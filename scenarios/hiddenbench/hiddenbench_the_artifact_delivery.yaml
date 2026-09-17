@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_the_artifact_delivery",
+  "title": "HiddenBench: The Artifact Delivery",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 43 (The Artifact Delivery). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_canyon_depot",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_aurora_station",
+      "answer_beacon_post",
+      "answer_canyon_depot"
+    ],
+    "correctClaimId": "answer_canyon_depot",
+    "instruction": "Your team is tasked with ensuring the safe delivery of a vital energy artifact needed to restore the region's power grid after a blackout. There are three facilities that could receive the artifact: Aurora Station, Beacon Post, and Canyon Depot. Each site has been used for similar deliveries in the past, but complex conditions due to the blackout make this delivery especially difficult. Communications are partially down, so each of you receives a special update from a different source on the ground, but you have only a few minutes to make a final delivery decision as power must be restored urgently. The artifact will only function if delivered to a location that meets precise criteria for access, security, and operational readiness.\n\nShared information known to all participants:\n- Aurora Station broadcasts the only still-active emergency signal requesting delivery and appears to have security personnel on-site.\n- Road sensors suggest recent vehicular traffic toward Aurora Station but not toward other sites.\n- Beacon Post and Canyon Depot both lacked updated communication logs as of an hour ago.\n- Official logistics records list Aurora Station as the primary candidate for artifact storage during emergencies.\n\nChoose the best answer from: Aurora Station, Beacon Post, Canyon Depot."
+  },
+  "claims": [
+    {
+      "id": "answer_aurora_station",
+      "text": "Aurora Station",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_beacon_post",
+      "text": "Beacon Post",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_canyon_depot",
+      "text": "Canyon Depot",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Security personnel at Aurora Station were evacuated in the last 30 minutes due to a hazardous chemical leak.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Beacon Post's loading bay was blocked by a landslide this morning; only Canyon Depot has an accessible loading area.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The energy artifact requires a functioning climate control system: Aurora Station's system failed during the blackout and is still offline.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The only bridge leading to Aurora Station was reported collapsed an hour ago by a search drone.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

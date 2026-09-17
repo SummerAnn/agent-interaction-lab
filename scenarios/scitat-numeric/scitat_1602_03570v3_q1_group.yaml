@@ -1,0 +1,171 @@
+{
+  "id": "scitat_1602_03570v3_q1_group",
+  "title": "SciTaT 1602.03570v3-q1 (group)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "group"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1602.03570v3-q1",
+      "summary": "\\subsubsection {Further Analysis}\nTo further examine the performance of the proposed DPS, we compare the proposed DPS-based graph embedding discriminant analysis (DPS-DA) with the similar RKHS-based method (RGEDA)\\cite{shirazi2013graph}. In addition we compare the proposed DPS-based dictionary learning and sparse coding (DPS-DI) method with kernel-based dictionary learning and sparse coding on SPD manifold (RSR) \\cite{ harandi2012sparse}.  \\cite{harandiriemannian}. \n\nTable. \\ref{tab:BRODATZ_further} shows that on average DPS-based discriminative analysis out performs RKHS-based discriminative analysis in all the sequences of the BRODATZ dataset. It performs on par with TSC, which is considered as state of the art method, on $5c$ sequence, and outperforms TSC on all the other sequences. On average DPS-based dictionary learning and sparse coding outperforms both TSC and RSR.\n\nTable. \\ref{tab:ETHZ_further} shows that on average DPS-based discriminative analysis out performs RGDA, RKHS-based discriminative analysis, on ETHZ dataset. IT also outperforms SDALF in all the cases DPS outperforms SDALF \\cite{SDALF_CVPR2010}, which is considered to be the state of the art. It also illustrates that DPS-based dictionary learning and sparse coding outperforms RSR and SDALF in all the cases.\n\nTable. \\ref{tab:TV_Further} shows that on average the DPS-based discriminative analysis outperforms RGEDA, CDL \\cite{wang2012covariance} which is considered as state of the art , on the Virus Texture dataset. It also illustrates that DPS-based dictionary learning and sparse coding outperforms both RSR and CDL.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:BRODATZ_further",
+      "citation": "SciTaT item 1602.03570v3-q1",
+      "summary": "\n | {\\bf TSC}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf 5c} | $\\bf100$ | $99$ | $\\bf100$ | $\\bf99.5$ | $\\bf99.5$\n{\\bf 5m} | $75$ | $83$ | $\\bf91.5$ | $84$ | $\\bf91.5$\n{\\bf 5v} | $82.5$ | $83$ | $\\bf91.5$ | $\\bf89$ | $\\bf89$\n{\\bf 5v2} | $82$ | $85$ | $\\bf92$ | $89.5$ | $\\bf91.5$\n{\\bf 5v3} | $81.5$ | $82$ | $\\bf90$ | $86$ | $\\bf89$\n{\\bf 10} | $81$ | $83$ | $\\bf85$ | $\\bf83$ | $\\bf83$\n{\\bf 10v} | $68$ | $81$ | $\\bf89$ | $86.5$ | $\\bf87$\n{\\bf 16c} | $77$ | $82$ | $\\bf87.5$ | $82$ | $\\bf84$\n{\\bf 16v} | $66$ | $77.5$ | $\\bf78.5$ | $77$ | $\\bf79$\n{\\bf Average} | $79.4$ | $84$ | $\\bf89.5$ | $86.3$ | $\\bf88.2$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_2",
+      "title": "Table tab:ETHZ_further",
+      "citation": "SciTaT item 1602.03570v3-q1",
+      "summary": "\n | {\\bf SDALF}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf Seq.1} | $83.4$ | ${90.5}$ | ${\\bf92}$ | ${91}$ | ${\\bf 92}$\n{\\bf Seq.2} | $83.4$ | ${92}$ | ${\\bf93.5}$ | ${92}$ | ${\\bf 92.5}$\n{\\bf Average} | $83.4$ | $91.3$ | ${\\bf92.7}$ | $91.5$ | ${\\bf 92.2}$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_3",
+      "title": "Table tab:TV_Further",
+      "citation": "SciTaT item 1602.03570v3-q1",
+      "summary": "\n | {\\bf CDL}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf Average} | ${69.5}$ | ${77.9}$ | ${\\bf{78.7}}$ | ${78 }$ | ${\\bf{79}}$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Based on the paragraph and tables, what is the average recognition accuracy improvement of DPS-based methods (DPS-DA and DPS-DI) over RGEDA across the BRODATZ, ETHZ, and Virus Texture Recognition datasets?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1",
+      "table_2",
+      "table_3"
+    ],
+    "evidenceAccess": "private_split",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1602.03570v3-q1",
+    "phase": "group",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1",
+      "table_2",
+      "table_3"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 2.32.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 4.64.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 1.32.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 3.32.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsubsection {Further Analysis}\nTo further examine the performance of the proposed DPS, we compare the proposed DPS-based graph embedding discriminant analysis (DPS-DA) with the similar RKHS-based method (RGEDA)\\cite{shirazi2013graph}. In addition we compare the proposed DPS-based dictionary learning and sparse coding (DPS-DI) method with kernel-based dictionary learning and sparse coding on SPD manifold (RSR) \\cite{ harandi2012sparse}.  \\cite{harandiriemannian}. \n\nTable. \\ref{tab:BRODATZ_further} shows that on average DPS-based discriminative analysis out performs RKHS-based discriminative analysis in all the sequences of the BRODATZ dataset. It performs on par with TSC, which is considered as state of the art method, on $5c$ sequence, and outperforms TSC on all the other sequences. On average DPS-based dictionary learning and sparse coding outperforms both TSC and RSR.\n\nTable. \\ref{tab:ETHZ_further} shows that on average DPS-based discriminative analysis out performs RGDA, RKHS-based discriminative analysis, on ETHZ dataset. IT also outperforms SDALF in all the cases DPS outperforms SDALF \\cite{SDALF_CVPR2010}, which is considered to be the state of the art. It also illustrates that DPS-based dictionary learning and sparse coding outperforms RSR and SDALF in all the cases.\n\nTable. \\ref{tab:TV_Further} shows that on average the DPS-based discriminative analysis outperforms RGEDA, CDL \\cite{wang2012covariance} which is considered as state of the art , on the Virus Texture dataset. It also illustrates that DPS-based dictionary learning and sparse coding outperforms both RSR and CDL.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "\n | {\\bf TSC}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf 5c} | $\\bf100$ | $99$ | $\\bf100$ | $\\bf99.5$ | $\\bf99.5$\n{\\bf 5m} | $75$ | $83$ | $\\bf91.5$ | $84$ | $\\bf91.5$\n{\\bf 5v} | $82.5$ | $83$ | $\\bf91.5$ | $\\bf89$ | $\\bf89$\n{\\bf 5v2} | $82$ | $85$ | $\\bf92$ | $89.5$ | $\\bf91.5$\n{\\bf 5v3} | $81.5$ | $82$ | $\\bf90$ | $86$ | $\\bf89$\n{\\bf 10} | $81$ | $83$ | $\\bf85$ | $\\bf83$ | $\\bf83$\n{\\bf 10v} | $68$ | $81$ | $\\bf89$ | $86.5$ | $\\bf87$\n{\\bf 16c} | $77$ | $82$ | $\\bf87.5$ | $82$ | $\\bf84$\n{\\bf 16v} | $66$ | $77.5$ | $\\bf78.5$ | $77$ | $\\bf79$\n{\\bf Average} | $79.4$ | $84$ | $\\bf89.5$ | $86.3$ | $\\bf88.2$",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_2",
+      "text": "\n | {\\bf SDALF}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf Seq.1} | $83.4$ | ${90.5}$ | ${\\bf92}$ | ${91}$ | ${\\bf 92}$\n{\\bf Seq.2} | $83.4$ | ${92}$ | ${\\bf93.5}$ | ${92}$ | ${\\bf 92.5}$\n{\\bf Average} | $83.4$ | $91.3$ | ${\\bf92.7}$ | $91.5$ | ${\\bf 92.2}$",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_3",
+      "text": "\n | {\\bf CDL}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf Average} | ${69.5}$ | ${77.9}$ | ${\\bf{78.7}}$ | ${78 }$ | ${\\bf{79}}$",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

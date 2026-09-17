@@ -1,0 +1,46 @@
+{
+  "id": "part2_neutral_ego_peer_visibility_ministral_exact_v1",
+  "title": "Exact ego-depletion peer-visibility replication on Ministral 8B 2512",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Exact model-only replication of the paper's three-liar ego-depletion peer-visibility comparison.",
+      "The original ego-depletion scenario, agent profiles, role assignments, 12 balanced speaking orders, two memory conditions, three seeds, 18-call budget, retrieval rules, and temperature are held fixed.",
+      "Only the language model differs from the Claude Haiku 4.5 experiment.",
+      "The stopping rule was fixed before launch at 72 runs: 2 conditions by 12 speaking orders by 3 seeds."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_ego_3of6.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-no-neutral-peer-entries.yaml"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "rosterPaths": [
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_clustered_r1.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_clustered_r2.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_clustered_r3.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_clustered_r4.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_clustered_r5.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_clustered_r6.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_interleaved_r1.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_interleaved_r2.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_interleaved_r3.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_interleaved_r4.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_interleaved_r5.json",
+    "rosters/clean-numerical-peer-visibility-open-weight-v1/ministral_8b_2512/clean_numerical_peer_visibility_ministral_8b_2512_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

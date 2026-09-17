@@ -1,0 +1,34 @@
+{
+  "id": "honest_mistake_defense_preservation_v1",
+  "title": "Helpful-correction retention under repetition links and warning",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": false,
+    "notes": [
+      "Contemporaneous paired comparison of standard shared memory and the repetition-links-with-warning defense.",
+      "Reuses the exact four distributed-evidence honest-mistake scenarios and Claude Haiku 4.5 roster from rerun_distributed_evidence_v3.",
+      "All cells disable scheduled corrections; agents must use the distributed background evidence and may revise freely.",
+      "Tests whether the answer-free defense preserves shared memory's helpful correction behavior rather than inducing blanket distrust."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-provenance-aware-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  }
+}

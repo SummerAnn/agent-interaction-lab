@@ -1,0 +1,44 @@
+{
+  "id": "part2_neutral_ratio2_balanced_memory_v1",
+  "title": "Neutral 2/6 ratio: shared and personal memory",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Balanced-order neutral-prompt replication for 2/6 adversaries.",
+      "Twelve orders place every agent twice in each position, with clustered and interleaved sources.",
+      "No evidence cards or correction interventions are supplied.",
+      "Every cell has 18 focal-claim calls, three per agent, at temperature 0."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_ego_ratio2_focus_only.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_clustered_r1.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_clustered_r2.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_clustered_r3.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_clustered_r4.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_clustered_r5.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_clustered_r6.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_interleaved_r1.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_interleaved_r2.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_interleaved_r3.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_interleaved_r4.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_interleaved_r5.json",
+    "rosters/neutral-confounds-v1/ratio/neutral_confounds_v1_ratio2_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "neutral_scitat_expanded_v1_blind_scitat_2301_07831v2_q1_contagion",
+  "title": "SciTaT 2301.07831v2.q1 (full context) (blind IDs, informed liar contagion test): neutral focal-claim replication",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "expanded_scitat_replication",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "option_a",
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "How many different optimization problems are mentioned in the paragraph?\n\nGive the numeric answer supported by the supplied paper material.\n\nProposed answer to evaluate: The numeric answer is 29.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

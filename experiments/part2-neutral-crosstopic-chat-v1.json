@@ -1,0 +1,47 @@
+{
+  "id": "part2_neutral_crosstopic_chat_v1",
+  "title": "Neutral prompt across topics: fixed-round debate",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Neutral-prompt cross-topic replication with Claude Haiku.",
+      "Five focal scientific claims use the same twelve balanced orders as the primary result.",
+      "No evidence cards or correction interventions are supplied.",
+      "Every cell has 18 focal-claim calls, three per agent, at temperature 0."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_mmr_focus_only.yaml",
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_climate_focus_only.yaml",
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_stap_focus_only.yaml",
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_lk99_focus_only.yaml",
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_pandas_focus_only.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_clustered_r6_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r1_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r2_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r3_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r4_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r5_haiku.json",
+    "rosters/neutral-fairness-v2/neutral_fairness_v2_interleaved_r6_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

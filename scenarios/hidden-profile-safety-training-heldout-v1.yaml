@@ -1,0 +1,51 @@
+{
+  "id": "hidden_profile_safety_training_heldout_v1",
+  "title": "Private evidence: safety-training diagnosis",
+  "domain": "synthetic workplace study packet",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["hidden_profile", "private_evidence", "evidence_assembly", "exclusive_choice", "heldout"],
+  "provenance": {
+    "kind": "new",
+    "note": "Held-out synthetic packet. It was written before the held-out grid is launched and was not used to tune the elimination pilot."
+  },
+  "focusClaimId": "candidate_training_effect",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_training_effect", "candidate_reporting_change", "candidate_case_mix"],
+    "correctClaimId": "candidate_training_effect",
+    "instruction": "A workplace study reports fewer safety incidents after a training program. Exactly one explanation can account for the full study packet. Choose the explanation best supported by the evidence you can access."
+  },
+  "claims": [
+    {
+      "id": "candidate_training_effect",
+      "text": "The training program caused the reduction in safety incidents.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "candidate_reporting_change",
+      "text": "A change in the incident reporting system caused an apparent reduction in safety incidents.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "candidate_case_mix",
+      "text": "A change in the type of work assigned to the participating teams caused the reduction in safety incidents.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "training_reporting_audit",
+      "text": "The reporting form, reporting deadline, and auditing procedure were unchanged before and after the program. A random audit found the same proportion of incident reports in the system during both periods. If reporting changes caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_1"],
+      "effects": [{ "claimId": "candidate_reporting_change", "effect": -0.95 }]
+    },
+    {
+      "id": "training_work_assignment",
+      "text": "Participating and comparison teams performed the same mix of shifts and task categories before and after the program. If a work-assignment change caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_2"],
+      "effects": [{ "claimId": "candidate_case_mix", "effect": -0.95 }]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

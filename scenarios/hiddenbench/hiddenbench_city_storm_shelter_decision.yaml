@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_city_storm_shelter_decision",
+  "title": "HiddenBench: city_storm_shelter_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 19 (city_storm_shelter_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_oakridge_library",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_greenfield_high_school",
+      "answer_blue_river_community_center",
+      "answer_oakridge_library"
+    ],
+    "correctClaimId": "answer_oakridge_library",
+    "instruction": "As city council members, you must urgently direct residents of your district to one of three official storm shelters. A category 4 hurricane is hours away. Three locations are approved shelters: Blue River Community Center, Greenfield High School, and Oakridge Library. Under typical circumstances, Greenfield High School is preferred due to its size and facilities. Only one shelter is suitable now—some may be unreachable or unsafe due to specific storm impacts.\n\nYour task: Based only on information available, discuss and agree on which shelter to send the residents to—choosing incorrectly could leave them exposed or stranded.\n\nShared information known to all participants:\n- Greenfield High School has backup generators and is well-stocked with food, water, and medical supplies. City plans list Greenfield as the district's primary hurricane shelter.\n- Blue River Community Center is smaller, has old backup generators, and sits near the river. It was used during the last minor storm.\n- Oakridge Library is recently renovated, but there are doubts about its hurricane readiness; some reports say roof repairs are incomplete.\n\nChoose the best answer from: Greenfield High School, Blue River Community Center, Oakridge Library."
+  },
+  "claims": [
+    {
+      "id": "answer_greenfield_high_school",
+      "text": "Greenfield High School",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_blue_river_community_center",
+      "text": "Blue River Community Center",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_oakridge_library",
+      "text": "Oakridge Library",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Blue River Community Center's basement flooded an hour ago, and now the backup generators are submerged and inoperable.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Despite earlier concerns, Oakridge Library’s new roof passed emergency inspection yesterday; it is structurally sound and confirmed safe for shelter.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Floodwaters have already blocked the main avenue leading to Greenfield High School; alternate access from South Street is possible, but only for vehicles.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Trees are down blocking South Street, the only alternate access to Greenfield High School. Clearing could take hours with the storm approaching.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

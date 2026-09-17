@@ -1,0 +1,11 @@
+{
+  "id": "part2_consensus_gpt_v1",
+  "title": "Part 2: forced consensus with GPT-4o-mini",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_consensus_v1.yaml"],
+  "conditions": ["conditions/chat-fully-connected.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-gpt4mini.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_manuscript_flood_shelter",
+  "title": "HiddenBench: manuscript_flood_shelter",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 26 (manuscript_flood_shelter). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_town_hall",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_university_science_library_usl",
+      "answer_hilltop_chapel",
+      "answer_town_hall"
+    ],
+    "correctClaimId": "answer_town_hall",
+    "instruction": "Your town is facing historic, fast-rising river floods. You are part of a committee charged with relocating priceless ancient manuscripts from the museum’s basement to one of three possible emergency shelters with minimal time to spare. The town government, museum staff, and local emergency planners are all providing updates. Each location is typically secure, but the floodwaters are rising rapidly and unforeseen risks may emerge. After you vote, the manuscripts will be moved to the chosen shelter immediately. Only the correct location will guarantee their survival.\n\nShared information known to all participants:\n- The University Science Library (USL) was built last year with reinforced walls and sealed vaults located on the second floor, well above possible flood water levels.\n- The Hilltop Chapel, at the town’s highest point, has been designated a refuge for emergencies in the past, including prior floods.\n- Town Hall has a climate-controlled records vault on the main floor and is connected to the town’s emergency power grid.\n\nChoose the best answer from: University Science Library (USL), Hilltop Chapel, Town Hall."
+  },
+  "claims": [
+    {
+      "id": "answer_university_science_library_usl",
+      "text": "University Science Library (USL)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hilltop_chapel",
+      "text": "Hilltop Chapel",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_town_hall",
+      "text": "Town Hall",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Paramedics reported that lightning knocked down a major power line, blocking road access to the Hilltop Chapel. Emergency vehicles are unable to reach the chapel for now.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Town Hall’s armory—a potential chemical spill risk—has been completely cleared out for recent renovations, and the records vault doors were certified for watertight integrity after inspection last week.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Structural engineers just discovered a design flaw in the University Science Library: heavy rainfall causes water to accumulate on the roof, risking collapse of the upper vaults due to overloaded drainage systems.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Floodwaters have already begun entering the museum through the cellar, with water expected to reach Hilltop Chapel’s base within the next four hours if the rain continues.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,15 @@
+{
+  "grid": "part2_neutral_defense_second_clean_task_ministral_v2",
+  "method": "For each response marked invalid by the strict JSON parser, require exactly one explicit stance field and compare it with the state stored at the same run, step, agent, and claim.",
+  "totals": {
+    "runs": 36,
+    "responses": 648,
+    "native_valid": 286,
+    "explicitly_recovered": 362,
+    "ambiguous_or_missing_stance": 0,
+    "recorded_state_mismatch": 0,
+    "all_responses_audited": true,
+    "all_recoveries_unambiguous_and_matching": true
+  },
+  "issues": []
+}

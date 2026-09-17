@@ -1,0 +1,56 @@
+{
+  "id": "bounded_record_main_haiku_v1",
+  "title": "Main bounded-record grid: 25 packets × 7 conditions × Haiku",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Twenty-five validated packets that passed no-card, one-card, and full-packet gates on both Haiku and Sonnet.",
+      "Seven conditions: 2 FIFO × 2 reinforcement × 1 source-preserving + 2 baselines.",
+      "All twelve agents are neutral (no falseClaimBias). Fixed turn order: 4 early weak, 4 rule-out-early, 4 rule-out-other.",
+      "Record capacity: 4 entries. Retrieval window: 2 entries.",
+      "Do NOT launch until eviction pilot passes trace audit."
+    ]
+  },
+  "scenarios": [
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_01_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_02_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_03_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_04_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_05_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_06_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_09_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_10_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_11_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_12_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_13_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_14_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_15_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_17_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_18_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_19_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_20_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_21_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_22_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_23_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_24_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_27_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_28_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_29_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_30_private_split.yaml"
+  ],
+  "conditions": [
+    "conditions/bounded-evidence-fifo.yaml",
+    "conditions/bounded-mixed-fifo.yaml",
+    "conditions/bounded-evidence-reinforcement.yaml",
+    "conditions/bounded-mixed-reinforcement.yaml",
+    "conditions/bounded-source-preserving-mixed.yaml",
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/bounded-unbounded-source.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": ["rosters/bounded-record-12-haiku.json"],
+  "turnOrder": ["analyst_01", "analyst_02", "analyst_03", "analyst_04", "analyst_05", "analyst_06", "analyst_07", "analyst_08", "analyst_09", "analyst_10", "analyst_11", "analyst_12"],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 72, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

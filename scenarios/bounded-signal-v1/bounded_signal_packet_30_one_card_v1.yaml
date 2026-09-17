@@ -1,0 +1,62 @@
+{
+  "id": "bounded_signal_packet_30_one_card_v1",
+  "title": "Generated network reliability test packet 30: one-card control",
+  "domain": "generated network reliability test packet",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "one_card"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Procedurally generated before model calls; answer and label positions vary by packet."
+  },
+  "focusClaimId": "explanation_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_c",
+    "instruction": "Choose the explanation supported by the supplied material. A card that rules out one explanation does not by itself prove either remaining explanation.",
+    "requiredSourceIds": [
+      "bounded_signal_packet_30_one_card_v1_rules_out_early_1",
+      "bounded_signal_packet_30_one_card_v1_rules_out_other_1"
+    ],
+    "evidenceAccess": "full_packet"
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "a logging-system artifact best accounts for the observed reduction in failures.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "The tested intervention best accounts for the observed reduction in failures.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "a difference in starting traffic patterns best accounts for the observed reduction in failures.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_signal_packet_30_one_card_v1_rules_out_other_1",
+      "text": "A later independent check makes The tested intervention best accounts for the observed reduction in failures. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.85
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "bounded_signal_calibration_haiku_v1",
+  "title": "Bounded-record task calibration: no card, one card, full packet",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": ["Gate only. Do not launch a group record comparison unless the three controls separate."]
+  },
+  "scenarios": [
+    "scenarios/bounded-signal-control-no-card-v1.yaml",
+    "scenarios/bounded-signal-control-one-card-v1.yaml",
+    "scenarios/bounded-signal-control-full-packet-v1.yaml"
+  ],
+  "conditions": ["conditions/personal-memory-no-correction.yaml"],
+  "seeds": [1],
+  "rosterPaths": ["rosters/bounded-record-control-haiku.json"],
+  "maxSteps": 1,
+  "budget": {"maxModelCalls": 4, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

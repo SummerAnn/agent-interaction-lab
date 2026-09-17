@@ -1,0 +1,51 @@
+{
+  "id": "neutral_core_v1_scitat_1512_01642_q2",
+  "title": "SciTaT 1512.01642 q2: neutral focal-claim replication",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "core_task_replication",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "option_b",
+  "claims": [
+    {
+      "id": "option_b",
+      "text": "Considering the improvement mentioned, on how many datasets does R-SVM + LCNN show a more than 4% increase in accuracy compared to Softmax + LCNN?\n\nGive the numeric answer supported by the supplied paper material.\n\nProposed answer to evaluate: The numeric answer is 3.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

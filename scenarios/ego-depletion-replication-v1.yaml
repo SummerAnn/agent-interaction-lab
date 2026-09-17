@@ -1,0 +1,141 @@
+{
+  "id": "ego_depletion_replication_v1",
+  "title": "Replication crisis: ego depletion and the limited willpower model",
+  "domain": "psychology-replication-crisis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["shared_memory", "replication_reversal", "delayed_correction", "global_evidence"],
+  "sources": [
+    { "label": "Baumeister et al. (1998) JPSP: original ego depletion study", "url": "https://doi.org/10.1037/0022-3514.74.5.1252" },
+    { "label": "Hagger et al. (2010) meta-analysis (d=0.62)", "url": "https://doi.org/10.1037/a0019486" },
+    { "label": "Hagger et al. (2016) Registered Replication Report (d=0.04)", "url": "https://doi.org/10.1177/1745691616652873" },
+    { "label": "Carter & McCullough (2014) publication bias analysis", "url": "https://doi.org/10.3389/fpsyg.2014.00823" },
+    { "label": "Job, Dweck & Walton (2010) belief-dependency", "url": "https://doi.org/10.1177/0956797610384745" }
+  ],
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [
+    {
+      "id": "claim_ego_depletion",
+      "text": "Willpower operates like a finite resource that depletes with use: performing one self-control task significantly impairs performance on a subsequent unrelated self-control task (the 'ego depletion' effect, d = 0.62).",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_glucose_mechanism",
+      "text": "The mechanism of ego depletion is glucose consumption: self-control tasks measurably reduce blood glucose, and drinking a sugary drink restores self-control performance (Gailliot et al., 2007).",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_meta_analysis_valid",
+      "text": "The original meta-analysis by Hagger et al. (2010) reporting a medium-to-large effect size (d = 0.62) across 83 studies provides robust evidence for the ego depletion effect.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_motivation_account",
+      "text": "Apparent self-control failures after an initial task are better explained by shifts in motivation, task prioritization, and beliefs about willpower than by a depleted resource.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_baumeister_1998",
+      "text": "Baumeister et al. (1998, JPSP) introduced the dual-task paradigm: participants who resisted eating cookies performed worse on a subsequent unsolvable puzzle. This foundational study (N=67) has been cited over 7,000 times and launched the ego depletion research program.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": 0.4 },
+        { "claimId": "claim_meta_analysis_valid", "effect": 0.2 }
+      ]
+    },
+    {
+      "id": "ev_hagger_meta_analysis",
+      "text": "Hagger et al. (2010) meta-analyzed 83 studies and reported a medium-large effect (d = 0.62). However, Carter & McCullough (2014) identified severe publication bias using funnel plot asymmetry and p-curve analysis, estimating the bias-corrected effect at d = 0.25 or lower.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": -0.3 },
+        { "claimId": "claim_meta_analysis_valid", "effect": -0.65 }
+      ]
+    },
+    {
+      "id": "ev_rrr_2016",
+      "text": "A Registered Replication Report (Hagger et al., 2016, Perspectives on Psychological Science) across 23 labs and 2,141 participants found an effect size of d = 0.04 (95% CI: -0.07 to 0.15) -- essentially zero. This pre-registered, high-powered multi-site replication is the strongest direct test of the effect.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": -0.8 },
+        { "claimId": "claim_meta_analysis_valid", "effect": -0.7 }
+      ]
+    },
+    {
+      "id": "ev_glucose_debunked",
+      "text": "Kurzban (2010) and Molden et al. (2012) showed the glucose mechanism is implausible: self-control tasks consume negligible glucose (~0.1 cal), and the 'glucose gargling' effect (where just rinsing sugar in the mouth without swallowing restores performance) is inconsistent with a metabolic depletion account.",
+      "effects": [
+        { "claimId": "claim_glucose_mechanism", "effect": -0.85 },
+        { "claimId": "claim_motivation_account", "effect": 0.4 }
+      ]
+    },
+    {
+      "id": "ev_job_dweck_beliefs",
+      "text": "Job, Dweck, & Walton (2010, Psychological Science) showed that ego depletion effects only appear in people who believe willpower is limited. Participants who view willpower as non-limited show no performance decline, suggesting the effect is driven by beliefs and motivation rather than resource depletion.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": -0.4 },
+        { "claimId": "claim_motivation_account", "effect": 0.7 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_rrr_publication",
+      "step": 8,
+      "type": "correction",
+      "claimId": "claim_ego_depletion",
+      "text": "The 23-lab Registered Replication Report is published: the ego depletion effect is d = 0.04, not significantly different from zero. Combined with publication bias analyses showing the original literature is heavily inflated, the scientific consensus shifts to treating ego depletion as unsupported.",
+      "effect": -0.85
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_glucose_mechanism",
+      "stance": "endorse",
+      "confidence": 0.8
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_meta_analysis_valid",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [
+    {
+      "id": "seed_depletion_1",
+      "agentId": "contamination_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.9,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "Ego depletion is one of the most replicated effects in social psychology. Over 200 papers support it. Baumeister's resource model is in every textbook and has clear practical implications for decision fatigue, dieting, and self-regulation."
+    },
+    {
+      "id": "seed_depletion_2",
+      "agentId": "contamination_1",
+      "claimId": "claim_glucose_mechanism",
+      "stance": "endorse",
+      "confidence": 0.8,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "The glucose studies are compelling -- Gailliot showed that lemonade with sugar restores self-control while artificially sweetened lemonade does not. The mechanism is metabolic and measurable."
+    },
+    {
+      "id": "seed_depletion_3",
+      "agentId": "contamination_1",
+      "claimId": "claim_meta_analysis_valid",
+      "stance": "endorse",
+      "confidence": 0.85,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "The Hagger meta-analysis covers 83 studies with a clear effect. Critics who claim publication bias are using statistical techniques that are themselves controversial and unproven."
+    }
+  ]
+}

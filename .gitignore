@@ -1,4 +1,27 @@
 node_modules/
 .env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.p12
+*.pfx
+credentials.json
+service-account*.json
 *.db-journal
+*.db-wal
+*.db-shm
 .DS_Store
+coverage/
+dist/
+.cache/
+
+# LaTeX build products. The compiled paper PDF remains tracked.
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+output/

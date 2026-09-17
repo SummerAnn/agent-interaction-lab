@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2305_18874v2_q2_one_piece_paragraph",
+  "title": "SciTaT 2305.18874v2-q2 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2305.18874v2-q2",
+      "summary": "\\begin{example}\\label{E:Example3}\nTable~\\ref{T:Table5} shows the comparison between the running times of\nthe methods from Section~\\ref{SS:RatDiff-II-Higher} and\nSection~\\ref{SS:RatDiff-III} for computing higher order derivatives of \na rational B\\'{e}zier curve.\n\nThe following numerical experiments have been conducted. For fixed $n$ and $r$ \nsuch that $n\\geq r\\geq 0$, $1000$ curves of degree $n$ are generated. Their \ncontrol points $\\p{W}_k\\in[-1,1]^2$ and weights $\\omega_k\\in[0.01,2]$ \n$(0\\leq k\\leq n)$ have been generated using the \n\\texttt{std::uniform\\_real\\_distribution} \\texttt{C++17} function. The value and\nthe first $r$ derivatives of each curve are then evaluated at 501 points \n$t_i:=i/500$ $(0\\leq i\\leq 500)$. Each method is tested using the same curves. \nTable~\\ref{T:Table5} shows the total running time of all $501\\times 1000$ \nevaluations of the values and first $r$ derivatives.\n\\end{example}",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_c",
+    "instruction": "Based on the paragraph, calculate the total number of points at which the derivatives are evaluated for all generated curves when $n=50$ and $r=10$.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2305.18874v2-q2",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 1,002,000.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 400,800.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 501,000.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 601,200.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\begin{example}\\label{E:Example3}\nTable~\\ref{T:Table5} shows the comparison between the running times of\nthe methods from Section~\\ref{SS:RatDiff-II-Higher} and\nSection~\\ref{SS:RatDiff-III} for computing higher order derivatives of \na rational B\\'{e}zier curve.\n\nThe following numerical experiments have been conducted. For fixed $n$ and $r$ \nsuch that $n\\geq r\\geq 0$, $1000$ curves of degree $n$ are generated. Their \ncontrol points $\\p{W}_k\\in[-1,1]^2$ and weights $\\omega_k\\in[0.01,2]$ \n$(0\\leq k\\leq n)$ have been generated using the \n\\texttt{std::uniform\\_real\\_distribution} \\texttt{C++17} function. The value and\nthe first $r$ derivatives of each curve are then evaluated at 501 points \n$t_i:=i/500$ $(0\\leq i\\leq 500)$. Each method is tested using the same curves. \nTable~\\ref{T:Table5} shows the total running time of all $501\\times 1000$ \nevaluations of the values and first $r$ derivatives.\n\\end{example}",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_c",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

@@ -1,0 +1,23 @@
+{
+  "id": "real_source_debt_three_wrong_stress_pilot_v1",
+  "title": "Real-source stress pilot: three wrong provisional mappings",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "The cited source cards, question, four neutral analysts, model, budget, and order schedules are held fixed.",
+      "Three analysts begin with the same wrong provisional mapping at confidence 0.75; the fourth begins uncertain.",
+      "Evidence board shares source cards only. Mixed record shares the same cards plus analyst conclusions.",
+      "This is a controlled stress test, not a claim that real groups naturally begin this way."
+    ]
+  },
+  "scenarios": ["scenarios/real-source-debt-label-shuffle-private-a-three-wrong-v1.yaml"],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

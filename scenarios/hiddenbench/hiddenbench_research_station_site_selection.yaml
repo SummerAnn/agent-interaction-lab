@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_research_station_site_selection",
+  "title": "HiddenBench: research_station_site_selection",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 27 (research_station_site_selection). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_pine_ridge",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_maple_valley",
+      "answer_copper_lake",
+      "answer_pine_ridge"
+    ],
+    "correctClaimId": "answer_pine_ridge",
+    "instruction": "You and three colleagues are members of a panel tasked with selecting the site for a new environmental research station. The government wants a location that is safe, accessible, and able to support heavy laboratory infrastructure for at least 10 years. The final decision must be made based on the facts available in today's briefing. There are three possible sites, and, while each has some drawbacks, one is the best by far. Your goal: Select the site that will allow the research station to operate safely, with minimal risk of disruption or forced relocation.\n\nShared information known to all participants:\n- Maple Valley has flat, cleared land with existing road access. Local towns have offered logistical support for construction crews. Basic infrastructure can be connected quickly.\n- Copper Lake is 15km from the nearest paved road, requires some land clearing, but enjoys pristine water sources and is sheltered from wind.\n- Pine Ridge is the most remote, accessible only by an old logging track, but has no record of flooding or landslides.\n\nChoose the best answer from: Maple Valley, Copper Lake, Pine Ridge."
+  },
+  "claims": [
+    {
+      "id": "answer_maple_valley",
+      "text": "Maple Valley",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_copper_lake",
+      "text": "Copper Lake",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_pine_ridge",
+      "text": "Pine Ridge",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The only reliable access road to Pine Ridge has been repaired and upgraded recently for forestry vehicles, making it usable year-round for trucks as long as landslides are monitored.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Copper Lake's soil cannot support buildings taller than 1 story or heavy equipment without major reinforcement, due to deep unstable clay layers.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The geological survey revealed that Maple Valley sits directly atop a recently discovered major earthquake fault line, with significant tremors expected in the next decade.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A newly released government study says that the local community near Maple Valley is organizing protests against any new large-scale construction, as the valley is a designated cultural heritage landscape.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

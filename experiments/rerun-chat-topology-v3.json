@@ -1,0 +1,30 @@
+{
+  "id": "rerun_chat_topology_v3",
+  "title": "Rerun: chat topology comparison with fixed parser",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Clean rerun of 8/28 chat studies with fixed parser.",
+      "Fully-connected vs star topology — star showed 0.292 false endorsement in 8/28.",
+      "Same biased roster. Star topology = contamination agent is the hub.",
+      "Produces actual transcripts for the PI's requested analysis."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected.yaml",
+    "conditions/chat-star.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

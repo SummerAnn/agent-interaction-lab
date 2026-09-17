@@ -1,4 +1,4 @@
-# Agent Society Architecture
+# Agent Interaction Lab Architecture
 
 See the canonical version at [docs/architecture.md](../docs/architecture.md).
 

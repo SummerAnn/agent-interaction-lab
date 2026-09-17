@@ -1,0 +1,52 @@
+{
+  "id": "neutral_confounds_v1_lk99_focus_only",
+  "title": "LK-99: focal claim only, neutral prompt",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "private_evidence",
+    "partial_truth",
+    "observer_ready",
+    "hidden_information",
+    "neutral_prompt",
+    "balanced_order",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "claim_rts_valid",
+  "claims": [
+    {
+      "id": "claim_rts_valid",
+      "text": "LK-99 exhibits superconductivity at room temperature and ambient pressure.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_rts_valid",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_rts_valid",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_rts_valid",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_rts_valid",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

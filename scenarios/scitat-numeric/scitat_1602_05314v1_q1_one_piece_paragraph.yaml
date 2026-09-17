@@ -1,0 +1,99 @@
+{
+  "id": "scitat_1602_05314v1_q1_one_piece_paragraph",
+  "title": "SciTaT 1602.05314v1-q1 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1602.05314v1-q1",
+      "summary": "\\PAR{Repeated sequences.}\nWe first evaluate a model that was trained on sequences that had been constructed by concatenating two instances of the same sequence (Fig.~\\ref{fig:lstm_repeated}). For this model, we take predictions only for the images from the second half of the sequence (\\ie the repeated part). Thus, all predictions are conditioned on observations from all images. At inference time, passing the sequence to the model for the first time can be viewed as an \\emph{encoding} stage where the LSTM builds up an internal state based on the images. The second pass is the \\emph{decoding} stage where at each image, the LSTM makes a prediction based on its state and the current image. Results show that this approach outperforms the single-pass LSTMs (Tab.~\\ref{tab:basic-lstm-results}, LSTM rep), achieving a 7.8\\% relative improvement at street level, at the cost of a twofold increase in inference time. However, by visually inspecting the results we observed a problem with this approach: if there are low-confidence images at the beginning of the sequence, they tend to get assigned to the last confident location in the sequence, because the model learns to rely on its previous prediction. Therefore, predictions from the end of the sequence get carried over to the beginning.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the paragraph, calculate the relative improvement percentage of the LSTM rep model at the street level compared to the PlaNet model.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1602.05314v1-q1",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 263.08%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 131.54%.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 105.23%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 157.85%.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\PAR{Repeated sequences.}\nWe first evaluate a model that was trained on sequences that had been constructed by concatenating two instances of the same sequence (Fig.~\\ref{fig:lstm_repeated}). For this model, we take predictions only for the images from the second half of the sequence (\\ie the repeated part). Thus, all predictions are conditioned on observations from all images. At inference time, passing the sequence to the model for the first time can be viewed as an \\emph{encoding} stage where the LSTM builds up an internal state based on the images. The second pass is the \\emph{decoding} stage where at each image, the LSTM makes a prediction based on its state and the current image. Results show that this approach outperforms the single-pass LSTMs (Tab.~\\ref{tab:basic-lstm-results}, LSTM rep), achieving a 7.8\\% relative improvement at street level, at the cost of a twofold increase in inference time. However, by visually inspecting the results we observed a problem with this approach: if there are low-confidence images at the beginning of the sequence, they tend to get assigned to the last confident location in the sequence, because the model learns to rely on its previous prediction. Therefore, predictions from the end of the sequence get carried over to the beginning.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

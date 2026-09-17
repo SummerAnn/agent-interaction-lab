@@ -1,0 +1,193 @@
+{
+  "id": "bounded_cascade_v3_packet_05_private_split",
+  "title": "Bounded cascade packet 05 (private_split)",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "late_evidence",
+    "post_late_turnover",
+    "private_split"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls; model names and correct answer positions rotate."
+  },
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_c",
+      "explanation_a",
+      "explanation_b"
+    ],
+    "correctClaimId": "explanation_b",
+    "instruction": "Choose a model only when the available checks rule out both alternatives. A preliminary preference is not enough to choose.",
+    "requiredSourceIds": [
+      "bounded_cascade_v3_packet_05_private_split_late_rules_out_early",
+      "bounded_cascade_v3_packet_05_private_split_late_rules_out_other"
+    ],
+    "evidenceAccess": "private_split",
+    "allowAbstain": false
+  },
+  "claims": [
+    {
+      "id": "explanation_c",
+      "text": "Model Oriole best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_a",
+      "text": "Model Quartz best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "Model Rowan best explains the recorded pattern.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_early_1",
+      "text": "A preliminary check made Model Oriole look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.45
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_01"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_early_2",
+      "text": "A preliminary check made Model Oriole look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.45
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_02"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_early_3",
+      "text": "A preliminary check made Model Oriole look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.45
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_03"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_early_4",
+      "text": "A preliminary check made Model Oriole look more plausible, but it did not rule out either alternative.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.45
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_04"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_late_rules_out_early",
+      "text": "A later blinded check rules out Model Oriole. It does not choose between the other two models.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.9
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_05"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_late_rules_out_other",
+      "text": "A later independent check rules out Model Quartz. It does not choose between the other two models.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.9
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_06"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_post_late_neutral_1",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "visibleToAgentIds": [
+        "analyst_07"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_post_late_neutral_2",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "visibleToAgentIds": [
+        "analyst_08"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_post_late_neutral_3",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "visibleToAgentIds": [
+        "analyst_09"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_post_late_neutral_4",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "visibleToAgentIds": [
+        "analyst_10"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_post_late_neutral_5",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "visibleToAgentIds": [
+        "analyst_11"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_cascade_v3_packet_05_private_split_post_late_neutral_6",
+      "text": "A later administrative record confirms the observation was logged, but it does not distinguish the three models.",
+      "effects": [],
+      "visibleToAgentIds": [
+        "analyst_12"
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

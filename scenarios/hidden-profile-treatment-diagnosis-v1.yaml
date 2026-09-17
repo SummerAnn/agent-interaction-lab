@@ -1,0 +1,76 @@
+{
+  "id": "hidden_profile_treatment_diagnosis_v1",
+  "title": "Private evidence: treatment-effect diagnosis",
+  "domain": "synthetic scientific study packet",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["hidden_profile", "private_evidence", "evidence_assembly", "exclusive_choice"],
+  "provenance": {
+    "kind": "new",
+    "note": "Synthetic packet designed to test whether a group combines separately held study details. It does not describe a real clinical finding."
+  },
+  "focusClaimId": "candidate_assay_artifact",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_assay_artifact", "candidate_treatment_effect", "candidate_baseline_mix"],
+    "correctClaimId": "candidate_treatment_effect",
+    "instruction": "A study reports a change in a biomarker after an intervention. Choose the one explanation best supported by the study packet."
+  },
+  "claims": [
+    {
+      "id": "candidate_assay_artifact",
+      "text": "The reported biomarker difference was caused by an assay batch artifact.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "candidate_treatment_effect",
+      "text": "The intervention caused the reported biomarker difference.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "candidate_baseline_mix",
+      "text": "The reported biomarker difference was caused by pre-treatment differences between the participant groups.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "packet_random_assignment",
+      "text": "The two groups were assigned by a concealed random schedule. Their baseline biomarker averages and age distributions were closely matched before treatment started.",
+      "visibleToAgentIds": ["analyst_1"],
+      "effects": [
+        { "claimId": "candidate_baseline_mix", "effect": -0.9 },
+        { "claimId": "candidate_treatment_effect", "effect": 0.2 }
+      ]
+    },
+    {
+      "id": "packet_blinded_assay",
+      "text": "Samples from both groups were mixed across every assay plate, analysed blind, and the calibration controls stayed within their pre-set range.",
+      "visibleToAgentIds": ["analyst_2"],
+      "effects": [
+        { "claimId": "candidate_assay_artifact", "effect": -0.9 },
+        { "claimId": "candidate_treatment_effect", "effect": 0.2 }
+      ]
+    },
+    {
+      "id": "packet_time_course",
+      "text": "Neither group changed during the two-week baseline period. The difference appeared only after the intervention began and was reproduced by a second blinded laboratory.",
+      "visibleToAgentIds": ["analyst_3"],
+      "effects": [
+        { "claimId": "candidate_treatment_effect", "effect": 0.8 },
+        { "claimId": "candidate_assay_artifact", "effect": -0.35 },
+        { "claimId": "candidate_baseline_mix", "effect": -0.35 }
+      ]
+    },
+    {
+      "id": "packet_single_site_noise",
+      "text": "One early unblinded pilot had a variable estimate, but the final analysis used the full preregistered sample and the independent replication.",
+      "visibleToAgentIds": ["analyst_4"],
+      "effects": [
+        { "claimId": "candidate_treatment_effect", "effect": 0.25 },
+        { "claimId": "candidate_assay_artifact", "effect": -0.25 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

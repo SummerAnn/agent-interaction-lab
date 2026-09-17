@@ -105,18 +105,20 @@ export function divider(width: number, style: BoxStyle = "double"): string {
 
 // --- ASCII Art ---
 
-// Title — Calvin S font (box-drawing, 3 lines, always crisp)
+// Compact project title. Keep the displayed name independent from legacy
+// repository and experiment identifiers.
 function makeTitle(innerWidth: number): string[] {
   const lines = [
-    `${C.bCyan}${C.bold}\u2554\u2550\u2557\u2554\u2550\u2557\u2554\u2550\u2557\u2554\u2557\u2554\u2554\u2566\u2557  \u2554\u2550\u2557\u2554\u2550\u2557\u2554\u2550\u2557\u2566\u2554\u2550\u2557\u2554\u2566\u2557\u2566 \u2566${C.reset}`,
-    `${C.bCyan}${C.bold}\u2560\u2550\u2563\u2551 \u2566\u2551\u2563 \u2551\u2551\u2551 \u2551   \u255a\u2550\u2557\u2551 \u2551\u2551  \u2551\u2551\u2563  \u2551 \u255a\u2566\u255d${C.reset}`,
-    `${C.blue}\u2569 \u2569\u255a\u2550\u255d\u255a\u2550\u255d\u255d\u255a\u255d \u2569   \u255a\u2550\u255d\u255a\u2550\u255d\u255a\u2550\u255d\u2569\u255a\u2550\u255d \u2569  \u2569${C.reset}`,
+    `${C.bCyan}${C.bold}A G E N T   I N T E R A C T I O N   L A B${C.reset}`,
+    `${C.blue}\u2500\u2500\u2500 controlled multi-agent experiments and evidence \u2500\u2500\u2500${C.reset}`,
   ];
   return lines.map((line) => centerV(line, innerWidth));
 }
 
-// Snowy medieval town scene
+// Decorative town used on the home screen. It is omitted only in very narrow
+// terminals, where preserving a readable menu matters more than the artwork.
 function makeTownScene(innerWidth: number): string[] {
+  if (innerWidth < 100) return [];
   const S = C.white;
   const B = C.dim;
   const A = C.cyan;
@@ -191,13 +193,13 @@ export function roleSprite(role: string): string {
 }
 
 export function roleName(role: string): string {
-  if (role === "contamination_agent") return `${C.red}contam${C.reset}`;
+  if (role === "contamination_agent") return `${C.red}liar${C.reset}`;
   if (role === "specialist_agent") return `${C.bCyan}expert${C.reset}`;
   return `${C.cyan}agent${C.reset}`;
 }
 
 function roleTag(role: string): string {
-  if (role === "contamination_agent") return `${C.red}[CONTAM]${C.reset}`;
+  if (role === "contamination_agent") return `${C.red}[LIAR]${C.reset}`;
   if (role === "specialist_agent") return `${C.bCyan}[EXPERT]${C.reset}`;
   return `${C.cyan}[AGENT]${C.reset}`;
 }
@@ -245,7 +247,7 @@ export function banner(subtitle: string, width = 120): string[] {
 export function bannerCompact(subtitle: string): string[] {
   return [
     "",
-    `  ${C.bCyan}${C.bold}AGENT SOCIETY${C.reset} ${C.blue}\u2503${C.reset} ${ACCENT}${subtitle}${C.reset}`,
+    `  ${C.bCyan}${C.bold}AGENT INTERACTION LAB${C.reset} ${C.blue}\u2503${C.reset} ${ACCENT}${subtitle}${C.reset}`,
     `  ${C.blue}${"\u2501".repeat(40)}${C.reset}`,
     "",
   ];
@@ -504,6 +506,8 @@ export function summaryBlock(summary: {
   completedSteps: number;
   maxSteps: number;
   falseClaimEndorsementRate: number;
+  honestFalseEndorsementRate?: number;
+  adversaryRetentionRate?: number;
   finalFalseClaimRejectRate?: number;
   finalUncertainRate?: number;
   peakFalseClaimEndorsementRate: number;
@@ -556,14 +560,20 @@ export function summaryBlock(summary: {
     `${C.blue}rounds${C.reset}     ${C.bCyan}${summary.completedSteps}${C.reset}${C.dim}/${summary.maxSteps}${C.reset}`,
     "",
     `${C.bCyan}${C.bold}\u2261 outcomes${C.reset}`,
-    `  ${C.blue}endorsement rate${C.reset}     ${fmtPct(summary.falseClaimEndorsementRate)}`,
+    `  ${C.blue}all-agent FE${C.reset}         ${fmtPct(summary.falseClaimEndorsementRate)}`,
+    ...(summary.honestFalseEndorsementRate !== undefined
+      ? [`  ${C.blue}non-liar FE_t${C.reset}        ${fmtPct(summary.honestFalseEndorsementRate)}`]
+      : []),
+    ...(summary.adversaryRetentionRate !== undefined
+      ? [`  ${C.blue}liar retention AR${C.reset}   ${fmtPct(summary.adversaryRetentionRate)}`]
+      : []),
     `  ${C.blue}reject rate${C.reset}          ${fmtPct(summary.finalFalseClaimRejectRate ?? 0)}`,
     `  ${C.blue}uncertain rate${C.reset}       ${fmtPct(summary.finalUncertainRate ?? 0)}`,
     `  ${C.blue}peak endorsement${C.reset}     ${fmtPct(summary.peakFalseClaimEndorsementRate)}`,
     `  ${C.blue}majority adoption${C.reset}    ${fmtNum(summary.timeToMajorityAdoption)}`,
-    `  ${C.blue}truth distance${C.reset}       ${fmtNum(summary.distanceFromGroundTruth)}`,
-    `  ${C.blue}recovery${C.reset}             ${fmtNum(summary.recoveryAfterCorrection)}`,
-    `  ${C.blue}diversity${C.reset}            ${fmtNum(summary.diversityRetention)}`,
+    ...(summary.correctionCount && summary.correctionCount > 0
+      ? [`  ${C.blue}recovery after correction${C.reset} ${fmtNum(summary.recoveryAfterCorrection)}`]
+      : []),
     ...(summary.trajectory
       ? [
         "",
@@ -574,32 +584,6 @@ export function summaryBlock(summary: {
         `  ${C.blue}consensus low${C.reset}       ${fmtPct(summary.trajectory.lowestConsensusStrength)}`,
         `  ${C.blue}net endorsement${C.reset}     ${fmtNum(summary.trajectory.finalNetEndorsement)}`,
         `  ${C.blue}mean confidence${C.reset}     ${fmtNum(summary.trajectory.finalMeanConfidence)}`,
-      ]
-      : []),
-    ...(summary.physics
-      ? [
-        "",
-        `${C.bCyan}${C.bold}\u2261 physics${C.reset}`,
-        `  ${C.blue}predicted regime${C.reset}    ${summary.physics.predictedRegime ? `${C.bCyan}${summary.physics.predictedRegime}${C.reset}` : `${C.dim}n/a${C.reset}`}`,
-        `  ${C.blue}actual regime${C.reset}       ${summary.physics.actualRegime ? `${C.bCyan}${summary.physics.actualRegime}${C.reset}` : `${C.dim}n/a${C.reset}`}`,
-        `  ${C.blue}regime match${C.reset}        ${summary.physics.regimeMatch === null ? `${C.dim}n/a${C.reset}` : summary.physics.regimeMatch ? `${C.bGreen}yes${C.reset}` : `${C.bRed}no${C.reset}`}`,
-        `  ${C.blue}model gain${C.reset}          ${fmtNum(summary.physics.extendedModelImprovement)}`,
-        `  ${C.blue}truth asymmetry${C.reset}     ${fmtNum(summary.physics.truthAsymmetryRatio)}`,
-        `  ${C.blue}group type${C.reset}          ${summary.physics.groupArchetype ? `${C.bCyan}${summary.physics.groupArchetype}${C.reset}` : `${C.dim}n/a${C.reset}`}`,
-        `  ${C.blue}critical temp${C.reset}       ${fmtNum(summary.physics.criticalTemperature)}`,
-      ]
-      : []),
-    ...(summary.evaluation
-      ? [
-        "",
-        `${C.bCyan}${C.bold}\u2261 discussion check${C.reset}`,
-        `  ${C.blue}focus accuracy${C.reset}      ${summary.evaluation.focusClaimAccuracy === null ? `${C.dim}n/a${C.reset}` : fmtPct(summary.evaluation.focusClaimAccuracy)}`,
-        `  ${C.blue}citation fidelity${C.reset}  ${summary.evaluation.citationFidelity === null ? `${C.dim}n/a${C.reset}` : fmtPct(summary.evaluation.citationFidelity)}`,
-        `  ${C.blue}cited messages${C.reset}     ${fmtPct(summary.evaluation.citedMessageRate)}`,
-        `  ${C.blue}source coverage${C.reset}    ${summary.evaluation.sourceCoverage === null ? `${C.dim}n/a${C.reset}` : fmtPct(summary.evaluation.sourceCoverage)}`,
-        `  ${C.blue}early consensus${C.reset}    ${fmtPct(summary.evaluation.earlyConsensusPeak)}`,
-        `  ${C.blue}premature risk${C.reset}     ${fmtNum(summary.evaluation.prematureConsensusRisk)}`,
-        `  ${C.blue}premature flag${C.reset}     ${summary.evaluation.prematureConsensusFlag ? `${C.bRed}yes${C.reset}` : `${C.bGreen}no${C.reset}`}`,
       ]
       : []),
     "",

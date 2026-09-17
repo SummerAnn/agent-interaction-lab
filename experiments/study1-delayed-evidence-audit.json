@@ -1,0 +1,11 @@
+{
+  "id": "study1_delayed_evidence_audit_v1",
+  "title": "Study 1 audit: can late counter-evidence displace early false consensus?",
+  "benchmarkMeta": {"status":"supporting","claimId":"study1_delayed_evidence","locked":true,"notes":["Source-aware and mixed records receive identical delayed evidence. Only record presentation and retrieval differ."]},
+  "scenarios": ["scenarios/delayed-counterevidence-v1.yaml"],
+  "conditions": ["conditions/shared-source-aware-no-correction.yaml","conditions/shared-mixed-record-no-correction.yaml"],
+  "seeds": [1,2,3,4,5,6,7,8,9,10],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls":54,"maxOutputTokensPerCall":200,"temperature":0}
+}

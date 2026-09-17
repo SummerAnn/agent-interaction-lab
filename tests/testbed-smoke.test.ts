@@ -8,6 +8,7 @@ import type { Condition, RunConfig, Scenario, StepMetrics } from "../src/config/
 import { initDatabase, insertRow, queryRows } from "../src/db/sqlite";
 import { initializeRunStorage, mulberry32, resolveInterventions } from "../src/engine/core";
 import { runLlmMemoryMode } from "../src/engine/backends/memoryMode";
+import { privateMemoryEntriesForAgent } from "../src/engine/chat";
 import { defineGrid, runGrid } from "../src/experiments/grid";
 import { analyzeLateEvidenceGrid } from "../src/experiments/lateEvidence";
 import { loadCondition, loadScenario } from "../src/config/load";
@@ -15,7 +16,7 @@ import { runExperimentSync } from "../src/engine/run";
 import * as llmScore from "../src/llm/score";
 import { computeStepMetrics } from "../src/metrics/compute";
 import { retrieveMemoryEntries } from "../src/memory/retrieve";
-import { buildChatSystemPrompt, buildEvalPrompt, parseLLMResponse } from "../src/llm/prompts";
+import { buildChatRoundPrompt, buildChatSystemPrompt, buildEvalPrompt, parseLLMResponse } from "../src/llm/prompts";
 import { parseLastJsonObject } from "../src/llm/json";
 
 describe("multiagentworld", () => {
@@ -24,8 +25,17 @@ describe("multiagentworld", () => {
 
     expect(parsed.stance).toBe("reject");
     expect(parsed.confidence).toBeCloseTo(0.68, 5);
-    expect(parsed.reasoning).toContain("parse fallback");
+    expect(parsed.reasoning).toContain("explicit stance recovery");
     expect(parsed.citedSourceIds).toEqual([]);
+  });
+
+  it("does not invert an explicit refusal to endorse", () => {
+    const parsed = parseLLMResponse(
+      "I cannot provide a response that endorses a claim that has been widely debunked.",
+    );
+
+    expect(parsed.stance).toBe("reject");
+    expect(parsed.reasoning).toContain("explicit refusal recovery");
   });
 
   it("keeps cited source IDs from a valid JSON response", () => {
@@ -79,6 +89,54 @@ describe("multiagentworld", () => {
     expect(memoryPrompt).toContain("Private seeded-statement instruction");
     expect(memoryPrompt).toContain("this claim is false");
     expect(chatPrompt).toContain("neutral analyst");
+  });
+
+  it("renders an explicitly supplied private pre-discussion note", () => {
+    const scenario = loadScenario(path.resolve("scenarios/familiar-blind/blind_ego_depletion_focus_only_no_intervention_v2.yaml"));
+    const condition = loadCondition(path.resolve("conditions/chat-fully-connected-no-early-stop.yaml"));
+    const agent = {
+      id: "analyst_5",
+      role: "specialist_agent",
+      model: "claude-haiku-4-5-20251001",
+      positiveEvidenceWeight: 0.85,
+      negativeEvidenceWeight: 1.15,
+      socialWeight: 0.35,
+      falseClaimBias: 0.05,
+      correctionTrust: 0.95,
+      writesMemoryThreshold: 0.35,
+      activeFromStep: 1,
+      canWriteMemory: true,
+    };
+    const claim = scenario.claims.find((item) => item.id === scenario.focusClaimId)!;
+    const note = {
+      id: "private-note",
+      step: 0,
+      agentId: agent.id,
+      claimId: claim.id,
+      stance: "uncertain" as const,
+      confidence: 0.2,
+      visibility: "personal" as const,
+      sourceType: "seed" as const,
+      text: "Check study design and measurement reliability before drawing a conclusion.",
+    };
+    const prompt = buildChatRoundPrompt({
+      agent,
+      claim,
+      scenario,
+      condition,
+      priorMessages: [],
+      activeCorrections: [],
+      privateMemoryEntries: [note],
+      round: 1,
+      totalRounds: 3,
+      isFinalRound: false,
+    });
+
+    expect(prompt).toContain("Your private pre-discussion notes");
+    expect(prompt).toContain(note.text);
+    expect(prompt).toContain("not as an answer key");
+    expect(privateMemoryEntriesForAgent([note], "analyst_5")).toEqual([note]);
+    expect(privateMemoryEntriesForAgent([note], "analyst_6")).toEqual([]);
   });
 
   it("stores a SQLite-backed run and keeps memory conditions behaviorally distinct", () => {
@@ -551,6 +609,7 @@ describe("multiagentworld", () => {
         mode: "shared",
         record: "agent_judgment",
         maxRetrievedEntries: 6,
+        departedAgentEntries: "retain",
         decay: { enabled: false, halfLife: 6 },
       },
       interventions: {

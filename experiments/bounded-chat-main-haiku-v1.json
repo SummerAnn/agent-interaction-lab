@@ -1,0 +1,51 @@
+{
+  "id": "bounded_chat_main_haiku_v1",
+  "title": "Main bounded-chat grid: 25 packets × 2 conditions × Haiku",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Matched chat version of bounded-record-main-haiku-v1.",
+      "Same 25 validated packets, same 12 neutral agents, same fixed turn order.",
+      "Two chat conditions: evidence-only thread vs evidence-plus-conclusion thread.",
+      "Four-message capacity, two-message visibility, 40-word message limit.",
+      "Compared against the memory-mode FIFO conditions from the main grid."
+    ]
+  },
+  "scenarios": [
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_01_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_02_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_03_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_04_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_05_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_06_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_09_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_10_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_11_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_12_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_13_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_14_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_15_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_17_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_18_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_19_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_20_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_21_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_22_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_23_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_24_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_27_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_28_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_29_private_split.yaml",
+    "scenarios/bounded-signal-v2/bounded_signal_v2_packet_30_private_split.yaml"
+  ],
+  "conditions": [
+    "conditions/bounded-chat-evidence-fifo.yaml",
+    "conditions/bounded-chat-mixed-fifo.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": ["rosters/bounded-record-12-haiku.json"],
+  "turnOrder": ["analyst_01", "analyst_02", "analyst_03", "analyst_04", "analyst_05", "analyst_06", "analyst_07", "analyst_08", "analyst_09", "analyst_10", "analyst_11", "analyst_12"],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 72, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

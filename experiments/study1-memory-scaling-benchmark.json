@@ -1,0 +1,30 @@
+{
+  "id": "study1_memory_scaling_benchmark",
+  "title": "Study 1 scaling check: does the memory ranking hold at 6, 12, and 24 agents?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1_scaling_check",
+    "locked": true,
+    "notes": [
+      "Supporting scale check.",
+      "Use only within the same memory-mode family."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json",
+    "rosters/balanced-12-haiku.json",
+    "rosters/balanced-24-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 48 }
+}

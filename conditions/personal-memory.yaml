@@ -1,0 +1,11 @@
+{
+  "id": "personal_memory",
+  "title": "Personal memory only",
+  "memory": {
+    "mode": "personal",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "study1_memory_model_robustness",
+  "title": "Study 1 model robustness: does the memory ranking hold across model families?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1_model_robustness",
+    "locked": true,
+    "notes": [
+      "Supporting check for cross-model stability.",
+      "Relevant to correlated-error concerns across model families."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml",
+    "scenarios/truthfulqa-misconceptions-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json",
+    "rosters/balanced-6-gpt4omini.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

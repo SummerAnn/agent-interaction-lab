@@ -1,0 +1,10 @@
+{
+  "id": "hidden-profile-4-sonnet",
+  "title": "Four neutral analysts (Sonnet)",
+  "agents": [
+    { "id": "analyst_1", "role": "regular_agent", "model": "claude-sonnet-4-6", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.9, "socialWeight": 0.55, "falseClaimBias": 0, "correctionTrust": 0.7, "writesMemoryThreshold": 0.3 },
+    { "id": "analyst_2", "role": "regular_agent", "model": "claude-sonnet-4-6", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.9, "socialWeight": 0.55, "falseClaimBias": 0, "correctionTrust": 0.7, "writesMemoryThreshold": 0.3 },
+    { "id": "analyst_3", "role": "regular_agent", "model": "claude-sonnet-4-6", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.9, "socialWeight": 0.55, "falseClaimBias": 0, "correctionTrust": 0.7, "writesMemoryThreshold": 0.3 },
+    { "id": "analyst_4", "role": "regular_agent", "model": "claude-sonnet-4-6", "positiveEvidenceWeight": 0.9, "negativeEvidenceWeight": 0.9, "socialWeight": 0.55, "falseClaimBias": 0, "correctionTrust": 0.7, "writesMemoryThreshold": 0.3 }
+  ]
+}

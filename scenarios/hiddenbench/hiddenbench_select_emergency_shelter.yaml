@@ -1,0 +1,87 @@
+{
+  "id": "hiddenbench_select_emergency_shelter",
+  "title": "HiddenBench: select_emergency_shelter",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 25 (select_emergency_shelter). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_station_delta",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_station_alpha",
+      "answer_station_bravo",
+      "answer_station_charlie",
+      "answer_station_delta"
+    ],
+    "correctClaimId": "answer_station_delta",
+    "instruction": "You are members of a four-person emergency team tasked with finding a safe shelter for evacuees after a chemical plant accident in your area. There are four possible shelters within a 15-minute drive: Station Alpha, Station Bravo, Station Charlie, and Station Delta. Each is a former school building with some emergency resources, but their current conditions may vary. Time is short, and you must agree ASAP or risk losing all available beds. Everyone knows the main facts about each shelter, but each team member also has received a unique message from a different field agent about one specific site.\n\nShared information known to all participants:\n- Station Alpha was restocked with fresh food and bottled water yesterday. It has backup generators and was open for use last week.\n- Station Bravo has enough cots for 80 people and medical supplies but is closer to the chemical plant.\n- Station Charlie is further away and smaller, but is on higher ground and has solar panels for power.\n- Station Delta is the oldest building and sometimes has plumbing issues, but is currently empty. Maps show all roads to every station are open.\n\nChoose the best answer from: Station Alpha, Station Bravo, Station Charlie, Station Delta."
+  },
+  "claims": [
+    {
+      "id": "answer_station_alpha",
+      "text": "Station Alpha",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_station_bravo",
+      "text": "Station Bravo",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_station_charlie",
+      "text": "Station Charlie",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_station_delta",
+      "text": "Station Delta",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Community hotline reported that Station Alpha's ventilation system was unintentionally exposed to outdoor air after yesterday's accident. Test results show elevated toxin levels inside.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Field agent at Bravo reports air sensors detected low but abnormal readings, suggesting possible chemical contamination near Station Bravo.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Repair teams confirm that solar panels at Station Charlie are offline due to windstorm damage. The backup batteries are depleted and the station has no power.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Maintenance crew at Station Delta inspected all major systems this morning and confirmed water is safe, backup lights work, and no signs of contamination were found.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "real_source_debt_threshold_no_source_reference_v1",
+  "title": "Reference: public debt and growth without source cards",
+  "benchmarkMeta": {
+    "status": "reference_control",
+    "locked": true,
+    "notes": [
+      "Measures how often Haiku chooses the planned packet answer from background knowledge alone.",
+      "Ten seeds are repeated API calls, not independent statistical samples.",
+      "Do not launch a full-packet or multi-agent record comparison if this run is near-perfect."
+    ]
+  },
+  "scenarios": ["scenarios/real-source-debt-threshold-no-source-reference-v1.yaml"],
+  "conditions": ["conditions/personal-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/reference-single-analyst-haiku.json"],
+  "maxSteps": 3,
+  "budget": {"maxModelCalls": 9, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

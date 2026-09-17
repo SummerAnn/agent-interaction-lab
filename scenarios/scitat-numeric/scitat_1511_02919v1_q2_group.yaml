@@ -1,0 +1,123 @@
+{
+  "id": "scitat_1511_02919v1_q2_group",
+  "title": "SciTaT 1511.02919v1-q2 (group)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "group"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1511.02919v1-q2",
+      "summary": "\\subsection {Combining Different IQA Databases}\n\\label{sec:combineDatabases}\nSince NR IQA algorithms are generally trained and tested on various splits of a single dataset (as described above), it is natural to wonder if the trained set of parameters are database specific. In order to demonstrate that the training process is simply a calibration, and that once such training is performed, an ideal blind IQA model should be able to assess the quality of any distorted image (from the set of distortions it is trained for), we evaluated the performance of the multi-model FRIQUEE algorithm on combinations of different image databases - the LIVE IQA Database \\cite{live-r2} and the LIVE Multiply Distorted IQA Database \\cite{multiply}, as well as the new LIVE In the Wild Image Quality Challenge Database. The same 80-20 training setup was followed, i.e., after combining images from the different databases, 80\\% of the randomly chosen images were used to train our DBN model and the trained model was then tested on the remaining 20\\% of the image data. We present the results in Table \\ref{tbl:combine-perf}. It is clear from Table \\ref{tbl:combine-perf} that the performance of FRIQUEE is \\emph{not} database dependent and that once trained, it is capable of accurately assessing the quality of images across the distortions (both single and multiple, of different severities) that it is trained for. The results clearly show FRIQUEE's potential to tackle the imminent deluge of visual data and the unavoidable distortions they are bound to contain.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tbl:combine-perf",
+      "citation": "SciTaT item 1511.02919v1-q2",
+      "summary": "\\small{Median lcc, Median srocc, Mean Precision (MP) and Mean Recall (MR) across 100 train-test combinations on different combinations of image datasets when DBN proposed in \\cite{friquee1, friquee2} was used.}\nImage datasets | {PLCC} | {SROCC} \n    \nLIVE IQA \\cite{live-r2}+ LIVE Challenge | 0.82 | 0.78  \n\nLIVE Challenge + LIVE Multiply \\cite{multiply} | 0.80 | 0.79   \n\nLIVE Challenge + LIVE Multiply \\cite{multiply} + LIVE IQA \\cite{live-r2} | 0.85 | 0.83",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the performance metrics provided in Table \\ref{tbl:combine-perf}, if the LIVE Challenge dataset were to account for 50\\% of the images in the combination \"LIVE Challenge + LIVE Multiply \\cite{multiply} + LIVE IQA \\cite{live-r2}\", what proportion (percentage) of the PLCC improvement from \"LIVE Challenge + LIVE Multiply\" to \"LIVE Challenge + LIVE Multiply + LIVE IQA\" could be attributed to the addition of the LIVE IQA dataset?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ],
+    "evidenceAccess": "private_split",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1511.02919v1-q2",
+    "phase": "group",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 60%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 50%.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 40%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 100%.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsection {Combining Different IQA Databases}\n\\label{sec:combineDatabases}\nSince NR IQA algorithms are generally trained and tested on various splits of a single dataset (as described above), it is natural to wonder if the trained set of parameters are database specific. In order to demonstrate that the training process is simply a calibration, and that once such training is performed, an ideal blind IQA model should be able to assess the quality of any distorted image (from the set of distortions it is trained for), we evaluated the performance of the multi-model FRIQUEE algorithm on combinations of different image databases - the LIVE IQA Database \\cite{live-r2} and the LIVE Multiply Distorted IQA Database \\cite{multiply}, as well as the new LIVE In the Wild Image Quality Challenge Database. The same 80-20 training setup was followed, i.e., after combining images from the different databases, 80\\% of the randomly chosen images were used to train our DBN model and the trained model was then tested on the remaining 20\\% of the image data. We present the results in Table \\ref{tbl:combine-perf}. It is clear from Table \\ref{tbl:combine-perf} that the performance of FRIQUEE is \\emph{not} database dependent and that once trained, it is capable of accurately assessing the quality of images across the distortions (both single and multiple, of different severities) that it is trained for. The results clearly show FRIQUEE's potential to tackle the imminent deluge of visual data and the unavoidable distortions they are bound to contain.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "\\small{Median lcc, Median srocc, Mean Precision (MP) and Mean Recall (MR) across 100 train-test combinations on different combinations of image datasets when DBN proposed in \\cite{friquee1, friquee2} was used.}\nImage datasets | {PLCC} | {SROCC} \n    \nLIVE IQA \\cite{live-r2}+ LIVE Challenge | 0.82 | 0.78  \n\nLIVE Challenge + LIVE Multiply \\cite{multiply} | 0.80 | 0.79   \n\nLIVE Challenge + LIVE Multiply \\cite{multiply} + LIVE IQA \\cite{live-r2} | 0.85 | 0.83",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

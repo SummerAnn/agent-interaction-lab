@@ -1,0 +1,13 @@
+{
+  "id": "bounded_unbounded_source",
+  "title": "Unbounded source record (all original signals remain available)",
+  "memory": {
+    "mode": "shared",
+    "record": "evidence_board",
+    "maxRetrievedEntries": 12
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

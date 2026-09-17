@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_space_evacuation_decision",
+  "title": "HiddenBench: Space Evacuation Decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 41 (Space Evacuation Decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_mars_colony",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_orion_station",
+      "answer_lunar_base",
+      "answer_mars_colony"
+    ],
+    "correctClaimId": "answer_mars_colony",
+    "instruction": "You are officers on a space station orbiting the Moon. A sudden solar storm has been detected, and you have only a short window to evacuate to a safe location before it hits. You receive a system-wide alert: all ground links are unstable; rapid decision-making is crucial. Your team must decide where to evacuate before loss of communication. Your three emergency evacuation options are:\n- Orion Station (in lunar orbit; accessed directly by station shuttle)\n- Lunar Base (surface habitat; accessed by lunar lander)\n- Mars Colony (long-range hab, reached by long-duration shuttle, ~3 hours away)\nAll three should be accessible—but resource constraints mean only one evacuation can succeed for the whole group.\n\nShared information known to all participants:\n- Orion Station's docked shuttle is prepped for immediate departure and is ready to launch at a moment's notice.\n- Lunar Base reports reinforced shielding capable of withstanding solar storms for at least 24 hours—but no confirmation if air recyclers are working.\n- Mars Colony is farther away and requires a long-duration shuttle to reach, which will take about 3 hours at best speed.\n- There is only enough oxygen on Orion Station for about 8 hours.\n\nChoose the best answer from: Orion Station, Lunar Base, Mars Colony."
+  },
+  "claims": [
+    {
+      "id": "answer_orion_station",
+      "text": "Orion Station",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lunar_base",
+      "text": "Lunar Base",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_mars_colony",
+      "text": "Mars Colony",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "An engineering message says the docking clamps on Orion Station's shuttle are jammed and would need 2-3 hours to unfasten under current power.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A message from Mars Colony says their landing pads have just been cleared for arrivals, and their backup life-support system is verified safe for incoming evacuees.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A critical oxygen recycling unit at Orion Station failed this morning; the real oxygen supply will last only 3 hours, not 8.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Recent seismic activity at Lunar Base damaged their airlocks, and they've been unable to completely seal off two habitat modules.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

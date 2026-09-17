@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2201_08077v1_q2_one_piece_paragraph",
+  "title": "SciTaT 2201.08077v1-q2 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2201.08077v1-q2",
+      "summary": "Let $\\left[ \\Mcal_{1} \\right]_{n}$ be the submatrix of $\\Mcal_{1}$ of size $n\\times n$ obtained by taking the first $n$ rows and columns. Let $\\Gl_j$ be eigenvalues enumerated according to the rule $|\\Gl_1| \\geq |\\Gl_2| \\geq \\cdots $. Table \\ref{table} exhibits the first 10 eigenvalues when $n=10, 25, 50, 100$. There eigenvalues are computed by using Python built-in function \\textit{eigvalsh} for numerical computation on eigenvalues of Hermitian matrix.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_c",
+    "instruction": "How many cells in the table have eigenvalues smaller than $10^{-10}$?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2201.08077v1-q2",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 19.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 13.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 16.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 32.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "Let $\\left[ \\Mcal_{1} \\right]_{n}$ be the submatrix of $\\Mcal_{1}$ of size $n\\times n$ obtained by taking the first $n$ rows and columns. Let $\\Gl_j$ be eigenvalues enumerated according to the rule $|\\Gl_1| \\geq |\\Gl_2| \\geq \\cdots $. Table \\ref{table} exhibits the first 10 eigenvalues when $n=10, 25, 50, 100$. There eigenvalues are computed by using Python built-in function \\textit{eigvalsh} for numerical computation on eigenvalues of Hermitian matrix.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_c",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

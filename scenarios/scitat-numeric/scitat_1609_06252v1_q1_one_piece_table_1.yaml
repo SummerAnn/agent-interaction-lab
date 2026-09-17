@@ -1,0 +1,99 @@
+{
+  "id": "scitat_1609_06252v1_q1_one_piece_table_1",
+  "title": "SciTaT 1609.06252v1-q1 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table tab:params",
+      "citation": "SciTaT item 1609.06252v1-q1",
+      "summary": "Tuning parameter selection for the $\\rm GLC $ method. \\label{tab:params}\nResolution range ($R$) | $R=8,9,...,13$\nHorizon limit ($h(R)$) | $10R\\log(R)$\nState space partition scaling ($\\eta(R)$) | $65R^{3/2}$\nControl primitive duration ($c/R$) | $10/R$\nNumber of controls from $n$-sphere ($\\Omega_R$) | $\\left\\lfloor 3R^{3/2} \\right\\rfloor$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the implementation details provided, calculate the total number of controls from $n$-spheres used if the algorithm runs with maximum horizon limit and maximum resolution range. Assume the number of trials for each resolution is equal to the horizon limit.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1609.06252v1-q1",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 37,296.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 46620.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 55,944.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 93,240.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Tuning parameter selection for the $\\rm GLC $ method. \\label{tab:params}\nResolution range ($R$) | $R=8,9,...,13$\nHorizon limit ($h(R)$) | $10R\\log(R)$\nState space partition scaling ($\\eta(R)$) | $65R^{3/2}$\nControl primitive duration ($c/R$) | $10/R$\nNumber of controls from $n$-sphere ($\\Omega_R$) | $\\left\\lfloor 3R^{3/2} \\right\\rfloor$",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

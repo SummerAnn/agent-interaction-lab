@@ -1,0 +1,23 @@
+{
+  "id": "real_source_debt_three_wrong_late_cards_pilot_v1",
+  "title": "Real-source stress pilot: late distinguishing cards",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "The source cards, four neutral analysts, wrong provisional mapping, prompt, budget, and order schedules match the completed three-wrong pilot.",
+      "Only W2 and W3 are delayed until step 5. Together they distinguish the correct mapping from the initial wrong mapping.",
+      "Evidence board shares source cards only. Mixed record shares the same cards plus analyst conclusions.",
+      "This tests whether early shared conclusions persist when the sources needed to correct them arrive later."
+    ]
+  },
+  "scenarios": ["scenarios/real-source-debt-label-shuffle-private-a-three-wrong-late-cards-v1.yaml"],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

@@ -1,0 +1,46 @@
+{
+  "id": "part2_neutral_ratio3_standardized_chat_v3",
+  "title": "Standardized neutral ratio 3/6: fixed-round debate (two repeat cohorts)",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Standardized-profile adversary-ratio replication.",
+      "Every contamination agent has the same profile and every neutral target has the same profile; only the number assigned to the contamination role changes.",
+      "Twelve explicit orders per ratio place every agent twice in every position and vary relative source placement.",
+      "Every cell has 18 focal-claim calls, three per agent, no evidence card, no correction intervention, and temperature 0.",
+      "Seeds 1 and 2 repeat every explicit order to measure provider-level repeat variability at temperature 0.",
+      "These repeats are pooled with the seed-0 v2 cohort; seed labels do not imply independent population samples."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_ego_3of6.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    1,
+    2
+  ],
+  "rosterPaths": [
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r1.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r2.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r3.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r4.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r5.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_clustered_r6.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r1.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r2.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r3.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r4.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r5.json",
+    "rosters/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_3of6_interleaved_r6.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

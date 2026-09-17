@@ -1,0 +1,35 @@
+{
+  "projectRoot": ".",
+  "seeds": [
+    1
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Official SciTaT numeric-answer items, screened before group comparison."
+  },
+  "id": "scitat_numeric_chat_screen_smoke_v2",
+  "title": "SciTaT chat screen smoke v2",
+  "scenarios": [
+    "scenarios/scitat-numeric/scitat_1210_8343v1_q1_full_context.yaml",
+    "scenarios/scitat-numeric/scitat_1210_8343v1_q1_no_context.yaml",
+    "scenarios/scitat-numeric/scitat_1210_8343v1_q1_one_piece_paragraph.yaml",
+    "scenarios/scitat-numeric/scitat_1210_8343v1_q1_one_piece_table_1.yaml"
+  ],
+  "rosterPaths": [
+    "rosters/reference-single-analyst-haiku.json"
+  ],
+  "turnOrder": [
+    "analyst_1"
+  ],
+  "conditions": [
+    "conditions/bounded-chat-evidence-fifo.yaml"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 8,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

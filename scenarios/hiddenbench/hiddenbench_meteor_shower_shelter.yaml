@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_meteor_shower_shelter",
+  "title": "HiddenBench: meteor_shower_shelter",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 20 (meteor_shower_shelter). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_shelter_alpha",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_shelter_alpha",
+      "answer_shelter_beta",
+      "answer_shelter_gamma"
+    ],
+    "correctClaimId": "answer_shelter_alpha",
+    "instruction": "You're on the surface of Mars at the research outpost 'Crimson 7'. An urgent planetary alert warns of a high-intensity meteor shower approaching. Your team's only chance of survival is to take shelter in one of three remote shelters: Alpha, Beta, or Gamma. You must choose quickly, because if you pick the wrong shelter, your entire group risks disaster. All shelters are reachably close, but previously, only one is checked per protocol at any given time. Each person has partial maintenance reports from the last safety inspection, with one unique update. Discuss and agree on which shelter to use!\n\nShared information known to all participants:\n- Shelter Beta is certified to be the most heavily shielded against impact, with sufficient supplies stockpiled for a week.\n- Shelter Alpha is closest to the main base, but last month there was a minor leak that was reportedly patched.\n- Shelter Gamma is the farthest away but had a new air purification system installed this week.\n\nChoose the best answer from: Shelter Alpha, Shelter Beta, Shelter Gamma."
+  },
+  "claims": [
+    {
+      "id": "answer_shelter_alpha",
+      "text": "Shelter Alpha",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_shelter_beta",
+      "text": "Shelter Beta",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_shelter_gamma",
+      "text": "Shelter Gamma",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The repair log for Shelter Alpha indicates that after the leak patch, full pressure tests were completed and results were 'excellent'.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Sensors detected faint seismic vibrations beneath Shelter Beta, possibly indicating underground instability, but the report says 'requires further investigation.'",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Shelter Beta's supply inventory shows a mysterious usage spike in oxygen canisters last night; the oxygen alarm system is overdue for maintenance.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Shelter Gamma's new air system was installed, but there was a recall notice for a faulty emergency ventilation back-up, and the needed replacement has not yet been delivered.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

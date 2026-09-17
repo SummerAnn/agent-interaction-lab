@@ -1,0 +1,42 @@
+{
+  "id": "scitat_informed_seed_chat_v2",
+  "title": "SciTaT chat: source cards versus false public calculation",
+  "projectRoot": ".",
+  "provenance": {
+    "kind": "adapted",
+    "note": "Uses two official SciTaT items that passed chat no-context, one-piece, and full-context controls."
+  },
+  "scenarios": [
+    "scenarios/scitat-numeric/scitat_1601_07336v1_q1_group.yaml",
+    "scenarios/scitat-numeric/scitat_2301_07831v2_q1_group.yaml"
+  ],
+  "conditions": [
+    "conditions/bounded-chat-evidence-fifo.yaml",
+    "conditions/bounded-chat-mixed-fifo.yaml"
+  ],
+  "rosterPaths": [
+    "rosters/scitat_chat_baseline_4_haiku_v1.json",
+    "rosters/scitat_chat_informed_false_4_haiku_v1.json"
+  ],
+  "turnOrder": [
+    "analyst_1",
+    "analyst_2",
+    "analyst_3",
+    "analyst_4"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "maxSteps": 4,
+  "budget": {
+    "maxModelCalls": 16,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

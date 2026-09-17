@@ -1,0 +1,16 @@
+{
+  "id": "bounded_source_preserving_mixed",
+  "title": "Four-slot source-plus-conclusion record, two slots reserved for source cards",
+  "memory": {
+    "mode": "shared",
+    "record": "mixed_record",
+    "maxRetrievedEntries": 2,
+    "maxStoredEntries": 4,
+    "evictionPolicy": "source_preserving",
+    "reservedSourceEntries": 2
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

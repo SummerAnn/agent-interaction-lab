@@ -1,0 +1,19 @@
+{
+  "id": "quick_audit_study7_private_evidence",
+  "title": "Quick audit: Study 7 private evidence",
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml",
+    "conditions/shared-memory-noisy-verification.yaml"
+  ],
+  "seeds": [1, 2],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

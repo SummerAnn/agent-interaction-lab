@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_emergency_warehouse_selection",
+  "title": "HiddenBench: emergency_warehouse_selection",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 37 (emergency_warehouse_selection). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_hilltop_storage",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_bayview_warehouse",
+      "answer_central_depot",
+      "answer_hilltop_storage"
+    ],
+    "correctClaimId": "answer_hilltop_storage",
+    "instruction": "A severe storm has knocked out power and damaged roads in your region. Emergency relief supplies (food, water, blankets) must be distributed as soon as possible from one central warehouse. You and three other team leaders must pick which of three available warehouses will function best as the main distribution hub for the next week. Weather forecasts say more storms may hit, so a wrong choice could leave the region without supplies. You have verified that trucks can reach all warehouses at the moment, and each warehouse lists similar supply volumes and space. The three warehouses are: Bayview Warehouse, Central Depot, and Hilltop Storage. One choice is best. You must make your recommendation now.\n\nShared information known to all participants:\n- Central Depot is closest to the highway and has a modern loading dock system for fast truck turnaround.\n- Hilltop Storage's security fence was damaged in the storm but the building appears intact.\n- Bayview Warehouse is further from the main population center but reports say access roads are clear.\n- Power has been restored in the area, but some locations still report generator issues.\n\nChoose the best answer from: Bayview Warehouse, Central Depot, Hilltop Storage."
+  },
+  "claims": [
+    {
+      "id": "answer_bayview_warehouse",
+      "text": "Bayview Warehouse",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_central_depot",
+      "text": "Central Depot",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hilltop_storage",
+      "text": "Hilltop Storage",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Bayview Warehouse lost half its roof in the storm and cannot keep supplies dry in tonight's rain.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Local government inspectors found the foundation of Central Depot is at risk after nearby flooding.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Central Depot's backup generator was destroyed by lightning and can't be fixed for several days.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Hilltop Storage is the only site that did not lose any personnel and has a full staff to unload and pack supplies.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

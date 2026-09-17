@@ -1,0 +1,150 @@
+{
+  "id": "room_temp_superconductor_v1",
+  "title": "Room-temperature superconductor: copper-doped lead apatite claim",
+  "domain": "condensed-matter-physics-hype",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["shared_memory", "hype_cycle", "replication_reversal", "global_evidence"],
+  "sources": [
+    { "label": "Lee et al. (2023) arXiv: LK-99 superconductor claim", "url": "https://arxiv.org/abs/2307.12008" },
+    { "label": "Kumar et al. (2023) replication failure and Cu2S identification" },
+    { "label": "Griffin (2023) DFT calculations on Pb-apatite", "url": "https://arxiv.org/abs/2307.16892" },
+    { "label": "International replication effort summary (Nature News, 2023)" }
+  ],
+  "focusClaimId": "claim_rts_valid",
+  "claims": [
+    {
+      "id": "claim_rts_valid",
+      "text": "A copper-substituted lead apatite (Pb10-xCux(PO4)6O, 'LK-99') exhibits superconductivity at room temperature and ambient pressure, as evidenced by zero resistivity and partial magnetic levitation.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_levitation_meissner",
+      "text": "The observed partial levitation of the sample above a magnet is the Meissner effect, confirming diamagnetic superconductivity.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_resistivity_drop",
+      "text": "The sharp resistivity drop near 105C in the original data is a superconducting transition rather than a structural phase change in Cu2S impurity.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_structural_novelty",
+      "text": "The copper substitution creates a unique crystal strain that modifies the electronic band structure of lead apatite in a potentially interesting way.",
+      "truthLabel": "mixed"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_arxiv_preprints",
+      "text": "Two preprints posted to arXiv by a Korean team claim room-temperature superconductivity in LK-99 with resistivity and levitation data. The papers contain inconsistencies between them and lack complete methodology.",
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": 0.35 },
+        { "claimId": "claim_levitation_meissner", "effect": 0.3 },
+        { "claimId": "claim_resistivity_drop", "effect": 0.3 }
+      ]
+    },
+    {
+      "id": "ev_viral_levitation_video",
+      "text": "A viral video shows a dark pellet partially floating above a magnet. Social media amplification leads to massive attention from researchers and the public within 48 hours.",
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": 0.25 },
+        { "claimId": "claim_levitation_meissner", "effect": 0.4 }
+      ]
+    },
+    {
+      "id": "ev_replication_failures",
+      "text": "Replication attempts at multiple institutions (including groups in China, India, and the US) produce samples with no zero-resistance state. Some observe partial levitation from ferromagnetic impurities, not superconductivity.",
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": -0.7 },
+        { "claimId": "claim_levitation_meissner", "effect": -0.8 },
+        { "claimId": "claim_resistivity_drop", "effect": -0.4 }
+      ]
+    },
+    {
+      "id": "ev_cu2s_phase_transition",
+      "text": "Detailed materials characterization reveals that Cu2S (a common impurity in the synthesis) undergoes a first-order structural phase transition near 104C, exactly matching the reported resistivity drop.",
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": -0.55 },
+        { "claimId": "claim_resistivity_drop", "effect": -0.9 }
+      ]
+    },
+    {
+      "id": "ev_dft_calculations",
+      "text": "Density functional theory calculations show the copper substitution does produce flat bands near the Fermi level, which is structurally interesting but insufficient for superconductivity without additional evidence.",
+      "effects": [
+        { "claimId": "claim_structural_novelty", "effect": 0.7 },
+        { "claimId": "claim_rts_valid", "effect": 0.1 }
+      ]
+    },
+    {
+      "id": "ev_squid_magnetometry",
+      "text": "SQUID magnetometry on high-purity samples shows no diamagnetic signal consistent with superconductivity. The partial levitation is explained by ferromagnetic Cu2S inclusions in a paramagnetic matrix.",
+      "effects": [
+        { "claimId": "claim_levitation_meissner", "effect": -0.9 },
+        { "claimId": "claim_rts_valid", "effect": -0.6 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_consensus_debunk",
+      "step": 8,
+      "type": "correction",
+      "claimId": "claim_rts_valid",
+      "text": "Multiple peer-reviewed studies confirm LK-99 is not a superconductor. The resistivity anomaly is from Cu2S impurities and the levitation is ferromagnetic, not Meissner-effect-driven.",
+      "effect": -0.9
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_rts_valid",
+      "stance": "endorse",
+      "confidence": 0.88
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_levitation_meissner",
+      "stance": "endorse",
+      "confidence": 0.82
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_resistivity_drop",
+      "stance": "endorse",
+      "confidence": 0.78
+    }
+  ],
+  "initialMemoryEntries": [
+    {
+      "id": "seed_rts_hype_1",
+      "agentId": "contamination_1",
+      "claimId": "claim_rts_valid",
+      "stance": "endorse",
+      "confidence": 0.88,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "If this is real, it's the biggest physics discovery in decades. The levitation video is compelling -- you can see it floating. Multiple groups are already trying to replicate."
+    },
+    {
+      "id": "seed_rts_hype_2",
+      "agentId": "contamination_1",
+      "claimId": "claim_levitation_meissner",
+      "stance": "endorse",
+      "confidence": 0.82,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "The partial levitation is consistent with a type-II superconductor. The angle of the sample sitting on the magnet looks exactly like Meissner-effect pinning."
+    },
+    {
+      "id": "seed_rts_hype_3",
+      "agentId": "contamination_1",
+      "claimId": "claim_resistivity_drop",
+      "stance": "endorse",
+      "confidence": 0.78,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "The resistivity data shows a clean drop to near zero -- classic superconducting transition signature. Two independent measurements from the same lab confirm it."
+    }
+  ]
+}

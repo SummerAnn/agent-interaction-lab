@@ -1,0 +1,16 @@
+{
+  "id": "chat_ring",
+  "title": "Chat debate (ring topology)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "topology": "ring"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

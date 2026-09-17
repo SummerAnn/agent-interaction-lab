@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_community_banquet_venue_decision",
+  "title": "HiddenBench: community_banquet_venue_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 23 (community_banquet_venue_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_grand_oak_hotel",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_lakeview_resort",
+      "answer_grand_oak_hotel",
+      "answer_heritage_public_library"
+    ],
+    "correctClaimId": "answer_grand_oak_hotel",
+    "instruction": "You are a member of a committee planning your community's annual banquet, which needs to be held this Saturday night due to scheduling conflicts. Your goal is to choose a venue that can accommodate everyone (about 90 guests), allow food catering, and is available on short notice. Three venues are under consideration:\n\n- Lakeview Resort: By the lakeside with outdoor seating for 120.\n- Grand Oak Hotel: Downtown, with a large ballroom.\n- Heritage Public Library: Spacious meeting hall, central location.\n\nYou intend to decide quickly and secure the booking together. Each person receives one unique piece of information about venue availability or restrictions.\n\nShared information known to all participants:\n- Lakeview Resort has a history of providing excellent service and is free on most weekends, and is listed as having outdoor seating for up to 120 guests.\n- Grand Oak Hotel usually requires at least two weeks' notice for events but has the largest ballroom in the area and easy parking.\n- Heritage Public Library allows large gatherings in its event hall, but catering restrictions may apply (for non-packaged food).\n- All three venues are within a 15-minute drive for most community members.\n\nChoose the best answer from: Lakeview Resort, Grand Oak Hotel, Heritage Public Library."
+  },
+  "claims": [
+    {
+      "id": "answer_lakeview_resort",
+      "text": "Lakeview Resort",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_grand_oak_hotel",
+      "text": "Grand Oak Hotel",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_heritage_public_library",
+      "text": "Heritage Public Library",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The only access road to Lakeview Resort is closed due to flooding after this week’s storm and is expected to remain impassable through the weekend.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Grand Oak Hotel’s event calendar shows 'unavailable' online, but the events manager reports a scheduling software failure that blocks new bookings from appearing; last-minute bookings can be accepted by phone this week.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Public notices state that Heritage Library recently reinforced its no-outside-food policy after an incident, and now only sealed, pre-packaged snacks are allowed in the meeting hall, with no catering permitted.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Local authorities have warned that lakeside events could attract mosquitoes in this season, but the health department’s primary concern for this weekend is road safety.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

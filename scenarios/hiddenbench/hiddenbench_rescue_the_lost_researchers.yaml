@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_rescue_the_lost_researchers",
+  "title": "HiddenBench: Rescue the Lost Researchers",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 28 (Rescue the Lost Researchers). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_forest_trail",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_river_route",
+      "answer_mountain_pass",
+      "answer_forest_trail"
+    ],
+    "correctClaimId": "answer_forest_trail",
+    "instruction": "You are part of a crisis coordination team tasked with sending help to a group of scientists lost after a sudden storm in a remote national park. Their last known location (about 18 km away) is cut off from main roads, and time is running short before nightfall. You must quickly decide which route a rescue team should use to reach them safely. There are three potential approaches: crossing the Mountain Pass, following the River Route, or hiking the Forest Trail. Each has pros and cons, and only one route is truly viable. Your reward depends on picking the correct rescue route together as a team.\n\nShared information known to all participants:\n- The River Route has been reported as unusually calm today, and local rescue teams are already stationed at its mouth.\n- The Mountain Pass is well known among hikers, though prone to rockslides during storms.\n- The Forest Trail is the least direct path, potentially requiring extra hours of hiking.\n- Radio contact with the research team was lost about 5 hours after the storm began.\n\nChoose the best answer from: River Route, Mountain Pass, Forest Trail."
+  },
+  "claims": [
+    {
+      "id": "answer_river_route",
+      "text": "River Route",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_mountain_pass",
+      "text": "Mountain Pass",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_forest_trail",
+      "text": "Forest Trail",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A local ranger reported heavy bear activity on the lower end of the River Route, making the path unsafe for unarmed teams.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "An emergency bulletin revealed that the bridge on the River Route washed out this morning and won’t be rebuilt for at least a week.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Weather data predicts renewed strong winds at higher elevations, making the Mountain Pass too dangerous for passage tonight.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Satellite images showed a large rockslide completely blocking the Mountain Pass early this afternoon.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

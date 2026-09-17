@@ -1,0 +1,99 @@
+{
+  "id": "scitat_1712_05111v1_q2_one_piece_paragraph",
+  "title": "SciTaT 1712.05111v1-q2 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1712.05111v1-q2",
+      "summary": "\\begin{figure}[tb]\n\\includegraphics[width=8.5cm]{fig2.eps}\n\\caption{\n(color online) Ground-state phase diagram with respect to the inter-spin\ninteractions $c_1^{(12)}$ and $c_2^{(12)}$ without the intra-spin\ninteractions, $c_1^{(1)} = c_1^{(2)} = c_2^{(2)} = 0$.\nThe spherical harmonic representations of the spin states are also shown,\nwhere the left- and right-hand figures indicate the spin-1 and spin-2\nstates, respectively.\nThe letter-pairs specify the spin-1 and spin-2 states, which are defined in\nFig.~\\ref{f:spin12}, and the subscript $\\pm$ indicates the sign of\n$\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)}$.\nIn the striped region, the linear combination of the polar-ferromagnetic and\npolar-biaxial nematic states are continuously degenerate.\n}\n\\label{f:noint}\n\\end{figure}\n\\begin{figure}[tb]\n\\includegraphics[width=7.6cm]{fig3.eps}\n\\caption{\n  (color online) Ground-state phase diagram for $c_1^{(1)} = -0.46$,\n  $c_1^{(2)} = 1.1$, and $c_2^{(2)} = -0.05$.\n  The ground state for $c_1^{(12)} = c_2^{(12)} = 0$ is the ferromagnetic\n  state for spin 1 and the nematic state for spin 2.\n  The region of many phases in (a) is magnified in (b).\n  The upper-case letter-pairs indicate the spin-1 and spin-2 states as\n  defined in Fig.~\\ref{f:spin12} and the lower-case letters indicate the\n  intermediate states as defined in Table~\\ref{t:abc}.\n  The subscripts $\\pm$ denote the sign of $\\bm{F}^{(1)} \\cdot\n  \\bm{F}^{(2)}$.\n  The physical quantities along the dotted line are shown in\n  Fig.~\\ref{f:ferro_nem2}(a).\n  The spin states at the black dots are shown in\n  Fig.~\\ref{f:ferro_nem2}(b).\n }\n\\label{f:ferro_nem}\n\\end{figure}\nTo see the effect of the interaction between the spin-1 and spin-2 BECs, we\nfirst consider the case without the intra-spin interactions,\n$c_1^{(1)} = c_1^{(2)} = c_2^{(2)} = 0$.\nThe spin-dependent energy then reduces to $E_{\\rm spin} = c_1^{(12)}\n\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)} + c_2^{(12)} P_1^{(12)}$.\nFigure~\\ref{f:noint} shows the ground-state phase diagram with respect to\n$c_1^{(12)}$ and $c_2^{(12)}$.\nWhen $c_1^{(12)}$ is sufficiently large and negative, the state in which the\nspin vectors $\\bm{F}^{(1)}$ and $\\bm{F}^{(2)}$ are fully-polarized in the\nsame direction is energetically favored, and the ground state is\n$\\bm{\\zeta}^{(1)} = \\bm{\\zeta}^{(1)}_F$ and $\\bm{\\zeta}^{(2)} =\n\\bm{\\zeta}^{(2)}_F$.\nWe abbreviate this state as ``FF$_+$'', in which the first and second\nletters indicate the spin-1 and spin-2 states, respectively, and the\nsubscript $+$ denotes that the two spin vectors are in the same direction.\nThe capital letters indicate the spin states shown in Fig.~\\ref{f:spin12}.\nThe energy of the FF$_+$ state is $E_{\\rm spin} = 2 c_1^{(12)}$.\nIn a similar manner, when $c_1^{(12)}$ is large and positive, the ground\nstate is the ferromagnetic state with $\\bm{F}^{(1)}$ and $\\bm{F}^{(2)}$\nbeing in opposite directions, whose energy is $E_{\\rm spin} = -2 c_1^{(12)}\n+ 3 c_2^{(12)} / 5$.\nThis phase is denoted as ``FF$_-$'', where the subscript $-$ represents that\nthe two spin vectors are in the opposite directions.\nIn general, we define the subscripts $\\pm$ to indicate the sign of\n$\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)}$.\nAs shown in Fig.~\\ref{f:noint}, there are two regions between these\nferromagnetic phases.\nWhen $c_2^{(12)} < 0$ and $c_2^{(12)} / 5 < c_1^{(12)} < c_2^{(12)} /\n10$, the ground state is $\\bm{\\zeta}^{(1)} = \\bm{\\zeta}^{(1)}_P$ and\n$\\bm{\\zeta}^{(2)} = \\bm{\\zeta}^{(2)}_{\\rm UN}$ with an energy $E_{\\rm spin}\n= 2 c_2^{(12)} / 5$, which is denoted as ``PU''.\nWhen $c_2^{(12)} > 0$ and $0 < c_1^{(12)} < 3 c_2^{(12)} / 10$, the ground\nstate is continuously degenerate: the linear combination of the ``PF''\n(polar-ferromagnetic) and ``PB'' (polar-biaxial nematic) states is the ground\nstate with an energy $E_{\\rm spin} = 3 c_2^{(12)} / 10$.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "How many distinct regions with different ground-state phases are identified in the phase diagram shown in Fig.~\\ref{f:noint}? Calculate the total number of such regions based on the provided paragraph.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1712.05111v1-q2",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\begin{figure}[tb]\n\\includegraphics[width=8.5cm]{fig2.eps}\n\\caption{\n(color online) Ground-state phase diagram with respect to the inter-spin\ninteractions $c_1^{(12)}$ and $c_2^{(12)}$ without the intra-spin\ninteractions, $c_1^{(1)} = c_1^{(2)} = c_2^{(2)} = 0$.\nThe spherical harmonic representations of the spin states are also shown,\nwhere the left- and right-hand figures indicate the spin-1 and spin-2\nstates, respectively.\nThe letter-pairs specify the spin-1 and spin-2 states, which are defined in\nFig.~\\ref{f:spin12}, and the subscript $\\pm$ indicates the sign of\n$\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)}$.\nIn the striped region, the linear combination of the polar-ferromagnetic and\npolar-biaxial nematic states are continuously degenerate.\n}\n\\label{f:noint}\n\\end{figure}\n\\begin{figure}[tb]\n\\includegraphics[width=7.6cm]{fig3.eps}\n\\caption{\n  (color online) Ground-state phase diagram for $c_1^{(1)} = -0.46$,\n  $c_1^{(2)} = 1.1$, and $c_2^{(2)} = -0.05$.\n  The ground state for $c_1^{(12)} = c_2^{(12)} = 0$ is the ferromagnetic\n  state for spin 1 and the nematic state for spin 2.\n  The region of many phases in (a) is magnified in (b).\n  The upper-case letter-pairs indicate the spin-1 and spin-2 states as\n  defined in Fig.~\\ref{f:spin12} and the lower-case letters indicate the\n  intermediate states as defined in Table~\\ref{t:abc}.\n  The subscripts $\\pm$ denote the sign of $\\bm{F}^{(1)} \\cdot\n  \\bm{F}^{(2)}$.\n  The physical quantities along the dotted line are shown in\n  Fig.~\\ref{f:ferro_nem2}(a).\n  The spin states at the black dots are shown in\n  Fig.~\\ref{f:ferro_nem2}(b).\n }\n\\label{f:ferro_nem}\n\\end{figure}\nTo see the effect of the interaction between the spin-1 and spin-2 BECs, we\nfirst consider the case without the intra-spin interactions,\n$c_1^{(1)} = c_1^{(2)} = c_2^{(2)} = 0$.\nThe spin-dependent energy then reduces to $E_{\\rm spin} = c_1^{(12)}\n\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)} + c_2^{(12)} P_1^{(12)}$.\nFigure~\\ref{f:noint} shows the ground-state phase diagram with respect to\n$c_1^{(12)}$ and $c_2^{(12)}$.\nWhen $c_1^{(12)}$ is sufficiently large and negative, the state in which the\nspin vectors $\\bm{F}^{(1)}$ and $\\bm{F}^{(2)}$ are fully-polarized in the\nsame direction is energetically favored, and the ground state is\n$\\bm{\\zeta}^{(1)} = \\bm{\\zeta}^{(1)}_F$ and $\\bm{\\zeta}^{(2)} =\n\\bm{\\zeta}^{(2)}_F$.\nWe abbreviate this state as ``FF$_+$'', in which the first and second\nletters indicate the spin-1 and spin-2 states, respectively, and the\nsubscript $+$ denotes that the two spin vectors are in the same direction.\nThe capital letters indicate the spin states shown in Fig.~\\ref{f:spin12}.\nThe energy of the FF$_+$ state is $E_{\\rm spin} = 2 c_1^{(12)}$.\nIn a similar manner, when $c_1^{(12)}$ is large and positive, the ground\nstate is the ferromagnetic state with $\\bm{F}^{(1)}$ and $\\bm{F}^{(2)}$\nbeing in opposite directions, whose energy is $E_{\\rm spin} = -2 c_1^{(12)}\n+ 3 c_2^{(12)} / 5$.\nThis phase is denoted as ``FF$_-$'', where the subscript $-$ represents that\nthe two spin vectors are in the opposite directions.\nIn general, we define the subscripts $\\pm$ to indicate the sign of\n$\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)}$.\nAs shown in Fig.~\\ref{f:noint}, there are two regions between these\nferromagnetic phases.\nWhen $c_2^{(12)} < 0$ and $c_2^{(12)} / 5 < c_1^{(12)} < c_2^{(12)} /\n10$, the ground state is $\\bm{\\zeta}^{(1)} = \\bm{\\zeta}^{(1)}_P$ and\n$\\bm{\\zeta}^{(2)} = \\bm{\\zeta}^{(2)}_{\\rm UN}$ with an energy $E_{\\rm spin}\n= 2 c_2^{(12)} / 5$, which is denoted as ``PU''.\nWhen $c_2^{(12)} > 0$ and $0 < c_1^{(12)} < 3 c_2^{(12)} / 10$, the ground\nstate is continuously degenerate: the linear combination of the ``PF''\n(polar-ferromagnetic) and ``PB'' (polar-biaxial nematic) states is the ground\nstate with an energy $E_{\\rm spin} = 3 c_2^{(12)} / 10$.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

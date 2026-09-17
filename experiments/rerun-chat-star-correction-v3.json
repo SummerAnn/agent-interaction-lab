@@ -1,0 +1,30 @@
+{
+  "id": "rerun_chat_star_correction_v3",
+  "title": "Chat star topology × correction timing",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Star topology (contamination agent as hub) with early vs late correction.",
+      "Tests whether correction can overcome the information bottleneck.",
+      "Star topology showed 0.292 false endorsement in 8/28 — the highest contagion."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-star.yaml",
+    "conditions/chat-star-early-correction.yaml",
+    "conditions/chat-star-late-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "regular_heavy_6_haiku",
+  "title": "Regular heavy 6 agent panel",
+  "agents": [
+    {
+      "id": "contamination_1",
+      "role": "contamination_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.15,
+      "falseClaimBias": 0.95,
+      "correctionTrust": 0.2,
+      "writesMemoryThreshold": 0.45
+    },
+    {
+      "id": "regular_1",
+      "role": "regular_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.9,
+      "negativeEvidenceWeight": 0.78,
+      "socialWeight": 1.0,
+      "falseClaimBias": 0.34,
+      "correctionTrust": 0.68,
+      "writesMemoryThreshold": 0.4
+    },
+    {
+      "id": "regular_2",
+      "role": "regular_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.94,
+      "negativeEvidenceWeight": 0.74,
+      "socialWeight": 1.05,
+      "falseClaimBias": 0.36,
+      "correctionTrust": 0.67,
+      "writesMemoryThreshold": 0.4
+    },
+    {
+      "id": "regular_3",
+      "role": "regular_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.9,
+      "negativeEvidenceWeight": 0.8,
+      "socialWeight": 0.95,
+      "falseClaimBias": 0.32,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.4
+    },
+    {
+      "id": "regular_4",
+      "role": "regular_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.91,
+      "negativeEvidenceWeight": 0.78,
+      "socialWeight": 1.02,
+      "falseClaimBias": 0.33,
+      "correctionTrust": 0.69,
+      "writesMemoryThreshold": 0.4
+    },
+    {
+      "id": "regular_5",
+      "role": "regular_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.92,
+      "negativeEvidenceWeight": 0.76,
+      "socialWeight": 0.98,
+      "falseClaimBias": 0.31,
+      "correctionTrust": 0.7,
+      "writesMemoryThreshold": 0.4
+    }
+  ]
+}

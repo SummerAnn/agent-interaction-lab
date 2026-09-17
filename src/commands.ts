@@ -1040,6 +1040,7 @@ export function analyzeRunPhysics(target: string, projectRoot = process.cwd()): 
       mode: summary.memoryMode,
       record: "agent_judgment",
       maxRetrievedEntries: 6,
+      departedAgentEntries: "retain",
       decay: { enabled: false, halfLife: 6 },
     },
     interaction: {

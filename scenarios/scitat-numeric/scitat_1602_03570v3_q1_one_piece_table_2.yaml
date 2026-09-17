@@ -1,0 +1,101 @@
+{
+  "id": "scitat_1602_03570v3_q1_one_piece_table_2",
+  "title": "SciTaT 1602.03570v3-q1 (table_2)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_2",
+      "title": "Table tab:ETHZ_further",
+      "citation": "SciTaT item 1602.03570v3-q1",
+      "summary": "\n | {\\bf SDALF}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf Seq.1} | $83.4$ | ${90.5}$ | ${\\bf92}$ | ${91}$ | ${\\bf 92}$\n{\\bf Seq.2} | $83.4$ | ${92}$ | ${\\bf93.5}$ | ${92}$ | ${\\bf 92.5}$\n{\\bf Average} | $83.4$ | $91.3$ | ${\\bf92.7}$ | $91.5$ | ${\\bf 92.2}$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Based on the paragraph and tables, what is the average recognition accuracy improvement of DPS-based methods (DPS-DA and DPS-DI) over RGEDA across the BRODATZ, ETHZ, and Virus Texture Recognition datasets?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1602.03570v3-q1",
+    "phase": "one_piece",
+    "pieceId": "table_2",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1",
+      "table_2",
+      "table_3"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 2.32.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 4.64.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 1.32.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 3.32.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_2",
+      "text": "\n | {\\bf SDALF}~ | {\\bf RGEDA}~ | {\\bf DPS-DA}~ | {\\bf RSR}~ | {\\bf DPS-DI}~\n{\\bf Seq.1} | $83.4$ | ${90.5}$ | ${\\bf92}$ | ${91}$ | ${\\bf 92}$\n{\\bf Seq.2} | $83.4$ | ${92}$ | ${\\bf93.5}$ | ${92}$ | ${\\bf 92.5}$\n{\\bf Average} | $83.4$ | $91.3$ | ${\\bf92.7}$ | $91.5$ | ${\\bf 92.2}$",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

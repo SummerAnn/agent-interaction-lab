@@ -68,6 +68,30 @@ function recordRetrievedEntries(ctx: MemoryModeContext, entries: MemoryEntry[]):
   }
 }
 
+function applyDepartedAgentEntryPolicy(ctx: MemoryModeContext, step: number): void {
+  if (ctx.condition.memory.departedAgentEntries !== "remove" || step <= 1) return;
+  const departedIds = new Set(
+    ctx.runConfig.agents
+      .filter((agent) => agent.activeUntilStep === step - 1)
+      .map((agent) => agent.id),
+  );
+  if (departedIds.size === 0) return;
+
+  for (let index = ctx.memoryEntries.length - 1; index >= 0; index -= 1) {
+    const entry = ctx.memoryEntries[index];
+    if (!departedIds.has(entry.agentId)) continue;
+    ctx.memoryEntries.splice(index, 1);
+    insertRow(ctx.dbPath, "events", {
+      run_id: ctx.runId,
+      step_index: step,
+      agent_id: entry.agentId,
+      event_type: "memory_entry_removed_after_exit",
+      claim_id: entry.claimId,
+      output_json: JSON.stringify({ removedMemoryEntryId: entry.id }),
+    });
+  }
+}
+
 function seededStatementClaimForStep(agent: AgentSpec, step: number): string | null {
   const policy = agent.seedStatementPolicy;
   if (!policy || step < policy.fromStep || step > policy.untilStep) return null;
@@ -144,7 +168,10 @@ function publishEvidenceToBoard(
   if (
     ctx.condition.memory.record !== "evidence_board" &&
     ctx.condition.memory.record !== "mixed_record" &&
-    ctx.condition.memory.record !== "source_aware"
+    ctx.condition.memory.record !== "source_aware" &&
+    ctx.condition.memory.record !== "provenance_aware" &&
+    ctx.condition.memory.record !== "provenance_minimal" &&
+    ctx.condition.memory.record !== "lineage_collapsed"
   ) return null;
 
   let firstEntryId: string | null = null;
@@ -260,6 +287,7 @@ export function runHeuristicMemoryMode(
   for (let step = 1; step <= ctx.runConfig.maxSteps; step += 1) {
     if (modelCalls + callsPerStep > ctx.runConfig.budget.maxModelCalls) break;
 
+    applyDepartedAgentEntryPolicy(ctx, step);
     const agent = selectAgentForStep(ctx, step);
     if (!agent) break;
     maybeActivateTriggeredInterventions(
@@ -373,7 +401,10 @@ export function runHeuristicMemoryMode(
     if (
       ctx.condition.memory.record === "evidence_board" ||
       ctx.condition.memory.record === "mixed_record" ||
-      ctx.condition.memory.record === "source_aware"
+      ctx.condition.memory.record === "source_aware" ||
+      ctx.condition.memory.record === "provenance_aware" ||
+      ctx.condition.memory.record === "provenance_minimal" ||
+      ctx.condition.memory.record === "lineage_collapsed"
     ) {
       writtenMemoryEntryId = publishTaskEvidenceToBoard(ctx, agent, step, stepUpdates);
     }
@@ -457,7 +488,8 @@ export function runHeuristicMemoryMode(
       });
     }
 
-    const metrics = computeStepMetrics(ctx.runId, step, stepSnapshot, ctx.scenario);
+    const honestIds = new Set(ctx.runConfig.agents.filter((a) => a.role !== "contamination_agent").map((a) => a.id));
+    const metrics = computeStepMetrics(ctx.runId, step, stepSnapshot, ctx.scenario, honestIds, ctx.memoryEntries);
     ctx.stepMetrics.push(metrics);
     persistStepMetrics(ctx.dbPath, ctx.runId, step, metrics);
 
@@ -493,6 +525,7 @@ export async function runLlmMemoryMode(
   for (let step = 1; step <= ctx.runConfig.maxSteps; step += 1) {
     if (modelCalls + callsPerStep > ctx.runConfig.budget.maxModelCalls) break;
 
+    applyDepartedAgentEntryPolicy(ctx, step);
     const agent = selectAgentForStep(ctx, step);
     if (!agent) break;
     const provider = ctx.providerMap.get(agent.id)!;
@@ -659,7 +692,10 @@ export async function runLlmMemoryMode(
     if (
       ctx.condition.memory.record === "evidence_board" ||
       ctx.condition.memory.record === "mixed_record" ||
-      ctx.condition.memory.record === "source_aware"
+      ctx.condition.memory.record === "source_aware" ||
+      ctx.condition.memory.record === "provenance_aware" ||
+      ctx.condition.memory.record === "provenance_minimal" ||
+      ctx.condition.memory.record === "lineage_collapsed"
     ) {
       writtenMemoryEntryId = publishTaskEvidenceToBoard(ctx, agent, step, stepUpdates);
     }
@@ -670,6 +706,11 @@ export async function runLlmMemoryMode(
       && focusState.stance !== "uncertain"
       && agent.canWriteMemory
     ) {
+      const adoptionParents = focusClaimRetrievedMemory.filter((entry) =>
+        entry.agentId !== agent.id &&
+        entry.claimId === focusState.claimId &&
+        entry.stance === focusState.stance,
+      );
       const memoryEntry: MemoryEntry = {
         id: `${ctx.runId}-memory-${step}`,
         step,
@@ -680,15 +721,12 @@ export async function runLlmMemoryMode(
         visibility: ctx.condition.memory.mode === "shared" ? "shared" : "personal",
         sourceType: "agent",
         text: buildMemoryText(agent.id, focusState.claimId, focusState.stance, focusState.confidence, focusClaimReasoning),
+        derivedFromEntryId: adoptionParents[0]?.id,
       };
       appendMemoryEntry(ctx, memoryEntry);
       writtenMemoryEntryId = memoryEntry.id;
 
-      for (const parent of focusClaimRetrievedMemory.filter((entry) =>
-        entry.agentId !== agent.id &&
-        entry.claimId === focusState.claimId &&
-        entry.stance === focusState.stance,
-      )) {
+      for (const parent of adoptionParents) {
         persistClaimLineage(
           ctx.dbPath,
           ctx.runId,
@@ -740,7 +778,8 @@ export async function runLlmMemoryMode(
       });
     }
 
-    const metrics = computeStepMetrics(ctx.runId, step, stepSnapshot, ctx.scenario);
+    const honestIds = new Set(ctx.runConfig.agents.filter((a) => a.role !== "contamination_agent").map((a) => a.id));
+    const metrics = computeStepMetrics(ctx.runId, step, stepSnapshot, ctx.scenario, honestIds, ctx.memoryEntries);
     ctx.stepMetrics.push(metrics);
     persistStepMetrics(ctx.dbPath, ctx.runId, step, metrics);
 

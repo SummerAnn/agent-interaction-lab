@@ -1,0 +1,54 @@
+{
+  "id": "bounded_cascade_v3_packet_22_none",
+  "title": "Bounded cascade packet 22 (none)",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "late_evidence",
+    "post_late_turnover",
+    "none"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls; model names and correct answer positions rotate."
+  },
+  "focusClaimId": "explanation_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_b",
+      "explanation_c",
+      "explanation_a"
+    ],
+    "correctClaimId": "explanation_a",
+    "instruction": "Choose a model only when the available checks rule out both alternatives. A preliminary preference is not enough to choose.",
+    "requiredSourceIds": [
+      "bounded_cascade_v3_packet_22_none_late_rules_out_early",
+      "bounded_cascade_v3_packet_22_none_late_rules_out_other"
+    ],
+    "evidenceAccess": "none",
+    "allowAbstain": true
+  },
+  "claims": [
+    {
+      "id": "explanation_b",
+      "text": "Model Saffron best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_c",
+      "text": "Model Cobalt best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_a",
+      "text": "Model Juniper best explains the recorded pattern.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

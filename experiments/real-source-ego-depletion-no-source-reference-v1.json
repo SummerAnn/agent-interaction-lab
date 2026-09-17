@@ -1,0 +1,18 @@
+{
+  "id": "real_source_ego_depletion_no_source_reference_v1",
+  "title": "Reference: ego depletion without source cards",
+  "benchmarkMeta": {
+    "status": "reference_control",
+    "locked": true,
+    "notes": [
+      "Measures how often the model chooses the packet answer from background knowledge alone.",
+      "Ten seeds are repeated API calls, not independent statistical samples."
+    ]
+  },
+  "scenarios": ["scenarios/real-source-ego-depletion-no-source-reference-v1.yaml"],
+  "conditions": ["conditions/personal-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/reference-single-analyst-haiku.json"],
+  "maxSteps": 3,
+  "budget": { "maxModelCalls": 9, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

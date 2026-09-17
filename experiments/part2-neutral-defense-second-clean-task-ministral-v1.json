@@ -1,0 +1,44 @@
+{
+  "id": "part2_neutral_defense_second_clean_task_ministral_v2",
+  "title": "Cross-model defense replication on a clean numerical task",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Three liar agents and three neutral agents evaluate one uniquely scorable false numerical answer.",
+      "The standard, statement-marker, and statement-marker-plus-warning conditions use identical agents, prompts, speaking orders, and call budgets.",
+      "Ministral 8B 2512 was selected because a prior matched twelve-order evaluation on this task with four liar agents and two neutral agents produced neutral-agent false-answer rates of 0.833 with shared memory and 0 with personal memory. The present experiment uses three liar agents and three neutral agents, matching the Haiku defense replication."
+    ]
+  },
+  "scenarios": [
+    "scenarios/neutral-core-v1/neutral_core_v1_scitat_math_0012242_q2_3of6.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-provenance-minimal-no-correction.yaml",
+    "conditions/shared-provenance-aware-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_clustered_r1.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_clustered_r2.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_clustered_r3.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_clustered_r4.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_clustered_r5.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_clustered_r6.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_interleaved_r1.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_interleaved_r2.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_interleaved_r3.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_interleaved_r4.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_interleaved_r5.json",
+    "rosters/defense-second-clean-task-ministral-v1/defense_second_clean_task_ministral_v1_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

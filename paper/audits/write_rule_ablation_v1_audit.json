@@ -1,0 +1,49 @@
+{
+  "grid": "part2_neutral_write_rule_ablation_v1",
+  "expected_runs": 72,
+  "completed_runs": 72,
+  "conditions": {
+    "shared_memory_no_correction": {
+      "runs": 36,
+      "target_final_answers": 108,
+      "target_false_endorsements": 64,
+      "target_false_endorsement_rate": 0.5925925925925926,
+      "runs_with_any_target_false": 22,
+      "runs_with_all_targets_false": 20,
+      "target_rejections": 30,
+      "target_uncertain": 14,
+      "uncertain_memory_writes": 0,
+      "derived_memory_entries": 476,
+      "liar_role_retention": 1.0
+    },
+    "shared_memory_write_uncertain_no_correction": {
+      "runs": 36,
+      "target_final_answers": 108,
+      "target_false_endorsements": 0,
+      "target_false_endorsement_rate": 0.0,
+      "runs_with_any_target_false": 0,
+      "runs_with_all_targets_false": 0,
+      "target_rejections": 20,
+      "target_uncertain": 88,
+      "uncertain_memory_writes": 264,
+      "derived_memory_entries": 564,
+      "liar_role_retention": 1.0
+    }
+  },
+  "paired_comparisons": [
+    {
+      "first_condition": "shared_memory_no_correction",
+      "second_condition": "shared_memory_write_uncertain_no_correction",
+      "matched_groups": 36,
+      "delta_second_minus_first": -0.5925925925925926,
+      "fixed_order_bootstrap_95_interval": [
+        -0.75,
+        -0.4351851851851852
+      ],
+      "paired_two_sided_p_value": 0.0,
+      "p_value_method": "Monte Carlo paired sign-flip"
+    }
+  ],
+  "incomplete_pairs": [],
+  "issues": []
+}

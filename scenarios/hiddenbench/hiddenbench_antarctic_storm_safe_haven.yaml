@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_antarctic_storm_safe_haven",
+  "title": "HiddenBench: Antarctic Storm Safe Haven",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 22 (Antarctic Storm Safe Haven). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_main_base",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_main_base",
+      "answer_retreat_camp",
+      "answer_rescue_outpost"
+    ],
+    "correctClaimId": "answer_main_base",
+    "instruction": "You and three other participants are scientists at an Antarctic research station. A massive, fast-moving storm is approaching. You must rapidly decide, as a group, which facility to seek shelter in for the next 48 hours. You have snow vehicles and limited time to reach only one location before the blizzard begins. Your three choices:\n- Main Base: The largest facility, but farther away.\n- Retreat Camp: A small, nearby camp rated for storms.\n- Rescue Outpost: Smaller, medium distance, typically used for emergencies.\nWhichever location you pick, you'll be unable to contact others until the storm passes. Supplies, infrastructure, and route safety may differ. Only one option will keep you safe and supplied until rescue teams arrive.\n\nShared information known to all participants:\n- A radio update confirms Retreat Camp is the closest shelter and is built to withstand severe weather.\n- Supply records say that Retreat Camp offers food, water, and sleeping bags for four people.\n- The snow vehicle has just enough fuel to reach any of the three locations before the storm hits, but not to try multiple.\n- The Rescue Outpost's exterior was recently checked and found structurally sound.\n\nChoose the best answer from: Main Base, Retreat Camp, Rescue Outpost."
+  },
+  "claims": [
+    {
+      "id": "answer_main_base",
+      "text": "Main Base",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_retreat_camp",
+      "text": "Retreat Camp",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_rescue_outpost",
+      "text": "Rescue Outpost",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The most recent supply delivery to Retreat Camp was delayed, so the promised food and water may not be there.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Main Base appears to have uninterrupted generator power, working communications, and fully stocked rations according to a direct radio call just before the storm warning.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The snow route to Rescue Outpost is fully snowed in since the last storm; the path isn't navigable even with the vehicle.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Satellite imagery from this morning shows the ice bridge leading to Retreat Camp has collapsed, making it dangerous to reach by foot or vehicle.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

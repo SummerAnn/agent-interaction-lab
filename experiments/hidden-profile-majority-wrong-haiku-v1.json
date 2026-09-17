@@ -1,0 +1,25 @@
+{
+  "id": "hidden_profile_majority_wrong_haiku_v1",
+  "title": "Synthetic source detachment: early wrong majority, Haiku",
+  "benchmarkMeta": {
+    "status": "paper-facing synthetic control",
+    "locked": true,
+    "notes": [
+      "Both conditions use the same agents, starting beliefs, delayed private cards, schedules, model, and budget.",
+      "The only changed variable is whether the shared record contains original evidence only or original evidence plus earlier analyst conclusions.",
+      "Primary outcomes: exact group choice, detached-support rate, and required-card source coverage among final supporters."
+    ]
+  },
+  "scenarios": [
+    "scenarios/hidden-profile-water-majority-wrong-v1.yaml",
+    "scenarios/hidden-profile-training-majority-wrong-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 28, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

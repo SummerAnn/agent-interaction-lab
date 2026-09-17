@@ -1,0 +1,44 @@
+{
+  "id": "post_exit_scaling_v2_equal_n24",
+  "title": "Post-exit scaling, equal split, N=24",
+  "benchmarkMeta": {
+    "status": "exploratory",
+    "locked": false,
+    "notes": [
+      "Claude Haiku 4.5 on the ego-depletion claim.",
+      "12 liar agents each speak once and exit; 12 neutral agents then receive two turns each.",
+      "Matched conditions differ only in whether memory entries written by departed liar agents are retained or removed.",
+      "Seeds 0 through 11 rotate speaking order within each role group."
+    ]
+  },
+  "scenarios": [
+    "scenarios/post-exit-scaling-ego-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-post-exit-retained-v2.yaml",
+    "conditions/shared-memory-post-exit-cleared-v2.yaml"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "rosterPaths": [
+    "rosters/post-exit-scaling-v2/post_exit_scaling_v2_equal_n24.json"
+  ],
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 160,
+    "temperature": 0
+  }
+}

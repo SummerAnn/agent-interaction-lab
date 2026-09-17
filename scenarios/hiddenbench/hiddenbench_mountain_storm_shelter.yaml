@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_mountain_storm_shelter",
+  "title": "HiddenBench: mountain_storm_shelter",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 52 (mountain_storm_shelter). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_green_valley_outpost",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_blue_lake_cabin",
+      "answer_red_cliff_lodge",
+      "answer_green_valley_outpost"
+    ],
+    "correctClaimId": "answer_green_valley_outpost",
+    "instruction": "Your hiking group is unexpectedly stranded in the mountains due to a rapidly approaching windstorm. You must immediately choose one place to shelter for the night before the storm intensifies. There are three well-known shelters within reach: Blue Lake Cabin, Red Cliff Lodge, and Green Valley Outpost. Only one option is safe and accessible—the others all hide serious dangers or are unreachable at present. Your team must coordinate and decide wisely; if you shelter in the only safe location, everyone survives. If you pick wrong, the outcome could be fatal.\n\nShared information known to all participants:\n- Blue Lake Cabin has a recent delivery of emergency rations, medical kits, and blankets. It is accessible by crossing a bridge, which the ranger station repaired last week after a minor landslide.\n- Red Cliff Lodge is a solid stone building that usually withstands harsh weather, but contact was lost with its caretaker earlier today.\n- Green Valley Outpost is further away and designed primarily as a rest stop for day hikers, with basic shelter but minimal supplies.\n- The local ranger station’s last broadcast said the storm’s strongest winds are expected to hit somewhere north of your current location, but the reports are not exact.\n\nChoose the best answer from: Blue Lake Cabin, Red Cliff Lodge, Green Valley Outpost."
+  },
+  "claims": [
+    {
+      "id": "answer_blue_lake_cabin",
+      "text": "Blue Lake Cabin",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_red_cliff_lodge",
+      "text": "Red Cliff Lodge",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_green_valley_outpost",
+      "text": "Green Valley Outpost",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A sign near the Blue Lake trailhead warns that an upstream dam release is set for tonight, which will further raise water levels and could worsen the bridge collapse situation.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A new weather alert (missed in earlier updates) says the storm will hit Red Cliff Lodge directly, with extreme, possibly structural-damaging winds expected at that elevation.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A hiker coming from Blue Lake reports the bridge washed out in the last hour and is now impassable.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Green Valley Outpost, though lacking supplies, is built partially underground and is rated for emergency use in extreme weather, per a maintenance record found in your group’s gear.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

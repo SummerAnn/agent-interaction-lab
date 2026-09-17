@@ -1,0 +1,24 @@
+{
+  "id": "bounded_record_eviction_pilot_haiku_v1",
+  "title": "Trace pilot: reinforcement and source-preserving eviction policies",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": [
+      "Tests reinforcement (least-retrieved) and source-preserving eviction on the same packet used for the FIFO trace pilot.",
+      "Four conditions × 1 packet × 1 seed = 4 cells. Implementation audit only."
+    ]
+  },
+  "scenarios": ["scenarios/bounded-signal-v2/bounded_signal_v2_packet_01_private_split.yaml"],
+  "conditions": [
+    "conditions/bounded-evidence-reinforcement.yaml",
+    "conditions/bounded-mixed-reinforcement.yaml",
+    "conditions/bounded-source-preserving-mixed.yaml",
+    "conditions/bounded-unbounded-source.yaml"
+  ],
+  "seeds": [1],
+  "rosterPaths": ["rosters/bounded-record-12-haiku.json"],
+  "turnOrder": ["analyst_01", "analyst_02", "analyst_03", "analyst_04", "analyst_05", "analyst_06", "analyst_07", "analyst_08", "analyst_09", "analyst_10", "analyst_11", "analyst_12"],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 72, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

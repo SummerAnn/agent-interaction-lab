@@ -1,0 +1,29 @@
+{
+  "id": "real_source_debt_threshold_no_source_reference_v1",
+  "title": "Reference: public debt and economic growth without source cards",
+  "domain": "economics-methods",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["real_source_packet", "reference", "no_source"],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Reference control for the debt-threshold packet. The analyst sees only the question and candidate conclusions."
+  },
+  "sources": [],
+  "sourceCards": [],
+  "focusClaimId": "candidate_qualified_conclusion",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_sharp_causal_cutoff", "candidate_qualified_conclusion", "candidate_no_possible_relationship"],
+    "correctClaimId": "candidate_qualified_conclusion",
+    "instruction": "Choose the statement you judge most plausible. No source cards are available in this reference run. Do not claim to cite evidence you were not given.",
+    "evidenceAccess": "none"
+  },
+  "claims": [
+    {"id": "candidate_sharp_causal_cutoff", "text": "Public debt above 90 percent of GDP causes a sharp drop in economic growth, and the selected research establishes that cutoff.", "truthLabel": "false"},
+    {"id": "candidate_qualified_conclusion", "text": "The selected research does not support a sharp causal 90 percent cutoff. It reports that debt and growth can be related in data, while the corrected and causal analyses do not establish that this cutoff causes lower growth.", "truthLabel": "true"},
+    {"id": "candidate_no_possible_relationship", "text": "Because one high-debt calculation was corrected, public debt cannot be related to economic growth in any country or period.", "truthLabel": "false"}
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

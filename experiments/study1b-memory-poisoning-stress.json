@@ -1,0 +1,34 @@
+{
+  "id": "study1b_memory_poisoning_stress",
+  "title": "Study 1b: How robust are memory defenses under stronger seeded false-memory pressure?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1b_memory_poisoning_stress",
+    "locked": true,
+    "notes": [
+      "Stress-test line for stronger inherited false memory.",
+      "Treat as a pressure test, not the main benchmark."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-poison-low-v1.yaml",
+    "scenarios/ego-depletion-poison-medium-v1.yaml",
+    "scenarios/ego-depletion-poison-high-v1.yaml",
+    "scenarios/wakefield-poison-low-v1.yaml",
+    "scenarios/wakefield-poison-medium-v1.yaml",
+    "scenarios/wakefield-poison-high-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory.yaml",
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-decay.yaml",
+    "conditions/shared-memory-verification.yaml",
+    "conditions/shared-memory-noisy-verification.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

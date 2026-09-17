@@ -1,0 +1,19 @@
+{
+  "id": "part2_confidence_bias_test_v1",
+  "title": "Part 2: confidence bias test — mild liars (same confidence as honest) vs committed",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Tests whether contagion at 50/50 is driven by CONFIDENCE or COUNT.",
+      "Mild liars: regular_agent role, falseClaimBias=0.55, start endorse(0.55-0.60).",
+      "No 'do not waver' instruction — they can change their mind.",
+      "If contagion still happens: it's about entry count in the record.",
+      "If contagion disappears: it was about confidence asymmetry."
+    ]
+  },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_3mild_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/blind-3mild-3honest-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

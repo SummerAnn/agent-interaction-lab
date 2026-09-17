@@ -1,0 +1,27 @@
+{
+  "id": "delayed_counterevidence_v1",
+  "title": "Delayed counter-evidence after early false consensus",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["delayed_evidence", "early_consensus", "private_evidence"],
+  "focusClaimId": "claim_supplement",
+  "claims": [
+    {"id":"claim_supplement","text":"The supplement reliably prevents seasonal respiratory infections.","truthLabel":"false"},
+    {"id":"claim_trial","text":"The largest preregistered trial found no meaningful preventive benefit.","truthLabel":"true"},
+    {"id":"claim_bias","text":"The early positive studies were small and had substantial risk of publication bias.","truthLabel":"true"}
+  ],
+  "evidence": [
+    {"id":"ev_early_positive","text":"Two small early observational studies reported fewer infections among people taking the supplement.","visibleToAgentIds":["contamination_1","regular_1","regular_2"],"availableFromStep":1,"effects":[{"claimId":"claim_supplement","effect":0.65}]},
+    {"id":"ev_late_trial","text":"A later preregistered randomized trial found no meaningful difference in infection rates between the supplement and placebo.","visibleToAgentIds":["specialist_1","observer_1"],"availableFromStep":7,"effects":[{"claimId":"claim_supplement","effect":-0.95},{"claimId":"claim_trial","effect":0.95}]},
+    {"id":"ev_late_bias","text":"A systematic review found the early positive studies were small, selective, and consistent with publication bias.","visibleToAgentIds":["specialist_2","observer_1"],"availableFromStep":7,"effects":[{"claimId":"claim_supplement","effect":-0.75},{"claimId":"claim_bias","effect":0.9}]}
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId":"contamination_1","claimId":"claim_supplement","stance":"endorse","confidence":0.84},
+    {"agentId":"specialist_1","claimId":"claim_supplement","stance":"uncertain","confidence":0.25},
+    {"agentId":"specialist_2","claimId":"claim_supplement","stance":"uncertain","confidence":0.25},
+    {"agentId":"regular_1","claimId":"claim_supplement","stance":"uncertain","confidence":0.25},
+    {"agentId":"regular_2","claimId":"claim_supplement","stance":"uncertain","confidence":0.25},
+    {"agentId":"observer_1","claimId":"claim_supplement","stance":"uncertain","confidence":0.25}
+  ],
+  "initialMemoryEntries": []
+}

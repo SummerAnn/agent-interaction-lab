@@ -1,0 +1,29 @@
+{
+  "id": "chat_open_discussion_star",
+  "title": "Open discussion (star topology)",
+  "provenance": {
+    "kind": "new",
+    "note": "A richer discussion condition with a hub and spoke communication shape."
+  },
+  "citations": {
+    "mechanism": [
+      {
+        "title": "open discussion condition with star topology",
+        "note": "same discussion mode as the fully connected version, but one communication hub can dominate access"
+      }
+    ]
+  },
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 4,
+    "topology": "star",
+    "chatStyle": "open-discussion"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

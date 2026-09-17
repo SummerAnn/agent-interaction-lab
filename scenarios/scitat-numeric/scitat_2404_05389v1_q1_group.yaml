@@ -1,0 +1,147 @@
+{
+  "id": "scitat_2404_05389v1_q1_group",
+  "title": "SciTaT 2404.05389v1-q1 (group)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "group"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2404.05389v1-q1",
+      "summary": "With regard to resource utilization, Tables \\ref{tab:utilizationPMU} and \\ref{tab:utilization-without-PMU} present a summary of the main resources used by the OBC, both with and without the PMU enabled, respectively. All of these metrics were extracted from the Vivado Suite analysis report tool and the results provided are those obtained during synthesis with exactly the same settings selected for both projects.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:utilizationPMU",
+      "citation": "SciTaT item 2404.05389v1-q1",
+      "summary": "Resources utilization of the OBC with the PMU enabled.\nComponent | Slice LUTs | Slice Registers | F7 Muxes | Block RAM\nRV32 | 6498 | 5347 | 292 | 2\nclint | 77 | 72 | 0 | 0\ndecode | 334 | 44 | 0 | 0\nexecute | 634 | 0 | 1 | 0\nfu | 74 | 0 | 0 | 0\nif | 22 | 35 | 0 | 0\nmc | 205 | 284 | 0 | 0\nmemory | 120 | 72 | 0 | 0\npipeline\\_logic | 406 | 203 | 0 | 0\nplic | 84 | 1 | 0 | 0\nprom | 2 | 0 | 0 | 2\nreg | 3853 | 3398 | 291 | 0\nCSR | 3181 | 2406 | 35 | 0\nGPR | 640 | 992 | 256 | 0\nrexmem | 77 | 172 | 0 | 0\nridex | 137 | 296 | 0 | 0\nrifid | 80 | 405 | 0 | 0\nrmemwb | 87 | 166 | 0 | 0\nsel\\_plic\\_clint | 50 | 99 | 0 | 0\ntimer | 245 | 134 | 0 | 0",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_2",
+      "title": "Table tab:utilization-without-PMU",
+      "citation": "SciTaT item 2404.05389v1-q1",
+      "summary": "Resources utilization of the OBC with the PMU disabled.\nComponent | Slice LUTs | Slice Registers | F7 Muxes | Block RAM\nRV32 | 4817 | 4246 | 259 | 2\nclint | 76 | 72 | 0 | 0\ndecode | 327 | 44 | 0 | 0\nexecute | 634 | 0 | 1 | 0\nfu | 74 | 0 | 0 | 0\nif | 22 | 35 | 0 | 0\nmc | 174 | 280 | 0 | 0\nmemory | 118 | 72 | 0 | 0\npipeline\\_logic | 381 | 203 | 0 | 0\nplic | 88 | 1 | 0 | 0\nprom | 2 | 0 | 0 | 2\nreg | 2257 | 2342 | 258 | 0\nCSR | 1585 | 1350 | 2 | 0\nGPR | 640 | 992 | 256 | 0\nrexmem | 67 | 159 | 0 | 0\nridex | 129 | 283 | 0 | 0\nrifid | 82 | 104 | 0 | 0\nrmemwb | 80 | 152 | 0 | 0\nsel\\_plic\\_clint | 50 | 99 | 0 | 0\ntimer | 245 | 134 | 0 | 0",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "How many rows have a higher count of Slice Registers with the PMU enabled compared to when it is disabled? Calculate based on the given information in the paragraph.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1",
+      "table_2"
+    ],
+    "evidenceAccess": "private_split",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2404.05389v1-q1",
+    "phase": "group",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1",
+      "table_2"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 14.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 7.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 6.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "With regard to resource utilization, Tables \\ref{tab:utilizationPMU} and \\ref{tab:utilization-without-PMU} present a summary of the main resources used by the OBC, both with and without the PMU enabled, respectively. All of these metrics were extracted from the Vivado Suite analysis report tool and the results provided are those obtained during synthesis with exactly the same settings selected for both projects.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "Resources utilization of the OBC with the PMU enabled.\nComponent | Slice LUTs | Slice Registers | F7 Muxes | Block RAM\nRV32 | 6498 | 5347 | 292 | 2\nclint | 77 | 72 | 0 | 0\ndecode | 334 | 44 | 0 | 0\nexecute | 634 | 0 | 1 | 0\nfu | 74 | 0 | 0 | 0\nif | 22 | 35 | 0 | 0\nmc | 205 | 284 | 0 | 0\nmemory | 120 | 72 | 0 | 0\npipeline\\_logic | 406 | 203 | 0 | 0\nplic | 84 | 1 | 0 | 0\nprom | 2 | 0 | 0 | 2\nreg | 3853 | 3398 | 291 | 0\nCSR | 3181 | 2406 | 35 | 0\nGPR | 640 | 992 | 256 | 0\nrexmem | 77 | 172 | 0 | 0\nridex | 137 | 296 | 0 | 0\nrifid | 80 | 405 | 0 | 0\nrmemwb | 87 | 166 | 0 | 0\nsel\\_plic\\_clint | 50 | 99 | 0 | 0\ntimer | 245 | 134 | 0 | 0",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_2",
+      "text": "Resources utilization of the OBC with the PMU disabled.\nComponent | Slice LUTs | Slice Registers | F7 Muxes | Block RAM\nRV32 | 4817 | 4246 | 259 | 2\nclint | 76 | 72 | 0 | 0\ndecode | 327 | 44 | 0 | 0\nexecute | 634 | 0 | 1 | 0\nfu | 74 | 0 | 0 | 0\nif | 22 | 35 | 0 | 0\nmc | 174 | 280 | 0 | 0\nmemory | 118 | 72 | 0 | 0\npipeline\\_logic | 381 | 203 | 0 | 0\nplic | 88 | 1 | 0 | 0\nprom | 2 | 0 | 0 | 2\nreg | 2257 | 2342 | 258 | 0\nCSR | 1585 | 1350 | 2 | 0\nGPR | 640 | 992 | 256 | 0\nrexmem | 67 | 159 | 0 | 0\nridex | 129 | 283 | 0 | 0\nrifid | 82 | 104 | 0 | 0\nrmemwb | 80 | 152 | 0 | 0\nsel\\_plic\\_clint | 50 | 99 | 0 | 0\ntimer | 245 | 134 | 0 | 0",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "chat_star_late_correction",
+  "title": "Chat debate (star topology, late correction)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "topology": "star"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "late"
+  }
+}

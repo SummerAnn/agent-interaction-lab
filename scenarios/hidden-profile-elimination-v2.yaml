@@ -1,0 +1,67 @@
+{
+  "id": "hidden_profile_elimination_v2",
+  "title": "Private evidence: explanation by elimination",
+  "domain": "synthetic scientific study packet",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["hidden_profile", "private_evidence", "evidence_assembly", "exclusive_choice", "elimination"],
+  "provenance": {
+    "kind": "new",
+    "note": "Synthetic task. The answer follows only after separately held cards rule out the two alternatives."
+  },
+  "focusClaimId": "candidate_assay_artifact",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_assay_artifact", "candidate_treatment_effect", "candidate_baseline_mix"],
+    "correctClaimId": "candidate_treatment_effect",
+    "instruction": "A study reports a biomarker difference after an intervention. Exactly one explanation can account for the full study packet. Choose the explanation best supported by the evidence you can access."
+  },
+  "claims": [
+    {
+      "id": "candidate_assay_artifact",
+      "text": "The biomarker difference was caused by an assay batch artifact.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "candidate_treatment_effect",
+      "text": "The intervention caused the biomarker difference.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "candidate_baseline_mix",
+      "text": "The biomarker difference was caused by pre-treatment differences between the participant groups.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "elimination_random_assignment",
+      "text": "The groups were assigned by a concealed random schedule and had the same biomarker distribution before treatment. If pre-treatment group differences caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_1"],
+      "effects": [
+        { "claimId": "candidate_baseline_mix", "effect": -0.95 }
+      ]
+    },
+    {
+      "id": "elimination_blinded_controls",
+      "text": "Samples from both groups were interleaved across assay plates, analysed blind, and calibration controls stayed stable. If an assay batch artifact caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_2"],
+      "effects": [
+        { "claimId": "candidate_assay_artifact", "effect": -0.95 }
+      ]
+    },
+    {
+      "id": "elimination_ambiguous_pilot",
+      "text": "An early unblinded pilot had a noisy estimate. By itself, that pilot could not distinguish a treatment effect from either alternative.",
+      "visibleToAgentIds": ["analyst_3"],
+      "effects": []
+    },
+    {
+      "id": "elimination_preregistered_analysis",
+      "text": "The final analysis plan was registered before outcomes were examined. This limits flexibility in analysis but does not by itself select one explanation.",
+      "visibleToAgentIds": ["analyst_4"],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

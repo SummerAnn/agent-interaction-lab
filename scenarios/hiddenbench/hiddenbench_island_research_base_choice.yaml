@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_island_research_base_choice",
+  "title": "HiddenBench: island_research_base_choice",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 54 (island_research_base_choice). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_site_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_site_a",
+      "answer_site_b",
+      "answer_site_c"
+    ],
+    "correctClaimId": "answer_site_c",
+    "instruction": "You are part of a team of engineers tasked with selecting the site for a new field research base on an isolated island. The island recently experienced a major earthquake. There are three possible sites (A, B, and C), and each has its own pros and cons. All team members must agree on the safest and most viable option for the next six months. Only one site is actually safe post-earthquake. After the choice is made, the team will begin work immediately and cannot switch locations. Collaboration is crucial; only by sharing all unique information can you successfully identify the correct site.\n\nShared information known to all participants:\n- Site A is close to the harbor and supply routes, with newly built infrastructure reportedly up to seismic standards.\n- Site B is located on high ground, safe from flooding, but farther from the harbor and supply routes; existing buildings are old but considered stable.\n- Site C is located in a valley near the center of the island, has limited road access, and is known to have patchy radio communications after storms.\n- Preliminary drone footage after the earthquake showed no major visible damage at any of the sites.\n\nChoose the best answer from: Site A, Site B, Site C."
+  },
+  "claims": [
+    {
+      "id": "answer_site_a",
+      "text": "Site A",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_site_b",
+      "text": "Site B",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_site_c",
+      "text": "Site C",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Significant flooding and water contamination have been detected at Site B; heavy equipment cannot access the site and health risks are high.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The radio blackout at Site C is being caused by damaged antennas, not by terrain or long-term technical barriers—portable equipment can restore communications within hours.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A gas leak and flammable vapor have been detected near Site A that could create a serious explosion risk under certain weather conditions.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Unusual ground instability measurements have been found at Site A, suggesting a risk of sinkholes forming after the earthquake.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

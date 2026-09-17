@@ -1,0 +1,62 @@
+{
+  "id": "bounded_signal_packet_11_one_card_v1",
+  "title": "Generated battery-cycle study packet 11: one-card control",
+  "domain": "generated battery-cycle study packet",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "one_card"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Procedurally generated before model calls; answer and label positions vary by packet."
+  },
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_b",
+    "instruction": "Choose the explanation supported by the supplied material. A card that rules out one explanation does not by itself prove either remaining explanation.",
+    "requiredSourceIds": [
+      "bounded_signal_packet_11_one_card_v1_rules_out_early_1",
+      "bounded_signal_packet_11_one_card_v1_rules_out_other_1"
+    ],
+    "evidenceAccess": "full_packet"
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "a charge-meter artifact best accounts for the observed capacity improvement.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "The tested intervention best accounts for the observed capacity improvement.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_c",
+      "text": "a difference in the initial cell batch best accounts for the observed capacity improvement.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_signal_packet_11_one_card_v1_rules_out_other_1",
+      "text": "A later independent check makes a charge-meter artifact best accounts for the observed capacity improvement. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_baker_2010",
+  "title": "HiddenBench: baker_2010",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 5 (baker_2010). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_roberts",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_stevens",
+      "answer_roberts",
+      "answer_jones"
+    ],
+    "correctClaimId": "answer_roberts",
+    "instruction": "You are participating in a study and are on the search team for a new president of Higher Education University, a private liberal arts college in Georgia. Highlights fromthe job posting are provided below. Three candidates have applied and information that you have gathered from resumes, reference checks, candidate interviews, and presentations are provided on the pages that follow. Read through all of the material and then identify the candidate that you think should be offered the job.\n- Job Posting for President of Higher Education University:\nHigher Education University is a small (2,500 students), private liberal arts college in Georgia. The president of the university is ultimately responsible for the administration and operation of the university. The president oversees strategic planning, fund raising, and budgeting, ensures that university polices are followed, and builds relationships with the community, alumni, and other outside constituencies.\n- Desired Qualification:\nCandidates will be evaluated based on the following criteria:\n- Evidence of academic scholarship and teaching experience or relevant, extensive, professional credentials that demonstrate an ability to lead in an academic environment;\n- Evidence of leadership in an academic or comparable setting withthe following characteristics: (1) Integrity and commitment to the highest ethical standards; (2) Commitment to shared governance and full involvement of faculty, staff and students; (3) Commitment to a diverse faculty, staff, and student body with equal opportunities for all;\n- Ability to develop a vision for the university and provide the leadership and inspiration needed to make the vision a reality;\n- Commitment to creating a culture that values excellence in scholarship, teaching, and service;\n- Commitment to and evidence of successful fundraising;\n- Ability to promote the university to outside constituents and increase support for its mission and programs\n- Commitment to improving the quality of life for students, faculty, and staff\n- Support for developing and using new technologies to enhance learning, scholarship, and the dispersion of ideas.\nYour Task:\nYou will discuss with other participants, who are also acting as members of the personnel committee, to decide who to recruit. You have three candidates:\n- Stevens\n- Roberts\n- Jones\nThere is only one best candidate. In addition to highlights from each candidate's CV, you have lists of information drawn from interviews, references, personal observations, etc. After the discussion:\n- If you choose the correct person, you will earn $1.\n- If all other participants also choose the correct one, you will earn an additional $1 (for a total of $2).\nThis means that coordinating with others is critical to maximize your rewards. However, the exact time when the chat will end is unknown.\n\nShared information known to all participants:\n- Stevens' CV highlights:\n- Currently the provost and executive vice president of a medium-sized university in Florida\n- Previous experience as business dean of a large Mississippi university and Chair of the Information and Technology department at a large Texas University\n- Was Dean in Mississippi when plans were drawn up for a new $25 million business school building and was provost in Florida whenthe business college received $15 million\n- Has the rank of full professor of Information Technology.\n- Roberts' CV highlights:\n- Just completed a term as U.S. Senator for Georgia but chose not toseek a second term\n- Raised a significant amount of money in campaign for senator\n- Previous experience as Dean of the College of Arts and Sciences of a medium-sized university in Virginia and later of a large private university in Georgia\n- Had rank of full professor of public administration before becoming senator.\n- Jones' CV highlights:\n- Currently the senior managing partner in a large law firm in Atlanta,Georgia\n- For the past 5 years has served on the Board of Trustees of Higher Education University, and is on the steering committee for the current $150 million capital campaign\n- Has expertise in employment law and has successfully argued infront of the Federal Supreme Court\n- Served as visiting professor of law at a major university in Georgia.\n- Stevens' information:\n- Nationally recognized by academics for research in informationtechnology\n- Nationally recognized by business leaders for expertise in information technology\n- In an interview, Stevens emphasized the importance of collaboration with campus leaders and faculty\n- Demonstrated excellent oratory skills during presentation to faculty\n- Someone other than Stevens was primarily responsible for getting the $15 million in Florida.\n- Roberts' information:\n- Faculty feedback indicated that Roberts had come across as aloofduring the presentation portion of the selection process\n- Has not worked in higher education for past 6 years\n- Has a condo in Pensacola\n- Has little direct experience dealing with campus-student life issues\n- As a senator, was accused of changing positions on issues for political gain.\n- Jones' information:\n- Pleasant personality in social settings\n- Law partners say Jones is a strategic thinker with respect to the direction of the firm\n- Following the Supreme Court appearance, Jones success rate in litigating employment law cases fell\n- Has been one of the more active members of Higher Education University's Board of Trustees\n- Student enrollment and evaluations from classes indicate that Jonesis well-liked as a teacher.\n\nChoose the best answer from: Stevens, Roberts, Jones."
+  },
+  "claims": [
+    {
+      "id": "answer_stevens",
+      "text": "Stevens",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_roberts",
+      "text": "Roberts",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_jones",
+      "text": "Jones",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Stevens' information:\n- Stevens left the dean position at the Mississippi University beforeraising any funds for building campaign\n- As provost, Stevens teaches a class per year\n- Spouse has a PhD in Spanish and teaches a class or two at college level\nRoberts' information:\n- Has made numerous influential contacts as senator\n- Frequently volunteers for two highly respected nonprofit organiza-tions, one that provides affordable housing and another concernedwith advancing human rights\n- Is a vegetarian\n Jones' information\n- Already lives in the area\n- Is married with a grown child\n- Sources at the law firm attribute a high turnover rate at the firm toJones' somewhat abrasive leadership style",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Stevens' information:\n- Comments from faculty in Florida and Mississippi indicate thatStevens tends to discourage new, innovative ideas\n- Has family in Atlanta\n- Is married with three children\nRoberts' information:\n- Previous faculty members describe Roberts as thoughtful leader andgood listener\n- Previous colleagues say Roberts uses a collaborative decision-making style\n- Enjoys golf and tennis\nJones' information\n- Has two dogs and two cats\n- Jones' spouse is a physician, specializing in internal medicine",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Stevens' information:\n- Left the dean position at the Mississippi University before raisingany funds for the building campaign\n- Enjoys sports, goes to football, and basketball games\n- Stays fit by biking and running\n- Has been observed drinking heavily in public, including at univer-sity events\nRoberts' information:\n- Previous students and faculty say Roberts is an excellent teacher\n- Is divorced and remarried; has two children\n- Faculty research productivity increased while serving as dean in Georgia\nJones' information:\n- Sources at the law firm attribute a high turnover rate at the firm to Jones' somewhat abrasive leadership style\n- Plays bridge as a hobby\n- Enjoys traveling overseas on vacation\n- Feedback from other trustees indicates that there is tension between the current provost and Jones",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Stevens' information:\n- Comments from faculty in Florida and Mississippi indicate thatStevens tends to discourage new, innovative ideas\n- Has been observed drinking heavily in public, including at univer-sity events\n- Does consulting work in IT\n- Likes to garden\nRoberts' information:\n- Enjoys golf and tennis\n- Is divorced and remarried; has two children\n- Increased the diversity of the faculty when dean in Georgia\n- Instrumental in securing a multimillion dollar federal grant for aGeorgia based nonprofit institution\nJones' information:\n- Feedback from other trustees indicates that there is tension betweenthe current provost and Jones\n- Law partners say Jones is a strategic thinker with respect to the direction of the firm\n- Reads mystery novels and biographies\n- Loves to cook",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,208 @@
+{
+  "id": "bounded_signal_packet_08_private_split_v1",
+  "title": "Generated materials test packet 08: private split",
+  "domain": "generated materials test packet",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "private_split"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Procedurally generated before model calls; answer and label positions vary by packet."
+  },
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_a",
+      "explanation_b",
+      "explanation_c"
+    ],
+    "correctClaimId": "explanation_b",
+    "instruction": "Choose the explanation supported by the supplied material. A card that rules out one explanation does not by itself prove either remaining explanation.",
+    "requiredSourceIds": [
+      "bounded_signal_packet_08_private_split_v1_rules_out_early_1",
+      "bounded_signal_packet_08_private_split_v1_rules_out_other_1"
+    ],
+    "evidenceAccess": "private_split"
+  },
+  "claims": [
+    {
+      "id": "explanation_a",
+      "text": "an instrument-calibration artifact best accounts for the observed conductivity change.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "The tested intervention best accounts for the observed conductivity change.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_c",
+      "text": "a difference in starting sample composition best accounts for the observed conductivity change.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_early_1",
+      "text": "An early exploratory check was compatible with a difference in starting sample composition best accounts for the observed conductivity change. The check was small or unblinded and did not rule out the other explanations.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_1"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_early_2",
+      "text": "An early exploratory check was compatible with a difference in starting sample composition best accounts for the observed conductivity change. The check was small or unblinded and did not rule out the other explanations.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_2"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_early_3",
+      "text": "An early exploratory check was compatible with a difference in starting sample composition best accounts for the observed conductivity change. The check was small or unblinded and did not rule out the other explanations.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_3"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_early_4",
+      "text": "An early exploratory check was compatible with a difference in starting sample composition best accounts for the observed conductivity change. The check was small or unblinded and did not rule out the other explanations.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_4"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_early_1",
+      "text": "A later blinded and preregistered check makes a difference in starting sample composition best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_5"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_early_2",
+      "text": "A later blinded and preregistered check makes a difference in starting sample composition best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_6"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_early_3",
+      "text": "A later blinded and preregistered check makes a difference in starting sample composition best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_7"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_early_4",
+      "text": "A later blinded and preregistered check makes a difference in starting sample composition best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_c",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_8"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_other_1",
+      "text": "A later independent check makes an instrument-calibration artifact best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_9"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_other_2",
+      "text": "A later independent check makes an instrument-calibration artifact best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_10"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_other_3",
+      "text": "A later independent check makes an instrument-calibration artifact best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_11"
+      ]
+    },
+    {
+      "id": "bounded_signal_packet_08_private_split_v1_rules_out_other_4",
+      "text": "A later independent check makes an instrument-calibration artifact best accounts for the observed conductivity change. unlikely.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_12"
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

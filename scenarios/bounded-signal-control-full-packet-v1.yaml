@@ -1,0 +1,38 @@
+{
+  "id": "bounded_signal_control_full_packet_v1",
+  "title": "Generated signal task: full-packet control",
+  "domain": "synthetic study diagnosis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["generated_signal", "control", "full_packet"],
+  "provenance": {"kind": "new", "note": "The full packet includes weak early signals favoring A and later stronger signals that rule out A and C."},
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": ["explanation_a", "explanation_b", "explanation_c"],
+    "correctClaimId": "explanation_b",
+    "instruction": "A study has three possible explanations, named A, B, and C. Choose the explanation supported by the full set of supplied signals. The early pilot signals are weak and should not outweigh the later controlled signals.",
+    "requiredSourceIds": ["signal_rules_out_a_1", "signal_rules_out_c_1"],
+    "evidenceAccess": "full_packet"
+  },
+  "claims": [
+    {"id": "explanation_a", "text": "Explanation A best accounts for the result.", "truthLabel": "false"},
+    {"id": "explanation_b", "text": "Explanation B best accounts for the result.", "truthLabel": "true"},
+    {"id": "explanation_c", "text": "Explanation C best accounts for the result.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {"id": "early_a_1", "text": "A small unblinded pilot gave a pattern compatible with Explanation A. The pilot was noisy and could not rule out B or C.", "effects": [{"claimId": "explanation_a", "effect": 0.20}]},
+    {"id": "early_a_2", "text": "A second preliminary sample also looked compatible with Explanation A, but its measurement procedure changed during collection.", "effects": [{"claimId": "explanation_a", "effect": 0.20}]},
+    {"id": "early_a_3", "text": "An exploratory subgroup result pointed toward Explanation A, but the subgroup was selected after the data were examined.", "effects": [{"claimId": "explanation_a", "effect": 0.20}]},
+    {"id": "early_a_4", "text": "A short follow-up was compatible with Explanation A but had too few observations to separate A from B.", "effects": [{"claimId": "explanation_a", "effect": 0.20}]},
+    {"id": "signal_rules_out_a_1", "text": "A preregistered blinded comparison kept the measurement procedure constant. Its result makes Explanation A unlikely.", "effects": [{"claimId": "explanation_a", "effect": -0.85}]},
+    {"id": "signal_rules_out_c_1", "text": "The comparison groups had the same measured starting profile before the study. This makes Explanation C unlikely.", "effects": [{"claimId": "explanation_c", "effect": -0.85}]},
+    {"id": "signal_rules_out_a_2", "text": "An independent blinded replication did not show the pattern predicted by Explanation A.", "effects": [{"claimId": "explanation_a", "effect": -0.85}]},
+    {"id": "signal_rules_out_c_2", "text": "A masked review found no difference in the baseline factor predicted by Explanation C.", "effects": [{"claimId": "explanation_c", "effect": -0.85}]},
+    {"id": "signal_rules_out_a_3", "text": "A calibration check removed the measurement feature required for Explanation A while the result remained.", "effects": [{"claimId": "explanation_a", "effect": -0.85}]},
+    {"id": "signal_rules_out_c_3", "text": "A matched allocation check found the same composition across groups, contrary to Explanation C.", "effects": [{"claimId": "explanation_c", "effect": -0.85}]},
+    {"id": "signal_rules_out_a_4", "text": "A larger registered sample again failed to show the signature required by Explanation A.", "effects": [{"claimId": "explanation_a", "effect": -0.85}]},
+    {"id": "signal_rules_out_c_4", "text": "A second independent check found the baseline pattern required by Explanation C was absent.", "effects": [{"claimId": "explanation_c", "effect": -0.85}]}
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

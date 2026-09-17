@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2311_08320v1_q1_one_piece_paragraph",
+  "title": "SciTaT 2311.08320v1-q1 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2311.08320v1-q1",
+      "summary": "\\subsubsection {Task context save/restore acceleration}\nRegister banking is a technique adopted by several interrupt controller architectures to swap a task's context without pushing/popping register values to the stack at the cost of an additional area overhead in the design.\nAs discussed above, in Arm designs, this is the case of \\gls{hw} register banking in platform-level interrupt controllers (\\gls{gic}). \nA similar approach is implemented in the Renesas M32C/80 series~\\cite{renesas_m32c80}. A dual register bank allows quickly swapping the context without saving/restoring to/from the stack, as the second register bank is reserved for high-speed interrupts.\nThe Aurix family instead implements a \\gls{sw} managed solution, featuring a specific organization of the context layout in the system memory based on \\glspl{csa} chained in a linked list fashion~\\cite{tricore_patent}.\nThese approaches trade-off \\gls{hw} and \\gls{sw}-induced latencies when handling asynchronous events, as depicted in~\\cref{fig:int-latency-decomposed}. Gaitan et al.~\\cite{TASK_SWITCHING_TVLSI} propose instead a full \\gls{hw} solution based on a Hardware Scheduling Engine (HSE) that directly attaches interrupts to running tasks without the need for a specialized interrupt controller. While this approach allows lowering interrupt latency and task context switches dramatically, as reported in \\cref{tab:related_work}, it is expensive in terms of area as it requires replicating hardware resources per task.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the paragraph, if the interrupt latency for a system using register banking is 20 cycles and the interrupt latency for a system using a full hardware solution is 1.5 cycles, by what percentage does the full hardware solution reduce the interrupt latency compared to the register banking approach?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2311.08320v1-q1",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 111.0%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 92.5%.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 185.0%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 74.0%.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsubsection {Task context save/restore acceleration}\nRegister banking is a technique adopted by several interrupt controller architectures to swap a task's context without pushing/popping register values to the stack at the cost of an additional area overhead in the design.\nAs discussed above, in Arm designs, this is the case of \\gls{hw} register banking in platform-level interrupt controllers (\\gls{gic}). \nA similar approach is implemented in the Renesas M32C/80 series~\\cite{renesas_m32c80}. A dual register bank allows quickly swapping the context without saving/restoring to/from the stack, as the second register bank is reserved for high-speed interrupts.\nThe Aurix family instead implements a \\gls{sw} managed solution, featuring a specific organization of the context layout in the system memory based on \\glspl{csa} chained in a linked list fashion~\\cite{tricore_patent}.\nThese approaches trade-off \\gls{hw} and \\gls{sw}-induced latencies when handling asynchronous events, as depicted in~\\cref{fig:int-latency-decomposed}. Gaitan et al.~\\cite{TASK_SWITCHING_TVLSI} propose instead a full \\gls{hw} solution based on a Hardware Scheduling Engine (HSE) that directly attaches interrupts to running tasks without the need for a specialized interrupt controller. While this approach allows lowering interrupt latency and task context switches dramatically, as reported in \\cref{tab:related_work}, it is expensive in terms of area as it requires replicating hardware resources per task.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

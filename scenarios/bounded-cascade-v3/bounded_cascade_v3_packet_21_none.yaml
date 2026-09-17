@@ -1,0 +1,54 @@
+{
+  "id": "bounded_cascade_v3_packet_21_none",
+  "title": "Bounded cascade packet 21 (none)",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "late_evidence",
+    "post_late_turnover",
+    "none"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls; model names and correct answer positions rotate."
+  },
+  "focusClaimId": "explanation_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_c",
+      "explanation_a",
+      "explanation_b"
+    ],
+    "correctClaimId": "explanation_c",
+    "instruction": "Choose a model only when the available checks rule out both alternatives. A preliminary preference is not enough to choose.",
+    "requiredSourceIds": [
+      "bounded_cascade_v3_packet_21_none_late_rules_out_early",
+      "bounded_cascade_v3_packet_21_none_late_rules_out_other"
+    ],
+    "evidenceAccess": "none",
+    "allowAbstain": true
+  },
+  "claims": [
+    {
+      "id": "explanation_c",
+      "text": "Model Lumen best explains the recorded pattern.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_a",
+      "text": "Model Ember best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "Model Fjord best explains the recorded pattern.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

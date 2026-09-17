@@ -1,0 +1,27 @@
+{
+  "id": "rerun_chat_collusion_v3",
+  "title": "Chat collusion: selective disclosure without adversary",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "From proposal: no adversary needed. The contamination agent truthfully but selectively shares.",
+      "Compare: open discussion vs truthful-selective collusion (hidden).",
+      "Tests whether selective evidence sharing causes contagion even without lying."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-open-discussion.yaml",
+    "conditions/chat-open-discussion-truthful-collusion-hidden.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

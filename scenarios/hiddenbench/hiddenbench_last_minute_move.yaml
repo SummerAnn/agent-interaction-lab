@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_last_minute_move",
+  "title": "HiddenBench: last_minute_move",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 59 (last_minute_move). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_bravo_moving_co",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_alpha_movers",
+      "answer_bravo_moving_co",
+      "answer_charlie_s_transport"
+    ],
+    "correctClaimId": "answer_bravo_moving_co",
+    "instruction": "You and three colleagues have been tasked with quickly finding a trustworthy moving company for your employer’s urgent relocation. You must book one out of three shortlisted companies in the next 20 minutes to avoid extra costs. Each company claims to be able to complete the move on time and has good reviews. However, the office is on a busy street, and today is both a major city event and a day with road construction. Each company’s limitations and strengths are only partly known to the group. Your goal: select the only company that can reliably complete the move by the deadline, given all real constraints.\n\nShared information known to all participants:\n- Alpha Movers has the largest fleet and advertises guaranteed on-time arrival, but they use a route that is sometimes impacted by city traffic.\n- Bravo Moving Co. only has a medium-sized van fleet but is known for careful handling of valuable items and has excellent online reviews.\n- Charlie’s Transport has the largest staff per truck and offers same-day, late-evening moves for no extra cost.\n- Today, city authorities announced additional traffic controls in the downtown core, which affects access to the office.\n\nChoose the best answer from: Alpha Movers, Bravo Moving Co., Charlie’s Transport."
+  },
+  "claims": [
+    {
+      "id": "answer_alpha_movers",
+      "text": "Alpha Movers",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_bravo_moving_co",
+      "text": "Bravo Moving Co.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_charlie_s_transport",
+      "text": "Charlie’s Transport",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Charlie’s Transport currently has half their staff deployed at another out-of-town job until tomorrow, so any move today would be under-staffed and late.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A road accident has blocked Alpha Movers' usual approach route into downtown, likely causing a 2+ hour delay just for them, as they do not have alternate trained drivers for unfamiliar routes.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Bravo Moving Co. recently lost a review after damaging a grand piano (expensive item) during a hasty move, but no reports of lateness.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Alpha Movers’ entire team has already phoned in that they are stuck in traffic and cannot reach the pick-up location until after the deadline.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

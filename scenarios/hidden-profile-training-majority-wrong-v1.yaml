@@ -1,0 +1,49 @@
+{
+  "id": "hidden_profile_training_majority_wrong_v1",
+  "title": "Private evidence: safety-training diagnosis with early wrong majority",
+  "domain": "synthetic workplace study packet",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["hidden_profile", "private_evidence", "evidence_assembly", "majority_wrong", "delayed_evidence", "source_detachment"],
+  "provenance": {
+    "kind": "new",
+    "note": "Controlled synthetic task. Three analysts begin with the same wrong explanation. Two cards arriving in step 2 separately rule out the two wrong explanations."
+  },
+  "focusClaimId": "candidate_reporting_change",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_training_effect", "candidate_reporting_change", "candidate_case_mix"],
+    "correctClaimId": "candidate_training_effect",
+    "requiredSourceIds": ["training_reporting_audit", "training_work_assignment"],
+    "instruction": "A workplace study reports fewer safety incidents after a training program. Exactly one explanation can account for the full study packet. Choose the explanation best supported by the evidence you can access. If you name a source card, use only an ID you received."
+  },
+  "claims": [
+    {"id": "candidate_training_effect", "text": "The training program caused the reduction in safety incidents.", "truthLabel": "true"},
+    {"id": "candidate_reporting_change", "text": "A change in the incident reporting system caused an apparent reduction in safety incidents.", "truthLabel": "false"},
+    {"id": "candidate_case_mix", "text": "A change in the type of work assigned to the participating teams caused the reduction in safety incidents.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {
+      "id": "training_reporting_audit",
+      "text": "The reporting form, reporting deadline, and auditing procedure were unchanged before and after the program. A random audit found the same proportion of incident reports in the system during both periods. If reporting changes caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_1"],
+      "availableFromStep": 2,
+      "effects": [{"claimId": "candidate_reporting_change", "effect": -0.95}]
+    },
+    {
+      "id": "training_work_assignment",
+      "text": "Participating and comparison teams performed the same mix of shifts and task categories before and after the program. If a work-assignment change caused the result, this observation would be unlikely.",
+      "visibleToAgentIds": ["analyst_2"],
+      "availableFromStep": 2,
+      "effects": [{"claimId": "candidate_case_mix", "effect": -0.95}]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId": "analyst_2", "claimId": "candidate_reporting_change", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_2", "claimId": "candidate_training_effect", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_reporting_change", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_3", "claimId": "candidate_training_effect", "stance": "reject", "confidence": 0.75},
+    {"agentId": "analyst_4", "claimId": "candidate_reporting_change", "stance": "endorse", "confidence": 0.75},
+    {"agentId": "analyst_4", "claimId": "candidate_training_effect", "stance": "reject", "confidence": 0.75}
+  ],
+  "initialMemoryEntries": []
+}

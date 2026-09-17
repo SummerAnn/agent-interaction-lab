@@ -1,0 +1,27 @@
+{
+  "id": "ambiguous_evidence_majority_wrong_haiku_v1",
+  "title": "Ambiguous evidence: opinions vs facts when evidence is open to interpretation",
+  "benchmarkMeta": {
+    "status": "paper-facing synthetic control",
+    "locked": true,
+    "notes": [
+      "Each card is individually ambiguous: consistent with the correct answer and at least one wrong answer.",
+      "Only combining both cards narrows to one explanation.",
+      "Three of four analysts start favoring one wrong explanation.",
+      "The only changed variable is whether the shared record contains original evidence only or original evidence plus earlier analyst conclusions.",
+      "Primary outcomes: exact group choice, detached-support rate, and required-card source coverage among final supporters."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ambiguous-evidence-productivity-v1.yaml",
+    "scenarios/ambiguous-evidence-tutoring-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

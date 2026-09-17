@@ -1,0 +1,26 @@
+{
+  "id": "calibration_late_weak_global_v1",
+  "title": "Calibration: weak late evidence visible to all",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["calibration", "late_evidence", "weak_counterevidence", "global_visibility"],
+  "focusClaimId": "claim_supplement",
+  "claims": [
+    {"id":"claim_supplement","text":"The supplement reliably prevents seasonal respiratory infections.","truthLabel":"false"},
+    {"id":"claim_trial","text":"A randomized trial found no reliable preventive benefit.","truthLabel":"true"},
+    {"id":"claim_bias","text":"The early positive reports had serious publication-bias concerns.","truthLabel":"true"}
+  ],
+  "evidence": [
+    {"id":"ev_early_positive","text":"Two early observational studies reported fewer infections among people taking the supplement, although neither study used random assignment.","visibleToAgentIds":["contamination_1","regular_1","regular_2"],"availableFromStep":1,"effects":[{"claimId":"claim_supplement","effect":0.65}]},
+    {"id":"ev_late_weak_trial","text":"A preregistered randomized study of 900 participants found no statistically reliable reduction in infections, although its confidence interval could not rule out a small benefit.","availableFromStep":7,"effects":[{"claimId":"claim_supplement","effect":-0.35},{"claimId":"claim_trial","effect":0.5}]}
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId":"contamination_1","claimId":"claim_supplement","stance":"endorse","confidence":0.84},
+    {"agentId":"regular_1","claimId":"claim_supplement","stance":"endorse","confidence":0.68},
+    {"agentId":"regular_2","claimId":"claim_supplement","stance":"endorse","confidence":0.68},
+    {"agentId":"specialist_1","claimId":"claim_supplement","stance":"uncertain","confidence":0.25},
+    {"agentId":"specialist_2","claimId":"claim_supplement","stance":"uncertain","confidence":0.25},
+    {"agentId":"observer_1","claimId":"claim_supplement","stance":"uncertain","confidence":0.25}
+  ],
+  "initialMemoryEntries": []
+}

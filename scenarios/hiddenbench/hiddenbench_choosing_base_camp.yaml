@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_choosing_base_camp",
+  "title": "HiddenBench: choosing_base_camp",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 18 (choosing_base_camp). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_camp_pinecone",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_camp_summit",
+      "answer_camp_pinecone",
+      "answer_camp_meadow"
+    ],
+    "correctClaimId": "answer_camp_pinecone",
+    "instruction": "You are leaders of a multi-national research expedition in a mountainous region planning to set up your central base camp for a two-week mission. There are three candidate spots: Camp Summit (high ground near a glacier), Camp Pinecone (forest edge near a river), and Camp Meadow (open grassland below a ridge). Each has some historical data and rumored risks, but no location is perfect. Your decision must be made within the next hour before dark. Weather, animal activity, equipment delivery, and avalanche danger all affect safety and logistics.\n\nShared information known to all participants:\n- Camp Summit is forecasted to have stable weather for the next 72 hours, making it seem the safest immediate location.\n- Site managers last week delivered extra cold-weather gear to Camp Summit, so supplies there should be plentiful.\n- Camp Pinecone had reports last year of bears near the river in early summer.\n- Camp Meadow is expected to get high winds tonight according to regional weather bulletins.\n\nChoose the best answer from: Camp Summit, Camp Pinecone, Camp Meadow."
+  },
+  "claims": [
+    {
+      "id": "answer_camp_summit",
+      "text": "Camp Summit",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_camp_pinecone",
+      "text": "Camp Pinecone",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_camp_meadow",
+      "text": "Camp Meadow",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Wind speed projections for Camp Meadow have been revised upwards—tents there may not withstand the forecasted gale.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Delivery of additional food supplies for the expedition is delayed; only Camp Pinecone currently has emergency food rations stored.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The glacier overlooking Camp Summit was reported by the last survey team to have developed new cracks, making sudden avalanches possible if temperatures rise.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Bears in the region have moved further upriver for the season, and no recent sightings have been reported at Camp Pinecone in the last two months.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

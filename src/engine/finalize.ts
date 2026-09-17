@@ -294,6 +294,8 @@ export function finalizeSummary(
     maxSteps: runConfig.maxSteps,
     completedSteps: stepMetrics.length,
     falseClaimEndorsementRate: finalMetrics?.falseClaimEndorsementRate ?? 0,
+    honestFalseEndorsementRate: finalMetrics?.honestFalseEndorsementRate ?? 0,
+    finalCorroborationInflation: finalMetrics?.corroborationInflation ?? null,
     finalConfidenceWeightedFalseEndorsement: finalMetrics?.confidenceWeightedFalseEndorsement ?? 0,
     finalFalseClaimRejectRate: finalMetrics?.falseClaimRejectRate ?? 0,
     finalUncertainRate: finalMetrics?.uncertainRate ?? 0,

@@ -1,0 +1,37 @@
+{
+  "id": "scitat_part2_pressure_chat_smoke_v1",
+  "title": "SciTaT Part 2 pressure: four-speaker smoke check",
+  "projectRoot": ".",
+  "provenance": {
+    "kind": "adapted",
+    "note": "Applies the six-agent 0/1/4 persistent false-speaker treatment to two screened SciTaT items."
+  },
+  "scenarios": [
+    "scenarios/scitat-numeric/scitat_1601_07336v1_q1_group.yaml"
+  ],
+  "conditions": [
+    "conditions/bounded-chat-mixed-fifo.yaml"
+  ],
+  "rosterPaths": [
+    "rosters/scitat_part2_four_seed_6_haiku_v1.json"
+  ],
+  "turnOrder": [
+    "analyst_1",
+    "analyst_2",
+    "analyst_3",
+    "analyst_4",
+    "analyst_5",
+    "analyst_6"
+  ],
+  "seeds": [
+    1
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 40,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

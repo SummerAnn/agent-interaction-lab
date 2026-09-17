@@ -1,0 +1,14 @@
+{
+  "id": "real_source_chemo_predictor_no_source_b_v1",
+  "title": "Reference: chemotherapy-predictor source question without cards B",
+  "domain": "research-integrity", "mechanismFamily": "source_grounded_deliberation", "mechanismTags": ["real_source_packet", "reference", "no_source", "source_quality_conflict"],
+  "provenance": {"kind": "adapted", "note": "No-card control. Answer order B puts the qualified conclusion second."},
+  "sources": [], "sourceCards": [], "focusClaimId": "candidate_qualified",
+  "groupDecision": {"candidateClaimIds": ["candidate_validated", "candidate_qualified", "candidate_never_useful"], "correctClaimId": "candidate_qualified", "instruction": "Choose the statement you judge most plausible. No source cards are available in this reference run. Do not claim to cite evidence you were not given.", "evidenceAccess": "none"},
+  "claims": [
+    {"id": "candidate_qualified", "text": "The 2006 report described a proposed method, but the later record does not support treating these specific chemotherapy-response signatures as validated.", "truthLabel": "true"},
+    {"id": "candidate_validated", "text": "The sources establish that these specific chemotherapy-response signatures were validated for directing chemotherapy choice.", "truthLabel": "false"},
+    {"id": "candidate_never_useful", "text": "The sources show that genomic information can never help predict treatment response.", "truthLabel": "false"}
+  ],
+  "evidence": [], "scheduledInterventions": [], "initialBeliefStates": [], "initialMemoryEntries": []
+}

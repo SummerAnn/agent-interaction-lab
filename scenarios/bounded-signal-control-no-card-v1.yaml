@@ -1,0 +1,25 @@
+{
+  "id": "bounded_signal_control_no_card_v1",
+  "title": "Generated signal task: no-card control",
+  "domain": "synthetic study diagnosis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["generated_signal", "control", "no_card"],
+  "provenance": {"kind": "new", "note": "The answer label is arbitrary and no source material is shown."},
+  "focusClaimId": "explanation_b",
+  "groupDecision": {
+    "candidateClaimIds": ["explanation_a", "explanation_b", "explanation_c"],
+    "correctClaimId": "explanation_b",
+    "instruction": "A study has three possible explanations, named A, B, and C. Choose one only when the supplied material supports it. If there is no supplied material, do not guess from the label.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "none"
+  },
+  "claims": [
+    {"id": "explanation_a", "text": "Explanation A best accounts for the result.", "truthLabel": "false"},
+    {"id": "explanation_b", "text": "Explanation B best accounts for the result.", "truthLabel": "true"},
+    {"id": "explanation_c", "text": "Explanation C best accounts for the result.", "truthLabel": "false"}
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

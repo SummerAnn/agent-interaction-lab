@@ -1,0 +1,53 @@
+{
+  "id": "neutral_confounds_v1_mmr_focus_only",
+  "title": "MMR and autism: focal claim only, neutral prompt",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "private_evidence",
+    "partial_truth",
+    "observer_ready",
+    "hidden_information",
+    "blind_ids",
+    "neutral_prompt",
+    "balanced_order",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "claim_mmr_causes_autism",
+  "claims": [
+    {
+      "id": "claim_mmr_causes_autism",
+      "text": "The MMR vaccine causes autism.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

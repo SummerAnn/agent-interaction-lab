@@ -1,0 +1,24 @@
+{
+  "id": "part2_adversary_ratio_neutral_v1",
+  "title": "Adversary ratio: 3/6 even split with neutral prompts",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Fills the 3/6 gap in the adversary ratio gradient.",
+      "Same experiment ID so results merge with 1/6, 2/6, 4/6."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/blind-minority-wrong-3of6-neutral-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

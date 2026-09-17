@@ -1,0 +1,57 @@
+{
+  "id": "part2_neutral_crossmodel_weak_chat_v1",
+  "title": "Neutral prompt across larger Anthropic models on weak-private-signal tasks: debate",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Neutral-prompt boundary test on one ambiguous familiar-science topic and two no-context SciTaT pilot items.",
+      "Claude Sonnet 4.6 and Opus 4.6 each use twelve explicit orders, balancing every agent twice in every position.",
+      "Every cell has 18 focal-claim calls, three per agent, no evidence card, no correction intervention, and temperature 0.",
+      "This grid tests whether the larger Anthropic models resist neutral contagion only when they have a strong private answer."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-confounds-v1/neutral_confounds_v1_pandas_focus_only.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_scitat_1512_01642_q2.yaml",
+    "scenarios/neutral-core-v1/neutral_core_v1_scitat_math_0012242_q2.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_clustered_r6.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_opus_interleaved_r6.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_clustered_r6.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r1.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r2.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r3.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r4.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r5.json",
+    "rosters/neutral-confounds-v1/cross-model/neutral_confounds_v1_sonnet_interleaved_r6.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

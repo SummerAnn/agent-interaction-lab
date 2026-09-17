@@ -1,0 +1,30 @@
+{
+  "id": "study9_correction_trust",
+  "title": "Study 9: How much does correction trust determine recovery?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study9_correction_trust",
+    "locked": true,
+    "notes": [
+      "Supporting benchmark for trust-conditioned recovery.",
+      "Keeps intervention rule fixed and varies correction trust through the roster."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml",
+    "scenarios/stap-cells-v1.yaml",
+    "scenarios/climate-attribution-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-trigger-at-majority.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/correction-trust-low-6-haiku.json",
+    "rosters/balanced-6-haiku.json",
+    "rosters/correction-trust-high-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

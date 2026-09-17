@@ -1,0 +1,28 @@
+{
+  "id": "rerun_noisy_verification_source_exit_v3",
+  "title": "Noisy verification + source exit: does a fallible verifier help or hurt?",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "From the proposal: a fallible verifier that marks a false claim as true only lends it more authority.",
+      "Source-exit roster × three noise levels (30%, 50%, 70%) + reliable verification baseline."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-gt-verification-no-correction.yaml",
+    "conditions/shared-memory-noisy-gt-verification-30-no-correction.yaml",
+    "conditions/shared-memory-noisy-gt-verification-50-no-correction.yaml",
+    "conditions/shared-memory-noisy-gt-verification-70-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-source-exit-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

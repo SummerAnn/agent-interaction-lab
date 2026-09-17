@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_critical_data_backup_site_selection",
+  "title": "HiddenBench: Critical Data Backup Site Selection",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 24 (Critical Data Backup Site Selection). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_city_hq_facility",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_mountain_server_farm",
+      "answer_valley_research_annex",
+      "answer_city_hq_facility"
+    ],
+    "correctClaimId": "answer_city_hq_facility",
+    "instruction": "You are IT coordinators at a national research institute. A sophisticated cyberattack is underway, targeting all your digital assets. You must immediately choose a site to physically deliver critical data for offline backup before the attacker can permanently destroy or corrupt systems. There are three candidate facilities:\n- Mountain Server Farm (isolated, known for its robust network and backup power).\n- Valley Research Annex (onsite security team and advanced air-gapped systems).\n- City HQ Facility (main office building, older but recently renovated infrastructure).\nOnly one location is both reachable and appropriately secure under current conditions. Time is of the essence: the attacker may escalate at any moment, so the decision must be rapid and correct.\n\nShared information known to all participants:\n- Mountain Server Farm is on an isolated network and has backup generators in the event of a main power loss.\n- Valley Research Annex is monitored by a live security team and is equipped with air-gapped backup systems.\n- City HQ Facility just completed a major infrastructure upgrade, including new firewalls and physical barriers, but remains directly connected to the internet.\n\nChoose the best answer from: Mountain Server Farm, Valley Research Annex, City HQ Facility."
+  },
+  "claims": [
+    {
+      "id": "answer_mountain_server_farm",
+      "text": "Mountain Server Farm",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_valley_research_annex",
+      "text": "Valley Research Annex",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_city_hq_facility",
+      "text": "City HQ Facility",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Emergency backup power at Mountain Server Farm was rerouted this morning to support a nearby hospital and is currently unavailable for the servers.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The Mountain Server Farm's isolated network has been down for the last 12 hours, and the local team is unable to restore connectivity.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The Valley Research Annex was bypassed by the attackers, but a security technician just discovered the main network routing switch was replaced with one loaded with hidden malware.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The City HQ Facility's recent renovation included installation of a separate, newly-laid internet line with verified security audits, and there is confirmation that the building is physically undisturbed.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

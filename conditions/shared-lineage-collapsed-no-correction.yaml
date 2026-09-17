@@ -1,0 +1,13 @@
+{
+  "id": "shared_lineage_collapsed_no_correction",
+  "title": "Shared lineage-collapsed record with no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "lineage_collapsed",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

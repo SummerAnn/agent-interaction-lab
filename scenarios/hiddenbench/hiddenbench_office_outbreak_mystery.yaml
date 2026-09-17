@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_office_outbreak_mystery",
+  "title": "HiddenBench: Office Outbreak Mystery",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 64 (Office Outbreak Mystery). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_airborne_toxin_from_hvac",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_cafeteria_food",
+      "answer_contaminated_water_supply",
+      "answer_airborne_toxin_from_hvac"
+    ],
+    "correctClaimId": "answer_airborne_toxin_from_hvac",
+    "instruction": "You are employees on the safety committee of MetroLoop Inc., called together urgently to advise management after 12 people fell ill at company headquarters. The company cafeteria is under scrutiny, but the source of the outbreak isn’t yet confirmed. Your team must quickly identify the likely cause to guide containment actions. You have three leading hypotheses:\n- Food poisoning from the cafeteria\n- Contaminated water supply\n- Airborne toxin from the HVAC system\nEach of you has received reports or observations not known by others. The company needs your answer within 15 minutes. Speed matters, but so does accuracy—acting on the wrong cause may harm colleagues.\n\nShared information known to all participants:\n- All 12 sick employees had lunch in the company cafeteria on the day symptoms began.\n- Several cafeteria staff are also reporting mild symptoms.\n- Water samples from office faucets showed no immediate contamination in preliminary tests.\n- Symptoms included nausea and dizziness, reported by all affected employees within an hour after lunch.\n\nChoose the best answer from: Cafeteria Food, Contaminated Water Supply, Airborne Toxin from HVAC."
+  },
+  "claims": [
+    {
+      "id": "answer_cafeteria_food",
+      "text": "Cafeteria Food",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_contaminated_water_supply",
+      "text": "Contaminated Water Supply",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_airborne_toxin_from_hvac",
+      "text": "Airborne Toxin from HVAC",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "I didn’t eat anything from the cafeteria that day, but I developed the same symptoms as the others.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The building’s air vents have been malfunctioning for two days, with an unusual odor reported throughout the open-plan office area, but not in the cafeteria itself.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A client visiting from another city became sick late in the afternoon, despite bringing their own bottled water and packed lunch, but spent the afternoon in Meeting Room 4 near the sick employees.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A health department specialist found early traces of a rarely encountered airborne compound in air filters serving areas outside the cafeteria, but not in the kitchen or dining area.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

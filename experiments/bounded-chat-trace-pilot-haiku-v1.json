@@ -1,0 +1,19 @@
+{
+  "id": "bounded_chat_trace_pilot_haiku_v2",
+  "title": "Bounded-chat trace pilot: source-only versus source-plus-conclusion",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": [
+      "Two-cell implementation audit before any matched memory/chat grid.",
+      "Twelve neutral agents act once in fixed order; each sees one private card and two public messages."
+    ]
+  },
+  "scenarios": ["scenarios/bounded-signal-v2/bounded_signal_v2_packet_01_private_split.yaml"],
+  "conditions": ["conditions/bounded-chat-evidence-fifo.yaml", "conditions/bounded-chat-mixed-fifo.yaml"],
+  "seeds": [1],
+  "rosterPaths": ["rosters/bounded-record-12-haiku.json"],
+  "turnOrder": ["analyst_01", "analyst_02", "analyst_03", "analyst_04", "analyst_05", "analyst_06", "analyst_07", "analyst_08", "analyst_09", "analyst_10", "analyst_11", "analyst_12"],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 28, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

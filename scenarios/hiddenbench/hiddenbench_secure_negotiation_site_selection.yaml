@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_secure_negotiation_site_selection",
+  "title": "HiddenBench: secure_negotiation_site_selection",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 58 (secure_negotiation_site_selection). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_the_old_museum_basement",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_riverside_conference_center",
+      "answer_city_hall_annex",
+      "answer_the_old_museum_basement"
+    ],
+    "correctClaimId": "answer_the_old_museum_basement",
+    "instruction": "A city is on high alert due to an imminent threat. You and three colleagues must urgently decide where to hold confidential negotiations with several key stakeholders to ensure maximum safety as well as the ability to communicate with the outside world. Three potential locations are under consideration:\n- Riverside Conference Center (a prestigious facility by the river, currently under military guard)\n- City Hall Annex (a modern office block downtown)\n- The Old Museum Basement (historical site with limited modern infrastructure)\nAll sites were examined in the past 24 hours and deemed functional for meetings. The wrong choice would jeopardize security and the negotiation outcome.\n\nShared information known to all participants:\n- The Riverside Conference Center is currently under heavy military guard, and most previous government functions have been relocated there during this crisis.\n- The City Hall Annex boasts reinforced doors and windows, and its communication infrastructure is reported to have survived recent cyberattacks.\n- The Old Museum Basement is rarely used, but security systems were tested yesterday and found to be operational.\n\nChoose the best answer from: Riverside Conference Center, City Hall Annex, The Old Museum Basement."
+  },
+  "claims": [
+    {
+      "id": "answer_riverside_conference_center",
+      "text": "Riverside Conference Center",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_city_hall_annex",
+      "text": "City Hall Annex",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_the_old_museum_basement",
+      "text": "The Old Museum Basement",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The Old Museum Basement, while rarely used, contains a sealed tunnel known only to a few staff, which allows quick, discreet escape to a neighboring street if needed.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "All official phones and internet connections in City Hall Annex are currently jammed, with no estimate for restoration, and personal devices likewise receive no signal.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A reliable military source has reported that infiltration attempts have compromised trust in Riverside Conference Center's security personnel, but the building itself is still structurally secure.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The river by the Conference Center has been mined as a countermeasure, but this also makes rapid evacuation from the site nearly impossible if warned of an attack.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

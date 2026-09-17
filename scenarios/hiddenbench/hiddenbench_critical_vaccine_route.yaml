@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_critical_vaccine_route",
+  "title": "HiddenBench: critical_vaccine_route",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 32 (critical_vaccine_route). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_route_c_old_supply_road",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_route_a_mountain_pass",
+      "answer_route_b_frozen_lake",
+      "answer_route_c_old_supply_road"
+    ],
+    "correctClaimId": "answer_route_c_old_supply_road",
+    "instruction": "You are a logistics coordinator for an international medical response team. A remote Arctic research base radioed in a request for an urgent shipment of a new vaccine after an outbreak. There are three delivery routes: A (Mountain Pass), B (Frozen Lake), and C (Old Supply Road). Each route has previously been used for deliveries, but recent conditions may have changed their safety. A strict delivery deadline means only one route can be chosen. The goal is for the group to decide together which route ensures the vaccine reaches the base safely and on time.\n\nShared information known to all participants:\n- Weather stations report mild snowfall. Winds are steady but within the normal range for this season.\n- Route A's snowplows were deployed yesterday, and road crews reported all clear as of 6 AM.\n- Route B is known for its reliability, used for most winter deliveries in past years. The base just received a report that the ice is thicker than average this week.\n- A research team driving via Route C last week reported limited radio contact and some branches blocking half the road. No structural damage to the bridge at its main river crossing was reported.\n\nChoose the best answer from: Route A (Mountain Pass), Route B (Frozen Lake), Route C (Old Supply Road)."
+  },
+  "claims": [
+    {
+      "id": "answer_route_a_mountain_pass",
+      "text": "Route A (Mountain Pass)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_route_b_frozen_lake",
+      "text": "Route B (Frozen Lake)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_route_c_old_supply_road",
+      "text": "Route C (Old Supply Road)",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Route B is under a sudden quarantine order after a suspected case of viral hemorrhagic fever at a midway checkpoint; no unauthorized transit is allowed for at least 48 hours.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The main bridge on Route C was inspected in detail after the last snowstorm and certified as structurally safe, able to handle supply vehicles, despite local rumors.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A specialized snow rescue unit is only available for Route C tonight; for the other routes, backup would take 12+ hours to arrive.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "An avalanche monitoring post flagged a fresh crack in the mountain, and geologists estimate a high risk of landslide across Route A within the next 6 hours.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

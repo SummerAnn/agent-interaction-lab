@@ -1,0 +1,24 @@
+{
+  "id": "audit_study2_correction_sanity",
+  "title": "Audit: Study 2 correction policy sanity run",
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml",
+    "scenarios/stap-cells-v1.yaml",
+    "scenarios/climate-attribution-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-early-correction.yaml",
+    "conditions/shared-memory-late-correction.yaml",
+    "conditions/shared-memory-weak-correction.yaml",
+    "conditions/shared-memory-repeated-correction.yaml",
+    "conditions/shared-memory-high-authority.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

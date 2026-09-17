@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_the_elusive_bird_sighting",
+  "title": "HiddenBench: The Elusive Bird Sighting",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 60 (The Elusive Bird Sighting). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_area_a_the_oak_woods",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_area_a_the_oak_woods",
+      "answer_area_b_the_wetland",
+      "answer_area_c_the_meadow"
+    ],
+    "correctClaimId": "answer_area_a_the_oak_woods",
+    "instruction": "You are part of a research group searching for the recently spotted rare Bluecrest Thrush in the large Greenwood Nature Reserve. The park is divided into three main sections: Area A (the Oak Woods), Area B (the Wetland), and Area C (the Meadow). A trusted park ranger reported sighting the bird yesterday at sunrise, but due to heavy fog, the exact location was unclear. Each group member will receive one unique field report in addition to the public information.\n\nShared information known to all participants:\n- The trusted ranger noted that the sighting took place in a grassy clearing with dew on the ground, and that songbirds could be heard nearby.\n- In Area A, the Oak Woods, the last official survey found no evidence of Bluecrest Thrush for the past season.\n- Area B, the Wetland, is partially flooded due to recent storms, making movement difficult and likely discouraging small land birds.\n- Area C, the Meadow, is famous for its grassy clearings and hosts several songbird species; it has had intermittent sightings of rare birds before.\n\nChoose the best answer from: Area A (the Oak Woods), Area B (the Wetland), Area C (the Meadow)."
+  },
+  "claims": [
+    {
+      "id": "answer_area_a_the_oak_woods",
+      "text": "Area A (the Oak Woods)",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_area_b_the_wetland",
+      "text": "Area B (the Wetland)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_area_c_the_meadow",
+      "text": "Area C (the Meadow)",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Area B’s main trail has been entirely underwater since the storm, making it physically impossible to cross it on foot or for the ranger to have entered there yesterday.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The only patch of ground in Area C that is suitable as a 'grassy clearing' is currently under maintenance and was cordoned off completely yesterday; researchers cannot enter it.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Though the last official survey found no Bluecrest Thrush in Area A, several spontaneous amateur sightings with photos have been submitted from Area A to the reserve’s website in the last two weeks.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Last night, local residents saw wild dogs passing through Area C and observed them again at dawn. Bluecrest Thrushes avoid areas where wild dogs were seen in the preceding 24 hours.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

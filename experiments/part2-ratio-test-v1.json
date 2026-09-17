@@ -1,0 +1,23 @@
+{
+  "id": "part2_ratio_test_v1",
+  "title": "Part 2: liar ratio gradient — 3:3, 4:4, 2:6",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Tests contagion at different liar:honest ratios with more honest agents.",
+      "3:3 = half and half (3 liars + 1 specialist + 2 regular)",
+      "4:4 = equal 8-agent (4 liars + 2 specialist + 2 regular)",
+      "2:6 = minority liars (2 liars + 2 specialist + 4 regular)",
+      "More honest agents means more counter-entries in the record."
+    ]
+  },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_3liars_clean_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/blind-3liar-3honest-haiku.json",
+    "rosters/blind-4liar-4honest-haiku.json",
+    "rosters/blind-2liar-6honest-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 72, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

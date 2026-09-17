@@ -1,0 +1,34 @@
+{
+  "id": "study1_memory_rules_v2",
+  "title": "Study 1: Which memory rules help or hurt truth recovery when evidence is split across agents?",
+  "benchmarkMeta": {
+    "status": "canonical",
+    "claimId": "study1_memory_rules_v2_under_split_evidence",
+    "locked": true,
+    "notes": [
+      "Version 2: paper-facing run with correction removed, private initial seeding, an evidence-board comparison, and LLM-visible memory decay. Every agent receives three turns; the only changed factor is the record available to the group."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/shared-memory-decay-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxOutputTokensPerCall": 200,
+    "temperature": 0
+  }
+}

@@ -93,6 +93,8 @@ export async function runChatMode(
       {
         chatRounds: ctx.condition.interaction.chatRounds,
         topology: ctx.condition.interaction.topology,
+        adaptiveStopping: ctx.condition.interaction.adaptiveStopping,
+        privateMemoryEntries: ctx.memoryEntries,
         onMessage: ctx.onChatMessage,
         maxInputTokens: ctx.runConfig.budget.maxInputTokensPerCall,
         maxOutputTokens: ctx.runConfig.budget.maxOutputTokensPerCall,
@@ -202,7 +204,8 @@ export async function runChatMode(
     const stepSnapshot = buildStepSnapshot(ctx.runId, step, ctx.allBeliefStates, stepUpdates);
     ctx.allBeliefStates.push(...stepUpdates);
 
-    const metrics = computeStepMetrics(ctx.runId, step, stepSnapshot, ctx.scenario);
+    const honestIds = new Set(ctx.runConfig.agents.filter((a) => a.role !== "contamination_agent").map((a) => a.id));
+    const metrics = computeStepMetrics(ctx.runId, step, stepSnapshot, ctx.scenario, honestIds);
     ctx.stepMetrics.push(metrics);
     persistStepMetrics(ctx.dbPath, ctx.runId, step, metrics);
     modelCalls += debateResult.usageLogs.length;

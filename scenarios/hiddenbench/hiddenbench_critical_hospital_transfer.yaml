@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_critical_hospital_transfer",
+  "title": "HiddenBench: critical_hospital_transfer",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 9 (critical_hospital_transfer). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_hospital_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_hospital_a",
+      "answer_hospital_b",
+      "answer_hospital_c"
+    ],
+    "correctClaimId": "answer_hospital_a",
+    "instruction": "You are on the hospital staff of a rural clinic. A young patient has collapsed with symptoms of a rare but treatable illness. The patient needs to be transferred immediately to a hospital with advanced ICU facilities. There are three hospitals within reach: Hospital A (north), Hospital B (east), and Hospital C (south). You have a single ambulance, and time is critical. Weather conditions are poor (intense rain), some roads may be blocked, and you have no radio contact with the hospitals. Each of you, as staff, have partial updates from local contacts, but you must pool your information to choose which hospital to send the ambulance to. Pick wrong, and the patient may not make it.\n\nShared information known to all participants:\n- The main road to Hospital B has been recently repaired and is the most commonly used route. Hospital B is known for its large ICU and currently has at least one doctor on emergency shift.\n- Hospital A has a good reputation but is smaller and sometimes lacks staff at night. The northern mountain pass leading to Hospital A can become hazardous after heavy rain.\n- Hospital C is the oldest hospital and has a history of equipment failures; it’s reached by a secondary road that sometimes floods. However, its ICU was upgraded last year and their ambulance often helps transfer patients.\n\nChoose the best answer from: Hospital A, Hospital B, Hospital C."
+  },
+  "claims": [
+    {
+      "id": "answer_hospital_a",
+      "text": "Hospital A",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_hospital_b",
+      "text": "Hospital B",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hospital_c",
+      "text": "Hospital C",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Hospital C's recent ICU upgrade is incomplete: the oxygen supply system failed last night, and they have posted an urgent request for repairs—no critical care available until fixed.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A police alert reported a landslide blocking the last stretch of the main road to Hospital B this morning—traffic is completely halted for at least 24 hours.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "The northern mountain pass to Hospital A has been cleared and is confirmed safe for ambulance travel as of an hour ago.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Hospital B's emergency shift doctor is dealing with a multi-patient accident, and the hospital is temporarily out of critical care beds.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,43 @@
+{
+  "id": "real_source_debt_threshold_attribution_draft_v1",
+  "title": "Draft real-source packet: keeping debt-and-growth findings attached to their sources",
+  "domain": "economics-methods",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["real_source_packet", "private_evidence", "source_attribution", "causal_inference"],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Draft for source review. This version tests whether a group can keep each finding attached to its original source."
+  },
+  "sources": [
+    {"id": "reinhart_rogoff_2010", "label": "Reinhart and Rogoff (2010), Growth in a Time of Debt", "url": "https://doi.org/10.1257/aer.100.2.573"},
+    {"id": "herndon_ash_pollin_2014", "label": "Herndon, Ash, and Pollin (2014), Does high public debt consistently stifle economic growth?", "url": "https://doi.org/10.1093/cje/bet075"},
+    {"id": "panizza_presbitero_2014", "label": "Panizza and Presbitero (2014), Public debt and economic growth: Is there a causal effect?", "url": "https://doi.org/10.1016/j.jmacro.2014.03.009"},
+    {"id": "panizza_presbitero_2013", "label": "Panizza and Presbitero (2013), Public debt and economic growth in advanced economies: A survey", "url": "https://doi.org/10.1007/BF03399388"}
+  ],
+  "sourceCards": [
+    {"id": "D1", "title": "Source D1", "citation": "Reinhart and Rogoff (2010)", "summary": "Reported lower growth above 90 percent public debt-to-GDP in its analysis.", "url": "https://doi.org/10.1257/aer.100.2.573", "notes": ["Reviewed paraphrase from the paper abstract."]},
+    {"id": "D2", "title": "Source D2", "citation": "Herndon, Ash, and Pollin (2014)", "summary": "Reported calculation problems and a 2.2 percent high-debt postwar growth average in its recalculation.", "url": "https://doi.org/10.1093/cje/bet075", "notes": ["Reviewed paraphrase from the article abstract."]},
+    {"id": "D3", "title": "Source D3", "citation": "Panizza and Presbitero (2014)", "summary": "Reported no causal effect after its method addressed endogeneity in its OECD sample.", "url": "https://doi.org/10.1016/j.jmacro.2014.03.009", "notes": ["Reviewed paraphrase from the article abstract."]},
+    {"id": "D4", "title": "Source D4", "citation": "Panizza and Presbitero (2013)", "summary": "Reported no simple relationship and no single debt threshold in its literature survey.", "url": "https://doi.org/10.1007/BF03399388", "notes": ["Reviewed paraphrase from the article summary."]}
+  ],
+  "focusClaimId": "candidate_correct_mapping",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_cutoff_mapping", "candidate_correct_mapping", "candidate_swapped_mapping"],
+    "correctClaimId": "candidate_correct_mapping",
+    "instruction": "Use only the provided source cards. Choose the source-to-finding summary that matches all four cards. Cite the card IDs that make your choice correct. Do not replace a source finding with another agent's unsupported summary."
+  },
+  "claims": [
+    {"id": "candidate_cutoff_mapping", "text": "D1 found no debt threshold. D2 established that crossing 90 percent causes lower growth. D3 found a coding error. D4 found no relationship between debt and growth.", "truthLabel": "false"},
+    {"id": "candidate_correct_mapping", "text": "D1 reported lower growth above 90 percent in the original analysis. D2 reported calculation problems and a 2.2 percent high-debt average in its recalculation. D3 reported no causal effect after addressing endogeneity in its OECD sample. D4 reported no single threshold in its survey.", "truthLabel": "true"},
+    {"id": "candidate_swapped_mapping", "text": "D1 reported lower growth above 90 percent. D2 reported no causal effect after addressing endogeneity. D3 reported calculation problems and a 2.2 percent high-debt average. D4 supported a universal 90 percent threshold.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {"id": "debt_attribution_D1", "text": "[D1 | Reinhart and Rogoff, 2010] The analysis reported weak debt-growth relationships below 90 percent of GDP and lower growth above that level. It reported an observed pattern; it did not establish that crossing 90 percent causes lower growth.", "visibleToAgentIds": ["analyst_1"], "effects": [{"claimId": "candidate_correct_mapping", "effect": 0.35}, {"claimId": "candidate_cutoff_mapping", "effect": -0.45}]},
+    {"id": "debt_attribution_D2", "text": "[D2 | Herndon, Ash, and Pollin, 2014] A recalculation found coding, data-selection, and weighting problems. For the high-debt group, it reported 2.2 percent average annual growth rather than the original negative estimate.", "visibleToAgentIds": ["analyst_2"], "effects": [{"claimId": "candidate_correct_mapping", "effect": 0.5}, {"claimId": "candidate_swapped_mapping", "effect": -0.8}]},
+    {"id": "debt_attribution_D3", "text": "[D3 | Panizza and Presbitero, 2014] In an OECD sample, a negative debt-growth correlation disappeared after the analysis addressed endogeneity. The paper reported no evidence of a causal debt-to-growth effect in that sample.", "visibleToAgentIds": ["analyst_3"], "effects": [{"claimId": "candidate_correct_mapping", "effect": 0.5}, {"claimId": "candidate_swapped_mapping", "effect": -0.8}]},
+    {"id": "debt_attribution_D4", "text": "[D4 | Panizza and Presbitero, 2013] A survey of advanced-economy research concluded that there is no simple debt-growth relationship and no single threshold separating good from bad outcomes.", "visibleToAgentIds": ["analyst_4"], "effects": [{"claimId": "candidate_correct_mapping", "effect": 0.5}, {"claimId": "candidate_cutoff_mapping", "effect": -0.8}, {"claimId": "candidate_swapped_mapping", "effect": -0.75}]}
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

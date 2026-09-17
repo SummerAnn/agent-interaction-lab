@@ -1,0 +1,87 @@
+{
+  "id": "hiddenbench_storm_recovery_clinic_site_selection",
+  "title": "HiddenBench: storm_recovery_clinic_site_selection",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 38 (storm_recovery_clinic_site_selection). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_site_c_hilltop_park",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_site_a_open_field_with_tent",
+      "answer_site_b_community_sports_center",
+      "answer_site_c_hilltop_park",
+      "answer_site_d_library"
+    ],
+    "correctClaimId": "answer_site_c_hilltop_park",
+    "instruction": "You are members of an emergency medical relief team sent to a region recently struck by a severe storm. Your role is to choose the best location for setting up a temporary medical clinic. Local authorities pushed for a quick decision to maximize the chances for rapid care delivery. There are four possible sites. You have basic facts about each one, and each of you has one additional, unique piece of local intel. Only one site will work safely and efficiently. Discuss and decide quickly: after today, the decision can't be reversed.\n\nShared information known to all participants:\n- Site A is in an open field with a large, undamaged tent structure already set up. The field is flat and local authorities suggest this location. Road access is clear, and it is closest to the main hospital.\n- Site B is a community sports center on the west side of town, featuring indoor plumbing and generator power. There is some cosmetic damage to the exterior, but no reported injuries or incidents from the storm at this site.\n- Site C is a hilltop park, previously used for small festivals. A parking lot can accommodate vehicles, but there is no existing shelter beyond restrooms. It is further from town but visible from most directions.\n- Site D is the local library, which was used as a shelter during the storm. The area around it saw minor flooding, but this has receded. The building has electricity and ADA ramps.\n\nChoose the best answer from: Site A (Open field with tent), Site B (Community sports center), Site C (Hilltop park), Site D (Library)."
+  },
+  "claims": [
+    {
+      "id": "answer_site_a_open_field_with_tent",
+      "text": "Site A (Open field with tent)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_site_b_community_sports_center",
+      "text": "Site B (Community sports center)",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_site_c_hilltop_park",
+      "text": "Site C (Hilltop park)",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_site_d_library",
+      "text": "Site D (Library)",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "The only bridge that ambulances can use to access Site D was damaged in the storm—emergency vehicles cannot reach the library at this time.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Despite power at Site B, mold was rapidly found in the lower level and several people got sick after being there for only an hour.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Structural engineers have identified new cracks in a load-bearing wall of Site B; they say a collapse is possible if the weight on the upper floor increases sharply.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The river upstream from Site A is still rising rapidly, and flood warnings for that field have been issued for the next 24 hours.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

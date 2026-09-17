@@ -1,0 +1,17 @@
+{
+  "id": "chat_fc_early_correction",
+  "title": "Chat debate (fully connected, early correction)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "early"
+  }
+}

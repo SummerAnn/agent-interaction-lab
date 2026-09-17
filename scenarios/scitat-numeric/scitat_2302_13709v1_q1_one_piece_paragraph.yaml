@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2302_13709v1_q1_one_piece_paragraph",
+  "title": "SciTaT 2302.13709v1-q1 (paragraph)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2302.13709v1-q1",
+      "summary": "\\subsection {Modeling~\\label{sec:modeling}\n}\nThe yaw and pitch axes of the robot arm were orthogonal; thus, the equations of motion for each motor can be independently established.\nThe equations of motion for each motor are as follows:\n\\begin{equation}\n\\bar{J}_{j}\\ddot{\\theta}_j(t) = \\bar{K}_ji_j(t) - \\tau_j^{d}(t), \\quad \\forall j\\in\\{1,2\\}, \\label{math:yaw} \n\\end{equation}\n\\hspace*{-1ex}\nwhere the subscript $j\\in\\{1, 2\\}$ denotes the yaw and pitch motors, respectively, \n$i_j\\in\\mathbb{R}$ is the current input to the motor, \n$\\theta_j\\in\\mathbb{R}$ is the angle measurable by the encoder, and $\\tau_j^{d}\\in\\mathbb{R}$ is the unknown disturbance torque.\n$\\bar{J}_{j}$ and $\\bar{K}_j$ are the nominal values of the moment of inertia and torque coefficient, respectively, and their values are listed in TABLE~\\ref{tab:spec}, which are obtained from the specifications. \nHereafter, subscript $j$ is omitted for simplicity.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the equations of motion provided in Section \\ref{sec:modeling}, how many cells in TABLE~\\ref{tab:spec} contain the values for nominal parameters $\\bar{J}_j$ and $\\bar{K}_j$ for the yaw and pitch motors? Calculate the total count of such cells.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2302.13709v1-q1",
+    "phase": "one_piece",
+    "pieceId": "paragraph",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsection {Modeling~\\label{sec:modeling}\n}\nThe yaw and pitch axes of the robot arm were orthogonal; thus, the equations of motion for each motor can be independently established.\nThe equations of motion for each motor are as follows:\n\\begin{equation}\n\\bar{J}_{j}\\ddot{\\theta}_j(t) = \\bar{K}_ji_j(t) - \\tau_j^{d}(t), \\quad \\forall j\\in\\{1,2\\}, \\label{math:yaw} \n\\end{equation}\n\\hspace*{-1ex}\nwhere the subscript $j\\in\\{1, 2\\}$ denotes the yaw and pitch motors, respectively, \n$i_j\\in\\mathbb{R}$ is the current input to the motor, \n$\\theta_j\\in\\mathbb{R}$ is the angle measurable by the encoder, and $\\tau_j^{d}\\in\\mathbb{R}$ is the unknown disturbance torque.\n$\\bar{J}_{j}$ and $\\bar{K}_j$ are the nominal values of the moment of inertia and torque coefficient, respectively, and their values are listed in TABLE~\\ref{tab:spec}, which are obtained from the specifications. \nHereafter, subscript $j$ is omitted for simplicity.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

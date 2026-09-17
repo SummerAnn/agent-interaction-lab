@@ -1,0 +1,14 @@
+{
+  "id": "shared_memory_no_neutral_peer_entries",
+  "title": "Shared memory with neutral-to-neutral entries withheld",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "peerEntryVisibility": "exclude_neutral_peers"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-17T08:38:34.434075+00:00",
+  "mode": "quick",
+  "status": "PASS",
+  "counts": {
+    "claimed_total": 6334,
+    "base": 5542,
+    "late": 576,
+    "open": 216,
+    "missing_summaries": 0,
+    "missing_traces": 0,
+    "hash_pairs_checked": 0,
+    "sqlite_checked": 0,
+    "config_dependencies_checked": 448,
+    "base_calculation_issues": 0
+  },
+  "late_aggregates": {
+    "heterogeneous_ego_depletion": {
+      "haiku_to_haiku": [
+        86,
+        108
+      ],
+      "haiku_to_opus": [
+        0,
+        108
+      ],
+      "haiku_to_sonnet": [
+        0,
+        108
+      ],
+      "opus_to_haiku": [
+        65,
+        108
+      ],
+      "opus_to_opus": [
+        0,
+        108
+      ],
+      "opus_to_sonnet": [
+        0,
+        108
+      ],
+      "sonnet_to_haiku": [
+        76,
+        108
+      ],
+      "sonnet_to_opus": [
+        0,
+        108
+      ],
+      "sonnet_to_sonnet": [
+        0,
+        108
+      ]
+    },
+    "heterogeneous_scitat_calculation": {
+      "haiku_to_haiku": [
+        29,
+        36
+      ],
+      "haiku_to_opus": [
+        3,
+        36
+      ],
+      "haiku_to_sonnet": [
+        3,
+        36
+      ],
+      "opus_to_haiku": [
+        30,
+        36
+      ],
+      "opus_to_opus": [
+        2,
+        36
+      ],
+      "opus_to_sonnet": [
+        4,
+        36
+      ],
+      "sonnet_to_haiku": [
+        35,
+        36
+      ],
+      "sonnet_to_opus": [
+        5,
+        36
+      ],
+      "sonnet_to_sonnet": [
+        5,
+        36
+      ]
+    },
+    "uncertain_answer_write_rule": {
+      "shared_memory_no_correction": [
+        64,
+        30,
+        14,
+        108
+      ],
+      "shared_memory_write_uncertain_no_correction": [
+        0,
+        20,
+        88,
+        108
+      ]
+    },
+    "repetition_warning_numerical_task": {
+      "shared_memory_no_correction": [
+        24,
+        36
+      ],
+      "shared_provenance_aware_no_correction": [
+        3,
+        36
+      ],
+      "shared_provenance_minimal_no_correction": [
+        21,
+        36
+      ]
+    },
+    "repetition_warning_numerical_task_ministral": {
+      "shared_memory_no_correction": [
+        33,
+        36
+      ],
+      "shared_provenance_aware_no_correction": [
+        21,
+        36
+      ],
+      "shared_provenance_minimal_no_correction": [
+        25,
+        36
+      ]
+    }
+  },
+  "open_aggregates": {
+    "part2_neutral_ego_peer_visibility_llama_exact_v1": {
+      "shared_memory_no_correction": [
+        108,
+        108
+      ],
+      "shared_memory_no_neutral_peer_entries": [
+        108,
+        108
+      ]
+    },
+    "part2_neutral_ego_peer_visibility_ministral_exact_v1": {
+      "shared_memory_no_correction": [
+        108,
+        108
+      ],
+      "shared_memory_no_neutral_peer_entries": [
+        108,
+        108
+      ]
+    },
+    "part2_neutral_ego_peer_visibility_gemma_exact_v1": {
+      "shared_memory_no_correction": [
+        108,
+        108
+      ],
+      "shared_memory_no_neutral_peer_entries": [
+        108,
+        108
+      ]
+    }
+  },
+  "errors": []
+}

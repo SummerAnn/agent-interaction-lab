@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_find_the_missing_prototype",
+  "title": "HiddenBench: Find the Missing Prototype",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 47 (Find the Missing Prototype). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_ceo_s_office",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_conference_room",
+      "answer_storage_room",
+      "answer_ceo_s_office"
+    ],
+    "correctClaimId": "answer_ceo_s_office",
+    "instruction": "You are part of a crisis response team at a technology company the morning after a high-security incident: the company's new prototype device disappeared overnight. The CEO has called a meeting to coordinate the investigation and recover the prototype before the press arrives in three hours. The device is too large to have been taken out of the main office building, so it must be somewhere on this floor.\n\nYour Task:\nYou and three other team members must decide where to search first. There are three candidate locations:\n- Conference Room\n- Storage Room\n- CEO's Office\n\nYou must investigate only one location (you have one chance). If you find the prototype, the company avoids disaster and everyone gets a bonus. If not, security will sweep the other locations, but it may be too late (the press may find out).\n\nShared information known to all participants:\n- The prototype device was last reported being wheeled down the main hallway toward the storage room late last night.\n- Security camera footage shows no suspicious activity in the hallways during the night.\n- The storage room and conference room are both located on the east side of the floor, while the CEO's office is on the west side.\n- The only staff authorized to enter all three locations are the four team participants (you) and the CEO.\n\nChoose the best answer from: Conference Room, Storage Room, CEO's Office."
+  },
+  "claims": [
+    {
+      "id": "answer_conference_room",
+      "text": "Conference Room",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_storage_room",
+      "text": "Storage Room",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_ceo_s_office",
+      "text": "CEO's Office",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Reviewing badge swipe logs, you see none of the team members entered the storage room during the night or early morning.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "According to cleaning staff schedules, the CEO's office is the only room that was not entered by any cleaning staff during the night – all others were cleaned between 2:00-5:00am.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "During a maintenance inspection this morning, the building supervisor noted that the storage room door was jammed shut all night and couldn't be opened until after 8:00am – well after the prototype went missing.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The conference room was under renovation overnight and was locked from the inside with the only key held by the contractor, who signed in at 7:00am this morning.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

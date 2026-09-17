@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_evacuate_park_dilemma",
+  "title": "HiddenBench: evacuate_park_dilemma",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 12 (evacuate_park_dilemma). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_green_valley",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_blueberry_ridge",
+      "answer_green_valley",
+      "answer_red_lake"
+    ],
+    "correctClaimId": "answer_green_valley",
+    "instruction": "You are serving on an emergency planning team for a scenic region hosting a national outdoor festival. As thunderstorms approach, authorities must evacuate everyone to safety. There are three official evacuation locations, all reportedly equipped and expecting displaced guests: Blueberry Ridge (a woodland lodge), Green Valley (a campground center), and Red Lake (a lakeside community hall). Authorities stress that time is short—you must urgently advise all festival-goers which evacuation site to use. You know that routes to all three seem open, but heavy rain may have caused unexpected damage or hazards. Only one option is safe, accessible, and prepared for immediate evacuation. Your group must recommend the best location based on the latest information, aiming to maximize the number of people evacuated safely.\n\nShared information known to all participants:\n- Roads leading to all three evacuation sites were inspected this morning and declared passable by local highway patrols.\n- Blueberry Ridge lodge has emergency power generators and a medical station; you hear that the lodge has started preparing rooms for potential evacuees.\n- Red Lake community hall has hosted large groups before, including last year's festival overflow, and reportedly received bulk food supplies earlier today.\n- The Green Valley campground recently had a pest outbreak, and you notice local authorities have posted warning signs. However, you hear that the main building is preparing cots and handing out blankets for arrivals.\n\nChoose the best answer from: Blueberry Ridge, Green Valley, Red Lake."
+  },
+  "claims": [
+    {
+      "id": "answer_blueberry_ridge",
+      "text": "Blueberry Ridge",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_green_valley",
+      "text": "Green Valley",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_red_lake",
+      "text": "Red Lake",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Green Valley pest outbreak closure only applies to tourists; local officials have confirmed it remains open for emergency evacuations, with extra staff sent in.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "An emergency text alert just announced that a sinkhole appeared across the only road to Red Lake, and law enforcement has closed the route.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "All power at Blueberry Ridge went out midday, including backups. Emergency medical equipment is unusable and the location is only accepting those who can walk miles to reach it.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The bridge over Pine Creek, a key access point to Blueberry Ridge, collapsed in today's storm, cutting off vehicle access to the lodge.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

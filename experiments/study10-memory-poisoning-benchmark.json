@@ -1,0 +1,30 @@
+{
+  "id": "study10_memory_poisoning",
+  "title": "Study 10: How much seeded false memory is needed before recovery breaks down?",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study10_seeded_false_memory",
+    "locked": true,
+    "notes": [
+      "Supporting benchmark for initial false-memory inheritance."
+    ]
+  },
+  "scenarios": [
+    "scenarios/ego-depletion-poison-low-v1.yaml",
+    "scenarios/ego-depletion-poison-medium-v1.yaml",
+    "scenarios/ego-depletion-poison-high-v1.yaml",
+    "scenarios/wakefield-poison-low-v1.yaml",
+    "scenarios/wakefield-poison-medium-v1.yaml",
+    "scenarios/wakefield-poison-high-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-verification.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 10,
+  "budget": { "maxModelCalls": 30 }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "rerun_corrector_exit_v1",
+  "title": "Matched rerun: loss of the best-informed corrector",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "notes": [
+      "Matches the source-exit rerun except for which agent leaves.",
+      "The false-information source remains active throughout.",
+      "specialist_1 holds the strongest contrary evidence in every included scenario and exits after step 3.",
+      "Compare with the baseline roster and the existing false-information-source exit rerun."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-trigger-post-exit.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-corrector-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

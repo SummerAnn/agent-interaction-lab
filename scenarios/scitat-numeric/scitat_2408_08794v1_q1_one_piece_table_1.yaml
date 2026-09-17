@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2408_08794v1_q1_one_piece_table_1",
+  "title": "SciTaT 2408.08794v1-q1 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table tab:fpgavsgpu",
+      "citation": "SciTaT item 2408.08794v1-q1",
+      "summary": "Comparison of hardware efficiency for a single attention head (CPU and GPU implementations) for different architectures. For SSA block, $T=10$.\n\\textbf{{Architecture -- Device}} | $f_{\\text{clk}}$ \\textbf{{(MHz)}} | \\textbf{{Latency (ms)}} | \\textbf{{Power (W)}}\nANN attention -- CPU | $2100$ | $0.15$ | $107.01$\nANN attention -- GPU | $562$ | $0.06$ | $26.13$\nSSA -- CPU | $2100$ | $2.672$ | $65.54$\nSSA -- GPU | $562$ | $0.159$ | $22.41$\nSSA -- FPGA | $200$ | $\\mathbf{3.3\\times 10^{-3}}$ | $\\mathbf{1.47}$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Considering the paragraph, what is the ratio of the power consumption per unit latency for the FPGA implementation compared to the GPU implementation for SSA?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2408.08794v1-q1",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 3.16.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 4.16.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 6.32.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 2.16.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Comparison of hardware efficiency for a single attention head (CPU and GPU implementations) for different architectures. For SSA block, $T=10$.\n\\textbf{{Architecture -- Device}} | $f_{\\text{clk}}$ \\textbf{{(MHz)}} | \\textbf{{Latency (ms)}} | \\textbf{{Power (W)}}\nANN attention -- CPU | $2100$ | $0.15$ | $107.01$\nANN attention -- GPU | $562$ | $0.06$ | $26.13$\nSSA -- CPU | $2100$ | $2.672$ | $65.54$\nSSA -- GPU | $562$ | $0.159$ | $22.41$\nSSA -- FPGA | $200$ | $\\mathbf{3.3\\times 10^{-3}}$ | $\\mathbf{1.47}$",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

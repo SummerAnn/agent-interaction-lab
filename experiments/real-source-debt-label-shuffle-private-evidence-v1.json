@@ -1,0 +1,19 @@
+{
+  "id": "real_source_debt_label_shuffle_private_evidence_v1",
+  "title": "Real-source private evidence: personal notes versus shared evidence board",
+  "benchmarkMeta": {
+    "status": "paper_candidate",
+    "locked": true,
+    "notes": [
+      "The task passed its shuffled no-source and full-packet reference gates.",
+      "The only changed variable is whether original source cards initially held by other analysts can be retrieved from a shared evidence board.",
+      "Agent order is varied across ten schedules. These are schedule variations, not independent samples."
+    ]
+  },
+  "scenarios": ["scenarios/real-source-debt-label-shuffle-private-a-v1.yaml", "scenarios/real-source-debt-label-shuffle-private-b-v1.yaml", "scenarios/real-source-debt-label-shuffle-private-c-v1.yaml"],
+  "conditions": ["conditions/personal-memory-no-correction.yaml", "conditions/shared-evidence-board-no-correction.yaml"],
+  "seeds": [1,2,3,4,5,6,7,8,9,10],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2402_00657v1_q1_one_piece_table_1",
+  "title": "SciTaT 2402.00657v1-q1 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table tab:partial_pdg_prediction_results",
+      "citation": "SciTaT item 2402.00657v1-q1",
+      "summary": "Intrinsic evaluation results on partial code in terms of F1-score.\n\\textbf{Dependency} | \\textbf{5} | \\textbf{10} | \\textbf{15} | \\textbf{20} | \\textbf{25} | \\textbf{30}\n\\textbf{Control} | 98.99 | 99.29 | 99.30 | 99.25 | 99.23 | 99.21\n\\textbf{Data} | 97.38 | 96.61 | 96.05 | 95.63 | 95.44 | 95.08\n\\textbf{Overall} | 97.69 | 97.51 | 97.29 | 97.07 | 97.00 | 96.84",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_d",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_d",
+    "instruction": "Based on the evaluation results described in the paragraph, how many distinct dependencies' F1-scores for the smallest K value are mentioned, and what is the total count of F1-scores given for these dependencies? Calculate the sum of distinct F1-score counts for the smallest K value.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2402.00657v1-q1",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 6.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 2.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Intrinsic evaluation results on partial code in terms of F1-score.\n\\textbf{Dependency} | \\textbf{5} | \\textbf{10} | \\textbf{15} | \\textbf{20} | \\textbf{25} | \\textbf{30}\n\\textbf{Control} | 98.99 | 99.29 | 99.30 | 99.25 | 99.23 | 99.21\n\\textbf{Data} | 97.38 | 96.61 | 96.05 | 95.63 | 95.44 | 95.08\n\\textbf{Overall} | 97.69 | 97.51 | 97.29 | 97.07 | 97.00 | 96.84",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

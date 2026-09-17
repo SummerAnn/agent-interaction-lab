@@ -1,0 +1,42 @@
+{
+  "id": "paired_seed_ego_baseline_v1",
+  "title": "Paired seed comparison: No false seed",
+  "projectRoot": ".",
+  "provenance": {
+    "kind": "adapted",
+    "note": "Matched comparison of an honest mistaken belief and an informed false statement."
+  },
+  "scenarios": [
+    "scenarios/paired-seed/paired_seed_ego_baseline_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "rosterPaths": [
+    "rosters/paired_seed_ego_baseline_haiku_v1.json"
+  ],
+  "turnOrder": [
+    "analyst_1",
+    "analyst_2",
+    "analyst_3",
+    "analyst_4",
+    "analyst_5",
+    "analyst_6"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

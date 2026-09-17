@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_crisis_backup_decision",
+  "title": "HiddenBench: Crisis Backup Decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 16 (Crisis Backup Decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_charlie",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_alpha",
+      "answer_bravo",
+      "answer_charlie"
+    ],
+    "correctClaimId": "answer_charlie",
+    "instruction": "Your company’s IT systems have just suffered a major ransomware attack. Senior management is demanding you make an immediate group decision: choose where to send the next full backup copy of all systems. You have contracts in place with three geographically separate data centers—Alpha, Bravo, and Charlie—each with a track record of reliability. Only one can receive the backup now (due to bandwidth limitations), and there's no opportunity to create a second backup for at least a week. If the chosen center fails, company data may be permanently lost, so your group must agree which site offers the best security and continuity under urgent conditions. Each of you has received a short briefing: some details are shared; an additional confidential update has been given to each person, which might affect your assessment of the risks.\n\nShared information known to all participants:\n- Data Center Bravo is currently rated as having the best firewall and intrusion protection according to the latest independent audit report.\n- Alpha, Bravo, and Charlie all report no power outages or physical damage in the past year.\n- The company’s legal department says any site failure could have major regulatory consequences; the primary concern is ensuring the backup stays both physically secure and rapidly accessible.\n- The latest IT operations dashboard reports Alpha is busiest but still within normal usage; Bravo and Charlie at normal load.\n\nChoose the best answer from: Alpha, Bravo, Charlie."
+  },
+  "claims": [
+    {
+      "id": "answer_alpha",
+      "text": "Alpha",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_bravo",
+      "text": "Bravo",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_charlie",
+      "text": "Charlie",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Bravo has just received a legal notice from a government agency about possible asset freezes due to an ongoing investigation; details are not being shared publicly yet, and services may be disrupted pending developments.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Construction crews are scheduled to do electrical maintenance near Data Center Alpha within the next 24 hours, with a risk of power cuts (but the data center has not announced an outage).",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A cable cut near Data Center Charlie last month has been fully repaired, and the center has recently passed an extra security audit prompted by that incident.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "An internal alert notes Bravo’s site manager for this weekend is a temp unfamiliar with emergency protocols, but nothing has gone wrong so far.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

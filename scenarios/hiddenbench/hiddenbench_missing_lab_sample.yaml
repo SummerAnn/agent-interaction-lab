@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_missing_lab_sample",
+  "title": "HiddenBench: missing_lab_sample",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 48 (missing_lab_sample). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_lab_2_bench",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_cold_storage_b",
+      "answer_lab_2_bench",
+      "answer_decontamination_room"
+    ],
+    "correctClaimId": "answer_lab_2_bench",
+    "instruction": "You are all senior researchers in a laboratory working with sensitive, potentially hazardous biological samples. This morning, a technician returned the key from Cold Storage B, claiming to have finalized her sample drop-off last night. However, when inventory was conducted, a vial containing an experimental virus sample was missing. It is essential to determine the correct storage location of the sample as soon as possible to prevent a safety incident.\nYou have three possible places the missing sample could be:\n- Cold Storage B\n- Lab 2 Bench\n- Decontamination Room\nIf you identify the correct location, containment protocols can proceed swiftly. However, searching the wrong place first could waste precious time.\nDiscuss with your colleagues to determine the sample’s likely location.\n\nShared information known to all participants:\n- The technician who handled the sample last night usually stores samples in Cold Storage B after use.\n- Temperature sensors indicated Cold Storage B was briefly opened around the time the technician finished.\n- Lab 2’s inventory log shows no record of the missing sample’s entry or removal in the past two days.\n- The Decontamination Room was scheduled for cleaning this morning but was found undisturbed.\n\nChoose the best answer from: Cold Storage B, Lab 2 Bench, Decontamination Room."
+  },
+  "claims": [
+    {
+      "id": "answer_cold_storage_b",
+      "text": "Cold Storage B",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_lab_2_bench",
+      "text": "Lab 2 Bench",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_decontamination_room",
+      "text": "Decontamination Room",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A maintenance worker reports that the door sensor on Cold Storage B has been malfunctioning all week and frequently gives false open/close readings.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "The Decontamination Room's cleaning log, when checked closely, indicates a cleaning occurred unexpectedly after midnight, but the supervisor noted it as a routine wipe-down only for dust.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Another researcher was working in Cold Storage B late last night and saw no unlogged vials left when he locked up after midnight.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "The technician received an urgent phone call just after finishing her task and was seen heading rapidly toward Lab 2.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

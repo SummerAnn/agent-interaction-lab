@@ -1,0 +1,30 @@
+{
+  "id": "multi_exit_contagion_v1",
+  "title": "Multiple agents exit with wrong beliefs — does false endorsement compound?",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Three agents exit at step 3: contamination_1 (bias 0.95), specialist_2 (bias 0.05), regular_1 (bias 0.28).",
+      "Only specialist_1, regular_2, and observer_1 remain to correct.",
+      "If 0.158 was 1/6 frozen, 3 exits should give ~0.5 frozen if none are corrected before leaving.",
+      "Tests whether the record fills with wrong entries from departed agents and influences remaining ones."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-multi-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

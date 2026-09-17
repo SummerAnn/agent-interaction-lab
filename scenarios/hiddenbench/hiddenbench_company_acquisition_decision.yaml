@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_company_acquisition_decision",
+  "title": "HiddenBench: company_acquisition_decision",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 62 (company_acquisition_decision). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_option_c_logistics_software_company",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_option_a_biomedical_startup",
+      "answer_option_b_ai_hardware_startup",
+      "answer_option_c_logistics_software_company"
+    ],
+    "correctClaimId": "answer_option_c_logistics_software_company",
+    "instruction": "Your investment firm must choose one of three technology startups to acquire. Each has shown interest in the deal, and you have only 24 hours before a competitor starts bidding. The acquisition is a major commitment: making the wrong choice could risk millions and damage your firm’s reputation. Each team member has confidential research, but only through discussion can the full picture emerge.\n\nOptions:\n- Option A: A biomedical startup with several patents and ongoing clinical trials.\n- Option B: An AI hardware startup recently featured in major news outlets for its rapid growth.\n- Option C: A logistics software company led by experienced founders with a history of scaling companies.\n\nYou must choose which company to acquire. Your bonus depends on a correct group decision.\n\nShared information known to all participants:\n- Industry analysts say Option B has a stable revenue base and recently announced strong sales growth.\n- Option C just lost one of its major customers, dropping its current revenues.\n- Option A is rumored to have unresolved legal disputes over intellectual property, making it controversial.\n- Venture capitalists are especially interested in B's sector and predict strong growth in the coming years.\n\nChoose the best answer from: Option A: Biomedical startup, Option B: AI hardware startup, Option C: Logistics software company."
+  },
+  "claims": [
+    {
+      "id": "answer_option_a_biomedical_startup",
+      "text": "Option A: Biomedical startup",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_option_b_ai_hardware_startup",
+      "text": "Option B: AI hardware startup",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_option_c_logistics_software_company",
+      "text": "Option C: Logistics software company",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "Option B's chief engineer, responsible for the core product, will resign immediately after any acquisition, and she is not under a non-compete agreement.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "Option C's lost customer had already announced a plan to return if the founders remain on board post-acquisition.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "Option A's key patent, responsible for most of its value, expires next year and cannot be renewed.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "Option B's largest clients have contracts that cannot be transferred if the company changes ownership, and the sales team is not able to renegotiate them.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

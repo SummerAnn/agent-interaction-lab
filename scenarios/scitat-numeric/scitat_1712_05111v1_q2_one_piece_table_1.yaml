@@ -1,0 +1,99 @@
+{
+  "id": "scitat_1712_05111v1_q2_one_piece_table_1",
+  "title": "SciTaT 1712.05111v1-q2 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table t:abc",
+      "citation": "SciTaT item 1712.05111v1-q2",
+      "summary": "Classification of the intermediate states that change continuously in\n    the phase diagram.\n    ``nonzero'' indicates that the value depends on $c_1^{(12)}$ and\n    $c_2^{(12)}$.\n    E indicates the trivial group.\n    The subscript $+$ or $-$ is added to a-d to indicate the sign of\n    $\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)}$.\n | $\\bm{F}^{(1)}$ | $\\bm{F}^{(2)}$ | $A_0^{(2)}$ | $\\bm{F}^{(1)}\n    \\times \\bm{F}^{(2)}$ | isotropy group\na | nonzero | nonzero | nonzero | 0 | $\\mathbb{Z}_2$\nb | nonzero | nonzero | nonzero | nonzero | E\nc | 1 | nonzero | nonzero | 0 | $\\mathbb{Z}_4$\nd | 1 | nonzero | 0 | 0 | $\\mathbb{Z}_3$\ne | 0 | 0 | nonzero | 0 | $\\mathbb{Z}_2 \\times \\mathbb{Z}_2$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "How many distinct regions with different ground-state phases are identified in the phase diagram shown in Fig.~\\ref{f:noint}? Calculate the total number of such regions based on the provided paragraph.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1712.05111v1-q2",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Classification of the intermediate states that change continuously in\n    the phase diagram.\n    ``nonzero'' indicates that the value depends on $c_1^{(12)}$ and\n    $c_2^{(12)}$.\n    E indicates the trivial group.\n    The subscript $+$ or $-$ is added to a-d to indicate the sign of\n    $\\bm{F}^{(1)} \\cdot \\bm{F}^{(2)}$.\n | $\\bm{F}^{(1)}$ | $\\bm{F}^{(2)}$ | $A_0^{(2)}$ | $\\bm{F}^{(1)}\n    \\times \\bm{F}^{(2)}$ | isotropy group\na | nonzero | nonzero | nonzero | 0 | $\\mathbb{Z}_2$\nb | nonzero | nonzero | nonzero | nonzero | E\nc | 1 | nonzero | nonzero | 0 | $\\mathbb{Z}_4$\nd | 1 | nonzero | 0 | 0 | $\\mathbb{Z}_3$\ne | 0 | 0 | nonzero | 0 | $\\mathbb{Z}_2 \\times \\mathbb{Z}_2$",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

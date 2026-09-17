@@ -1,0 +1,28 @@
+{
+  "projectRoot": ".",
+  "id": "scitat_numeric_chat_parser_smoke_v1",
+  "title": "SciTaT chat final-parser smoke check",
+  "provenance": {
+    "kind": "adapted",
+    "note": "One exact full-context SciTaT control used only to verify final-answer parsing."
+  },
+  "scenarios": [
+    "scenarios/scitat-numeric/scitat_1601_07336v1_q1_full_context.yaml"
+  ],
+  "rosterPaths": [
+    "rosters/reference-single-analyst-haiku.json"
+  ],
+  "turnOrder": ["analyst_1"],
+  "conditions": [
+    "conditions/bounded-chat-evidence-fifo.yaml"
+  ],
+  "seeds": [1],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 8,
+    "maxInputTokensPerCall": 4096,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output"
+}

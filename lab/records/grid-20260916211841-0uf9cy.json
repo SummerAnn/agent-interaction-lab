@@ -1,0 +1,113 @@
+{
+  "projectRoot": ".",
+  "kind": "grid",
+  "title": "Post-exit scaling, equal split, N=24",
+  "question": "Post-exit scaling, equal split, N=24",
+  "note": "Factorial benchmark grid run.",
+  "command": "experiment output/post_exit_scaling_v2_equal_n24.json",
+  "tags": [
+    "grid",
+    "benchmark"
+  ],
+  "scenarios": [
+    "post_exit_scaling_ego_v1"
+  ],
+  "conditions": [
+    "shared_memory_post_exit_cleared_v2",
+    "shared_memory_post_exit_retained_v2"
+  ],
+  "rosters": [
+    "post_exit_scaling_v2_equal_n24"
+  ],
+  "models": [
+    "claude-haiku-4-5-20251001"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "runIds": [
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed0",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed1",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed2",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed3",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed4",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed5",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed6",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed7",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed8",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed9",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed10",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed11",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed0",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed1",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed2",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed3",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed4",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed5",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed6",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed7",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed8",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed9",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed10",
+    "post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed11"
+  ],
+  "primaryOutputPath": "output/post_exit_scaling_v2_equal_n24-grid-results.json",
+  "extraOutputPaths": [
+    "output/post_exit_scaling_v2_equal_n24-figure-provenance.json",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed0/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed1/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed2/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed3/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed4/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed5/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed6/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed7/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed8/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed9/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed10/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_retained_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_retained_v2-seed11/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed0/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed1/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed2/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed3/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed4/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed5/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed6/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed7/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed8/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed9/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed10/trace.db",
+    "output/post_exit_scaling_v2_equal_n24_post_exit_scaling_ego_v1_shared_memory_post_exit_cleared_v2_post_exit_scaling_v2_equal_n24-shared_memory_post_exit_cleared_v2-seed11/trace.db"
+  ],
+  "manifestPath": null,
+  "requestedManifestPath": null,
+  "benchmarkMeta": {
+    "status": "exploratory",
+    "locked": false,
+    "notes": [
+      "Claude Haiku 4.5 on the ego-depletion claim.",
+      "12 liar agents each speak once and exit; 12 neutral agents then receive two turns each.",
+      "Matched conditions differ only in whether memory entries written by departed liar agents are retained or removed.",
+      "Seeds 0 through 11 rotate speaking order within each role group."
+    ]
+  },
+  "metrics": {
+    "completedCells": 24,
+    "manipulationCheckPassRate": 1
+  },
+  "provenance": null,
+  "citations": null,
+  "id": "grid-20260916211841-0uf9cy",
+  "createdAt": "2026-09-16T21:18:41.719Z"
+}

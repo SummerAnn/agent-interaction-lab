@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS memory_entries (
   confidence REAL NOT NULL,
   visibility TEXT NOT NULL,
   source_type TEXT NOT NULL,
-  entry_text TEXT NOT NULL
+  entry_text TEXT NOT NULL,
+  derived_from_entry_id TEXT
 );
 
 CREATE TABLE IF NOT EXISTS retrieval_traces (

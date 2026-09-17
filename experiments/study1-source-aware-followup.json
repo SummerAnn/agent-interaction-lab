@@ -1,0 +1,32 @@
+{
+  "id": "study1_source_aware_followup_v1",
+  "title": "Study 1 follow-up: source-aware shared record under split evidence",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1_source_aware_record_under_split_evidence",
+    "locked": true,
+    "notes": [
+      "Matches Study 1 v2 on scenarios, roster, turns, seed set, and budget.",
+      "Adds a source-aware record: original evidence is kept separate from one current agent assessment per agent."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-source-aware-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxOutputTokensPerCall": 200,
+    "temperature": 0
+  }
+}

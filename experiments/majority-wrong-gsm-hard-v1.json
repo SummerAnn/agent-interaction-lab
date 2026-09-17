@@ -1,0 +1,38 @@
+{
+  "id": "majority_wrong_gsm_hard_v1",
+  "title": "Majority wrong on GSM-Hard: 4/6 agents endorse wrong answer — replicating Cost of Consensus",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "4 of 6 agents start endorsing the wrong math answer. 2 are unbiased.",
+      "This matches the setup in Cost of Consensus (majority wrong) and Conformity Dynamics (social pressure).",
+      "Compare: majority stays vs majority exits, memory vs chat, 1-wrong vs 4-wrong.",
+      "If the 2 unbiased agents fold to the majority, we've replicated the conformity finding in our testbed.",
+      "If they don't, Claude is genuinely robust even to majority pressure."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml",
+    "scenarios/gsm-hard/gsm_hard_04.yaml",
+    "scenarios/gsm-hard/gsm_hard_05.yaml",
+    "scenarios/gsm-hard/gsm_hard_06.yaml",
+    "scenarios/gsm-hard/gsm_hard_07.yaml",
+    "scenarios/gsm-hard/gsm_hard_08.yaml",
+    "scenarios/gsm-hard/gsm_hard_09.yaml",
+    "scenarios/gsm-hard/gsm_hard_10.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/majority-wrong-4of6-haiku.json",
+    "rosters/majority-wrong-4of6-exit-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

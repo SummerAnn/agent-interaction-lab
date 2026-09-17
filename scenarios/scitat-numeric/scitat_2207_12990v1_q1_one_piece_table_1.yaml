@@ -1,0 +1,99 @@
+{
+  "id": "scitat_2207_12990v1_q1_one_piece_table_1",
+  "title": "SciTaT 2207.12990v1-q1 (table_1)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "one_piece"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "table_1",
+      "title": "Table tab:stats",
+      "citation": "SciTaT item 2207.12990v1-q1",
+      "summary": "Statistics of several time signals (mean $\\langle\\bullet\\rangle$ and root-mean-square of the fluctuation component $\\sigma_{\\bullet}=\\sqrt{\\langle\\left(\\bullet-\\langle\\bullet\\rangle\\right)^2\\rangle}$, this latter corrected for domain size) of the statistically-steady turbulent state as computed in the full orthogonal domain and in the azimuthally-long but axially-narrow parallelogram domain. The uncertainty margins correspond to 95\\% confidence intervals obtained through stationary bootstrapping.\ncase | full domain | full domain | long narrow domain | long narrow domain\n$(n_1,k_1,n_2,k_2)$ | $(1,0,0,0.2)$ | $(1,0,0,0.2)$ | $(1,0.2,0,4.5)$ | $(1,0.2,0,4.5)$\n$(L,N,M)$ | $(322,322,42)$ | $(322,322,42)$ | $(18,322,42)$ | $(18,322,42)$\nestimator | $\\langle\\bullet\\rangle$ | $\\sigma_{\\bullet}=\\sqrt{\\langle\\left(\\bullet-\\langle\\bullet\\rangle\\right)^2\\rangle}$ | $\\langle\\bullet\\rangle$ | $\\sigma_{\\bullet}=\\sqrt{\\langle\\left(\\bullet-\\langle\\bullet\\rangle\\right)^2\\rangle}$\n$E$ | $16390\\pm40$ | $570\\pm 30$ | $16960\\pm90$ | $520\\pm20$\n$\\tau_{\\rm i}$ | $0.658\\pm0.001$ | $0.0195\\pm0.0007$ | $0.689\\pm0.003$ | $0.0182\\pm0.0005$\n$\\tau_{\\rm o}$ | $0.658\\pm0.002$ | $0.0232\\pm0.0009$ | $0.690\\pm0.004$ | $0.0209\\pm0.0006$\n$c_{\\theta}$ | $-34.18\\pm0.08$ | $3.47\\pm0.07$ | $-35.4\\pm0.2$ | $3.2\\pm0.2$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_c",
+    "instruction": "How many signals have their mean values differing by more than 2\\% between the full domain and the long narrow domain as referenced in the paragraph?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": true
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2207.12990v1-q1",
+    "phase": "one_piece",
+    "pieceId": "table_1",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "table_1",
+      "text": "Statistics of several time signals (mean $\\langle\\bullet\\rangle$ and root-mean-square of the fluctuation component $\\sigma_{\\bullet}=\\sqrt{\\langle\\left(\\bullet-\\langle\\bullet\\rangle\\right)^2\\rangle}$, this latter corrected for domain size) of the statistically-steady turbulent state as computed in the full orthogonal domain and in the azimuthally-long but axially-narrow parallelogram domain. The uncertainty margins correspond to 95\\% confidence intervals obtained through stationary bootstrapping.\ncase | full domain | full domain | long narrow domain | long narrow domain\n$(n_1,k_1,n_2,k_2)$ | $(1,0,0,0.2)$ | $(1,0,0,0.2)$ | $(1,0.2,0,4.5)$ | $(1,0.2,0,4.5)$\n$(L,N,M)$ | $(322,322,42)$ | $(322,322,42)$ | $(18,322,42)$ | $(18,322,42)$\nestimator | $\\langle\\bullet\\rangle$ | $\\sigma_{\\bullet}=\\sqrt{\\langle\\left(\\bullet-\\langle\\bullet\\rangle\\right)^2\\rangle}$ | $\\langle\\bullet\\rangle$ | $\\sigma_{\\bullet}=\\sqrt{\\langle\\left(\\bullet-\\langle\\bullet\\rangle\\right)^2\\rangle}$\n$E$ | $16390\\pm40$ | $570\\pm 30$ | $16960\\pm90$ | $520\\pm20$\n$\\tau_{\\rm i}$ | $0.658\\pm0.001$ | $0.0195\\pm0.0007$ | $0.689\\pm0.003$ | $0.0182\\pm0.0005$\n$\\tau_{\\rm o}$ | $0.658\\pm0.002$ | $0.0232\\pm0.0009$ | $0.690\\pm0.004$ | $0.0209\\pm0.0006$\n$c_{\\theta}$ | $-34.18\\pm0.08$ | $3.47\\pm0.07$ | $-35.4\\pm0.2$ | $3.2\\pm0.2$",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_c",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

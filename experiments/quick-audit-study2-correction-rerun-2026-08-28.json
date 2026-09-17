@@ -1,0 +1,20 @@
+{
+  "id": "quick_audit_study2_correction_rerun_2026_08_28",
+  "title": "Quick audit: Study 2 correction policy rerun 2026-08-28",
+  "scenarios": [
+    "scenarios/ego-depletion-replication-v1.yaml",
+    "scenarios/wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory.yaml",
+    "conditions/shared-memory-early-correction.yaml",
+    "conditions/shared-memory-late-correction.yaml",
+    "conditions/shared-memory-high-authority.yaml"
+  ],
+  "seeds": [1, 2],
+  "rosterPaths": [
+    "rosters/balanced-6-haiku.json"
+  ],
+  "maxSteps": 12,
+  "budget": { "maxModelCalls": 60 }
+}

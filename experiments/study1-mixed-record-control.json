@@ -1,0 +1,32 @@
+{
+  "id": "study1_mixed_record_control_v1",
+  "title": "Study 1 control: unstructured mixed shared record under split evidence",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "claimId": "study1_source_aware_information_matched_control",
+    "locked": true,
+    "notes": [
+      "Matches the source-aware follow-up on scenarios, roster, turns, seed set, and budget.",
+      "Shares the same source evidence and agent assessments, but keeps a single unstructured retrieval list with no source reservation or per-agent deduplication."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxOutputTokensPerCall": 200,
+    "temperature": 0
+  }
+}

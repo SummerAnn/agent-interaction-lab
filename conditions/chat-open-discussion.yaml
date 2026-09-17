@@ -1,0 +1,29 @@
+{
+  "id": "chat_open_discussion",
+  "title": "Open discussion (fully connected)",
+  "provenance": {
+    "kind": "new",
+    "note": "A richer discussion condition for source grounded agent conversation."
+  },
+  "citations": {
+    "mechanism": [
+      {
+        "title": "open discussion condition",
+        "note": "agents can question, critique, summarize, cite sources, and interact in a fully connected network"
+      }
+    ]
+  },
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 4,
+    "topology": "fully-connected",
+    "chatStyle": "open-discussion"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

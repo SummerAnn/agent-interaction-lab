@@ -1,0 +1,63 @@
+{
+  "id": "real_source_debt_threshold_draft_v1",
+  "title": "Draft real-source packet: public debt, growth, and the proposed 90 percent cutoff",
+  "domain": "economics-methods",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["real_source_packet", "private_evidence", "causal_inference", "source_quality"],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Draft for source review. Do not use as paper evidence until its no-source and full-packet references are reviewed."
+  },
+  "sources": [
+    {"id": "reinhart_rogoff_2010", "label": "Reinhart and Rogoff (2010), Growth in a Time of Debt", "url": "https://doi.org/10.1257/aer.100.2.573"},
+    {"id": "herndon_ash_pollin_2014", "label": "Herndon, Ash, and Pollin (2014), Does high public debt consistently stifle economic growth?", "url": "https://doi.org/10.1093/cje/bet075"},
+    {"id": "panizza_presbitero_2014", "label": "Panizza and Presbitero (2014), Public debt and economic growth: Is there a causal effect?", "url": "https://doi.org/10.1016/j.jmacro.2014.03.009"},
+    {"id": "panizza_presbitero_2013", "label": "Panizza and Presbitero (2013), Public debt and economic growth in advanced economies: A survey", "url": "https://doi.org/10.1007/BF03399388"}
+  ],
+  "sourceCards": [
+    {"id": "debt_original_threshold", "title": "Original debt-threshold analysis", "citation": "Reinhart and Rogoff (2010)", "summary": "The study reported weak debt-growth relationships below a public-debt level of 90 percent of GDP and lower growth above that level.", "url": "https://doi.org/10.1257/aer.100.2.573", "notes": ["Reviewed paraphrase from the paper abstract."]},
+    {"id": "debt_recalculation", "title": "Recalculation and methods critique", "citation": "Herndon, Ash, and Pollin (2014)", "summary": "A replication of the calculations reported coding, data-selection, and weighting problems and found 2.2 percent average annual growth, rather than negative growth, for the high-debt group in the disputed postwar calculation.", "url": "https://doi.org/10.1093/cje/bet075", "notes": ["Reviewed paraphrase from the article abstract."]},
+    {"id": "debt_causal_analysis", "title": "Causal analysis", "citation": "Panizza and Presbitero (2014)", "summary": "The study found a negative correlation in ordinary analysis, but the link disappeared after its approach addressed endogeneity; it reported no evidence of a causal debt-to-growth effect in its OECD sample.", "url": "https://doi.org/10.1016/j.jmacro.2014.03.009", "notes": ["Reviewed paraphrase from the article abstract."]},
+    {"id": "debt_literature_survey", "title": "Survey of the literature", "citation": "Panizza and Presbitero (2013)", "summary": "The survey concluded that there is no simple debt-growth relationship and no single debt ratio that separates good from bad outcomes.", "url": "https://doi.org/10.1007/BF03399388", "notes": ["Reviewed paraphrase from the article summary."]}
+  ],
+  "focusClaimId": "candidate_qualified_conclusion",
+  "groupDecision": {
+    "candidateClaimIds": ["candidate_sharp_causal_cutoff", "candidate_qualified_conclusion", "candidate_no_possible_relationship"],
+    "correctClaimId": "candidate_qualified_conclusion",
+    "instruction": "Use only the provided source cards. Choose the conclusion best supported by the full source packet. Cite the cards that support your choice. Keep an observed relationship separate from a claim that one number causes a sharp change in growth."
+  },
+  "claims": [
+    {"id": "candidate_sharp_causal_cutoff", "text": "Public debt above 90 percent of GDP causes a sharp drop in economic growth, and the selected research establishes that cutoff.", "truthLabel": "false"},
+    {"id": "candidate_qualified_conclusion", "text": "The selected research does not support a sharp causal 90 percent cutoff. It reports that debt and growth can be related in data, while the corrected and causal analyses do not establish that this cutoff causes lower growth.", "truthLabel": "true"},
+    {"id": "candidate_no_possible_relationship", "text": "Because one high-debt calculation was corrected, public debt cannot be related to economic growth in any country or period.", "truthLabel": "false"}
+  ],
+  "evidence": [
+    {
+      "id": "debt_card_original_threshold",
+      "text": "[Reinhart and Rogoff, 2010] This analysis reported weak debt-growth relationships below 90 percent of GDP and lower growth above that level. It reports an observed pattern; it does not by itself show that crossing 90 percent causes lower growth.",
+      "visibleToAgentIds": ["analyst_1"],
+      "effects": [{"claimId": "candidate_sharp_causal_cutoff", "effect": 0.35}]
+    },
+    {
+      "id": "debt_card_recalculation",
+      "text": "[Herndon, Ash, and Pollin, 2014] A recalculation found coding, data-selection, and weighting problems in the disputed postwar calculation. For the high-debt group, it reported 2.2 percent average annual growth rather than the original negative estimate. This card challenges the proposed sharp cutoff; it does not show that debt and growth are unrelated everywhere.",
+      "visibleToAgentIds": ["analyst_2"],
+      "effects": [{"claimId": "candidate_sharp_causal_cutoff", "effect": -0.9}, {"claimId": "candidate_qualified_conclusion", "effect": 0.7}]
+    },
+    {
+      "id": "debt_card_causal_analysis",
+      "text": "[Panizza and Presbitero, 2014] In an OECD sample, a negative debt-growth correlation disappeared after the analysis addressed endogeneity. The paper reported no evidence of a causal debt-to-growth effect in that sample. This concerns causal interpretation; it does not prove that no relationship can exist in every country or period.",
+      "visibleToAgentIds": ["analyst_3"],
+      "effects": [{"claimId": "candidate_sharp_causal_cutoff", "effect": -0.8}, {"claimId": "candidate_qualified_conclusion", "effect": 0.75}]
+    },
+    {
+      "id": "debt_card_literature_survey",
+      "text": "[Panizza and Presbitero, 2013] A survey of advanced-economy research concluded that there is no simple debt-growth relationship and no single threshold separating good from bad outcomes. This supports rejecting a universal 90 percent cutoff; it does not erase all possible debt-growth relationships.",
+      "visibleToAgentIds": ["analyst_4"],
+      "effects": [{"claimId": "candidate_qualified_conclusion", "effect": 0.75}, {"claimId": "candidate_no_possible_relationship", "effect": -0.9}]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

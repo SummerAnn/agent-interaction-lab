@@ -1,0 +1,32 @@
+{
+  "id": "neutral_ratio_standardized_v2_ego_1of6",
+  "title": "Ego depletion with 1/6 standardized adversaries",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "standardized_profiles",
+    "adversary_ratio",
+    "balanced_order",
+    "no_evidence",
+    "no_intervention"
+  ],
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [
+    {
+      "id": "claim_ego_depletion",
+      "text": "Willpower operates like a depletable resource, so performing one self-control task significantly impairs the next task.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.9
+    }
+  ],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,93 @@
+{
+  "id": "mixed_model_confirmatory_v2_stage1",
+  "title": "Mixed-model capability confirmation, missing seed-zero cells",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "Confirmatory extension of mixed_model_capability_pilot_v1.",
+      "Every run uses ego depletion, three liar agents, three neutral agents, standard shared memory, 18 calls, temperature 0, and one of the same twelve balanced speaking orders.",
+      "Prompts, numeric profiles, identities, question, condition, call budget, and speaking orders remain fixed. Only the model assigned to liar and neutral roles changes.",
+      "Primary outcomes are final neutral-agent false endorsement, any neutral adoption, complete neutral adoption, and liar-role retention.",
+      "The primary analysis estimates liar-model, neutral-model, and interaction effects. It does not claim a general intelligence scaling law.",
+      "Stage 1 adds only the five Sonnet-containing pairings absent from the completed seed-0 pilot, avoiding duplicate paid calls."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/neutral-ratio-standardized-v2/neutral_ratio_standardized_v2_ego_3of6.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_clustered_r1.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_clustered_r2.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_clustered_r3.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_clustered_r4.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_clustered_r5.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_clustered_r6.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_interleaved_r1.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_interleaved_r2.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_interleaved_r3.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_interleaved_r4.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_interleaved_r5.json",
+    "rosters/mixed-model-confirmatory-v2/haiku_to_sonnet/mixed_model_confirmatory_v2_haiku_to_sonnet_interleaved_r6.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_clustered_r1.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_clustered_r2.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_clustered_r3.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_clustered_r4.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_clustered_r5.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_clustered_r6.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_interleaved_r1.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_interleaved_r2.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_interleaved_r3.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_interleaved_r4.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_interleaved_r5.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_haiku/mixed_model_confirmatory_v2_sonnet_to_haiku_interleaved_r6.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_clustered_r1.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_clustered_r2.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_clustered_r3.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_clustered_r4.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_clustered_r5.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_clustered_r6.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_interleaved_r1.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_interleaved_r2.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_interleaved_r3.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_interleaved_r4.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_interleaved_r5.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_sonnet/mixed_model_confirmatory_v2_sonnet_to_sonnet_interleaved_r6.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_clustered_r1.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_clustered_r2.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_clustered_r3.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_clustered_r4.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_clustered_r5.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_clustered_r6.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_interleaved_r1.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_interleaved_r2.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_interleaved_r3.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_interleaved_r4.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_interleaved_r5.json",
+    "rosters/mixed-model-confirmatory-v2/sonnet_to_opus/mixed_model_confirmatory_v2_sonnet_to_opus_interleaved_r6.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_clustered_r1.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_clustered_r2.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_clustered_r3.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_clustered_r4.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_clustered_r5.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_clustered_r6.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_interleaved_r1.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_interleaved_r2.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_interleaved_r3.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_interleaved_r4.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_interleaved_r5.json",
+    "rosters/mixed-model-confirmatory-v2/opus_to_sonnet/mixed_model_confirmatory_v2_opus_to_sonnet_interleaved_r6.json"
+  ],
+  "maxSteps": 18,
+  "budget": {
+    "maxModelCalls": 18,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

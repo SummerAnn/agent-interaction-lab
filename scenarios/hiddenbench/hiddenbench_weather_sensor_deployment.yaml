@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_weather_sensor_deployment",
+  "title": "HiddenBench: weather_sensor_deployment",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 31 (weather_sensor_deployment). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_gamma_lake",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_alpha_ridge",
+      "answer_beta_valley",
+      "answer_gamma_lake"
+    ],
+    "correctClaimId": "answer_gamma_lake",
+    "instruction": "You are part of a scientific team deployed to investigate unusual atmospheric phenomena. You must quickly decide at which of three sites to install your advanced weather sensor. Each site comes with advantages and risks. Communications are patchy and difficult, so you must rely on available information. Whichever site the group selects must both be physically accessible and able to support the equipment for at least 48 hours. If you choose the correct site, you will enable the team to capture essential data; otherwise, the study could fail entirely.\n\nShared information known to all participants:\n- Alpha Ridge is the highest elevation, with a flat summit suitable for equipment installation. Local forecasts predict intense atmospheric activity nearby.\n- Beta Valley is lower-lying and more sheltered, but there are reports of significant rainfall causing possible flooding.\n- Gamma Lake is accessible by road until the last 2 km, after which the only known trail becomes muddy and flooded during rainstorms.\n\nChoose the best answer from: Alpha Ridge, Beta Valley, Gamma Lake."
+  },
+  "claims": [
+    {
+      "id": "answer_alpha_ridge",
+      "text": "Alpha Ridge",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_beta_valley",
+      "text": "Beta Valley",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_gamma_lake",
+      "text": "Gamma Lake",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A radio transmission indicates the bridge to Beta Valley has just collapsed due to floodwaters; all vehicles and personnel must avoid this route until repaired.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A recent geologist’s note (found on a desk) says Alpha Ridge’s summit is unstable after last month's landslide, and hauling heavy equipment up could risk collapse. The note is unsigned and not yet included in central updates.",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "An old cache of equipment logs reveals a small boat is moored at the southern shore of Gamma Lake, which can be used to cross the flooded trail and access the intended installation point, but only if known in advance.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "An urgent message states that sudden gale-force winds will hit Alpha Ridge in the next few hours, making sensor deployment and equipment stability impossible for at least two days.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

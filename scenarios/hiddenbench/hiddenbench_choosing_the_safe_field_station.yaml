@@ -1,0 +1,81 @@
+{
+  "id": "hiddenbench_choosing_the_safe_field_station",
+  "title": "HiddenBench: choosing_the_safe_field_station",
+  "domain": "hiddenbench",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "hidden_profile",
+    "private_evidence",
+    "evidence_assembly",
+    "exclusive_choice",
+    "hiddenbench"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Converted from HiddenBench task 49 (choosing_the_safe_field_station). Original benchmark: https://github.com/jonradoff/hiddenbench"
+  },
+  "focusClaimId": "answer_hilltop_cabin",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "answer_riverside_station",
+      "answer_hilltop_cabin",
+      "answer_valley_edge_outpost"
+    ],
+    "correctClaimId": "answer_hilltop_cabin",
+    "instruction": "You are part of a scientific expedition team about to cross a forested region to reach a field station for an urgent wildlife survey. Time is tight, and you can't afford to be delayed. There are three possible field stations to pick as your base: Riverside Station (accessible by the main bridge), Hilltop Cabin (accessible by a winding road), and Valley Edge Outpost (accessible via trails that split from the highway and from the riverside road). Each participant knows the base status, but different team members have received separate logistical updates from park rangers and local authorities. Only one station is reachable and safe for tonight.\n\nShared information known to all participants:\n- A new bridge to Riverside Station was opened last month, and routine checks showed it was in good condition just this morning.\n- All supplies for tonight are already delivered to the three stations.\n- The park's main highway crosses both the river (to Riverside) and leads to the outpost (Valley Edge).\n- Weather this week has been unusually calm aside from some melting snow in the mountains.\n\nChoose the best answer from: Riverside Station, Hilltop Cabin, Valley Edge Outpost."
+  },
+  "claims": [
+    {
+      "id": "answer_riverside_station",
+      "text": "Riverside Station",
+      "truthLabel": "false"
+    },
+    {
+      "id": "answer_hilltop_cabin",
+      "text": "Hilltop Cabin",
+      "truthLabel": "true"
+    },
+    {
+      "id": "answer_valley_edge_outpost",
+      "text": "Valley Edge Outpost",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "private_info_analyst_1",
+      "text": "A fire department bulletin: the only small bridge giving alternate access to Valley Edge from the north is closed for urgent repairs until tomorrow.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_2",
+      "text": "A car radio alert: There's a sudden emergency at the upstream hydro dam, prompting evacuation orders for all stations directly downstream (including Riverside).",
+      "visibleToAgentIds": [
+        "analyst_2"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_3",
+      "text": "A message from a supply manager: the hiking trail connecting Riverside and Valley Edge is flooded and not passable on foot or vehicle.",
+      "visibleToAgentIds": [
+        "analyst_3"
+      ],
+      "effects": []
+    },
+    {
+      "id": "private_info_analyst_4",
+      "text": "A park ranger just reported a landslide has blocked the main highway leading toward Valley Edge Outpost.",
+      "visibleToAgentIds": [
+        "analyst_4"
+      ],
+      "effects": []
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

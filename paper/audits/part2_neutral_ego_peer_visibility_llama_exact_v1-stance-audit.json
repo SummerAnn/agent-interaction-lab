@@ -1,0 +1,16 @@
+{
+  "grid": "part2_neutral_ego_peer_visibility_llama_exact_v1",
+  "method": "For each response marked invalid by the strict JSON parser, require exactly one explicit stance field and compare it with the state stored at the same run, step, agent, and claim.",
+  "totals": {
+    "runs": 72,
+    "responses": 1296,
+    "native_valid": 1263,
+    "explicitly_recovered": 33,
+    "ambiguous_or_missing_stance": 0,
+    "recorded_state_mismatch": 0,
+    "expected_responses": 1296,
+    "all_responses_audited": true,
+    "all_recoveries_unambiguous_and_matching": true
+  },
+  "issues": []
+}

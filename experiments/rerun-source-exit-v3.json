@@ -1,0 +1,33 @@
+{
+  "id": "rerun_source_exit_v3",
+  "title": "Rerun: source exit with fixed parser (Study 8)",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Clean rerun of the 8/28 source-exit study with the fixed parser, JSON-only output, and 256-token cap.",
+      "Same scenarios, conditions, rosters, and seeds as the original study8_source_exit_observer.",
+      "Four roster variants: baseline, observer, source-exit, source-exit+observer.",
+      "The source-exit roster has contamination_1 exiting at step 3.",
+      "This was the strongest lock-in result in the 8/28 data (0.167 false endorsement, 0.000 recovery)."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-trigger-post-exit.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-observer-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json",
+    "rosters/distributed-source-exit-observer-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

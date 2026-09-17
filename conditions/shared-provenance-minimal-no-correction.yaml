@@ -1,0 +1,13 @@
+{
+  "id": "shared_provenance_minimal_no_correction",
+  "title": "Shared provenance-minimal record with no correction (annotations only, no warning)",
+  "memory": {
+    "mode": "shared",
+    "record": "provenance_minimal",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

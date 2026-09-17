@@ -1,0 +1,120 @@
+{
+  "id": "scitat_2402_00657v1_q1_full_context",
+  "title": "SciTaT 2402.00657v1-q1 (full context)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2402.00657v1-q1",
+      "summary": "\\subsubsection {Results}\nTable~\\ref{tab:partial_pdg_prediction_results} shows the evaluation results of PDBERT on partial code in terms of F1-score.\nThe results presented in the ``Overall'' row are calculated on the combination of control and data dependencies.\nWe can see that PDBERT performs very well on CDP, achieving F1-scores of about 99\\% for all Ks.\nAs for DDP, PDBERT achieves F1-scores of over 95\\%, which is also impressive.\nNote that for each code snippet, DDP instances are highly imbalanced.\nThus, DDP is more challenging than CDP.\nThe overall F1-scores of PDBERT are over 96\\% for all Ks, indicating the feasibility and effectiveness of PDBERT in analyzing program dependencies for partial code.\nWe also notice that the control, data and overall F1-scores of PDBERT slightly decrease as $K$ increases.\nThis trend is attributed to the increased difficulty in analyzing long code snippets compared to shorter ones.\nPlease note that existing static analysis tools, e.g., Joern, lack the ability to automatically derive program dependencies in partial code, and thus are unsuitable for this scenario.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:partial_pdg_prediction_results",
+      "citation": "SciTaT item 2402.00657v1-q1",
+      "summary": "Intrinsic evaluation results on partial code in terms of F1-score.\n\\textbf{Dependency} | \\textbf{5} | \\textbf{10} | \\textbf{15} | \\textbf{20} | \\textbf{25} | \\textbf{30}\n\\textbf{Control} | 98.99 | 99.29 | 99.30 | 99.25 | 99.23 | 99.21\n\\textbf{Data} | 97.38 | 96.61 | 96.05 | 95.63 | 95.44 | 95.08\n\\textbf{Overall} | 97.69 | 97.51 | 97.29 | 97.07 | 97.00 | 96.84",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_d",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_d",
+    "instruction": "Based on the evaluation results described in the paragraph, how many distinct dependencies' F1-scores for the smallest K value are mentioned, and what is the total count of F1-scores given for these dependencies? Calculate the sum of distinct F1-score counts for the smallest K value.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2402.00657v1-q1",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 6.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 2.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsubsection {Results}\nTable~\\ref{tab:partial_pdg_prediction_results} shows the evaluation results of PDBERT on partial code in terms of F1-score.\nThe results presented in the ``Overall'' row are calculated on the combination of control and data dependencies.\nWe can see that PDBERT performs very well on CDP, achieving F1-scores of about 99\\% for all Ks.\nAs for DDP, PDBERT achieves F1-scores of over 95\\%, which is also impressive.\nNote that for each code snippet, DDP instances are highly imbalanced.\nThus, DDP is more challenging than CDP.\nThe overall F1-scores of PDBERT are over 96\\% for all Ks, indicating the feasibility and effectiveness of PDBERT in analyzing program dependencies for partial code.\nWe also notice that the control, data and overall F1-scores of PDBERT slightly decrease as $K$ increases.\nThis trend is attributed to the increased difficulty in analyzing long code snippets compared to shorter ones.\nPlease note that existing static analysis tools, e.g., Joern, lack the ability to automatically derive program dependencies in partial code, and thus are unsuitable for this scenario.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "Intrinsic evaluation results on partial code in terms of F1-score.\n\\textbf{Dependency} | \\textbf{5} | \\textbf{10} | \\textbf{15} | \\textbf{20} | \\textbf{25} | \\textbf{30}\n\\textbf{Control} | 98.99 | 99.29 | 99.30 | 99.25 | 99.23 | 99.21\n\\textbf{Data} | 97.38 | 96.61 | 96.05 | 95.63 | 95.44 | 95.08\n\\textbf{Overall} | 97.69 | 97.51 | 97.29 | 97.07 | 97.00 | 96.84",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

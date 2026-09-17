@@ -1,0 +1,24 @@
+{
+  "id": "hidden_profile_diagnosis_pilot_v1",
+  "title": "Private-evidence diagnosis pilot: record rules",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "Synthetic hidden-profile task. Each analyst starts with a different study detail; no evidence card states the correct explanation by itself.",
+      "The primary outcome is exact group choice, scored from the final support for the three candidate explanations.",
+      "This is a development pilot, not paper-facing evidence. A held-out scenario family is required before any paper claim."
+    ]
+  },
+  "scenarios": ["scenarios/hidden-profile-treatment-diagnosis-v1.yaml"],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml",
+    "conditions/shared-source-aware-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/hidden-profile-4-haiku.json"],
+  "maxSteps": 8,
+  "budget": {"maxModelCalls": 24, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

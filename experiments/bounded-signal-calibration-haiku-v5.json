@@ -1,0 +1,25 @@
+{
+  "id": "bounded_signal_calibration_haiku_v5",
+  "title": "Bounded-record task calibration: neutral model names, parser-safe cap",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": ["Re-run of v4 with a 512-token cap after one full-packet final choice reached the prior 256-token cap and could not be parsed."]
+  },
+  "scenarios": [
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_1_none.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_1_one_card.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_1_full_packet.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_2_none.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_2_one_card.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_2_full_packet.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_3_none.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_3_one_card.yaml",
+    "scenarios/bounded-signal-v2-pilot/bounded_signal_v2_packet_3_full_packet.yaml"
+  ],
+  "conditions": ["conditions/personal-memory-no-correction.yaml"],
+  "seeds": [1],
+  "rosterPaths": ["rosters/bounded-record-control-haiku.json"],
+  "maxSteps": 1,
+  "budget": {"maxModelCalls": 4, "maxOutputTokensPerCall": 512, "temperature": 0}
+}

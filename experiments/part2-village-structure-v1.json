@@ -1,0 +1,27 @@
+{
+  "id": "part2_village_structure_v1",
+  "title": "Village structure: 12 agents (3 liars + 9 honest), shared record vs chat vs chain topology",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "12 agents: 3 liars (1 per 'neighborhood'), 6 regular, 3 specialist.",
+      "Tests whether spread works at village scale with distributed liars.",
+      "3 liars at 25% ratio — our ratio gradient showed 30% spread at 25%.",
+      "Chain topology = gossip chain (each agent only sees neighbors).",
+      "Star topology = village with central figure.",
+      "Fully connected = everyone sees everything (baseline)."
+    ]
+  },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_v1.yaml"],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/chat-chain.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-3liar-3honest-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

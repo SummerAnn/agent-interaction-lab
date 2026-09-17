@@ -1,0 +1,40 @@
+{
+  "id": "gsm_hard_open_discussion_v1",
+  "title": "GSM-Hard open discussion: closest match to Cost of Consensus format",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Open-discussion format: agents solve the problem together, state their answer.",
+      "NO claim evaluation framing — just 'what is your answer?'",
+      "This matches Cost of Consensus: agents see others' answers and can conform.",
+      "Compare: 1-wrong (baseline) vs 4-wrong (majority), stays vs exits.",
+      "Compare with claim-evaluation GSM-Hard results to isolate the framing effect.",
+      "If this shows contagion but claim-evaluation doesn't, the framing is the key variable."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard-open/gsm_hard_open_01.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_02.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_03.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_04.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_05.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_06.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_07.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_08.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_09.yaml",
+    "scenarios/gsm-hard-open/gsm_hard_open_10.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-open-discussion.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json",
+    "rosters/majority-wrong-4of6-haiku.json",
+    "rosters/majority-wrong-4of6-exit-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

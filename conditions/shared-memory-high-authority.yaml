@@ -1,0 +1,12 @@
+{
+  "id": "shared_memory_high_authority",
+  "title": "Shared memory with high-authority correction",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionStrength": "high_authority"
+  }
+}

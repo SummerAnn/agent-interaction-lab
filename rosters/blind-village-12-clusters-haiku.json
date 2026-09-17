@@ -1,0 +1,19 @@
+{
+  "id": "blind_village_12_clusters_haiku",
+  "description": "Village structure: 12 agents in 3 neighborhoods. Each neighborhood has 1 liar + 3 honest. Agents see their own neighborhood + a shared 'town bulletin board'.",
+  "model": "claude-haiku-4-5-20251001",
+  "agents": [
+    {"id": "analyst_1", "role": "contamination_agent", "positiveEvidenceWeight": 0.80, "negativeEvidenceWeight": 0.45, "socialWeight": 0.20, "falseClaimBias": 0.95, "correctionTrust": 0.20, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_2", "role": "regular_agent", "positiveEvidenceWeight": 0.70, "negativeEvidenceWeight": 0.80, "socialWeight": 1.00, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_3", "role": "regular_agent", "positiveEvidenceWeight": 0.70, "negativeEvidenceWeight": 0.80, "socialWeight": 1.00, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_4", "role": "specialist_agent", "positiveEvidenceWeight": 0.65, "negativeEvidenceWeight": 1.15, "socialWeight": 0.35, "falseClaimBias": 0.05, "correctionTrust": 0.95, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_5", "role": "contamination_agent", "positiveEvidenceWeight": 0.80, "negativeEvidenceWeight": 0.45, "socialWeight": 0.20, "falseClaimBias": 0.90, "correctionTrust": 0.20, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_6", "role": "regular_agent", "positiveEvidenceWeight": 0.70, "negativeEvidenceWeight": 0.80, "socialWeight": 1.00, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_7", "role": "regular_agent", "positiveEvidenceWeight": 0.70, "negativeEvidenceWeight": 0.80, "socialWeight": 1.00, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_8", "role": "specialist_agent", "positiveEvidenceWeight": 0.65, "negativeEvidenceWeight": 1.15, "socialWeight": 0.35, "falseClaimBias": 0.05, "correctionTrust": 0.95, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_9", "role": "contamination_agent", "positiveEvidenceWeight": 0.80, "negativeEvidenceWeight": 0.45, "socialWeight": 0.20, "falseClaimBias": 0.90, "correctionTrust": 0.20, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_10", "role": "regular_agent", "positiveEvidenceWeight": 0.70, "negativeEvidenceWeight": 0.80, "socialWeight": 1.00, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_11", "role": "regular_agent", "positiveEvidenceWeight": 0.70, "negativeEvidenceWeight": 0.80, "socialWeight": 1.00, "falseClaimBias": 0.05, "correctionTrust": 0.72, "writesMemoryThreshold": 0.30},
+    {"id": "analyst_12", "role": "specialist_agent", "positiveEvidenceWeight": 0.65, "negativeEvidenceWeight": 1.15, "socialWeight": 0.35, "falseClaimBias": 0.05, "correctionTrust": 0.95, "writesMemoryThreshold": 0.30}
+  ]
+}

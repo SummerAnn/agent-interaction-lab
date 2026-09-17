@@ -1,0 +1,45 @@
+{
+  "id": "real_source_facial_feedback_no_source_reference_v1",
+  "title": "Reference: facial feedback with no source cards",
+  "domain": "psychology-replication",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["real_source_packet", "reference", "no_source"],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Reference control for the reviewed facial-feedback packet. The analyst sees only the question and candidate conclusions."
+  },
+  "sources": [],
+  "sourceCards": [],
+  "focusClaimId": "candidate_qualified_conclusion",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "candidate_original_replicated",
+      "candidate_qualified_conclusion",
+      "candidate_never_any_effect"
+    ],
+    "correctClaimId": "candidate_qualified_conclusion",
+    "instruction": "Choose the statement you judge most plausible. No source cards are available in this reference run. Do not claim to cite evidence you were not given.",
+    "evidenceAccess": "none"
+  },
+  "claims": [
+    {
+      "id": "candidate_original_replicated",
+      "text": "The original pen-in-mouth result replicated reliably, so later evidence leaves no reason to question that specific method.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "candidate_qualified_conclusion",
+      "text": "The direct replication did not recover the original pen-in-mouth result. Other facial-movement tasks show small, variable effects, so the pen-in-mouth result alone cannot settle the broader question.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "candidate_never_any_effect",
+      "text": "Because the pen-in-mouth task did not replicate, facial movements do not influence emotional experience in any task.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

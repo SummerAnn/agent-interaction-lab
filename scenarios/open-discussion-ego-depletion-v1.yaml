@@ -1,0 +1,181 @@
+{
+  "id": "open_discussion_ego_depletion_v1",
+  "title": "Open discussion: does ego depletion still have scientific support?",
+  "scenarioType": "open_discussion",
+  "domain": "psychology-replication-crisis",
+  "mechanismFamily": "source_grounded_deliberation",
+  "mechanismTags": ["source_cards", "citation_fidelity", "premature_consensus", "discussion_protocol"],
+  "provenance": {
+    "kind": "adapted",
+    "note": "This discussion version is adapted from the controlled ego depletion benchmark scenario."
+  },
+  "citations": {
+    "scenario": [
+      {
+        "title": "Hagger et al. (2016) Registered Replication Report",
+        "url": "https://doi.org/10.1177/1745691616652873",
+        "note": "the strongest direct test in the scenario"
+      },
+      {
+        "title": "Carter and McCullough (2014) publication bias analysis",
+        "url": "https://doi.org/10.3389/fpsyg.2014.00823",
+        "note": "why the early literature is not enough by itself"
+      }
+    ],
+    "metric": [
+      {
+        "title": "premature consensus",
+        "note": "used here to check whether the group settles too early before the strongest evidence is used"
+      }
+    ]
+  },
+  "sources": [
+    { "id": "orig_1998", "label": "Baumeister et al. (1998) JPSP", "url": "https://doi.org/10.1037/0022-3514.74.5.1252" },
+    { "id": "meta_2010", "label": "Hagger et al. (2010) meta analysis", "url": "https://doi.org/10.1037/a0019486" },
+    { "id": "rrr_2016", "label": "Hagger et al. (2016) Registered Replication Report", "url": "https://doi.org/10.1177/1745691616652873" },
+    { "id": "bias_2014", "label": "Carter and McCullough (2014) publication bias analysis", "url": "https://doi.org/10.3389/fpsyg.2014.00823" },
+    { "id": "beliefs_2010", "label": "Job, Dweck, and Walton (2010)", "url": "https://doi.org/10.1177/0956797610384745" }
+  ],
+  "sourceCards": [
+    {
+      "id": "orig_1998",
+      "title": "Original ego depletion study",
+      "citation": "Baumeister et al. (1998), JPSP",
+      "summary": "Introduced the cookie and puzzle dual task paradigm with a small sample and a positive result.",
+      "url": "https://doi.org/10.1037/0022-3514.74.5.1252",
+      "notes": ["small early study", "frequently cited"]
+    },
+    {
+      "id": "meta_2010",
+      "title": "Early meta analysis",
+      "citation": "Hagger et al. (2010)",
+      "summary": "Reported a medium sized effect but later work argued the literature was distorted by publication bias.",
+      "url": "https://doi.org/10.1037/a0019486",
+      "notes": ["83 studies", "effect size d = 0.62"]
+    },
+    {
+      "id": "rrr_2016",
+      "title": "Large registered replication",
+      "citation": "Hagger et al. (2016)",
+      "summary": "A 23 lab replication with 2,141 participants found an effect near zero.",
+      "url": "https://doi.org/10.1177/1745691616652873",
+      "notes": ["effect size d = 0.04", "strongest direct test"]
+    },
+    {
+      "id": "bias_2014",
+      "title": "Bias reanalysis",
+      "citation": "Carter and McCullough (2014)",
+      "summary": "Argued the earlier literature was strongly inflated by publication bias.",
+      "url": "https://doi.org/10.3389/fpsyg.2014.00823",
+      "notes": ["funnel plot asymmetry", "smaller corrected effect"]
+    },
+    {
+      "id": "beliefs_2010",
+      "title": "Belief dependent account",
+      "citation": "Job, Dweck, and Walton (2010)",
+      "summary": "Suggested the apparent effect depends on beliefs about willpower rather than a depleted resource.",
+      "url": "https://doi.org/10.1177/0956797610384745",
+      "notes": ["motivation and belief account"]
+    }
+  ],
+  "discussion": {
+    "opener": "A new lab meeting thread asks whether ego depletion is still a good example of a real self control effect, or whether the field should now treat it as mostly unsupported.",
+    "instructions": "Use the sources directly. Ask for missing evidence if needed. If you cite something, cite the source id exactly.",
+    "evaluatorFocus": ["accuracy", "citation_fidelity", "premature_consensus"]
+  },
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [
+    {
+      "id": "claim_ego_depletion",
+      "text": "Willpower operates like a finite resource that depletes with use, and the classic ego depletion effect is a real medium sized finding.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_glucose_mechanism",
+      "text": "The core mechanism of ego depletion is glucose consumption during self control tasks.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_motivation_account",
+      "text": "Apparent self control failures after an initial task are better explained by motivation, task prioritization, and beliefs than by a depleted resource.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_orig_1998",
+      "text": "The original Baumeister et al. study reported worse puzzle persistence after cookie resistance, but it was small and early.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": 0.35 }
+      ]
+    },
+    {
+      "id": "ev_meta_2010",
+      "text": "The early meta analysis reported d = 0.62, but later reanalyses argued that publication bias inflated that number.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": -0.25 }
+      ]
+    },
+    {
+      "id": "ev_rrr_2016",
+      "text": "The 23 lab registered replication found d = 0.04 with a confidence interval around zero, which is the strongest direct test of the main claim.",
+      "effects": [
+        { "claimId": "claim_ego_depletion", "effect": -0.8 }
+      ]
+    },
+    {
+      "id": "ev_beliefs_2010",
+      "text": "Belief dependent results suggest the pattern is tied to expectations and motivation rather than a depleting resource.",
+      "effects": [
+        { "claimId": "claim_motivation_account", "effect": 0.7 },
+        { "claimId": "claim_ego_depletion", "effect": -0.4 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_rrr_strengthened",
+      "step": 3,
+      "type": "correction",
+      "claimId": "claim_ego_depletion",
+      "text": "A senior participant posts the registered replication result directly and notes that the original meta analytic estimate is no longer treated as strong evidence.",
+      "effect": -0.85
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.88
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_glucose_mechanism",
+      "stance": "endorse",
+      "confidence": 0.75
+    }
+  ],
+  "initialMemoryEntries": [
+    {
+      "id": "seed_ego_1",
+      "agentId": "contamination_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.88,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "Ego depletion is still one of the best known self control findings. The meta analysis showed a clear effect and the field taught it for years."
+    },
+    {
+      "id": "seed_ego_2",
+      "agentId": "contamination_1",
+      "claimId": "claim_glucose_mechanism",
+      "stance": "endorse",
+      "confidence": 0.75,
+      "visibility": "shared",
+      "sourceType": "seed",
+      "text": "The glucose explanation always made sense to me because it gives a concrete biological mechanism."
+    }
+  ]
+}

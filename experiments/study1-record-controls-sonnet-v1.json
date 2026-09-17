@@ -1,0 +1,11 @@
+{
+  "id": "study1_record_controls_sonnet_v1_output_complete",
+  "title": "Study 1: matched source-aware and mixed records with Sonnet",
+  "benchmarkMeta": {"status":"paper_replication","claimId":"study1_source_aware_information_matched_sonnet","locked":true,"notes":["Exact match to study1_record_controls_v3_output_complete except model family.","This tests whether the record-form result appears beyond Haiku."]},
+  "scenarios": ["scenarios/distributed-ego-depletion-v1.yaml","scenarios/distributed-wakefield-mmr-autism-v1.yaml","scenarios/distributed-climate-attribution-v1.yaml","scenarios/distributed-room-temp-superconductor-v1.yaml"],
+  "conditions": ["conditions/shared-source-aware-no-correction.yaml","conditions/shared-mixed-record-no-correction.yaml"],
+  "seeds": [1,2,3,4,5,6,7,8,9,10],
+  "rosterPaths": ["rosters/distributed-baseline-6-sonnet.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls":54,"maxOutputTokensPerCall":256,"temperature":0}
+}

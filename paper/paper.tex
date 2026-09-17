@@ -1,18 +1,27 @@
 
 \documentclass{article} % For LaTeX2e
+\usepackage[T1]{fontenc}
 \usepackage{iclr2027_conference,times}
 
 \input{math_commands.tex}
 
 \usepackage{hyperref}
+\hypersetup{hidelinks}
 \usepackage{url}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{multirow}
 \usepackage{enumitem}
+\usepackage{float}
 
-\title{Information Cascades in LLM Agent Societies:\\How Shared State Amplifies False Beliefs}
+\makeatletter
+\newenvironment{fixedtable}
+  {\par\addvspace{\intextsep}\noindent\begin{minipage}{\textwidth}\def\@captype{table}}
+  {\end{minipage}\par\addvspace{0.5em}}
+\makeatother
+
+\title{Information Cascades:\\When Shared Memory Creates\\False Consensus in Multi-Agent Systems}
 
 % Authors hidden for double-blind review
 %\iclrfinalcopy
@@ -21,11 +30,12 @@
 \newcommand{\new}{\marginpar{NEW}}
 
 \begin{document}
+\raggedbottom
 
 \maketitle
 
 \begin{abstract}
-When multiple AI agents share a written memory, does the group become more reliable, or more gullible? Multi-agent systems increasingly rely on shared memory, where one agent writes a conclusion and the next reads it and builds on it. Shared memory helps groups correct mistakes, because later agents see evidence that earlier agents missed. In addition, when peers are honestly mistaken, memory delivers corrections and the group converges on truth. But the same mechanism that makes shared memory valuable (being influenced by peers) is what makes it dangerous. When peers persistently write confident false entries, the memory creates a one-sided public history that appears to represent consensus. We study this using groups of six LLM agents under shared memory, live debate, and personal-memory controls, across seven models from four providers and tasks ranging from scientific claims to mathematical reasoning. Through shared memory, 43\% of non-adversarial agents adopt the false belief on the primary topic, with contagion in 26/30 pooled evaluations. When agents reason alone, none adopt it. Live debate often helps, although its success depends on the model. The effect remains when we remove the prompt language that might make agents easy to persuade. It also grows as more agents repeat the false claim. We test several defenses. A correct signal from an external verifier stops the spread in all five models tested on the primary topic. Other defenses are less reliable. These results show how shared memory can turn repeated false reports into apparent consensus. We release Agent Society and the full traces for further study.
+When multiple AI agents share a written memory, does the group become more reliable, or more gullible? Multi-agent systems increasingly rely on shared memory, where one agent writes a conclusion and the next reads it and builds on it. This can help a group correct mistakes because later agents may see evidence that earlier agents missed. In experiments where agents begin with honest mistakes and remain free to revise them, shared memory reduces wrong final answers compared with personal memory. But the same willingness to learn from other agents can create a risk. When several agents repeatedly add confident false statements, the memory forms a one-sided public history that appears to reflect agreement. Following prior work, we call this feedback process an \emph{information cascade}. An agent accepts a claim after reading the shared record, writes that judgment back to the record, and may thereby influence later agents. The main experiments cover six models and four question families, with a seventh model in a supporting experiment. Comparisons among shared memory, personal memory, and live debate hold the agents, instructions, question, speaking order, and call budget fixed. Across the six models in the main design, every model has a tested question where shared memory produces more false neutral-agent answers than both alternatives, although the question and effect size differ. Overall, shared memory can circulate corrections or turn repeated false claims into apparent consensus. Its reliability depends on what enters the record and how repeated support is presented. We release the Agent Interaction Lab testbed, configurations, and recorded responses.
 \end{abstract}
 
 % ============================================================
@@ -33,229 +43,288 @@ When multiple AI agents share a written memory, does the group become more relia
 \label{sec:intro}
 % ============================================================
 
-When AI agents work together, they typically share what they learn through a common memory. For example, one agent writes a conclusion, and the next reads it and builds on it. This pattern appears in memory-augmented multi-agent systems \citep{park2023, cuadros2026}, agentic workflows, and research pipelines. \citet{hammond2025} identify persistent shared state as a key source of multi-agent risk, and \citet{dash2026} show that memory designs which improve agent performance also expand the memory poisoning attack surface. But what happens when the shared memory contains confident false information? Does the group catch the error or adopt it?
+When AI agents work together, one agent's output often becomes part of what later agents read. A shared memory makes earlier conclusions available to the group, allowing later agents to use evidence that others found. It can also preserve false claims and make repeated statements appear to provide independent support. When an agent adopts a claim from the record, writes that judgment back, and influences later agents, we call the resulting feedback an \emph{information cascade}. Memory already shapes how agents behave over time, and recent work considers records shared across agents \citep{park2023,cuadros2026}. We ask when a common memory helps a group correct errors and when it creates false consensus.
 
-Prior work on misinformation in LLM agents has emphasized debate, where agents challenge one another \citep{bertalanic2026, wan2026, becker2026}. The shared-memory setting, where one agent writes and later agents retrieve entries without direct reply, has received less attention despite its use in agentic workflows. We compare matched instances of the complete shared-memory, debate, and personal-memory protocols. We do not claim to isolate a single primitive such as synchrony or call count.
+Persistent inter-agent records already matter outside laboratory studies. During a cybersecurity evaluation, agents repurposed shared infrastructure as a message board and passed methods to later agents \citep{openai2026incident}. The incident involved capability sharing rather than false consensus, but it illustrates how agent-written records can influence later behavior.
 
-In each experiment, 6 agents analyze a question. They communicate in one of two formats: shared memory, where agents take turns writing to and retrieving from a common pool but cannot reply to a specific entry, or live debate, where agents can challenge earlier messages. We also run a personal-memory control, where each agent sees only its own prior reasoning. Tasks range from well-known facts (does MMR cause autism?) to screened numeric problems the model cannot answer without the supplied context. Within matched comparisons we hold agents, evidence access, model, claim, and order schedule constant and vary the complete communication protocol.
+LLM agents are already known to follow incorrect majorities, especially when their initial confidence is low or when the question is difficult to answer \citep{zhu2025conformity,bellina2026conformity}. False information can also persist through multi-agent debate or enter an agent's memory \citep{becker2026,wan2026,dash2026,xu2026mandela}. These findings leave a narrower question. How much does the communication method change the outcome when the other experimental choices stay fixed? We compare two ways of receiving information from other agents, shared written memory and live debate, with personal memory, where agents receive no peer messages. In each matched comparison, the agents, instructions, questions, speaking orders, and number of model calls stay the same across methods.
 
-We built a testbed called Agent Society and ran more than 9,000 traced evaluations across 7 models from 4 providers. In the primary experiment, 6 LLM agents analyze a scientific claim. Four agents are instructed to persistently endorse a false belief. We hold agent configurations, evidence access, claims, model, and order schedule fixed within matched comparisons and change the communication protocol. Through shared memory, 43\% of target agents adopt the wrong answer on the primary topic (contagion in 26 of 30 pooled evaluations). In personal memory, 0\% do. In debate, adoption drops, partly because the adversaries themselves abandon their assigned position under argument pressure. In shared memory, the target role agreed because others agreed. In a separate matched debate evaluation, the same configured role rejected because the evidence was weak. Shared memory also helps correct honest mistakes, reducing the fraction of agents holding a wrong belief from 0.167 to 0.087, and this positive impact of sharing would be lost if sharing were disabled entirely. These results match predictions from information cascade theory \citep{anderson1997}, where agents rationally defer to a one-sided public history instead of reasoning from their own information.
+The main experiments study groups of six copies of the same language model in two broad situations. First, one or more agents begin with an honest mistake and remain free to revise it. Second, some agents are instructed to keep repeating a false claim while the others judge it for themselves. We vary the number of agents repeating the claim, the question, the model, and the speaking order. The questions include familiar scientific claims, grade-school arithmetic, harder mathematics, and scientific table questions that require source material. A supporting experiment assigns different Claude models to the liar and neutral roles. Appendix~\ref{app:tasks} gives the full question set. The audited results contain 6,334 complete runs across seven models from five developers.
 
-We make three contributions.
-\begin{enumerate}[leftmargin=*]
-\item A controlled three-way comparison of shared memory, debate, and personal memory for false-belief spread. Prior work studies these formats separately. We run the same agents, same claims, and same false information through all three and show that changing the communication format to shared memory leads to the spread of false belief and information cascade.
-\item Identification of three factors associated with stronger spread in our evaluated configurations: shared persistent state, high-confidence persistent sources, and weak personal/no-context task performance. The current design does not establish each factor as universally necessary.
-\item A comparison of 11 intervention and communication configurations. An oracle claim-verification signal and timed corrections eliminate target-agent adoption for Claude Haiku. Warnings and memory limits only reduce it. Debate and topology effects vary by model and configuration.
+The results show that the communication method can change whether agents judging for themselves adopt repeatedly stated false claims. In the central comparison shown in Figure~\ref{fig:overview}, shared memory produces frequent false answers, while the corresponding personal-memory and live-debate runs produce none. In a separate Haiku experiment, all three neutral agents give the false answer in 81\% of runs when they can read one another's judgments, compared with 50\% when they cannot. They see the same liar-agent statements in both versions. The effect varies across questions, models, and group compositions, and some debate runs also end with false answers. Together, these results indicate that failures depend on both what enters the shared record and how repeated support is presented. This motivates defenses that preserve useful information sharing while adding verified corrections or identifying statements that repeat the same underlying evidence.
+
+We make five contributions.
+\begin{enumerate}[leftmargin=*,nosep]
+\item Controlled comparisons of shared memory, personal memory, and live debate that hold the agents, instructions, question, speaking order, and call budget fixed, together with tests across models, questions, and group compositions.
+\item An experiment in which neutral agents still see every liar-agent statement but cannot see statements written by other neutral agents. This tests whether neutral agents who accept the false claim help it spread further.
+\item Separate reports of how often neutral agents give the false answer and how often liar agents keep repeating it. The same all-agent average can hide different behavior in these two groups.
+\item A comparison of several ways to reduce false answers, including a correct answer from a trusted external source and a memory that shows when a statement repeats an earlier one.
+\item Agent Interaction Lab, an auditable testbed that records every retrieved statement, message, answer, and memory write. We release the configurations, recorded responses, and manifests linking reported results to their runs.
 \end{enumerate}
-We release Agent Society, a paper-facing run manifest, and the configurations and traces for all reported evaluations.
 
-\begin{figure*}[!tb]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{fig/fig1.png}
-\caption{Two communication protocols and one control, with the same 6 agents and ego-depletion claim. 4 agents are instructed to write persistent false entries (red). Each agent maintains personal state (notebook icon). \textbf{(A)}~Shared memory. Agents write to and retrieve from a common pool but cannot reply to a specific entry. The non-adversarial agent (analyst\_6) reads confident false entries and shifts from uncertain~(0.20) to endorse~(0.80), citing peer agreement. Across 30 pooled evaluations, at least one target agent adopts in 26 (87\%, mean FE$_\text{t}=0.43$). When false entries come from honest mistakes rather than persistent adversaries, sharing instead reduces FE (0.167~$\to$~0.087). \textbf{(B)}~Live debate. Agents challenge earlier messages; the specialist cites replication failures, an adversary retracts, and analyst\_6 rejects at 0.85. \textbf{Control:}~In personal memory, analyst\_6 sees no peer entries and rejects at 0.68. This example illustrates the outcome of the full protocol bundle; the protocols differ in timing, participation, persistence, and reply structure.}
+\includegraphics[width=0.96\textwidth]{fig/figure1_primary_v3.png}
+\caption{One matched comparison using Claude Haiku 4.5. Four agents are instructed to keep supporting a false claim, while two judge it for themselves. The agents, instructions, question, 12 speaking orders, and 18-call budget stay fixed across the three communication methods. The two agents judging for themselves give 22 false final answers out of 24 with shared memory and none with personal memory or live debate. Panels illustrate one run. Agents see only generic analyst IDs, not one another's instructions.}
 \label{fig:overview}
-\vspace{-2em}
-\end{figure*}
+\end{figure}
 
 % ============================================================
 \section{Related Work}
 \label{sec:related}
 % ============================================================
 
-We situate our work in four areas.
+Earlier studies show that an incorrect majority can change an LLM's answer. Agents conform more often when they are uncertain, when the opposing group is larger, or when other agents appear more capable \citep{zhu2025conformity,choi2025group,bellina2026conformity}. Majority-following also appears across model families and much larger groups \citep{demarzo2026majority}. Assigned personas change which agents are trusted, while adversary count, perceived capability, and rhetoric can change collective decisions \citep{li2026persona,ko2026social}. Network structure affects misinformation spread, and strategically persuasive or coordinated agents can steer belief formation \citep{yu2025netsafe,kraidia2026persuasion,hu2026lying}. Our comparison fixes the agents, instructions, question, speaking orders, and call budget, then changes the communication method.
 
-\textbf{Information cascades.} \citet{anderson1997} and \citet{bikhchandani1992} established that sequential agents observing a public history can rationally ignore their private signals once the history is sufficiently one-sided. Our shared-memory setting maps onto this model. Memory entries are the public history, the model's own reasoning is the private signal, and debate forces agents to reveal reasoning instead of just conclusions. Four of six predictions match cleanly. Two are partially confirmed with model-dependent exceptions (Section~\ref{sec:discussion}).
+Large-scale simulators study thousands of agents or sample from very large persona populations \citep{piao2025agentsociety,li2026matraix}. Our complementary goal is causal identification in smaller groups, using matched runs to isolate how communication and memory rules change final judgments.
 
-\textbf{Multi-agent safety.} \citet{hammond2025} identify information asymmetries as key risks in multi-agent systems but do not empirically test memory format. \citet{becker2026} seed misinformation into debate and find persistence depends on group composition. Under matched rosters, we show that outcomes differ sharply across complete communication protocols. \citet{dash2026} systematically study memory poisoning in single-agent systems and show that memory designs which improve performance also expand the attack surface. We extend this to multi-agent shared memory, where one poisoned entry reaches $N$ readers. \citet{li2026constraint} show constraints weaken across memory and delegation. \citet{margalit2026} formalize governed shared memory with provenance tracking and scoped retrieval. \citet{yan2026truth} show that false evidence gains collective influence through adoption and propagation by other agents, complementing our finding that shared memory amplifies this effect.
+Work on saved records is closer to our setting. ManBench varies agent roles and memory duration \citep{xu2026mandela}. Ask WhAI studies role-primed medical agents writing to a shared record \citep{moore2025askwhai}. \citet{yan2026truth} show that false evidence can outlast a deceptive agent. Confidence-aware and consensus-free debate methods show that confidence displays and pressure to agree can also change outcomes \citep{lin2025confidence,cui2026freemad}. Semantic-collapse work measures the diversity of generated ideas \citep{kong2026semantic}. This paper measures answer correctness. Our experiment keeps every liar-agent statement visible but prevents each neutral agent from reading statements written by the other neutral agents. This tests whether newly persuaded agents contribute to further spread.
 
-\textbf{Conformity.} \citet{bertalanic2026} report 85.5\% sycophantic conformity on GSM-Hard with 7--8B models. We find conformity is both model-dependent (Claude Haiku: 0/25, Llama 8B: 6/9 in a separate three-problem blind cohort) and protocol-dependent (shared memory produces higher target adoption than debate for every model in the matched six-model grid). \citet{wan2026} show debate loses critical facts as positions converge, and we show that communication protocols can differ sharply in whether target agents adopt a false claim. \citet{han2026} study topology effects; our topology results are more modest than the shared-memory-versus-debate differences in the evaluated configurations. \citet{el2026} model LLM communities with Ising dynamics but treat all communication as equivalent. Our data identifies communication design as an empirical moderator of the resulting regime. \citet{du2023} show debate improves factuality in cooperative settings without adversarial agents. \citet{ann2026interaction} show interaction erases solution diversity, and we show it can amplify bad consensus. \citet{ys2026} study public conformity despite private disagreement.
-
-\textbf{Hidden profiles.} \citet{stasser1985} established that human groups discuss shared information before unique information. \citet{li2025hiddenbench} replicate this in LLM groups and find scaling does not fix it. \citet{zhang2026silo} and \citet{zhu2025multiagentbench} benchmark distributed coordination with different topologies. Shared memory goes beyond failing to pool information. It manufactures false certainty, converting ``I don't know'' (0.20) into ``I'm 89\% sure'' (0.89) of the wrong answer.
-
-\textbf{What we add.} \citet{becker2026} seed misinformation into debate but do not test shared memory. We directly compare shared memory with debate and personal memory. \citet{bertalanic2026} compare isolated and debate settings but do not test asynchronous shared memory. \citet{wan2026} study debate losing facts but do not compare against a non-debate channel. We run matched three-protocol evaluations, observe shared-memory target adoption across seven models (six also evaluated in debate), and show that even a specialist role can fall on questions the model cannot answer alone. Across the intervention suite, an oracle claim-verification signal is the most consistent defense, while debate, topology, warnings, and memory policies have model- or configuration-dependent effects.
+Several defenses trace or change information flow. ARGUS locates and corrects misinformation \citep{li2026argus}. \citet{xie2026spark} trace an injected error through later messages. Other systems preserve source history or restrict record use \citep{margalit2026,wang2026mapgraph}. Multiple reports drawn from the same evidence should not count as independent support \citep{bara2026sybil}. One of our defenses keeps every statement visible without revealing the correct answer, while showing when one repeats an earlier statement. We separately test this marker and a warning that repeated statements are not independent support, as information cascade theory predicts \citep{anderson1997,bikhchandani1992}.
 
 % ============================================================
-\section{Setup}
+\section{Experimental Setup}
 \label{sec:setup}
 % ============================================================
 
-\subsection{Testbed}
+% Controlled vocabulary for the paper:
+% Roles: liar agent; neutral agent; specialist agent; social agent.
+% Experiments: honest-mistake experiments; liar--neutral experiments; specialist--social experiment.
+% Protocols: shared memory; personal memory; live debate.
+% Metrics: FE; FE_t; assigned-role retention (AR).
+% Evaluations: main 18-task evaluation; separate 18-item SciTaT evaluation.
+% Changes to shared memory: standard shared memory; restricted shared memory; dependence warning; earlier-statement markers.
 
-All experiments run on Agent Society, our testbed for multi-agent belief propagation. It supports shared memory, multi-round debate, several memory formats and chat topologies, and grids across models, scenarios, conditions, and order schedules. Every retrieval, judgment, and memory write is traced in SQLite. We release the configurations and traces. The manifest identifies the exact run IDs and exclusions. The architecture draws on \citet{park2023}.
+\subsection{The two situations we study}
 
-\subsection{Agents and communication}
+The main experiments use six copies of the same language model. We begin with a situation in which memory should help. One or more agents start with an honest mistake, but no agent is instructed to keep the wrong answer. The agents receive different pieces of relevant background information and may revise their answers. These \emph{honest-mistake experiments} ask whether information shared by the group corrects the initial error.
 
-We place 6 agents in a group. Each evaluates a scientific claim over 18 steps. Four agents know the correct answer but are instructed to persistently endorse the false claim. The original roster also has a skeptical specialist and a regular agent. Public labels do not reveal these roles. Agents return a stance, confidence, short reason, and cited sources in structured JSON. Full prompts and parameters appear in Appendix~\ref{app:configs}.
+We then study what happens when a false statement persists. Some agents are told to keep saying that a false claim is true. We call them \emph{liar agents}. The others receive no answer to follow and decide for themselves. We call them \emph{neutral agents}. These labels describe the agents' instructions, which are hidden from the other agents. We call this family of tests the \emph{liar--neutral experiments}. Most of the paper examines this case.
 
-In shared memory, agents act sequentially and retrieve up to six recent entries. They cannot reply to a specific entry. In live debate, all agents speak in three rounds and can challenge earlier messages. In personal memory, each agent reads only its own entries. Matched comparisons hold agents, evidence access, claims, model, and order schedule fixed. The protocols still differ in timing, participation, persistence, retrieval, and reply structure, so we estimate the effect of each complete protocol. Appendix~\ref{app:channels} gives the implementation details.
+We compare three ways for agents to receive earlier answers. With \emph{shared memory}, the system keeps one group record. After each turn, it saves the agent's answer if the agent endorses or rejects the claim, together with the agent's confidence and short explanation. Before an agent's next turn, it reads up to six of the most recent saved statements, including statements written by other agents. Uncertain answers are not saved, and agents cannot reply directly to an entry. We call this \emph{standard shared memory}. With \emph{personal memory}, an agent sees only its own earlier statements. This is the control without peer information. With \emph{live debate}, agents read and respond directly to one another over three rounds, and there is no separate saved record. Live debate therefore provides peer information through a different interaction protocol. Appendix~\ref{app:channels} gives the exact rules. Within each matched comparison, the model, question, instructions, speaking order, and call budget remain fixed.
 
-\subsection{Tasks}
+\subsection{A central matched comparison}
 
-We test four task categories: six familiar-science topics, five computable GSM8K problems \citep{gsm8k}, five GSM-Hard problems \citep{gsmhard}, and scientific table calculations from SciTaT \citep{scitat2025}. Personal memory measures whether a model rejects the false claim without peer entries. The SciTaT expansion retains 18 of 30 candidate items using an operational screen: 0\% no-context accuracy and at least 80\% full-context accuracy. Appendix~\ref{app:tasks} describes all tasks, and Appendix~\ref{app:scitat_screen} reports the screen and model-specific baselines.
+We first use one model and question to isolate the effect of the communication method. The later experiments vary both. We call a comparison \emph{matched} when the model, question, six agents, instructions, speaking order, and number of calls stay fixed, and only the communication method changes. This comparison uses six Claude Haiku 4.5 agents and a claim that exerting self-control once makes later self-control harder. Four liar agents must support the claim throughout the run. Two neutral agents receive no answer to follow and form their own judgment. Agents see only generic names such as \texttt{analyst\_1}, not the role labels, and receive no source stating the correct answer.
 
-\subsection{Metrics}
+Each agent answers three times, giving 18 calls per run. The same 12 speaking orders are used for all three communication methods, with every agent appearing twice in each position. Appendix~\ref{app:channels} defines the three methods, and Appendix~\ref{app:neutral_fairness} gives the exact prompt and speaking orders for this comparison.
 
-We call final endorsement of the false claim by a non-adversarial agent \textit{adoption}, and a positive adoption event \textit{contagion}, borrowing the latter term from epidemiology. Unless a trajectory is explicitly discussed, both terms refer to the final recorded response rather than a transient endorsement. They are operational outcomes, not claims that an agent has a persistent internal belief beyond its generated response. ``Adversary'' means an agent assigned the scripted persistent-false-position role. ``Liar'' is shorthand for that assignment, not an inference about model intent. ``Target'' or ``non-adversarial'' means every other agent, whether its final stance is reject or uncertain. We prefer this observable role label to ``honest agent.'' The honest-mistake experiments contain no adversaries and are analyzed separately.
+\subsection{How the later experiments extend the comparison}
 
-The experimental unit is one completed scenario--condition--roster--model--schedule evaluation, which we call a \textit{run} or \textit{cell}. Final metrics use each agent's last recorded stance on the false claim. \texttt{Uncertain} never counts as endorsement. Unless stated otherwise, table entries are unweighted means over completed cells. $n$ is the number of cells, with no imputation for failed or incomplete cells. Reuse of an order schedule in a different configuration is a separate evaluation but not a new unique schedule.
+We then vary the number of liar agents, whether neutral agents can read one another's statements, the questions, and the models, and test several ways to reduce false answers. The broad evaluation has six familiar scientific claims, five GSM8K problems \citep{gsm8k}, five GSM-Hard problems \citep{gsmhard}, and two SciTaT questions requiring a supplied paragraph and table \citep{scitat2025}. A separate evaluation has 18 additional SciTaT questions selected because Haiku usually needs that material. Seven models appear overall. Six appear in the broad matched liar--neutral comparison. Gemma appears in a supporting ego-depletion visibility replication and in the specialist--social experiment. Task coverage differs by model. A supporting heterogeneous-model check assigns Haiku, Sonnet, or Opus separately to three liar agents and three neutral agents under standard shared memory. Appendices~\ref{app:tasks}, \ref{app:scitat_screen}, \ref{app:heterogeneous_models}, and~\ref{app:models} give the questions, selection procedure, heterogeneous-model results, and model coverage.
 
-\textbf{False endorsement rate (FE).} The fraction of \emph{all} agents, including instructed adversaries, endorsing the false claim at the final step. If all 4 adversaries in a 6-agent run comply, their contribution alone is $4/6 = 0.667$. This is a reference level, not a universal statistical floor: in debate, adversaries may recant while target agents endorse. Consequently, all-agent FE cannot by itself identify spread.
+\subsection{A separate supporting experiment}
 
-\textbf{Target-agent false endorsement rate (FE$_\text{t}$).} The fraction of non-adversarial agents who endorse the false claim. This is the primary metric for whether false beliefs spread beyond the scripted sources. With 2 non-adversarial agents and 4 adversaries, FE$_\text{t} = 0.50$ means 1 of 2 non-adversarial agents endorsed. Primary spread comparisons use FE$_\text{t}$. We retain all-agent FE where source compliance or comparison with legacy runs is relevant.
+To test whether agent instructions change who accepts or abandons a false claim, we also replace the two neutral agents with a \emph{specialist agent}, who looks for scientific weaknesses, and a \emph{social agent}, who places more weight on the group. This experiment lets us distinguish false answers by these two agents from continued endorsement by the four liar agents. Its five-run memory comparisons rotate the order, while debate uses one fixed order, so we report it as a separate supporting experiment rather than as part of the matched comparison.
 
-\textbf{Adversary retention rate (AR).} The fraction of instructed adversaries still endorsing at the final step. If $p_A$ is the assigned adversary fraction, then $\mathrm{FE}=p_A\mathrm{AR}+(1-p_A)\mathrm{FE}_{\mathrm{t}}$. We use this decomposition whenever debate causes adversaries to abandon their assigned stance. We never recover FE$_\text{t}$ from an assumed $0.667$ floor. It is computed from agent identities and final states.
+\subsection{What we measure}
 
-\textbf{Matched protocol adoption gap ($\Delta$FE$_\text{t}$).} For matched scenario--roster--model--schedule cells, we subtract personal-memory FE$_\text{t}$ from the communication protocol's FE$_\text{t}$. This separates target adoption associated with peer communication from a model's tendency to endorse even when alone. It is especially important on SciTaT, where some models have nonzero personal baselines. The gap estimates the effect of the full protocol bundle, not a single mechanism.
+Throughout the paper, \textit{endorse} means that an agent says the claim is true, \textit{reject} means that it says the claim is false, and \textit{uncertain} means that it chooses neither answer. A run has a false answer when at least one agent not instructed to lie endorses the false claim at the end. The honest-mistake experiments have no liar agents, so their results include all six agents.
 
-\textbf{Contagion rate.} The fraction of completed cells in which at least one non-adversarial agent endorses at the final step, equivalently $\mathbf{1}[\mathrm{FE}_{\mathrm{t}}>0]$ per cell. We report the numerator and denominator (e.g., 5/5). Because this any-target event depends on the number of target agents, adversary-ratio comparisons use mean FE$_\text{t}$ as the primary outcome.
+\textbf{False endorsement rate (FE).} FE is the fraction of all six agents that endorse the false claim in their final answers. When all four liar agents follow their instructions, FE is at least $4/6=0.667$ even if neither neutral agent endorses.
 
-Condition-level FE and FE$_\text{t}$ values are macro-averages of cell-level fractions. Pooled evaluations are descriptive unless labeled as matched pairs. Order schedules are controlled robustness variations, so we report exact counts and finite-grid means rather than population-level significance tests. Appendix~\ref{app:metrics} defines secondary and trajectory metrics.
+\textbf{False endorsement rate among agents not instructed to lie (FE$_\text{t}$).} FE$_\text{t}$ excludes the liar agents. In the liar--neutral experiments, it counts the neutral agents. In the specialist--social experiment, it counts the specialist and social agents. When the subgroup has two agents, FE$_\text{t}=0.50$ means that one endorses the false claim.
 
-\subsection{Models}
+\textbf{Assigned-role retention (AR).} AR is the fraction of liar agents that still endorse the claim at the end. With four liar agents and two other agents, $\mathrm{FE}=(4/6)\mathrm{AR}+(2/6)\mathrm{FE}_{\mathrm{t}}$. Reporting both parts shows which agents changed.
 
-Seven models from 4 providers. Gemma 3 4B (Google), Llama 3.1 8B (Meta), Mistral 8B, GPT-4o-mini (OpenAI), Claude Haiku 4.5, Claude Sonnet 4.6, and Claude Opus 4.6 (Anthropic). All at temperature 0. Gemma was tested in shared memory only (no debate runs).
+Counts label either runs or final responses. The central 12 runs yield 24 responses from two neutral agents. The group-composition experiment and the experiment hiding other neutral-agent statements each repeat 12 orders three times, giving 36 runs. With three neutral agents, that is 108 responses. Fresh API runs can differ even at temperature 0.
+
+We match runs by question, agents, model, and speaking order. Tables report means over completed runs, with $n$ denoting runs. Exact counts accompany the main results. Resampled 95\% ranges describe sensitivity across the fixed speaking orders, not a larger population of tasks or models. Appendix~\ref{app:metrics} defines the calculations and Appendix~\ref{app:stats} reports the resampling procedure.
 
 % ============================================================
-\section{Sharing Corrects Honest Mistakes}
+\section{Results}
+\label{sec:results}
+% ============================================================
+
+We first test whether shared memory corrects revisable mistakes, then isolate the communication method in one matched example. We next vary group composition, which statements neutral agents can read, the questions, and the models. Across the six models in the liar--neutral design, every model has at least one tested question where shared memory produces more false neutral-agent answers than both alternatives, although no method ranks best everywhere.
+
+\subsection{Shared Memory Can Correct Honest Mistakes}
 \label{sec:honest}
-% ============================================================
 
-Before testing deliberate deception, we tested honest mistakes. One agent starts wrong but is free to update. Across four familiar-science topics and 10 schedules per condition, personal-memory FE is 0.167 and shared-memory FE is 0.087. An oracle claim-verification signal reduces it to 0.013. These values include all agents because this experiment has no adversaries.
+In the first honest-mistake experiment, one agent starts wrong but may revise its answer. Across four questions, 40 of 240 final answers are wrong with personal memory (FE $=0.167$), 21 with shared memory (FE $=0.088$), and 3 when a correct external verification message is added (FE $=0.013$). These rates include all six agents because none must stay wrong.
 
-Correction works better when it arrives early. When the mistaken source leaves before correction, shared-memory FE is 0.158, but its error never spreads in 160 source-exit cells. Debate reduces source-exit FE to 0.008 by exposing the agent to counterarguments before it leaves. Appendix~\ref{app:honest} reports the full timing and exit results.
+When four agents start wrong but remain free to revise, a memory containing only the pieces of external evidence ends with 22 wrong answers out of 240 (FE $=0.092$). When the memory also contains the agents' changing judgments, only 1 of 240 answers remains wrong (FE $=0.004$), because later agents can read corrected judgments. Appendix~\ref{app:amplifier} reports the 80 runs.
 
-% ============================================================
-\section{Sharing Spreads Deliberate Lies}
+When the initially mistaken agent leaves before seeing a correction, no other agent repeats its error, but 38 of 240 shared-memory answers remain wrong (FE $=0.158$). Live debate exposes the agent to counterarguments before it leaves and leaves 2 of 240 wrong (FE $=0.008$, Appendix~\ref{app:honest}).
+
+\subsection{Shared Memory Changes the Neutral Agents' Answers}
 \label{sec:deliberate}
-% ============================================================
 
-\subsection{The core result}
-
-When 4 out of 6 agents persistently write confident false entries, outcomes differ sharply across the evaluated communication protocols (Table~\ref{tab:core}).
-
-\begin{table}[!t]
-\caption{Ego depletion with 4/6 instructed adversaries. FE counts all agents. FE$_\text{t}$ counts only the 2 non-adversarial agents. The shared-memory result pools 30 evaluations from five cohorts covering 20 unique order schedules; debate and personal rows are descriptive pools of 30 and 20 evaluations and are not a single 30-pair design. A fully matched 10-schedule comparison appears in Appendix~\ref{app:neutral_prompt}.}
-\label{tab:core}
-\begin{center}
-\small
-\begin{tabular}{lcccc}
-\toprule
-Format & FE & FE$_\text{t}$ & Spread (runs) & What the non-adversarial agent cited \\
-\midrule
-Shared memory & 0.811 & 0.433 & 26/30 (87\%) & ``Three peers strongly endorse'' \\
-Live debate & 0.000 & 0.000 & 0/30 (0\%) & ``Replication failures are decisive'' \\
-Personal memory & 0.667 & 0.000 & 0/20 (0\%) & ``Meta-analyses challenge the model'' \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-
-Trace inspection shows the target agent treating repeated one-sided entries as peer consensus. The same configured role cites replication evidence in personal memory. Debate permits direct challenge, and some Haiku adversaries recant. These generated explanations support the behavioral interpretation but do not reveal the model's internal causal process. Full trajectories appear in Appendix~\ref{app:traces}.
-
-The matched neutral-prompt replication uses the same 10 schedules under all three protocols. Shared-memory FE$_\text{t}$ is 0.900, while debate and personal-memory FE$_\text{t}$ are both 0.000 (Appendix~\ref{app:neutral_prompt}).
-
-\subsection{What makes contagion stronger or weaker}
-
-With neutral target-agent prompts, mean FE$_\text{t}$ scales from 0.000 at 1/6 adversaries to 0.475 at 2/6 and 1.000 at both 3/6 and 4/6 (Appendix, Table~\ref{tab:adversary_ratio}). Debate and personal memory remain at FE$_\text{t}=0$ throughout. At a 50/50 split, the adversaries write persistently at high confidence while target agents lack a comparably persistent counter-signal. We compare ratios using FE$_\text{t}$ rather than all-agent FE because the scripted adversary fraction, and therefore the all-agent reference level, changes by design.
-
-Longer exposure is associated with more contagion: 1/5 after one step and 4/5 after twelve (Appendix, Table~\ref{tab:app_exit}). At a 3:3 ratio, the high-confidence persistent condition produces 80\% contagion, while a mild condition changing confidence and persistence together produces 0\%. This comparison identifies the full manipulation rather than either feature alone.
-
-The deliberate-lie experiments withhold evidence cards. Personal-memory target agents still reject the false claim using training knowledge, while shared-memory target agents sometimes adopt after reading peer entries. This isolates peer communication relative to the matched personal baseline. It does not test how external counter-evidence changes the effect.
-
-\subsection{When the model cannot get it right alone, even the expert falls}
-
-For the primary Haiku ambiguity grid, contagion ranges from 0/5 on MMR to 5/5 on ego depletion. PANDAS is 4/5, LK-99 3/5, STAP 2/5, and climate 1/5 (Appendix, Table~\ref{tab:app_ambiguity}). GSM8K remains 0/25 when agents can compute the answer. In the original two-item Haiku SciTaT study, contagion is 10/10 and the specialist role also endorses. These are task- and model-specific empirical gradients, not a calibrated universal ambiguity scale.
-
-In the expanded 18-item study (810 completed cells), shared-memory FE$_\text{t}$ is 0.917 for Haiku, 0.856 for Mistral, and 0.739 for Llama. Because personal-memory FE$_\text{t}$ is 0.000, 0.389, and 0.556 respectively, the matched shared-minus-personal adoption gaps are 0.917, 0.467, and 0.183. Debate FE$_\text{t}$ is 0 across all 270 debate cells (Appendix~\ref{app:scitat_screen}).
-
-\subsection{Every model falls, but defenses depend on training}
-
-\begin{table}[t]
-\caption{Target-agent adoption and adversary retention across the 6 models evaluated in both protocols. Ego depletion, 4/6 adversaries, 5 schedules each. FE$_\text{t}$ is the primary spread metric. Debate AR shows how often instructed adversaries retain their assigned stance.}
-\label{tab:crossmodel}
+\begin{table}[H]
+\caption{Central comparison with Claude Haiku 4.5. Four liar agents are told to keep answering yes to the ego-depletion claim. Two neutral agents judge the claim for themselves. Every communication method uses the same 12 speaking orders and 18 model calls per run.}
+\label{tab:neutral_fairness_main}
 \begin{center}
 \small
 \begin{tabular}{lccc}
 \toprule
-Model & Shared FE$_\text{t}$ & Debate FE$_\text{t}$ & Debate AR \\
+Communication method & Neutral false answers & Runs with any false answer & $n$ \\
 \midrule
-Llama 3.1 8B & 0.600 & 0.400 & 1.000 \\
-Mistral 8B & 0.500 & 0.300 & 0.150 \\
-Claude Haiku 4.5 & 0.500 & \textbf{0.000} & 0.000 \\
-Claude Sonnet 4.6 & 0.400 & 0.000 & 0.700 \\
-Claude Opus 4.6 & 0.500 & 0.000 & 0.700 \\
-GPT-4o-mini & 0.500 & 0.400 & 1.000 \\
+Shared memory & \textbf{91.7\% (22/24)} & 91.7\% (11/12) & 12 \\
+Personal memory & 0.0\% (0/24) & 0.0\% (0/12) & 12 \\
+Live debate & 0.0\% (0/24) & 0.0\% (0/12) & 12 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Every model in Table~\ref{tab:crossmodel} shows target adoption in shared memory. Debate prevents it for the three Claude models in this grid and leaves nonzero adoption for Llama, Mistral, and GPT-4o-mini. AR separates target resistance from adversary recanting. Gemma also shows shared-memory adoption but has no matched debate evaluation. Appendix~\ref{app:crossmodel} reports model-specific trajectories, cross-family attacks, and topic exceptions.
+With shared memory, the two neutral agents give the false answer in 22 of their 24 final responses, giving FE$_\text{t}=0.917$. At least one does so in 11 of the 12 runs. Neither gives the false answer with personal memory or live debate. The shared-minus-personal difference is 0.917, with a resampled 95\% range of $[0.750,1.000]$ across the 12 fixed speaking orders (Appendix Table~\ref{tab:schedule_uncertainty}). The prompts, speaking positions, and number of model calls are the same across the three methods. Appendix~\ref{app:neutral_fairness} reports every speaking order and the agents' answers over time.
 
-% ============================================================
-\section{What Works as a Defense, and What Does Not}
-\label{sec:mitigations}
-% ============================================================
+\subsection{The Number of Liar Agents Changes How the Error Spreads}
 
-\begin{table}[t]
-\caption{Selected mitigation results. Ego depletion, 4/6 adversaries, Claude Haiku unless noted. 5 schedules per row. Contagion counts cells with FE$_\text{t}>0$.}
-\label{tab:mitigations}
+We next vary the number of liar agents while giving every liar agent the same instruction and every neutral agent the same instruction. Across 36 shared-memory runs at each group composition, mean FE$_\text{t}$ rises from 0 with one liar agent to 0.125 with two and 0.926 (100 of 108 neutral-agent responses) with three, then falls to 0.806 with four. Personal memory and live debate remain at zero in all 288 comparison runs (Appendix Table~\ref{tab:adversary_ratio}).
+
+The averages hide how strongly the answers cluster within a run. With two liar agents, 30 of 36 runs end with no neutral agent giving the false answer. Three end with some neutral agents giving it, and three end with all four doing so. With three liar agents, 32 of 36 runs end with all three neutral agents giving the false answer. With four liar agents, 29 runs are affected, and both neutral agents give the false answer in every one. The change is therefore concentrated between two and three liar agents, and adding a fourth does not increase the average in these runs. Appendix Table~\ref{tab:cascade_shape} gives the full distribution.
+
+These ratio runs use identical wording for every liar agent. The central comparison instead uses four small variants of that instruction, so we keep its 0.917 result separate. None of these runs gives agents an external source that states the correct answer.
+
+\subsection{Other Neutral-Agent Statements Affect Whether the Error Reaches the Whole Group}
+\label{sec:peer_amplification}
+
+The standard traces reveal the sequence preceding the group-wide shift. At three liar agents, 102 neutral agents give the false answer at least once. Two later revert, leaving 100 false final answers. After excluding the first adopter in each of the 34 affected runs, all 68 later first-adoption events occur immediately after retrieval of a false statement written by another neutral agent. This temporal pattern motivates the direct intervention below.
+
+We therefore rerun the two-, three-, and four-liar conditions with one change. Each neutral agent still reads every statement from a liar agent and its own earlier statements, but cannot read statements from the other neutral agents. We call this \emph{restricted shared memory}. The prompts, question, model, 12 speaking orders, and 18 model calls remain fixed. The comparison contains 216 runs.
+
+\begin{table}[H]
+\caption{Effect of hiding statements written by other neutral agents. Every row has 36 Claude Haiku 4.5 shared-memory runs on ego depletion. The denominator in the false-answers column is the number of final responses from neutral agents.}
+\label{tab:peer_visibility_main}
 \begin{center}
-\small
-\begin{tabular}{llcl}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrr}
 \toprule
-Tier & Defense & Contagion & Why \\
+Liar agents & Neutral agents can read & \shortstack{False answers\\\% (count)} & \shortstack{Runs with any\\\% (count)} & \shortstack{Runs with all\\\% (count)} \\
 \midrule
-\multirow{4}{*}{\shortstack[l]{Zero adoption\\in this setting}} & Oracle verification & 0/5 & Correct external signal \\
-& Live debate (Haiku) & 0/5 & Pushback breaks liars \\
-& Early correction & 0/5 & Counter-signal prevents lock-in \\
-& Late correction & 0/5 & Correction reverses adoption \\
-\midrule
-\multirow{2}{*}{\shortstack[l]{Partial\\reduction}} & Independence warning & 2/5 & FE 0.833$\to$0.733 \\
-& Fade old entries & 4/5 & Weakens correct entries too \\
-\midrule
-\multirow{2}{*}{No reduction} & Force skeptic to write & 5/5 & Adversaries produce 12 entries vs.\ 3 \\
-& Larger model (Opus) & 5/5 & Opus = Haiku \\
+2 of 6 & All recent statements & 15.3 (22/144) & 22.2 (8/36) & 5.6 (2/36) \\
+2 of 6 & Liar statements and own history & 13.9 (20/144) & 22.2 (8/36) & 5.6 (2/36) \\
+3 of 6 & All recent statements & 82.4 (89/108) & 83.3 (30/36) & 80.6 (29/36) \\
+3 of 6 & Liar statements and own history & \textbf{67.6 (73/108)} & 77.8 (28/36) & \textbf{50.0 (18/36)} \\
+4 of 6 & All recent statements & 90.3 (65/72) & 94.4 (34/36) & 86.1 (31/36) \\
+4 of 6 & Liar statements and own history & 88.9 (64/72) & 91.7 (33/36) & 86.1 (31/36) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-We tested 11 intervention and communication configurations. Table~\ref{tab:mitigations} shows the directly comparable ego-depletion subset.
+The difference is concentrated at three liar agents. Hiding the other neutral agents' statements reduces false final answers from 89/108 to 73/108. Runs in which all three neutral agents give the false answer fall from 29 to 18, while runs with any false answer move only from 30 to 28. Access to neutral-agent statements therefore affects whether an existing error reaches the whole group more than whether the error first appears. Restricted shared memory retrieves more liar-agent statements per neutral agent, 11.38 instead of 9.24, so reduced exposure to liar agents cannot explain the decrease. At two and four liar agents, the two memory versions differ by at most two false final answers. Appendix~\ref{app:peer_visibility} gives a matched transcript comparison and the aggregate trace results.
 
-The oracle condition gives each agent a claim-level message from a correct external verifier. It yields zero target adoption in 5/5 Haiku cells. In the cross-model grid, it also yields FE$_\text{t}=0$ for all five evaluated models on ego depletion (25 cells, Appendix~\ref{app:crossmodel_mitigations}). This is a scoped upper bound that assumes access to a correct verifier. Debate yields zero adoption for Claude Haiku but not for all models. Both early and late corrections yield zero adoption in the five evaluated Haiku schedules.
+These rows use newly run standard shared-memory baselines rather than the earlier group-composition cohorts. Because separate API runs can differ even at temperature 0, we compare each change only with the baseline run alongside it. At three liar agents, the new baseline is 89/108 rather than 100/108. This result applies to Claude Haiku 4.5 on this question. Appendix~\ref{app:peer_visibility} gives all three cohort comparisons, the audit, and the speaking-order results.
 
-An independence-aware memory format that warns that entries are not independent reduces contagion from 5/5 to 2/5 in this Haiku comparison (all-agent FE 0.833 to 0.733). Because it also changes retrieval presentation, it is a bundled intervention. Fading old entries reduces contagion to 4/5 but also weakens older correct entries. Forcing the specialist to write does not reduce the 5/5 rate. Opus likewise shows 5/5 under the evaluated baseline, so moving to that larger model alone does not protect this setup.
+\subsection{Results Change Across Questions}
+
+Still using the liar--neutral design, we next change the question while holding the communication comparisons fixed. Among the six familiar scientific claims tested with Haiku, shared-memory FE$_\text{t}$ is 1.000 on the PANDAS claim, 0.917 on ego depletion, 0.083 on the LK-99 claim, and 0 on the MMR/autism, climate-attribution, and STAP stem-cell claims. Each question uses 12 speaking orders. Personal memory and live debate remain at 0 for all six (Figure~\ref{fig:task_protocols}A).
+
+Across the broad 18-question evaluation, shared-memory FE$_\text{t}$ is 0.333 for familiar science, 0 for grade-school arithmetic, 0.150 for harder mathematics, and 0.813 for the two questions whose answers require numbers from a supplied scientific table. Personal memory remains at 0 in every group. Live debate is also 0 except on those two table questions, where FE$_\text{t}$ is 0.063 (Figure~\ref{fig:task_protocols}B).
+
+For a separate stress test, we select 18 SciTaT questions that Haiku usually answers correctly when the relevant paragraph and table are supplied, then withhold that material. Under shared memory, FE$_\text{t}$ is 0.938, and at least one neutral agent gives the false answer in 203 of 216 runs. Personal memory remains at 0, and live-debate FE$_\text{t}$ is 0.007. These results apply only to the selected questions and missing-source setting (Appendix~\ref{app:scitat_screen}).
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{fig/fig_task_protocols_v2.png}
+\caption{False answers from neutral agents using Claude Haiku 4.5 in the liar--neutral experiments. \textbf{(A)} Six familiar scientific questions. \textbf{(B)} Five GSM8K questions, five GSM-Hard questions, the two SciTaT questions in the broad evaluation, and the separate 18-question SciTaT evaluation. Each question uses 12 speaking orders per communication method. Unlabeled bars are zero. Appendix Table~\ref{tab:neutral_core_categories} gives the broad-evaluation counts. Appendix Table~\ref{tab:neutral_scitat_expanded} gives the separate SciTaT counts.}
+\label{fig:task_protocols}
+\end{figure}
+
+\subsection{Results Change Across Models}
+
+We keep the liar--neutral design and next change the model. Each of the six models in these matched comparisons has at least one tested question where shared-memory FE$_\text{t}$ exceeds both personal-memory and live-debate FE$_\text{t}$. The question differs by model, and task coverage is not identical. This documents breadth without implying a universal ranking. On ego depletion, shared-memory FE$_\text{t}$ is 0 for Sonnet and 0.042 for Opus, compared with 0.917 for Haiku. On the PANDAS claim, the three models instead reach 1.000, 1.000, and 0.958, while personal memory remains at 0. On the two SciTaT questions in the broad evaluation, the shared-minus-personal differences are 1.000 and 0.625 for Sonnet and 1.000 and 0.042 for Opus (Appendix Tables~\ref{tab:neutral_boundaries} and~\ref{tab:neutral_claude_scitat}).
+
+GPT-4o-mini, Llama 3.1 8B, and Ministral 8B 2512 reach FE$_\text{t}=1$ on ego depletion even in personal memory, so this question shows no added memory effect for them. Across six questions, their mean shared-minus-personal differences are 0.160, $-0.069$, and 0.174, concentrated on SciTaT. MMR and GSM8K give zeros, small differences, or reversals (Appendix Tables~\ref{tab:neutral_open_ego}--\ref{tab:neutral_open_multitask}).
+
+\subsection{The All-Agent Average Can Hide Who Changed}
+
+We now switch to the separate specialist--social experiment, which has one specialist and one social agent instead of two neutral agents. A single average over all six agents combines their answers with those of the four liar agents, so similar averages can describe different behavior.
+
+\begin{table}[!htbp]
+\caption{Results by model in the specialist--social experiment on ego depletion. Entries are percentages of agents whose final answer supports the false claim. Each row has four liar agents, one specialist agent, one social agent, and five runs. All liar agents retain the false claim in shared memory, so only the specialist and social agents' answers are shown for that method.}
+\label{tab:crossmodel}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{1}{c}{Shared memory} & \multicolumn{3}{c}{Live debate} \\
+\cmidrule(lr){2-2}\cmidrule(lr){3-5}
+Model & \shortstack{Specialist +\\social agents} & \shortstack{All\\agents} & \shortstack{Specialist +\\social agents} & \shortstack{Liar\\agents} \\
+\midrule
+Llama 3.1 8B & 60\% & 80\% & 40\% & 100\% \\
+Ministral 8B 2512 & 50\% & 50\% & 60\% & 45\% \\
+Claude Haiku 4.5 & 50\% & 0\% & 0\% & 0\% \\
+Claude Sonnet 4.6 & 40\% & 46.7\% & 0\% & 70\% \\
+Claude Opus 4.6 & 50\% & 46.7\% & 0\% & 70\% \\
+GPT-4o-mini & 50\% & 80\% & 40\% & 100\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Looking only at the average across all six agents could lead to the wrong conclusion. With Sonnet and Opus, 46.7\% of all agents end live debate supporting the false claim, but neither the specialist nor the social agent does so. The nonzero average comes entirely from liar agents, some of whom abandon the answer they were assigned. Ministral has a similar all-agent rate of 50.0\%, yet the specialist and social agents give the false answer in 60.0\% of their final responses. Thus, similar group averages can mean opposite things for the agents judging the claim. Live debate lowers the specialist and social agents' false-answer rate for five models in Table~\ref{tab:crossmodel}, but raises it for Ministral from 50.0\% to 60.0\%. Gemma was evaluated only in shared memory in this experiment and is reported in Appendix~\ref{app:crossmodel}.
+
+We also test live debate while ensuring that every liar agent keeps endorsing the claim. After each model call, we replace that agent's public response with a fixed endorsement. FE$_\text{t}$ remains 0 for Haiku, Sonnet, and Opus across 12 speaking orders per model (Appendix Table~\ref{tab:enforced_debate}).
+
+\subsection{Several Changes Reduce False Answers}
+\label{sec:mitigations}
+
+We show six tested changes here, using the same 12 speaking orders and neutral-agent instruction. One tells every agent that a reliable external check found the claim false. Two insert a correction early or late. The others fade old statements, show answer counts with a warning, or identify which earlier statement a repeated statement follows. This marker labels statements, not agents, and does not reveal the correct answer.
+
+\begin{table}[H]
+\caption{Standard shared memory and six changes, tested with Claude Haiku 4.5 on ego depletion. Every row has 12 balanced speaking orders, two neutral agents, and 18 calls per run. AR is 1.000 throughout.}
+\label{tab:neutral_defenses_main}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule
+Shared-memory version & FE$_\text{t}$ & False answers & Runs with any \\
+\midrule
+Standard shared memory & 0.958 & 23/24 & 12/12 \\
+Correct external verification message & 0.000 & 0/24 & 0/12 \\
+Early correction & 0.000 & 0/24 & 0/12 \\
+Late correction & 0.292 & 7/24 & 6/12 \\
+Fading old statements & 0.708 & 17/24 & 9/12 \\
+Current answer counts with warning & 0.000 & 0/24 & 0/12 \\
+Earlier statement shown with warning & 0.000 & 0/24 & 0/12 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Four changes reduce the 23 false answers in the standard condition to zero: the correct external verification message, an early correction, current answer counts with a warning, and showing which earlier statement was repeated together with a warning. A late correction leaves 7 false answers, and fading old statements leaves 17. The standard condition in this separately executed comparison has one more false answer than the central comparison, 23/24 rather than 22/24. Comparisons within Table~\ref{tab:neutral_defenses_main} use the same speaking orders. Appendix~\ref{app:neutral_defenses} describes how each version changes the record.
+
+The correct external verification message yields FE$_\text{t}=0$ for all five models tested on ego depletion, though it assumes access to a reliable verifier (25 runs, Appendix~\ref{app:crossmodel_mitigations}). We next switch to the separate specialist--social experiment. In a matched six-question Haiku comparison, FE$_\text{t}$ falls from 0.217 with standard shared memory to 0.167 when the memory shows which earlier statement was repeated, and to 0.067 when it also warns agents not to count repetitions as new evidence. The last comparison holds retrieval and statement markers fixed. With both changes, FE$_\text{t}$ reaches zero for Haiku and Sonnet and 0.200 for GPT-4o-mini on ego depletion, but remains 0.400 for Haiku on PANDAS (Appendix~\ref{app:provenance}). On a clean numerical task, the marker and warning lower FE$_\text{t}$ from 0.667 to 0.083 for Haiku and from 0.917 to 0.583 for Ministral. Only Haiku shows a clear added benefit from the warning beyond the marker (Appendix Table~\ref{tab:provenance_numerical}).
+
+In a separate check across four scientific claims, standard shared memory and the memory that identifies repeated statements and warns against double-counting them each correct 120 of 160 initially wrong final answers (80 runs, Appendix~\ref{app:defense_preservation}).
 
 % ============================================================
 \section{Discussion}
 \label{sec:discussion}
 % ============================================================
 
-Shared memory corrects honest mistakes in our experiments, reducing FE from 0.167 to 0.087. It also amplifies persistent false entries, producing FE$_\text{t}=0.433$ on ego depletion. Repeated one-sided reports can look like independent agreement even when later entries inherit the same claim. A useful memory system must preserve correction while exposing source dependence.
+Changing only the communication method changes the neutral agents' final answers in the central comparison. Across the broader evaluation, every model has a tested question where shared memory produces more false neutral-agent answers than both alternatives, but no method is safest everywhere. The honest-mistake experiments show that the same record can also carry corrections.
 
-The pattern is consistent with information cascades \citep{anderson1997}. A model's own answer competes with the public history in memory. Adoption grows when the private answer is weak, exposure is longer, or false reports are persistent. It falls when the answer can be independently computed or a reliable correction enters the record. Appendix~\ref{app:cascade} gives the complete prediction mapping and exceptions.
+Several controls narrow this finding. The central result is not explained by the neutral-agent instruction, exposure to four liar agents, forced liar-agent retention in debate, or speaking position. Prompt wording matters. A 10-run check produces false answers in 8 runs with strongly persistent liar-agent instructions and none with milder instructions, although other prompt values also change (Appendix Table~\ref{tab:app_confidence}). Results also vary with prior knowledge and task format. Haiku rejects all five tested GSM8K errors but gives 24 of 36 false responses on the separately prompted $6/3$ task, so checkability alone is insufficient. It also often accepts unsupported answers on selected SciTaT questions. In heterogeneous Claude groups, the model assigned to judge the claim matters more than the liar model, but two questions do not establish a general scaling law (Appendix~\ref{app:heterogeneous_models}). Debate also varies.
 
-Prompted persistence is an experimental stress test. It does not show how deception arises naturally. The neutral roster removes susceptibility language and produces higher shared-memory adoption (FE$_\text{t}=0.900$ versus 0.500, $n=10$ each). It also removes the specialist role and changes the write threshold, so it tests the full roster package. The susceptibility phrase is not required for adoption.
+The record's rules also matter. Saving uncertain answers removes all 64 false final responses in a matched 72-run ablation, but 88 of 108 responses remain uncertain rather than reject (Appendix~\ref{app:uncertain_write_rule}). At a three--three split, hiding other neutral agents' statements reduces complete false consensus in Haiku from 29 to 18 of 36 runs. The same change has no effect for Llama 3.1 8B, Ministral 8B 2512, or Gemma 3 4B, which give 108 of 108 false neutral-agent responses in each condition. Thus, peer visibility helps complete the Haiku cascade, but hiding it is not a general defense (Appendix~\ref{app:peer_visibility}). Together with the benefit of identifying repeated statements, this is consistent with dependent reports acting as additional support when they affect the outcome \citep{anderson1997,bikhchandani1992}.
 
-Shared memory and debate are complete protocol bundles. They differ in timing, participation, persistence, retrieval, and direct reply. Debate outcomes also reflect both target resistance and adversary recanting. We therefore make protocol-level comparisons. Results may change with future models, schedules, free-text outputs, and naturally emerging disagreement. Oracle verification succeeds across the five models tested here, while debate and topology remain model-dependent.
+The specialist--social experiment shows why evaluation must distinguish who changed. With Sonnet and Opus, the specialist and social agents reject the claim in debate despite a nonzero group-wide rate. With Ministral, a similar group rate accompanies frequent false answers from those agents. One average can therefore hide opposite behavior.
+
+These findings favor improving the record rather than suppressing communication. External verification stops false answers in all five models tested on ego depletion. Identifying repeated statements and warning against double-counting them also helps and preserves correction in four honest-mistake questions, although PANDAS remains an exception. Limitations include scripted liar agents, fixed questions, mostly homogeneous groups, small cells, and limited coverage of the heterogeneous and write-rule checks. Traces cannot identify a model's internal reason for changing its answer. Future work should test naturally arising errors and broaden these checks.
 
 % ============================================================
 \section{Conclusion}
 \label{sec:conclusion}
 % ============================================================
 
-Shared persistent state in multi-agent LLM systems produces measurable false-belief adoption among target agents. In shared memory, 43\% of target agents adopt the false claim on ego depletion (contagion in 26/30 pooled evaluations, 0\% in personal memory). Target-agent adoption occurs in shared memory for all seven evaluated models. Debate was evaluated for six, and its protection is model-dependent. Debate outcomes reflect both target-agent resistance and adversaries abandoning their assigned position. The same mechanism that makes shared memory valuable for correcting honest errors makes it dangerous for amplifying persistent false entries. An oracle claim-verification signal eliminates target-agent adoption on all five models in the cross-model mitigation study. Debate and corrections also eliminate it on Claude Haiku, while warning and memory-limit interventions provide partial or inconsistent reductions. A neutral-prompt replication confirms that susceptibility language is not necessary, although it changes the full target-agent roster rather than one phrase alone. Whether the same rates hold with naturally emergent disagreement remains an open question.
+Shared memory can improve judgment or create false consensus because saved answers influence later agents. No communication method is safest everywhere. Safer records should distinguish evidence from repetition and use reliable verification without suppressing corrections. Evaluations should separate neutral-agent persuasion from liar-agent retention.
 
 % ============================================================
-\subsection*{Reproducibility Statement}
-All experiments use fixed order schedules and temperature 0. Provider API completions are not assumed to be bitwise deterministic. The complete code and SQLite traces are available at \url{https://anonymous.4open.science/r/agent-society} (anonymous for review). The canonical \texttt{iclr2027/run\_manifest.json} and readable \texttt{iclr2027/RUN\_MANIFEST.md} map each paper table cohort to exact run IDs, configuration files, scenarios, models, schedules, summary/trace paths, and checksums. The generator also recomputes final-state FE, FE$_\text{t}$, and AR and exits nonzero on an identity, count, or reported-value mismatch. Every run is traced at the level of individual retrievals, belief changes, and memory writes.
+{\small
+\noindent\textbf{Reproducibility.} Code, configurations, SQLite records, and manifests connecting table values to run IDs are available at \url{https://anonymous.4open.science/r/agent-society}. The generators recompute FE, FE$_\text{t}$, and AR. Repeated API calls may differ at temperature 0.
 
-\subsection*{Ethics Statement}
-This work studies false-belief propagation in AI systems. No human subjects are involved. The scientific claims used as scenarios are from published literature. We do not release attack tools. The testbed is for defensive safety evaluation. The finding that shared memory can spread false beliefs, including vaccine misinformation in some models, has dual-use potential. We report it because the vulnerability exists in deployed systems and defenders need to know.
+\noindent\textbf{Ethics.} This work has no human subjects. It uses controlled false scientific claims, including vaccine misinformation. The released configurations aid reproduction and defense testing but could be misused.
 
-\subsection*{AI Use Statement}
-We used Claude Code (Anthropic) for experiment design and data analysis. The AI models studied in this paper (Claude, GPT-4o-mini, Llama, Mistral, Gemma) are subjects of the experiments, not authors. All experimental results are from controlled API calls with fixed seeds. Research questions, interpretations, and writing are the authors' own. All AI-assisted work was reviewed for correctness by the authors.
+\section*{AI Use}
+Generative AI tools, including Claude and OpenAI Codex, assisted with designing and refining experiments, implementing methods and analysis code, checking data quality and references, interpreting results, reviewing related literature, and editing the manuscript for clarity. The authors reviewed all AI-assisted work, verified the reported results against the released records and manifests, and take responsibility for the final content.
+}
 
 % ============================================================
 \bibliography{iclr2027_conference}

@@ -45,8 +45,10 @@ Sushil Bikhchandani, David Hirshleifer, and Ivo Welch.
 
 \bibitem[Carter \& McCullough(2014)Carter and McCullough]{carter2014}
 Evan~C Carter and Michael~E McCullough.
-\newblock Publication bias and the limited strength model of self-control.
+\newblock Publication bias and the limited strength model of self-control: has
+  the evidence for ego depletion been overestimated?
 \newblock \emph{Frontiers in Psychology}, 5:\penalty0 823, 2014.
+\newblock \doi{10.3389/fpsyg.2014.00823}.
 
 \bibitem[Choi et~al.(2025)Choi, Kim, Chae, and Baek]{choi2025group}
 Min Choi, Keonwoo Kim, Sungwon Chae, and Sangyeop Baek.
@@ -99,11 +101,29 @@ Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie
 \newblock \emph{arXiv preprint arXiv:2211.10435}, 2022.
 \newblock GSM-Hard dataset.
 
-\bibitem[Hagger et~al.(2016)]{hagger2016}
-Martin~S Hagger et~al.
+\bibitem[Hagger et~al.(2016)Hagger, Chatzisarantis, Alberts, Anggono,
+  Batailler, Birt, Brand, Brandt, Brewer, Bruyneel, Calvillo, Campbell, Cannon,
+  Carlucci, Carruth, Cheung, Crowell, De~Ridder, Dewitte, Elson, Evans, Fay,
+  Fennis, Finley, Francis, Heise, Hoemann, Inzlicht, Koole, Koppel, Kroese,
+  Lange, Lau, Lynch, Martijn, Merckelbach, Mills, Michirev, Miyake, Mosser,
+  Muise, Muller, Muzi, Nalis, Nurwanti, Otgaar, Philipp, Primoceri, Rentzsch,
+  Ringos, Schlinkert, Schmeichel, Schoch, Schrama, Sch{"u}tz, Stamos,
+  Tingh{"o}g, Ullrich, vanDellen, Wimbarti, Wolff, Yusainy, Zerhouni, and
+  Zwienenberg]{hagger2016}
+M~S Hagger, N~L~D Chatzisarantis, H~Alberts, C~O Anggono, C~Batailler, A~R
+  Birt, R~Brand, M~J Brandt, G~Brewer, S~Bruyneel, D~P Calvillo, W~K Campbell,
+  P~R Cannon, M~Carlucci, N~P Carruth, T~Cheung, A~Crowell, D~T~D De~Ridder,
+  S~Dewitte, M~Elson, J~R Evans, B~A Fay, B~M Fennis, A~Finley, Z~Francis,
+  E~Heise, H~Hoemann, M~Inzlicht, S~L Koole, L~Koppel, F~Kroese, F~Lange,
+  K~Lau, B~P Lynch, C~Martijn, H~Merckelbach, N~V Mills, A~Michirev, A~Miyake,
+  A~E Mosser, M~Muise, D~Muller, M~Muzi, D~Nalis, R~Nurwanti, H~Otgaar, M~C
+  Philipp, P~Primoceri, K~Rentzsch, L~Ringos, C~Schlinkert, B~J Schmeichel, S~F
+  Schoch, M~Schrama, A~Sch{"u}tz, A~Stamos, G~Tingh{"o}g, J~Ullrich,
+  M~vanDellen, S~Wimbarti, W~Wolff, C~Yusainy, O~Zerhouni, and M~Zwienenberg.
 \newblock A multilab preregistered replication of the ego-depletion effect.
 \newblock \emph{Perspectives on Psychological Science}, 11\penalty0
   (4):\penalty0 546--573, 2016.
+\newblock \doi{10.1177/1745691616652873}.
 
 \bibitem[Hu et~al.(2026)Hu, Huang, Sun, Dong, and Huang]{hu2026lying}
 Jinwei Hu, Xinmiao Huang, Youcheng Sun, Yi~Dong, and Xiaowei Huang.
@@ -179,6 +199,7 @@ Kreesten~M Madsen, Anders Hviid, Mogens Vestergaard, Diana Schendel, Jan
   and autism.
 \newblock \emph{New England Journal of Medicine}, 347\penalty0 (19):\penalty0
   1477--1482, 2002.
+\newblock \doi{10.1056/NEJMoa021134}.
 
 \bibitem[Margalit et~al.(2026)Margalit, Cohen-Inger, Avram, Taig, and
   Margalit]{margalit2026}
@@ -218,12 +239,13 @@ Jinghua Piao, Yuwei Yan, Jun Zhang, Nian Li, Junbo Yan, Xiaochong Lan, Zhihong
 \bibitem[Swedo et~al.(1998)Swedo, Leonard, Garvey, Mittleman, Allen,
   Perlmutter, Lougee, Dow, Zamkoff, and Dubbert]{swedo1998}
 Susan~E Swedo, Henrietta~L Leonard, Marjorie Garvey, Barbara Mittleman,
-  Albert~J Allen, Susan Perlmutter, Lisa Lougee, Sara Dow, Janet Zamkoff, and
-  Brenda~K Dubbert.
+  Albert~J Allen, Susan Perlmutter, Lorraine Lougee, Sara Dow, Jason Zamkoff,
+  and Billinda~K Dubbert.
 \newblock Pediatric autoimmune neuropsychiatric disorders associated with
   streptococcal infections: Clinical description of the first 50 cases.
 \newblock \emph{American Journal of Psychiatry}, 155\penalty0 (2):\penalty0
   264--271, 1998.
+\newblock \doi{10.1176/ajp.155.2.264}.
 
 \bibitem[Wakefield et~al.(1998)Wakefield, Murch, Anthony, Linnell, Casson,
   Malik, Berelowitz, Dhillon, Thomson, Harvey, Valentine, Davies, and
@@ -231,9 +253,10 @@ Susan~E Swedo, Henrietta~L Leonard, Marjorie Garvey, Barbara Mittleman,
 Andrew~J Wakefield, Simon~H Murch, Andrew Anthony, John Linnell, David~M
   Casson, Mohsin Malik, Mark Berelowitz, Amar~P Dhillon, Michael~A Thomson,
   Peter Harvey, Alan Valentine, Susan~E Davies, and John~A Walker-Smith.
-\newblock Retracted: Ileal-lymphoid-nodular hyperplasia, non-specific colitis,
-  and pervasive developmental disorder in children.
+\newblock Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and
+  pervasive developmental disorder in children.
 \newblock \emph{The Lancet}, 351\penalty0 (9103):\penalty0 637--641, 1998.
+\newblock \doi{10.1016/S0140-6736(97)11096-0}.
 \newblock Retracted 2010.
 
 \bibitem[Wan et~al.(2026)Wan, Wu, Luo, Li, Wang, Chen, and Kan]{wan2026}

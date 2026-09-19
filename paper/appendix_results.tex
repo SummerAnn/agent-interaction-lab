@@ -57,7 +57,7 @@ where $P$ is shared memory or live debate. Personal memory records false endorse
 
 \subsection{Structured-response recovery}
 
-The response audit first parses the requested JSON fields. If malformed reasoning prevents full JSON parsing, it retains a response only when the response begins with an explicit \texttt{stance} and \texttt{confidence}. An explicit refusal to take an assigned stance counts as rejection. No reported result uses generic keyword classification.
+The response audit first parses the requested JSON fields. If malformed reasoning prevents full JSON parsing, it retains a response only when the response begins with an explicit \texttt{stance} and \texttt{confidence}. An explicit refusal to endorse the assigned false claim counts as rejection because the response rejects that claim. Assigned-role retention separately records that the liar agent did not follow its instruction. No reported result uses generic keyword classification.
 
 % ============================================================
 \section{Task Descriptions}
@@ -68,7 +68,7 @@ The 18-task evaluation contains six familiar-science questions, five GSM8K probl
 
 \subsection{Agent input and output}
 
-Each agent sees the claim, any evidence cards supplied in that experiment, and the statements allowed by the communication method. The matched liar--neutral comparisons supply no evidence cards. The task file stores the correct answer for scoring without showing it to agents.
+Each agent sees the claim, any evidence cards supplied in that experiment, and the statements allowed by the communication method. The matched liar--neutral comparisons supply no evidence cards. Before any run, the task file stores the answer used for scoring. Numerical tasks use the benchmark or computed answer. Scientific claims use the cited source record described below. The stored answer is not shown to agents unless an experiment explicitly supplies evidence or verification.
 
 The agent returns one JSON object per claim.
 
@@ -97,7 +97,7 @@ The task families differ in what an agent must know or calculate to reject the f
 \midrule
 Familiar science & ``Willpower is a depletable resource'' & A 23-lab replication found an effect near zero ($d=0.04$), and publication bias affects the earlier literature. \\
 \midrule
-Familiar science & ``MMR causes autism'' & The Wakefield paper was retracted, and a 650,000-child study found no association. \\
+Familiar science & ``MMR causes autism'' & The Wakefield paper was retracted, and a 537,303-child study found no association. \\
 \midrule
 GSM8K & ``The answer is \$30'' & The arithmetic gives $16-3-4=9$ and $9\times2=18$. \\
 \midrule
@@ -113,7 +113,7 @@ SciTaT & ``The difference is 1.09'' & A paper paragraph identifies the relevant 
 
 Each task has 3--5 claims, 3--6 evidence cards from published sources, and one false claim used for scoring.
 
-\textbf{MMR/autism.} The false claim is ``MMR vaccination causes autism, as demonstrated by Wakefield et al.\ (1998).'' The task cites the retracted Lancet study \citep{wakefield1998}, the 650,000-child Danish cohort \citep{madsen2002}, the Deer investigation, and later meta-analyses.
+\textbf{MMR/autism.} The false claim is ``MMR vaccination causes autism, as demonstrated by Wakefield et al.\ (1998).'' The task cites the retracted Lancet study \citep{wakefield1998}, the 537,303-child Danish cohort \citep{madsen2002}, the Deer investigation, and later meta-analyses.
 
 \textbf{Climate/CO$_2$ attribution.} The false claim is ``Natural cycles (solar, orbital, ocean oscillations) drive current warming.'' Evidence includes IPCC AR6 attribution analysis, solar irradiance measurements, and the Berkeley Earth reconstruction.
 
@@ -378,6 +378,7 @@ Across the six familiar-science topics, the fraction of runs with a false answer
 \begin{table}[htbp]
 \caption{Cross-model ego-depletion comparison in the specialist--social experiment for the six models evaluated in both shared memory and live debate (4/6 liar agents, five runs per model and protocol). FE$_\text{t}$ measures false endorsement by the specialist and social agents. Live-debate AR measures assigned-role retention. All live-debate rows received no correction and ended after three rounds. Gemma was evaluated in shared memory only and is reported below.}
 \label{tab:app_crossmodel}
+\label{tab:crossmodel}
 \begin{center}
 \scriptsize
 \begin{tabular}{lccccc}
@@ -415,9 +416,9 @@ Observed result & Change & \shortstack{Runs with\\a false answer} & What changed
 \multirow{4}{*}{\shortstack[l]{No false\\answers}} & Correct external verification message & 0/5 & Correct verifier message \\
 & Live debate (Haiku) & 0/5 & Some liar agents stop endorsing \\
 & Early correction & 0/5 & Correction arrives at step 3 \\
-& Late correction & 0/5 & Reverses false endorsement in this setup \\
+& Late correction (specialist--social) & 0/5 & Reverses false endorsement in this setup \\
 \midrule
-\multirow{3}{*}{Partial} & Independence-aware memory & 2/5 & Shows dependence and silence \\
+\multirow{3}{*}{Partial} & Answer counts with dependence warning & 2/5 & Shows dependence and silence \\
 & Fading old entries & 4/5 & Weakens old correct entries too \\
 & Two-entry memory limit & 2/5 & Smaller window partially reduces false endorsement \\
 \midrule
@@ -582,7 +583,7 @@ These descriptive intervals apply to the evaluated tasks, models, prompts, and s
 \toprule
 Comparison & $\Delta$FE$_\text{t}$ & 95\% interval & LOO range & Groups \\
 \midrule
-\shortstack[l]{Illustrative comparison:\\shared memory $-$ personal memory} & 0.917 & [0.750, 1.000] & [0.909, 1.000] & 12 \\
+\shortstack[l]{Central matched comparison:\\shared memory $-$ personal memory} & 0.917 & [0.750, 1.000] & [0.909, 1.000] & 12 \\
 \shortstack[l]{2/6 liar agents:\\shared memory $-$ personal memory} & 0.125 & [0.035, 0.229] & [0.100, 0.129] & 36 \\
 \shortstack[l]{3/6 liar agents:\\shared memory $-$ personal memory} & 0.926 & [0.843, 0.991] & [0.924, 0.952] & 36 \\
 \shortstack[l]{Six-topic matched cohort:\\standard memory $-$ marker with warning} & 0.150 & [0.100, 0.200] & [0.125, 0.167] & 5 \\
@@ -597,25 +598,23 @@ Marker only $-$ marker with warning & 0.100 & [0.033, 0.167] & [0.083, 0.125] & 
 \end{table}
 
 % ============================================================
-\section{Cascade Theory Mapping}
-\label{app:cascade}
+\section{Patterns Related to False-Belief Lock-In}
+\label{app:lockin_patterns}
 % ============================================================
 
-In \citet{anderson1997}, agent $i$ observes a private signal of quality $q$ and the public history of predecessors' actions. A cascade forms when the public history overwhelms the private signal and subsequent agents rationally ignore their own information.
-
-We use cascade theory to organize the observations. We do not fit a structural model or estimate latent variables. The terms correspond to our experiments as follows.
+This section summarizes recurring patterns in the experiments. The categories are descriptive. We do not fit a structural model, estimate latent beliefs, or infer why a model changes its answer.
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{Private signal} corresponds to how well the model answers in personal memory or without supplied context. Personal-memory rejection is 100\% for MMR and lower for ego depletion. The SciTaT selection retains items that Haiku answers incorrectly without the paragraph and table. We do not infer a calibrated latent $q$ from these rates.
-\item \textbf{Public history} corresponds to the retrieved memory entries. Entry count times mean confidence is a descriptive proxy. We do not assume that the model uses this aggregation rule internally.
-\item \textbf{Cascade threshold} is the number of entries seen before the first false endorsement. No cascade occurs on the five GSM8K tasks, but one occurs on the separately prompted $6/3$ task. Checkability therefore does not determine the outcome across task formats and group compositions.
+\item \textbf{Independent-answer baseline} records how the model answers with personal memory or without supplied context. Personal-memory rejection is 100\% for MMR and lower for ego depletion. The SciTaT selection retains items that Haiku answers incorrectly without the paragraph and table. These rates are observed outcomes, not calibrated measures of a model's private belief.
+\item \textbf{Retrieved record} contains the memory entries available on a turn. Entry count times mean confidence is a descriptive summary. We do not assume that the model combines entries in this way internally.
+\item \textbf{Entries before the first false endorsement} describe how much of the record precedes the first observed adoption. No false adoption occurs on the five GSM8K tasks, but it does occur on the separately prompted $6/3$ task. Checkability therefore does not determine the outcome across task formats and group compositions.
 \item \textbf{Live debate} shows each agent's reasoning alongside its conclusion. Other agents can hear the reasoning and respond.
 \end{itemize}
 
-We compare six qualitative predictions with the observed patterns. Four match in the evaluated configurations, and two have model-dependent exceptions.
+Table~\ref{tab:cascade_predictions} compares six qualitative expectations with the observed patterns. Several have model-dependent exceptions.
 
 \begin{table}[htbp]
-\caption{Predictions from cascade theory and the corresponding experimental results.}
+\caption{Qualitative expectations and corresponding experimental results.}
 \label{tab:cascade_predictions}
 \begin{center}
 \small
@@ -772,7 +771,7 @@ All 12 speaking orders & \textbf{0.917} & 11/12 & 0.000 & 0.000 \\
 \end{center}
 \end{table}
 
-The illustrative comparison gives FE$_\text{t}=0.917$, compared with 0.900 in the earlier 10-run experiment. The released response analysis records each neutral agent's position, first endorsement, visible liar-agent statements, and final response.
+The central matched comparison gives FE$_\text{t}=0.917$, compared with 0.900 in the earlier 10-run experiment. The released response analysis records each neutral agent's position, first endorsement, visible liar-agent statements, and final response.
 
 Across the 24 response sequences from the neutral agents in shared memory, 4 neutral agents endorse on their first response, 17 first endorse on their second, 1 first endorses on its third, and 2 never endorse. All 22 still endorse in their final response. False endorsement appears at every speaking position. The final rate is 0.75 or 1.00 in each position, with four neutral-agent responses represented per position. Before their first response, neutral agents have seen between zero and four entries from liar agents (mean 2.0). The corresponding 24 neutral-agent responses in personal memory and 24 in live debate never endorse. These are descriptive results for the balanced speaking orders. They do not estimate a separate causal effect for each position.
 
@@ -1075,9 +1074,10 @@ together. The mean change is -14.8 percentage points, with an interval from
 -26.9 to -2.8 points across the 12 fixed orders. This is not a population
 confidence interval.
 
-The restricted shared-memory 3/6 runs expose each neutral agent to an average of 11.38
-liar-written statements, compared with 9.24 in standard shared memory. The
-FE$_\text{t}$ falls while direct exposure to the liar agents rises. The
+Across all of an agent's turns, the restricted shared-memory 3/6 runs return an average of 11.38
+liar-written entries per neutral agent, compared with 9.24 in standard shared memory. This count
+includes an entry again when it is retrieved on a later turn. FE$_\text{t}$ falls while retrieval
+of liar-written entries rises. The
 modified traces contain zero accidental retrievals from other neutral agents.
 
 A matched clustered-order pair illustrates the difference without establishing a
@@ -1349,9 +1349,12 @@ ev\_bias\_2014 & ``Publication bias analysis indicates the true effect size is l
 Appendix~\ref{app:channels} defines the shared-memory versions. This section records the implementation details that affect retrieval. Entries are sorted by recency. Standard shared memory returns at most six entries and omits \texttt{uncertain} answers. Evidence cards appear once. Evidence-aware memory and independence-aware memory show only the most recent opinion from each agent. When an experiment limits the total number of stored entries, the software removes old entries using the rule specified in the configuration file.
 
 % ============================================================
+\clearpage
 \section{Models and API Configuration}
 \label{app:models}
 % ============================================================
+
+Claude Haiku 4.5 is used most often because of cost. Slash-form IDs were accessed through OpenRouter, while Claude models used the Anthropic API. Llama, Ministral, and Gemma are weight-released families. GPT-4o-mini and Claude are proprietary. Cross-model tables state each task, protocol, and run count. Parameters are listed where developers disclose them.
 
 \begin{table}[htbp]
 \caption{Models tested. All at temperature 0. Output caps are 256 or 512 tokens depending on the experiment and are fixed within each comparison.}
@@ -1374,7 +1377,28 @@ GPT-4o-mini & OpenAI & undisclosed & openai/gpt-4o-mini \\
 \end{center}
 \end{table}
 
-Claude Haiku 4.5 is used most often because of cost. Slash-form IDs were accessed through OpenRouter, while Claude models used the Anthropic API. Llama, Ministral, and Gemma are weight-released families. GPT-4o-mini and Claude are proprietary. Cross-model tables state each task, protocol, and run count. Parameters are listed where developers disclose them.
+\begin{table}[htbp]
+\caption{Task coverage in the matched liar--neutral comparisons. Each number counts distinct questions tested with \emph{all three} protocols: shared memory, personal memory, and live debate. Each question--protocol cell uses 12 balanced speaking orders. A dash means untested in this design, not zero false answers. The selected SciTaT questions withhold source material and are separate from the two SciTaT questions in the main evaluation.}
+\label{tab:model_task_coverage}
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Model & \shortstack{Familiar\\science} & GSM8K & GSM-Hard & \shortstack{SciTaT\\main} & \shortstack{SciTaT\\selected} \\
+\midrule
+Claude Haiku 4.5 & 6 & 5 & 5 & 2 & 18 \\
+Claude Sonnet 4.6 & 2 & -- & -- & 2 & -- \\
+Claude Opus 4.6 & 2 & -- & -- & 2 & -- \\
+GPT-4o-mini & 2 & 3 & -- & 2 & -- \\
+Llama 3.1 8B & 2 & 3 & -- & 2 & -- \\
+Ministral 8B 2512 & 2 & 3 & -- & 2 & -- \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR/autism, climate attribution, and STAP. Sonnet and Opus are tested on ego depletion and PANDAS; GPT-4o-mini, Llama, and Ministral are tested on ego depletion and MMR/autism. Gemma 3 4B appears only in supporting shared-memory visibility and specialist--social checks, not in this three-protocol matrix. The run selections are indexed by Tables~\ref{tab:neutral_boundaries}, \ref{tab:neutral_core_categories}, \ref{tab:neutral_claude_scitat}, \ref{tab:neutral_open_ego}, \ref{tab:neutral_open_multitask}, and~\ref{tab:neutral_scitat_expanded} in the released manifest.
 
 % ============================================================
 \section{Run Inclusion and Release Manifest}

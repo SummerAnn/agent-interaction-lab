@@ -903,6 +903,13 @@ TABLE_SPECS: list[dict[str, Any]] = [
         "rows": [],
     },
     {
+        "labels": ["tab:model_task_coverage"],
+        "title": "Model-by-task coverage for the matched liar-neutral comparisons",
+        "status": "design_metadata",
+        "source_files": ["experiments/", "rosters/"],
+        "rows": [],
+    },
+    {
         "labels": ["tab:models"],
         "title": "Model catalog",
         "status": "design_metadata",

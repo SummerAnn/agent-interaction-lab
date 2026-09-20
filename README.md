@@ -4,10 +4,12 @@ Testbed and experimental data for "On the Effect of Shared Memory on False Belie
 
 **[Read the paper (PDF)](paper/paper.pdf)**
 
-This personal repository contains the current paper and testbed, but its saved
-`output/` directory is an older, partial collection. For the complete
-6,334-run release and a passing end-to-end audit, use the
-[ChicagoHAI release](https://github.com/ChicagoHAI/agent-interaction-lab).
+This repository contains the current paper, testbed, and all 6,334
+manifest-selected runs. The full release audit checks every saved summary and
+SQLite trace; run `npm run verify:release` to reproduce it. The
+[ChicagoHAI release](https://github.com/ChicagoHAI/agent-interaction-lab)
+is also available. Other exploratory runs under `output/` are not part of the
+paper's reported denominators.
 
 ![Agent Interaction Lab terminal interface](testbed_image/main.png)
 

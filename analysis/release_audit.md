@@ -8,8 +8,8 @@ Status: **PASS**
 - Open-model replication runs: **216**
 - Missing summaries: **0**
 - Missing traces: **0**
-- Verified SHA-256 pairs: **0**
-- SQLite traces checked: **0**
+- Verified SHA-256 pairs: **6334**
+- SQLite traces checked: **6334**
 - Config dependencies checked: **448**
 - Base table calculation issues: **0**
 

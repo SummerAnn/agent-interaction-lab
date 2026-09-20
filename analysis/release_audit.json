@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-17T08:38:34.434075+00:00",
-  "mode": "quick",
+  "generated_at": "2026-09-20T18:11:47.139013+00:00",
+  "mode": "full",
   "status": "PASS",
   "counts": {
     "claimed_total": 6334,
@@ -10,8 +10,8 @@
     "open": 216,
     "missing_summaries": 0,
     "missing_traces": 0,
-    "hash_pairs_checked": 0,
-    "sqlite_checked": 0,
+    "hash_pairs_checked": 6334,
+    "sqlite_checked": 6334,
     "config_dependencies_checked": 448,
     "base_calculation_issues": 0
   },

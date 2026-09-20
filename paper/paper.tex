@@ -9,6 +9,7 @@
 \hypersetup{hidelinks}
 \usepackage{url}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{multirow}
@@ -228,7 +229,7 @@ For a separate stress test, we select 18 SciTaT questions that Haiku usually ans
 
 Each of the six models has a tested question where shared-memory FE$_\text{t}$ exceeds both alternatives, but task coverage differs. On ego depletion, Sonnet and Opus have shared-memory FE$_\text{t}$ of 0 and 0.042, versus Haiku's 0.917. On PANDAS, the three reach 1.000, 1.000, and 0.958, with zero under personal memory. SciTaT also differs by question and model (Appendix Tables~\ref{tab:neutral_boundaries} and~\ref{tab:neutral_claude_scitat}).
 
-GPT-4o-mini, Llama 3.1 8B, and Ministral 8B 2512 already reach FE$_\text{t}=1$ on ego depletion in personal memory. Their six-question mean shared-minus-personal differences are 0.160, $-0.069$, and 0.174, mainly from SciTaT; MMR and GSM8K show small or reversed differences (Appendix Tables~\ref{tab:neutral_open_ego}--\ref{tab:neutral_open_multitask}).
+GPT-4o-mini, Llama 3.1 8B, and Ministral 8B 2512 already reach FE$_\text{t}=1$ on ego depletion in personal memory. On a different six-question set (MMR, two SciTaT items, and three GSM8K problems), their mean shared-minus-personal differences are 0.160, $-0.069$, and 0.174, mainly from SciTaT; MMR and GSM8K show small or reversed differences (Appendix Tables~\ref{tab:neutral_open_ego}--\ref{tab:neutral_open_multitask}).
 
 \subsection{The All-Agent Average Can Hide Who Changed}
 
@@ -278,18 +279,18 @@ In a separate check across four scientific claims, standard shared memory and th
 
 In the revisable honest-mistake setting, adding agents' changing judgments to an evidence-only record reduces wrong answers from 22/240 to 1/240 (Appendix Table~\ref{tab:app_amplifier}). Agent-written judgments can thus carry corrections, not just false claims. The central liar--neutral result is a protocol-level difference, not a storage-only effect; it survives controls for neutral instruction, enforced liar retention in debate, and speaking position. But it depends on prompt and task. Strong liar instructions produce false answers in 8/10 runs versus none with milder instructions, though other prompt values also change (Appendix Table~\ref{tab:app_confidence}). Haiku resists five GSM8K word problems yet gives 24/36 false responses when evaluating the proposed answer 4 for $6/3$; the prompts and group compositions differ. Missing source material on selected SciTaT questions and the judging model in a two-question Claude check also matter (Appendix~\ref{app:heterogeneous_models}).
 
-Memory rules help explain these differences. Saving uncertain answers removes 64 false final responses but leaves 88/108 uncertain (Appendix~\ref{app:uncertain_write_rule}). Hiding other neutral agents' statements reduces complete false consensus in Haiku from 29 to 18 of 36 runs, but not in Llama, Ministral, or Gemma (Appendix~\ref{app:peer_visibility}). Dependent reports can appear to add support, yet visibility restriction is not a general defense and traces cannot reveal internal reasoning. The specialist--social results likewise show why false answers by judging agents must be separated from liar-agent retention.
+Saving uncertain answers removes 64 false final responses but leaves 88/108 uncertain and lowers correct rejections from 30/108 to 20/108 (Appendix~\ref{app:uncertain_write_rule}). Hiding neutral-peer statements reduces complete false consensus in Haiku from 29 to 18 of 36 runs, but not in Llama, Ministral, or Gemma (Appendix~\ref{app:peer_visibility}). Visibility restriction is therefore not a general defense, and traces cannot reveal internal reasoning. The specialist--social results also require separating judging agents' false answers from liar-agent retention.
 
 Improving the record looks more promising than suppressing communication. Correct external verification stops false answers in five models on ego depletion. Marking repetition and warning against double-counting helps while preserving correction on four honest-mistake questions, though PANDAS remains an exception.
 
-\paragraph{Limitations.} Strongly instructed liar agents do not show how often false claims arise naturally. Results vary by model, question, prompt, and separately executed cohort; some cells have five runs. The recording-rule test has not been replicated across models. Our mechanism claims rest on within-cohort comparisons, not model counts or differences between cohorts.
+\paragraph{Limitations.} Instructed liar agents do not show how often false claims arise naturally. Results vary by model, task, prompt, and cohort; some cells have five runs. The save-uncertain write-rule test is Haiku-only, and floor or ceiling rates limit some comparisons. Mechanism claims rely on within-cohort comparisons, not differences between cohorts.
 
 % ============================================================
 \section{Conclusion}
 \label{sec:conclusion}
 % ============================================================
 
-Shared memory can improve judgment or create false consensus because saved answers influence later agents. The Haiku visibility test shows one route by which a neutral agent's recorded judgment can spread an error, but that route is not universal across models. Safer records should distinguish evidence from repetition and use reliable verification without suppressing corrections. Agent Interaction Lab makes these distinctions inspectable in released traces.
+Shared memory can correct errors or reinforce false claims through saved answers. Haiku shows one route---neutral-agent write-back---though it is not universal. Separating neutral adoption from liar retention, marking repetition, and using reliable verification without suppressing corrections can make records safer. Agent Interaction Lab makes these outcomes inspectable.
 
 % ============================================================
 {\small

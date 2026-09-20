@@ -91,7 +91,7 @@ The task families differ in what an agent must know or calculate to reject the f
 \begin{center}
 \scriptsize
 \setlength{\tabcolsep}{2pt}
-\begin{tabular}{@{}p{2.3cm}p{3.5cm}p{6.6cm}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{6.6cm}@{}}
 \toprule
 \textbf{Task family} & \textbf{Example false answer} & \textbf{Information needed to reject it} \\
 \midrule
@@ -409,9 +409,9 @@ On MMR/autism, Llama reaches unanimous endorsement in 3/5 live-debate runs, with
 \begin{center}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{p{1.7cm}p{4.1cm}cp{5.0cm}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{4.1cm}c>{\raggedright\arraybackslash}p{5.0cm}}
 \toprule
-Observed result & Change & \shortstack{Runs with\\a false answer} & What changed \\
+\shortstack[l]{Observed\\result} & Change & \shortstack{Runs with\\a false answer} & What changed \\
 \midrule
 \multirow{4}{*}{\shortstack[l]{No false\\answers}} & Correct external verification message & 0/5 & Correct verifier message \\
 & Live debate (Haiku) & 0/5 & Some liar agents stop endorsing \\
@@ -982,7 +982,7 @@ Final FE$_\text{t}$ is 0 in every version, and the first-response rates show no 
 
 Every run uses one ego-depletion claim, the same two neutral agents as the central matched comparison, 12 balanced speaking orders, and 18 model calls. Table~\ref{tab:neutral_defenses_main} reports the results. The early and late correction versions differ only in when the correction appears. The fading version makes older entries less visible. The other four versions add no correction. No agent receives an evidence card.
 
-The newly executed standard shared-memory baseline differs from the illustrative result of 0.917 by one false endorsement among 24 final neutral-agent answers. Comparisons within this table use the same speaking orders. All 84 recorded runs contain three model calls per agent, and the JSON parser accepts every response. The answer-count version displays the current answer distribution and warns that agents influence one another. The version that identifies repeated statements and adds a warning also changes which statements are retrieved.
+The newly executed standard shared-memory baseline differs from the central matched comparison's 0.917 result by one false endorsement among 24 final neutral-agent answers. Comparisons within this table use the same speaking orders. All 84 recorded runs contain three model calls per agent, and the JSON parser accepts every response. The answer-count version displays the current answer distribution and warns that agents influence one another. The version that identifies repeated statements and adds a warning also changes which statements are retrieved.
 
 % ============================================================
 \section{Varying the Number of Liar Agents}
@@ -1009,7 +1009,7 @@ We vary the number of liar agents from 1 to 4 out of 6 agents. Every liar agent 
 \end{center}
 \end{table}
 
-The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 liar agents. The three repetition means are 0.972, 0.917, and 0.889 at 3/6. They are 0.833, 0.833, and 0.750 at 4/6. The group-composition experiment gives every liar agent one identical instruction. The illustrative 0.917 comparison instead uses four small variants of that instruction, so we report it separately. Speaking position and generated messages may also affect the outcome. Personal-memory and live-debate FE$_\text{t}$ are 0 at every liar-agent count. The released audit reports each repetition separately.
+The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 liar agents. The three repetition means are 0.972, 0.917, and 0.889 at 3/6. They are 0.833, 0.833, and 0.750 at 4/6. The group-composition experiment gives every liar agent one identical instruction. The central matched comparison instead uses four small variants of that instruction, so we report it separately. Speaking position and generated messages may also affect the outcome. Personal-memory and live-debate FE$_\text{t}$ are 0 at every liar-agent count. The released audit reports each repetition separately.
 
 \begin{fixedtable}
 \caption{How the false answer spreads within each shared-memory run. Each row contains 36 runs over three repetitions of 12 balanced speaking orders. Partial means that some, though not all, neutral agents give the false final answer.}

@@ -10,7 +10,7 @@ Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results an
 \label{app:metrics}
 % ============================================================
 
-This appendix uses four role names. A \emph{liar agent} is instructed to say that the false claim is true and to keep that answer throughout the run. In the matched comparisons, \emph{neutral agents} receive no answer to follow and judge the claim for themselves. In the supporting specialist--social experiment, a \emph{specialist agent} is told to look for scientific weaknesses, while a \emph{social agent} is told to rely more on the group. The honest-mistake experiments have no liar agents. An \emph{evidence card} is a short excerpt from a published source that some experiments provide to agents. A \emph{memory entry} is a short statement saved by an agent after one turn. AR means assigned-role retention. Code names appear in \texttt{typewriter text} only when readers need them to match the paper to the released files.
+This appendix uses four role names. A \emph{liar agent} is instructed to say that the false claim is true and to keep that answer throughout the run. In the matched comparisons, \emph{neutral agents} receive no answer to follow and judge the claim for themselves. In the supporting specialist--social experiment, a \emph{specialist agent} is told to look for scientific weaknesses, while a \emph{social agent} is told to rely more on the group. The initially mistaken-agent experiments also contain a persistence-role agent; historical prompt limitations are described in Appendix~\ref{app:honest}. An \emph{evidence card} is a short excerpt from a published source that some experiments provide to agents. A \emph{memory entry} is a short statement saved by an agent after one turn. AR means assigned-role retention. Code names appear in \texttt{typewriter text} only when readers need them to match the paper to the released files.
 
 A \emph{run} is one completed execution with a specified task, communication method, group of agents, model, and speaking order. The \emph{speaking order} is the order in which agents respond, and a \emph{step} is one agent turn. In the one-claim experiments, one \emph{model call} produces the response for one agent turn. Tasks with several claims require one model call per claim during that turn. In some shared-memory and personal-memory experiments, the stored seed chooses the first speaker in a cyclic order. Six agents give at most six distinct rotations unless we supply an explicit order. Live debate uses the order in the agent file. Temperature 0 does not make repeated provider API calls identical. Final metrics use each agent's last recorded answer to the false claim. \texttt{Uncertain} is a distinct answer and never counts as endorsement.
 
@@ -281,13 +281,13 @@ The specialist agent remains uncertain. Analyst\_3 refers to analyst\_2, and ana
 
 The released \texttt{run\_manifest.json} defines the runs in each table and \texttt{RUN\_MANIFEST.md} provides a readable index. All $n$ values count completed runs. FE counts all agents, FE$_\text{t}$ excludes liar agents, and AR records whether liar agents retain their assigned answer.
 
-\subsection{Honest-mistake experiments}
+\subsection{Initially mistaken-agent experiments}
 \label{app:honest}
 
-One agent starts with a wrong answer and is free to update. No agent is assigned to repeat a false claim. These experiments test whether the system helps correct honest errors.
+One agent starts with a wrong answer. The shared-memory row uses the released agent-judgment condition, not the evidence-plus-opinions mixed record in Appendix~\ref{app:amplifier}. These runs establish observed changes in answers, but not an all-revisable instruction design. Both early and later traces identify \texttt{contamination\_1} with the persistence role. The earliest recovered source snapshot (September 5, commit \texttt{4389ce3}) instructs that role to maintain its position and not waver. That snapshot postdates the September 3 cohort, and the traces do not save complete historical system prompts. We cannot establish identical requests across cohorts or claim that no agent was instructed to persist.
 
 \begin{table}[htbp]
-\caption{Honest-mistake experiments averaged across four familiar-science topics, with 10 runs per topic and communication method or change (generally $n=40$ runs and 240 final agent answers per row), Claude Haiku 4.5. Mistaken-agent exit means the initially mistaken agent leaves before seeing counter-evidence. FE and recovery include all agents. There are no liar agents.}
+\caption{Initially mistaken-agent experiments averaged across four familiar-science topics, with 10 runs per topic and communication method or change (generally $n=40$ runs and 240 final agent answers per row), Claude Haiku 4.5. Mistaken-agent exit means the initially mistaken agent leaves before seeing counter-evidence. FE and recovery include all agents. The role-provenance caveat above applies.}
 \label{tab:app_honest}
 \begin{center}
 \small
@@ -312,7 +312,7 @@ Live debate + exit & 40 & 0.008 & Not applicable \\
 \end{center}
 \end{table}
 
-Appendix~\ref{app:amplifier} reports the shared-memory experiments with a revisable wrong majority separately because those agents start from different answers.
+Appendix~\ref{app:amplifier} reports the shared-memory experiments with an initially wrong majority separately because those agents start from different answers.
 
 \subsection{Liar-agent exit timing}
 \label{app:exit}
@@ -320,7 +320,7 @@ Appendix~\ref{app:amplifier} reports the shared-memory experiments with a revisa
 This experiment varies how many agent turns occur before the liar agents leave.
 
 \begin{table}[htbp]
-\caption{Liar-agent exit timing. Shared memory, 4/6 liar agents, ego depletion, Claude Haiku 4.5, five runs for each exit time. This differs from mistaken-agent exit in Table~\ref{tab:app_honest}, where an honestly mistaken agent leaves.}
+\caption{Liar-agent exit timing. Shared memory, 4/6 liar agents, ego depletion, Claude Haiku 4.5, five runs for each exit time. This differs from mistaken-agent exit in Table~\ref{tab:app_honest}, where the initially mistaken agent leaves.}
 \label{tab:app_exit}
 \begin{center}
 \small
@@ -496,13 +496,13 @@ Cyclic start labels (seeds 11--20) & 10 & 0.833 & Same pattern \\
 
 False endorsement by the specialist or social agent is identical with and without evidence cards. The social agent cites peer consensus and cites no evidence.
 
-\subsection{Shared memory with a revisable wrong majority}
+\subsection{Shared memory with an initially wrong majority}
 \label{app:amplifier}
 
-This experiment uses revisable, honestly mistaken agents. Four of six agents start by endorsing the false claim. Across four topics and 10 runs per topic, it compares shared memory containing only evidence cards with shared memory containing evidence cards and agent opinions (40 runs per version).
+This September 3 experiment measures correction from initially wrong answers; the historical role-instruction caveat in Appendix~\ref{app:honest} applies. Four of six agents start by endorsing the false claim. Across four topics and 10 runs per topic, it compares shared memory containing only evidence cards with shared memory containing evidence cards and agent opinions (40 runs per version).
 
 \begin{table}[htbp]
-\caption{Matched shared-memory comparison with a 4/6 initially wrong but revisable majority. Four topics, with 10 runs for each topic and version, Claude Haiku 4.5.}
+\caption{Matched shared-memory comparison with a 4/6 initially wrong majority. Four topics, with 10 runs for each topic and version, Claude Haiku 4.5.}
 \label{tab:app_amplifier}
 \begin{center}
 \small
@@ -517,31 +517,33 @@ Mixed record (evidence + opinions) & 40 & 0.004 & Evolving evidence and opinions
 \end{center}
 \end{table}
 
-Because all agents may revise, corrected judgments can enter the mixed record. In a separate experiment where 1/6 agents begin wrong, shared memory with evidence and opinions yields FE $=0.017$, and evidence-aware memory yields FE $=0.000$ ($n=40$ each).
+Corrected judgments appear in the mixed record in these saved runs. In a separate experiment where 1/6 agents begin wrong, shared memory with evidence and opinions yields FE $=0.017$, and evidence-aware memory yields FE $=0.000$ ($n=40$ each).
 
 \subsection{Does the defense preserve helpful correction?}
 \label{app:defense_preservation}
 
-Four agents again begin with the wrong answer but remain free to revise. We compare standard shared memory with a memory that shows supplied evidence separately, identifies which earlier statement each repeated statement follows, and warns agents not to count the repetition as new evidence. The comparison covers the same four scientific claims, with 10 paired runs per claim and memory version. All 80 runs contain 18 turns and 54 model calls and pass the trace checks.
+Four agents again begin with the wrong answer. The saved outcomes do not establish that all four received revisable instructions. We compare the mixed record (evidence plus agent opinions) with a memory that shows supplied evidence separately, identifies which earlier statement each repeated statement follows, and warns agents not to count the repetition as new evidence. The comparison covers the same four scientific claims, with 10 paired runs per claim and memory version. All 80 runs contain 18 turns and 54 model calls and pass the trace checks.
 
 \begin{table}[htbp]
-\caption{Does identifying repeated statements and warning against double-counting them preserve helpful correction? Each memory version has 40 runs, comprising four scientific claims and 10 paired runs per claim. In every run, four agents begin wrong and two begin correct. All may revise.}
+\caption{Does identifying repeated statements and warning against double-counting them preserve helpful correction? Each memory version has 40 runs, comprising four scientific claims and 10 paired runs per claim. In every run, four agents begin wrong and two begin correct. Historical instruction provenance is incomplete.}
 \label{tab:app_defense_preserves_correction}
 \begin{center}
 \small
 \begin{tabular}{lcc}
 \toprule
-Outcome & Standard shared memory & \shortstack{Repeated statements\\identified + warning} \\
+Outcome & Mixed record & \shortstack{Repeated statements\\identified + warning} \\
 \midrule
 Initially wrong answers corrected & 120/160 & 120/160 \\
 Initially correct answers turned false & 0/80 & 0/80 \\
+Final false endorsements (all agents) & 40/240 & 40/240 \\
+Final uncertain answers (all agents) & 0/240 & 0/240 \\
 Runs & 40 & 40 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-The defense therefore preserves the correction observed under standard shared memory in this test. It does not improve it. The result is limited to Claude Haiku 4.5 and these four questions.
+The warning leaves correction unchanged within this comparison: both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. The baseline is a separate execution of the mixed-record condition, not the earlier cohort in Table~\ref{tab:app_amplifier}. The earlier cohort, executed on September 3, ends with 239 correct rejections and one false endorsement; this cohort, executed on September 12, ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. Those matching configuration fields do not establish identical historical requests or explain the difference. In every one of these 80 later runs, the sole final false endorsement belongs to \texttt{contamination\_1}, across varying final speaking positions. Its saved role is the persistence role described in Appendix~\ref{app:honest}. This pattern does not identify the cause of the between-cohort difference, but it rules out interpreting the 40 remaining answers as uncertainty. The test supports unchanged correction relative to its own baseline, not replication of an all-revisable design or the earlier near-complete correction.
 
 \subsection{Saving uncertain answers}
 \label{app:uncertain_write_rule}
@@ -567,6 +569,39 @@ Save uncertain answers & \textbf{0/108} & 20/108 & 88/108 & \textbf{0/36} \\
 Saving uncertain answers reduces FE$_\text{t}$ by 0.593. The resampled 95\% range across the 36 fixed matched groups is $[0.435,0.750]$ for the reduction. The changed rule produces no false final answers, but most neutral agents remain uncertain rather than reject the claim. Correct rejections also fall from 30/108 to 20/108, so the intervention trades false adoption for greater indecision rather than uniformly improving answers. The standard row is a fresh cohort and should be compared only with the changed rule run alongside it.
 
 Across three separately executed standard-memory cohorts at this nominal Haiku, ego-depletion, and 3/6 setting, false responses are 100/108 in the group-composition experiment, 89/108 in the visibility experiment, and 64/108 here. FE$_\text{t}$ therefore spans 0.593 to 0.926. Because this variation is large relative to some effects, each intervention is compared only with its same-cohort baseline.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Standard-memory baselines at three liar and three neutral agents. Each cohort has three repetitions of 12 speaking orders, yielding 36 final neutral answers per repetition.}
+\label{tab:baseline_cohort_audit}
+\begin{tabular}{lrrl}
+\toprule
+Cohort & False / total & False by repetition & Date (2026) \\
+\midrule
+Group composition & 100/108 & 35, 33, 32 & September 9 \\
+Visibility & 89/108 & 27, 32, 30 & September 11 \\
+Recording rule & 64/108 & 24, 21, 19 & September 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+An audit of all 108 baseline runs reproduces these totals from saved final
+states and independently from step events. Recorded model identifiers,
+temperature, output-token caps, 18-call budgets, and speaking-order/seed sets
+match across cohorts. Current experiment files also reference the same
+scenario and rosters. The saved metadata lacks complete historical prompts
+and engine revisions, so these checks do not establish byte-identical
+requests or identify the source of the between-cohort variation.
+
+The cohort means decline across these three execution dates, while the
+three repetition counts within each cohort span 3--5 answers. This is
+compatible with a batch effect, but three batches cannot identify temporal
+drift or distinguish provider changes from unrecorded implementation changes.
+In the recording-rule experiment, the standard-memory calls ran from
+22:25 to 22:42 on September 14 and the save-uncertain calls from 22:42 to
+22:59, according to database timestamps. These were consecutive condition
+blocks, not interleaved assignments.
 
 \subsection{Aggregation and uncertainty}
 \label{app:stats}
@@ -751,7 +786,24 @@ Separate live-debate and chain runs from the same launch received a scheduled co
 \label{app:neutral_fairness}
 % ============================================================
 
-The specialist--social experiment uses one specialist agent and one social agent. Appendix~\ref{app:configs} prints both instructions. The matched comparisons instead use two neutral agents with the same instruction to evaluate the claim and form their own judgment. That instruction contains no numeric values. The liar agents receive the same instructions in both designs.
+The specialist--social experiment uses one specialist agent and one social agent. Appendix~\ref{app:configs} prints both instructions. The matched comparisons instead use two neutral agents with the same role instruction: \emph{You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.} This role instruction contains no numeric values; task content and protocol-specific response instructions are supplied separately. Each liar agent retains its instruction across the two designs; this does not mean that all four liar agents have identical prompt parameters.
+
+The twelve orders below come from the released central-comparison rosters. Numbers denote \texttt{analyst\_1} through \texttt{analyst\_6}; agents 1--4 are liar agents and agents 5--6 are neutral agents. Each order repeats for three rounds.
+\begin{center}
+\small
+\begin{tabular}{cll}
+\toprule
+Rotation & Clustered & Interleaved \\
+\midrule
+1 & 1, 2, 3, 4, 5, 6 & 1, 5, 2, 3, 6, 4 \\
+2 & 2, 3, 4, 5, 6, 1 & 5, 2, 3, 6, 4, 1 \\
+3 & 3, 4, 5, 6, 1, 2 & 2, 3, 6, 4, 1, 5 \\
+4 & 4, 5, 6, 1, 2, 3 & 3, 6, 4, 1, 5, 2 \\
+5 & 5, 6, 1, 2, 3, 4 & 6, 4, 1, 5, 2, 3 \\
+6 & 6, 1, 2, 3, 4, 5 & 4, 1, 5, 2, 3, 6 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 A separate 10-run experiment first showed that the social agent's instruction to rely more on peers was unnecessary for Claude Haiku 4.5 on ego depletion. Shared-memory FE$_\text{t}$ is 0.900, while personal-memory and live-debate FE$_\text{t}$ are 0. We report those runs separately because their cyclic speaking orders do not place every agent equally often in each position. The central matched comparison uses 4/6 liar agents and two neutral agents. It contains one false claim and provides no evidence cards or corrections. Twelve speaking orders place every agent twice in every position. Six orders cluster the liar agents, and six interleave them with the neutral agents. Shared memory, personal memory, and live debate use the same orders. Every agent answers the claim three times in every run, giving 18 model calls per run. Live debate completes all three rounds.
 
@@ -1036,7 +1088,12 @@ Two later revert, leaving 100 final endorsements. Excluding the first adopter in
 each affected run leaves 68 later first-adoption events, and all 68 follow
 retrieval of a false statement written by another neutral agent. The
 corresponding counts are 12/12 at 2/6 and 29/29 at 4/6. This sequence motivated
-the memory test below.
+the memory test below. Among 244 neutral-agent turns before that agent's first
+endorsement, 68 retrieve another neutral agent's endorsement and all 68 end
+in first adoption; the other 176 contain 34 first adoptions. After the first
+neutral adoption in a run, every remaining eligible turn retrieves another
+neutral endorsement. The 68/68 sequence therefore has no unexposed comparison
+at that stage and is descriptive evidence, not an independent causal test.
 
 % ============================================================
 \section{Visibility of Neutral-Agent Statements}

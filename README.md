@@ -249,10 +249,9 @@ docs/                   # Architecture and repository documentation
 
 ## Project name and stable identifiers
 
-The testbed and public repository are named **Agent Interaction Lab**. The
-anonymous paper URL still uses the older `agent-society` slug; changing that URL
-would break the link printed in the submitted paper. Older internal experiment
-identifiers also remain unchanged so that manifests and saved run paths resolve.
+The testbed and repository are named **Agent Interaction Lab**. Older internal
+experiment identifiers remain unchanged so that manifests and saved run paths
+continue to resolve.
 
 ## How the code maps to the paper
 

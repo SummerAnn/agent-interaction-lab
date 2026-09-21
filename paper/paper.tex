@@ -54,6 +54,13 @@ The main experiments study groups of six copies of the same language model in tw
 
 Shared memory reduces wrong final answers by 47.5\% relative to personal memory in one honest-mistake experiment. In another, recording agents' revised judgments alongside external evidence leaves 1 wrong final answer out of 240, compared with 22 when the record contains evidence alone. Agent-written judgments can carry a correction as well as an error. In the central liar--neutral comparison shown in Figure~\ref{fig:overview}, neutral agents give 22 false final answers out of 24 with shared memory and none with personal memory or live debate. In a separate Haiku experiment, all three neutral agents give the false answer in 81\% of runs when they can read one another's judgments, compared with 50\% when statements from other neutral agents are hidden. Liar-agent entries remain eligible for retrieval in both versions, although changing which entries are available also changes the realized composition of retrieved memory. Saving uncertain answers removes false adoption in another comparison but leaves most neutral agents uncertain rather than correct. Effects vary across questions, models, and group compositions, and some debate runs also end with false answers. What enters the record matters alongside how agents share it.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\textwidth]{fig/figure1_primary_v4.png}
+\caption{One matched comparison using Claude Haiku 4.5. Four agents are instructed to keep supporting a false claim, while two judge it for themselves. The agents, instructions, question, 12 speaking orders, and 18-call budget stay fixed; each communication method has its own information flow and response format. This compares whole protocols, not storage alone. The two agents judging for themselves give 22 false final answers out of 24 with shared memory and none with personal memory or live debate. Panels illustrate one run. Agents see only generic analyst IDs, not one another's instructions.}
+\label{fig:overview}
+\end{figure}
+
 We make five contributions.
 \begin{enumerate}[leftmargin=*,nosep]
 \item Controlled comparisons of shared memory, personal memory, and live debate across models, questions, and group compositions.
@@ -62,13 +69,6 @@ We make five contributions.
 \item Tests of the memory recording rule and several ways to reduce false answers, including saving uncertainty, adding a correct answer from a trusted external source, and showing when a statement repeats an earlier one.
 \item Agent Interaction Lab, an auditable testbed that records every retrieved statement, message, answer, and memory write. We release the configurations, recorded responses, and manifests linking reported results to their runs.
 \end{enumerate}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.96\textwidth]{fig/figure1_primary_v4.png}
-\caption{One matched comparison using Claude Haiku 4.5. Four agents are instructed to keep supporting a false claim, while two judge it for themselves. The agents, instructions, question, 12 speaking orders, and 18-call budget stay fixed; each communication method has its own information flow and response format. This compares whole protocols, not storage alone. The two agents judging for themselves give 22 false final answers out of 24 with shared memory and none with personal memory or live debate. Panels illustrate one run. Agents see only generic analyst IDs, not one another's instructions.}
-\label{fig:overview}
-\end{figure}
 
 % ============================================================
 \section{Related Work}
@@ -239,7 +239,7 @@ With Sonnet and Opus, 46.7\% of all agents end debate supporting the false claim
 
 We also test live debate while ensuring that every liar agent keeps endorsing the claim. After each model call, we replace that agent's public response with a fixed endorsement. FE$_\text{t}$ remains 0 for Haiku, Sonnet, and Opus across 12 speaking orders per model (Appendix Table~\ref{tab:enforced_debate}).
 
-\subsection{Changing the Record}
+\subsection{Several Changes Reduce False Answers}
 \label{sec:mitigations}
 
 We show six tested changes here, using the same 12 speaking orders and neutral-agent instruction. One tells every agent that a high-reliability external check says the claim is likely false. Two insert a correction early or late. The others fade old statements, show answer counts with a warning, or identify which earlier statement a repeated statement follows. This marker labels statements, not agents, and does not reveal the correct answer.

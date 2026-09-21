@@ -375,7 +375,7 @@ Across the six familiar-science topics, the fraction of runs with a false answer
 \subsection{Cross-model comparison}
 \label{app:crossmodel}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Cross-model ego-depletion comparison in the specialist--social experiment for the six models evaluated in both shared memory and live debate (4/6 liar agents, five runs per model and protocol). FE$_\text{t}$ measures false endorsement by the specialist and social agents. Live-debate AR measures assigned-role retention. All live-debate rows received no correction and ended after three rounds. Gemma was evaluated in shared memory only and is reported below.}
 \label{tab:app_crossmodel}
 \label{tab:crossmodel}
@@ -403,7 +403,9 @@ On MMR/autism, Llama reaches unanimous endorsement in 3/5 live-debate runs, with
 \subsection{Changes intended to reduce false answers}
 \label{app:mitigations}
 
-\begin{table}[htbp]
+Table~\ref{tab:app_mitigations} collects changes to the record alongside correction, protocol, instruction, and model alternatives in the supporting specialist--social experiment.
+
+\begin{table}[H]
 \caption{Nine interventions and alternatives explored in the supporting specialist--social experiment. Rows include changes to memory, correction timing, communication method, agent instructions, and model choice. They should not be interpreted as nine versions of the same controlled intervention. Unless noted, rows use ego depletion, 4/6 liar agents, Claude Haiku 4.5, and five runs. A false answer means that the specialist or social agent endorses, so FE$_\text{t}>0$. The memory that shows which earlier statement was repeated and adds a warning appears in Table~\ref{tab:provenance_defense}.}
 \label{tab:app_mitigations}
 \begin{center}
@@ -429,7 +431,7 @@ On MMR/autism, Llama reaches unanimous endorsement in 3/5 live-debate runs, with
 \end{center}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Sonnet results in the supporting specialist--social experiment on ego depletion, with five runs per condition.}
 \label{tab:app_sonnet_mitigations}
 \begin{center}
@@ -448,7 +450,7 @@ Correct external verification message & 0/5 \\
 \end{center}
 \end{table}
 
-This is a separately executed cohort from Table~\ref{tab:app_crossmodel}. Comparisons in this table use its own standard shared-memory row. Table~\ref{tab:app_sonnet_mitigations} shows that correction and fading old entries vary across models. The correct external verification message gives 0/5 for both Haiku and Sonnet.
+Table~\ref{tab:app_sonnet_mitigations} uses a separately executed cohort from Table~\ref{tab:app_crossmodel}; comparisons use its own standard shared-memory row. Correction and fading old entries vary across models. The correct external verification message gives 0/5 for both Haiku and Sonnet.
 
 \subsection{Confidence and persistence}
 \label{app:confidence}

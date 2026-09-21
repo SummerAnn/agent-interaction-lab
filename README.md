@@ -6,10 +6,8 @@ Testbed and experimental data for "On the Effect of Shared Memory on False Belie
 
 This repository contains the current paper, testbed, and all 6,334
 manifest-selected runs. The full release audit checks every saved summary and
-SQLite trace; run `npm run verify:release` to reproduce it. The
-[ChicagoHAI release](https://github.com/ChicagoHAI/agent-interaction-lab)
-is also available. Other exploratory runs under `output/` are not part of the
-paper's reported denominators.
+SQLite trace; run `npm run verify:release` to reproduce it. Other exploratory
+runs under `output/` are not part of the paper's reported denominators.
 
 ![Agent Interaction Lab terminal interface](testbed_image/main.png)
 
@@ -152,9 +150,8 @@ The paper's 6,334 claimed runs are divided into three non-overlapping manifests:
 
 The appendix model-by-task coverage table lists the three-protocol liar--neutral comparisons. A dash means that comparison was not run, not that its false-answer rate was zero. Gemma appears only in supporting experiments. The Haiku peer-visibility result does not reproduce as a useful restriction in the three tested open models; it is a mechanism test in one setting, not a general mitigation. The save-uncertain-answers write-rule ablation has not been repeated across models.
 
-Run the following audits in a clone of the complete ChicagoHAI release; they
-will report missing runs in this partial personal checkout. The quick check
-recomputes coverage and calculations without hashing every large trace:
+Run the following audits from the repository root. The quick check recomputes
+coverage and calculations without hashing every large trace:
 
 ```bash
 npm run verify:release:quick

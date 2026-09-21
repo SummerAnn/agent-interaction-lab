@@ -281,13 +281,13 @@ The specialist agent remains uncertain. Analyst\_3 refers to analyst\_2, and ana
 
 The released \texttt{run\_manifest.json} defines the runs in each table and \texttt{RUN\_MANIFEST.md} provides a readable index. All $n$ values count completed runs. FE counts all agents, FE$_\text{t}$ excludes liar agents, and AR records whether liar agents retain their assigned answer.
 
-\subsection{Initially mistaken-agent experiments}
+\subsection{Initial-error experiments}
 \label{app:honest}
 
 The initially wrong agent is \texttt{contamination\_1}. The personal- and shared-memory comparison ran on September 4; all 40 and 21 false final answers, respectively, belong to that agent. The shared-memory row uses the released agent-judgment condition, not the evidence-plus-opinions mixed record in Appendix~\ref{app:amplifier}. These runs establish observed changes in answers, but not an all-revisable instruction design. Both early and later traces identify \texttt{contamination\_1} with the persistence role. The earliest recovered source snapshot (September 5, commit \texttt{4389ce3}) instructs that role to maintain its position and not waver. That snapshot postdates the September 3 cohort, and the traces do not save complete historical system prompts. We cannot establish identical requests across cohorts or claim that no agent was instructed to persist.
 
 \begin{table}[htbp]
-\caption{Initially mistaken-agent experiments averaged across four familiar-science topics, with 10 runs per topic and communication method or change (generally $n=40$ runs and 240 final agent answers per row), Claude Haiku 4.5. Mistaken-agent exit means the initially mistaken agent leaves before seeing counter-evidence. FE and recovery include all agents. The role-provenance caveat above applies.}
+\caption{Initial-error experiments averaged across four familiar-science topics, with 10 runs per topic and communication method or change (generally $n=40$ runs and 240 final agent answers per row), Claude Haiku 4.5. Initial-error exit means the initially wrong agent leaves before seeing counter-evidence. FE and recovery include all agents. The role-provenance caveat above applies.}
 \label{tab:app_honest}
 \begin{center}
 \small
@@ -304,7 +304,7 @@ Shared memory + correct external verification message & 40 & 0.013 & Not applica
 Early correction (step 3) & 40 & 0.013 & 0.129 \\
 Late correction (step 12) & 40 & 0.038 & 0.037 \\
 \midrule
-\multicolumn{4}{l}{\emph{Mistaken-agent exit}} \\
+\multicolumn{4}{l}{\emph{Initial-error exit}} \\
 Shared memory + exit & 40 & 0.158 & Not applicable \\
 Live debate + exit & 40 & 0.008 & Not applicable \\
 \bottomrule
@@ -320,7 +320,7 @@ Appendix~\ref{app:amplifier} reports the shared-memory experiments with an initi
 This experiment varies how many agent turns occur before the liar agents leave.
 
 \begin{table}[htbp]
-\caption{Liar-agent exit timing. Shared memory, 4/6 liar agents, ego depletion, Claude Haiku 4.5, five runs for each exit time. This differs from mistaken-agent exit in Table~\ref{tab:app_honest}, where the initially mistaken agent leaves.}
+\caption{Liar-agent exit timing. Shared memory, 4/6 liar agents, ego depletion, Claude Haiku 4.5, five runs for each exit time. This differs from initial-error exit in Table~\ref{tab:app_honest}, where the initially wrong agent leaves.}
 \label{tab:app_exit}
 \begin{center}
 \small
@@ -416,7 +416,7 @@ Table~\ref{tab:app_mitigations} collects changes to the record alongside correct
 \shortstack[l]{Observed\\result} & Change & \shortstack{Runs with\\a false answer} & What changed \\
 \midrule
 \multirow{4}{*}{\shortstack[l]{No false\\answers}} & Correct external verification message & 0/5 & Correct verifier message \\
-& Live debate (Haiku) & 0/5 & Some liar agents stop endorsing \\
+& Live debate (Haiku) & 0/5 & All liar agents stop endorsing \\
 & Early correction & 0/5 & Correction arrives at step 3 \\
 & Late correction (specialist--social) & 0/5 & Reverses false endorsement in this setup \\
 \midrule
@@ -543,7 +543,7 @@ Runs & 40 & 40 \\
 \end{center}
 \end{table}
 
-The warning leaves correction unchanged within this comparison: both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. The baseline is a separate execution of the mixed-record condition, not the earlier cohort in Table~\ref{tab:app_amplifier}. The earlier cohort, executed on September 3, ends with 239 correct rejections and one false endorsement; this cohort, executed on September 12, ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. Those matching configuration fields do not establish identical historical requests or explain the difference. In every one of these 80 later runs, the sole final false endorsement belongs to \texttt{contamination\_1}, across varying final speaking positions. Its saved role is the persistence role described in Appendix~\ref{app:honest}. This pattern does not identify the cause of the between-cohort difference, but it rules out interpreting the 40 remaining answers as uncertainty. The test supports unchanged correction relative to its own baseline, not replication of an all-revisable design or the earlier near-complete correction.
+The warning leaves correction unchanged within this comparison: both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. In each arm, \texttt{contamination\_1} retains the false answer in all 40 runs, while the other three initially wrong agents are corrected in all 120 cases. The saved role metadata identifies \texttt{contamination\_1} as the persistence-role agent; the exact historical request is not stored. The baseline is a separate execution of the mixed-record condition, not the earlier cohort in Table~\ref{tab:app_amplifier}. The earlier cohort, executed on September 3, ends with 239 correct rejections and one false endorsement; this cohort, executed on September 12, ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. Those matching configuration fields do not establish identical historical requests or explain the difference. In every one of these 80 later runs, the sole final false endorsement belongs to \texttt{contamination\_1}, across varying final speaking positions. Its saved role is the persistence role described in Appendix~\ref{app:honest}. This pattern does not identify the cause of the between-cohort difference, but it rules out interpreting the 40 remaining answers as uncertainty. The test supports unchanged correction relative to its own baseline, not replication of an all-revisable design or the earlier near-complete correction.
 
 \subsection{Saving uncertain answers}
 \label{app:uncertain_write_rule}
@@ -557,7 +557,7 @@ Standard shared memory omits an answer when an agent returns \texttt{uncertain}.
 \small
 \begin{tabular}{lrrrr}
 \toprule
-Memory-writing rule & False & Reject & Uncertain & Runs with any false \\
+Uncertain-answer recording rule & False & Reject & Uncertain & Runs with any false \\
 \midrule
 Omit uncertain answers & 64/108 & 30/108 & 14/108 & 22/36 \\
 Save uncertain answers & \textbf{0/108} & 20/108 & 88/108 & \textbf{0/36} \\
@@ -1171,7 +1171,7 @@ that cell. Every active trace contains 18 calls.
 We repeat the 3/6 comparison with Llama 3.1 8B, Ministral 8B 2512, and Gemma 3
 4B. Relative to the Haiku experiment, each replication changes only the model.
 The ego-depletion question, prompts, agent profiles, role assignments, two memory
-conditions, 12 balanced speaking orders, three seeds, six-statement memory limit,
+conditions, 12 balanced speaking orders, three repetitions, six-statement memory limit,
 temperature, and 18-call budget remain fixed. Each model contributes 72 runs.
 All 216 runs complete 18 calls and pass the retrieval manipulation check.
 
@@ -1349,7 +1349,7 @@ Ministral 8B 2512 & Shown with warning & \textbf{58.3\% (21/36)} & \textbf{8/12}
 \end{center}
 \end{table}
 
-For Haiku, adding the warning to the marker reduces FE$_\text{t}$ by 0.500, with a resampled 95\% range of $[0.250,0.750]$ across the 12 fixed speaking orders. Relative to standard memory, the reduction is 0.583, with a range of $[0.333,0.833]$. For Ministral, the marker and warning together reduce FE$_\text{t}$ by 0.333, but the range is $[0,0.667]$ and the paired test gives $p=0.141$. Adding the warning to the marker changes FE$_\text{t}$ by 0.111, with a range of $[-0.250,0.444]$. The direction extends to a second model, while the strong incremental warning effect does not.
+For Haiku, adding the warning to the marker reduces FE$_\text{t}$ by 0.500, with a resampled 95\% range of $[0.250,0.750]$ across the 12 fixed speaking orders. Relative to standard memory, the reduction is 0.583, with a range of $[0.333,0.833]$. For Ministral, the marker and warning together reduce FE$_\text{t}$ by 0.333, but the range is $[0,0.667]$ and an exact paired sign-flip test gives $p=0.141$. Adding the warning to the marker changes FE$_\text{t}$ by 0.111, with a range of $[-0.250,0.444]$. The direction extends to a second model, while the strong incremental warning effect does not.
 
 Ministral returned malformed pseudo-JSON in 362 of 648 responses. None was dropped. Each contained one explicit stance, which a call-by-call audit matched to the stored state for the same run, turn, agent, and claim. No case was ambiguous or mismatched. The audit is released with the manifest.
 

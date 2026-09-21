@@ -125,8 +125,8 @@ def task_protocol_figure(data: dict) -> None:
     groups = [
         ("GSM8K\n5 tasks", "GSM8K"),
         ("GSM-Hard\n5 tasks", "GSM-Hard"),
-        ("SciTaT\ncore\n(2)", "SciTaT core subset (2)"),
-        ("SciTaT\nscreened\n(18)", "expanded"),
+        ("SciTaT-A/B\n(2)", "SciTaT core subset (2)"),
+        ("Selected\nSciTaT\n(18)", "expanded"),
     ]
     group_values: dict[str, list[float]] = {}
     for protocol in PROTOCOLS:
@@ -146,7 +146,8 @@ def task_protocol_figure(data: dict) -> None:
     draw_grouped_bars(axes[1], [label for label, _ in groups], group_values)
     axes[0].set_title("A  Familiar science tasks", loc="left", fontsize=9.5, pad=6)
     axes[1].set_title("B  Other task groups", loc="left", fontsize=9.5, pad=6)
-    axes[0].set_ylabel(r"Target-agent adoption (FE$_t$)")
+    axes[0].set_ylabel("Neutral-agent false-answer rate")
+    axes[1].tick_params(axis="x", labelsize=7.5)
     polish(axes[0], show_y=True)
     polish(axes[1], show_y=False)
     handles, legend_labels = axes[0].get_legend_handles_labels()

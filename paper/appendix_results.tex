@@ -455,7 +455,7 @@ Table~\ref{tab:app_sonnet_mitigations} uses a separately executed cohort from Ta
 \subsection{Confidence and persistence}
 \label{app:confidence}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Starting confidence and persistence instructions. The two versions use the same 3/6 group composition, ego depletion, Claude Haiku 4.5, and 10 runs. The agent files also differ in other prompt values, so the table does not identify the effect of confidence alone.}
 \label{tab:app_confidence}
 \begin{center}
@@ -519,7 +519,7 @@ Mixed record (evidence + opinions) & 40 & 0.004 & Evolving evidence and opinions
 
 Corrected judgments appear in the mixed record in these saved runs. In a separate experiment where 1/6 agents begin wrong, shared memory with evidence and opinions yields FE $=0.017$, and evidence-aware memory yields FE $=0.000$ ($n=40$ each).
 
-\subsection{Does the defense preserve helpful correction?}
+\subsection{Correction under the repetition marker and warning}
 \label{app:defense_preservation}
 
 Four agents again begin with the wrong answer. The saved outcomes do not establish that all four received revisable instructions. We compare the mixed record (evidence plus agent opinions) with a memory that shows supplied evidence separately, identifies which earlier statement each repeated statement follows, and warns agents not to count the repetition as new evidence. The comparison covers the same four scientific claims, with 10 paired runs per claim and memory version. All 80 runs contain 18 turns and 54 model calls and pass the trace checks.
@@ -543,12 +543,12 @@ Runs & 40 & 40 \\
 \end{center}
 \end{table}
 
-The warning leaves correction unchanged within this comparison: both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. In each arm, \texttt{contamination\_1} retains the false answer in all 40 runs, while the other three initially wrong agents are corrected in all 120 cases. The saved role metadata identifies \texttt{contamination\_1} as the persistence-role agent; the exact historical request is not stored. The baseline is a separate execution of the mixed-record condition, not the earlier cohort in Table~\ref{tab:app_amplifier}. The earlier cohort, executed on September 3, ends with 239 correct rejections and one false endorsement; this cohort, executed on September 12, ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. Those matching configuration fields do not establish identical historical requests or explain the difference. In every one of these 80 later runs, the sole final false endorsement belongs to \texttt{contamination\_1}, across varying final speaking positions. Its saved role is the persistence role described in Appendix~\ref{app:honest}. This pattern does not identify the cause of the between-cohort difference, but it rules out interpreting the 40 remaining answers as uncertainty. The test supports unchanged correction relative to its own baseline, not replication of an all-revisable design or the earlier near-complete correction.
+The warning leaves correction unchanged within this comparison: both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. In each arm, \texttt{contamination\_1} retains the false answer in all 40 runs, while the other three initially wrong agents are corrected in all 120 cases. This September 12 cohort postdates the September 5 source snapshot, whose persistence-role prompt is consistent with the saved role; byte-identical historical requests are not established. The baseline is a separate execution of the mixed-record condition, not the earlier cohort in Table~\ref{tab:app_amplifier}. The earlier cohort, executed on September 3, ends with 239 correct rejections and one false endorsement; this cohort ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. The test supports unchanged correction relative to its own baseline, not replication of an all-revisable design or the earlier near-complete correction.
 
 \subsection{Saving uncertain answers}
 \label{app:uncertain_write_rule}
 
-Standard shared memory omits an answer when an agent returns \texttt{uncertain}. This ablation keeps the model, task, prompts, three liar agents, three neutral agents, retrieval rule, 12 speaking orders, and 18-call budget fixed. The changed version also writes uncertain answers to memory. We repeat each speaking order three times, giving 36 matched groups and 72 runs. Every run completes all 18 calls, all responses parse successfully, and all liar agents retain the assigned answer.
+Standard shared memory omits an answer when an agent returns \texttt{uncertain}. We test this rule because omitting uncertainty can leave the visible record more one-sided than the agents' responses. This ablation keeps the model, task, prompts, three liar agents, three neutral agents, retrieval rule, 12 speaking orders, and 18-call budget fixed. The changed version also writes uncertain answers to memory. We repeat each speaking order three times, giving 36 matched groups and 72 runs. Every run completes all 18 calls, all responses parse successfully, and all liar agents retain the assigned answer.
 
 \begin{table}[htbp]
 \caption{Effect of saving uncertain answers in shared memory. Each row contains 36 Claude Haiku 4.5 runs on ego depletion, with three liar agents and three neutral agents. The 108 final responses come from the neutral agents.}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,6 +10,12 @@ Lisa~R Anderson and Charles~A Holt.
 \newblock Information cascades in the laboratory.
 \newblock \emph{American Economic Review}, 87\penalty0 (5):\penalty0 847--862,
   1997.
+
+\bibitem[Banerjee(1992)]{banerjee1992}
+Abhijit~V Banerjee.
+\newblock A simple model of herd behavior.
+\newblock \emph{Quarterly Journal of Economics}, 107\penalty0 (3):\penalty0
+  797--817, 1992.
 
 \bibitem[Bara(2026)]{bara2026sybil}
 Marc Bara.
@@ -107,8 +113,8 @@ Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie
   Fennis, Finley, Francis, Heise, Hoemann, Inzlicht, Koole, Koppel, Kroese,
   Lange, Lau, Lynch, Martijn, Merckelbach, Mills, Michirev, Miyake, Mosser,
   Muise, Muller, Muzi, Nalis, Nurwanti, Otgaar, Philipp, Primoceri, Rentzsch,
-  Ringos, Schlinkert, Schmeichel, Schoch, Schrama, Sch{"u}tz, Stamos,
-  Tingh{"o}g, Ullrich, vanDellen, Wimbarti, Wolff, Yusainy, Zerhouni, and
+  Ringos, Schlinkert, Schmeichel, Schoch, Schrama, Sch{\"u}tz, Stamos,
+  Tingh{\"o}g, Ullrich, vanDellen, Wimbarti, Wolff, Yusainy, Zerhouni, and
   Zwienenberg]{hagger2016}
 M~S Hagger, N~L~D Chatzisarantis, H~Alberts, C~O Anggono, C~Batailler, A~R
   Birt, R~Brand, M~J Brandt, G~Brewer, S~Bruyneel, D~P Calvillo, W~K Campbell,
@@ -118,7 +124,7 @@ M~S Hagger, N~L~D Chatzisarantis, H~Alberts, C~O Anggono, C~Batailler, A~R
   K~Lau, B~P Lynch, C~Martijn, H~Merckelbach, N~V Mills, A~Michirev, A~Miyake,
   A~E Mosser, M~Muise, D~Muller, M~Muzi, D~Nalis, R~Nurwanti, H~Otgaar, M~C
   Philipp, P~Primoceri, K~Rentzsch, L~Ringos, C~Schlinkert, B~J Schmeichel, S~F
-  Schoch, M~Schrama, A~Sch{"u}tz, A~Stamos, G~Tingh{"o}g, J~Ullrich,
+  Schoch, M~Schrama, A~Sch{\"u}tz, A~Stamos, G~Tingh{\"o}g, J~Ullrich,
   M~vanDellen, S~Wimbarti, W~Wolff, C~Yusainy, O~Zerhouni, and M~Zwienenberg.
 \newblock A multilab preregistered replication of the ego-depletion effect.
 \newblock \emph{Perspectives on Psychological Science}, 11\penalty0
@@ -246,6 +252,16 @@ Susan~E Swedo, Henrietta~L Leonard, Marjorie Garvey, Barbara Mittleman,
 \newblock \emph{American Journal of Psychiatry}, 155\penalty0 (2):\penalty0
   264--271, 1998.
 \newblock \doi{10.1176/ajp.155.2.264}.
+
+\bibitem[Vohs et~al.(2021)Vohs, Schmeichel, Lohmann, Gronau, Finley, Ainsworth,
+  Alquist, et~al.]{vohs2021}
+Kathleen~D Vohs, Brandon~J Schmeichel, Sophie Lohmann, Quentin~F Gronau, Anna~J
+  Finley, Sarah~E Ainsworth, Jessica~L Alquist, et~al.
+\newblock A multisite preregistered paradigmatic test of the ego-depletion
+  effect.
+\newblock \emph{Psychological Science}, 32\penalty0 (10):\penalty0 1566--1581,
+  2021.
+\newblock \doi{10.1177/0956797621989733}.
 
 \bibitem[Wakefield et~al.(1998)Wakefield, Murch, Anthony, Linnell, Casson,
   Malik, Berelowitz, Dhillon, Thomson, Harvey, Valentine, Davies, and

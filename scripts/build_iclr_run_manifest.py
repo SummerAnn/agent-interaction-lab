@@ -148,7 +148,7 @@ TABLE_SPECS: list[dict[str, Any]] = [
         ],
     },
     {
-        "labels": ["tab:app_crossmodel", "tab:crossmodel"],
+        "labels": ["tab:app_crossmodel"],
         "title": "Cross-model ego-depletion comparison",
         "rows": [
             row("Haiku shared", [source("part2_personal_vs_shared_v1", **EGO, **SHARED, **H4)], n=5, fe=0.833, fe_t=0.500, interventions=0),

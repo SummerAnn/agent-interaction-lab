@@ -916,6 +916,24 @@ TABLE_SPECS: list[dict[str, Any]] = [
         "source_files": ["rosters/", "experiments/"],
         "rows": [],
     },
+    {
+        "labels": ["tab:design_overview"],
+        "title": "Selected experiment designs",
+        "status": "design_metadata",
+        "source_files": ["experiments/", "rosters/", "paper/appendix_results.tex"],
+        "rows": [],
+    },
+    {
+        "labels": ["tab:baseline_cohort_audit"],
+        "title": "Standard-memory baselines across three cohorts",
+        "status": "derived",
+        "depends_on": [
+            "tab:adversary_ratio",
+            "tab:peer_visibility_main",
+            "tab:uncertain_write_rule",
+        ],
+        "rows": [],
+    },
 ]
 
 

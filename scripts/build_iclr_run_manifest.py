@@ -499,8 +499,24 @@ TABLE_SPECS: list[dict[str, Any]] = [
     },
     {
         "labels": ["tab:neutral_claude_scitat"],
-        "title": "Same-prompt results on two SciTaT items for Sonnet and Opus",
+        "title": "Same-prompt results on two SciTaT items for Haiku, Sonnet, and Opus",
         "rows": [
+            row(
+                f"Haiku 4.5 {task_label} {protocol_name}",
+                [source(experiment, scenario_contains=scenario_marker, condition_id=condition_id)],
+                n=12,
+                fe_t=fe_t,
+            )
+            for task_label, scenario_marker, shard, shared_fe_t, personal_fe_t, debate_fe_t in [
+                ("SciTaT-A", "1512_01642", 2, 1.000, 0.000, 0.125),
+                ("SciTaT-B", "math_0012242", 6, 0.625, 0.000, 0.000),
+            ]
+            for protocol_name, experiment, condition_id, fe_t in [
+                ("shared", f"part2_neutral_scitat_expanded_memory_v3_s{shard}", "shared_memory_no_correction", shared_fe_t),
+                ("personal", f"part2_neutral_scitat_expanded_memory_v3_s{shard}", "personal_memory_no_correction", personal_fe_t),
+                ("debate", f"part2_neutral_scitat_expanded_chat_v3_s{shard}", "chat_fully_connected_no_early_stop", debate_fe_t),
+            ]
+        ] + [
             row(
                 f"{model_label} {task_label} {protocol_name}",
                 [source(experiment, scenario_contains=scenario_marker, condition_id=condition_id, roster_contains=roster_marker)],
@@ -508,10 +524,10 @@ TABLE_SPECS: list[dict[str, Any]] = [
                 fe_t=fe_t,
             )
             for model_label, roster_marker, task_label, scenario_marker, shared_fe_t, personal_fe_t, debate_fe_t in [
-                ("Sonnet 4.6", "sonnet", "SciTaT 1512", "1512_01642", 1.000, 0.000, 0.000),
-                ("Sonnet 4.6", "sonnet", "SciTaT math", "math_0012242", 0.625, 0.000, 0.000),
-                ("Opus 4.6", "opus", "SciTaT 1512", "1512_01642", 1.000, 0.000, 0.625),
-                ("Opus 4.6", "opus", "SciTaT math", "math_0012242", 0.042, 0.000, 0.000),
+                ("Sonnet 4.6", "sonnet", "SciTaT-A", "1512_01642", 1.000, 0.000, 0.000),
+                ("Sonnet 4.6", "sonnet", "SciTaT-B", "math_0012242", 0.625, 0.000, 0.000),
+                ("Opus 4.6", "opus", "SciTaT-A", "1512_01642", 1.000, 0.000, 0.625),
+                ("Opus 4.6", "opus", "SciTaT-B", "math_0012242", 0.042, 0.000, 0.000),
             ]
             for protocol_name, experiment, condition_id, fe_t in [
                 ("shared", "part2_neutral_crossmodel_weak_memory_v2", "shared_memory_no_correction", shared_fe_t),
@@ -663,7 +679,7 @@ TABLE_SPECS: list[dict[str, Any]] = [
                 ("Late correction", "shared_memory_late_correction", 0.292, 6, 12, 7),
                 ("Fading old entries", "shared_memory_decay_no_correction", 0.708, 9, 0, 17),
                 ("Current answer counts with warning", "shared_independence_aware_no_correction", 0.000, 0, 0, 0),
-                ("Earlier statement shown with warning", "shared_provenance_aware_no_correction", 0.000, 0, 0, 0),
+                ("Earlier-statement marker + warning", "shared_provenance_aware_no_correction", 0.000, 0, 0, 0),
             ]
         ],
     },
@@ -770,7 +786,7 @@ TABLE_SPECS: list[dict[str, Any]] = [
                 ("MMR", "blind_wakefield_mmr_autism_v1", [0.000, 0.000, 0.000, 0.000]),
             ]
             for condition_label, condition_id, value in zip(
-                ["Standard shared memory", "Answer counts with warning", "One statement per origin", "Earlier statement shown with warning"],
+                ["Standard shared memory", "Answer counts with warning", "One statement per origin", "Earlier-statement marker + warning"],
                 [
                     "shared_memory_no_correction",
                     "shared_independence_aware_no_correction",
@@ -783,7 +799,7 @@ TABLE_SPECS: list[dict[str, Any]] = [
             row("Overall | Standard shared memory", [source("provenance_defense_v1", **SHARED)], n=30, fe_t=0.233),
             row("Overall | Answer counts with warning", [source("provenance_defense_v1", condition_id="shared_independence_aware_no_correction")], n=30, fe_t=0.100),
             row("Overall | One statement per origin", [source("provenance_defense_v1", condition_id="shared_lineage_collapsed_no_correction")], n=30, fe_t=0.083),
-            row("Overall | Earlier statement shown with warning", [source("provenance_defense_v1", condition_id="shared_provenance_aware_no_correction")], n=30, fe_t=0.067),
+            row("Overall | Earlier-statement marker + warning", [source("provenance_defense_v1", condition_id="shared_provenance_aware_no_correction")], n=30, fe_t=0.067),
         ],
     },
     {
@@ -805,7 +821,7 @@ TABLE_SPECS: list[dict[str, Any]] = [
                 ("MMR", "blind_wakefield_mmr_autism_v1", [0.000, 0.000, 0.000]),
             ]
             for condition_label, condition_id, value in zip(
-                ["Standard shared memory", "Earlier statement shown", "Earlier statement shown with warning"],
+                ["Standard shared memory", "Earlier-statement marker", "Earlier-statement marker + warning"],
                 [
                     "shared_memory_no_correction",
                     "shared_provenance_minimal_no_correction",
@@ -815,8 +831,8 @@ TABLE_SPECS: list[dict[str, Any]] = [
             )
         ] + [
             row("Overall | Standard shared memory", [source("provenance_ablation_v1", **SHARED)], n=30, fe_t=0.217),
-            row("Overall | Earlier statement shown", [source("provenance_ablation_v1", condition_id="shared_provenance_minimal_no_correction")], n=30, fe_t=0.167),
-            row("Overall | Earlier statement shown with warning", [source("provenance_ablation_v1", condition_id="shared_provenance_aware_no_correction")], n=30, fe_t=0.067),
+            row("Overall | Earlier-statement marker", [source("provenance_ablation_v1", condition_id="shared_provenance_minimal_no_correction")], n=30, fe_t=0.167),
+            row("Overall | Earlier-statement marker + warning", [source("provenance_ablation_v1", condition_id="shared_provenance_aware_no_correction")], n=30, fe_t=0.067),
         ],
     },
     {
@@ -824,14 +840,14 @@ TABLE_SPECS: list[dict[str, Any]] = [
         "title": "Cross-model statement marker and warning",
         "rows": [
             row("Haiku | Standard shared memory", [source("provenance_ablation_v1", **EGO, **SHARED)], n=5, fe_t=0.500),
-            row("Haiku | Earlier statement shown", [source("provenance_ablation_v1", **EGO, condition_id="shared_provenance_minimal_no_correction")], n=5, fe_t=0.300),
-            row("Haiku | Earlier statement shown with warning", [source("provenance_ablation_v1", **EGO, condition_id="shared_provenance_aware_no_correction")], n=5, fe_t=0.000),
+            row("Haiku | Earlier-statement marker", [source("provenance_ablation_v1", **EGO, condition_id="shared_provenance_minimal_no_correction")], n=5, fe_t=0.300),
+            row("Haiku | Earlier-statement marker + warning", [source("provenance_ablation_v1", **EGO, condition_id="shared_provenance_aware_no_correction")], n=5, fe_t=0.000),
             row("Sonnet | Standard shared memory", [source("provenance_cross_model_v1", **EGO, **SHARED, roster_contains="sonnet")], n=5, fe_t=0.500),
-            row("Sonnet | Earlier statement shown", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_minimal_no_correction", roster_contains="sonnet")], n=5, fe_t=0.300),
-            row("Sonnet | Earlier statement shown with warning", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_aware_no_correction", roster_contains="sonnet")], n=5, fe_t=0.000),
+            row("Sonnet | Earlier-statement marker", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_minimal_no_correction", roster_contains="sonnet")], n=5, fe_t=0.300),
+            row("Sonnet | Earlier-statement marker + warning", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_aware_no_correction", roster_contains="sonnet")], n=5, fe_t=0.000),
             row("GPT-4o-mini | Standard shared memory", [source("provenance_cross_model_v1", **EGO, **SHARED, roster_contains="gpt4mini")], n=5, fe_t=0.500),
-            row("GPT-4o-mini | Earlier statement shown", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_minimal_no_correction", roster_contains="gpt4mini")], n=5, fe_t=0.500),
-            row("GPT-4o-mini | Earlier statement shown with warning", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_aware_no_correction", roster_contains="gpt4mini")], n=5, fe_t=0.200),
+            row("GPT-4o-mini | Earlier-statement marker", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_minimal_no_correction", roster_contains="gpt4mini")], n=5, fe_t=0.500),
+            row("GPT-4o-mini | Earlier-statement marker + warning", [source("provenance_cross_model_v1", **EGO, condition_id="shared_provenance_aware_no_correction", roster_contains="gpt4mini")], n=5, fe_t=0.200),
         ],
     },
     {

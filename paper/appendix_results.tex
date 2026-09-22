@@ -525,7 +525,7 @@ Corrected judgments appear in the mixed record in these saved runs. In a separat
 Four agents again begin with the wrong answer. The saved outcomes do not establish that all four received revisable instructions. We compare the mixed record (evidence plus agent opinions) with a memory that shows supplied evidence separately, identifies which earlier statement each repeated statement follows, and warns agents not to count the repetition as new evidence. The comparison covers the same four scientific claims, with 10 paired runs per claim and memory version. All 80 runs contain 18 turns and 54 model calls and pass the trace checks.
 
 \begin{table}[htbp]
-\caption{Does identifying repeated statements and warning against double-counting them preserve helpful correction? Each memory version has 40 runs, comprising four scientific claims and 10 paired runs per claim. In every run, four agents begin wrong and two begin correct. Historical instruction provenance is incomplete.}
+\caption{Correction when repeated statements are identified and accompanied by a warning. Each memory version has 40 runs, comprising four scientific claims and 10 paired runs per claim. In every run, four agents begin wrong and two begin correct. Historical instruction provenance is incomplete.}
 \label{tab:app_defense_preserves_correction}
 \begin{center}
 \small
@@ -566,7 +566,7 @@ Save uncertain answers & \textbf{0/108} & 20/108 & 88/108 & \textbf{0/36} \\
 \end{center}
 \end{table}
 
-Saving uncertain answers reduces FE$_\text{t}$ by 0.593. The resampled 95\% range across the 36 fixed matched groups is $[0.435,0.750]$ for the reduction. The changed rule produces no false final answers, but most neutral agents remain uncertain rather than reject the claim. Correct rejections also fall from 30/108 to 20/108, so the intervention trades false adoption for greater indecision rather than uniformly improving answers. The standard row is a fresh cohort and should be compared only with the changed rule run alongside it.
+Saving uncertain answers reduces FE$_\text{t}$ by 0.593. The resampled 95\% range across the 36 fixed matched groups is $[0.435,0.750]$ for the reduction. The changed rule produces no false final answers, but most neutral agents remain uncertain rather than reject the claim. Correct rejections also fall from 30/108 to 20/108, so the intervention trades false adoption for greater indecision rather than uniformly improving answers. The standard row is a fresh cohort and should be compared only with the changed-rule condition in the same cohort.
 
 Across three separately executed standard-memory cohorts at this nominal Haiku, ego-depletion, and 3/6 setting, false responses are 100/108 in the group-composition experiment, 89/108 in the visibility experiment, and 64/108 here. FE$_\text{t}$ therefore spans 0.593 to 0.926. Because this variation is large relative to some effects, each intervention is compared only with its same-cohort baseline.
 
@@ -897,10 +897,10 @@ All 108 runs pass the response audit. Each agent answers three times, the JSON p
 
 \subsection{Cross-model matched comparisons}
 
-The two SciTaT tasks from the 18-task evaluation give matched comparisons for Sonnet and Opus. Each model, task, and protocol uses the same 12 balanced speaking orders and 18 model calls.
+The two SciTaT tasks from the 18-task evaluation give matched comparisons for Haiku, Sonnet, and Opus. Each model, task, and protocol uses the same 12 balanced speaking orders and 18 model calls.
 
 \begin{fixedtable}
-\caption{The two SciTaT tasks from the 18-task evaluation with Sonnet and Opus. $\Delta$ is shared-memory FE$_\text{t}$ minus personal-memory FE$_\text{t}$. Every entry averages 12 balanced speaking orders.}
+\caption{The two SciTaT tasks from the 18-task evaluation with Haiku, Sonnet, and Opus. $\Delta$ is shared-memory FE$_\text{t}$ minus personal-memory FE$_\text{t}$. Every entry averages 12 balanced speaking orders.}
 \label{tab:neutral_claude_scitat}
 \begin{center}
 \small
@@ -908,16 +908,18 @@ The two SciTaT tasks from the 18-task evaluation give matched comparisons for So
 \toprule
 Model & Task & Shared memory & Personal memory & $\Delta$ & Live debate \\
 \midrule
-Claude Sonnet 4.6 & SciTaT 1512 & 1.000 & 0.000 & 1.000 & 0.000 \\
-Claude Sonnet 4.6 & SciTaT math & 0.625 & 0.000 & 0.625 & 0.000 \\
-Claude Opus 4.6 & SciTaT 1512 & 1.000 & 0.000 & 1.000 & 0.625 \\
-Claude Opus 4.6 & SciTaT math & 0.042 & 0.000 & 0.042 & 0.000 \\
+Claude Haiku 4.5 & SciTaT-A & 1.000 & 0.000 & 1.000 & 0.125 \\
+Claude Haiku 4.5 & SciTaT-B & 0.625 & 0.000 & 0.625 & 0.000 \\
+Claude Sonnet 4.6 & SciTaT-A & 1.000 & 0.000 & 1.000 & 0.000 \\
+Claude Sonnet 4.6 & SciTaT-B & 0.625 & 0.000 & 0.625 & 0.000 \\
+Claude Opus 4.6 & SciTaT-A & 1.000 & 0.000 & 1.000 & 0.625 \\
+Claude Opus 4.6 & SciTaT-B & 0.042 & 0.000 & 0.042 & 0.000 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{fixedtable}
 
-Sonnet shows a positive matched difference on both items. Opus shows a positive difference on SciTaT 1512 and almost no false endorsement on the math item. Live debate also differs by task for Opus. These rows give both neutral agents the same instruction and use the same task files as the Haiku experiment.
+Haiku and Sonnet show a positive matched difference on both items. Opus shows a positive difference on SciTaT-A and almost no false endorsement on SciTaT-B. Live debate also differs by task for Opus. These rows give both neutral agents the same instruction and use the same task files.
 
 A separate experiment run through OpenRouter adds MMR, the same two SciTaT items, and three GSM8K problems. It includes GPT-4o-mini, Llama 3.1 8B, and Ministral 8B 2512. Table~\ref{tab:neutral_open_multitask_summary} averages the six equally sized task groups. Table~\ref{tab:neutral_open_multitask} reports every task separately.
 
@@ -1101,7 +1103,7 @@ at that stage and is descriptive evidence, not an independent causal test.
 % ============================================================
 
 We rerun the shared-memory conditions with 2, 3, and 4 liar agents. Each ratio
-uses 12 balanced speaking orders and three provider repeats per order. One
+uses 12 balanced speaking orders and three provider repetitions per order. One
 version uses standard shared memory, where each neutral agent can read every
 recent statement. In \emph{restricted shared memory}, a neutral agent can read every statement
 written by a liar agent and its own earlier statements. Statements written by
@@ -1128,7 +1130,7 @@ affected runs, the number in which all three neutral agents give the false answe
 The change appears under both types of speaking order. When the three liar
 agents speak together, FE$_\text{t}$ falls from 36/54 to 27/54. When
 liar and neutral agents are interleaved, it falls from 53/54 to 46/54. A
-descriptive resampling check keeps the three provider repeats for each order
+descriptive resampling check keeps the three provider repetitions for each order
 together. The mean change is -14.8 percentage points, with an interval from
 -26.9 to -2.8 points across the 12 fixed orders. This is not a population
 confidence interval.
@@ -1211,7 +1213,7 @@ The main comparisons use one model for all six agents. This supporting check
 instead assigns Claude Haiku 4.5, Claude Sonnet 4.6, or Claude Opus 4.6
 separately to the three liar agents and three neutral agents. It uses standard
 shared memory and the same 12 balanced speaking orders. The ego-depletion cells
-contain three provider repeats per order. The SciTaT calculation cells contain
+contain three provider repetitions per order. The SciTaT calculation cells contain
 one repeat per order.
 
 \begin{table}[H]
@@ -1261,7 +1263,7 @@ We test four versions of shared memory with 4/6 liar agents and no corrections. 
 \item \textbf{Standard shared memory} (\texttt{agent\_judgment}). Entries show the agent ID, stance, and confidence. They contain no origin information.
 \item \textbf{Answer counts with dependence warning}. Statements are split into supplied evidence and agent opinions. The current answer distribution is shown with a warning that agents read one another's statements. The released code calls this version \texttt{independence\_aware}.
 \item \textbf{One statement per recorded origin}. Statements with the same recorded origin are shown once. The released code calls this version \texttt{lineage\_collapsed}.
-\item \textbf{Earlier statement shown with a warning}. Each repeated statement identifies the earlier statement it follows (e.g., ``derived from analyst\_1 at step 2''). A warning tells agents that repeated statements do not provide independent support. The released code calls this version \texttt{provenance\_aware}.
+\item \textbf{Earlier-statement marker + warning}. Each repeated statement identifies the earlier statement it follows (e.g., ``derived from analyst\_1 at step 2''). A warning tells agents that repeated statements do not provide independent support. The released code calls this version \texttt{provenance\_aware}.
 \end{itemize}
 
 \begin{table}[H]
@@ -1270,7 +1272,7 @@ We test four versions of shared memory with 4/6 liar agents and no corrections. 
 \begin{center}
 \begin{tabular}{lcccc}
 \toprule
-Topic & \shortstack{Standard shared\\memory} & \shortstack{Answer counts\\+ warning} & \shortstack{One statement\\per origin} & \shortstack{Earlier statement\\shown + warning} \\
+Topic & \shortstack{Standard shared\\memory} & \shortstack{Answer counts\\+ warning} & \shortstack{One statement\\per origin} & \shortstack{Earlier-statement\\marker + warning} \\
 \midrule
 Ego depletion & 0.500 & 0.200 & 0.200 & \textbf{0.000} \\
 PANDAS & 0.400 & 0.400 & 0.300 & 0.400 \\
@@ -1285,7 +1287,7 @@ MMR/autism & 0.000 & 0.000 & 0.000 & 0.000 \\
 \end{center}
 \end{table}
 
-Showing the earlier statement with a warning reduces mean FE$_\text{t}$ across six topics from 0.233 to 0.067. The value reaches zero on ego depletion, LK-99, and STAP, where standard shared memory is nonzero. Climate and MMR are already zero with standard shared memory. PANDAS remains 0.400.
+The earlier-statement marker paired with a warning reduces mean FE$_\text{t}$ across six topics from 0.233 to 0.067. The value reaches zero on ego depletion, LK-99, and STAP, where standard shared memory is nonzero. Climate and MMR are already zero with standard shared memory. PANDAS remains 0.400.
 
 Table~\ref{tab:provenance_defense} and the matched comparison below use separately executed runs. Each comparison uses the same tasks and speaking orders within its table. The standard shared memory values differ by one false endorsement by the specialist or social agent across 30 runs, producing six-topic means of 0.233 and 0.217. Provider API outputs are not assumed to be identical at temperature 0.
 
@@ -1297,8 +1299,8 @@ We compare three versions across the same 6 topics (90 runs). The two marked ver
 
 \begin{itemize}
 \item \textbf{Standard shared memory}. No origin information.
-\item \textbf{Earlier statement shown}. Repeated statements identify an earlier matching statement. The files call this \texttt{provenance\_minimal}.
-\item \textbf{Shown with warning}. The same markers appear with a warning that repetitions are not independent support.
+\item \textbf{Earlier-statement marker}. Repeated statements identify an earlier matching statement. The files call this \texttt{provenance\_minimal}.
+\item \textbf{Earlier-statement marker + warning}. The same markers appear with a warning that repetitions are not independent support.
 \end{itemize}
 
 \begin{table}[h]
@@ -1307,7 +1309,7 @@ We compare three versions across the same 6 topics (90 runs). The two marked ver
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
-Topic & \shortstack{Standard shared\\memory} & \shortstack{Earlier statement\\shown} & \shortstack{Shown with\\warning} \\
+Topic & \shortstack{Standard shared\\memory} & \shortstack{Earlier-statement\\marker} & \shortstack{Marker +\\warning} \\
 \midrule
 Ego depletion & 0.500 & 0.300 & \textbf{0.000} \\
 PANDAS & 0.400 & 0.400 & 0.400 \\
@@ -1338,12 +1340,12 @@ We repeat the three-way comparison with three liar agents, three neutral agents,
 Model & Shared-memory version & False answers & Any false & All false \\
 \midrule
 Haiku 4.5 & Standard shared memory & 66.7\% (24/36) & 9/12 & 7/12 \\
-Haiku 4.5 & Earlier statement shown & 58.3\% (21/36) & 7/12 & 7/12 \\
-Haiku 4.5 & Shown with warning & \textbf{8.3\% (3/36)} & \textbf{1/12} & \textbf{1/12} \\
+Haiku 4.5 & Earlier-statement marker & 58.3\% (21/36) & 7/12 & 7/12 \\
+Haiku 4.5 & Marker + warning & \textbf{8.3\% (3/36)} & \textbf{1/12} & \textbf{1/12} \\
 \midrule
 Ministral 8B 2512 & Standard shared memory & 91.7\% (33/36) & 11/12 & 11/12 \\
-Ministral 8B 2512 & Earlier statement shown & 69.4\% (25/36) & 9/12 & 8/12 \\
-Ministral 8B 2512 & Shown with warning & \textbf{58.3\% (21/36)} & \textbf{8/12} & \textbf{6/12} \\
+Ministral 8B 2512 & Earlier-statement marker & 69.4\% (25/36) & 9/12 & 8/12 \\
+Ministral 8B 2512 & Marker + warning & \textbf{58.3\% (21/36)} & \textbf{8/12} & \textbf{6/12} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1363,7 +1365,7 @@ We add Claude Sonnet 4.6 and GPT-4o-mini results on 2 topics (ego depletion and 
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
-Model & \shortstack{Standard shared\\memory} & \shortstack{Earlier statement\\shown} & \shortstack{Shown with\\warning} \\
+Model & \shortstack{Standard shared\\memory} & \shortstack{Earlier-statement\\marker} & \shortstack{Marker +\\warning} \\
 \midrule
 Claude Haiku 4.5 & 0.500 & 0.300 & \textbf{0.000} \\
 Claude Sonnet 4.6 & 0.500 & 0.300 & \textbf{0.000} \\
@@ -1373,7 +1375,7 @@ GPT-4o-mini & 0.500 & 0.500 & 0.200 \\
 \end{center}
 \end{table}
 
-Showing the earlier statement with a warning reaches FE$_\text{t}=0$ on Haiku and Sonnet and 0.200 on GPT-4o-mini. For GPT-4o-mini, showing the earlier statement alone matches standard shared memory. MMR is zero across these models and versions. The effect of adding the marker and warning varies by model.
+The earlier-statement marker paired with a warning reaches FE$_\text{t}=0$ on Haiku and Sonnet and 0.200 on GPT-4o-mini. For GPT-4o-mini, the earlier-statement marker alone matches standard shared memory. MMR is zero across these models and versions. The effect of adding the marker and warning varies by model.
 
 % ============================================================
 \section{Evidence Card Example}

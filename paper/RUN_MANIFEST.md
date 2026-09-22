@@ -44,7 +44,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
 | `tab:neutral_boundaries` | Same-prompt results across models and familiar-science topics | **verified** | 360 |  |
 | `tab:neutral_core_categories` | Same-prompt results for the main 18-task evaluation | **verified** | 648 |  |
 | `tab:neutral_open_ego` | Same-prompt ego-depletion results for three additional models | **verified** | 108 |  |
-| `tab:neutral_claude_scitat` | Same-prompt results on two SciTaT items for Sonnet and Opus | **verified** | 144 |  |
+| `tab:neutral_claude_scitat` | Same-prompt results on two SciTaT items for Haiku, Sonnet, and Opus | **verified** | 216 |  |
 | `tab:neutral_open_multitask_summary` | Six-task neutral-agent summary for three additional models | **verified** | 648 |  |
 | `tab:neutral_open_multitask` | Per-task neutral-agent results for three additional models | **verified** | 648 |  |
 | `tab:neutral_scitat_expanded` | Same-prompt Haiku results on 18 selected SciTaT items | **verified** | 648 |  |
@@ -920,64 +920,94 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - Integrity checks: 7/7 passed.
   - `part2_neutral_fairness_crossmodel_chat_v2` with `{"condition_id": "chat_fully_connected_no_early_stop", "roster_contains": "mistral8b"}` selects 12 runs.
 
-### tab:neutral_claude_scitat: Same-prompt results on two SciTaT items for Sonnet and Opus
+### tab:neutral_claude_scitat: Same-prompt results on two SciTaT items for Haiku, Sonnet, and Opus
 
-- **Sonnet 4.6 SciTaT 1512 shared** — verified; 12 exact runs.
+- **Haiku 4.5 SciTaT-A shared** — verified; 12 exact runs.
+  - `PASS` n: paper `12`, recomputed `12`.
+  - `PASS` fe_t: paper `1.0`, recomputed `1.0`.
+  - Integrity checks: 7/7 passed.
+  - `part2_neutral_scitat_expanded_memory_v3_s2` with `{"condition_id": "shared_memory_no_correction", "scenario_contains": "1512_01642"}` selects 12 runs.
+- **Haiku 4.5 SciTaT-A personal** — verified; 12 exact runs.
+  - `PASS` n: paper `12`, recomputed `12`.
+  - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
+  - Integrity checks: 7/7 passed.
+  - `part2_neutral_scitat_expanded_memory_v3_s2` with `{"condition_id": "personal_memory_no_correction", "scenario_contains": "1512_01642"}` selects 12 runs.
+- **Haiku 4.5 SciTaT-A debate** — verified; 12 exact runs.
+  - `PASS` n: paper `12`, recomputed `12`.
+  - `PASS` fe_t: paper `0.125`, recomputed `0.125`.
+  - Integrity checks: 7/7 passed.
+  - `part2_neutral_scitat_expanded_chat_v3_s2` with `{"condition_id": "chat_fully_connected_no_early_stop", "scenario_contains": "1512_01642"}` selects 12 runs.
+- **Haiku 4.5 SciTaT-B shared** — verified; 12 exact runs.
+  - `PASS` n: paper `12`, recomputed `12`.
+  - `PASS` fe_t: paper `0.625`, recomputed `0.625`.
+  - Integrity checks: 7/7 passed.
+  - `part2_neutral_scitat_expanded_memory_v3_s6` with `{"condition_id": "shared_memory_no_correction", "scenario_contains": "math_0012242"}` selects 12 runs.
+- **Haiku 4.5 SciTaT-B personal** — verified; 12 exact runs.
+  - `PASS` n: paper `12`, recomputed `12`.
+  - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
+  - Integrity checks: 7/7 passed.
+  - `part2_neutral_scitat_expanded_memory_v3_s6` with `{"condition_id": "personal_memory_no_correction", "scenario_contains": "math_0012242"}` selects 12 runs.
+- **Haiku 4.5 SciTaT-B debate** — verified; 12 exact runs.
+  - `PASS` n: paper `12`, recomputed `12`.
+  - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
+  - Integrity checks: 7/7 passed.
+  - `part2_neutral_scitat_expanded_chat_v3_s6` with `{"condition_id": "chat_fully_connected_no_early_stop", "scenario_contains": "math_0012242"}` selects 12 runs.
+- **Sonnet 4.6 SciTaT-A shared** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `1.0`, recomputed `1.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "shared_memory_no_correction", "roster_contains": "sonnet", "scenario_contains": "1512_01642"}` selects 12 runs.
-- **Sonnet 4.6 SciTaT 1512 personal** — verified; 12 exact runs.
+- **Sonnet 4.6 SciTaT-A personal** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "personal_memory_no_correction", "roster_contains": "sonnet", "scenario_contains": "1512_01642"}` selects 12 runs.
-- **Sonnet 4.6 SciTaT 1512 debate** — verified; 12 exact runs.
+- **Sonnet 4.6 SciTaT-A debate** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_chat_v2` with `{"condition_id": "chat_fully_connected_no_early_stop", "roster_contains": "sonnet", "scenario_contains": "1512_01642"}` selects 12 runs.
-- **Sonnet 4.6 SciTaT math shared** — verified; 12 exact runs.
+- **Sonnet 4.6 SciTaT-B shared** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.625`, recomputed `0.625`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "shared_memory_no_correction", "roster_contains": "sonnet", "scenario_contains": "math_0012242"}` selects 12 runs.
-- **Sonnet 4.6 SciTaT math personal** — verified; 12 exact runs.
+- **Sonnet 4.6 SciTaT-B personal** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "personal_memory_no_correction", "roster_contains": "sonnet", "scenario_contains": "math_0012242"}` selects 12 runs.
-- **Sonnet 4.6 SciTaT math debate** — verified; 12 exact runs.
+- **Sonnet 4.6 SciTaT-B debate** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_chat_v2` with `{"condition_id": "chat_fully_connected_no_early_stop", "roster_contains": "sonnet", "scenario_contains": "math_0012242"}` selects 12 runs.
-- **Opus 4.6 SciTaT 1512 shared** — verified; 12 exact runs.
+- **Opus 4.6 SciTaT-A shared** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `1.0`, recomputed `1.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "shared_memory_no_correction", "roster_contains": "opus", "scenario_contains": "1512_01642"}` selects 12 runs.
-- **Opus 4.6 SciTaT 1512 personal** — verified; 12 exact runs.
+- **Opus 4.6 SciTaT-A personal** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "personal_memory_no_correction", "roster_contains": "opus", "scenario_contains": "1512_01642"}` selects 12 runs.
-- **Opus 4.6 SciTaT 1512 debate** — verified; 12 exact runs.
+- **Opus 4.6 SciTaT-A debate** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.625`, recomputed `0.625`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_chat_v2` with `{"condition_id": "chat_fully_connected_no_early_stop", "roster_contains": "opus", "scenario_contains": "1512_01642"}` selects 12 runs.
-- **Opus 4.6 SciTaT math shared** — verified; 12 exact runs.
+- **Opus 4.6 SciTaT-B shared** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.042`, recomputed `0.041666666666666664`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "shared_memory_no_correction", "roster_contains": "opus", "scenario_contains": "math_0012242"}` selects 12 runs.
-- **Opus 4.6 SciTaT math personal** — verified; 12 exact runs.
+- **Opus 4.6 SciTaT-B personal** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_crossmodel_weak_memory_v2` with `{"condition_id": "personal_memory_no_correction", "roster_contains": "opus", "scenario_contains": "math_0012242"}` selects 12 runs.
-- **Opus 4.6 SciTaT math debate** — verified; 12 exact runs.
+- **Opus 4.6 SciTaT-B debate** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1480,7 +1510,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` interventions: paper `0`, recomputed `0`.
   - Integrity checks: 7/7 passed.
   - `part2_neutral_defense_suite_v2` with `{"condition_id": "shared_independence_aware_no_correction"}` selects 12 runs.
-- **Earlier statement shown with warning** — verified; 12 exact runs.
+- **Earlier-statement marker + warning** — verified; 12 exact runs.
   - `PASS` n: paper `12`, recomputed `12`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - `PASS` ar: paper `1.0`, recomputed `1.0`.
@@ -1637,7 +1667,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.2`, recomputed `0.2`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction", "scenario_id": "blind_ego_depletion_v1"}` selects 5 runs.
-- **Ego depletion | Earlier statement shown with warning** — verified; 5 exact runs.
+- **Ego depletion | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1657,7 +1687,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.3`, recomputed `0.3`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction", "scenario_id": "blind_medical_pandas_dx_v1"}` selects 5 runs.
-- **PANDAS | Earlier statement shown with warning** — verified; 5 exact runs.
+- **PANDAS | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.4`, recomputed `0.4`.
   - Integrity checks: 7/7 passed.
@@ -1677,7 +1707,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction", "scenario_id": "blind_room_temp_superconductor_v1"}` selects 5 runs.
-- **LK-99 | Earlier statement shown with warning** — verified; 5 exact runs.
+- **LK-99 | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1697,7 +1727,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction", "scenario_id": "blind_stap_cells_v1"}` selects 5 runs.
-- **STAP | Earlier statement shown with warning** — verified; 5 exact runs.
+- **STAP | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1717,7 +1747,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction", "scenario_id": "blind_climate_attribution_v1"}` selects 5 runs.
-- **Climate | Earlier statement shown with warning** — verified; 5 exact runs.
+- **Climate | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1737,7 +1767,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction", "scenario_id": "blind_wakefield_mmr_autism_v1"}` selects 5 runs.
-- **MMR | Earlier statement shown with warning** — verified; 5 exact runs.
+- **MMR | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1757,7 +1787,7 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.083`, recomputed `0.08333333333333333`.
   - Integrity checks: 7/7 passed.
   - `provenance_defense_v1` with `{"condition_id": "shared_lineage_collapsed_no_correction"}` selects 30 runs.
-- **Overall | Earlier statement shown with warning** — verified; 30 exact runs.
+- **Overall | Earlier-statement marker + warning** — verified; 30 exact runs.
   - `PASS` n: paper `30`, recomputed `30`.
   - `PASS` fe_t: paper `0.067`, recomputed `0.06666666666666667`.
   - Integrity checks: 7/7 passed.
@@ -1770,12 +1800,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.5`, recomputed `0.5`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_id": "blind_ego_depletion_v1"}` selects 5 runs.
-- **Ego depletion | Earlier statement shown** — verified; 5 exact runs.
+- **Ego depletion | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.3`, recomputed `0.3`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_id": "blind_ego_depletion_v1"}` selects 5 runs.
-- **Ego depletion | Earlier statement shown with warning** — verified; 5 exact runs.
+- **Ego depletion | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1785,12 +1815,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.4`, recomputed `0.4`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_id": "blind_medical_pandas_dx_v1"}` selects 5 runs.
-- **PANDAS | Earlier statement shown** — verified; 5 exact runs.
+- **PANDAS | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.4`, recomputed `0.4`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_id": "blind_medical_pandas_dx_v1"}` selects 5 runs.
-- **PANDAS | Earlier statement shown with warning** — verified; 5 exact runs.
+- **PANDAS | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.4`, recomputed `0.4`.
   - Integrity checks: 7/7 passed.
@@ -1800,12 +1830,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.3`, recomputed `0.3`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_id": "blind_room_temp_superconductor_v1"}` selects 5 runs.
-- **LK-99 | Earlier statement shown** — verified; 5 exact runs.
+- **LK-99 | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.3`, recomputed `0.3`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_id": "blind_room_temp_superconductor_v1"}` selects 5 runs.
-- **LK-99 | Earlier statement shown with warning** — verified; 5 exact runs.
+- **LK-99 | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1815,12 +1845,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.1`, recomputed `0.1`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_id": "blind_stap_cells_v1"}` selects 5 runs.
-- **STAP | Earlier statement shown** — verified; 5 exact runs.
+- **STAP | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_id": "blind_stap_cells_v1"}` selects 5 runs.
-- **STAP | Earlier statement shown with warning** — verified; 5 exact runs.
+- **STAP | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1830,12 +1860,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_id": "blind_climate_attribution_v1"}` selects 5 runs.
-- **Climate | Earlier statement shown** — verified; 5 exact runs.
+- **Climate | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_id": "blind_climate_attribution_v1"}` selects 5 runs.
-- **Climate | Earlier statement shown with warning** — verified; 5 exact runs.
+- **Climate | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1845,12 +1875,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_id": "blind_wakefield_mmr_autism_v1"}` selects 5 runs.
-- **MMR | Earlier statement shown** — verified; 5 exact runs.
+- **MMR | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_id": "blind_wakefield_mmr_autism_v1"}` selects 5 runs.
-- **MMR | Earlier statement shown with warning** — verified; 5 exact runs.
+- **MMR | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1860,12 +1890,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.217`, recomputed `0.21666666666666667`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction"}` selects 30 runs.
-- **Overall | Earlier statement shown** — verified; 30 exact runs.
+- **Overall | Earlier-statement marker** — verified; 30 exact runs.
   - `PASS` n: paper `30`, recomputed `30`.
   - `PASS` fe_t: paper `0.167`, recomputed `0.16666666666666666`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction"}` selects 30 runs.
-- **Overall | Earlier statement shown with warning** — verified; 30 exact runs.
+- **Overall | Earlier-statement marker + warning** — verified; 30 exact runs.
   - `PASS` n: paper `30`, recomputed `30`.
   - `PASS` fe_t: paper `0.067`, recomputed `0.06666666666666667`.
   - Integrity checks: 7/7 passed.
@@ -1878,12 +1908,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.5`, recomputed `0.5`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_memory_no_correction", "scenario_contains": "ego_depletion"}` selects 5 runs.
-- **Haiku | Earlier statement shown** — verified; 5 exact runs.
+- **Haiku | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.3`, recomputed `0.3`.
   - Integrity checks: 7/7 passed.
   - `provenance_ablation_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "scenario_contains": "ego_depletion"}` selects 5 runs.
-- **Haiku | Earlier statement shown with warning** — verified; 5 exact runs.
+- **Haiku | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1893,12 +1923,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.5`, recomputed `0.5`.
   - Integrity checks: 7/7 passed.
   - `provenance_cross_model_v1` with `{"condition_id": "shared_memory_no_correction", "roster_contains": "sonnet", "scenario_contains": "ego_depletion"}` selects 5 runs.
-- **Sonnet | Earlier statement shown** — verified; 5 exact runs.
+- **Sonnet | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.3`, recomputed `0.3`.
   - Integrity checks: 7/7 passed.
   - `provenance_cross_model_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "roster_contains": "sonnet", "scenario_contains": "ego_depletion"}` selects 5 runs.
-- **Sonnet | Earlier statement shown with warning** — verified; 5 exact runs.
+- **Sonnet | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.0`, recomputed `0.0`.
   - Integrity checks: 7/7 passed.
@@ -1908,12 +1938,12 @@ A row is **verified** only when the stated selection returns exact run IDs, all 
   - `PASS` fe_t: paper `0.5`, recomputed `0.5`.
   - Integrity checks: 7/7 passed.
   - `provenance_cross_model_v1` with `{"condition_id": "shared_memory_no_correction", "roster_contains": "gpt4mini", "scenario_contains": "ego_depletion"}` selects 5 runs.
-- **GPT-4o-mini | Earlier statement shown** — verified; 5 exact runs.
+- **GPT-4o-mini | Earlier-statement marker** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.5`, recomputed `0.5`.
   - Integrity checks: 7/7 passed.
   - `provenance_cross_model_v1` with `{"condition_id": "shared_provenance_minimal_no_correction", "roster_contains": "gpt4mini", "scenario_contains": "ego_depletion"}` selects 5 runs.
-- **GPT-4o-mini | Earlier statement shown with warning** — verified; 5 exact runs.
+- **GPT-4o-mini | Earlier-statement marker + warning** — verified; 5 exact runs.
   - `PASS` n: paper `5`, recomputed `5`.
   - `PASS` fe_t: paper `0.2`, recomputed `0.2`.
   - Integrity checks: 7/7 passed.

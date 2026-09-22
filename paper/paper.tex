@@ -132,9 +132,9 @@ Experiment & Agents & Orders and runs \\
 \midrule
 Central protocol comparison & 4 liar, 2 neutral; Haiku & 12 balanced orders, 12 runs \\
 Initial-error comparisons & 6 agents; see Appendix F.1 & 10 runs/topic; 4 topics \\
-Group composition & 1--4 liar, remaining neutral; Haiku & 12 balanced orders, 3 repeats, 36 runs \\
-Peer visibility & 2--4 liar, remaining neutral; Haiku & 12 balanced orders, 3 repeats, 36 runs \\
-Save-uncertainty ablation & 3 liar, 3 neutral; Haiku & 12 balanced orders, 3 repeats, 36 runs \\
+Group composition & 1--4 liar, remaining neutral; Haiku & 12 balanced orders, 3 repetitions, 36 runs \\
+Peer visibility & 2--4 liar, remaining neutral; Haiku & 12 balanced orders, 3 repetitions, 36 runs \\
+Save-uncertainty ablation & 3 liar, 3 neutral; Haiku & 12 balanced orders, 3 repetitions, 36 runs \\
 Matched mitigations & 4 liar, 2 neutral; Haiku & 12 balanced orders, 12 runs \\
 Supporting specialist--social & 4 liar, 1 specialist, 1 social & Five-run memory comparisons rotate order; debate uses a fixed order \\
 \bottomrule
@@ -171,7 +171,7 @@ We begin with initial errors, then turn to the liar--neutral comparisons.
 \subsection{Supporting Evidence on Initial Errors}
 \label{sec:honest}
 
-In the September 4 initial-error comparison, \texttt{contamination\_1} starts wrong. All 40 personal-memory and 21 shared-memory false final answers belong to this agent. Across four questions, 40 of 240 final answers are wrong with personal memory (FE $=0.167$), 21 with shared memory (FE $=0.088$), and 3 when a correct external verification message is added (FE $=0.013$). The relative reduction is 47.5\%, but these supporting results do not distinguish correction of a revisable mistake from abandonment of persistence instructions: complete historical prompts are unavailable. These rates include all six agents.
+In the September 4 initial-error comparison, the initially wrong agent (released ID \texttt{contamination\_1}) starts wrong. All 40 personal-memory and 21 shared-memory false final answers belong to this agent. Across four questions, 40 of 240 final answers are wrong with personal memory (FE $=0.167$), 21 with shared memory (FE $=0.088$), and 3 when a correct external verification message is added (FE $=0.013$). The relative reduction is 47.5\%, but these supporting results do not distinguish correction of a revisable mistake from abandonment of persistence instructions: complete historical prompts are unavailable. These rates include all six agents.
 
 In the September 3 cohort with four agents initially wrong, a memory containing only the pieces of external evidence ends with 22 wrong answers out of 240 (FE $=0.092$). When the memory also contains the agents' changing judgments, only 1 of 240 answers remains wrong (FE $=0.004$). A later execution of the mixed-record condition ended with 40/240 false answers; Appendix~\ref{app:defense_preservation} reports the cohort and role-provenance differences. Appendix~\ref{app:amplifier} reports the 80 runs.
 
@@ -237,7 +237,7 @@ Liar agents & Neutral agents can read & \shortstack{False answers\\\% (count)} &
 
 The difference is concentrated at three liar agents. Hiding the other neutral agents' statements reduces false final answers from 89/108 to 73/108. Runs in which all three neutral agents give the false answer fall from 29 to 18, while runs with any false answer move only from 30 to 28. Access to neutral-agent statements therefore affects whether an existing error reaches the whole group more than whether the error first appears. Across an agent's turns, restricted shared memory returns an average of 11.38 liar-written entries per neutral agent, counting an entry again when it is retrieved on a later turn, compared with 9.24 under standard shared memory. Reduced retrieval of liar-written entries therefore cannot explain the decrease. At two and four liar agents, the two memory versions differ by at most two false final answers. Appendix~\ref{app:peer_visibility} gives a matched transcript comparison and the aggregate trace results.
 
-The standard-memory baseline at three liar agents is 89/108 here, 100/108 in the earlier group-composition experiment, and 64/108 in the later recording-rule experiment. Their recorded settings match, but their baseline spread exceeds the 16/108 visibility difference; the saved records do not establish its cause (Appendix Table~\ref{tab:baseline_cohort_audit}). We interpret each intervention against its own alongside baseline, not the cross-cohort differences. This visibility result applies to Claude Haiku 4.5 on this question. Appendix~\ref{app:peer_visibility} gives the matched traces, audit, and speaking-order results.
+The standard-memory baseline at three liar agents is 89/108 here, 100/108 in the earlier group-composition experiment, and 64/108 in the later recording-rule experiment. Their recorded settings match, but their baseline spread exceeds the 16/108 visibility difference; the saved records do not establish its cause (Appendix Table~\ref{tab:baseline_cohort_audit}). We interpret each intervention against its same-cohort baseline, not the cross-cohort differences. This visibility result applies to Claude Haiku 4.5 on this question. Appendix~\ref{app:peer_visibility} gives the matched traces, audit, and speaking-order results.
 
 \subsection{Question Dependence}
 
@@ -266,7 +266,7 @@ A supporting heterogeneous-model check with three liar and three neutral agents 
 
 The separate specialist--social experiment replaces two neutral agents with one specialist and one social agent. Averaging all six agents can conceal whose answers changed.
 
-With Sonnet and Opus, 46.7\% of all agents end debate supporting the false claim, but neither judging agent does. The endorsements come from liar agents, some of whom abandon their assigned answer. Ministral has a similar all-agent rate of 50.0\%, yet its specialist and social agents give the false answer in 60.0\% of responses. Debate lowers their false-answer rate for five models but raises Ministral's from 50.0\% to 60.0\%. Appendix Table~\ref{tab:app_crossmodel} gives all six models' FE, FE$_\text{t}$, and AR; Gemma's shared-memory-only result appears there too.
+With Sonnet and Opus, 46.7\% of all agents end debate supporting the false claim, but neither the specialist nor the social agent does. The endorsements come from liar agents, some of whom abandon their assigned answer. Ministral has a similar all-agent rate of 50.0\%, yet its specialist and social agents give the false answer in 60.0\% of responses. Debate lowers their false-answer rate for five models but raises Ministral's from 50.0\% to 60.0\%. Appendix Table~\ref{tab:app_crossmodel} gives all six models' FE, FE$_\text{t}$, and AR; Gemma's shared-memory-only result appears there too.
 
 We also test live debate while ensuring that every liar agent keeps endorsing the claim. After each model call, we replace that agent's public response with a fixed endorsement. FE$_\text{t}$ remains 0 for Haiku, Sonnet, and Opus across 12 speaking orders per model (Appendix Table~\ref{tab:enforced_debate}).
 
@@ -291,13 +291,13 @@ Early correction & 0.000 & 0/24 & 0/12 \\
 Late correction & 0.292 & 7/24 & 6/12 \\
 Fading old statements & 0.708 & 17/24 & 9/12 \\
 Answer counts with dependence warning & 0.000 & 0/24 & 0/12 \\
-Earlier statement shown with warning & 0.000 & 0/24 & 0/12 \\
+Earlier-statement marker + warning & 0.000 & 0/24 & 0/12 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Four changes reduce the 23 false answers in the standard condition to zero: the correct external verification message, an early correction, answer counts with a dependence warning, and showing which earlier statement was repeated together with a warning. A late correction leaves 7 false answers, and fading old statements leaves 17. The standard condition in this separately executed comparison has one more false answer than the central comparison, 23/24 rather than 22/24. Comparisons within Table~\ref{tab:neutral_defenses_main} use the same speaking orders. Appendix~\ref{app:neutral_defenses} describes how each version changes the record.
+Four changes reduce the 23 false answers in the standard condition to zero: the correct external verification message, an early correction, answer counts with a dependence warning, and an earlier-statement marker paired with a warning. A late correction leaves 7 false answers, and fading old statements leaves 17. The standard condition in this separately executed comparison has one more false answer than the central comparison, 23/24 rather than 22/24. Comparisons within Table~\ref{tab:neutral_defenses_main} use the same speaking orders. Appendix~\ref{app:neutral_defenses} describes how each version changes the record.
 
 The correct external verification message yields FE$_\text{t}=0$ for all five models tested on ego depletion, though it assumes access to a reliable verifier (25 runs, Appendix~\ref{app:crossmodel_mitigations}). We next switch to the separate specialist--social experiment. In a matched six-question Haiku comparison, FE$_\text{t}$ falls from 0.217 with standard shared memory to 0.167 when the memory shows which earlier statement was repeated, and to 0.067 when it also warns agents not to count repetitions as new evidence. The last comparison holds retrieval and statement markers fixed. With both changes, FE$_\text{t}$ reaches zero for Haiku and Sonnet and 0.200 for GPT-4o-mini on ego depletion, but remains 0.400 for Haiku on PANDAS (Appendix~\ref{app:provenance}). On a clean numerical task, the marker and warning lower FE$_\text{t}$ from 0.667 to 0.083 for Haiku and from 0.917 to 0.583 for Ministral. Only Haiku shows a clear added benefit from the warning beyond the marker (Appendix Table~\ref{tab:provenance_numerical}).
 
@@ -311,7 +311,7 @@ In a separate check across four scientific claims, the mixed record and the memo
 
 The central liar--neutral result is a protocol-level difference, not a storage-only effect; it survives controls for neutral instruction, enforced liar retention in debate, and speaking position. But it depends on prompt and task. Strong liar instructions produce false answers in 8/10 runs versus none with milder instructions, though other prompt values also change (Appendix Table~\ref{tab:app_confidence}). Haiku resists five GSM8K word problems yet gives 24/36 false responses when evaluating the proposed answer 4 for $6/3$; the prompts and group compositions differ. Missing source material on selected SciTaT questions and the judging model in a two-question Claude check also change the result (Appendix~\ref{app:heterogeneous_models}). In the September 3 initial-error cohort, adding agents' changing judgments to an evidence-only record reduces wrong answers from 22/240 to 1/240 (Appendix Table~\ref{tab:app_amplifier}). This within-cohort result shows correction alongside agent-written judgments; the later mixed-record baseline is 40/240, and historical role instructions are not fully recoverable (Appendix~\ref{app:defense_preservation}).
 
-Saving uncertain answers removes 64 false final responses but leaves 88/108 uncertain and lowers correct rejections from 30/108 to 20/108 (Appendix~\ref{app:uncertain_write_rule}). Hiding neutral-peer statements reduces complete false consensus in Haiku from 29 to 18 of 36 runs, while Llama, Ministral, and Gemma remain at ceiling in both conditions (Appendix~\ref{app:peer_visibility}). Visibility restriction is therefore not a general defense, and traces cannot reveal internal reasoning. The specialist--social results also require separating false answers from the specialist and social agents from liar-agent retention.
+Saving uncertain answers removes 64 false final responses but leaves 88/108 uncertain and lowers correct rejections from 30/108 to 20/108 (Appendix~\ref{app:uncertain_write_rule}). Hiding neutral-peer statements reduces complete false consensus in Haiku from 29 to 18 of 36 runs, while Llama, Ministral, and Gemma remain at ceiling in both conditions (Appendix~\ref{app:peer_visibility}). Visibility restriction is therefore not a general defense, and traces cannot reveal internal reasoning. The specialist--social results also require separating the specialist and social agents' false answers from liar-agent retention.
 
 Improving the record looks more promising than suppressing communication. Correct external verification stops false answers in five models on ego depletion. Marking repetition and warning against double-counting helps in some tests and leaves correction unchanged in a separate four-question initial-error comparison, though PANDAS remains an exception.
 

@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-EXPECTED_COUNTS = {"base": 5542, "late": 576, "open": 216, "single": 72, "total": 6406}
+EXPECTED_COUNTS = {"base": 5542, "late": 576, "open": 216, "single": 180, "total": 6514}
 SUPPLEMENTARY_CONFIGS = {
     "mixed_model_capability_pilot_v1": "experiments/mixed-model-capability-pilot-v1.json",
     "mixed_model_confirmatory_v2_stage1": "experiments/mixed-model-confirmatory-v2-stage1.json",
@@ -32,6 +32,9 @@ SUPPLEMENTARY_CONFIGS = {
     "single_peer_influence_haiku_v1": "experiments/single-peer-influence-haiku-v1.json",
     "single_peer_influence_sonnet_v1": "experiments/single-peer-influence-sonnet-v1.json",
     "single_peer_influence_opus_v1": "experiments/single-peer-influence-opus-v1.json",
+    "single_peer_content_haiku_v1": "experiments/single-peer-content-haiku-v1.json",
+    "single_peer_content_sonnet_v1": "experiments/single-peer-content-sonnet-v1.json",
+    "single_peer_content_opus_v1": "experiments/single-peer-content-opus-v1.json",
 }
 PAIR_PATTERN = re.compile(r"_(haiku|sonnet|opus)_to_(haiku|sonnet|opus)_(?:clustered|interleaved)_r\d+$")
 EXPECTED_HETEROGENEOUS = {
@@ -64,16 +67,31 @@ EXPECTED_DEFENSE = {
 }
 EXPECTED_SINGLE_PEER = {
     "single_peer_influence_haiku_v1": {
-        "scitat_1210_single_peer_endorsement_v1": (54, 4, 18, 0, 72),
-        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 72),
+        "scitat_1210_single_peer_endorsement_v1": (54, 4, 18, 0, 8, 0, 72),
+        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 12, 0, 72),
     },
     "single_peer_influence_sonnet_v1": {
-        "scitat_1210_single_peer_endorsement_v1": (0, 0, 72, 0, 72),
-        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 72),
+        "scitat_1210_single_peer_endorsement_v1": (0, 0, 72, 0, 12, 0, 72),
+        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 12, 0, 72),
     },
     "single_peer_influence_opus_v1": {
-        "scitat_1210_single_peer_endorsement_v1": (52, 12, 20, 0, 72),
-        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 72),
+        "scitat_1210_single_peer_endorsement_v1": (52, 12, 20, 0, 0, 0, 72),
+        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 12, 0, 72),
+    },
+    "single_peer_content_haiku_v1": {
+        "scitat_1210_single_peer_endorsement_v1": (52, 4, 20, 0, 8, 0, 72),
+        "scitat_1210_single_peer_correct_rejection_v1": (0, 0, 0, 72, 0, 12, 72),
+        "scitat_1210_single_peer_evidence_correction_v1": (0, 0, 0, 72, 0, 12, 72),
+    },
+    "single_peer_content_sonnet_v1": {
+        "scitat_1210_single_peer_endorsement_v1": (0, 0, 72, 0, 12, 0, 72),
+        "scitat_1210_single_peer_correct_rejection_v1": (0, 0, 1, 71, 1, 11, 72),
+        "scitat_1210_single_peer_evidence_correction_v1": (0, 0, 0, 72, 0, 12, 72),
+    },
+    "single_peer_content_opus_v1": {
+        "scitat_1210_single_peer_endorsement_v1": (59, 12, 13, 0, 0, 0, 72),
+        "scitat_1210_single_peer_correct_rejection_v1": (0, 0, 0, 72, 0, 12, 72),
+        "scitat_1210_single_peer_evidence_correction_v1": (0, 0, 0, 72, 0, 12, 72),
     },
 }
 
@@ -244,7 +262,7 @@ def recompute_open(repo: Path, manifest: dict, errors: list[str]) -> dict:
 def recompute_single_peer(repo: Path, manifest: dict, errors: list[str]) -> dict:
     aggregates = {}
     for cohort_name, cohort in manifest["cohorts"].items():
-        by_scenario = defaultdict(lambda: [0, 0, 0, 0, 0])
+        by_scenario = defaultdict(lambda: [0, 0, 0, 0, 0, 0, 0])
         for run in cohort["runs"]:
             trace_path = artifact_path(repo, run["trace_path"])
             with sqlite3.connect(trace_path) as connection:
@@ -263,6 +281,12 @@ def recompute_single_peer(repo: Path, manifest: dict, errors: list[str]) -> dict
                     "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6 AND stance='reject'"
                 ).fetchone()[0]
                 values[4] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index=1 AND stance='uncertain'"
+                ).fetchone()[0]
+                values[5] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index=1 AND stance='reject'"
+                ).fetchone()[0]
+                values[6] += connection.execute(
                     "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6"
                 ).fetchone()[0]
         actual = {key: tuple(value) for key, value in sorted(by_scenario.items())}
@@ -345,8 +369,8 @@ def main() -> int:
         all_ids.update(group)
 
     paper_text = (repo / "paper/paper.tex").read_text(encoding="utf-8") + (repo / "paper/appendix_results.tex").read_text(encoding="utf-8")
-    if "6,406" not in paper_text:
-        errors.append("paper no longer states the audited 6,406-run total")
+    if "6,514" not in paper_text:
+        errors.append("paper no longer states the audited 6,514-run total")
 
     dependency_count = check_config_dependencies(repo, errors)
     missing_summaries = 0

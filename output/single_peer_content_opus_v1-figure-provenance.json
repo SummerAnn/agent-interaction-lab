@@ -1,0 +1,164 @@
+{
+  "studyId": "single_peer_content_opus_v1",
+  "title": "Single recorded peer content on SciTaT, Opus",
+  "resultPath": "output/single_peer_content_opus_v1-grid-results.json",
+  "sourceManifestPath": null,
+  "requestedManifestPath": null,
+  "benchmarkMeta": {
+    "status": "confirmatory_extension",
+    "locked": true,
+    "notes": [
+      "Three-cell extension: a repeated false-endorsement anchor, an unsupported correct rejection, and an evidence-backed correction.",
+      "The source identity, record position, confidence, retrieval capacity, task, live-agent roles, 12 speaking orders, seed, and call budget are fixed.",
+      "All six live agents are neutral and answer once. The primary endpoint is the first exposed agent's stance in each run. All six responses are secondary.",
+      "The repeated endorsement cell checks for drift relative to the released single-peer experiment. The two correction cells are new.",
+      "Scenario order is rotated across models. The stopping rule was fixed before launch at 36 runs. No extension is triggered by interim results."
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "scitat_1210_single_peer_evidence_correction_v1",
+      "title": "SciTaT 1210.8343 with one prior evidence-backed correction",
+      "sourcePath": "scenarios/single-peer-influence-v1/scitat-1210-single-peer-evidence-correction-v1.yaml"
+    },
+    {
+      "id": "scitat_1210_single_peer_endorsement_v1",
+      "title": "SciTaT 1210.8343 with one prior neutral endorsement",
+      "sourcePath": "scenarios/single-peer-influence-v1/scitat-1210-single-peer-endorsement-v1.yaml"
+    },
+    {
+      "id": "scitat_1210_single_peer_correct_rejection_v1",
+      "title": "SciTaT 1210.8343 with one prior neutral correct rejection",
+      "sourcePath": "scenarios/single-peer-influence-v1/scitat-1210-single-peer-correct-rejection-v1.yaml"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "shared_memory_no_correction",
+      "title": "Shared community memory with no correction",
+      "sourcePath": "conditions/shared-memory-no-correction.yaml"
+    }
+  ],
+  "rosters": [
+    {
+      "id": "single_peer_influence_v1_opus_r1",
+      "title": "Single-peer influence opus roster r1 (forward cyclic 0)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r1.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r2",
+      "title": "Single-peer influence opus roster r2 (forward cyclic 1)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r2.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r3",
+      "title": "Single-peer influence opus roster r3 (forward cyclic 2)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r3.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r4",
+      "title": "Single-peer influence opus roster r4 (forward cyclic 3)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r4.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r5",
+      "title": "Single-peer influence opus roster r5 (forward cyclic 4)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r5.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r6",
+      "title": "Single-peer influence opus roster r6 (forward cyclic 5)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r6.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r7",
+      "title": "Single-peer influence opus roster r7 (reverse cyclic 0)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r7.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r8",
+      "title": "Single-peer influence opus roster r8 (reverse cyclic 1)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r8.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r9",
+      "title": "Single-peer influence opus roster r9 (reverse cyclic 2)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r9.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r10",
+      "title": "Single-peer influence opus roster r10 (reverse cyclic 3)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r10.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r11",
+      "title": "Single-peer influence opus roster r11 (reverse cyclic 4)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r11.json",
+      "agentCount": 6
+    },
+    {
+      "id": "single_peer_influence_v1_opus_r12",
+      "title": "Single-peer influence opus roster r12 (reverse cyclic 5)",
+      "sourcePath": "rosters/single-peer-influence-v1/opus/single_peer_influence_v1_opus_r12.json",
+      "agentCount": 6
+    }
+  ],
+  "metricCatalog": [
+    {
+      "key": "falseClaimEndorsementRate",
+      "title": "False claim endorsement rate",
+      "direction": "lower_is_better",
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "peakFalseClaimEndorsementRate",
+      "title": "Peak false claim endorsement rate",
+      "direction": "lower_is_better",
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "distanceFromGroundTruth",
+      "title": "Distance from ground truth",
+      "direction": "lower_is_better",
+      "bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "recoveryAfterCorrection",
+      "title": "Recovery after correction",
+      "direction": "higher_is_better",
+      "bounds": [
+        -1,
+        1
+      ]
+    },
+    {
+      "key": "diversityRetention",
+      "title": "Diversity retention",
+      "direction": "higher_is_better",
+      "bounds": [
+        0,
+        1
+      ]
+    }
+  ],
+  "generatedAt": "2026-09-23T06:31:45.680Z"
+}

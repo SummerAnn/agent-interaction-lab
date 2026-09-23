@@ -137,12 +137,12 @@ superseded files may be present in a checkout; they are not part of the reported
 denominators. Start with the manifest for a table instead of counting all files
 under `output/`.
 
-The paper's 6,406 claimed runs are divided into four non-overlapping manifests:
+The paper's 6,514 claimed runs are divided into four non-overlapping manifests:
 
 - `paper/run_manifest.json`: 5,542 runs used by the base table calculator
 - `paper/new_appendix_run_manifest.json`: 576 late-appendix runs
 - `paper/open_model_visibility_manifest.json`: 216 open-model replication runs
-- `paper/single_peer_influence_manifest.json`: 72 single-entry causal-test runs
+- `paper/single_peer_influence_manifest.json`: 180 single-entry causal-test runs
 
 The appendix model-by-task coverage table lists the three-protocol liar--neutral comparisons. A dash means that comparison was not run, not that its false-answer rate was zero. Gemma appears only in supporting experiments. The Haiku peer-visibility result does not reproduce as a useful restriction in the three tested open models; it is a mechanism test in one setting, not a general mitigation. The save-uncertain-answers write-rule ablation has not been repeated across models.
 
@@ -159,7 +159,7 @@ npm run verify:release
 ```
 
 Full mode rebuilds the base table manifest, independently recomputes the late
-appendix aggregates, verifies all 6,406 summary and trace checksums, runs SQLite
+appendix aggregates, verifies all 6,514 summary and trace checksums, runs SQLite
 integrity checks, checks completion and call counts, and validates the released
 experiment dependencies. The durable report is written to
 `analysis/release_audit.md` and `analysis/release_audit.json`.
@@ -183,7 +183,7 @@ The generated table-to-run manifest is the exact source for every reported cohor
 | Honest mistakes | `rerun-distributed-evidence-v3.json` + `amplifier-majority-wrong-haiku-v1.json` | Revisable errors and record formats |
 | Save uncertain answers | See `paper/new_appendix_run_manifest.json` (Appendix F.10) | Matched recording-rule ablation and its uncertainty trade-off |
 | Open-model peer visibility | See `paper/open_model_visibility_manifest.json` | Llama, Ministral, and Gemma replications of the restricted-memory test |
-| Single recorded endorsement | See `paper/single_peer_influence_manifest.json` | All-neutral Haiku, Sonnet, and Opus comparison with one endorsement or uncertain entry |
+| Single recorded entry | See `paper/single_peer_influence_manifest.json` | All-neutral Haiku, Sonnet, and Opus comparisons with one endorsement, uncertain entry, correct rejection, or evidence-backed correction |
 
 To replicate a specific result, run the corresponding experiment config through the grid runner:
 

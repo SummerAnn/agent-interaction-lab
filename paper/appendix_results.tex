@@ -3,7 +3,7 @@
 % Real agent traces pulled from SQLite databases
 
 \noindent\textbf{Appendix guide.}
-Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results and shows how the neutral agents' answers change over time. Appendices~\ref{app:neutral_defenses}--\ref{app:peer_visibility} report the mitigation experiments, the group-composition experiment, and the experiment that hides statements written by other neutral agents. Appendix~\ref{app:heterogeneous_models} gives a supporting check with different models in the liar and neutral roles. Appendix~\ref{app:provenance} reports the memory changes that identify repeated statements. Appendix~\ref{app:defense_preservation} tests whether that change preserves helpful correction. Appendix~\ref{app:uncertain_write_rule} tests the rule for saving uncertain answers. Appendix~\ref{app:scale} links every reported table to its run IDs and checksums.
+Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results and shows how the neutral agents' answers change over time. Appendices~\ref{app:neutral_defenses}--\ref{app:peer_visibility} report the mitigation experiments, the group-composition experiment, and the experiment that hides statements written by other neutral agents. Appendix~\ref{app:single_peer_entry} tests the effect of one entry before any live agent responds. Appendix~\ref{app:heterogeneous_models} gives a supporting check with different models in the liar and neutral roles. Appendix~\ref{app:provenance} reports the memory changes that identify repeated statements. Appendix~\ref{app:defense_preservation} tests whether that change preserves helpful correction. Appendix~\ref{app:uncertain_write_rule} tests the rule for saving uncertain answers. Appendix~\ref{app:scale} links every reported table to its run IDs and checksums.
 
 % ============================================================
 \section{Metric Definitions}
@@ -1202,46 +1202,60 @@ Haiku mechanism result and show that restricted shared memory is not a general
 defense. Exact run IDs and SHA-256 checksums are listed in the released
 open-model visibility manifest.
 
-\subsection{A single recorded endorsement}
+\subsection{The content of one recorded statement}
 \label{app:single_peer_entry}
 
-We test the effect of one recorded peer statement before any live agent responds.
-The shared record begins with one entry attributed to the same prior neutral agent.
-The endorsement version supports the false answer of 9.0\%. The control entry says
-that the answer cannot be verified without the missing source table. The source ID,
-confidence of 0.80, record position, task, agent instructions, and model-call budget
-remain fixed.
+We use the missing-source SciTaT item 1210.8343v1-q1 to test one recorded peer
+statement before any live agent responds. The first experiment compares a false
+endorsement of 9.0\% with an uncertain entry that says the answer cannot be verified
+without the source table. A second experiment repeats the false endorsement and adds
+two correct entries. One rejects 9.0\% and gives the answer as 4.5\%. The other also
+shows the subtraction from the two values in the missing table. The source ID,
+confidence of 0.80, record position, task, live-agent instructions, and model-call
+budget remain fixed. Scenario order is rotated across models in the second experiment.
 
 Each run contains six neutral agents, and each agent responds once. Every agent
 retrieves the initial entry. The first speaker therefore responds before any live
 agent can write back to the record. We use 12 speaking orders for Claude Haiku 4.5,
-Claude Sonnet 4.6, and Claude Opus 4.6. All 72 runs complete six model calls.
+Claude Sonnet 4.6, and Claude Opus 4.6. All 180 runs complete six model calls.
 
 \begin{table}[H]
-\caption{Effect of one recorded false endorsement on an all-neutral group. Counts include one response from each of six agents in 12 runs per cell. The first-speaker columns measure the response before any live-agent write-back.}
+\caption{Responses to one recorded statement in an all-neutral group. Each cell contains 12 runs. E, U, and R denote endorsement of the false answer, uncertainty, and correct rejection. First-response counts are measured before any live-agent write-back. The endorsement anchor and two correction cells come from the second experiment. The uncertainty control comes from the first.}
 \label{tab:single_peer_entry}
 \begin{center}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{lcccc}
+\begin{tabular}{llcc}
 \toprule
-Model & \shortstack{False responses after\\endorsement entry} & \shortstack{False responses after\\uncertain entry} & \shortstack{First speaker false after\\endorsement entry} & \shortstack{First speaker false after\\uncertain entry} \\
+Model & Initial entry & \shortstack{First response\\E/U/R} & \shortstack{All responses\\E/U/R} \\
 \midrule
-Claude Haiku 4.5 & 54/72 & 0/72 & 4/12 & 0/12 \\
-Claude Sonnet 4.6 & 0/72 & 0/72 & 0/12 & 0/12 \\
-Claude Opus 4.6 & 52/72 & 0/72 & 12/12 & 0/12 \\
+Claude Haiku 4.5 & False endorsement & 4/8/0 & 52/20/0 \\
+ & Uncertainty & 0/12/0 & 0/72/0 \\
+ & Correct rejection & 0/0/12 & 0/0/72 \\
+ & Evidence-backed correction & 0/0/12 & 0/0/72 \\
+\midrule
+Claude Sonnet 4.6 & False endorsement & 0/12/0 & 0/72/0 \\
+ & Uncertainty & 0/12/0 & 0/72/0 \\
+ & Correct rejection & 0/1/11 & 0/1/71 \\
+ & Evidence-backed correction & 0/0/12 & 0/0/72 \\
+\midrule
+Claude Opus 4.6 & False endorsement & 12/0/0 & 59/13/0 \\
+ & Uncertainty & 0/12/0 & 0/72/0 \\
+ & Correct rejection & 0/0/12 & 0/0/72 \\
+ & Evidence-backed correction & 0/0/12 & 0/0/72 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Every Haiku and Opus endorsement run contains at least one false answer, while
-none of their uncertain-entry controls does. Sonnet remains uncertain in every
-response under both entries. The first-speaker results show that one recorded
-endorsement can change an answer without a chain of live-agent endorsements.
-The totals from the remaining five speakers also include any later influence from
-statements written during the run, so they do not isolate each additional step of
-propagation.
+The repeated endorsement anchor reproduces the original first-speaker counts for
+all three models. Across all six responses, the original and repeated endorsement
+counts are 54 and 52 for Haiku, 0 and 0 for Sonnet, and 52 and 59 for Opus. Haiku
+and Opus follow the direction of the recorded judgment. Sonnet stays uncertain
+after a false endorsement but rejects the false answer after a correct entry. The
+numerical evidence resolves its one remaining uncertain first response. Responses
+from the other five speakers can also reflect statements written during the run.
+Only the first response isolates the initial entry.
 
 % ============================================================
 \section{Heterogeneous-Model Groups}
@@ -1509,4 +1523,4 @@ Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR
 \label{app:scale}
 % ============================================================
 
-The manifests, not filesystem totals, define the paper's evidence. \texttt{paper/run\_manifest.json} indexes 5,542 original runs. \texttt{paper/new\_appendix\_run\_manifest.json} indexes 576 late runs used in Table~\ref{tab:heterogeneous_models}, Appendix~\ref{app:uncertain_write_rule}, and Table~\ref{tab:provenance_numerical}. \texttt{paper/open\_model\_visibility\_manifest.json} indexes 216 model-only visibility runs. \texttt{paper/single\_peer\_influence\_manifest.json} indexes the 72 single-entry runs in Table~\ref{tab:single_peer_entry}. Together they contain 6,406 runs. Markdown counterparts provide readable indexes. Entries give run IDs, paths, SHA-256 checksums, call-count checks, and rates recomputed from SQLite. These checks keep overwritten summaries or duplicate records from changing a denominator.
+The manifests, not filesystem totals, define the paper's evidence. \texttt{paper/run\_manifest.json} indexes 5,542 original runs. \texttt{paper/new\_appendix\_run\_manifest.json} indexes 576 late runs used in Table~\ref{tab:heterogeneous_models}, Appendix~\ref{app:uncertain_write_rule}, and Table~\ref{tab:provenance_numerical}. \texttt{paper/open\_model\_visibility\_manifest.json} indexes 216 model-only visibility runs. \texttt{paper/single\_peer\_influence\_manifest.json} indexes the 180 single-entry runs in Table~\ref{tab:single_peer_entry}. Together they contain 6,514 runs. Markdown counterparts provide readable indexes. Entries give run IDs, paths, SHA-256 checksums, call-count checks, and rates recomputed from SQLite. These checks keep overwritten summaries or duplicate records from changing a denominator.

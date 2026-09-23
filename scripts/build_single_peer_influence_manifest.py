@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the manifest for the single-recorded-endorsement experiment."""
+"""Build the manifest for the single-recorded-entry experiments."""
 
 from __future__ import annotations
 
@@ -10,14 +10,34 @@ import sqlite3
 from pathlib import Path
 
 
-EXPERIMENTS = {
-    "Claude Haiku 4.5": "single_peer_influence_haiku_v1",
-    "Claude Sonnet 4.6": "single_peer_influence_sonnet_v1",
-    "Claude Opus 4.6": "single_peer_influence_opus_v1",
-}
-SCENARIOS = (
-    "scitat_1210_single_peer_endorsement_v1",
-    "scitat_1210_single_peer_uncertainty_v1",
+EXPERIMENTS = (
+    ("Claude Haiku 4.5", "single_peer_influence_haiku_v1", (
+        "scitat_1210_single_peer_endorsement_v1",
+        "scitat_1210_single_peer_uncertainty_v1",
+    )),
+    ("Claude Sonnet 4.6", "single_peer_influence_sonnet_v1", (
+        "scitat_1210_single_peer_endorsement_v1",
+        "scitat_1210_single_peer_uncertainty_v1",
+    )),
+    ("Claude Opus 4.6", "single_peer_influence_opus_v1", (
+        "scitat_1210_single_peer_endorsement_v1",
+        "scitat_1210_single_peer_uncertainty_v1",
+    )),
+    ("Claude Haiku 4.5", "single_peer_content_haiku_v1", (
+        "scitat_1210_single_peer_endorsement_v1",
+        "scitat_1210_single_peer_correct_rejection_v1",
+        "scitat_1210_single_peer_evidence_correction_v1",
+    )),
+    ("Claude Sonnet 4.6", "single_peer_content_sonnet_v1", (
+        "scitat_1210_single_peer_correct_rejection_v1",
+        "scitat_1210_single_peer_evidence_correction_v1",
+        "scitat_1210_single_peer_endorsement_v1",
+    )),
+    ("Claude Opus 4.6", "single_peer_content_opus_v1", (
+        "scitat_1210_single_peer_evidence_correction_v1",
+        "scitat_1210_single_peer_endorsement_v1",
+        "scitat_1210_single_peer_correct_rejection_v1",
+    )),
 )
 CONDITION = "shared_memory_no_correction"
 SEED_ENTRY_ID = "seed_prior_neutral_1"
@@ -62,6 +82,12 @@ def trace_counts(path: Path, run_id: str) -> dict[str, int]:
         reject_total = connection.execute(
             "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6 AND stance='reject'"
         ).fetchone()[0]
+        uncertain_first = connection.execute(
+            "SELECT COUNT(*) FROM agent_claim_states WHERE step_index=1 AND stance='uncertain'"
+        ).fetchone()[0]
+        reject_first = connection.execute(
+            "SELECT COUNT(*) FROM agent_claim_states WHERE step_index=1 AND stance='reject'"
+        ).fetchone()[0]
     if completed != 1:
         raise RuntimeError(f"Expected one completed trace record for {run_id}")
     expected = {"calls": 6, "seed_entries": 1, "seed_retrievals": 6, "states": 6}
@@ -79,6 +105,8 @@ def trace_counts(path: Path, run_id: str) -> dict[str, int]:
         "first_speaker_false": false_first,
         "uncertain_responses": uncertain_total,
         "reject_responses": reject_total,
+        "first_speaker_uncertain": uncertain_first,
+        "first_speaker_reject": reject_first,
     }
 
 
@@ -92,7 +120,7 @@ def main() -> int:
 
     cohorts: dict[str, object] = {}
     all_run_ids: set[str] = set()
-    for model, experiment_id in EXPERIMENTS.items():
+    for model, experiment_id, scenarios in EXPERIMENTS:
         runs = []
         for directory in sorted(run_root.glob(f"{experiment_id}_*")):
             if not directory.is_dir():
@@ -102,7 +130,7 @@ def main() -> int:
             if not summary_path.is_file() or not trace_path.is_file():
                 continue
             summary = json.loads(summary_path.read_text(encoding="utf-8"))
-            if summary.get("scenarioId") not in SCENARIOS:
+            if summary.get("scenarioId") not in scenarios:
                 continue
             if summary.get("conditionId") != CONDITION:
                 continue
@@ -124,6 +152,8 @@ def main() -> int:
                     "first_speaker_false": counts["first_speaker_false"],
                     "uncertain_responses": counts["uncertain_responses"],
                     "reject_responses": counts["reject_responses"],
+                    "first_speaker_uncertain": counts["first_speaker_uncertain"],
+                    "first_speaker_reject": counts["first_speaker_reject"],
                     "summary_path": f"{run_id}/summary.json",
                     "summary_sha256": sha256(summary_path),
                     "trace_path": f"{run_id}/trace.db",
@@ -132,10 +162,11 @@ def main() -> int:
                 }
             )
 
-        if len(runs) != 24:
-            raise RuntimeError(f"Expected 24 runs for {model}, found {len(runs)}")
+        expected_runs = 12 * len(scenarios)
+        if len(runs) != expected_runs:
+            raise RuntimeError(f"Expected {expected_runs} runs for {experiment_id}, found {len(runs)}")
         by_scenario = {}
-        for scenario in SCENARIOS:
+        for scenario in scenarios:
             selected = [run for run in runs if run["scenario_id"] == scenario]
             if len(selected) != 12:
                 raise RuntimeError(f"Expected 12 {scenario} runs for {model}")
@@ -146,11 +177,13 @@ def main() -> int:
                 "first_speaker_false_count": sum(run["first_speaker_false"] for run in selected),
                 "uncertain_response_count": sum(run["uncertain_responses"] for run in selected),
                 "reject_response_count": sum(run["reject_responses"] for run in selected),
+                "first_speaker_uncertain_count": sum(run["first_speaker_uncertain"] for run in selected),
+                "first_speaker_reject_count": sum(run["first_speaker_reject"] for run in selected),
                 "runs_with_any_false_response": sum(run["false_responses"] > 0 for run in selected),
             }
         cohorts[experiment_id] = {
             "model": model,
-            "run_count": 24,
+            "run_count": expected_runs,
             "all_completed": True,
             "all_have_6_model_calls": True,
             "all_retrieve_seed_entry": True,
@@ -160,7 +193,7 @@ def main() -> int:
 
     manifest = {
         "schema_version": 1,
-        "purpose": "Exact run IDs and checksums for the all-neutral single-recorded-endorsement comparison.",
+        "purpose": "Exact run IDs and checksums for the all-neutral single-recorded-entry comparisons.",
         "unique_run_count": len(all_run_ids),
         "cohorts": cohorts,
     }
@@ -169,20 +202,27 @@ def main() -> int:
     json_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
     lines = [
-        "# Single recorded endorsement manifest",
+        "# Single recorded entry manifest",
         "",
         f"Unique completed runs: {len(all_run_ids)}",
         "",
-        "| Model | Initial entry | Runs | False responses | First-speaker false responses |",
+        "| Model | Initial entry | Runs | All responses E/U/R | First response E/U/R |",
         "|---|---|---:|---:|---:|",
     ]
     for cohort in cohorts.values():
         for scenario, values in cohort["scenarios"].items():
-            entry = "endorsement" if "endorsement" in scenario else "uncertainty"
+            if "evidence_correction" in scenario:
+                entry = "evidence-backed correction"
+            elif "correct_rejection" in scenario:
+                entry = "correct rejection"
+            elif "endorsement" in scenario:
+                entry = "endorsement repeat" if "content" in cohort.get("runs", [{}])[0].get("run_id", "") else "endorsement original"
+            else:
+                entry = "uncertainty"
             lines.append(
                 f"| {cohort['model']} | {entry} | 12 | "
-                f"{values['false_response_count']}/72 | "
-                f"{values['first_speaker_false_count']}/12 |"
+                f"{values['false_response_count']}/{values['uncertain_response_count']}/{values['reject_response_count']} | "
+                f"{values['first_speaker_false_count']}/{values['first_speaker_uncertain_count']}/{values['first_speaker_reject_count']} |"
             )
     lines.extend(["", "The JSON companion contains every run ID and SHA-256 checksum.", ""])
     (output_dir / "SINGLE_PEER_INFLUENCE_MANIFEST.md").write_text(

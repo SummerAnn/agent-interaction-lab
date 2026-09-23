@@ -1,0 +1,38 @@
+{
+  "id": "single_peer_content_haiku_v1",
+  "title": "Single recorded peer content on SciTaT, Haiku",
+  "benchmarkMeta": {
+    "status": "confirmatory_extension",
+    "locked": true,
+    "notes": [
+      "Three-cell extension: a repeated false-endorsement anchor, an unsupported correct rejection, and an evidence-backed correction.",
+      "The source identity, record position, confidence, retrieval capacity, task, live-agent roles, 12 speaking orders, seed, and call budget are fixed.",
+      "All six live agents are neutral and answer once. The primary endpoint is the first exposed agent's stance in each run. All six responses are secondary.",
+      "The repeated endorsement cell checks for drift relative to the released single-peer experiment. The two correction cells are new.",
+      "The stopping rule was fixed before launch at 36 runs. No extension is triggered by interim results."
+    ]
+  },
+  "scenarios": [
+    "scenarios/single-peer-influence-v1/scitat-1210-single-peer-endorsement-v1.yaml",
+    "scenarios/single-peer-influence-v1/scitat-1210-single-peer-correct-rejection-v1.yaml",
+    "scenarios/single-peer-influence-v1/scitat-1210-single-peer-evidence-correction-v1.yaml"
+  ],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/poisoned-record-v1/poisoned_record_v1_r1.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r2.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r3.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r4.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r5.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r6.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r7.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r8.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r9.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r10.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r11.json",
+    "rosters/poisoned-record-v1/poisoned_record_v1_r12.json"
+  ],
+  "maxSteps": 6,
+  "budget": {"maxModelCalls": 6, "maxOutputTokensPerCall": 512, "temperature": 0}
+}

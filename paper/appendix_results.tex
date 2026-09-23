@@ -3,7 +3,7 @@
 % Real agent traces pulled from SQLite databases
 
 \noindent\textbf{Appendix guide.}
-Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results and shows how the neutral agents' answers change over time. Appendices~\ref{app:neutral_defenses}--\ref{app:peer_visibility} report the mitigation experiments, the group-composition experiment, and the experiment that hides statements written by other neutral agents. Appendix~\ref{app:single_peer_entry} tests the effect of one entry before any live agent responds. Appendix~\ref{app:heterogeneous_models} gives a supporting check with different models in the liar and neutral roles. Appendix~\ref{app:provenance} reports the memory changes that identify repeated statements. Appendix~\ref{app:defense_preservation} tests whether that change preserves helpful correction. Appendix~\ref{app:uncertain_write_rule} tests the rule for saving uncertain answers. Appendix~\ref{app:scale} links every reported table to its run IDs and checksums.
+Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results and shows how the neutral agents' answers change over time. Appendices~\ref{app:neutral_defenses}--\ref{app:peer_visibility} report the mitigation, group-composition, and peer-visibility experiments. Appendix~\ref{app:single_peer_entry}, within Appendix~\ref{app:peer_visibility}, tests the effect of one entry before any live agent responds. Appendix~\ref{app:heterogeneous_models} gives a supporting check with different models in the liar and neutral roles. Appendix~\ref{app:provenance} reports the memory changes that identify repeated statements. Appendix~\ref{app:defense_preservation} tests whether that change preserves helpful correction. Appendix~\ref{app:uncertain_write_rule} tests the rule for saving uncertain answers. Appendix~\ref{app:scale} links every reported table to its run IDs and checksums.
 
 % ============================================================
 \section{Metric Definitions}
@@ -1435,13 +1435,14 @@ GPT-4o-mini & 0.500 & 0.500 & 0.200 \\
 The earlier-statement marker paired with a warning reaches FE$_\text{t}=0$ on Haiku and Sonnet and 0.200 on GPT-4o-mini. For GPT-4o-mini, the earlier-statement marker alone matches standard shared memory. MMR is zero across these models and versions. The effect of adding the marker and warning varies by model.
 
 % ============================================================
+\clearpage
 \section{Evidence Card Example}
 \label{app:evidence_example}
 % ============================================================
 
 The matched liar--neutral comparisons deliver none of these cards to agents. Distributed-evidence experiments deliver them according to their visibility rules. Otherwise, they remain task metadata. The table documents task construction, not the prompt content of every experiment.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \caption{Evidence cards in the ego-depletion task file. Effect values are directional. Positive supports the false claim, and negative supports rejection.}
 \label{tab:evidence_cards}
 \begin{center}

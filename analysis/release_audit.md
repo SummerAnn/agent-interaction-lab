@@ -1,6 +1,6 @@
 # Release verification
 
-Status: **PASS**
+Status: **FAIL**
 
 - Claimed runs: **6406**
 - Base-paper runs: **5542**
@@ -15,3 +15,18 @@ Status: **PASS**
 - Base table calculation issues: **0**
 
 The base manifest is rebuilt from the trace databases. Supplementary table counts are independently recomputed from released summaries, and full mode checks every released checksum and SQLite database.
+
+## Errors
+
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r1.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r2.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r3.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r4.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r5.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r6.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r7.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r8.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r9.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r10.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r11.json
+- missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r12.json

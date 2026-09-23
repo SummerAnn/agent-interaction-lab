@@ -1,0 +1,72 @@
+{
+  "id": "poisoned_record_v1_r1",
+  "title": "Poisoned record roster r1 (forward cyclic 0)",
+  "agents": [
+    {
+      "id": "analyst_1",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_2",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_3",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_4",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_5",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_6",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    }
+  ]
+}

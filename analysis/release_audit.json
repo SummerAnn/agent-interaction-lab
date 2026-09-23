@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T05:31:28.688769+00:00",
+  "generated_at": "2026-09-23T05:40:42.057379+00:00",
   "mode": "full",
-  "status": "PASS",
+  "status": "FAIL",
   "counts": {
     "claimed_total": 6406,
     "base": 5542,
@@ -218,5 +218,18 @@
       ]
     }
   },
-  "errors": []
+  "errors": [
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r1.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r2.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r3.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r4.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r5.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r6.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r7.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r8.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r9.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r10.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r11.json",
+    "missing dependency for experiments/single-peer-influence-haiku-v1.json: rosters/poisoned-record-v1/poisoned_record_v1_r12.json"
+  ]
 }

@@ -290,9 +290,9 @@ The released \texttt{run\_manifest.json} defines the runs in each table and \tex
 The initially wrong agent is \texttt{contamination\_1}. All 40 personal-memory and 21 shared-memory false final answers belong to that agent. The shared-memory row uses the released agent-judgment condition, not the evidence-plus-opinions mixed record in Appendix~\ref{app:amplifier}. These runs establish observed changes in answers, but not an all-revisable instruction design. Both early and later traces identify \texttt{contamination\_1} with the persistence role. The earliest archived prompt for that role instructs it to maintain its position and not waver, but the prompt postdates these cohorts, and the traces do not preserve the complete historical requests. We therefore cannot establish identical requests across cohorts or claim that no agent was instructed to persist.
 
 \begin{table}[htbp]
-\caption{Initial-error experiments averaged across four familiar-science topics, with 10 runs per topic and communication method or change (generally $n=40$ runs and 240 final agent answers per row), Claude Haiku 4.5. Initial-error exit means the initially wrong agent leaves before seeing counter-evidence. FE and recovery include all agents. The role-provenance caveat above applies.}
+\caption{Initial-error results across four familiar-science topics, with 10 runs per topic and generally 40 runs and 240 final answers per row. FE and recovery include all agents. The role-provenance caveat above applies.}
 \label{tab:app_honest}
-\begin{center}
+\centering
 \small
 \begin{tabular}{lccc}
 \toprule
@@ -312,7 +312,6 @@ Shared memory + exit & 40 & 0.158 & Not applicable \\
 Live debate + exit & 40 & 0.008 & Not applicable \\
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 Appendix~\ref{app:amplifier} reports the shared-memory experiments with an initially wrong majority separately because those agents start from different answers.
@@ -323,9 +322,9 @@ Appendix~\ref{app:amplifier} reports the shared-memory experiments with an initi
 This experiment varies how many agent turns occur before the liar agents leave.
 
 \begin{table}[htbp]
-\caption{Liar-agent exit timing. Shared memory, 4/6 liar agents, ego depletion, Claude Haiku 4.5, five runs for each exit time. This differs from initial-error exit in Table~\ref{tab:app_honest}, where the initially wrong agent leaves.}
+\caption{Liar-agent exit timing on ego depletion with Claude Haiku 4.5 and five runs per exit time. This differs from Table~\ref{tab:app_honest}, where the initially wrong agent leaves.}
 \label{tab:app_exit}
-\begin{center}
+\centering
 \small
 \begin{tabular}{lcccc}
 \toprule
@@ -338,7 +337,6 @@ After 12 agent turns & 5 & 0.800 & 4/5 (80\%) & 12 \\
 Never & 30 & 0.811 & 26/30 (87\%) & 18 \\
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 False answers are more frequent when liar agents remain longer in these five-run comparisons. Broader evidence would be needed to infer a universal turn threshold.
@@ -346,8 +344,12 @@ False answers are more frequent when liar agents remain longer in these five-run
 \subsection{Results by topic}
 \label{app:ambiguity}
 
-\begin{fixedtable}
-\caption{False endorsement by the specialist and social agents by topic in the specialist--social experiment. Shared memory, 4/6 liar agents, Claude Haiku 4.5 unless noted. The Haiku GSM-Hard row contains five problems with five runs each. The Llama row contains three problems with three runs each. The two rows are not matched. The SciTaT-A/B row contains five Haiku shared-memory runs per item.}
+Table~\ref{tab:app_ambiguity} compares topics in the specialist--social experiment. The familiar-science rows use five Haiku runs per topic. The Haiku GSM-Hard row contains five problems with five runs each, while the Llama row contains three problems with three runs each. These two rows are not matched. The SciTaT-A/B row contains five Haiku shared-memory runs per item.
+
+Across the six familiar-science topics, the fraction of runs with a false answer rises in 20-point steps from 0\% on MMR to 100\% on ego depletion. With five runs per topic, each additional affected run changes the percentage by 20 points. The specialist agent also endorsed the wrong answer in all 10 SciTaT runs at confidence 0.88.
+
+\begin{table}[H]
+\caption{False endorsement by the specialist and social agents by topic. Shared memory, 4/6 liar agents, and Claude Haiku 4.5 unless noted.}
 \label{tab:app_ambiguity}
 \begin{center}
 \small
@@ -371,9 +373,7 @@ SciTaT-A/B & 10/10 (100\%) & Yes (10/10) & Missing-source \\
 \bottomrule
 \end{tabular}
 \end{center}
-\end{fixedtable}
-
-Across the six familiar-science topics, the fraction of runs with a false answer rises in 20-point steps from 0\% on MMR to 100\% on ego depletion. With five runs per topic, each additional affected run changes the percentage by 20 points. The specialist agent also endorsed the wrong answer in all 10 SciTaT runs at confidence 0.88.
+\end{table}
 
 \subsection{Cross-model comparison}
 \label{app:crossmodel}

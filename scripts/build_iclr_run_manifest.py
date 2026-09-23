@@ -960,6 +960,7 @@ SUPPLEMENTARY_MANIFEST_LABELS = {
     "tab:heterogeneous_models": "new_appendix_run_manifest.json",
     "tab:peer_visibility_model_replication": "open_model_visibility_manifest.json",
     "tab:provenance_numerical": "new_appendix_run_manifest.json",
+    "tab:single_peer_entry": "single_peer_influence_manifest.json",
     "tab:uncertain_write_rule": "new_appendix_run_manifest.json",
 }
 

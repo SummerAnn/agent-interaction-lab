@@ -10,7 +10,7 @@ Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results an
 \label{app:metrics}
 % ============================================================
 
-This appendix uses four role names. A \emph{liar agent} is instructed to say that the false claim is true and to keep that answer throughout the run. In the matched comparisons, \emph{neutral agents} receive no answer to follow and judge the claim for themselves. In the supporting specialist--social experiment, a \emph{specialist agent} is told to look for scientific weaknesses, while a \emph{social agent} is told to rely more on the group. The initial-error experiments also contain a persistence-role agent; historical prompt limitations are described in Appendix~\ref{app:honest}. An \emph{evidence card} is a short excerpt from a published source that some experiments provide to agents. A \emph{memory entry} is a short statement saved by an agent after one turn. AR means assigned-role retention. Code names appear in \texttt{typewriter text} only when readers need them to match the paper to the released files.
+This appendix uses four role names. A \emph{liar agent} is instructed to say that the false claim is true and to keep that answer throughout the run. In the matched comparisons, \emph{neutral agents} receive no answer to follow and judge the claim for themselves. In the supporting specialist--social experiment, a \emph{specialist agent} is told to look for scientific weaknesses, while a \emph{social agent} is told to rely more on the group. The initial-error experiments also contain a persistence-role agent. Historical prompt limitations are described in Appendix~\ref{app:honest}. An \emph{evidence card} is a short excerpt from a published source that some experiments provide to agents. A \emph{memory entry} is a short statement saved by an agent after one turn. AR means assigned-role retention. Code names appear in \texttt{typewriter text} only when readers need them to match the paper to the released files.
 
 A \emph{run} is one completed execution with a specified task, communication method, group of agents, model, and speaking order. The \emph{speaking order} is the order in which agents respond, and a \emph{step} is one agent turn. In the one-claim experiments, one \emph{model call} produces the response for one agent turn. Tasks with several claims require one model call per claim during that turn. In some shared-memory and personal-memory experiments, the stored seed chooses the first speaker in a cyclic order. Six agents give at most six distinct rotations unless we supply an explicit order. Live debate uses the order in the agent file. Temperature 0 does not make repeated provider API calls identical. Final metrics use each agent's last recorded answer to the false claim. \texttt{Uncertain} is a distinct answer and never counts as endorsement.
 
@@ -64,7 +64,7 @@ The response audit first parses the requested JSON fields. If malformed reasonin
 \label{app:tasks}
 % ============================================================
 
-The 18-task summary contains six familiar-science questions, five GSM8K problems, five GSM-Hard problems, and two SciTaT calculations. Those two SciTaT items are drawn from the selected 18-item missing-source evaluation in Appendix~\ref{app:scitat_screen}; their runs appear in both summaries and are counted only once in the release total. Each task defines a false answer and the information needed to reject it. Poor performance without supplied material does not show that an item was absent from pretraining.
+The 18-task summary contains six familiar-science questions, five GSM8K problems, five GSM-Hard problems, and two SciTaT calculations. Those two SciTaT items are drawn from the selected 18-item missing-source evaluation in Appendix~\ref{app:scitat_screen}. Their runs appear in both summaries and are counted only once in the release total. Each task defines a false answer and the information needed to reject it. Poor performance without supplied material does not show that an item was absent from pretraining.
 
 \subsection{Agent input and output}
 
@@ -103,7 +103,7 @@ GSM8K & ``The answer is \$30'' & The arithmetic gives $16-3-4=9$ and $9\times2=1
 \midrule
 GSM-Hard & An incorrect large-number result & The problem uses the GSM8K structure with much larger values. \\
 \midrule
-SciTaT & ``The difference is 1.09'' & The benchmark paragraph identifies the relevant methods, and its table gives $11.6\%-7.1\%=4.5\%$; the reported missing-source runs withhold both from agents. \\
+SciTaT & ``The difference is 1.09'' & The benchmark paragraph identifies the relevant methods, and its table gives $11.6\%-7.1\%=4.5\%$. The reported missing-source runs withhold both from agents. \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -123,7 +123,7 @@ Each task has 3--5 claims, 3--6 evidence cards from published sources, and one f
 
 \textbf{PANDAS diagnosis.} The false claim is ``This patient's symptoms are PANDAS (pediatric autoimmune neuropsychiatric disorder associated with streptococcal infections).'' We use \citet{swedo1998} for the clinical description of PANDAS. The task presents four diagnoses and evidence favoring Tourette syndrome.
 
-\textbf{Ego depletion.} The false claim is ``Willpower operates like a depletable resource, as established by Baumeister et al.\ (1998)'' \citep{baumeister1998}. We score the full claim as false because the wording says that the original study established a depletable resource. A 23-lab preregistered replication found $d=0.04$ \citep{hagger2016}; a later 36-lab preregistered test found a nonsignificant confirmatory effect of $d=0.06$ \citep{vohs2021}; and a publication-bias analysis also questioned the evidence \citep{carter2014}. Whether a smaller depletion effect exists remains debated, but these results do not support the stronger ``as established'' wording. Our conclusions do not depend on this question alone: shared-memory differences also appear on tasks with uniquely scored answers, including SciTaT-A in the missing-source setting and the proposed answer 4 for $6/3$. We use ego depletion for the group-composition experiment, the experiment hiding other neutral-agent statements, and the matched mitigation experiments. The cross-question evaluations use the tasks below.
+\textbf{Ego depletion.} The false claim is ``Willpower operates like a depletable resource, as established by Baumeister et al.\ (1998)'' \citep{baumeister1998}. We score the full claim as false because the wording says that the original study established a depletable resource. A 23-lab preregistered replication found $d=0.04$ \citep{hagger2016}. A later 36-lab preregistered test found a nonsignificant confirmatory effect of $d=0.06$ \citep{vohs2021}. A publication-bias analysis also questioned the evidence \citep{carter2014}. Whether a smaller depletion effect exists remains debated, but these results do not support the stronger ``as established'' wording. Our conclusions do not depend on this question alone. Shared-memory differences also appear on tasks with uniquely scored answers, including SciTaT-A in the missing-source setting and the proposed answer 4 for $6/3$. We use ego depletion for the group-composition experiment, the experiment hiding other neutral-agent statements, and the matched mitigation experiments. The cross-question evaluations use the tasks below.
 
 \subsection{Verifiable math (GSM8K, 5 problems)}
 
@@ -135,7 +135,7 @@ GSM-Hard \citep{gsmhard} keeps the GSM8K problem structures but replaces the val
 
 \subsection{Scientific table calculations (SciTaT, 2 items)}
 
-SciTaT questions \citep{scitat2025} are normally answered from a paragraph and a data table: the paragraph identifies the methods or quantities, and the table provides the numbers. In the reported liar--neutral comparisons, those materials are withheld from the agents while the benchmark answer remains in the task file for scoring. The 18-task summary contains two items drawn from the selected 18-item SciTaT evaluation in Appendix~\ref{app:scitat_screen}; the two summaries therefore overlap.
+SciTaT questions \citep{scitat2025} are normally answered from a paragraph and a data table. The paragraph identifies the methods or quantities, and the table provides the numbers. In the reported liar--neutral comparisons, those materials are withheld from the agents while the benchmark answer remains in the task file for scoring. The 18-task summary contains two items drawn from the selected 18-item SciTaT evaluation in Appendix~\ref{app:scitat_screen}. The two summaries therefore overlap.
 
 % ============================================================
 \section{Communication Protocols and Shared-Memory Versions}
@@ -150,7 +150,7 @@ SciTaT questions \citep{scitat2025} are normally answered from a paragraph and a
 
 \textbf{Personal memory.} Each agent reads only its own prior entries. Agents cannot access other agents' responses.
 
-\textbf{Correct external verification message.} This change adds a message about the claim's truth to every agent judgment. For a false claim, the prompt says: ``A high-reliability external verification check says this claim is likely false.'' The message comes from the known answer in the task file. It does not label individual memory entries or force the agent's response. This experiment assumes access to a correct external verifier.
+\textbf{Correct external verification message.} This change adds a message about the claim's truth to every agent judgment. For a false claim, the prompt reads ``A high-reliability external verification check says this claim is likely false.'' The message comes from the known answer in the task file. It does not label individual memory entries or force the agent's response. This experiment assumes access to a correct external verifier.
 
 \subsection{Versions of shared memory}
 
@@ -164,7 +164,7 @@ These versions determine what appears when an agent reads shared memory.
 
 \textbf{Evidence-aware memory (\texttt{source\_aware}).} Evidence and opinions appear in separate labeled sections. Each agent's opinion appears at most once (the most recent). Agents can distinguish evidence from opinion.
 
-\textbf{Independence-aware memory (\texttt{independence\_aware}).} This version uses evidence-aware memory and adds an explicit warning in the prompt: ``These entries are not independent. Agents read each other's entries before writing. Unanimous agreement among non-independent readers is weaker evidence than it appears.'' It also includes a disagreement summary and tells agents to assess the evidence without counting opinions as independent support.
+\textbf{Independence-aware memory (\texttt{independence\_aware}).} This version uses evidence-aware memory and adds an explicit warning. The prompt reads ``These entries are not independent. Agents read each other's entries before writing. Unanimous agreement among non-independent readers is weaker evidence than it appears.'' It also includes a disagreement summary and tells agents to assess the evidence without counting opinions as independent support.
 
 Appendix~\ref{app:provenance} defines the shared-memory versions that show which earlier statements were repeated. The released manifest preserves their internal configuration IDs.
 
@@ -194,7 +194,7 @@ The specialist agent uses the same base model as every other agent in the run. I
 \subsection{Agent parameters}
 
 \begin{fixedtable}
-\caption{Numeric profiles used by the four liar agents in the central comparison and by the Claude Haiku 4.5 specialist--social group. The central comparison uses only the liar-agent column; the supporting group has four liar agents, one specialist agent, and one social agent. Its released roster uses the internal label \texttt{regular\_agent} for the social agent. The first five rows appear in the relevant LLM system prompts; the configured write threshold does not.}
+\caption{Numeric profiles used by the four liar agents in the central comparison and by the Claude Haiku 4.5 specialist--social group. The central comparison uses only the liar-agent column. The supporting group has four liar agents, one specialist agent, and one social agent. Its released roster uses the internal label \texttt{regular\_agent} for the social agent. The first five rows appear in the relevant LLM system prompts. The configured write threshold does not.}
 \label{tab:agent_params}
 \begin{center}
 \small
@@ -287,7 +287,7 @@ The released \texttt{run\_manifest.json} defines the runs in each table and \tex
 \subsection{Initial-error experiments}
 \label{app:honest}
 
-The initially wrong agent is \texttt{contamination\_1}; all 40 personal-memory and 21 shared-memory false final answers belong to that agent. The shared-memory row uses the released agent-judgment condition, not the evidence-plus-opinions mixed record in Appendix~\ref{app:amplifier}. These runs establish observed changes in answers, but not an all-revisable instruction design. Both early and later traces identify \texttt{contamination\_1} with the persistence role. The earliest archived prompt for that role instructs it to maintain its position and not waver, but the prompt postdates these cohorts, and the traces do not preserve the complete historical requests. We therefore cannot establish identical requests across cohorts or claim that no agent was instructed to persist.
+The initially wrong agent is \texttt{contamination\_1}. All 40 personal-memory and 21 shared-memory false final answers belong to that agent. The shared-memory row uses the released agent-judgment condition, not the evidence-plus-opinions mixed record in Appendix~\ref{app:amplifier}. These runs establish observed changes in answers, but not an all-revisable instruction design. Both early and later traces identify \texttt{contamination\_1} with the persistence role. The earliest archived prompt for that role instructs it to maintain its position and not waver, but the prompt postdates these cohorts, and the traces do not preserve the complete historical requests. We therefore cannot establish identical requests across cohorts or claim that no agent was instructed to persist.
 
 \begin{table}[htbp]
 \caption{Initial-error experiments averaged across four familiar-science topics, with 10 runs per topic and communication method or change (generally $n=40$ runs and 240 final agent answers per row), Claude Haiku 4.5. Initial-error exit means the initially wrong agent leaves before seeing counter-evidence. FE and recovery include all agents. The role-provenance caveat above applies.}
@@ -408,7 +408,7 @@ On MMR/autism, Llama reaches unanimous endorsement in 3/5 live-debate runs, with
 Table~\ref{tab:app_mitigations} collects changes to the record alongside correction, protocol, instruction, and model alternatives in the supporting specialist--social experiment.
 
 \begin{table}[H]
-\caption{Nine interventions and alternatives explored in the supporting specialist--social experiment. The rows span changes to memory, correction timing, communication method, agent instructions, and model choice; they do not form a single controlled intervention family. Unless noted, rows use ego depletion, 4/6 liar agents, Claude Haiku 4.5, and five runs. A false answer means that the specialist or social agent endorses, so FE$_\text{t}>0$. The earlier-statement marker with a repetition warning appears in Table~\ref{tab:provenance_defense}.}
+\caption{Nine interventions and alternatives explored in the supporting specialist--social experiment. The rows span changes to memory, correction timing, communication method, agent instructions, and model choice. They do not form a single controlled intervention family. Unless noted, rows use ego depletion, 4/6 liar agents, Claude Haiku 4.5, and five runs. A false answer means that the specialist or social agent endorses, so FE$_\text{t}>0$. The earlier-statement marker with a repetition warning appears in Table~\ref{tab:provenance_defense}.}
 \label{tab:app_mitigations}
 \begin{center}
 \footnotesize
@@ -452,7 +452,7 @@ Correct external verification message & 0/5 \\
 \end{center}
 \end{table}
 
-Table~\ref{tab:app_sonnet_mitigations} uses a separately executed cohort from Table~\ref{tab:app_crossmodel}; comparisons use its own standard shared-memory row. Correction and fading old entries vary across models. The correct external verification message gives 0/5 for both Haiku and Sonnet.
+Table~\ref{tab:app_sonnet_mitigations} uses a separately executed cohort from Table~\ref{tab:app_crossmodel}. Comparisons use its own standard shared-memory row. Correction and fading old entries vary across models. The correct external verification message gives 0/5 for both Haiku and Sonnet.
 
 \subsection{Confidence and persistence}
 \label{app:confidence}
@@ -501,7 +501,7 @@ False endorsement by the specialist or social agent is identical with and withou
 \subsection{Shared memory with an initially wrong majority}
 \label{app:amplifier}
 
-This experiment measures correction from initially wrong answers; the historical role-instruction caveat in Appendix~\ref{app:honest} applies. Four of six agents start by endorsing the false claim. Across four topics and 10 runs per topic, it compares shared memory containing only evidence cards with shared memory containing evidence cards and agent opinions (40 runs per version).
+This experiment measures correction from initially wrong answers. The historical role-instruction caveat in Appendix~\ref{app:honest} applies. Four of six agents start by endorsing the false claim. Across four topics and 10 runs per topic, it compares shared memory containing only evidence cards with shared memory containing evidence cards and agent opinions (40 runs per version).
 
 \begin{table}[htbp]
 \caption{Matched shared-memory comparison with a 4/6 initially wrong majority. Four topics, with 10 runs for each topic and version, Claude Haiku 4.5.}
@@ -545,7 +545,7 @@ Runs & 40 & 40 \\
 \end{center}
 \end{table}
 
-The warning leaves correction unchanged within this comparison: both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. In each arm, \texttt{contamination\_1} retains the false answer in all 40 runs, while the other three initially wrong agents are corrected in all 120 cases. The archived persistence-role prompt for this later cohort is consistent with the saved role, although the complete historical requests are unavailable. Its baseline is a separate execution of the mixed-record condition, run independently of the earlier cohort in Table~\ref{tab:app_amplifier}. That earlier cohort ends with 239 correct rejections and one false endorsement; this cohort ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. The test establishes unchanged correction against its own baseline. It does not replicate an all-revisable design or the earlier near-complete correction.
+The warning leaves correction unchanged within this comparison. Both arms end with 200 correct rejections and 40 false endorsements, with no uncertain answers. In each arm, \texttt{contamination\_1} retains the false answer in all 40 runs, while the other three initially wrong agents are corrected in all 120 cases. The archived persistence-role prompt for this later cohort is consistent with the saved role, although the complete historical requests are unavailable. Its baseline is a separate execution of the mixed-record condition, run independently of the earlier cohort in Table~\ref{tab:app_amplifier}. That earlier cohort ends with 239 correct rejections and one false endorsement. This cohort ends with 200 and 40. The released experiment configurations specify the same scenarios, roster, seeds, mixed-record condition, and call budget. The test establishes unchanged correction against its own baseline. It does not replicate an all-revisable design or the earlier near-complete correction.
 
 \subsection{Saving uncertain answers}
 \label{app:uncertain_write_rule}
@@ -568,11 +568,11 @@ Save uncertain answers & \textbf{0/108} & 20/108 & 88/108 & \textbf{0/36} \\
 \end{center}
 \end{table}
 
-Saving uncertain answers reduces FE$_\text{t}$ by 0.593. The resampled 95\% range across the 36 fixed matched groups is $[0.435,0.750]$ for the reduction. The changed rule produces no false final answers, but most neutral agents remain uncertain. Correct rejections also fall from 30/108 to 20/108: false adoption gives way mainly to indecision. The standard row is a fresh cohort and should be compared only with the changed-rule condition in the same cohort.
+Saving uncertain answers reduces FE$_\text{t}$ by 0.593. The resampled 95\% range across the 36 fixed matched groups is $[0.435,0.750]$ for the reduction. The changed rule produces no false final answers, but most neutral agents remain uncertain. Correct rejections also fall from 30/108 to 20/108. False adoption gives way mainly to indecision. The standard row is a fresh cohort and should be compared only with the changed-rule condition in the same cohort.
 
 Across three separately executed standard-memory cohorts at this nominal Haiku, ego-depletion, and 3/6 setting, false responses are 100/108 in the group-composition experiment, 89/108 in the visibility experiment, and 64/108 here. FE$_\text{t}$ therefore spans 0.593 to 0.926. Because this variation is large relative to some effects, each intervention is compared only with its same-cohort baseline.
 
-A trace audit describes how the changed rule altered what neutral agents retrieved. The endorsement share falls from 85.4\% (1,211/1,418 entries) when uncertainty is omitted to 51.7\% (810/1,566) when it is saved; uncertain entries occupy 612 retrieved slots, and endorsements written by neutral agents fall from 234 to zero. These post-treatment differences describe the information presented to later agents; the model's internal weighting remains unobserved.
+A trace audit describes how the changed rule altered what neutral agents retrieved. The endorsement share falls from 85.4\% (1,211/1,418 entries) when uncertainty is omitted to 51.7\% (810/1,566) when it is saved. Uncertain entries occupy 612 retrieved slots, and endorsements written by neutral agents fall from 234 to zero. These post-treatment differences describe the information presented to later agents. The model's internal weighting remains unobserved.
 
 \begin{table}[htbp]
 \centering
@@ -608,7 +608,7 @@ non-interleaved blocks.
 
 We report means and exact run counts for every experiment. For the reported paired comparisons, we first match runs by their speaking-order identifier. When an experiment contains several fixed tasks, we average those tasks within each identifier. We then resample complete matched groups with replacement and recompute the mean difference. Table~\ref{tab:schedule_uncertainty} reports the 2.5th and 97.5th percentiles from 100,000 draws with random seed 2027. The leave-one-group range shows the smallest and largest estimate obtained by dropping one matched group at a time.
 
-These descriptive intervals summarize the evaluated tasks, models, prompts, and speaking orders; they do not estimate sampling uncertainty over a wider population. The central matched comparison uses its 12 speaking orders as matched groups. The group-composition experiment uses 36 matched groups from three repetitions of the 12 orders. Experiments with repeated cyclic seed labels are excluded from these two intervals. The released \texttt{uncertainty\_analysis.py} reads \texttt{run\_manifest.json} and writes the values in \texttt{uncertainty\_results.json}.
+These descriptive intervals summarize the evaluated tasks, models, prompts, and speaking orders. They do not estimate sampling uncertainty over a wider population. The central matched comparison uses its 12 speaking orders as matched groups. The group-composition experiment uses 36 matched groups from three repetitions of the 12 orders. Experiments with repeated cyclic seed labels are excluded from these two intervals. The released \texttt{uncertainty\_analysis.py} reads \texttt{run\_manifest.json} and writes the values in \texttt{uncertainty\_results.json}.
 
 \begin{table}[htbp]
 \caption{Paired summaries for the reported FE$_\text{t}$ comparisons. Intervals resample complete matched groups. LOO is the range after leaving out one group at a time. Positive values mean more false endorsement in the first communication method or shared-memory version named.}
@@ -642,7 +642,7 @@ Comparison & $\Delta$FE$_\text{t}$ & \shortstack{Resampled 95\%\\range} & LOO ra
 This section summarizes recurring patterns in the experiments. The categories are descriptive and do not estimate latent beliefs or infer why a model changes its answer.
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{Independent-answer baseline} records how the model answers with personal memory or without supplied context. Personal-memory rejection is 100\% for MMR and lower for ego depletion. The SciTaT selection retains items that Haiku answers incorrectly without the paragraph and table. These are observed answer rates; private belief is unmeasured.
+\item \textbf{Independent-answer baseline} records how the model answers with personal memory or without supplied context. Personal-memory rejection is 100\% for MMR and lower for ego depletion. The SciTaT selection retains items that Haiku answers incorrectly without the paragraph and table. These are observed answer rates. Private belief is unmeasured.
 \item \textbf{Retrieved record} contains the memory entries available on a turn. Entry count times mean confidence is a descriptive summary. We do not assume that the model combines entries in this way internally.
 \item \textbf{Entries before the first false endorsement} describe how much of the record precedes the first observed adoption. No false adoption occurs on the five GSM8K tasks, but it does occur on the separately prompted $6/3$ task. Checkability therefore does not determine the outcome across task formats and group compositions.
 \item \textbf{Live debate} shows each agent's reasoning alongside its conclusion. Other agents can hear the reasoning and respond.
@@ -786,9 +786,9 @@ Separate live-debate and chain runs from the same launch received a scheduled co
 \label{app:neutral_fairness}
 % ============================================================
 
-The specialist--social experiment uses one specialist agent and one social agent. Appendix~\ref{app:configs} prints both instructions. The matched comparisons instead use two neutral agents with the same role instruction: \emph{You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.} This role instruction contains no numeric values; task content and protocol-specific response instructions are supplied separately. Each liar agent retains its instruction across the two designs; this does not mean that all four liar agents have identical prompt parameters.
+The specialist--social experiment uses one specialist agent and one social agent. Appendix~\ref{app:configs} prints both instructions. The matched comparisons instead use two neutral agents with the same role instruction. \emph{You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.} This role instruction contains no numeric values. Task content and protocol-specific response instructions are supplied separately. Each liar agent retains its instruction across the two designs. This does not mean that all four liar agents have identical prompt parameters.
 
-The twelve orders below come from the released central-comparison rosters. Numbers denote \texttt{analyst\_1} through \texttt{analyst\_6}; agents 1--4 are liar agents and agents 5--6 are neutral agents. Each order repeats for three rounds.
+The twelve orders below come from the released central-comparison rosters. Numbers denote \texttt{analyst\_1} through \texttt{analyst\_6}. Agents 1--4 are liar agents and agents 5--6 are neutral agents. Each order repeats for three rounds.
 \begin{center}
 \small
 \begin{tabular}{cll}
@@ -1092,7 +1092,7 @@ retrieval of a false statement written by another neutral agent. The
 corresponding counts are 12/12 at 2/6 and 29/29 at 4/6. This sequence motivated
 the memory test below. Among 244 neutral-agent turns before that agent's first
 endorsement, 68 retrieve another neutral agent's endorsement and all 68 end
-in first adoption; the other 176 contain 34 first adoptions. After the first
+in first adoption. The other 176 contain 34 first adoptions. After the first
 neutral adoption in a run, every remaining eligible turn retrieves another
 neutral endorsement. With no unexposed comparison at that stage, causal
 evidence comes from the intervention in Appendix~\ref{app:peer_visibility}.
@@ -1158,7 +1158,7 @@ At 2/6, the two memory versions give 22 and 20 false answers out of 144. At 4/6,
 they give 65 and 64 out of 72. The peer statements have their clearest effect at
 3/6. With 2 liar agents, false answers rarely begin. With 4, liar-written
 statements are usually enough on their own. In this one-model, one-question,
-six-agent design, peer reinforcement is harmful at 3/6; the other group
+six-agent design, peer reinforcement is harmful at 3/6. The other group
 compositions show that the effect is not uniform.
 
 The exact 216 run IDs and SHA-256 checksums appear in the released peer-visibility
@@ -1201,6 +1201,47 @@ observed universal false adoption in this setting. These replications bound the
 Haiku mechanism result and show that restricted shared memory is not a general
 defense. Exact run IDs and SHA-256 checksums are listed in the released
 open-model visibility manifest.
+
+\subsection{A single recorded endorsement}
+\label{app:single_peer_entry}
+
+We test the effect of one recorded peer statement before any live agent responds.
+The shared record begins with one entry attributed to the same prior neutral agent.
+The endorsement version supports the false answer of 9.0\%. The control entry says
+that the answer cannot be verified without the missing source table. The source ID,
+confidence of 0.80, record position, task, agent instructions, and model-call budget
+remain fixed.
+
+Each run contains six neutral agents, and each agent responds once. Every agent
+retrieves the initial entry. The first speaker therefore responds before any live
+agent can write back to the record. We use 12 speaking orders for Claude Haiku 4.5,
+Claude Sonnet 4.6, and Claude Opus 4.6. All 72 runs complete six model calls.
+
+\begin{table}[H]
+\caption{Effect of one recorded false endorsement on an all-neutral group. Counts include one response from each of six agents in 12 runs per cell. The first-speaker columns measure the response before any live-agent write-back.}
+\label{tab:single_peer_entry}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccc}
+\toprule
+Model & \shortstack{False responses after\\endorsement entry} & \shortstack{False responses after\\uncertain entry} & \shortstack{First speaker false after\\endorsement entry} & \shortstack{First speaker false after\\uncertain entry} \\
+\midrule
+Claude Haiku 4.5 & 54/72 & 0/72 & 4/12 & 0/12 \\
+Claude Sonnet 4.6 & 0/72 & 0/72 & 0/12 & 0/12 \\
+Claude Opus 4.6 & 52/72 & 0/72 & 12/12 & 0/12 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Every Haiku and Opus endorsement run contains at least one false answer, while
+none of their uncertain-entry controls does. Sonnet remains uncertain in every
+response under both entries. The first-speaker results show that one recorded
+endorsement can change an answer without a chain of live-agent endorsements.
+The totals from the remaining five speakers also include any later influence from
+statements written during the run, so they do not isolate each additional step of
+propagation.
 
 % ============================================================
 \section{Heterogeneous-Model Groups}
@@ -1245,7 +1286,7 @@ so in 60.2--79.6\% of their final responses. On the SciTaT calculation, Sonnet
 and Opus neutral agents give the false answer in 5.6--13.9\% of responses, versus
 80.6--97.2\% for Haiku neutral agents. The liar-agent model has no consistent
 ordering across the two questions. The diagonal SciTaT-B cells here use three
-liar and three neutral agents in a separate cohort; Table~\ref{tab:neutral_claude_scitat}
+liar and three neutral agents in a separate cohort. Table~\ref{tab:neutral_claude_scitat}
 uses four liar and two neutral agents. The cells are therefore not direct
 replications, and the design does not isolate group composition as the cause of
 their different rates. Three models from one developer, two
@@ -1441,7 +1482,7 @@ GPT-4o-mini & OpenAI & undisclosed & openai/gpt-4o-mini \\
 \end{table}
 
 \begin{table}[htbp]
-\caption{Task coverage in the matched liar--neutral comparisons. Each number counts distinct questions tested with \emph{all three} protocols: shared memory, personal memory, and live debate. Each question--protocol cell uses 12 balanced speaking orders. Dashes mark untested cells, not zero rates. SciTaT-A/B are two of the 18 selected missing-source items and reuse those runs for Haiku.}
+\caption{Task coverage in the matched liar--neutral comparisons. Each number counts distinct questions tested with all three protocols. These protocols are shared memory, personal memory, and live debate. Each question--protocol cell uses 12 balanced speaking orders. Dashes mark untested cells, not zero rates. SciTaT-A/B are two of the 18 selected missing-source items and reuse those runs for Haiku.}
 \label{tab:model_task_coverage}
 \begin{center}
 \small
@@ -1461,11 +1502,11 @@ Ministral 8B 2512 & 2 & 3 & -- & 2 & -- \\
 \end{center}
 \end{table}
 
-Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR/autism, climate attribution, and STAP. Sonnet and Opus are tested on ego depletion and PANDAS; GPT-4o-mini, Llama, and Ministral are tested on ego depletion and MMR/autism. Gemma 3 4B appears only in supporting shared-memory visibility and specialist--social checks, not in this three-protocol matrix. The run selections are indexed by Tables~\ref{tab:neutral_boundaries}, \ref{tab:neutral_core_categories}, \ref{tab:neutral_claude_scitat}, \ref{tab:neutral_open_ego}, \ref{tab:neutral_open_multitask}, and~\ref{tab:neutral_scitat_expanded} in the released manifest.
+Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR/autism, climate attribution, and STAP. Sonnet and Opus are tested on ego depletion and PANDAS. GPT-4o-mini, Llama, and Ministral are tested on ego depletion and MMR/autism. Gemma 3 4B appears only in supporting shared-memory visibility and specialist--social checks, not in this three-protocol matrix. The run selections are indexed by Tables~\ref{tab:neutral_boundaries}, \ref{tab:neutral_core_categories}, \ref{tab:neutral_claude_scitat}, \ref{tab:neutral_open_ego}, \ref{tab:neutral_open_multitask}, and~\ref{tab:neutral_scitat_expanded} in the released manifest.
 
 % ============================================================
 \section{Run Inclusion and Release Manifest}
 \label{app:scale}
 % ============================================================
 
-The manifests, not filesystem totals, define the paper's evidence. \texttt{paper/run\_manifest.json} indexes 5,542 original runs. \texttt{paper/new\_appendix\_run\_manifest.json} indexes 576 late runs used in Table~\ref{tab:heterogeneous_models}, Appendix~\ref{app:uncertain_write_rule}, and Table~\ref{tab:provenance_numerical}. \texttt{paper/open\_model\_visibility\_manifest.json} indexes the 216 model-only visibility runs, giving 6,334 runs in total. Markdown counterparts provide readable indexes. Entries give run IDs, paths, SHA-256 checksums, call-count checks, and rates recomputed from SQLite. These checks keep overwritten summaries or duplicate records from changing a denominator.
+The manifests, not filesystem totals, define the paper's evidence. \texttt{paper/run\_manifest.json} indexes 5,542 original runs. \texttt{paper/new\_appendix\_run\_manifest.json} indexes 576 late runs used in Table~\ref{tab:heterogeneous_models}, Appendix~\ref{app:uncertain_write_rule}, and Table~\ref{tab:provenance_numerical}. \texttt{paper/open\_model\_visibility\_manifest.json} indexes 216 model-only visibility runs. \texttt{paper/single\_peer\_influence\_manifest.json} indexes the 72 single-entry runs in Table~\ref{tab:single_peer_entry}. Together they contain 6,406 runs. Markdown counterparts provide readable indexes. Entries give run IDs, paths, SHA-256 checksums, call-count checks, and rates recomputed from SQLite. These checks keep overwritten summaries or duplicate records from changing a denominator.

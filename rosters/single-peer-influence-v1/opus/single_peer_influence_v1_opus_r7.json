@@ -1,0 +1,72 @@
+{
+  "id": "single_peer_influence_v1_opus_r7",
+  "title": "Single-peer influence opus roster r7 (reverse cyclic 0)",
+  "agents": [
+    {
+      "id": "analyst_6",
+      "role": "neutral_agent",
+      "model": "claude-opus-4-6",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_5",
+      "role": "neutral_agent",
+      "model": "claude-opus-4-6",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_4",
+      "role": "neutral_agent",
+      "model": "claude-opus-4-6",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_3",
+      "role": "neutral_agent",
+      "model": "claude-opus-4-6",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_2",
+      "role": "neutral_agent",
+      "model": "claude-opus-4-6",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    },
+    {
+      "id": "analyst_1",
+      "role": "neutral_agent",
+      "model": "claude-opus-4-6",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0
+    }
+  ]
+}

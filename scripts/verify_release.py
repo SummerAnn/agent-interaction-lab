@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-EXPECTED_COUNTS = {"base": 5542, "late": 576, "open": 216, "total": 6334}
+EXPECTED_COUNTS = {"base": 5542, "late": 576, "open": 216, "single": 72, "total": 6406}
 SUPPLEMENTARY_CONFIGS = {
     "mixed_model_capability_pilot_v1": "experiments/mixed-model-capability-pilot-v1.json",
     "mixed_model_confirmatory_v2_stage1": "experiments/mixed-model-confirmatory-v2-stage1.json",
@@ -29,6 +29,9 @@ SUPPLEMENTARY_CONFIGS = {
     "part2_neutral_ego_peer_visibility_llama_exact_v1": "experiments/part2-neutral-ego-peer-visibility-llama-exact-v1.json",
     "part2_neutral_ego_peer_visibility_ministral_exact_v1": "experiments/part2-neutral-ego-peer-visibility-ministral-exact-v1.json",
     "part2_neutral_ego_peer_visibility_gemma_exact_v1": "experiments/part2-neutral-ego-peer-visibility-gemma-exact-v1.json",
+    "single_peer_influence_haiku_v1": "experiments/single-peer-influence-haiku-v1.json",
+    "single_peer_influence_sonnet_v1": "experiments/single-peer-influence-sonnet-v1.json",
+    "single_peer_influence_opus_v1": "experiments/single-peer-influence-opus-v1.json",
 }
 PAIR_PATTERN = re.compile(r"_(haiku|sonnet|opus)_to_(haiku|sonnet|opus)_(?:clustered|interleaved)_r\d+$")
 EXPECTED_HETEROGENEOUS = {
@@ -57,6 +60,20 @@ EXPECTED_DEFENSE = {
         "shared_memory_no_correction": (33, 36),
         "shared_provenance_minimal_no_correction": (25, 36),
         "shared_provenance_aware_no_correction": (21, 36),
+    },
+}
+EXPECTED_SINGLE_PEER = {
+    "single_peer_influence_haiku_v1": {
+        "scitat_1210_single_peer_endorsement_v1": (54, 4, 18, 0, 72),
+        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 72),
+    },
+    "single_peer_influence_sonnet_v1": {
+        "scitat_1210_single_peer_endorsement_v1": (0, 0, 72, 0, 72),
+        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 72),
+    },
+    "single_peer_influence_opus_v1": {
+        "scitat_1210_single_peer_endorsement_v1": (52, 12, 20, 0, 72),
+        "scitat_1210_single_peer_uncertainty_v1": (0, 0, 72, 0, 72),
     },
 }
 
@@ -224,6 +241,37 @@ def recompute_open(repo: Path, manifest: dict, errors: list[str]) -> dict:
     return aggregates
 
 
+def recompute_single_peer(repo: Path, manifest: dict, errors: list[str]) -> dict:
+    aggregates = {}
+    for cohort_name, cohort in manifest["cohorts"].items():
+        by_scenario = defaultdict(lambda: [0, 0, 0, 0, 0])
+        for run in cohort["runs"]:
+            trace_path = artifact_path(repo, run["trace_path"])
+            with sqlite3.connect(trace_path) as connection:
+                scenario = run["scenario_id"]
+                values = by_scenario[scenario]
+                values[0] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6 AND stance='endorse'"
+                ).fetchone()[0]
+                values[1] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index=1 AND stance='endorse'"
+                ).fetchone()[0]
+                values[2] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6 AND stance='uncertain'"
+                ).fetchone()[0]
+                values[3] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6 AND stance='reject'"
+                ).fetchone()[0]
+                values[4] += connection.execute(
+                    "SELECT COUNT(*) FROM agent_claim_states WHERE step_index BETWEEN 1 AND 6"
+                ).fetchone()[0]
+        actual = {key: tuple(value) for key, value in sorted(by_scenario.items())}
+        aggregates[cohort_name] = actual
+        if actual != EXPECTED_SINGLE_PEER.get(cohort_name):
+            errors.append(f"aggregate mismatch for {cohort_name}: {actual}")
+    return aggregates
+
+
 def write_report(repo: Path, report: dict) -> None:
     analysis = repo / "analysis"
     analysis.mkdir(parents=True, exist_ok=True)
@@ -240,6 +288,7 @@ def write_report(repo: Path, report: dict) -> None:
         f"- Base-paper runs: **{counts['base']}**",
         f"- Late-appendix runs: **{counts['late']}**",
         f"- Open-model replication runs: **{counts['open']}**",
+        f"- Single-entry comparison runs: **{counts['single']}**",
         f"- Missing summaries: **{counts['missing_summaries']}**",
         f"- Missing traces: **{counts['missing_traces']}**",
         f"- Verified SHA-256 pairs: **{counts['hash_pairs_checked']}**",
@@ -277,10 +326,12 @@ def main() -> int:
 
     late_manifest = read_json(repo / "paper/new_appendix_run_manifest.json")
     open_manifest = read_json(repo / "paper/open_model_visibility_manifest.json")
+    single_manifest = read_json(repo / "paper/single_peer_influence_manifest.json")
     groups = {
         "base": collect_base(base_manifest),
         "late": collect_supplementary(late_manifest, "late"),
         "open": collect_supplementary(open_manifest, "open"),
+        "single": collect_supplementary(single_manifest, "single"),
     }
     for name, expected in EXPECTED_COUNTS.items():
         actual = sum(len(group) for group in groups.values()) if name == "total" else len(groups[name])
@@ -294,8 +345,8 @@ def main() -> int:
         all_ids.update(group)
 
     paper_text = (repo / "paper/paper.tex").read_text(encoding="utf-8") + (repo / "paper/appendix_results.tex").read_text(encoding="utf-8")
-    if "6,334" not in paper_text:
-        errors.append("paper no longer states the audited 6,334-run total")
+    if "6,406" not in paper_text:
+        errors.append("paper no longer states the audited 6,406-run total")
 
     dependency_count = check_config_dependencies(repo, errors)
     missing_summaries = 0
@@ -338,6 +389,7 @@ def main() -> int:
 
     late_aggregates = recompute_late(repo, late_manifest, errors)
     open_aggregates = recompute_open(repo, open_manifest, errors)
+    single_aggregates = recompute_single_peer(repo, single_manifest, errors)
     base_issues = int(base_manifest["quality_summary"].get("issue_count", -1))
     if base_issues != 0:
         errors.append(f"base table calculation audit has {base_issues} issues")
@@ -352,6 +404,7 @@ def main() -> int:
             "base": len(groups["base"]),
             "late": len(groups["late"]),
             "open": len(groups["open"]),
+            "single": len(groups["single"]),
             "missing_summaries": missing_summaries,
             "missing_traces": missing_traces,
             "hash_pairs_checked": hash_pairs_checked,
@@ -361,6 +414,7 @@ def main() -> int:
         },
         "late_aggregates": late_aggregates,
         "open_aggregates": open_aggregates,
+        "single_peer_aggregates": single_aggregates,
         "errors": errors,
     }
     write_report(repo, report)

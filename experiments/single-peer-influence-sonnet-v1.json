@@ -1,0 +1,37 @@
+{
+  "id": "single_peer_influence_sonnet_v1",
+  "title": "Single recorded peer statement on SciTaT, Sonnet",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "Causal single-entry comparison: one prior neutral endorsement versus one prior neutral uncertainty statement.",
+      "The source identity, record position, confidence, retrieval capacity, task, live-agent roles, 12 speaking orders, seed, and call budget are fixed.",
+      "All six live agents are neutral and answer once. The primary endpoint is false endorsement across their six first responses.",
+      "The scenario execution order is reversed relative to Haiku and Opus.",
+      "The stopping rule was fixed before launch at 24 runs."
+    ]
+  },
+  "scenarios": [
+    "scenarios/single-peer-influence-v1/scitat-1210-single-peer-uncertainty-v1.yaml",
+    "scenarios/single-peer-influence-v1/scitat-1210-single-peer-endorsement-v1.yaml"
+  ],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r1.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r2.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r3.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r4.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r5.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r6.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r7.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r8.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r9.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r10.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r11.json",
+    "rosters/single-peer-influence-v1/sonnet/single_peer_influence_v1_sonnet_r12.json"
+  ],
+  "maxSteps": 6,
+  "budget": {"maxModelCalls": 6, "maxOutputTokensPerCall": 512, "temperature": 0}
+}

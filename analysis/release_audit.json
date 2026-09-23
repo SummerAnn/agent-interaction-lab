@@ -1,18 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T01:22:26.522261+00:00",
+  "generated_at": "2026-09-23T05:31:28.688769+00:00",
   "mode": "full",
   "status": "PASS",
   "counts": {
-    "claimed_total": 6334,
+    "claimed_total": 6406,
     "base": 5542,
     "late": 576,
     "open": 216,
+    "single": 72,
     "missing_summaries": 0,
     "missing_traces": 0,
-    "hash_pairs_checked": 6334,
-    "sqlite_checked": 6334,
-    "config_dependencies_checked": 448,
+    "hash_pairs_checked": 6406,
+    "sqlite_checked": 6406,
+    "config_dependencies_checked": 493,
     "base_calculation_issues": 0
   },
   "late_aggregates": {
@@ -164,6 +165,56 @@
       "shared_memory_no_neutral_peer_entries": [
         108,
         108
+      ]
+    }
+  },
+  "single_peer_aggregates": {
+    "single_peer_influence_haiku_v1": {
+      "scitat_1210_single_peer_endorsement_v1": [
+        54,
+        4,
+        18,
+        0,
+        72
+      ],
+      "scitat_1210_single_peer_uncertainty_v1": [
+        0,
+        0,
+        72,
+        0,
+        72
+      ]
+    },
+    "single_peer_influence_sonnet_v1": {
+      "scitat_1210_single_peer_endorsement_v1": [
+        0,
+        0,
+        72,
+        0,
+        72
+      ],
+      "scitat_1210_single_peer_uncertainty_v1": [
+        0,
+        0,
+        72,
+        0,
+        72
+      ]
+    },
+    "single_peer_influence_opus_v1": {
+      "scitat_1210_single_peer_endorsement_v1": [
+        52,
+        12,
+        20,
+        0,
+        72
+      ],
+      "scitat_1210_single_peer_uncertainty_v1": [
+        0,
+        0,
+        72,
+        0,
+        72
       ]
     }
   },

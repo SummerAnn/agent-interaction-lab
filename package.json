@@ -11,6 +11,7 @@
     "agentlab": "node --import tsx src/cli.ts interactive",
     "multiagent:society": "node --import tsx src/cli.ts interactive",
     "verify:paper-tables": "python3 scripts/build_iclr_run_manifest.py --repo . --output-dir paper --tex-dir paper",
+    "verify:single-peer-manifest": "python3 scripts/build_single_peer_influence_manifest.py --run-root output --output-dir paper",
     "verify:release": "python3 scripts/verify_release.py --repo . --full",
     "verify:release:quick": "python3 scripts/verify_release.py --repo .",
     "test": "vitest run",

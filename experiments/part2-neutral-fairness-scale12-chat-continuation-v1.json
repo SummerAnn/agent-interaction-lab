@@ -1,0 +1,43 @@
+{
+  "id": "part2_neutral_fairness_scale12_chat_v1_continuation",
+  "title": "Twelve-agent neutral fairness scale check, fixed three-round debate",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": [
+      "Direct twelve-agent scale check of the central liar-neutral comparison.",
+      "The four original persistent-role parameter variants are each duplicated once.",
+      "The group contains eight persistent-source agents and four neutral agents.",
+      "Twelve cyclic rotations place each identity once in every speaking position.",
+      "Every agent receives exactly three focal-claim calls at temperature 0."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_focus_only_scale12_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r2_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r3_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r4_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r5_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r6_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r7_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r8_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r9_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r10_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r11_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r12_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

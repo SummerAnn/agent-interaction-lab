@@ -3,14 +3,14 @@
 % Real agent traces pulled from SQLite databases
 
 \noindent\textbf{Appendix guide.}
-Appendix~\ref{app:neutral_fairness} gives the full matched-comparison results and shows how the neutral agents' answers change over time. Appendices~\ref{app:neutral_defenses}--\ref{app:peer_visibility} report the mitigation, group-composition, and peer-visibility experiments. Appendix~\ref{app:single_peer_entry}, within Appendix~\ref{app:peer_visibility}, tests the effect of one entry before any live agent responds. Appendix~\ref{app:heterogeneous_models} gives a supporting check with different models in the liar and neutral roles. Appendix~\ref{app:provenance} reports the memory changes that identify repeated statements. Appendix~\ref{app:defense_preservation} tests whether that change preserves helpful correction. Appendix~\ref{app:uncertain_write_rule} tests the rule for saving uncertain answers. Appendix~\ref{app:scale} links every reported table to its run IDs and checksums.
+The central protocol comparison is documented in Appendix~\ref{app:neutral_fairness}. The group-composition experiment is in Appendix~\ref{app:adversary_ratio}, and the 12- and 100-agent experiments are in Appendix~\ref{app:larger_groups}. Appendix~\ref{app:peer_visibility} reports the experiments that hide neutral-agent statements and place one entry before any live agent responds. The record interventions appear in Appendices~\ref{app:neutral_defenses}, \ref{app:uncertain_write_rule}, and~\ref{app:provenance}. The initial-error comparisons are in Appendices~\ref{app:honest}, \ref{app:amplifier}, and~\ref{app:defense_preservation}. Appendix~\ref{app:heterogeneous_models} assigns different models to the liar and neutral roles, and Appendix~\ref{app:scale} links every reported table to run IDs and checksums.
 
 % ============================================================
 \section{Metric Definitions}
 \label{app:metrics}
 % ============================================================
 
-This appendix uses four role names. A \emph{liar agent} is instructed to say that the false claim is true and to keep that answer throughout the run. In the matched comparisons, \emph{neutral agents} receive no answer to follow and judge the claim for themselves. In the supporting specialist--social experiment, a \emph{specialist agent} is told to look for scientific weaknesses, while a \emph{social agent} is told to rely more on the group. The initial-error experiments also contain a persistence-role agent. Historical prompt limitations are described in Appendix~\ref{app:honest}. An \emph{evidence card} is a short excerpt from a published source that some experiments provide to agents. A \emph{memory entry} is a short statement saved by an agent after one turn. AR means assigned-role retention. Code names appear in \texttt{typewriter text} only when readers need them to match the paper to the released files.
+This appendix uses four role names. A \emph{liar agent} is instructed to say that the false claim is true and to keep that answer throughout the run. All agent counts use the term \emph{liar agent}. In the matched comparisons, \emph{neutral agents} receive no answer to follow and judge the claim for themselves. In the supporting specialist--social experiment, a \emph{specialist agent} is told to look for scientific weaknesses, while a \emph{social agent} is told to rely more on the group. The initial-error experiments also contain a persistence-role agent, which is distinct from the liar role used in the main experiments. Historical prompt limitations are described in Appendix~\ref{app:honest}. An \emph{evidence card} is a short excerpt from a published source that some experiments provide to agents. A \emph{memory entry} is a short statement saved by an agent after one turn. AR means assigned-role retention. Code names appear in \texttt{typewriter text} only when readers need them to match the paper to the released files.
 
 A \emph{run} is one completed execution with a specified task, communication method, group of agents, model, and speaking order. The \emph{speaking order} is the order in which agents respond, and a \emph{step} is one agent turn. In the one-claim experiments, one \emph{model call} produces the response for one agent turn. Tasks with several claims require one model call per claim during that turn. In some shared-memory and personal-memory experiments, the stored seed chooses the first speaker in a cyclic order. Six agents give at most six distinct rotations unless we supply an explicit order. Live debate uses the order in the agent file. Temperature 0 does not make repeated provider API calls identical. Final metrics use each agent's last recorded answer to the false claim. \texttt{Uncertain} is a distinct answer and never counts as endorsement.
 
@@ -1045,10 +1045,10 @@ The newly executed standard shared-memory baseline differs from the central matc
 \label{app:adversary_ratio}
 % ============================================================
 
-We vary the number of liar agents from 1 to 4 out of 6 agents. Every liar agent receives identical instructions, and every neutral agent receives the instruction from the matched comparisons. Twelve speaking orders place each agent twice in every position. We repeat all 12 orders three times, giving 36 runs per group composition and communication method. Analysts 5 and 6 remain neutral agents as the number of liar agents changes, so we also report their rate with the same two-agent denominator.
+We vary the number of liar agents from 0 to 4 out of 6 agents. Every liar agent receives identical instructions, and every neutral agent receives the instruction from the matched comparisons. Twelve speaking orders place each agent twice in every position. We repeat all 12 orders three times, giving 36 runs per group composition. The zero-liar control was run with shared memory. Counts from one to four were run with all three communication methods. Analysts 5 and 6 remain neutral agents as the number of liar agents changes, so we also report their rate with the same two-agent denominator.
 
 \begin{table}[htbp]
-\caption{Experiment varying the number of liar agents. Each entry pools 36 runs over three repetitions of 12 balanced speaking orders. The analysts-5-and-6 column measures the same two neutral agents at every liar-agent count.}
+\caption{Experiment varying the number of liar agents. Each entry pools 36 runs over three repetitions of 12 balanced speaking orders. The analysts-5-and-6 column measures the same two neutral agents at every liar-agent count. Dashes mark communication methods not run for the zero-liar control.}
 \label{tab:adversary_ratio}
 \begin{center}
 \small
@@ -1056,6 +1056,7 @@ We vary the number of liar agents from 1 to 4 out of 6 agents. Every liar agent 
 \toprule
 \shortstack[l]{Liar\\agents} & Shared memory FE$_\text{t}$ & Analysts 5 and 6 & Live debate FE$_\text{t}$ & Personal memory FE$_\text{t}$ \\
 \midrule
+0/6 & 0.000 & 0.000 & -- & -- \\
 1/6 & 0.000 & 0.000 & 0.000 & 0.000 \\
 2/6 & 0.125 & 0.111 & 0.000 & 0.000 \\
 3/6 (even split) & 0.926 & 0.931 & 0.000 & 0.000 \\
@@ -1065,7 +1066,7 @@ We vary the number of liar agents from 1 to 4 out of 6 agents. Every liar agent 
 \end{center}
 \end{table}
 
-The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 liar agents. The three repetition means are 0.972, 0.917, and 0.889 at 3/6. They are 0.833, 0.833, and 0.750 at 4/6. The group-composition experiment gives every liar agent identical wording and numeric profiles. In the central matched comparison, the four liar agents share the role instruction but receive slightly different numeric profiles, so we report it separately. Speaking position and generated messages may also affect the outcome. Personal-memory and live-debate FE$_\text{t}$ are 0 at every liar-agent count. The released audit reports each repetition separately.
+The zero-liar shared-memory control contains 0 false answers, 42 rejections, and 174 uncertain answers among 216 final responses. The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 liar agents. The three repetition means are 0.972, 0.917, and 0.889 at 3/6. They are 0.833, 0.833, and 0.750 at 4/6. The group-composition experiment gives every liar agent identical wording and numeric profiles. In the central matched comparison, the four liar agents share the role instruction but receive slightly different numeric profiles, so we report it separately. Speaking position and generated messages may also affect the outcome. Personal-memory and live-debate FE$_\text{t}$ are 0 at every tested liar-agent count from one to four. The released audit reports each repetition separately.
 
 \begin{fixedtable}
 \caption{How the false answer spreads within each shared-memory run. Each row contains 36 runs over three repetitions of 12 balanced speaking orders. Partial means that some, though not all, neutral agents give the false final answer.}
@@ -1076,6 +1077,7 @@ The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 lia
 \toprule
 Liar agents & No neutral agent & Some neutral agents & All neutral agents \\
 \midrule
+0 of 6 & 36 & 0 & 0 \\
 1 of 6 & 36 & 0 & 0 \\
 2 of 6 & 30 & 3 & 3 \\
 3 of 6 & 2 & 2 & 32 \\
@@ -1098,6 +1100,69 @@ neutral endorsement. With no unexposed comparison at that stage, causal
 evidence comes from the intervention in Appendix~\ref{app:peer_visibility}.
 
 % ============================================================
+\section{Larger Groups}
+\label{app:larger_groups}
+% ============================================================
+
+We ran three sets of experiments with more than six agents using Claude Haiku 4.5 and the ego-depletion claim. The first varies the number of liar agents in a 12-agent shared-memory group. It uses 0, 1, 2, or 6 liar agents and 12 cyclic rotations at each count. Liar agents are spaced around the order before it is rotated. Every agent answers three times, giving 36 calls per run. The shared-memory limit remains six entries.
+
+\begin{table}[htbp]
+\caption{Final answers in the 12-agent shared-memory sweep. Each new row contains 12 speaking rotations. The 8/12 row comes from the earlier communication-method comparison and is shown only for context. Liar endorsements confirm that every liar agent retained the false answer.}
+\label{tab:scale12_dose}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrrrrr}
+\toprule
+Liar agents & False endorsement & Correct rejection & Uncertain & Any false run & All false run & Liar endorsements \\
+\midrule
+0 & 0/144 & 36/144 & 108/144 & 0/12 & 0/12 & -- \\
+1 & 0/132 & 22/132 & 110/132 & 0/12 & 0/12 & 12/12 \\
+2 & \textbf{84/120} & 12/120 & 24/120 & \textbf{11/12} & 4/12 & 24/24 \\
+6 & \textbf{68/72} & 0/72 & 4/72 & 12/12 & 8/12 & 72/72 \\
+\midrule
+8 (earlier batch) & 47/48 & 0/48 & 1/48 & 12/12 & 11/12 & 96/96 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+The change between one and two liar agents is sharp in this setting. With two liar agents, 70\% of neutral final answers endorse the false claim. Eleven of 12 runs contain at least one neutral endorsement, and four end with all 10 neutral agents endorsing. The speaking rotations still produce different outcomes: the two-liar runs range from 0 to 10 neutral endorsements. The 8/12 comparison was executed separately and is not combined with the new sweep for inference.
+
+The second set repeats the three communication methods with eight liar agents and four neutral agents. It also includes a debate control in which each liar agent's public response is replaced with the fixed endorsement used in Table~\ref{tab:enforced_debate}. Twelve cyclic speaking orders give 12 runs per communication method and 48 runs in total. Table~\ref{tab:scale12_protocols} reports the final answers.
+
+The third set uses 100 agents under standard shared memory. We assign the liar role to 0, 1, 2, 3, 4, 5, 7, 10, 15, or 20 agents. Liar agents are spaced around a circular speaking order. Four runs at each count rotate the starting boundary by 0, 25, 50, or 75 positions while preserving the spacing within that count. Every agent answers three times, giving 300 model calls per run. The six-entry memory limit is unchanged. Because the spacing is reconstructed for each liar-agent count, these runs vary the number and placement of liar agents together.
+
+Most affected runs end in complete adoption rather than partial adoption. With two or three liar agents, one starting point leads every neutral agent to endorse and the other three lead none to endorse. The same split occurs with five and seven liar agents. Ten and fifteen affect two starting points each. Twenty affects all four. Four liar agents are the exception to the all-or-none pattern: three runs end with all 96 neutral agents endorsing, and the fourth ends with 92 endorsements and four uncertain answers. With one liar agent, the run that begins with that agent leaves all 99 neutral agents uncertain. In the other three positions, all 99 neutral agents eventually reject.
+
+The sequence is not monotonic in the number of liar agents. In particular, four liar agents produce 380 false answers out of 384, compared with 95 out of 380 at five liar agents and 93 out of 372 at seven. The four circular rotations are not a random sample of orders, and rebuilding the evenly spaced layout at each count changes which liar-agent identity appears where. The experiment therefore shows that a small number of liar agents can sometimes reach a 100-agent group, while also showing that their number alone is insufficient to predict the outcome.
+
+\begin{table}[H]
+\caption{Final answers in the 100-agent shared-memory experiment. The denominator changes because liar agents are excluded. Each liar-agent count has four starting positions.}
+\label{tab:scale100_dose}
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular}{rrrrr}
+\toprule
+Liar agents & False endorsement & Correct rejection & Uncertain & Runs with any false answer \\
+\midrule
+0 & 0/400 & 400/400 & 0/400 & 0/4 \\
+1 & 0/396 & 297/396 & 99/396 & 0/4 \\
+2 & 98/392 & 197/392 & 97/392 & 1/4 \\
+3 & 97/388 & 291/388 & 0/388 & 1/4 \\
+4 & 380/384 & 0/384 & 4/384 & 4/4 \\
+5 & 95/380 & 285/380 & 0/380 & 1/4 \\
+7 & 93/372 & 279/372 & 0/372 & 1/4 \\
+10 & 180/360 & 180/360 & 0/360 & 2/4 \\
+15 & 170/340 & 170/340 & 0/340 & 2/4 \\
+20 & 320/320 & 0/320 & 0/320 & 4/4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+% ============================================================
 \section{Visibility of Neutral-Agent Statements}
 \label{app:peer_visibility}
 % ============================================================
@@ -1115,6 +1180,27 @@ The question, Claude Haiku 4.5 model, prompts, agent IDs, speaking orders,
 six-statement memory limit, temperature, and 18 model calls remain fixed. The
 two versions were run during the same time window. Together they contain 216
 runs. Table~\ref{tab:peer_visibility_main} reports the six aggregate comparisons.
+
+\begin{table}[htbp]
+\caption{Hiding statements written by other neutral agents (Claude Haiku 4.5, ego depletion, 36 runs per row).}
+\label{tab:peer_visibility_main}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrr}
+\toprule
+Liar agents & Neutral agents can read & \shortstack{False endorsements\\\% (count)} & \shortstack{Runs with any\\\% (count)} & \shortstack{Runs with all\\\% (count)} \\
+\midrule
+2 of 6 & All recent statements & 15.3 (22/144) & 22.2 (8/36) & 5.6 (2/36) \\
+2 of 6 & Liar statements and own history & 13.9 (20/144) & 22.2 (8/36) & 5.6 (2/36) \\
+3 of 6 & All recent statements & 82.4 (89/108) & 83.3 (30/36) & 80.6 (29/36) \\
+3 of 6 & Liar statements and own history & \textbf{67.6 (73/108)} & 77.8 (28/36) & \textbf{50.0 (18/36)} \\
+4 of 6 & All recent statements & 90.3 (65/72) & 94.4 (34/36) & 86.1 (31/36) \\
+4 of 6 & Liar statements and own history & 88.9 (64/72) & 91.7 (33/36) & 86.1 (31/36) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
 
 The newly run standard shared-memory baselines contain 22/144, 89/108, and
 65/72 false final answers at 2/6, 3/6, and 4/6. The earlier group-composition
@@ -1524,4 +1610,4 @@ Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR
 \label{app:scale}
 % ============================================================
 
-The manifests, not filesystem totals, define the paper's evidence. \texttt{paper/run\_manifest.json} indexes 5,542 original runs. \texttt{paper/new\_appendix\_run\_manifest.json} indexes 576 late runs used in Table~\ref{tab:heterogeneous_models}, Appendix~\ref{app:uncertain_write_rule}, and Table~\ref{tab:provenance_numerical}. \texttt{paper/open\_model\_visibility\_manifest.json} indexes 216 model-only visibility runs. \texttt{paper/single\_peer\_influence\_manifest.json} indexes the 180 single-entry runs in Table~\ref{tab:single_peer_entry}. Together they contain 6,514 runs. Markdown counterparts provide readable indexes. Entries give run IDs, paths, SHA-256 checksums, call-count checks, and rates recomputed from SQLite. These checks keep overwritten summaries or duplicate records from changing a denominator.
+The manifests, not filesystem totals, define the paper's evidence. \texttt{paper/run\_manifest.json} indexes 5,542 original runs. \texttt{paper/new\_appendix\_run\_manifest.json} indexes 576 late runs used in Table~\ref{tab:heterogeneous_models}, Appendix~\ref{app:uncertain_write_rule}, and Table~\ref{tab:provenance_numerical}. \texttt{paper/open\_model\_visibility\_manifest.json} indexes 216 model-only visibility runs. \texttt{paper/single\_peer\_influence\_manifest.json} indexes the 180 single-entry runs in Table~\ref{tab:single_peer_entry}. \texttt{paper/large\_group\_run\_manifest.json} indexes the earlier 48 twelve-agent runs and 16 hundred-agent runs in Appendix~\ref{app:larger_groups}. \texttt{paper/scale12\_ratio\_sweep\_audit.json} indexes and checks the 48 new twelve-agent runs in Table~\ref{tab:scale12_dose}. \texttt{paper/scale100\_transition\_audit.json} rechecks the 16 earlier hundred-agent runs and indexes and checks the 24 additional runs in Table~\ref{tab:scale100_dose}. \texttt{paper/scale6\_ratio0\_audit.json} indexes and checks the 36 zero-liar shared-memory runs in Table~\ref{tab:adversary_ratio}. Together these files contain 6,686 runs. Markdown counterparts provide readable indexes. Entries give run IDs, paths, SHA-256 checksums where available, call-count checks, and rates recomputed from SQLite. These checks keep overwritten summaries or duplicate records from changing a denominator.

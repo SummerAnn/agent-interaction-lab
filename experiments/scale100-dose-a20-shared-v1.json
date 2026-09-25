@@ -1,0 +1,36 @@
+{
+  "id": "scale100_dose_a20_shared_v1",
+  "title": "100-agent shared-memory dose test, 20 persistent sources",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Prespecified extension of the existing 0, 1, 5, and 10 source experiment.",
+      "20 persistent false-claim sources and 80 neutral agents.",
+      "Four circular placements change the starting boundary while preserving source spacing.",
+      "Every agent receives three focal-claim calls at temperature 0.",
+      "The six-entry retrieval cap matches the earlier 100-agent conditions."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_scale100_a20_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/scale100-dose-v1/scale100_a20_p1_haiku.json",
+    "rosters/scale100-dose-v1/scale100_a20_p2_haiku.json",
+    "rosters/scale100-dose-v1/scale100_a20_p3_haiku.json",
+    "rosters/scale100-dose-v1/scale100_a20_p4_haiku.json"
+  ],
+  "maxSteps": 300,
+  "budget": {
+    "maxModelCalls": 300,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

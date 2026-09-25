@@ -1,0 +1,42 @@
+{
+  "id": "part2_neutral_fairness_scale12_enforced_debate_v1",
+  "title": "Twelve-agent neutral fairness check with fixed persistent-source debate messages",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "Matched control for source abandonment in the twelve-agent live-debate comparison.",
+      "Uses the same twelve rosters and cyclic rotations as the original twelve-agent comparison.",
+      "The engine replaces each contamination-agent public response with the same endorsement at confidence at least 0.90.",
+      "All API calls are retained, giving 36 model calls and three calls per agent in every run.",
+      "Temperature is 0 and no evidence card or correction is supplied."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_focus_only_scale12_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop-enforced-adversaries.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r1_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r2_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r3_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r4_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r5_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r6_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r7_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r8_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r9_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r10_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r11_haiku.json",
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r12_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

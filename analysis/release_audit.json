@@ -1,19 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T06:48:26.389919+00:00",
+  "generated_at": "2026-09-25T20:59:51.640364+00:00",
   "mode": "full",
   "status": "PASS",
   "counts": {
-    "claimed_total": 6514,
+    "claimed_total": 6686,
     "base": 5542,
     "late": 576,
     "open": 216,
     "single": 180,
+    "extension": 172,
     "missing_summaries": 0,
     "missing_traces": 0,
-    "hash_pairs_checked": 6514,
-    "sqlite_checked": 6514,
-    "config_dependencies_checked": 541,
+    "hash_pairs_checked": 6598,
+    "sqlite_checked": 6686,
+    "config_dependencies_checked": 749,
     "base_calculation_issues": 0
   },
   "late_aggregates": {

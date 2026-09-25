@@ -1,0 +1,36 @@
+{
+  "id": "scale100_transition_a7_shared_v1",
+  "title": "100-agent transition test, 7 persistent sources",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Prespecified transition-grid extension of the existing 0, 1, 5, 10, and 20 source experiment.",
+      "7 persistent false-claim sources and 93 neutral agents.",
+      "Four circular placements use offsets 0, 25, 50, and 75 while preserving source spacing.",
+      "Every agent receives three focal-claim calls at temperature 0.",
+      "The six-entry retrieval cap matches the earlier 100-agent conditions."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_scale100_a7_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/scale100-dose-v1/scale100_a7_p1_haiku.json",
+    "rosters/scale100-dose-v1/scale100_a7_p2_haiku.json",
+    "rosters/scale100-dose-v1/scale100_a7_p3_haiku.json",
+    "rosters/scale100-dose-v1/scale100_a7_p4_haiku.json"
+  ],
+  "maxSteps": 300,
+  "budget": {
+    "maxModelCalls": 300,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

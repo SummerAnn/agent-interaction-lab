@@ -1,0 +1,85 @@
+{
+  "id": "neutral_ratio_standardized_v2_0of6_clustered_r6",
+  "title": "Standardized neutral ratio 0/6: clustered, rotation 6",
+  "description": "All six agents use the standardized neutral-agent profile; speaking order matches the ratio sweep.",
+  "agents": [
+    {
+      "id": "analyst_6",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.7,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "analyst_1",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.7,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "analyst_2",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.7,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "analyst_3",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.7,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "analyst_4",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.7,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "analyst_5",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.7,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "scale100_dose_a20_p3_shared_v1",
+  "title": "100-agent shared-memory dose test, 20 persistent sources, placement 3",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Placement 3 from the prespecified 20-source extension.",
+      "All settings match scale100_dose_a20_shared_v1."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_scale100_a20_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/scale100-dose-v1/scale100_a20_p3_haiku.json"
+  ],
+  "maxSteps": 300,
+  "budget": {
+    "maxModelCalls": 300,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

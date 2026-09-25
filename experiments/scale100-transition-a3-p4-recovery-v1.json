@@ -1,0 +1,31 @@
+{
+  "id": "scale100_transition_a3_p4_recovery_v1",
+  "title": "100-agent transition test, 3 persistent sources, placement 4 recovery",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Exact rerun of placement 4 after its completed trace was overwritten by an interrupted duplicate launcher.",
+      "All settings match scale100_transition_a3_shared_v1 placement 4.",
+      "3 persistent false-claim sources and 97 neutral agents.",
+      "Every agent receives three focal-claim calls at temperature 0.",
+      "The six-entry retrieval cap matches the earlier 100-agent conditions."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_scale100_a3_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/scale100-dose-v1/scale100_a3_p4_haiku.json"
+  ],
+  "maxSteps": 300,
+  "budget": {
+    "maxModelCalls": 300,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

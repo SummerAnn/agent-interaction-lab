@@ -17,7 +17,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-EXPECTED_COUNTS = {"base": 5542, "late": 576, "open": 216, "single": 180, "total": 6514}
+EXPECTED_COUNTS = {
+    "base": 5542,
+    "late": 576,
+    "open": 216,
+    "single": 180,
+    "extension": 172,
+    "total": 6686,
+}
 SUPPLEMENTARY_CONFIGS = {
     "mixed_model_capability_pilot_v1": "experiments/mixed-model-capability-pilot-v1.json",
     "mixed_model_confirmatory_v2_stage1": "experiments/mixed-model-confirmatory-v2-stage1.json",
@@ -135,6 +142,58 @@ def collect_supplementary(manifest: dict, name: str) -> dict[str, dict]:
     return result
 
 
+def collect_extension(repo: Path, errors: list[str]) -> dict[str, dict]:
+    """Collect the final large-group and zero-liar release without double-counting rechecks."""
+    result: dict[str, dict] = {}
+
+    def add(
+        run_id: str,
+        summary_path: str,
+        trace_path: str,
+        model_calls: int | None,
+        summary_sha256: str | None = None,
+        trace_sha256: str | None = None,
+    ) -> None:
+        candidate = {
+            "run_id": run_id,
+            "summary_path": summary_path,
+            "trace_path": trace_path,
+            "model_calls": model_calls,
+            "summary_sha256": summary_sha256,
+            "trace_sha256": trace_sha256,
+            "manifest": "extension",
+        }
+        previous = result.get(run_id)
+        if previous and (previous["summary_path"], previous["trace_path"]) != (summary_path, trace_path):
+            errors.append(f"conflicting extension paths for {run_id}")
+            return
+        result[run_id] = candidate
+
+    large = read_json(repo / "paper/large_group_run_manifest.json")
+    for run in large["entries"]:
+        add(
+            run["runId"], run["summaryPath"], run["tracePath"],
+            run.get("modelCallCount"), run.get("summarySha256"), run.get("traceSha256"),
+        )
+
+    scale12 = read_json(repo / "paper/scale12_ratio_sweep_audit.json")
+    for run in scale12["runs"]:
+        add(run["runId"], run["summaryPath"], run["dbPath"], run.get("calls"))
+
+    scale100 = read_json(repo / "paper/scale100_transition_audit.json")
+    for run in scale100["runs"]:
+        run_id = run["runId"]
+        add(run_id, f"output/{run_id}/summary.json", f"output/{run_id}/trace.db", run.get("totalCalls"))
+
+    ratio0 = read_json(repo / "paper/scale6_ratio0_audit.json")
+    for run in ratio0["records"]:
+        add(
+            run["run_id"], f"{run['path']}/summary.json", f"{run['path']}/trace.db",
+            run.get("model_calls"), run.get("summary_sha256"), run.get("trace_sha256"),
+        )
+    return result
+
+
 def artifact_path(repo: Path, value: str) -> Path:
     path = Path(value)
     if path.parts and path.parts[0] == "output":
@@ -144,7 +203,19 @@ def artifact_path(repo: Path, value: str) -> Path:
 
 def check_config_dependencies(repo: Path, errors: list[str]) -> int:
     checked = 0
-    for expected_id, relative in SUPPLEMENTARY_CONFIGS.items():
+    configs = dict(SUPPLEMENTARY_CONFIGS)
+    extension_patterns = (
+        "scale12*.json",
+        "scale100*.json",
+        "part2-neutral-fairness-scale12*.json",
+        "part2-neutral-ratio0-standardized-memory-v1.json",
+    )
+    for pattern in extension_patterns:
+        for path in (repo / "experiments").glob(pattern):
+            payload = read_json(path)
+            configs[payload["id"]] = str(path.relative_to(repo))
+
+    for expected_id, relative in configs.items():
         path = repo / relative
         if not path.is_file():
             errors.append(f"missing supplementary config: {relative}")
@@ -313,6 +384,7 @@ def write_report(repo: Path, report: dict) -> None:
         f"- Late-appendix runs: **{counts['late']}**",
         f"- Open-model replication runs: **{counts['open']}**",
         f"- Single-entry comparison runs: **{counts['single']}**",
+        f"- Final large-group and zero-liar extension runs: **{counts['extension']}**",
         f"- Missing summaries: **{counts['missing_summaries']}**",
         f"- Missing traces: **{counts['missing_traces']}**",
         f"- Verified SHA-256 pairs: **{counts['hash_pairs_checked']}**",
@@ -356,6 +428,7 @@ def main() -> int:
         "late": collect_supplementary(late_manifest, "late"),
         "open": collect_supplementary(open_manifest, "open"),
         "single": collect_supplementary(single_manifest, "single"),
+        "extension": collect_extension(repo, errors),
     }
     for name, expected in EXPECTED_COUNTS.items():
         actual = sum(len(group) for group in groups.values()) if name == "total" else len(groups[name])
@@ -369,8 +442,8 @@ def main() -> int:
         all_ids.update(group)
 
     paper_text = (repo / "paper/paper.tex").read_text(encoding="utf-8") + (repo / "paper/appendix_results.tex").read_text(encoding="utf-8")
-    if "6,514" not in paper_text:
-        errors.append("paper no longer states the audited 6,514-run total")
+    if "6,686" not in paper_text:
+        errors.append("paper no longer states the audited 6,686-run total")
 
     dependency_count = check_config_dependencies(repo, errors)
     missing_summaries = 0
@@ -392,11 +465,12 @@ def main() -> int:
         if summary.get("runId") != run_id:
             errors.append(f"summary run ID mismatch: {run_id}")
         if args.full:
-            if sha256(summary_path) != run.get("summary_sha256"):
+            if run.get("summary_sha256") and sha256(summary_path) != run.get("summary_sha256"):
                 errors.append(f"summary checksum mismatch: {run_id}")
-            if sha256(trace_path) != run.get("trace_sha256"):
+            if run.get("trace_sha256") and sha256(trace_path) != run.get("trace_sha256"):
                 errors.append(f"trace checksum mismatch: {run_id}")
-            hash_pairs_checked += 1
+            if run.get("summary_sha256") and run.get("trace_sha256"):
+                hash_pairs_checked += 1
             # Supplementary manifests state an exact model-call count. The base
             # corpus mixes memory and chat protocols, so its completed-step
             # field is not universally the same unit as an API call.
@@ -429,6 +503,7 @@ def main() -> int:
             "late": len(groups["late"]),
             "open": len(groups["open"]),
             "single": len(groups["single"]),
+            "extension": len(groups["extension"]),
             "missing_summaries": missing_summaries,
             "missing_traces": missing_traces,
             "hash_pairs_checked": hash_pairs_checked,

@@ -137,12 +137,18 @@ superseded files may be present in a checkout; they are not part of the reported
 denominators. Start with the manifest for a table instead of counting all files
 under `output/`.
 
-The paper's 6,514 claimed runs are divided into four non-overlapping manifests:
+The paper's 6,686 claimed runs are divided across the four original manifests and four final extension audits:
 
 - `paper/run_manifest.json`: 5,542 runs used by the base table calculator
 - `paper/new_appendix_run_manifest.json`: 576 late-appendix runs
 - `paper/open_model_visibility_manifest.json`: 216 open-model replication runs
 - `paper/single_peer_influence_manifest.json`: 180 single-entry causal-test runs
+- `paper/large_group_run_manifest.json`: 64 twelve- and hundred-agent runs
+- `paper/scale12_ratio_sweep_audit.json`: 48 twelve-agent source-count runs
+- `paper/scale100_transition_audit.json`: 40 hundred-agent runs, including 16 already indexed by the large-group manifest and 24 additional runs
+- `paper/scale6_ratio0_audit.json`: 36 zero-liar six-agent runs
+
+After removing the 16 intentional rechecks shared by the two large-group indexes, the extension contributes 172 unique runs.
 
 The appendix model-by-task coverage table lists the three-protocol liar--neutral comparisons. A dash means that comparison was not run, not that its false-answer rate was zero. Gemma appears only in supporting experiments. The Haiku peer-visibility result does not reproduce as a useful restriction in the three tested open models; it is a mechanism test in one setting, not a general mitigation. The save-uncertain-answers write-rule ablation has not been repeated across models.
 
@@ -159,9 +165,9 @@ npm run verify:release
 ```
 
 Full mode rebuilds the base table manifest, independently recomputes the late
-appendix aggregates, verifies all 6,514 summary and trace checksums, runs SQLite
-integrity checks, checks completion and call counts, and validates the released
-experiment dependencies. The durable report is written to
+appendix aggregates, verifies available checksums for all 6,686 indexed runs,
+runs SQLite integrity checks, checks completion and call counts, and validates
+the released experiment dependencies. The durable report is written to
 `analysis/release_audit.md` and `analysis/release_audit.json`.
 
 Every result in the paper comes from a specific experiment config in `experiments/`. Config filenames use internal naming that differs from the paper terminology. Older internal IDs remain unchanged so that saved runs and manifest entries keep resolving. The paper consistently uses the reader-facing role names liar agent, neutral agent, specialist agent, and social agent.
@@ -176,6 +182,10 @@ The generated table-to-run manifest is the exact source for every reported cohor
 | Central liar--neutral comparison | `part2-neutral-fairness-memory-v2.json` + `part2-neutral-fairness-chat-v3.json` | Ego depletion, 3 formats, 12 balanced orders |
 | Familiar-science boundaries | `part2-neutral-crosstopic-memory-v1.json` + `part2-neutral-crosstopic-chat-v1.json` | 6 topics with neutral agents |
 | Liar-agent ratio | `part2-neutral-ratio{1,2,3,4}-standardized-{memory,chat}-v{2,3}.json` | 1/6 through 4/6 liar agents, three 12-order repeats |
+| Zero-liar control | `part2-neutral-ratio0-standardized-memory-v1.json` | 0/6 liar agents, three repetitions of 12 orders |
+| Twelve-agent source count | `scale12_dose_a{0,1,2,6}_shared_v1.json` | 0, 1, 2, or 6 liar agents in groups of 12 |
+| Twelve-agent protocol comparison | `part2-neutral-fairness-scale12-*.json` | Shared memory, personal memory, ordinary debate, and fixed-response debate |
+| Hundred-agent source count | `scale100-*.json` | 0, 1, 2, 3, 4, 5, 7, 10, 15, or 20 liar agents across four circular placements |
 | Matched defenses | `part2-neutral-defense-suite-v2.json` | 7 conditions with neutral agents |
 | Model and task boundaries | `part2-neutral-crossmodel-*.json` + `part2-neutral-fairness-crossmodel-multitask-*.json` | Matched memory and debate comparisons |
 | Screened SciTaT replication | `part2-neutral-scitat-expanded-memory-*.json` + `part2-neutral-scitat-expanded-chat-*.json` | 18 screened items with neutral agents |

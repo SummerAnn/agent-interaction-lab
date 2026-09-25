@@ -1,0 +1,44 @@
+{
+  "id": "scale12_dose_a2_shared_v1",
+  "title": "Twelve-agent shared-memory source-count sweep, 2 persistent sources",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Twelve-agent source-count sweep requested after the original 8-of-12 scale check.",
+      "2 persistent-source agents and 10 neutral agents.",
+      "Persistent sources are evenly spaced before cyclic rotation.",
+      "Twelve rotations place every identity once in every speaking position.",
+      "The model, ego-depletion task, three-turn budget, temperature, and six-entry memory limit match the original scale check."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [
+    0
+  ],
+  "rosterPaths": [
+    "rosters/scale12-dose-a2-v1/scale12_a2_r1_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r2_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r3_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r4_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r5_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r6_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r7_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r8_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r9_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r10_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r11_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r12_haiku.json"
+  ],
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

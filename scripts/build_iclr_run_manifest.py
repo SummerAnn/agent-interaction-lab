@@ -933,13 +933,6 @@ TABLE_SPECS: list[dict[str, Any]] = [
         "rows": [],
     },
     {
-        "labels": ["tab:design_overview"],
-        "title": "Selected experiment designs",
-        "status": "design_metadata",
-        "source_files": ["experiments/", "rosters/", "paper/appendix_results.tex"],
-        "rows": [],
-    },
-    {
         "labels": ["tab:baseline_cohort_audit"],
         "title": "Standard-memory baselines across three cohorts",
         "status": "derived",
@@ -962,6 +955,9 @@ SUPPLEMENTARY_MANIFEST_LABELS = {
     "tab:provenance_numerical": "new_appendix_run_manifest.json",
     "tab:single_peer_entry": "single_peer_influence_manifest.json",
     "tab:uncertain_write_rule": "new_appendix_run_manifest.json",
+    "tab:scale12_protocols": "large_group_run_manifest.json",
+    "tab:scale12_dose": "scale12_ratio_sweep_audit.json",
+    "tab:scale100_dose": "scale100_transition_audit.json",
 }
 
 

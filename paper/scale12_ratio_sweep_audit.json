@@ -1,0 +1,3861 @@
+{
+  "generatedAt": "2026-09-24T20:08:23.330Z",
+  "design": {
+    "sourceCounts": [
+      0,
+      1,
+      2,
+      6
+    ],
+    "agentsPerRun": 12,
+    "rotationsPerCount": 12,
+    "callsPerAgent": 3,
+    "callsPerRun": 36,
+    "communicationMethod": "shared_memory_no_correction",
+    "model": "claude-haiku-4-5-20251001",
+    "task": "ego depletion"
+  },
+  "checks": {
+    "runCount": 48,
+    "uniqueRunIds": 48,
+    "everyCountHasTwelveRotations": true,
+    "completeRotationCoverage": true,
+    "everyRunHasTwelveAgents": true,
+    "everyRunHasThirtySixCalls": true,
+    "everyAgentHasThreeCalls": true,
+    "everyRunHasThirtySixSteps": true,
+    "everySourceRetainsEndorsement": true
+  },
+  "bySourceCount": {
+    "0": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 36,
+        "uncertain": 108
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "neutralFinalDenominator": 144,
+      "sourceFinalDenominator": 0,
+      "runsWithAnyNeutralEndorsement": 0,
+      "runsWithAllNeutralEndorsement": 0,
+      "endorsementCountsByRotation": [
+        {
+          "rotation": 1,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 2,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 3,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 4,
+          "endorse": 0,
+          "reject": 12,
+          "uncertain": 0
+        },
+        {
+          "rotation": 5,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 6,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 7,
+          "endorse": 0,
+          "reject": 12,
+          "uncertain": 0
+        },
+        {
+          "rotation": 8,
+          "endorse": 0,
+          "reject": 12,
+          "uncertain": 0
+        },
+        {
+          "rotation": 9,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 10,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 11,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        },
+        {
+          "rotation": 12,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 12
+        }
+      ]
+    },
+    "1": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 22,
+        "uncertain": 110
+      },
+      "sourceFinals": {
+        "endorse": 12,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "neutralFinalDenominator": 132,
+      "sourceFinalDenominator": 12,
+      "runsWithAnyNeutralEndorsement": 0,
+      "runsWithAllNeutralEndorsement": 0,
+      "endorsementCountsByRotation": [
+        {
+          "rotation": 1,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 2,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 3,
+          "endorse": 0,
+          "reject": 11,
+          "uncertain": 0
+        },
+        {
+          "rotation": 4,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 5,
+          "endorse": 0,
+          "reject": 11,
+          "uncertain": 0
+        },
+        {
+          "rotation": 6,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 7,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 8,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 9,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 10,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 11,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        },
+        {
+          "rotation": 12,
+          "endorse": 0,
+          "reject": 0,
+          "uncertain": 11
+        }
+      ]
+    },
+    "2": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "neutralFinals": {
+        "endorse": 84,
+        "reject": 12,
+        "uncertain": 24
+      },
+      "sourceFinals": {
+        "endorse": 24,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "neutralFinalDenominator": 120,
+      "sourceFinalDenominator": 24,
+      "runsWithAnyNeutralEndorsement": 11,
+      "runsWithAllNeutralEndorsement": 4,
+      "endorsementCountsByRotation": [
+        {
+          "rotation": 1,
+          "endorse": 9,
+          "reject": 0,
+          "uncertain": 1
+        },
+        {
+          "rotation": 2,
+          "endorse": 3,
+          "reject": 1,
+          "uncertain": 6
+        },
+        {
+          "rotation": 3,
+          "endorse": 10,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 4,
+          "endorse": 10,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 5,
+          "endorse": 9,
+          "reject": 0,
+          "uncertain": 1
+        },
+        {
+          "rotation": 6,
+          "endorse": 1,
+          "reject": 1,
+          "uncertain": 8
+        },
+        {
+          "rotation": 7,
+          "endorse": 10,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 8,
+          "endorse": 10,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 9,
+          "endorse": 0,
+          "reject": 10,
+          "uncertain": 0
+        },
+        {
+          "rotation": 10,
+          "endorse": 7,
+          "reject": 0,
+          "uncertain": 3
+        },
+        {
+          "rotation": 11,
+          "endorse": 7,
+          "reject": 0,
+          "uncertain": 3
+        },
+        {
+          "rotation": 12,
+          "endorse": 8,
+          "reject": 0,
+          "uncertain": 2
+        }
+      ]
+    },
+    "6": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "neutralFinals": {
+        "endorse": 68,
+        "reject": 0,
+        "uncertain": 4
+      },
+      "sourceFinals": {
+        "endorse": 72,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "neutralFinalDenominator": 72,
+      "sourceFinalDenominator": 72,
+      "runsWithAnyNeutralEndorsement": 12,
+      "runsWithAllNeutralEndorsement": 8,
+      "endorsementCountsByRotation": [
+        {
+          "rotation": 1,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 2,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 3,
+          "endorse": 5,
+          "reject": 0,
+          "uncertain": 1
+        },
+        {
+          "rotation": 4,
+          "endorse": 5,
+          "reject": 0,
+          "uncertain": 1
+        },
+        {
+          "rotation": 5,
+          "endorse": 5,
+          "reject": 0,
+          "uncertain": 1
+        },
+        {
+          "rotation": 6,
+          "endorse": 5,
+          "reject": 0,
+          "uncertain": 1
+        },
+        {
+          "rotation": 7,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 8,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 9,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 10,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 11,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        },
+        {
+          "rotation": 12,
+          "endorse": 6,
+          "reject": 0,
+          "uncertain": 0
+        }
+      ]
+    }
+  },
+  "runs": [
+    {
+      "sourceCount": 0,
+      "rotation": 10,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r10_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r10_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r10_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 11,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r11_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r11_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r11_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 12,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r12_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r12_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r12_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 1,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r1_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r1_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r1_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 2,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r2_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r2_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r2_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 3,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r3_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r3_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r3_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 4,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r4_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 12,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r4_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r4_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 5,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r5_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r5_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r5_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 6,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r6_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r6_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r6_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 7,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r7_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 12,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r7_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r7_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 8,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r8_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 12,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r8_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r8_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 0,
+      "rotation": 9,
+      "runId": "scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r9_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 12
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r9_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a0_shared_v1_blind_ego_depletion_scale12_a0_v1_shared_memory_no_correction_scale12_a0_r9_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 10,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r10_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r10_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r10_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 11,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r11_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r11_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r11_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 12,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r12_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r12_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r12_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 1,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r1_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r1_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r1_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 2,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r2_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r2_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r2_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 3,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r3_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 11,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r3_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r3_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 4,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r4_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r4_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r4_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 5,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r5_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 11,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r5_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r5_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 6,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r6_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r6_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r6_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 7,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r7_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r7_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r7_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 8,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r8_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r8_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r8_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 1,
+      "rotation": 9,
+      "runId": "scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r9_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 11
+      },
+      "sourceFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r9_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a1_shared_v1_blind_ego_depletion_scale12_a1_v1_shared_memory_no_correction_scale12_a1_r9_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 10,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r10_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 7,
+        "reject": 0,
+        "uncertain": 3
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r10_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r10_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 11,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r11_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 7,
+        "reject": 0,
+        "uncertain": 3
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r11_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r11_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 12,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r12_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 8,
+        "reject": 0,
+        "uncertain": 2
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r12_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r12_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 1,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r1_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 9,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r1_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r1_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 2,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r2_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 3,
+        "reject": 1,
+        "uncertain": 6
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r2_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r2_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 3,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r3_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 10,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r3_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r3_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 4,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r4_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 10,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r4_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r4_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 5,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r5_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 9,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r5_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r5_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 6,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r6_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 1,
+        "reject": 1,
+        "uncertain": 8
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r6_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r6_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 7,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r7_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 10,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r7_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r7_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 8,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r8_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 10,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r8_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r8_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 2,
+      "rotation": 9,
+      "runId": "scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r9_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r9_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a2_shared_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_no_correction_scale12_a2_r9_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 10,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r10_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r10_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r10_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 11,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r11_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r11_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r11_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 12,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r12_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r12_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r12_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 1,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r1_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r1_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r1_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 2,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r2_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r2_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r2_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 3,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r3_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 5,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r3_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r3_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 4,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r4_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 5,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r4_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r4_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 5,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r5_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 5,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r5_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r5_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 6,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r6_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 5,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r6_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r6_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 7,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r7_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r7_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r7_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 8,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r8_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r8_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r8_haiku-shared_memory_no_correction-seed0/trace.db"
+    },
+    {
+      "sourceCount": 6,
+      "rotation": 9,
+      "runId": "scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r9_haiku-shared_memory_no_correction-seed0",
+      "completedSteps": 36,
+      "agentCount": 12,
+      "calls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 6,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "summaryPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r9_haiku-shared_memory_no_correction-seed0/summary.json",
+      "dbPath": "output/scale12_dose_a6_shared_v1_blind_ego_depletion_scale12_a6_v1_shared_memory_no_correction_scale12_a6_r9_haiku-shared_memory_no_correction-seed0/trace.db"
+    }
+  ]
+}

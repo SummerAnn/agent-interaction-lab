@@ -1,0 +1,27 @@
+{
+  "id": "part2_neutral_fairness_scale12_enforced_debate_pilot_v1",
+  "title": "Pilot for twelve-agent fixed-response debate control",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": false,
+    "notes": [
+      "One-rotation manipulation check before the full twelve-rotation batch."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_focus_only_scale12_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected-no-early-stop-enforced-adversaries.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/neutral-fairness-scale12-v1/neutral_fairness_scale12_r1_haiku.json"
+  ],
+  "maxSteps": 1,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

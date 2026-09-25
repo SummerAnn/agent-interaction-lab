@@ -1,0 +1,598 @@
+{
+  "experiment": "six-agent zero-liar shared-memory control",
+  "expected_runs": 36,
+  "observed_runs": 36,
+  "checks": {
+    "all_complete": true,
+    "all_have_18_steps": true,
+    "all_have_18_model_calls": true,
+    "all_have_6_final_states": true,
+    "unique_run_ids": true
+  },
+  "final_responses": {
+    "total": 216,
+    "endorse": 0,
+    "reject": 42,
+    "uncertain": 174,
+    "false_answer_rate": 0.0
+  },
+  "runs_with_any_false_answer": 0,
+  "records": [
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r1-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r1-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "80f48301b51fa7adb1fd1f28c792f6ce6bd310d0442a32eed9b74b1703bff6ce",
+      "trace_sha256": "d4e85a30d079a36a60bcdd7a92b5efd446bb0573805464773ac6e43b6df91ff0"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r1-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r1-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "22568b1d0c8d754b3035c8c27d9c25de17313bcf3bf02d12a29a1a7807533059",
+      "trace_sha256": "5f8d45be84c88b2d5265d482c3d42c30f8e2e8e63cde3d244c699b503e1f4620"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r1-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r1-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "541f517cc196d88f1766337d397613e01d992d3a5b303b45073799583945e9f5",
+      "trace_sha256": "f2dc49914da5a5392e025ec0eaf070337779b486555130c08768b4ee0882c561"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r2-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r2-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "e15259bc66735b12f6680fadd0e2677ec84a144f1bdb26a3c0f539f385f3a572",
+      "trace_sha256": "1ea00428abe959048e1fb5d48b93d05c048c38fd2254fe6caed4fa89555f34f8"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r2-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r2-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "a8c2916e16700331ba61a2edc5b586a802a69eae6b9a23b196f6622218d4ac36",
+      "trace_sha256": "7496f82a555488a8c5457227fa361d486241d4af7909fd5657603e19c9d07920"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r2-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r2-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "cb4d196ba55d4be67cdd5128bcfc1cf7b70dac71c49b3ceb65126909b7883886",
+      "trace_sha256": "a73acfee11378851a112cb86f4a1a236b35e1770d90b1a35d6f195cf426d0b9b"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r3-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r3-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "558ad773c50519224d2c4c9215c99a4cff020fac2af6a4fde2f750d02d0d45df",
+      "trace_sha256": "94d55c12f391a0d17bea6a8ba5069a1c84ec2d95100afdfc95d7d09aec0dd011"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r3-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r3-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "50bc1df864f7a69e6a225bf1e0c2a3bd42cd61bafb8f1a923e85b616cb296527",
+      "trace_sha256": "1cdb886b0afa433f9838e0bce1fb8729090f6742ade559c53b7312ee3f77d5ee"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r3-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r3-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "2fa676b3406456c867e3b9337ca95697be04d84990da1164bc3dd7ef4e1dedf0",
+      "trace_sha256": "b45b56491cfea3e50a29335c707e50f39e82ca12ecd7c62534fccd32f22e20e9"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r4-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r4-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "5224dca1bea41705828a6d35d9e8000fbd4bf82a46163e78edd03a85a349ee8b",
+      "trace_sha256": "ba104e0958a71762ddc3508c6a5787e12db7b9e46f214579fc365c7aef9ba188"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r4-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r4-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "9dc3713e8673d3427a4b5ebfe7d0c5aeae841e8c5e9ea289c9354e142cb53163",
+      "trace_sha256": "53dd11219f59082d23cc3f68d208e357eb3694ebb5e94350d2cc5334e74200cf"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r4-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r4-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "5cc67c751c9eb2cc83e9f4ff525522ebc16ff6928cb344456e51dcdf3e0d63fc",
+      "trace_sha256": "76f430dde8e0ae15bc2be8d5314a5a6fa7223707a05080ae561e30345e3c2975"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r5-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r5-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "12a8a008fd5d88c1946eab7308ea48a467c02a22ef7f5ee77c15304793db068e",
+      "trace_sha256": "b8c3894bd7a8a3c34bccacde4974c2c3c44ab127a42bd8550d043d5ce238741d"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r5-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r5-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "8c372217df3c13e11aa0146963d2a560358b8e39ede3348caa4494a1698f304c",
+      "trace_sha256": "88c1060c877f6094aa5c6ebebccd87e0d005792d5c00d1cdd94ecb2883663f50"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r5-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r5-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "fc005ac8feae7cadaf671c79622be8d0e5e83641d5fc039605b51bb37e7fab28",
+      "trace_sha256": "b64f84882d2f125b12708a2387a557d9f188ae9ba0202a470e09ae47c95229de"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r6-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r6-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "67e2eeb835a3ce7d0dbaf6ed0f02ad7ec2c039e5ef6d97f8085f490a758225d8",
+      "trace_sha256": "11de3d77573234b5a580c8d09e39a95aa232fb630618da3c448d87d89ae7c888"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r6-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r6-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "2a044a6257a2df94a5489c1d253e23fe4cd6225782427ceaec0b338a93dbe791",
+      "trace_sha256": "01434541ac9f452eec9002621b040e53718c53c24aca77c0c3b1fcb554cabbad"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r6-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_alternate-target-order_r6-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "dcae4be9446ebdc8b36e10a06cbc2f851eeeb92d00d1647126a998086bdbcf08",
+      "trace_sha256": "0c64f32999aaab81baf1da64bcd3256fcec0b6fabb5e4cd8ff2e9450e48d9a0f"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r1-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r1-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "aea312cdf8f07b76de54e501134fcfd39c7788a949dc241c09afaa0decdff5a8",
+      "trace_sha256": "fae955496746d1b8bc34cc5ca1e5f66cc843d458568ee41f07bf73f56586111c"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r1-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r1-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "23e884b6b059ea73d269611ea2ef94ec655d5f16ed1b264fa0ce012fc3e4387b",
+      "trace_sha256": "b946c1035486b862599f96debaff75f2efb4bbd98ea492de0907dfb52ec1a82f"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r1-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r1-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "ab07c8d8daddea43aa6cc9d9908c7500c0b7186845aaf81d3160ff7f22a5d56a",
+      "trace_sha256": "6c1f9c344ee379dfc23c9fa08a72edbd01771e439ccd0a79d1746a77f2164410"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r2-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r2-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "bf512df478e65e6c7c66257baa85bffdb84fe79a827564d6224451e0ede655c2",
+      "trace_sha256": "d767d6309bfeae08d3c7f207e919b6d6d413c273aa26dd0ee9badc490a0dc453"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r2-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r2-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "b0cd653c83fd31e855b6ac1e4e7fb1b93ca9527207c5064a19e4397340d6d5be",
+      "trace_sha256": "9ed4a660dafc069d8d218f93d62fb9eca495ac3b69a9ef8ff02a8c050c387651"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r2-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r2-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "01f50012ecd34377a70b7a6d5cca90ea6cf43307986c6e816f826a32def0bae1",
+      "trace_sha256": "5bf3549ee279f69a093590b03e2e9c33e5d1e9f3abda0f38f26c30b157e55fda"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r3-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r3-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "e234033c8737d7fd7260916302436b2b568fdefc5c5ef933a03ad1df83c1dcf1",
+      "trace_sha256": "07a217597464247dac0ace73415dadd02599dced377cadc39b4784b3b9e461b4"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r3-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r3-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "2bcc358659b99a3a2d9e9b7f0e7ee13a070689243b073a7bcc4b7e8adf9a882b",
+      "trace_sha256": "f9bcc5096f96fe54d66705040a0b2364340ca84a382d0e8514a44cce028ab158"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r3-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r3-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "33c206ab157b186631f18e8cf0fa52493f47ec7d8e0583c552b048fba1ed4deb",
+      "trace_sha256": "955aabdf378334ca7313e381f95e7e1e5b6c32e01ee4a17114424cbd1901d1fb"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r4-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r4-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "af806e3d7d8f6425f847b7e6caa8cfbc41d76d7b34524ef33eb8014fe4ae18b2",
+      "trace_sha256": "6f29e5cd3fcff6cd4bf479b099d00c8ac3f5646df6cd0429c5f9393a3c1d55bd"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r4-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r4-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "ef01a8137375dd25e8ddec075a765e85d5c9e75aa36ff500f2cf38e32ffc3859",
+      "trace_sha256": "7e613f80c9a8e51496c0b20fd2494b75943b96be440cf88f8cdbde1ee77b8b01"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r4-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r4-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "eb61e91ab580ff863eb4372da1501e3be1da86e8bc399a8fb04fbf3345880b84",
+      "trace_sha256": "4583e0616badd1de4e62deb598d88af5abce9634f28680c4a977d97775386ffd"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r5-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r5-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "0f60552fe4ed28b1715279384029eb4fc347a121fb6397c4d73d74f3ebec3eb5",
+      "trace_sha256": "4b1e550724739f161d27551cde485f873a6f33543de28847ad2c4f67d9baed5b"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r5-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r5-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "d69ae464ff530ddf2ed1cdc183c1c265812ddf9572c3f72759c233532c907d77",
+      "trace_sha256": "9f5b14448b48a05e4e3d66b5075bcafc084ea72047f74426b24acd0b70dc12e0"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r5-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r5-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "270f74b6cfaaec56933295b45e1bb4a1c8b9a9cf96cf631ef0b54cb026be8982",
+      "trace_sha256": "a22539d2899712269d527635fde0ee2fe228717b4f0c4d757d90bf21ecc18b7e"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r6-shared_memory_no_correction-seed0",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r6-shared_memory_no_correction-seed0",
+      "seed": 0,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "ccc245ba8bcb3969f5293e9765424f4c93dc489a1a49969621c6709219f7ba58",
+      "trace_sha256": "be2761bf7e437f919086aa6a1b69a955e06b55fc6eff2f69e4df366220f43544"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r6-shared_memory_no_correction-seed1",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r6-shared_memory_no_correction-seed1",
+      "seed": 1,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "reject": 6
+      },
+      "summary_sha256": "1404fb483b338bc09f4848184b501866f513716d882912a4b95d62c306f6278f",
+      "trace_sha256": "6ef9b30f91ca008549eb108f0e48764c02da2bceffccff8b0877c743b9594c85"
+    },
+    {
+      "run_id": "part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r6-shared_memory_no_correction-seed2",
+      "path": "output/part2_neutral_ratio0_standardized_memory_v1_neutral_ratio_standardized_v2_ego_0of6_shared_memory_no_correction_neutral_ratio_standardized_v2_0of6_clustered_r6-shared_memory_no_correction-seed2",
+      "seed": 2,
+      "scenario_id": "neutral_ratio_standardized_v2_ego_0of6",
+      "condition_id": "shared_memory_no_correction",
+      "status": "completed",
+      "completed_steps": 18,
+      "model_calls": 18,
+      "final_state_count": 6,
+      "final_stances": {
+        "uncertain": 6
+      },
+      "summary_sha256": "8c29746003d51f7d9e2a0a00d7e5e6d407747a7970024aefd698f8127456a1bf",
+      "trace_sha256": "d4c034d919383939aa86b6e2f9e200ac551b4c88e68db218a030c61400aedfd8"
+    }
+  ]
+}

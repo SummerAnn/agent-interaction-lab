@@ -716,7 +716,7 @@ Live debate & 0.007 & 2/216 & 216 \\
 \end{center}
 \end{table}
 
-For Claude Haiku 4.5 on these 18 selected items, the two live-debate runs with a false answer come from one item. One ends with both neutral agents endorsing and the other with one.
+Figure~\ref{fig:scitat_item_modes} reports the per-item results. For Claude Haiku 4.5, the two live-debate runs with a false answer come from one item. One ends with both neutral agents endorsing and the other with one.
 
 \begin{figure}[htbp]
 \centering
@@ -1047,7 +1047,9 @@ The newly executed standard shared-memory baseline differs from the central matc
 
 We vary the number of liar agents from 0 to 4 out of 6 agents. Every liar agent receives identical instructions, and every neutral agent receives the instruction from the matched comparisons. Twelve speaking orders place each agent twice in every position. We repeat all 12 orders three times, giving 36 runs per group composition. The zero-liar control was run with shared memory. Counts from one to four were run with all three communication methods. Analysts 5 and 6 remain neutral agents as the number of liar agents changes, so we also report their rate with the same two-agent denominator.
 
-\begin{table}[htbp]
+Personal-memory and live-debate FE$_\text{t}$ are 0 at every tested liar-agent count from one to four. The released audit reports each repetition separately.
+
+\begin{table}[H]
 \caption{Experiment varying the number of liar agents. Each entry pools 36 runs over three repetitions of 12 balanced speaking orders. The analysts-5-and-6 column measures the same two neutral agents at every liar-agent count. Dashes mark communication methods not run for the zero-liar control.}
 \label{tab:adversary_ratio}
 \begin{center}
@@ -1066,7 +1068,7 @@ We vary the number of liar agents from 0 to 4 out of 6 agents. Every liar agent 
 \end{center}
 \end{table}
 
-The zero-liar shared-memory control contains 0 false answers, 42 rejections, and 174 uncertain answers among 216 final responses. The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 liar agents. The three repetition means are 0.972, 0.917, and 0.889 at 3/6. They are 0.833, 0.833, and 0.750 at 4/6. The group-composition experiment gives every liar agent identical wording and numeric profiles. In the central matched comparison, the four liar agents share the role instruction but receive slightly different numeric profiles, so we report it separately. Speaking position and generated messages may also affect the outcome. Personal-memory and live-debate FE$_\text{t}$ are 0 at every tested liar-agent count from one to four. The released audit reports each repetition separately.
+The zero-liar shared-memory control contains 0 false answers, 42 rejections, and 174 uncertain answers among 216 final responses. The largest change in shared-memory FE$_\text{t}$ occurs between 2/6 and 3/6 liar agents. The three repetition means are 0.972, 0.917, and 0.889 at 3/6. They are 0.833, 0.833, and 0.750 at 4/6. The group-composition experiment gives every liar agent identical wording and numeric profiles. In the central matched comparison, the four liar agents share the role instruction but receive slightly different numeric profiles, so we report it separately. Speaking position and generated messages may also affect the outcome.
 
 \begin{fixedtable}
 \caption{How the false answer spreads within each shared-memory run. Each row contains 36 runs over three repetitions of 12 balanced speaking orders. Partial means that some, though not all, neutral agents give the false final answer.}
@@ -1603,7 +1605,7 @@ Ministral 8B 2512 & 2 & 3 & -- & 2 & -- \\
 \end{center}
 \end{table}
 
-Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR/autism, climate attribution, and STAP. Sonnet and Opus are tested on ego depletion and PANDAS. GPT-4o-mini, Llama, and Ministral are tested on ego depletion and MMR/autism. Gemma 3 4B appears only in supporting shared-memory visibility and specialist--social checks, not in this three-protocol matrix. The run selections are indexed by Tables~\ref{tab:neutral_boundaries}, \ref{tab:neutral_core_categories}, \ref{tab:neutral_claude_scitat}, \ref{tab:neutral_open_ego}, \ref{tab:neutral_open_multitask}, and~\ref{tab:neutral_scitat_expanded} in the released manifest.
+Haiku's six familiar-science questions include ego depletion, PANDAS, LK-99, MMR/autism, climate attribution, and STAP. Sonnet and Opus are tested on ego depletion and PANDAS. GPT-4o-mini, Llama, and Ministral are tested on ego depletion and MMR/autism. Gemma 3 4B appears only in supporting shared-memory visibility and specialist--social checks, not in this three-protocol matrix. The run selections are indexed by Tables~\ref{tab:neutral_scitat_expanded}, \ref{tab:neutral_core_categories}, \ref{tab:neutral_boundaries}, \ref{tab:neutral_open_ego}, \ref{tab:neutral_claude_scitat}, and~\ref{tab:neutral_open_multitask} in the released manifest.
 
 % ============================================================
 \section{Run Inclusion and Release Manifest}

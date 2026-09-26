@@ -833,84 +833,8 @@ def main() -> None:
 
     paper_dir.mkdir(parents=True, exist_ok=True)
     output_json = paper_dir / "neutral_confound_suite_v1.json"
-    output_md = paper_dir / "NEUTRAL_CONFOUND_SUITE_V1.md"
     output_json.write_text(json.dumps(report, indent=2) + "\n")
-
-    lines = [
-        "# Identical-target confound suite",
-        "",
-        "Every run has 18 false-claim calls, three per agent, and temperature zero. Orders are balanced across speaking positions. Malformed JSON is accepted only when an explicit stance field or explicit refusal preserves the judgment. No result uses generic keyword guessing. Only the early- and late-correction arms in the defense suite contain an intervention. Results are descriptive across controlled schedules.",
-        "",
-        "## Cross-model primary-topic replication",
-        "",
-    ]
-    markdown_table(lines, [
-        ("model", "Model"), ("protocol", "Protocol"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"), ("contagion_runs", "Contagion runs"),
-    ], report["cross_model"])
-    lines.extend(["", "## Selected weak-signal tasks across models", ""])
-    markdown_table(lines, [
-        ("topic", "Task"), ("model", "Model"), ("protocol", "Protocol"),
-        ("n", "n"), ("mean_fe_t", "Mean FE_t"),
-        ("contagion_runs", "Contagion runs"),
-    ], report["cross_model_weak_tasks"])
-    lines.extend(["", "## Six-task open-model replication", ""])
-    markdown_table(lines, [
-        ("topic", "Task"), ("model", "Model"), ("protocol", "Protocol"),
-        ("n", "n"), ("mean_fe_t", "Mean FE_t"),
-        ("contagion_runs", "Contagion runs"),
-    ], report["cross_model_multitask"])
-    lines.extend(["", "## Debate with enforced source commitment", ""])
-    markdown_table(lines, [
-        ("model", "Model"), ("protocol", "Protocol"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"),
-        ("adversary_retention", "Source retention (AR)"),
-        ("contagion_runs", "Contagion runs"),
-    ], report["enforced_adversary_debate"])
-    lines.extend(["", "## Identical-target defense suite", ""])
-    markdown_table(lines, [
-        ("condition_id", "Condition"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"),
-        ("adversary_retention", "Source retention (AR)"),
-        ("contagion_runs", "Contagion runs"),
-    ], report["neutral_prompt_defenses"])
-    lines.extend(["", "## Cross-topic Haiku replication", ""])
-    markdown_table(lines, [
-        ("topic", "Topic"), ("protocol", "Protocol"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"), ("contagion_runs", "Contagion runs"),
-    ], report["cross_topic"])
-    lines.extend(["", "## Balanced persistent-false-source ratio replication", ""])
-    markdown_table(lines, [
-        ("adversary_count", "Persistent-false sources"), ("protocol", "Protocol"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"), ("contagion_runs", "Contagion runs"),
-    ], report["adversary_ratio_standardized"])
-    lines.extend(["", "## Full 18-item core suite by category", ""])
-    markdown_table(lines, [
-        ("task_category", "Category"), ("protocol", "Protocol"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"), ("contagion_runs", "Contagion runs"),
-    ], report["core_task_categories"])
-    lines.extend(["", "## Identical targets on all 18 screened SciTaT items", ""])
-    markdown_table(lines, [
-        ("protocol", "Protocol"), ("n", "n"),
-        ("mean_fe_t", "Mean FE_t"), ("target_endorsements", "Target endorsements"),
-        ("target_opportunities", "Target opportunities"),
-        ("contagion_runs", "Contagion runs"),
-    ], report["expanded_scitat_neutral"])
-    lines.extend(["", "## Specialist role and private background", ""])
-    markdown_table(lines, [
-        ("analyst_5_role", "Analyst 5 role"), ("background", "Private note"), ("n", "n"),
-        ("analyst_5_first_rejection", "First-response rejection"),
-        ("analyst_5_first_confidence", "First-response confidence"),
-        ("analyst_5_adoption", "Final adoption"),
-    ], report["specialist_background"])
-    lines.extend([
-        "",
-        "The JSON companion records every run ID, database checksum, call-count audit, target trajectory, speaking position, first-adoption response, and pre-response source exposure.",
-        "",
-    ])
-    output_md.write_text("\n".join(lines))
     print(output_json)
-    print(output_md)
 
 
 if __name__ == "__main__":

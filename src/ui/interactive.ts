@@ -842,7 +842,7 @@ function paperDesignScreen(): string[] {
     `  ${C.cyan}AR${C.reset}               fraction of liar agents retaining the assigned false answer`,
     "",
     `${C.dim}Paper source: paper/paper.tex and paper/appendix_results.tex${C.reset}`,
-    `${C.dim}Exact cohorts: paper/RUN_MANIFEST.md plus the two supplementary manifest documents${C.reset}`,
+    `${C.dim}Exact cohorts: paper/RUN_MANIFEST.md and the JSON manifests in paper/${C.reset}`,
   ], w, "heavy");
 }
 
@@ -2505,7 +2505,7 @@ const REVIEWER_COMMAND_ITEMS: RunCommandItem[] = [
     detailTitle: "Inspect a claimed trace",
     cost: "cheap",
     detailSections: [{ heading: "Where to find IDs", lines: [
-      "Use paper/RUN_MANIFEST.md, paper/NEW_APPENDIX_RUN_MANIFEST.md, or paper/OPEN_MODEL_VISIBILITY_MANIFEST.md.",
+      "Use paper/RUN_MANIFEST.md or one of the JSON manifests in paper/.",
       "The trace view shows final states, memory entries, retrievals, and reported metrics.",
     ] }],
   },

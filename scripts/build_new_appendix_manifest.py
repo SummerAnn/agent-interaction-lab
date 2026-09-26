@@ -130,29 +130,6 @@ def main() -> int:
     json_path = output_dir / "new_appendix_run_manifest.json"
     json_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
-    lines = [
-        "# New Appendix Run Manifest",
-        "",
-        "This manifest covers the late heterogeneous-model, write-rule, and defense appendix results.",
-        "",
-        f"- Unique completed runs: **{len(seen)}**",
-        "- Every run has a completion record, 18 model calls, a summary checksum, and a trace checksum.",
-        "",
-        "| Cohort | Runs |",
-        "| --- | ---: |",
-    ]
-    for name, cohort in cohorts.items():
-        lines.append(f"| `{name}` | {cohort['run_count']} |")
-    lines.extend(
-        [
-            "",
-            "The JSON companion contains every run ID and SHA-256 checksum.",
-            "",
-        ]
-    )
-    (output_dir / "NEW_APPENDIX_RUN_MANIFEST.md").write_text(
-        "\n".join(lines), encoding="utf-8"
-    )
     print(f"Wrote {json_path} with {len(seen)} unique runs")
     return 0
 

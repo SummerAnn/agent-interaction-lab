@@ -201,33 +201,6 @@ def main() -> int:
     json_path = output_dir / "single_peer_influence_manifest.json"
     json_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
-    lines = [
-        "# Single recorded entry manifest",
-        "",
-        f"Unique completed runs: {len(all_run_ids)}",
-        "",
-        "| Model | Initial entry | Runs | All responses E/U/R | First response E/U/R |",
-        "|---|---|---:|---:|---:|",
-    ]
-    for cohort in cohorts.values():
-        for scenario, values in cohort["scenarios"].items():
-            if "evidence_correction" in scenario:
-                entry = "evidence-backed correction"
-            elif "correct_rejection" in scenario:
-                entry = "correct rejection"
-            elif "endorsement" in scenario:
-                entry = "endorsement repeat" if "content" in cohort.get("runs", [{}])[0].get("run_id", "") else "endorsement original"
-            else:
-                entry = "uncertainty"
-            lines.append(
-                f"| {cohort['model']} | {entry} | 12 | "
-                f"{values['false_response_count']}/{values['uncertain_response_count']}/{values['reject_response_count']} | "
-                f"{values['first_speaker_false_count']}/{values['first_speaker_uncertain_count']}/{values['first_speaker_reject_count']} |"
-            )
-    lines.extend(["", "The JSON companion contains every run ID and SHA-256 checksum.", ""])
-    (output_dir / "SINGLE_PEER_INFLUENCE_MANIFEST.md").write_text(
-        "\n".join(lines), encoding="utf-8"
-    )
     print(f"Wrote {json_path} with {len(all_run_ids)} unique runs")
     return 0
 

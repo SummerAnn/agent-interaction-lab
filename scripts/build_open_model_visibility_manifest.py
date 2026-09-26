@@ -139,25 +139,6 @@ def main() -> int:
     json_path = output_dir / "open_model_visibility_manifest.json"
     json_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
-    lines = [
-        "# Open-model peer-visibility replication manifest",
-        "",
-        f"Unique completed runs: {len(all_run_ids)}",
-        "",
-        "| Model | Condition | Runs | Neutral false responses | FE_t |",
-        "|---|---|---:|---:|---:|",
-    ]
-    for cohort in cohorts.values():
-        for condition, values in cohort["conditions"].items():
-            lines.append(
-                f"| {cohort['model']} | `{condition}` | {values['run_count']} | "
-                f"{values['neutral_false_response_count']}/{values['neutral_final_response_count']} | "
-                f"{values['mean_neutral_false_endorsement_rate']:.3f} |"
-            )
-    lines.extend(["", "The JSON companion contains every run ID and SHA-256 checksum.", ""])
-    (output_dir / "OPEN_MODEL_VISIBILITY_MANIFEST.md").write_text(
-        "\n".join(lines), encoding="utf-8"
-    )
     print(f"Wrote {json_path} with {len(all_run_ids)} unique runs")
     return 0
 

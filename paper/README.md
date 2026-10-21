@@ -17,4 +17,4 @@ directories. `new_appendix_run_manifest.json` and
 `npm run verify:release:quick` from the repository root for a coverage and
 calculation check, or `npm run verify:release` for the complete trace and
 checksum audit. The current paper title is "On the Effect of Shared Memory on
-False Belief Lock-In in Multi-Agent Systems."
+False-Belief Lock-In in Multi-Agent Systems."

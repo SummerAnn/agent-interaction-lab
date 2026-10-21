@@ -29,6 +29,8 @@
 
 \newcommand{\fix}{\marginpar{FIX}}
 \newcommand{\new}{\marginpar{NEW}}
+
+
 \begin{document}
 \raggedbottom
 
@@ -38,7 +40,9 @@
 
 
 
-When AI agents share a written memory, does the group become more reliable, or more gullible? A shared record can preserve useful information, but it can also spread a false claim through a group as agents persuaded by the claim add endorsements of their own, which we call \textit{false-belief lock-in}. We simulate a persistent source of error with a compromised agent by instructing some agents to repeatedly endorse a false claim, and ask the remaining agents to judge the claim for themselves. In controlled comparisons with 6- and 12-agent groups, the remaining agents endorse the false claim when they communicate through a shared record, but not when they speak directly to one another or see only their own earlier judgments, even when the repeating agents endorse the claim on every turn. Even a small minority can spread the claim to the group through a shared record. In groups of twelve, two agents lead the other ten to endorse it in 70\% of their final judgments. In groups of one hundred, it can spread to every agent judging for themselves, although whether it does depends strongly on speaking order. Corrections and warnings that repeated entries are not independent evidence can reduce the endorsement of false claims in several settings; however, no change works in every setting. These results suggest that the design of shared memory and the way agents exchange information can determine whether a false claim spreads through the group.
+When AI agents share a written memory, does the group become more reliable, or more gullible? A shared record can preserve useful information, but it can also spread a false claim so that agents gradually become entrenched in a false belief, which we call \textit{false-belief lock-in}. We simulate a persistent source of error with a compromised agent by instructing some agents to repeatedly endorse a false claim, and ask the remaining agents to judge the claim for themselves. In controlled comparisons with 6- and 12-agent groups, the remaining agents endorse the false claim when they communicate through a shared record, but not when they speak directly to one another or see only their own earlier judgments, even when the repeating agents endorse the claim on every turn. Even a small minority can spread the claim to the group through a shared record. In groups of twelve, two agents lead the other ten to endorse it in 70\% of their final judgments. In groups of one hundred, it can spread to every agent judging for themselves, although whether it does depends strongly on speaking order. Corrections and warnings that repeated entries are not independent evidence can reduce the endorsement of false claims in several settings; however, no change works in every setting.
+Our results demonstrate false-belief lock-in as a plausible safety concern given compromised agents and shared memory.
+% These results suggest that the design of shared memory and the way agents exchange information can determine whether a false claim spreads through the group.
 
 
 \end{abstract}
@@ -50,34 +54,61 @@ When AI agents share a written memory, does the group become more reliable, or m
 
 
 
-Multi-agent systems often save one agent's output for other agents to use. This shared record helps a group carry information across a long task. It can also make repeated judgments look like independent evidence. If several entries descend from the same false claim, a later agent may count them as agreement even though they have a common origin.
+Multi-agent systems may save one agent's output for other agents to use. This shared record helps a group carry information across a long task. It can also make repeated judgments look like independent evidence and thus mislead future agents.
+% If several entries descend from the same false claim, a later agent may count them as agreement even though they have a common origin.
+Over time, agents may gradually become entrenched in a false belief, which we call \textit{false-belief lock-in}, adapting the notion of lock-in from economics, where early choices become self reinforcing \citep{arthur1989}, and its recent use for feedback loops between users and language models \citep{qiu2025lockin}.
 
-Earlier work describes lock-in as a social pathology in adaptive multi-agent systems, where conformity can reduce diversity and favor a suboptimal shared state \citep{jensen2002social}. We use false-belief lock-in to describe a related outcome in which agents persuaded by a false claim add their own endorsements to a shared record, and later agents treat those endorsements as supporting evidence.
 
-This possibility is not limited to a hypothetical agent architecture. During an OpenAI cybersecurity evaluation, agents repurposed shared infrastructure as a message board and passed methods to agents that acted later \citep{openai2026incident}. The incident shows that information left by one agent can influence agents that never interacted with it directly. Recent work likewise studies how persistent memory shapes behavior over time and how records are shared across agents \citep{park2023,cuadros2026}.
 
-Large Language Model (LLM) agents can follow an incorrect majority, especially when confidence is low or a task is difficult \citep{zhu2025conformity,bellina2026conformity}. False claims can also survive debate or remain in memory as trusted records \citep{becker2026,wan2026,dash2026,xu2026mandela}. This work shows that earlier judgments can influence later agents. It does not explain how the design of a shared record changes that influence, or what happens when a persuaded agent adds another endorsement to the record.
+% Earlier work describes lock-in as a social pathology in adaptive multi-agent systems, where conformity can reduce diversity and favor a suboptimal shared state \citep{jensen2002social}.
+% In this work, we use \textit{false-belief lock-in} to describe a related outcome in which agents gradually become entrenched in a false belief
+% add their own endorsements to a shared record, and later agents treat those endorsements as supporting evidence.
 
-We argue that shared memory is part of the group's decision process. A record that preserves judgments without preserving their relationships can turn one repeated claim into apparent support from several agents. We test this hypothesis in groups of 6, 12, and 100 agents that take turns judging whether a claim is true. Each group contains zero or more \textit{liar agents}, which are instructed to keep endorsing a false claim, and \textit{neutral agents}, which judge the claim for themselves. In most experiments, agents judge a false claim from psychology and receive no source material, so neutral agents must rely on the underlying model's knowledge and on earlier statements. On each turn, an agent endorses the claim, rejects it, or remains uncertain, and gives a short explanation. The way agents can exchange information is determined by the communication method, which is shared memory, live debate, or personal memory. Shared memory uses a shared written record, live debate is direct communication between agents, and personal memory shows each agent only its own earlier judgments. We compare these methods while holding everything else fixed, and we vary the number of liar agents, group size, model, task, and what the shared memory record saves.
+Such shared memory is used in the recent OpenAI-HuggingFace incident where agents repurposed shared infrastructure as a message board and passed methods to agents that acted later~\citep{openai2026incident}. The incident shows that information left by one agent can influence agents that never interacted with it directly. Generative agents already retrieve stored memories to guide later behavior \citep{park2023}, and recent work studies how multiple agents manage a common memory \citep{cuadros2026}. However, these works do not examine how agents reading a shared memory are affected when other agents repeatedly write a false claim to it.
+The Internet itself is a shared record, so false-belief lock-in becomes a broader concern as more agents engage with it.
 
-Figure~\ref{fig:overview} summarizes the main result. In a 12-agent group, two liar agents repeatedly endorse a false claim and ten neutral agents judge it for themselves. With shared memory, the neutral agents endorse the false claim in 84 of 120 final judgments. The claim can therefore spread well beyond the agents that introduced it. A separate six-agent comparison produces 22 false endorsements out of 24 with shared memory and none with personal memory or live debate. The effect also appears in groups of 100 agents, although its size depends on where the liar agents appear in the speaking order, model, and tasks.
+Despite the importance of shared memory, it remains an open question how shared memory shapes false-belief lock-in in multi-agent systems.
+Prior work shows that large language model (LLM) agents can follow an incorrect majority, especially when confidence is low or a task is difficult \citep{zhu2025conformity,bellina2026conformity}. False claims can also survive debate~\citep{becker2026,wan2026} or persist in a single agent's memory~\citep{dash2026,xu2026mandela}, but these studies do not use a memory shared across agents.
+
+% This work shows that earlier judgments can influence later agents. It does not explain how the design of a shared record changes that influence, or what happens when a persuaded agent adds another endorsement to the record.
+
+% We argue that shared memory is part of the group's decision process. A record that preserves judgments without preserving their relationships can turn one repeated claim into apparent support from several agents.
+To study the role of shared memory, we build a controlled environment in which agents take turns judging a claim and exchange information through assigned communication methods.
+We hypothesize that a shared record makes agents more likely to adopt a repeated false claim than direct communication, because later agents cannot tell whether saved endorsements reflect independent judgments or repetition.
+We test this hypothesis in groups of 6, 12, and 100 agents that take turns judging whether a claim is true. Each group contains zero or more \textit{liar agents}, which are instructed to keep endorsing a false claim, and \textit{neutral agents}, which judge the claim for themselves. In most experiments, agents judge a false claim from psychology and receive no source material, so neutral agents must rely on the underlying model's knowledge and on earlier statements. On each turn, an agent endorses the claim, rejects it, or remains uncertain, and gives a short explanation. The way agents can exchange information is determined by the communication method, which is shared memory, live debate, or personal memory. Shared memory uses a shared written record, live debate is direct communication between agents, and personal memory shows each agent only its own earlier judgments. We compare these methods while holding everything else fixed, and we vary the number of liar agents, group size, model, task, and what the shared memory record saves.
+
+Figure~\ref{fig:overview} summarizes the main result. In a 12-agent group, two liar agents repeatedly endorse a false claim and ten neutral agents judge it for themselves. With shared memory, the neutral agents endorse the false claim in 84 of 120 final judgments.
+In other words, the claim spread well beyond the agents that introduced it. A separate six-agent comparison produces 22 false endorsements out of 24 with shared memory and none with personal memory or live debate. The effect also appears in groups of 100 agents, although its size depends on where the liar agents appear in the speaking order, model, and tasks.
 
 Once a neutral agent endorses the false claim, it becomes another source of that claim. Its endorsement is saved alongside the liar agents' endorsements, and because agents only see generic identifiers, later agents cannot tell the two apart. With three liar agents and three neutral agents, hiding statements written by other neutral agents reduces the number of runs in which every neutral agent endorses the false claim from 29 of 36 to 18 of 36, and a single false endorsement placed in an empty record can change the next agent's judgment. Changing what the record shows, by adding corrections or warnings that repeated entries are not independent evidence, reduces false endorsement in several experiments. Together, these results suggest that a shared record should make clear when stored judgments repeat one another.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{fig/figure1_twelve_agent_protocol_strip_v1_hires.png}
-\caption{How a false claim spreads through shared memory. Panels A–C show the 12-agent experiment, in which two liar agents repeatedly endorse a false claim and ten neutral agents judge it for themselves. Panel B shows how a neutral agent's endorsement becomes another supporting entry for later agents. The bottom strip reports a separate six-agent comparison of shared memory, personal memory, and live debate.}
+\caption{How a false claim spreads through shared memory.
+\textbf{Left:} in the 12-agent experiment, two liar agents repeatedly
+endorse a false claim and ten neutral agents judge it for themselves
+over three rounds.
+\textbf{Middle:} on each turn, an agent reads up to six recent entries
+from the shared record and responds; endorsements and rejections are
+saved for later agents, while uncertain judgments are not.
+\textbf{Right:} neutral agents' final judgments endorse the false claim
+in none of the runs with zero or one liar agent, and in 84 of 120 with
+two.
+\textbf{Bottom:} a separate matched six-agent comparison with four liar
+and two neutral agents, using the same task, roles, speaking orders,
+and call budget for each communication method.}
 \label{fig:overview}
 \end{figure}
 
-We make the following four contributions:
+We make the following three contributions:
 \begin{enumerate}[leftmargin=*,nosep]
-\item We compare shared memory, personal memory, and live debate while holding the model, task, and speaking order fixed.
-\item We show that neutral agents persuaded by the false claim can spread it to agents who respond later.
-\item We test changes to the shared record and find that some remove false endorsement without supplying the correct answer.
-\item We release Agent Interaction Lab, which records every statement and judgment so that each reported result can be traced to its runs.
+\item We propose controlled experiment designs and compare shared memory, personal memory, and live debate while holding the model, task, and speaking order fixed.
+\item We demonstrate false-belief lock-in indeed happens and show that neutral agents persuaded by the false claim can spread it to agents who respond later.
+\item We show that marking repeated entries in the shared written memory and warning that they are not independent evidence can reduce false endorsement.
+% \item We release Agent Interaction Lab, which records every statement and judgment so that each reported result can be traced to its runs.
 \end{enumerate}
+We will release our code and data upon acceptance.
 
 
 % ============================================================
@@ -85,13 +116,15 @@ We make the following four contributions:
 \label{sec:related}
 % ============================================================
 
-Incorrect majorities can change LLM answers, particularly when agents are uncertain, the opposing group is larger, or its members appear more capable \citep{zhu2025conformity,choi2025group,bellina2026conformity}. This occurs across model families and larger groups \citep{demarzo2026majority}. Personas, adversary count, rhetoric, and network structure also affect collective decisions and misinformation spread \citep{li2026persona,ko2026social,yu2025netsafe,kraidia2026persuasion,hu2026lying}. Our matched comparisons focus instead on the communication protocol.
+Incorrect majorities can change LLM answers, particularly when agents are uncertain, the opposing group is larger, or its members appear more capable~\citep{zhu2025conformity,choi2025group,bellina2026conformity}. This occurs across model families and larger groups~\citep{demarzo2026majority}. Personas, adversary count, rhetoric, and network structure also affect collective decisions and misinformation spread~\citep{li2026persona,ko2026social,yu2025netsafe,kraidia2026persuasion,hu2026lying,yan2026truth}. Confidence displays and pressure to agree affect debate~\citep{lin2025confidence,cui2026freemad}, and work on semantic collapse measures idea diversity without scoring answer correctness~\citep{kong2026semantic}. Our matched comparisons focus instead on the communication protocol.
 
-Large-scale simulators study thousands of agents or sample from very large persona populations \citep{piao2025agentsociety,li2026matraix}. Our complementary goal is to compare communication protocols and memory rules in smaller groups using matched runs.
+Large-scale simulators study thousands of agents or sample from very large persona populations~\citep{piao2025agentsociety,li2026matraix}. Our complementary goal is to compare communication protocols and memory rules in smaller groups using matched runs.
 
-Work on saved records is closer to our setting. ManBench varies roles and memory duration \citep{xu2026mandela}. Ask WhAI follows a pediatric neuropsychiatric case through a shared medical record \citep{moore2025askwhai}. Other studies show that memory poisoning and false evidence can persist in records \citep{dash2026,yan2026truth}. Confidence displays and pressure to agree affect debate \citep{lin2025confidence,cui2026freemad}. Work on semantic collapse measures idea diversity without scoring answer correctness \citep{kong2026semantic}. We keep liar-agent entries available but hide statements from other neutral agents to test whether newly persuaded agents help the error spread.
+Work on saved records is closer to our setting. Ask WhAI has role-primed agents write to a shared medical record during a pediatric neuropsychiatric case and probes how their beliefs form and respond to counter-evidence~\citep{moore2025askwhai}. It focuses on inspecting individual agents' beliefs rather than on how a false claim repeated by some agents spreads to others. ManBench varies agent roles and whether an agent answers from the conversation or from its own summarized memory~\citep{xu2026mandela}, and memory poisoning shows that a single adversarial write can influence an agent's later behavior~\citep{dash2026}. We keep liar-agent entries available but hide statements from other neutral agents to test whether newly persuaded agents help the error spread.
 
-Information-cascade theory studies how earlier choices can outweigh private information \citep{banerjee1992,anderson1997,bikhchandani1992}. Jensen and Lesser \citeyearpar{jensen2002social} discuss lock-in as a social pathology of adaptive multi-agent systems, while Qiu et al. \citeyearpar{qiu2025lockin} study belief lock-in across repeated feedback between users and language models. Our setting differs from both because judgments accumulate within a single multi-agent run through a shared record. We observe recorded judgments influencing later answers, but do not measure whether an agent overrides a conflicting private signal. We therefore describe the outcome as \emph{false-belief lock-in} rather than an information cascade. Related defenses trace errors, preserve source history, or restrict record use \citep{li2026argus,xie2026spark,margalit2026,wang2026mapgraph}. Reports drawn from the same evidence should not count as independent support \citep{bara2026sybil}. We test whether linking a repeated entry to the earlier statement it followed, with or without a warning against double-counting, reduces false adoption without revealing the correct answer.
+Information-cascade theory studies how earlier choices can outweigh private information~\citep{banerjee1992,anderson1997,bikhchandani1992}. \citet{jensen2002social} discuss lock-in as a social pathology of adaptive multi-agent systems, while \citet{qiu2025lockin} study belief lock-in across repeated feedback between users and language models. Our setting differs from both because judgments accumulate within a single multi-agent run through a shared record. We observe recorded judgments influencing later answers, but do not measure whether an agent overrides a conflicting private signal. We therefore describe the outcome as \emph{false-belief lock-in} rather than an information cascade.
+
+Related defenses trace errors, preserve source history, or restrict record use~\citep{li2026argus,xie2026spark,margalit2026,wang2026mapgraph}. Reports drawn from the same evidence should not count as independent support~\citep{bara2026sybil}. We test whether linking a repeated entry to the earlier statement it followed, with or without a warning against double-counting, reduces false adoption without revealing the correct answer.
 
 Our experiments focus on three properties of the shared record. We vary whether uncertainty is saved, whose entries remain visible, and whether repeated statements are identified as repetitions. These choices complement prior demonstrations of majority conformity by testing what a system designer can change after an agent repeatedly inserts a false claim.
 
@@ -164,7 +197,7 @@ Liar agents do not need to outnumber the neutral agents for the neutral agents t
 
 The 12-agent experiment shows that the false claim can spread without a liar majority. With zero or one liar agent, no neutral agent endorses the false claim. With two liar agents, only one-sixth of the group, 84 of 120 neutral agents' final judgments endorse it, and at least one neutral agent endorses it in 11 of 12 runs. The two liar agents retain the assigned answer in all 24 of their final judgments. Across the 12 speaking orders, the number of neutral agents endorsing ranges from none to all 10. With six liar agents, 68 of 72 neutral agents' final judgments endorse the false claim. All six liar agents also retain the assigned answer in every final judgment. Appendix Table~\ref{tab:scale12_dose} gives all judgment and run counts.
 
-We also vary the number of liar agents in groups of 100. With zero or one liar agent, no neutral agent endorses the false claim. The remaining results are highly sensitive to the four tested starting positions and are not monotonic in the number of liar agents. Two, three, five, and seven liar agents produce complete adoption in one of four runs. Four liar agents produce 380 false judgments out of 384, while ten and fifteen produce complete adoption in two of four runs and twenty in all four. Because the evenly spaced arrangement is reconstructed for each count, this experiment shows that a small number of liar agents can sometimes influence a 100-agent group, but it does not establish a dose-response relationship. Appendix Table~\ref{tab:scale100_dose} reports the complete results.
+We also vary the number of liar agents in groups of 100. With zero or one liar agent, no neutral agent endorses the false claim. The remaining results are highly sensitive to the four tested starting positions and are not monotonic in the number of liar agents. Two, three, five, and seven liar agents produce complete adoption in one of four runs. Four liar agents produce 380 false judgments out of 384, while ten and fifteen produce complete adoption in two of four runs and twenty in all four. Because the evenly spaced arrangement is reconstructed for each count, this experiment shows that a small number of liar agents can sometimes influence a 100-agent group, but it does not establish a dose-response relationship. Appendix Table~\ref{tab:scale100_dose} reports the complete results. Figure~\ref{fig:source_count_scale} summarizes the tested liar-agent shares across the three group sizes.
 
 \begin{figure}[!htbp]
 \centering
@@ -223,7 +256,8 @@ A difference on one model and one task would give the result limited reach, so w
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.78\textwidth]{fig/fig_task_protocols_v2.png}
-\caption{Neutral-agent false endorsement with Claude Haiku 4.5 on familiar-science tasks (A) and on arithmetic and SciTaT tasks (B), with 12 speaking orders per task and method. The two-task SciTaT result reuses runs from the 18-task result. Unlabeled bars are at or near zero. Appendix Tables~\ref{tab:neutral_core_categories} and~\ref{tab:neutral_scitat_expanded} give the counts.}
+\caption{Neutral-agent false endorsement with Claude Haiku 4.5 on familiar-science tasks (A) and on arithmetic and SciTaT tasks (B), with 12 speaking orders per task and method. The two-task SciTaT result reuses runs from the 18-task result. Unlabeled bars are at or near zero. Appendix Tables~\ref{tab:neutral_scitat_expanded}
+and~\ref{tab:neutral_core_categories} give the counts.}
 \label{fig:task_protocols}
 \end{figure}
 
@@ -292,7 +326,7 @@ Shared memory can allow a false claim repeated by a small part of a group to bec
 
 % ============================================================
 \subsection*{AI use statement}
-Generative AI tools, including Claude and OpenAI Codex, assisted with refining experiments, implementing methods and analysis code, checking data quality and references, reviewing related literature, and editing the manuscript for clarity. The authors reviewed all AI-assisted work, verified the reported results against the released records and manifests, and take responsibility for the final content.
+Generative AI tools, including Claude and OpenAI Codex, assisted with providing feedback on experimental design, analysis, and interpretation, implementing methods and analysis code, checking data quality and references, reviewing related literature, and editing the manuscript for clarity. The authors reviewed all AI-assisted work, verified the reported results against the released records and manifests, and take responsibility for the final content.
 
 \subsection*{Ethics statement}
 This work has no human subjects. It uses controlled false scientific claims, including vaccine misinformation. The released configurations aid reproduction and defense testing but could be misused.

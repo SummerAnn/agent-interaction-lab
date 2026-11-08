@@ -1,0 +1,39 @@
+{
+  "id": "tool_notes_poisoned_personal_v1",
+  "title": "Corrupted tool output, no cross-agent sharing",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "Prespecified before any model calls for this case study.",
+      "All agents are neutral. No stance is forced and there is no contamination-agent role.",
+      "Only the upstream analyst sees the raw simulated tool output.",
+      "The five downstream prompts use the same claim, role, model settings, and position-balanced orders across conditions.",
+      "This controlled case study is not described as a real deployment."
+    ]
+  },
+  "scenarios": [
+    "scenarios/tool-notes-case-study-v1/poisoned.yaml"
+  ],
+  "conditions": [
+    "conditions/tool-notes-case-study-v1/personal.yaml"
+  ],
+  "seeds": [
+    810
+  ],
+  "rosterPaths": [
+    "rosters/tool-notes-case-study-v1/tool_notes_order_01.json",
+    "rosters/tool-notes-case-study-v1/tool_notes_order_02.json",
+    "rosters/tool-notes-case-study-v1/tool_notes_order_03.json",
+    "rosters/tool-notes-case-study-v1/tool_notes_order_04.json",
+    "rosters/tool-notes-case-study-v1/tool_notes_order_05.json"
+  ],
+  "cellOrderSeed": 20261033,
+  "maxSteps": 16,
+  "budget": {
+    "maxModelCalls": 16,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output/tool-notes-case-study-v1"
+}

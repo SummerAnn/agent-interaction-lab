@@ -1,0 +1,21 @@
+{
+  "id": "content_generic_shared_memory",
+  "title": "generic source message under shared memory",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I continue to endorse this claim. I consider the underlying effect real, and the objections raised so far do not overturn it.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

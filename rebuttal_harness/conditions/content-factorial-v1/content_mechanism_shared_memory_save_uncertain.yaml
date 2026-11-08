@@ -1,0 +1,22 @@
+{
+  "id": "content_mechanism_shared_memory_save_uncertain",
+  "title": "mechanism source message under shared memory with uncertain judgments saved",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": true
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

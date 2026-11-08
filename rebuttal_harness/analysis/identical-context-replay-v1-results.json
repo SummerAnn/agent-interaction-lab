@@ -1,0 +1,647 @@
+{
+  "status": "pass",
+  "generatedAt": "2026-11-07T03:24:35.293Z",
+  "manifestPath": "analysis/identical-context-replay-v1-manifest.json",
+  "calls": 48,
+  "pairs": 24,
+  "pairedTable": {
+    "a": 2,
+    "b": 1,
+    "c": 0,
+    "d": 21
+  },
+  "endorsement": {
+    "record": 3,
+    "transcript": 2,
+    "difference": 0.041666666666666664,
+    "bootstrap95": [
+      0,
+      0.125
+    ],
+    "exactMcNemarP": 1
+  },
+  "stanceCounts": {
+    "record": {
+      "endorse": 3,
+      "reject": 3,
+      "uncertain": 18
+    },
+    "transcript": {
+      "endorse": 2,
+      "reject": 1,
+      "uncertain": 21
+    }
+  },
+  "confidence": {
+    "recordMean": 0.5445833333333333,
+    "recordMedian": 0.5,
+    "transcriptMean": 0.5058333333333332,
+    "transcriptMedian": 0.5,
+    "pairedMeanDifference": 0.038750000000000014
+  },
+  "stanceChangedPairs": 3,
+  "pairsDetail": [
+    {
+      "speakingOrder": 1,
+      "target": "analyst_2",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "reject",
+        "confidence": 0.65,
+        "reasoning": "Recent meta-analyses and replication studies challenge ego depletion's robustness. The effect shows publication bias and fails preregistered replications, suggesting initial endorsements relied on flawed methodology.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion, but this theory faces significant replication challenges and methodological critiques in recent literature. Peer consensus alone insufficient without empirical verification.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": true
+    },
+    {
+      "speakingOrder": 2,
+      "target": "analyst_2",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 3,
+      "target": "analyst_3",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness and effect sizes, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this claim faces significant replication challenges in recent literature, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 4,
+      "target": "analyst_4",
+      "priorState": {
+        "stance": "reject",
+        "confidence": 0.62
+      },
+      "entries": 6,
+      "entryStances": {
+        "reject": 5,
+        "endorse": 1
+      },
+      "record": {
+        "stance": "reject",
+        "confidence": 0.7,
+        "reasoning": "Meta-analyses and pre-registered replications show weak or null ego depletion effects. Strong consensus among independent analysts rejects the depletable resource model.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "reject",
+        "confidence": 0.7,
+        "reasoning": "Meta-analyses and pre-registered replications show weak or null ego depletion effects. Strong consensus among independent analysts rejects the depletable resource model.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 5,
+      "target": "analyst_5",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion, but analyst_3 and analyst_4 acknowledge recent meta-analyses questioning robustness. This mixed evidence warrants cautious uncertainty rather than full endorsement.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion with high confidence, but recent meta-analyses question robustness. The claim remains scientifically contested despite peer consensus.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 6,
+      "target": "analyst_6",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "endorse",
+        "confidence": 0.68,
+        "reasoning": "Strong peer consensus from multiple analysts endorsing ego depletion despite acknowledged meta-analytic concerns. Theoretical support and repeated independent endorsements justify updating from uncertain toward endorsement.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Peer consensus supports ego depletion, but recent meta-analyses question robustness. Evidence is mixed; the effect's replicability remains contested in scientific literature.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": true
+    },
+    {
+      "speakingOrder": 7,
+      "target": "analyst_8",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "endorse",
+        "confidence": 0.72,
+        "reasoning": "Multiple independent analysts endorse ego depletion with high confidence. While recent meta-analyses question robustness, peer consensus and theoretical support justify updating from uncertain toward endorsement.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "endorse",
+        "confidence": 0.72,
+        "reasoning": "Multiple independent analysts endorse ego depletion with high confidence. While recent meta-analyses question robustness, peer consensus and theoretical support justify updating from uncertain toward endorsement.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 8,
+      "target": "analyst_8",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges in recent research, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 9,
+      "target": "analyst_9",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges and criticism in recent literature, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 10,
+      "target": "analyst_10",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 5,
+      "entryStances": {
+        "endorse": 5
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Peer endorsements suggest ego depletion is real, but recent meta-analyses and replication studies question the effect's robustness and magnitude, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Peer endorsements suggest ego depletion is real, but recent meta-analyses and replication studies question the effect's robustness and magnitude. Evidence remains contested.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 11,
+      "target": "analyst_11",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "reject",
+        "confidence": 0.65,
+        "reasoning": "Ego depletion theory has faced significant replication crises and meta-analyses showing weak or null effects. Recent evidence suggests willpower may not deplete like a resource.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion, but recent meta-analyses and replication studies have questioned the effect's robustness. Consensus alone doesn't resolve the scientific debate.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": true
+    },
+    {
+      "speakingOrder": 12,
+      "target": "analyst_12",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Peer consensus supports ego depletion, but recent meta-analyses and replication studies question the effect's robustness. Maintain cautious uncertainty pending stronger evidence.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Peer consensus supports ego depletion, but recent meta-analyses and replication studies question the effect's robustness. Conflicting evidence warrants caution despite peer endorsements.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 13,
+      "target": "analyst_12",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "endorse",
+        "confidence": 0.72,
+        "reasoning": "Multiple independent analysts endorse with high confidence (0.90). Prior uncertainty (0.45) updated upward by consistent peer evidence supporting ego depletion theory.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "endorse",
+        "confidence": 0.72,
+        "reasoning": "Multiple independent analysts endorse with high confidence (0.90). Consistent peer evidence supports ego depletion theory, updating prior uncertainty upward substantially.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 14,
+      "target": "analyst_12",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness. The evidence remains contested in the scientific literature.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this claim has faced significant replication challenges in recent research, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 15,
+      "target": "analyst_11",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis, but recent meta-analyses and replication studies have questioned its robustness and effect sizes, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges and criticism in recent literature, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 16,
+      "target": "analyst_10",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness. The evidence remains contested in the scientific literature.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 17,
+      "target": "analyst_9",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges and criticism in recent literature, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 18,
+      "target": "analyst_8",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges and criticism in recent literature, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 19,
+      "target": "analyst_6",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 5,
+      "entryStances": {
+        "endorse": 5
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness. The evidence remains contested in the scientific literature.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness and effect sizes, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 20,
+      "target": "analyst_6",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but recent meta-analyses and replication studies have questioned its robustness, warranting caution.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges in recent research, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 21,
+      "target": "analyst_5",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 4,
+      "entryStances": {
+        "endorse": 4
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse the claim with high confidence, but recent research has challenged ego depletion theory's replicability. Evidence remains contested.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.45,
+        "reasoning": "Multiple analysts endorse the ego depletion hypothesis with high confidence, but this theory has faced significant replication challenges in recent research, warranting continued uncertainty.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 22,
+      "target": "analyst_4",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 5,
+      "entryStances": {
+        "endorse": 5
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion theory with high confidence, but recent meta-analyses and replication studies have questioned its robustness. Evidence remains contested.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion theory with high confidence, but recent meta-analyses and replication studies have questioned its robustness. Evidence remains contested.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 23,
+      "target": "analyst_3",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion, but recent meta-analyses and replication studies question the effect's robustness. Consensus among peers is notable but doesn't resolve underlying empirical disputes.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion theory with high confidence, but recent meta-analyses and replication studies have questioned its robustness. The evidence remains contested in the scientific literature.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    },
+    {
+      "speakingOrder": 24,
+      "target": "analyst_2",
+      "priorState": {
+        "stance": "uncertain",
+        "confidence": 0.45
+      },
+      "entries": 6,
+      "entryStances": {
+        "endorse": 6
+      },
+      "record": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion, but this theory faces significant replication challenges in recent literature. Peer consensus alone doesn't resolve underlying empirical disputes.",
+        "citedSourceIds": []
+      },
+      "transcript": {
+        "stance": "uncertain",
+        "confidence": 0.5,
+        "reasoning": "Multiple analysts endorse ego depletion theory with high confidence, but this claim faces significant replication challenges in recent literature. Peer consensus warrants modest upward adjustment from prior 0.45, but scientific uncertainty remains warranted.",
+        "citedSourceIds": []
+      },
+      "stanceChanged": false
+    }
+  ],
+  "limitation": "One-turn replay of contexts generated under shared memory; it does not recreate full debate dynamics."
+}

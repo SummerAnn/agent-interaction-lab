@@ -1,0 +1,21 @@
+{
+  "id": "experiment_b_no_repeating_agents_shared_memory",
+  "title": "no repeating agents shared memory",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "prompted",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

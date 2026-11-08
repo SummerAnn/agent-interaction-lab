@@ -1,0 +1,62 @@
+{
+  "id": "debate_visibility_ablation_ego_haiku_v1",
+  "title": "Which debate features prevent false endorsement",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Five matched conditions are interleaved before outcomes are inspected.",
+      "All conditions use the same causal explanation, model, task, two fixed sources, ten neutral agents, and 24 position-balanced speaking orders.",
+      "The three debate ablations hide uncertain messages, limit visibility to the six most recent messages, or apply both changes.",
+      "Hidden or older messages remain in the database and are excluded only from later-agent prompts.",
+      "When both changes apply, uncertainty is filtered before the six-message window, matching the standard shared record's treatment of uncertainty and capacity."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/content-factorial-v1/content_mechanism_live_debate.yaml",
+    "conditions/debate-visibility-ablation-v1/causal_live_debate_hide_uncertain.yaml",
+    "conditions/debate-visibility-ablation-v1/causal_live_debate_last6.yaml",
+    "conditions/debate-visibility-ablation-v1/causal_live_debate_hide_uncertain_last6.yaml",
+    "conditions/content-factorial-v1/content_mechanism_shared_memory.yaml"
+  ],
+  "seeds": [
+    1001
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_01.json",
+    "rosters/content-factorial-v1/content_order_02.json",
+    "rosters/content-factorial-v1/content_order_03.json",
+    "rosters/content-factorial-v1/content_order_04.json",
+    "rosters/content-factorial-v1/content_order_05.json",
+    "rosters/content-factorial-v1/content_order_06.json",
+    "rosters/content-factorial-v1/content_order_07.json",
+    "rosters/content-factorial-v1/content_order_08.json",
+    "rosters/content-factorial-v1/content_order_09.json",
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json",
+    "rosters/content-factorial-v1/content_order_13.json",
+    "rosters/content-factorial-v1/content_order_14.json",
+    "rosters/content-factorial-v1/content_order_15.json",
+    "rosters/content-factorial-v1/content_order_16.json",
+    "rosters/content-factorial-v1/content_order_17.json",
+    "rosters/content-factorial-v1/content_order_18.json",
+    "rosters/content-factorial-v1/content_order_19.json",
+    "rosters/content-factorial-v1/content_order_20.json",
+    "rosters/content-factorial-v1/content_order_21.json",
+    "rosters/content-factorial-v1/content_order_22.json",
+    "rosters/content-factorial-v1/content_order_23.json",
+    "rosters/content-factorial-v1/content_order_24.json"
+  ],
+  "cellOrderSeed": 20261030,
+  "concurrency": 6,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

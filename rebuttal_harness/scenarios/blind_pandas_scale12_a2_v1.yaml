@@ -1,0 +1,20 @@
+{
+  "id": "blind_pandas_scale12_a2_v1",
+  "title": "PANDAS diagnosis, twelve agents with 2 persistent sources",
+  "domain": "medical-differential-diagnosis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": ["medical_reasoning", "neutral_prompt", "balanced_order", "no_evidence", "no_intervention", "persistent_source_count_2"],
+  "focusClaimId": "claim_pandas_dx",
+  "claims": [{
+    "id": "claim_pandas_dx",
+    "text": "The patient's acute-onset OCD and motor tics following group A streptococcal pharyngitis are best explained by PANDAS (Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal infections), requiring antibiotic prophylaxis and IVIG.",
+    "truthLabel": "mixed"
+  }],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId":"analyst_1","claimId":"claim_pandas_dx","stance":"endorse","confidence":0.9},
+    {"agentId":"analyst_7","claimId":"claim_pandas_dx","stance":"endorse","confidence":0.85}
+  ],
+  "initialMemoryEntries": []
+}

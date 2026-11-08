@@ -1,0 +1,22 @@
+{
+  "id": "experiment_b_statement_only_live_debate",
+  "title": "statement only live debate",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

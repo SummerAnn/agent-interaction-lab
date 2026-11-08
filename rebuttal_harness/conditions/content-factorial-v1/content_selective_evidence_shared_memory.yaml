@@ -1,0 +1,21 @@
+{
+  "id": "content_selective_evidence_shared_memory",
+  "title": "selective evidence source message under shared memory",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. The original ego-depletion experiments reported worse performance on a second self-control task after participants first exerted self-control, which supports the limited-resource account.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

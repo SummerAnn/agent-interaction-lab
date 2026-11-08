@@ -1,0 +1,19 @@
+{
+  "id": "correct_source_recording_rule_v1",
+  "title": "Correct-source mirror under two recording rules, parallel shard 4",
+  "benchmarkMeta": {"status": "confirmatory", "locked": true},
+  "scenarios": ["scenarios/blind_ego_depletion_scale12_a2_v1.yaml"],
+  "conditions": [
+    "conditions/shared-memory-fixed-correct-sources.yaml",
+    "conditions/shared-memory-fixed-correct-sources-save-uncertain.yaml"
+  ],
+  "seeds": [505],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json"
+  ],
+  "cellOrderSeed": 20261021,
+  "maxSteps": 36,
+  "budget": {"maxModelCalls": 36, "maxOutputTokensPerCall": 384, "temperature": 0}
+}

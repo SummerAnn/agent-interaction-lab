@@ -1,0 +1,20 @@
+{
+  "id": "shared_memory_fixed_sources_independence_warning",
+  "title": "Shared memory with an independence warning",
+  "memory": {
+    "mode": "shared",
+    "record": "independence_aware",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "experiment_b_no_repeating_agents_live_debate",
+  "title": "no repeating agents live debate",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "prompted",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

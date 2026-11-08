@@ -1,0 +1,42 @@
+{
+  "id": "content_factorial_ego_haiku_v1_order12",
+  "title": "Matched source-message content by communication method, balanced order 12 of 24",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Message conditions were fixed before observing results.",
+      "The same exact source statement is replayed under shared memory and live debate.",
+      "Twenty-four position-balanced orders are repeated in three independently shuffled execution batches.",
+      "The primary test is the message-content by communication-method interaction in neutral final judgments."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/content-factorial-v1/content_bare_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_bare_live_debate.yaml",
+    "conditions/content-factorial-v1/content_generic_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_generic_live_debate.yaml",
+    "conditions/content-factorial-v1/content_mechanism_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_mechanism_live_debate.yaml",
+    "conditions/content-factorial-v1/content_selective_evidence_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_selective_evidence_live_debate.yaml"
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_12.json"
+  ],
+  "cellOrderSeed": 20261132,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "tool_notes_v2_clean_shared",
+  "title": "Clean tool output, shared notes, 24-order replication",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "DO NOT RUN unless a reviewer specifically asks for the scaled tool-note test.",
+      "The 24 downstream orders and the omitted 25th candidate were fixed before model calls.",
+      "All agents are neutral. No stance is forced and there is no contamination-agent role.",
+      "Only the upstream analyst sees the raw simulated tool output.",
+      "All four cells use the same claim, roles, model settings, seed, and downstream orders.",
+      "This controlled case study is not described as a real deployment."
+    ]
+  },
+  "scenarios": [
+    "scenarios/tool-notes-case-study-v2/clean.yaml"
+  ],
+  "conditions": [
+    "conditions/tool-notes-case-study-v2/shared.yaml"
+  ],
+  "seeds": [
+    810
+  ],
+  "rosterPaths": [
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_01.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_02.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_03.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_04.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_05.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_06.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_07.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_08.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_09.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_10.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_11.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_12.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_13.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_14.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_15.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_16.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_17.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_18.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_19.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_20.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_21.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_22.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_23.json",
+    "rosters/tool-notes-case-study-v2/tool_notes_v2_order_24.json"
+  ],
+  "cellOrderSeed": 20261104,
+  "maxSteps": 16,
+  "budget": {
+    "maxModelCalls": 16,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output/tool-notes-case-study-v2"
+}

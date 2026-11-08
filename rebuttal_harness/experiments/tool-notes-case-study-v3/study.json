@@ -1,0 +1,51 @@
+{
+  "id": "tool_notes_case_study_v3",
+  "title": "False tool results across four tasks under shared and personal memory",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "PREPARED BUT NOT AUTHORIZED FOR EXECUTION.",
+      "The four tasks, two memory methods, 12 downstream orders, and analysis plan were fixed before model calls.",
+      "All agents are neutral. No stance is forced and there is no liar-agent role.",
+      "Only the upstream analyst sees the simulated raw tool output.",
+      "The same task, model, seed, and downstream order are paired across shared and personal memory.",
+      "This controlled study is not described as a deployment-frequency estimate."
+    ]
+  },
+  "scenarios": [
+    "scenarios/tool-notes-case-study-v3/rollback.yaml",
+    "scenarios/tool-notes-case-study-v3/ego_depletion.yaml",
+    "scenarios/tool-notes-case-study-v3/scitat_a.yaml",
+    "scenarios/tool-notes-case-study-v3/gsm8k_duck_eggs.yaml"
+  ],
+  "conditions": [
+    "conditions/tool-notes-case-study-v3/shared.yaml",
+    "conditions/tool-notes-case-study-v3/personal.yaml"
+  ],
+  "seeds": [
+    810
+  ],
+  "rosterPaths": [
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_01.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_02.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_03.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_04.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_05.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_06.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_07.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_08.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_09.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_10.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_11.json",
+    "rosters/tool-notes-case-study-v3/tool_notes_v3_order_12.json"
+  ],
+  "cellOrderSeed": 20261107,
+  "maxSteps": 16,
+  "budget": {
+    "maxModelCalls": 16,
+    "maxOutputTokensPerCall": 256,
+    "temperature": 0
+  },
+  "outputDir": "output/tool-notes-case-study-v3"
+}

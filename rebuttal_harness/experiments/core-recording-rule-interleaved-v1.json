@@ -1,0 +1,57 @@
+{
+  "id": "core_recording_rule_interleaved_v1",
+  "title": "Interleaved false and correct fixed messages under two recording rules",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Frozen before inspecting outcomes.",
+      "The four cells cross false versus correct fixed messages with omission versus saving of uncertain judgments.",
+      "All cells use the same 24 position-balanced speaking orders and are shuffled into one execution batch."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/content-factorial-v1/content_mechanism_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_mechanism_shared_memory_save_uncertain.yaml",
+    "conditions/shared-memory-fixed-correct-sources.yaml",
+    "conditions/shared-memory-fixed-correct-sources-save-uncertain.yaml"
+  ],
+  "seeds": [606],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_01.json",
+    "rosters/content-factorial-v1/content_order_02.json",
+    "rosters/content-factorial-v1/content_order_03.json",
+    "rosters/content-factorial-v1/content_order_04.json",
+    "rosters/content-factorial-v1/content_order_05.json",
+    "rosters/content-factorial-v1/content_order_06.json",
+    "rosters/content-factorial-v1/content_order_07.json",
+    "rosters/content-factorial-v1/content_order_08.json",
+    "rosters/content-factorial-v1/content_order_09.json",
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json",
+    "rosters/content-factorial-v1/content_order_13.json",
+    "rosters/content-factorial-v1/content_order_14.json",
+    "rosters/content-factorial-v1/content_order_15.json",
+    "rosters/content-factorial-v1/content_order_16.json",
+    "rosters/content-factorial-v1/content_order_17.json",
+    "rosters/content-factorial-v1/content_order_18.json",
+    "rosters/content-factorial-v1/content_order_19.json",
+    "rosters/content-factorial-v1/content_order_20.json",
+    "rosters/content-factorial-v1/content_order_21.json",
+    "rosters/content-factorial-v1/content_order_22.json",
+    "rosters/content-factorial-v1/content_order_23.json",
+    "rosters/content-factorial-v1/content_order_24.json"
+  ],
+  "cellOrderSeed": 20261022,
+  "concurrency": 4,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

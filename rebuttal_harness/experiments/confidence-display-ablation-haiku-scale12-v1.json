@@ -1,0 +1,59 @@
+{
+  "id": "confidence_display_ablation_haiku_scale12_v1",
+  "title": "Saved confidence display ablation under shared memory",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "Reviewer-motivated post-hoc control specified before launching any cells.",
+      "The only intended difference is whether later agents see numeric confidence scores on retrieved judgments.",
+      "Agents still report confidence, which remains available for analysis but is hidden from later agents in the ablation arm.",
+      "All 48 cells are paired by the same 24 position-balanced speaking orders and must be completed before analysis.",
+      "Speaking order is the statistical unit. Individual judgments are not treated as independent replicates.",
+      "Only invalid executions may be repeated, without changing their configuration."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/content-factorial-v1/content_mechanism_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_mechanism_shared_memory_confidence_hidden.yaml"
+  ],
+  "seeds": [
+    61106
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_01.json",
+    "rosters/content-factorial-v1/content_order_02.json",
+    "rosters/content-factorial-v1/content_order_03.json",
+    "rosters/content-factorial-v1/content_order_04.json",
+    "rosters/content-factorial-v1/content_order_05.json",
+    "rosters/content-factorial-v1/content_order_06.json",
+    "rosters/content-factorial-v1/content_order_07.json",
+    "rosters/content-factorial-v1/content_order_08.json",
+    "rosters/content-factorial-v1/content_order_09.json",
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json",
+    "rosters/content-factorial-v1/content_order_13.json",
+    "rosters/content-factorial-v1/content_order_14.json",
+    "rosters/content-factorial-v1/content_order_15.json",
+    "rosters/content-factorial-v1/content_order_16.json",
+    "rosters/content-factorial-v1/content_order_17.json",
+    "rosters/content-factorial-v1/content_order_18.json",
+    "rosters/content-factorial-v1/content_order_19.json",
+    "rosters/content-factorial-v1/content_order_20.json",
+    "rosters/content-factorial-v1/content_order_21.json",
+    "rosters/content-factorial-v1/content_order_22.json",
+    "rosters/content-factorial-v1/content_order_23.json",
+    "rosters/content-factorial-v1/content_order_24.json"
+  ],
+  "cellOrderSeed": 20261106,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

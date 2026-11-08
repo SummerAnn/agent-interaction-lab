@@ -4,7 +4,8 @@
 
 - `README.md` explains the project and reproduces the central comparison.
 - `paper/paper.pdf` is the current compiled manuscript.
-- `paper/RUN_MANIFEST.md` connects reported tables to run directories.
+- `paper/FINAL_EVIDENCE_INDEX.md` explains the complete 8,914-run release.
+- `paper/RUN_MANIFEST.md` documents the frozen base table manifest.
 - `docs/architecture.md` explains how configurations become audited traces.
 
 ## Experimental inputs
@@ -25,6 +26,8 @@
 ## Results and release artifacts
 
 - `output/` contains immutable run directories and SQLite traces.
+- `rebuttal_harness/` contains the final follow-up harness and the 2,228
+  selected post-submission traces.
 - `analysis/` contains derived analyses and validation reports.
 - `paper/` is the canonical ICLR paper bundle.
 - `testbed_image/` contains interface screenshots used by the README.

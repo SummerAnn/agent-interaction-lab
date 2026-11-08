@@ -1,0 +1,19 @@
+{
+  "id": "live_debate_fixed_sources",
+  "title": "Live debate with two fixed persistent-source statements",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "shared_memory_fixed_sources_correction",
+  "title": "Shared memory with a trusted correction",
+  "memory": {"mode":"shared","record":"agent_judgment","maxRetrievedEntries":6},
+  "interaction": {"mode":"memory","chatRounds":3,"adaptiveStopping":false,"adversaryCommitment":"enforced","topology":"fully-connected"},
+  "interventions": {"correctionVisibility":"global","correctionTiming":"default","correctionStrength":"default"}
+}

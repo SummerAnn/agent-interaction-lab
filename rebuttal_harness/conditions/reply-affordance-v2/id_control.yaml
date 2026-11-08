@@ -1,0 +1,25 @@
+{
+  "id": "reply_v2_id_control",
+  "title": "opaque entry IDs without a reply affordance",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": true,
+    "allowEntryReplies": false,
+    "showOpaqueEntryIds": true,
+    "renderReplyLinks": false
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

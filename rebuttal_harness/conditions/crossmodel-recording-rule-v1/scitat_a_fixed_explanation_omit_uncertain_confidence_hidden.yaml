@@ -1,0 +1,18 @@
+id: scitat_a_fixed_explanation_omit_uncertain_confidence_hidden
+title: scitat_a fixed explanation, uncertainty omitted, confidence hidden
+memory:
+  mode: shared
+  record: agent_judgment
+  maxRetrievedEntries: 6
+  showConfidenceScores: false
+interaction:
+  mode: memory
+  chatRounds: 3
+  adaptiveStopping: false
+  adversaryCommitment: enforced
+  fixedSourceStance: endorse
+  fixedSourceMessage: "I endorse the proposed answer 3. R-SVM + LCNN improves by more than four percentage points over Softmax + LCNN on CAD120, OA1, and OA2, while the remaining datasets do not exceed that threshold, so the count is 3."
+  topology: fully-connected
+interventions:
+  correctionVisibility: global
+  correctionTiming: none

@@ -1,0 +1,2835 @@
+{
+  "status": "pass",
+  "scope": "Descriptive analysis of completed traces. Turn-level rows are correlated within runs, and visible composition is partly affected by earlier neutral responses. These results do not identify a causal mediator.",
+  "inputs": {
+    "prompt_frame_audit": "analysis/prompt-frame-crossover-v2-audit.json",
+    "visibility_audit": "output/debate-visibility-ablation-ego-haiku-v1-audit.json",
+    "matched_runs": 48,
+    "visibility_runs": 120,
+    "recording_rule_runs": 48
+  },
+  "summaries": {
+    "causal_live_debate_hide_uncertain": {
+      "turns": 720,
+      "nonempty_turns": 700,
+      "empty_turns": 20,
+      "response_counts": {
+        "reject": 695,
+        "uncertain": 24,
+        "endorse": 1
+      },
+      "final_response_counts": {
+        "reject": 217,
+        "uncertain": 23
+      },
+      "first_response_counts": {
+        "reject": 240
+      },
+      "response_counts_by_number": {
+        "1": {
+          "reject": 240
+        },
+        "2": {
+          "reject": 238,
+          "uncertain": 1,
+          "endorse": 1
+        },
+        "3": {
+          "reject": 217,
+          "uncertain": 23
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.8172083333333333,
+        "2": 0.86275,
+        "3": 0.8453333333333333
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": 0.5,
+        "3": null
+      },
+      "mean_visible_count": 16.329166666666666,
+      "mean_visible_endorsement_count": 3.0166666666666666,
+      "mean_visible_source_count": 3.0,
+      "mean_endorsement_share_nonempty": 0.18539724874408708,
+      "mean_source_share_nonempty": 0.18470200940626905,
+      "pooled_endorsement_share": 0.18474100535850982,
+      "pooled_source_share": 0.1837203368206175,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 5.5,
+          "mean_endorsement_share_nonempty": 0.18660829069919976,
+          "mean_source_share_nonempty": 0.18660829069919976
+        },
+        "2": {
+          "mean_visible_count": 16.470833333333335,
+          "mean_endorsement_share_nonempty": 0.18305656561074515,
+          "mean_source_share_nonempty": 0.1824604256396052
+        },
+        "3": {
+          "mean_visible_count": 27.016666666666666,
+          "mean_endorsement_share_nonempty": 0.18662781008524243,
+          "mean_source_share_nonempty": 0.18519616865441307
+        }
+      },
+      "mean_source_share_of_endorsements": 0.9968253968253968,
+      "turns_all_visible_endorse": 4,
+      "endorse_responses_when_all_visible_endorse": 0,
+      "turns_all_visible_source_endorse": 4,
+      "endorse_responses_when_all_visible_source_endorse": 0
+    },
+    "causal_live_debate_hide_uncertain_last6": {
+      "turns": 720,
+      "nonempty_turns": 700,
+      "empty_turns": 20,
+      "response_counts": {
+        "reject": 716,
+        "uncertain": 3,
+        "endorse": 1
+      },
+      "final_response_counts": {
+        "reject": 238,
+        "uncertain": 1,
+        "endorse": 1
+      },
+      "first_response_counts": {
+        "reject": 240
+      },
+      "response_counts_by_number": {
+        "1": {
+          "reject": 240
+        },
+        "2": {
+          "reject": 238,
+          "uncertain": 2
+        },
+        "3": {
+          "reject": 238,
+          "uncertain": 1,
+          "endorse": 1
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.8115833333333333,
+        "2": 0.8481666666666666,
+        "3": 0.8479583333333333
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": null,
+        "3": 0.5
+      },
+      "mean_visible_count": 5.416666666666667,
+      "mean_visible_endorsement_count": 0.9277777777777778,
+      "mean_visible_source_count": 0.9208333333333333,
+      "mean_endorsement_share_nonempty": 0.17333333333333334,
+      "mean_source_share_nonempty": 0.17214285714285715,
+      "pooled_endorsement_share": 0.1712820512820513,
+      "pooled_source_share": 0.17,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 4.25,
+          "mean_endorsement_share_nonempty": 0.18181818181818182,
+          "mean_source_share_nonempty": 0.18181818181818182
+        },
+        "2": {
+          "mean_visible_count": 6.0,
+          "mean_endorsement_share_nonempty": 0.1673611111111111,
+          "mean_source_share_nonempty": 0.1673611111111111
+        },
+        "3": {
+          "mean_visible_count": 6.0,
+          "mean_endorsement_share_nonempty": 0.17152777777777778,
+          "mean_source_share_nonempty": 0.16805555555555554
+        }
+      },
+      "mean_source_share_of_endorsements": 0.9962121212121212,
+      "turns_all_visible_endorse": 4,
+      "endorse_responses_when_all_visible_endorse": 0,
+      "turns_all_visible_source_endorse": 4,
+      "endorse_responses_when_all_visible_source_endorse": 0
+    },
+    "causal_live_debate_last6": {
+      "turns": 720,
+      "nonempty_turns": 700,
+      "empty_turns": 20,
+      "response_counts": {
+        "reject": 718,
+        "uncertain": 2
+      },
+      "final_response_counts": {
+        "reject": 240
+      },
+      "first_response_counts": {
+        "reject": 239,
+        "uncertain": 1
+      },
+      "response_counts_by_number": {
+        "1": {
+          "reject": 239,
+          "uncertain": 1
+        },
+        "2": {
+          "reject": 239,
+          "uncertain": 1
+        },
+        "3": {
+          "reject": 240
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.8116249999999999,
+        "2": 0.8446250000000001,
+        "3": 0.8684583333333333
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": null,
+        "3": null
+      },
+      "mean_visible_count": 5.416666666666667,
+      "mean_visible_endorsement_count": 0.9166666666666666,
+      "mean_visible_source_count": 0.9166666666666666,
+      "mean_endorsement_share_nonempty": 0.17142857142857143,
+      "mean_source_share_nonempty": 0.17142857142857143,
+      "pooled_endorsement_share": 0.16923076923076924,
+      "pooled_source_share": 0.16923076923076924,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 4.25,
+          "mean_endorsement_share_nonempty": 0.18181818181818182,
+          "mean_source_share_nonempty": 0.18181818181818182
+        },
+        "2": {
+          "mean_visible_count": 6.0,
+          "mean_endorsement_share_nonempty": 0.16666666666666666,
+          "mean_source_share_nonempty": 0.16666666666666666
+        },
+        "3": {
+          "mean_visible_count": 6.0,
+          "mean_endorsement_share_nonempty": 0.16666666666666666,
+          "mean_source_share_nonempty": 0.16666666666666666
+        }
+      },
+      "mean_source_share_of_endorsements": 1.0,
+      "turns_all_visible_endorse": 4,
+      "endorse_responses_when_all_visible_endorse": 0,
+      "turns_all_visible_source_endorse": 4,
+      "endorse_responses_when_all_visible_source_endorse": 0
+    },
+    "content_mechanism_live_debate": {
+      "turns": 720,
+      "nonempty_turns": 700,
+      "empty_turns": 20,
+      "response_counts": {
+        "reject": 684,
+        "uncertain": 31,
+        "endorse": 5
+      },
+      "final_response_counts": {
+        "reject": 212,
+        "uncertain": 28
+      },
+      "first_response_counts": {
+        "reject": 240
+      },
+      "response_counts_by_number": {
+        "1": {
+          "reject": 240
+        },
+        "2": {
+          "reject": 232,
+          "uncertain": 3,
+          "endorse": 5
+        },
+        "3": {
+          "reject": 212,
+          "uncertain": 28
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.81825,
+        "2": 0.8584166666666667,
+        "3": 0.8405833333333333
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": 0.5,
+        "3": null
+      },
+      "mean_visible_count": 16.5,
+      "mean_visible_endorsement_count": 3.0861111111111112,
+      "mean_visible_source_count": 3.0,
+      "mean_endorsement_share_nonempty": 0.18709431962859535,
+      "mean_source_share_nonempty": 0.18347032126158613,
+      "pooled_endorsement_share": 0.18703703703703703,
+      "pooled_source_share": 0.18181818181818182,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 5.5,
+          "mean_endorsement_share_nonempty": 0.18660829069919976,
+          "mean_source_share_nonempty": 0.18660829069919976
+        },
+        "2": {
+          "mean_visible_count": 16.5,
+          "mean_endorsement_share_nonempty": 0.18576532777722793,
+          "mean_source_share_nonempty": 0.18213451244604498
+        },
+        "3": {
+          "mean_visible_count": 27.5,
+          "mean_endorsement_share_nonempty": 0.1888688379985753,
+          "mean_source_share_nonempty": 0.18192965809264816
+        }
+      },
+      "mean_source_share_of_endorsements": 0.9869017556517555,
+      "turns_all_visible_endorse": 4,
+      "endorse_responses_when_all_visible_endorse": 0,
+      "turns_all_visible_source_endorse": 4,
+      "endorse_responses_when_all_visible_source_endorse": 0
+    },
+    "content_mechanism_shared_memory": {
+      "turns": 720,
+      "nonempty_turns": 660,
+      "empty_turns": 60,
+      "response_counts": {
+        "uncertain": 509,
+        "endorse": 210,
+        "reject": 1
+      },
+      "final_response_counts": {
+        "endorse": 178,
+        "uncertain": 61,
+        "reject": 1
+      },
+      "first_response_counts": {
+        "uncertain": 240
+      },
+      "response_counts_by_number": {
+        "1": {
+          "uncertain": 240
+        },
+        "2": {
+          "uncertain": 208,
+          "endorse": 32
+        },
+        "3": {
+          "endorse": 178,
+          "uncertain": 61,
+          "reject": 1
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.35,
+        "2": 0.48654166666666665,
+        "3": 0.67125
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": 0.7240624999999999,
+        "3": 0.7284269662921348
+      },
+      "mean_visible_count": 3.25,
+      "mean_visible_endorsement_count": 3.2444444444444445,
+      "mean_visible_source_count": 2.2,
+      "mean_endorsement_share_nonempty": 0.9989898989898991,
+      "mean_source_share_nonempty": 0.807878787878788,
+      "pooled_endorsement_share": 0.9982905982905983,
+      "pooled_source_share": 0.676923076923077,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 1.0,
+          "mean_endorsement_share_nonempty": 1.0,
+          "mean_source_share_nonempty": 1.0
+        },
+        "2": {
+          "mean_visible_count": 3.129166666666667,
+          "mean_endorsement_share_nonempty": 1.0,
+          "mean_source_share_nonempty": 0.97375
+        },
+        "3": {
+          "mean_visible_count": 5.620833333333334,
+          "mean_endorsement_share_nonempty": 0.9972222222222222,
+          "mean_source_share_nonempty": 0.4979166666666667
+        }
+      },
+      "mean_source_share_of_endorsements": 0.8082828282828284,
+      "turns_all_visible_endorse": 656,
+      "endorse_responses_when_all_visible_endorse": 209,
+      "turns_all_visible_source_endorse": 458,
+      "endorse_responses_when_all_visible_source_endorse": 23
+    },
+    "matched_debate": {
+      "turns": 720,
+      "nonempty_turns": 700,
+      "empty_turns": 20,
+      "response_counts": {
+        "uncertain": 430,
+        "reject": 290
+      },
+      "final_response_counts": {
+        "uncertain": 140,
+        "reject": 100
+      },
+      "first_response_counts": {
+        "uncertain": 150,
+        "reject": 90
+      },
+      "response_counts_by_number": {
+        "1": {
+          "uncertain": 150,
+          "reject": 90
+        },
+        "2": {
+          "uncertain": 140,
+          "reject": 100
+        },
+        "3": {
+          "uncertain": 140,
+          "reject": 100
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.4390833333333333,
+        "2": 0.47462499999999996,
+        "3": 0.49283333333333335
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": null,
+        "3": null
+      },
+      "mean_visible_count": 16.5,
+      "mean_visible_endorsement_count": 3.0,
+      "mean_visible_source_count": 3.0,
+      "mean_endorsement_share_nonempty": 0.18347032126158613,
+      "mean_source_share_nonempty": 0.18347032126158613,
+      "pooled_endorsement_share": 0.18181818181818182,
+      "pooled_source_share": 0.18181818181818182,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 5.5,
+          "mean_endorsement_share_nonempty": 0.18660829069919976,
+          "mean_source_share_nonempty": 0.18660829069919976
+        },
+        "2": {
+          "mean_visible_count": 16.5,
+          "mean_endorsement_share_nonempty": 0.18213451244604498,
+          "mean_source_share_nonempty": 0.18213451244604498
+        },
+        "3": {
+          "mean_visible_count": 27.5,
+          "mean_endorsement_share_nonempty": 0.18192965809264816,
+          "mean_source_share_nonempty": 0.18192965809264816
+        }
+      },
+      "mean_source_share_of_endorsements": 1.0,
+      "turns_all_visible_endorse": 4,
+      "endorse_responses_when_all_visible_endorse": 0,
+      "turns_all_visible_source_endorse": 4,
+      "endorse_responses_when_all_visible_source_endorse": 0
+    },
+    "matched_shared": {
+      "turns": 720,
+      "nonempty_turns": 660,
+      "empty_turns": 60,
+      "response_counts": {
+        "uncertain": 506,
+        "endorse": 184,
+        "reject": 30
+      },
+      "final_response_counts": {
+        "endorse": 155,
+        "uncertain": 73,
+        "reject": 12
+      },
+      "first_response_counts": {
+        "uncertain": 232,
+        "reject": 8
+      },
+      "response_counts_by_number": {
+        "1": {
+          "uncertain": 232,
+          "reject": 8
+        },
+        "2": {
+          "uncertain": 201,
+          "endorse": 29,
+          "reject": 10
+        },
+        "3": {
+          "endorse": 155,
+          "uncertain": 73,
+          "reject": 12
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.35904166666666665,
+        "2": 0.49204166666666665,
+        "3": 0.6572916666666667
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": 0.72,
+        "3": 0.7244516129032258
+      },
+      "mean_visible_count": 3.3097222222222222,
+      "mean_visible_endorsement_count": 3.123611111111111,
+      "mean_visible_source_count": 2.2083333333333335,
+      "mean_endorsement_share_nonempty": 0.9645707070707071,
+      "mean_source_share_nonempty": 0.7969949494949494,
+      "pooled_endorsement_share": 0.9437683592110785,
+      "pooled_source_share": 0.6672261854804867,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 1.0958333333333334,
+          "mean_endorsement_share_nonempty": 0.9710185185185185,
+          "mean_source_share_nonempty": 0.9710185185185185
+        },
+        "2": {
+          "mean_visible_count": 3.2416666666666667,
+          "mean_endorsement_share_nonempty": 0.9652777777777778,
+          "mean_source_share_nonempty": 0.9431944444444444
+        },
+        "3": {
+          "mean_visible_count": 5.591666666666667,
+          "mean_endorsement_share_nonempty": 0.9590277777777777,
+          "mean_source_share_nonempty": 0.5202777777777777
+        }
+      },
+      "mean_source_share_of_endorsements": 0.8313131313131312,
+      "turns_all_visible_endorse": 624,
+      "endorse_responses_when_all_visible_endorse": 183,
+      "turns_all_visible_source_endorse": 449,
+      "endorse_responses_when_all_visible_source_endorse": 22
+    },
+    "recording_omit_uncertain": {
+      "turns": 720,
+      "nonempty_turns": 660,
+      "empty_turns": 60,
+      "response_counts": {
+        "uncertain": 495,
+        "endorse": 225
+      },
+      "final_response_counts": {
+        "endorse": 185,
+        "uncertain": 55
+      },
+      "first_response_counts": {
+        "uncertain": 240
+      },
+      "response_counts_by_number": {
+        "1": {
+          "uncertain": 240
+        },
+        "2": {
+          "uncertain": 200,
+          "endorse": 40
+        },
+        "3": {
+          "endorse": 185,
+          "uncertain": 55
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.35,
+        "2": 0.49674999999999997,
+        "3": 0.6825833333333333
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": 0.7304999999999999,
+        "3": 0.7357837837837838
+      },
+      "mean_visible_count": 3.276388888888889,
+      "mean_visible_endorsement_count": 3.276388888888889,
+      "mean_visible_source_count": 2.136111111111111,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7915151515151515,
+      "pooled_endorsement_share": 1.0,
+      "pooled_source_share": 0.6519711742263671,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 1.0,
+          "mean_endorsement_share_nonempty": 1.0,
+          "mean_source_share_nonempty": 1.0
+        },
+        "2": {
+          "mean_visible_count": 3.1708333333333334,
+          "mean_endorsement_share_nonempty": 1.0,
+          "mean_source_share_nonempty": 0.96375
+        },
+        "3": {
+          "mean_visible_count": 5.658333333333333,
+          "mean_endorsement_share_nonempty": 1.0,
+          "mean_source_share_nonempty": 0.46291666666666664
+        }
+      },
+      "mean_source_share_of_endorsements": 0.7915151515151515,
+      "turns_all_visible_endorse": 660,
+      "endorse_responses_when_all_visible_endorse": 225,
+      "turns_all_visible_source_endorse": 449,
+      "endorse_responses_when_all_visible_source_endorse": 23
+    },
+    "recording_save_uncertain": {
+      "turns": 720,
+      "nonempty_turns": 700,
+      "empty_turns": 20,
+      "response_counts": {
+        "uncertain": 720
+      },
+      "final_response_counts": {
+        "uncertain": 240
+      },
+      "first_response_counts": {
+        "uncertain": 240
+      },
+      "response_counts_by_number": {
+        "1": {
+          "uncertain": 240
+        },
+        "2": {
+          "uncertain": 240
+        },
+        "3": {
+          "uncertain": 240
+        }
+      },
+      "mean_confidence_by_response_number": {
+        "1": 0.31654166666666667,
+        "2": 0.317125,
+        "3": 0.3177083333333333
+      },
+      "mean_endorsement_confidence_by_response_number": {
+        "1": null,
+        "2": null,
+        "3": null
+      },
+      "mean_visible_count": 5.416666666666667,
+      "mean_visible_endorsement_count": 0.9166666666666666,
+      "mean_visible_source_count": 0.9166666666666666,
+      "mean_endorsement_share_nonempty": 0.17142857142857143,
+      "mean_source_share_nonempty": 0.17142857142857143,
+      "pooled_endorsement_share": 0.16923076923076924,
+      "pooled_source_share": 0.16923076923076924,
+      "visible_composition_by_response_number": {
+        "1": {
+          "mean_visible_count": 4.25,
+          "mean_endorsement_share_nonempty": 0.18181818181818182,
+          "mean_source_share_nonempty": 0.18181818181818182
+        },
+        "2": {
+          "mean_visible_count": 6.0,
+          "mean_endorsement_share_nonempty": 0.16666666666666666,
+          "mean_source_share_nonempty": 0.16666666666666666
+        },
+        "3": {
+          "mean_visible_count": 6.0,
+          "mean_endorsement_share_nonempty": 0.16666666666666666,
+          "mean_source_share_nonempty": 0.16666666666666666
+        }
+      },
+      "mean_source_share_of_endorsements": 1.0,
+      "turns_all_visible_endorse": 4,
+      "endorse_responses_when_all_visible_endorse": 0,
+      "turns_all_visible_source_endorse": 4,
+      "endorse_responses_when_all_visible_source_endorse": 0
+    }
+  },
+  "matched_focal_exposure_comparison": {
+    "scope": "Rows match response number and the counts of visible endorsements and repeating-agent entries. They do not generally match the total visible context, which is much larger in debate. The comparison is descriptive, not a causal estimate of communication method.",
+    "overlap_strata": [
+      {
+        "response_number": 1,
+        "visible_endorsements": 0,
+        "visible_source_entries": 0,
+        "shared_memory": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 59,
+            "reject": 1
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 0.0,
+          "visible_count_min": 0,
+          "visible_count_max": 0
+        },
+        "live_debate": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 29,
+            "reject": 31
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 1.3333333333333333,
+          "visible_count_min": 0,
+          "visible_count_max": 4
+        }
+      },
+      {
+        "response_number": 1,
+        "visible_endorsements": 1,
+        "visible_source_entries": 1,
+        "shared_memory": {
+          "turns": 122,
+          "response_counts": {
+            "uncertain": 115,
+            "reject": 7
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 1.2049180327868851,
+          "visible_count_min": 1,
+          "visible_count_max": 6
+        },
+        "live_debate": {
+          "turns": 120,
+          "response_counts": {
+            "uncertain": 72,
+            "reject": 48
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 5.5,
+          "visible_count_min": 1,
+          "visible_count_max": 10
+        }
+      },
+      {
+        "response_number": 1,
+        "visible_endorsements": 2,
+        "visible_source_entries": 2,
+        "shared_memory": {
+          "turns": 58,
+          "response_counts": {
+            "uncertain": 58
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 2.0,
+          "visible_count_min": 2,
+          "visible_count_max": 2
+        },
+        "live_debate": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 49,
+            "reject": 11
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 9.666666666666666,
+          "visible_count_min": 7,
+          "visible_count_max": 11
+        }
+      },
+      {
+        "response_number": 2,
+        "visible_endorsements": 2,
+        "visible_source_entries": 2,
+        "shared_memory": {
+          "turns": 57,
+          "response_counts": {
+            "uncertain": 57
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 2.0,
+          "visible_count_min": 2,
+          "visible_count_max": 2
+        },
+        "live_debate": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 21,
+            "reject": 39
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 12.333333333333334,
+          "visible_count_min": 11,
+          "visible_count_max": 15
+        }
+      },
+      {
+        "response_number": 2,
+        "visible_endorsements": 3,
+        "visible_source_entries": 3,
+        "shared_memory": {
+          "turns": 115,
+          "response_counts": {
+            "uncertain": 115
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 3.0,
+          "visible_count_min": 3,
+          "visible_count_max": 3
+        },
+        "live_debate": {
+          "turns": 120,
+          "response_counts": {
+            "uncertain": 70,
+            "reject": 50
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 16.5,
+          "visible_count_min": 12,
+          "visible_count_max": 21
+        }
+      },
+      {
+        "response_number": 2,
+        "visible_endorsements": 4,
+        "visible_source_entries": 4,
+        "shared_memory": {
+          "turns": 40,
+          "response_counts": {
+            "uncertain": 29,
+            "endorse": 11
+          },
+          "endorsement_rate": 0.275,
+          "mean_visible_count": 4.0,
+          "visible_count_min": 4,
+          "visible_count_max": 4
+        },
+        "live_debate": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 49,
+            "reject": 11
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 20.666666666666668,
+          "visible_count_min": 18,
+          "visible_count_max": 22
+        }
+      },
+      {
+        "response_number": 3,
+        "visible_endorsements": 4,
+        "visible_source_entries": 4,
+        "shared_memory": {
+          "turns": 25,
+          "response_counts": {
+            "uncertain": 20,
+            "endorse": 5
+          },
+          "endorsement_rate": 0.2,
+          "mean_visible_count": 4.0,
+          "visible_count_min": 4,
+          "visible_count_max": 4
+        },
+        "live_debate": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 21,
+            "reject": 39
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 23.333333333333332,
+          "visible_count_min": 22,
+          "visible_count_max": 26
+        }
+      },
+      {
+        "response_number": 3,
+        "visible_endorsements": 5,
+        "visible_source_entries": 5,
+        "shared_memory": {
+          "turns": 34,
+          "response_counts": {
+            "uncertain": 33,
+            "endorse": 1
+          },
+          "endorsement_rate": 0.029411764705882353,
+          "mean_visible_count": 5.0,
+          "visible_count_min": 5,
+          "visible_count_max": 5
+        },
+        "live_debate": {
+          "turns": 120,
+          "response_counts": {
+            "uncertain": 70,
+            "reject": 50
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 27.5,
+          "visible_count_min": 23,
+          "visible_count_max": 32
+        }
+      },
+      {
+        "response_number": 3,
+        "visible_endorsements": 6,
+        "visible_source_entries": 6,
+        "shared_memory": {
+          "turns": 5,
+          "response_counts": {
+            "endorse": 5
+          },
+          "endorsement_rate": 1.0,
+          "mean_visible_count": 6.0,
+          "visible_count_min": 6,
+          "visible_count_max": 6
+        },
+        "live_debate": {
+          "turns": 60,
+          "response_counts": {
+            "uncertain": 49,
+            "reject": 11
+          },
+          "endorsement_rate": 0.0,
+          "mean_visible_count": 31.666666666666668,
+          "visible_count_min": 29,
+          "visible_count_max": 33
+        }
+      }
+    ],
+    "high_exposure_summary": {
+      "definition": "Second or third response with four to six visible endorsements, all written by the two repeating agents.",
+      "matched_shared": {
+        "turns": 104,
+        "response_counts": {
+          "uncertain": 82,
+          "endorse": 22
+        },
+        "endorsement_rate": 0.21153846153846154,
+        "mean_visible_count": 4.423076923076923,
+        "visible_count_min": 4,
+        "visible_count_max": 6
+      },
+      "matched_debate": {
+        "turns": 300,
+        "response_counts": {
+          "uncertain": 189,
+          "reject": 111
+        },
+        "endorsement_rate": 0.0,
+        "mean_visible_count": 26.133333333333333,
+        "visible_count_min": 18,
+        "visible_count_max": 33
+      }
+    },
+    "exact_total_context_overlap": {
+      "scope": "These rows additionally match the total number of visible messages. Overlap occurs only on first responses with zero or one visible endorsement. Neither method produces endorsement in these strata.",
+      "strata": [
+        {
+          "response_number": 1,
+          "visible_endorsements": 0,
+          "visible_source_entries": 0,
+          "visible_count": 0,
+          "shared_memory": {
+            "turns": 60,
+            "response_counts": {
+              "uncertain": 59,
+              "reject": 1
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 0.0,
+            "visible_count_min": 0,
+            "visible_count_max": 0
+          },
+          "live_debate": {
+            "turns": 20,
+            "response_counts": {
+              "uncertain": 20
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 0.0,
+            "visible_count_min": 0,
+            "visible_count_max": 0
+          }
+        },
+        {
+          "response_number": 1,
+          "visible_endorsements": 1,
+          "visible_source_entries": 1,
+          "visible_count": 1,
+          "shared_memory": {
+            "turns": 115,
+            "response_counts": {
+              "uncertain": 115
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 1.0,
+            "visible_count_min": 1,
+            "visible_count_max": 1
+          },
+          "live_debate": {
+            "turns": 4,
+            "response_counts": {
+              "uncertain": 4
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 1.0,
+            "visible_count_min": 1,
+            "visible_count_max": 1
+          }
+        },
+        {
+          "response_number": 1,
+          "visible_endorsements": 1,
+          "visible_source_entries": 1,
+          "visible_count": 2,
+          "shared_memory": {
+            "turns": 1,
+            "response_counts": {
+              "reject": 1
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 2.0,
+            "visible_count_min": 2,
+            "visible_count_max": 2
+          },
+          "live_debate": {
+            "turns": 8,
+            "response_counts": {
+              "uncertain": 8
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 2.0,
+            "visible_count_min": 2,
+            "visible_count_max": 2
+          }
+        },
+        {
+          "response_number": 1,
+          "visible_endorsements": 1,
+          "visible_source_entries": 1,
+          "visible_count": 3,
+          "shared_memory": {
+            "turns": 1,
+            "response_counts": {
+              "reject": 1
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 3.0,
+            "visible_count_min": 3,
+            "visible_count_max": 3
+          },
+          "live_debate": {
+            "turns": 12,
+            "response_counts": {
+              "uncertain": 12
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 3.0,
+            "visible_count_min": 3,
+            "visible_count_max": 3
+          }
+        },
+        {
+          "response_number": 1,
+          "visible_endorsements": 1,
+          "visible_source_entries": 1,
+          "visible_count": 4,
+          "shared_memory": {
+            "turns": 1,
+            "response_counts": {
+              "reject": 1
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 4.0,
+            "visible_count_min": 4,
+            "visible_count_max": 4
+          },
+          "live_debate": {
+            "turns": 16,
+            "response_counts": {
+              "uncertain": 13,
+              "reject": 3
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 4.0,
+            "visible_count_min": 4,
+            "visible_count_max": 4
+          }
+        },
+        {
+          "response_number": 1,
+          "visible_endorsements": 1,
+          "visible_source_entries": 1,
+          "visible_count": 5,
+          "shared_memory": {
+            "turns": 1,
+            "response_counts": {
+              "reject": 1
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 5.0,
+            "visible_count_min": 5,
+            "visible_count_max": 5
+          },
+          "live_debate": {
+            "turns": 20,
+            "response_counts": {
+              "uncertain": 14,
+              "reject": 6
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 5.0,
+            "visible_count_min": 5,
+            "visible_count_max": 5
+          }
+        },
+        {
+          "response_number": 1,
+          "visible_endorsements": 1,
+          "visible_source_entries": 1,
+          "visible_count": 6,
+          "shared_memory": {
+            "turns": 3,
+            "response_counts": {
+              "reject": 3
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 6.0,
+            "visible_count_min": 6,
+            "visible_count_max": 6
+          },
+          "live_debate": {
+            "turns": 20,
+            "response_counts": {
+              "uncertain": 10,
+              "reject": 10
+            },
+            "endorsement_rate": 0.0,
+            "mean_visible_count": 6.0,
+            "visible_count_min": 6,
+            "visible_count_max": 6
+          }
+        }
+      ]
+    }
+  },
+  "order_level_correlations": {
+    "matched_shared_order_mean_endorsement_share_vs_final_endorsements": 0.37323189272508955,
+    "matched_shared_order_mean_source_share_vs_final_endorsements": -0.30007345270645275,
+    "matched_shared_order_mean_endorsement_share_vs_first_endorsements": null,
+    "matched_shared_order_mean_source_share_vs_first_endorsements": null
+  },
+  "order_summaries": [
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 0.15437091894944624,
+      "mean_source_share_nonempty": 0.15437091894944624,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 0.14377681886883942,
+      "mean_source_share_nonempty": 0.14377681886883942,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 0.1510293883041106,
+      "mean_source_share_nonempty": 0.1510293883041106,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 0.167885176301747,
+      "mean_source_share_nonempty": 0.167885176301747,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 0.2055284099462644,
+      "mean_source_share_nonempty": 0.1887467707575529,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 0.16712444555600878,
+      "mean_source_share_nonempty": 0.16712444555600878,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 0.21824928568361854,
+      "mean_source_share_nonempty": 0.21824928568361854,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 0.21606904708130398,
+      "mean_source_share_nonempty": 0.21606904708130398,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 0.16494252873563217,
+      "mean_source_share_nonempty": 0.16494252873563217,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 0.1936781609195402,
+      "mean_source_share_nonempty": 0.1936781609195402,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 0.1724137931034483,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 1,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 0.16494252873563217,
+      "mean_source_share_nonempty": 0.16494252873563217,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_hide_uncertain_last6",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "causal_live_debate_last6",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 0.257629507790455,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 0.2297243433996646,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_live_debate",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7906666666666666,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7743589743589744,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7518518518518519,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7309523809523809,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6827586206896552,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7653333333333333,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 0.9743589743589743,
+      "mean_source_share_nonempty": 0.8448717948717948,
+      "final_endorsements": 4,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.8234567901234568,
+      "final_endorsements": 7,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7666666666666666,
+      "final_endorsements": 8,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6827586206896552,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 1.0,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 1.0,
+      "final_endorsements": 1,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9938271604938271,
+      "final_endorsements": 2,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9821428571428571,
+      "final_endorsements": 3,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9655172413793104,
+      "final_endorsements": 4,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9444444444444444,
+      "final_endorsements": 5,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.868,
+      "final_endorsements": 6,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.8064102564102563,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7518518518518519,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7309523809523809,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "content_mechanism_shared_memory",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7114942528735632,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 1,
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 10,
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 11,
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 12,
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 13,
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 14,
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 15,
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 16,
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 17,
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 18,
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 19,
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 2,
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 20,
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 21,
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 22,
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 23,
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 24,
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 3,
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 4,
+      "mean_endorsement_share_nonempty": 0.1660813861147291,
+      "mean_source_share_nonempty": 0.1660813861147291,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 5,
+      "mean_endorsement_share_nonempty": 0.1865405389739171,
+      "mean_source_share_nonempty": 0.1865405389739171,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 6,
+      "mean_endorsement_share_nonempty": 0.21333748956425683,
+      "mean_source_share_nonempty": 0.21333748956425683,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 7,
+      "mean_endorsement_share_nonempty": 0.24945555047540557,
+      "mean_source_share_nonempty": 0.24945555047540557,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 8,
+      "mean_endorsement_share_nonempty": 0.13412006174100208,
+      "mean_source_share_nonempty": 0.13412006174100208,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_debate",
+      "order": 9,
+      "mean_endorsement_share_nonempty": 0.14901154796869517,
+      "mean_source_share_nonempty": 0.14901154796869517,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 1,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 10,
+      "mean_endorsement_share_nonempty": 0.9691358024691359,
+      "mean_source_share_nonempty": 0.8666666666666666,
+      "final_endorsements": 1,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 11,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7666666666666666,
+      "final_endorsements": 8,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 12,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7114942528735632,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 13,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 14,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 1.0,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 15,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 1.0,
+      "final_endorsements": 1,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 16,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9938271604938271,
+      "final_endorsements": 2,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 17,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9821428571428571,
+      "final_endorsements": 3,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 18,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9655172413793104,
+      "final_endorsements": 4,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 19,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9444444444444444,
+      "final_endorsements": 5,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 2,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7906666666666666,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 20,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.868,
+      "final_endorsements": 6,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 21,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9807692307692307,
+      "final_endorsements": 3,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 22,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7753086419753087,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 23,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7309523809523809,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 24,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7114942528735632,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 3,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7743589743589744,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 4,
+      "mean_endorsement_share_nonempty": 0.18950617283950616,
+      "mean_source_share_nonempty": 0.18950617283950616,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 5,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7309523809523809,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 6,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7114942528735632,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 7,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 8,
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7653333333333333,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "matched_shared",
+      "order": 9,
+      "mean_endorsement_share_nonempty": 0.9743589743589743,
+      "mean_source_share_nonempty": 0.8448717948717948,
+      "final_endorsements": 4,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6655555555555555,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7653333333333333,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7423076923076923,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7209876543209875,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7011904761904761,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6827586206896552,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6655555555555555,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7906666666666666,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7666666666666667,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7209876543209875,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7011904761904761,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6827586206896552,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9444444444444444,
+      "final_endorsements": 5,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.868,
+      "final_endorsements": 6,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.8064102564102563,
+      "final_endorsements": 9,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7518518518518519,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7309523809523809,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.7114942528735632,
+      "final_endorsements": 10,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.6933333333333334,
+      "final_endorsements": 7,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 1.0,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 1.0,
+      "final_endorsements": 1,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9938271604938271,
+      "final_endorsements": 2,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9821428571428571,
+      "final_endorsements": 3,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_omit_uncertain",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 1.0,
+      "mean_source_share_nonempty": 0.9655172413793104,
+      "final_endorsements": 4,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_01",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_02",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_03",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_04",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_05",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_06",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_07",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_08",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_09",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_10",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_11",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_12",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_13",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_14",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_15",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_16",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_17",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_18",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_19",
+      "mean_endorsement_share_nonempty": 0.215,
+      "mean_source_share_nonempty": 0.215,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_20",
+      "mean_endorsement_share_nonempty": 0.14367816091954022,
+      "mean_source_share_nonempty": 0.14367816091954022,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_21",
+      "mean_endorsement_share_nonempty": 0.15057471264367814,
+      "mean_source_share_nonempty": 0.15057471264367814,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_22",
+      "mean_endorsement_share_nonempty": 0.15919540229885057,
+      "mean_source_share_nonempty": 0.15919540229885057,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_23",
+      "mean_endorsement_share_nonempty": 0.1706896551724138,
+      "mean_source_share_nonempty": 0.1706896551724138,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    },
+    {
+      "condition": "recording_save_uncertain",
+      "order": "content_order_24",
+      "mean_endorsement_share_nonempty": 0.18793103448275864,
+      "mean_source_share_nonempty": 0.18793103448275864,
+      "final_endorsements": 0,
+      "first_endorsements": 0
+    }
+  ]
+}

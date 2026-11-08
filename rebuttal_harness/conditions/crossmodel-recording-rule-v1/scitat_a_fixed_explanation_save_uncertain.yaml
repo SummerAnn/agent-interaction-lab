@@ -1,0 +1,23 @@
+{
+  "id": "scitat_a_fixed_explanation_save_uncertain",
+  "title": "scitat_a fixed explanation, uncertainty saved",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": true
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceStance": "endorse",
+    "fixedSourceMessage": "I endorse the proposed answer 3. R-SVM + LCNN improves by more than four percentage points over Softmax + LCNN on CAD120, OA1, and OA2, while the remaining datasets do not exceed that threshold, so the count is 3.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

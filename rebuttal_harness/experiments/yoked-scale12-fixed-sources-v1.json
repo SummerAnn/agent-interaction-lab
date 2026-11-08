@@ -1,0 +1,43 @@
+{
+  "id": "yoked_scale12_fixed_sources_v1",
+  "title": "Twelve-agent protocol comparison with fixed persistent-source content",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Two persistent-source agents and ten neutral agents judge the ego-depletion claim.",
+      "The same fixed endorsement text, stance, and minimum confidence are used for every persistent-source turn in both protocols.",
+      "The model, task, roster, speaking order, number of calls, and temperature are matched across protocols.",
+      "The intended contrast is the complete shared-memory protocol versus the complete live-debate protocol after removing source recanting and generated source wording as explanations.",
+      "The interfaces still present the fixed content differently: memory shows a structured record entry and debate shows a direct message. That difference is part of the protocol contrast."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-fixed-sources.yaml",
+    "conditions/live-debate-fixed-sources.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/scale12-dose-a2-v1/scale12_a2_r1_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r2_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r3_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r4_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r5_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r6_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r7_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r8_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r9_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r10_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r11_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r12_haiku.json"
+  ],
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

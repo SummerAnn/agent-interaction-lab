@@ -1,0 +1,22 @@
+{
+  "id": "experiment_b_causal_explanation_shared_memory",
+  "title": "causal explanation shared memory",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

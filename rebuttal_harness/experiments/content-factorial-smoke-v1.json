@@ -1,0 +1,19 @@
+{
+  "id": "content_factorial_smoke_v1",
+  "title": "Content factorial smoke test",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": ["One-cell implementation and trace check; excluded from scientific results."]
+  },
+  "scenarios": ["scenarios/blind_ego_depletion_scale12_a2_v1.yaml"],
+  "conditions": ["conditions/content-factorial-v1/content_bare_shared_memory.yaml"],
+  "seeds": [999],
+  "rosterPaths": ["rosters/content-factorial-v1/content_order_01.json"],
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

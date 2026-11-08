@@ -1,393 +1,260 @@
 # Agent Interaction Lab
 
-Testbed and experimental data for "On the Effect of Shared Memory on False-Belief Lock-In in Multi-Agent Systems" (ICLR 2027 submission).
+Code, experiment configurations, and audited evidence for **“On the Effect of
+Shared Memory on False-Belief Lock-In in Multi-Agent Systems”** (ICLR 2027
+submission).
 
-**[Read the paper (PDF)](paper/paper.pdf)**
+- [Read the paper](paper/paper.pdf)
+- [See the complete evidence index](paper/FINAL_EVIDENCE_INDEX.md)
+- [Read the latest release audit](analysis/release_audit.md)
+- [Open the anonymous release mirror](https://anonymous.4open.science/r/agent-interaction-lab-341D)
 
-![Agent Interaction Lab terminal interface](testbed_image/main.png)
+The paper reports **8,914 completed multi-agent runs**. The release audit maps
+every reported cohort to exact run IDs and checks all 8,914 SQLite traces.
 
-## What this is
+> **Double-blind review.** The GitHub account name identifies an author. Do not
+> share this GitHub URL in anonymous review correspondence. Use the anonymous
+> 4open.science link above. This repository is the convenient entry point for
+> collaborators and for public use after review.
 
-Agent Interaction Lab is a testbed for studying how information moves through groups of LLM agents that share a persistent written memory. The paper studies groups of 6, 12, and 100 agents and compares shared memory, live debate, and personal memory. The experiments cover seven models and several scientific, clinical, and arithmetic tasks, with different model coverage by task.
+## The question
 
-Unlike population-scale social simulators, Agent Interaction Lab is built for controlled causal comparisons. A matched run holds the agents, task, order, and call budget fixed while changing a communication or memory rule, and the audit trail records what every agent retrieved, wrote, and answered.
+When AI agents share a written memory, repeated judgments can look like
+independent support. We ask whether this can spread a false claim and keep it
+available after the original sources are removed. We call the return of the
+false answer from stored entries **false-belief lock-in**.
 
-The paper finds that a small minority can spread a repeated false claim through shared memory. In 12-agent groups, two agents repeatedly endorse the claim while ten judge it for themselves; the ten agents endorse it in 84 of 120 final judgments. In 100-agent groups, the claim can spread to every agent judging for themselves, although the result depends strongly on speaking order. A separate matched six-agent comparison gives 22 false final judgments out of 24 with shared memory and none with personal memory or live debate, even when the repeating agents endorse the claim on every turn. Additional experiments show that endorsements written by persuaded agents can contribute to further spread, while corrections and warnings that repeated entries are not independent evidence reduce false endorsement in several settings. These effects vary across models, questions, and record designs; the paper and coverage tables report the tested scope.
+The experiments compare shared memory, personal memory, and live debate while
+varying the number of liar agents, speaking order, message content, recording
+rules, model, task, corrections, and warnings.
 
-![Neutral-agent false endorsement across tasks](paper/fig/fig_task_protocols_v2.png)
+![Experimental setup and main results](paper/fig/figure1_overview_hybrid.png)
 
-## Quick start
+The figure above contains the two entry-point results. In twelve-agent Haiku
+groups, two liar agents lead the ten neutral agents to endorse the false claim
+in 84 of 120 final judgments. In the six-agent comparison, shared memory
+produces 22 false endorsements out of 24; personal memory and live debate
+produce none. The live-debate version in that comparison uses discuss
+instructions, so the paper separately matches the instructions as described
+below.
+
+## Main findings
+
+| Question | Result | Scope |
+| --- | --- | --- |
+| Is a liar-agent majority necessary? | With 0, 1, and 2 liar agents in twelve-agent groups, neutral agents endorse in 0/144, 0/132, and 84/120 final judgments. | Haiku on ego depletion |
+| Does the communication method matter? | With both methods using assess instructions, shared memory produces 155/240 false endorsements and live debate produces 0/240. | Haiku on ego depletion |
+| Does the repeated message matter? | A bare claim produces 6/240 false endorsements; an explanation produces 139/240. | Shared memory, Haiku on ego depletion |
+| Does saving doubt matter? | Saving uncertain judgments reduces false endorsement from 185/240 to 0/240; all 240 judgments remain uncertain. | Haiku on ego depletion |
+| Do numeric confidence scores matter? | Hiding them reduces false endorsement from 182/240 to 14/240, with a lower rate in 23 of 24 speaking orders. Sonnet remains at 240/240 with or without scores on SciTaT-A. | The effect appears in one model-task pair and not the other tested pair. |
+| Can warnings help without giving the answer? | Two repetition warnings reduce 23/24 false endorsements to 0/24. When the repeated answer is correct, both preserve all 240 correct rejections. | Six-agent and twelve-agent Haiku comparisons on ego depletion |
+| Can one false tool result spread without liar agents? | On three questions, every one of 36 shared-memory runs spreads the error to all five later agents; none of 36 personal-memory runs does. A fourth GSM8K question is a null with mixed evidence in the saved entry. | Haiku, four-question study |
+| What brings the false answer back after removal? | With neither earlier entries nor a reminder, every later judgment is uncertain. A reminder alone also does nothing. Earlier entries alone keep about 30 agents endorsing; entries plus the reminder produce 25, then 111 and 93 endorsements across the three later turns. | Twelve-agent Haiku removal experiment on ego depletion |
+
+The central comparison is not universal. Sonnet and Opus can also spread the
+claim in debate on SciTaT-A, Llama endorses more often in debate across six
+tasks, hiding confidence has no observed effect for Sonnet on SciTaT-A, and the
+warnings do not change agreement on PANDAS. The paper reports these boundaries
+rather than treating the Haiku result as a general rule.
+
+## What enters the record matters
+
+![Effect of repeated message content under shared memory and live debate](paper/fig/figure2_message_content_academic.png)
+
+For the record designs tested here, four features explain much of the observed
+spread:
+
+1. **Message content.** Explanations persuade more often than a bare claim.
+2. **Dropped uncertainty.** Standard shared memory saves endorsements and
+   rejections but omits uncertain judgments.
+3. **Visible confidence.** Numeric confidence beside saved judgments increases
+   spread in the Haiku ego-depletion comparison.
+4. **Repeated entries.** Later agents may see several related endorsements as
+   separate support. Links and a warning can remove false endorsement in the
+   six-agent comparison.
+
+The removal experiment adds a fifth point: stored entries are necessary for
+the observed return. A reminder of the agent’s last judgment does not restore
+the false answer by itself.
+
+## Independent fact-checking
+
+This repository contains the source code, paper, protocols, configurations,
+manifests, analysis outputs, verification script, and the exact raw traces for
+all 8,914 reported runs. The anonymous 4open.science link mirrors the same
+release for double-blind review.
+
+A complete extracted release contains both of these directories:
+
+```text
+output/
+rebuttal_harness/output/
+```
+
+After cloning or downloading this release, run from its root:
+
+```bash
+# Fast manifest, count, path, and aggregate checks
+python3 scripts/verify_release.py --repo .
+
+# Full checksum and SQLite-integrity audit
+python3 scripts/verify_release.py --repo . --full
+```
+
+The same commands are available through npm and do not require `npm install`:
+
+```bash
+npm run verify:release:quick
+npm run verify:release
+```
+
+The full audit should report:
+
+```text
+status: PASS
+claimed runs: 8,914
+missing summaries: 0
+missing traces: 0
+SQLite traces checked: 8,914
+SHA-256 trace/summary pairs checked: 8,826
+one-turn replay calls excluded from the run total: 96
+errors: 0
+```
+
+The durable reports are
+[`analysis/release_audit.md`](analysis/release_audit.md) and
+[`analysis/release_audit.json`](analysis/release_audit.json).
+
+## Run accounting
+
+| Evidence group | Runs | Canonical index |
+| --- | ---: | --- |
+| Original release | 6,686 | Base and extension manifests under `paper/` |
+| Record-content studies | 696 | `paper/rebuttal_run_manifest.json` |
+| Confirmatory follow-ups | 428 | `paper/rebuttal_run_manifest.json` |
+| Debate, correction, and persistence | 840 | `paper/rebuttal_run_manifest.json` |
+| Correct-answer warning comparison | 72 | `paper/rebuttal_run_manifest.json` |
+| Confidence-display comparisons | 96 | `paper/rebuttal_run_manifest.json` |
+| Four-question false-tool-result study | 96 | `paper/rebuttal_run_manifest.json` |
+| **Paper total** | **8,914** | [`paper/FINAL_EVIDENCE_INDEX.md`](paper/FINAL_EVIDENCE_INDEX.md) |
+| One-turn replay calls, excluded from total | 96 | `paper/replay_call_manifest.json` |
+
+The final evidence index maps the follow-up experiments to Appendix Tables
+54–69. Start there rather than inferring experimental cohorts from directory
+names.
+
+## Inspecting the data
+
+Each completed run has a `summary.json` and a SQLite `trace.db`. The database
+records every written judgment, memory entry, retrieval, debate message, model
+call, and metric.
+
+For example, to inspect the final judgments in one run:
+
+```bash
+sqlite3 path/to/trace.db \
+  "SELECT agent_id, stance, confidence
+   FROM agent_claim_states
+   WHERE claim_id='claim_ego_depletion'
+   AND step_index=(SELECT MAX(step_index) FROM agent_claim_states);"
+```
+
+To see what entered the shared record:
+
+```bash
+sqlite3 path/to/trace.db \
+  "SELECT step_index, agent_id, stance, confidence, entry_text
+   FROM memory_entries
+   WHERE claim_id='claim_ego_depletion'
+   ORDER BY step_index;"
+```
+
+To see what an agent retrieved before judging:
+
+```bash
+sqlite3 path/to/trace.db \
+  "SELECT step_index, agent_id, retrieved_entry_ids_json, context_json
+   FROM retrieval_traces
+   ORDER BY step_index, agent_id;"
+```
+
+## Running the testbed
+
+Running new experiments requires Node.js and the relevant model-provider key.
+It is not required for checking the released results.
 
 ```bash
 npm install
 cp .env.example .env
-# Add the keys you need to .env (ANTHROPIC_API_KEY, OPENAI_API_KEY,
-# or OPENROUTER_API_KEY). The TUI tests a key before saving it.
-```
-
-### Interactive terminal
-
-```bash
+# Add ANTHROPIC_API_KEY, OPENAI_API_KEY, or OPENROUTER_API_KEY as needed.
 npm run agentlab
 ```
 
-This launches the interactive terminal with a menu for running experiments, inspecting results, comparing runs, and browsing configurations. The menu options are:
+The interactive terminal can run a configuration, inspect an individual trace,
+compare runs, and browse completed grids. The manifest-based verifier above is
+the canonical way to audit the final paper totals.
 
-1. **Run config** -- choose a YAML run config and optionally override its seed, rounds, budget, or agent count
-2. **Paper guide & evidence** -- see the matched design, headline result, agent trajectory, trace map, and latest audit status
-3. **Inspect memory** -- browse what agents wrote and retrieved
-4. **Batch seeds** -- run the same setup across multiple seeds
-5. **Compare runs** -- side-by-side results for two configurations
-6. **Run history** -- see recent runs and their outcomes
-7. **Experiment archive** -- browse completed experiment grids
-8. **Browse setups** -- explore available scenarios, conditions, and rosters
-9. **Provider setup** -- configure API keys for each model provider
-10. **Run command** -- verify the release, inspect a claimed trace, rerun an exact paper experiment, or run a YAML config
-11. **Explain** -- read documentation about how the testbed works
+### Re-run the central communication comparison
 
-### Paper verification and reproduction
-
-![Paper verification, trace inspection, and released experiment menu](testbed_image/reproduce-paper.png)
-
-### Live debate view
-
-![Live debate between agents](testbed_image/chat.png)
-
-### Run results view
-
-![Completed run showing agent states and memory entries](testbed_image/fe_result.png)
-
-### Scenario browser
-
-![Browsing scenarios with claims and evidence cards](testbed_image/memory.png)
-
-### Try the central comparison yourself
-
-Want to reproduce the paper's central matched comparison? The model, question, six agents, instructions, speaking order, and call budget remain fixed across the three communication methods. Across 12 balanced speaking orders, neutral-agent false endorsement is 91.7% with shared memory and 0% with both personal memory and live debate.
-
-**Option 1. Interactive terminal (recommended)**
-
-```bash
-npm run agentlab
-```
-
-1. Select **Paper guide & evidence** to review the matched design, key numbers, agent trajectory, and exact manifest map
-2. Select **Run command**
-3. Choose **Central memory comparison** or **Central live-debate comparison**
-4. Review the preflight screen, including the scenarios, conditions, rosters, seeds, model calls, and estimated cost
-5. Confirm the run. The live view shows agent statements and memory operations, and the result view shows final stances and the trace location
-
-**Option 2. One command**
+The original six-agent comparison uses the same model, claim, roles, speaking
+orders, and call budget across methods. Shared and personal memory ask agents
+to assess the claim; live debate asks them to discuss it. The paper therefore
+also includes the matched-instruction experiment reported above.
 
 ```bash
 npx tsx src/experiments/grid.ts experiments/part2-neutral-fairness-memory-v2.json
 npx tsx src/experiments/grid.ts experiments/part2-neutral-fairness-chat-v3.json
 ```
 
-Together these configs run the matched shared-memory, personal-memory, and live-debate conditions. Each uses the same 12 balanced orders, one focal claim, 18 model calls, temperature 0, and Claude Haiku 4.5.
+The final follow-up experiments use the frozen code under
+`rebuttal_harness/`. Its README maps the follow-up study IDs to protocols,
+conditions, analyses, and archived traces.
 
-**Option 3. Look at existing data without running anything**
+## Repository map
 
-Every result is already in `output/`. Pick any trace database and query it.
+```text
+src/                       Original testbed engine and terminal UI
+experiments/               Original experiment grids
+conditions/                Communication and intervention definitions
+scenarios/                 Claims, tasks, and evidence
+rosters/                   Agent roles and speaking orders
+output/                    6,686 original run traces used in the paper
 
-```bash
-# Find a primary shared-memory run on ego depletion
-ls output/ | grep "part2_neutral_fairness_memory_v2" | head -3
+rebuttal_harness/          Frozen follow-up engine, protocols, and analyses
+  output/                  2,228 follow-up traces used in the paper
 
-# Open it and check the final stances
-sqlite3 output/<pick-one>/trace.db \
-  "SELECT agent_id, stance, confidence FROM agent_claim_states
-   WHERE claim_id='claim_ego_depletion'
-   AND step_index=(SELECT MAX(step_index) FROM agent_claim_states);"
+paper/                     Current paper, figures, and evidence manifests
+  paper.tex                Main text
+  appendix_results.tex     Appendix
+  paper.pdf                Compiled paper
+  FINAL_EVIDENCE_INDEX.md  Table-to-evidence map for all 8,914 runs
+
+scripts/verify_release.py  Independent release audit
+analysis/                  Durable audit reports
+docs/                      Architecture and repository notes
 ```
-
-The four liar agents are assigned to endorse the false claim. The primary outcome asks whether either of the two neutral agents also endorses it. The exact table-to-run manifest in `paper/RUN_MANIFEST.md` lists every included trace.
-
-### CLI commands
-
-```bash
-# Validate a run config
-npm run testbed:validate -- run-configs/shared-memory-run.yaml
-
-# Run a single config
-npm run testbed:run -- run-configs/shared-memory-run.yaml
-
-# Compare two runs
-npm run testbed:compare -- output/run1 output/run2
-
-# Batch across seeds
-npm run testbed:batch -- run-configs/shared-memory-run.yaml --seeds 1,2,3,4,5
-
-# Inspect a completed run
-npm run testbed:inspect -- output/run1
-```
-
-### Run a grid experiment
-
-```bash
-npx tsx src/experiments/grid.ts experiments/part2-ambiguity-gradient-v1.json
-```
-
-This runs all combinations of scenarios x conditions x seeds defined in the experiment config. Completed cells are cached, so you can restart safely.
-
-## Replicating paper results
-
-The manifests below define the paper's evidence. Other exploratory or
-superseded files may be present in a checkout; they are not part of the reported
-denominators. Start with the manifest for a table instead of counting all files
-under `output/`.
-
-The paper's 6,686 claimed runs are divided across the four original manifests and four final extension audits:
-
-- `paper/run_manifest.json`: 5,542 runs used by the base table calculator
-- `paper/new_appendix_run_manifest.json`: 576 late-appendix runs
-- `paper/open_model_visibility_manifest.json`: 216 open-model replication runs
-- `paper/single_peer_influence_manifest.json`: 180 single-entry causal-test runs
-- `paper/large_group_run_manifest.json`: 64 twelve- and hundred-agent runs
-- `paper/scale12_ratio_sweep_audit.json`: 48 twelve-agent source-count runs
-- `paper/scale100_transition_audit.json`: 40 hundred-agent runs, including 16 already indexed by the large-group manifest and 24 additional runs
-- `paper/scale6_ratio0_audit.json`: 36 zero-liar six-agent runs
-
-After removing the 16 intentional rechecks shared by the two large-group indexes, the extension contributes 172 unique runs.
-
-The appendix model-by-task coverage table lists the three-protocol liar--neutral comparisons. A dash means that comparison was not run, not that its false-answer rate was zero. Gemma appears only in supporting experiments. The Haiku peer-visibility result does not reproduce as a useful restriction in the three tested open models; it is a mechanism test in one setting, not a general mitigation. The save-uncertain-answers write-rule ablation has not been repeated across models.
-
-Run the quick coverage and calculation audit without hashing every large trace:
-
-```bash
-npm run verify:release:quick
-```
-
-Before sharing or submitting the release, run the full audit:
-
-```bash
-npm run verify:release
-```
-
-Full mode rebuilds the base table manifest, independently recomputes the late
-appendix aggregates, verifies available checksums for all 6,686 indexed runs,
-runs SQLite integrity checks, checks completion and call counts, and validates
-the released experiment dependencies. The durable report is written to
-`analysis/release_audit.md` and `analysis/release_audit.json`.
-
-Every result in the paper comes from a specific experiment config in `experiments/`. Config filenames use internal naming that differs from the paper terminology. Older internal IDs remain unchanged so that saved runs and manifest entries keep resolving. The paper consistently uses the reader-facing role names liar agent, neutral agent, specialist agent, and social agent.
-
-**Naming conventions in the config files.**
-The experiment files use prefixes like `part2-` that refer to internal development phases, not paper sections. Configs starting with `blind-` or `cross-model-` run comparisons across multiple models. Configs starting with `amplifier-` or `mitigation-` test record formats or defenses.
-
-The generated table-to-run manifest is the exact source for every reported cohort. The shorter list below gives entry points for the main and confound-critical experiments.
-
-| Paper result | Experiment config | What it runs |
-|---|---|---|
-| Central liar--neutral comparison | `part2-neutral-fairness-memory-v2.json` + `part2-neutral-fairness-chat-v3.json` | Ego depletion, 3 formats, 12 balanced orders |
-| Familiar-science boundaries | `part2-neutral-crosstopic-memory-v1.json` + `part2-neutral-crosstopic-chat-v1.json` | 6 topics with neutral agents |
-| Liar-agent ratio | `part2-neutral-ratio{1,2,3,4}-standardized-{memory,chat}-v{2,3}.json` | 1/6 through 4/6 liar agents, three 12-order repeats |
-| Zero-liar control | `part2-neutral-ratio0-standardized-memory-v1.json` | 0/6 liar agents, three repetitions of 12 orders |
-| Twelve-agent source count | `scale12_dose_a{0,1,2,6}_shared_v1.json` | 0, 1, 2, or 6 liar agents in groups of 12 |
-| Twelve-agent protocol comparison | `part2-neutral-fairness-scale12-*.json` | Shared memory, personal memory, ordinary debate, and fixed-response debate |
-| Hundred-agent source count | `scale100-*.json` | 0, 1, 2, 3, 4, 5, 7, 10, 15, or 20 liar agents across four circular placements |
-| Matched defenses | `part2-neutral-defense-suite-v2.json` | 7 conditions with neutral agents |
-| Model and task boundaries | `part2-neutral-crossmodel-*.json` + `part2-neutral-fairness-crossmodel-multitask-*.json` | Matched memory and debate comparisons |
-| Screened SciTaT replication | `part2-neutral-scitat-expanded-memory-*.json` + `part2-neutral-scitat-expanded-chat-*.json` | 18 screened items with neutral agents |
-| Origin tracking | `provenance-defense-v1.json` + `provenance-ablation-v1.json` + `provenance-cross-model-v1.json` | Topic, ablation, and model checks |
-| Honest mistakes | `rerun-distributed-evidence-v3.json` + `amplifier-majority-wrong-haiku-v1.json` | Revisable errors and record formats |
-| Save uncertain answers | See `paper/new_appendix_run_manifest.json` (Appendix F.10) | Matched recording-rule ablation and its uncertainty trade-off |
-| Open-model peer visibility | See `paper/open_model_visibility_manifest.json` | Llama, Ministral, and Gemma replications of the restricted-memory test |
-| Single recorded entry | See `paper/single_peer_influence_manifest.json` | All-neutral Haiku, Sonnet, and Opus comparisons with one endorsement, uncertain entry, correct rejection, or evidence-backed correction |
-
-To replicate a specific result, run the corresponding experiment config through the grid runner:
-
-```bash
-npx tsx src/experiments/grid.ts experiments/part2-neutral-fairness-memory-v2.json
-```
-
-The output appears in `output/` as SQLite trace databases. Each database contains every agent's belief state at every step, every memory entry written, every retrieval, and every LLM call.
-
-## Repository structure
-
-`paper/` is the canonical submission bundle. See
-[`docs/repository-layout.md`](docs/repository-layout.md) for a fuller map.
-
-```
-src/                    # Testbed source code (TypeScript)
-  engine/               # Run engine (memory mode + chat mode backends)
-    backends/           # memoryMode.ts (shared/personal) + chatMode.ts (debate)
-    run.ts              # Main run entry point
-    finalize.ts         # Run-level metrics and summary
-  ui/                   # Interactive terminal interface
-    interactive.ts      # Menu system and user interaction
-    render.ts           # Terminal rendering (retro ASCII style)
-  llm/                  # LLM API calls and prompt construction
-    prompts.ts          # All agent prompts (both modes)
-    provider.ts         # Multi-provider API abstraction
-  memory/               # Memory retrieval logic (5 formats)
-    retrieve.ts         # Format-dependent retrieval
-  metrics/              # Per-step metric computation
-    compute.ts          # FE, contagion, diversity, consensus
-  scenario/             # Scenario and evidence handling
-    access.ts           # Evidence visibility filtering
-  db/                   # SQLite trace storage
-    sqlite.ts           # Database operations
-  config/               # Schema definitions (Zod)
-  experiments/          # Grid runner for factorial experiments
-    grid.ts             # Runs all scenario x condition x seed combos
-
-experiments/            # Experiment configurations (JSON)
-conditions/             # Communication formats and interventions
-scenarios/              # Claims and evidence settings
-rosters/                # Agent assignments and speaking orders
-run-configs/            # Run configuration templates
-
-output/                 # Traced runs (SQLite databases)
-analysis/               # Derived analyses and validation reports
-
-scripts/                # Analysis and conversion scripts
-tests/                  # Test suite (vitest)
-db/schema.sql           # Database schema
-
-paper/                  # Canonical paper source, PDF, figures, and manifests
-  paper.tex             # Main text
-  appendix_results.tex  # Supplementary material
-  fig/                  # Figures
-
-docs/                   # Architecture and repository documentation
-```
-
-## Project name and stable identifiers
-
-The testbed and repository are named **Agent Interaction Lab**. Older internal
-experiment identifiers remain unchanged so that manifests and saved run paths
-continue to resolve.
 
 ## How the code maps to the paper
 
-| Paper concept | Code location |
-|---|---|
-| Shared memory (agents read/write a common log) | `src/engine/backends/memoryMode.ts` |
-| Live debate (agents argue in real-time rounds) | `src/engine/backends/chatMode.ts` + `src/engine/chat.ts` |
-| Personal memory (agent reasons alone) | Same as memory mode with `personal_memory` condition |
-| 5 memory formats (agent_judgment, evidence_board, mixed_record, source_aware, independence_aware) | `src/memory/retrieve.ts` |
-| Evidence visibility filtering (visibleToAgentIds, availableFromStep) | `src/scenario/access.ts` |
-| Agent prompts (liar, neutral, specialist, and social roles) | `src/llm/prompts.ts` |
-| Metrics (FE, contagion, soft contagion, diversity, consensus) | `src/metrics/compute.ts` |
-| Run finalization and summary | `src/engine/finalize.ts` |
-| Factorial experiment grids | `src/experiments/grid.ts` |
-| SQLite trace storage | `src/db/sqlite.ts` |
-| Interactive terminal UI | `src/ui/interactive.ts` + `src/ui/render.ts` |
+| Paper concept | Original engine | Follow-up engine |
+| --- | --- | --- |
+| Shared and personal memory | `src/engine/backends/memoryMode.ts` | `rebuttal_harness/src/engine/backends/memoryMode.ts` |
+| Live debate | `src/engine/backends/chatMode.ts` | `rebuttal_harness/src/engine/backends/chatMode.ts` |
+| Agent prompts | `src/llm/prompts.ts` | `rebuttal_harness/src/llm/prompts.ts` |
+| Memory retrieval | `src/memory/retrieve.ts` | `rebuttal_harness/src/memory/retrieve.ts` |
+| SQLite trace storage | `src/db/sqlite.ts` | `rebuttal_harness/src/db/sqlite.ts` |
+| Experiment grid runner | `src/experiments/grid.ts` | `rebuttal_harness/src/experiments/grid.ts` |
 
-## How experiment configs work
+Internal experiment IDs retain older development terminology so that hashes,
+manifests, and stored paths remain stable. The paper uses the reader-facing
+terms liar agent, neutral agent, shared memory, personal memory, and live
+debate.
 
-Each experiment config defines its scenario, communication conditions, seeds,
-rosters, step limit, and model-call budget. For a complete paper example, open
-[`experiments/part2-neutral-fairness-memory-v2.json`](experiments/part2-neutral-fairness-memory-v2.json).
-It specifies one focal scenario, shared and personal memory conditions, 12
-balanced rosters, 18 steps and model calls per run, and temperature 0.
+## Creating a new experiment
 
-The grid runner creates all combinations (scenarios x conditions x seeds) and runs them sequentially, caching completed cells. If a run is interrupted, restarting picks up where it left off.
+An experiment config combines scenarios, communication versions, seeds,
+rosters, a turn limit, and a model-call budget. A minimal example is:
 
-## Trace databases
-
-Each run produces one SQLite database in `output/`. You can inspect any database with:
-
-```bash
-sqlite3 output/<run-name>/trace.db
-```
-
-The database contains:
-- `agent_claim_states` -- agent stance (endorse/reject/uncertain) and confidence at each step
-- `memory_entries` -- everything written to shared memory
-- `chat_messages` -- debate messages with cited sources (chat mode only)
-- `retrieval_traces` -- what each agent saw before deciding (the memory contents it read)
-- `model_calls` -- model names, token counts, and estimated costs for calls
-- `events` -- experiment events (corrections, agent exits, etc.)
-- `metric_records` -- computed metrics at each step
-- `runs` -- run metadata and final summary
-
-## Analyzing trace data
-
-Here are example queries you can run on any trace database to extract the same results reported in the paper.
-
-**Did a neutral agent adopt the false belief?**
-```sql
-SELECT agent_id, stance, confidence
-FROM agent_claim_states
-WHERE claim_id = 'claim_ego_depletion'
-  AND step_index = (SELECT MAX(step_index) FROM agent_claim_states)
-ORDER BY agent_id;
-```
-
-**What did the shared memory look like when the agent flipped?**
-```sql
-SELECT step_index, agent_id, stance, confidence, entry_text
-FROM memory_entries
-WHERE claim_id = 'claim_ego_depletion'
-ORDER BY step_index;
-```
-
-**What memory entries did the agent retrieve?**
-```sql
-SELECT step_index, agent_id, retrieved_entry_ids_json, context_json
-FROM retrieval_traces
-WHERE agent_id = 'analyst_6'
-ORDER BY step_index;
-```
-
-**Get the false endorsement rate at each step**
-```sql
-SELECT step_index, metric_value AS false_endorsement_rate
-FROM metric_records
-WHERE metric_name = 'falseClaimEndorsementRate'
-ORDER BY step_index;
-```
-
-## Configuration file formats
-
-### Conditions (how agents communicate)
-
-Conditions define the communication format. Example (`conditions/shared-memory-no-correction.yaml`):
-
-```json
-{
-  "id": "shared_memory_no_correction",
-  "memory": {
-    "mode": "shared",           // "shared", "personal", or "chat"
-    "record": "agent_judgment", // memory format type
-    "maxRetrievedEntries": 6
-  },
-  "interventions": {
-    "correctionTiming": "none"  // "none", "early", "late"
-  }
-}
-```
-
-Key `memory.mode` values:
-- `"shared"` -- shared memory (all agents read/write the same pool)
-- `"personal"` -- personal memory (each agent sees only its own entries)
-- `"chat"` -- live debate (synchronous multi-round discussion)
-
-### Scenarios (what agents evaluate)
-
-Scenarios define the claims, evidence, and ground truth. Each scenario has:
-- **Claims** with truth labels (`true`, `false`, `mixed`)
-- **Evidence cards** with effect directions and visibility rules
-- **A focus claim** (the false claim that liar agents endorse)
-
-### Rosters (who the agents are)
-
-Rosters define agent roles, models, and behavioral fields:
-- `role` -- legacy code IDs that map to the paper's reader-facing roles
-- `model` -- which LLM to use
-- `socialWeight` and `falseClaimBias` -- included in LLM system-prompt text; they are not numerical coefficients in the reported LLM experiments
-- `writesMemoryThreshold` -- retained for rule-based compatibility; the LLM memory writer does not use this field. Standard shared memory writes non-uncertain answers and omits uncertain ones
-
-## Creating your own experiment
-
-1. Pick or create a **scenario** (the scientific claim and evidence)
-2. Pick or create **conditions** (shared memory, debate, etc.)
-3. Pick or create a **roster** (agent roles and which model to use)
-4. Create an **experiment config** that combines them with seeds
-
-Example minimal experiment:
 ```json
 {
   "id": "my_experiment",
@@ -403,13 +270,13 @@ Example minimal experiment:
 }
 ```
 
-This runs ego depletion with 4/6 liar agents in both shared memory and debate across 3 seeds (6 total runs).
+Run it with:
 
 ```bash
 npx tsx src/experiments/grid.ts experiments/my_experiment.json
 ```
 
-## Running tests
+## Tests
 
 ```bash
 npx vitest

@@ -1,0 +1,81 @@
+{
+  "id": "crossmodel_pandas_recording_rule_v1",
+  "title": "pandas fixed explanation under two recording rules in Sonnet and Opus",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Frozen before inspecting outcomes.",
+      "The exact task-specific source message is held fixed across both recording rules.",
+      "Sonnet and Opus use the same 24 position-balanced speaking orders."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_pandas_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/crossmodel-recording-rule-v1/pandas_fixed_explanation_omit_uncertain.yaml",
+    "conditions/crossmodel-recording-rule-v1/pandas_fixed_explanation_save_uncertain.yaml"
+  ],
+  "seeds": [
+    707
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1-sonnet/content_order_01_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_02_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_03_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_04_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_05_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_06_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_07_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_08_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_09_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_10_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_11_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_12_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_13_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_14_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_15_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_16_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_17_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_18_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_19_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_20_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_21_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_22_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_23_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_24_sonnet.json",
+    "rosters/content-factorial-v1-opus/content_order_01_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_02_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_03_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_04_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_05_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_06_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_07_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_08_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_09_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_10_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_11_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_12_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_13_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_14_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_15_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_16_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_17_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_18_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_19_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_20_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_21_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_22_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_23_opus.json",
+    "rosters/content-factorial-v1-opus/content_order_24_opus.json"
+  ],
+  "cellOrderSeed": 20261729,
+  "concurrency": 4,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

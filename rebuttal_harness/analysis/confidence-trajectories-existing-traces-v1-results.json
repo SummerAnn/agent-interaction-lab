@@ -1,0 +1,85 @@
+{
+  "adoption": {
+    "agentsChangingAwayAfterAnEndorsement": 2,
+    "agentsEverEndorsing": 102,
+    "agentsNeverEndorsing": 6,
+    "agentsWithAResponseAfterFirstEndorsement": 80,
+    "postEndorsementTransitionCounts": {
+      "endorse->endorse": 78,
+      "endorse->uncertain": 2
+    }
+  },
+  "byResponseNumber": {
+    "1": {
+      "endorsingResponses": 0,
+      "meanConfidenceAllNeutralResponses": 0.362963,
+      "meanConfidenceAmongEndorsingResponses": null,
+      "stanceCounts": {
+        "uncertain": 108
+      }
+    },
+    "2": {
+      "endorsingResponses": 80,
+      "meanConfidenceAllNeutralResponses": 0.664167,
+      "meanConfidenceAmongEndorsingResponses": 0.739125,
+      "stanceCounts": {
+        "endorse": 80,
+        "uncertain": 28
+      }
+    },
+    "3": {
+      "endorsingResponses": 100,
+      "meanConfidenceAllNeutralResponses": 0.731019,
+      "meanConfidenceAmongEndorsingResponses": 0.7455,
+      "stanceCounts": {
+        "endorse": 100,
+        "reject": 2,
+        "uncertain": 6
+      }
+    }
+  },
+  "firstEndorsementConfidence": {
+    "agents": 102,
+    "agentsWithHigherConfidenceAtAdoption": 102,
+    "maximum": 0.82,
+    "mean": 0.741765,
+    "meanConfidenceOnResponseBeforeAdoption": 0.385294,
+    "meanPairedIncreaseFromPriorResponse": 0.356471,
+    "median": 0.72,
+    "minimum": 0.72,
+    "responseNumberCounts": {
+      "2": 80,
+      "3": 22
+    }
+  },
+  "interpretation": {
+    "caveat": "Confidence is model-reported, not calibrated, and the analysis is descriptive. It does not establish that an agent has a private or strengthening belief.",
+    "claim": "Agents report higher confidence when they first switch from uncertainty to endorsement, and endorsement is usually stable afterward. Confidence does not continue to rise on average after adoption."
+  },
+  "scope": {
+    "affectedRuns": 34,
+    "neutralAgents": 108,
+    "neutralResponses": 324,
+    "runs": 36,
+    "traceFamilies": [
+      "v2 seed 0",
+      "v3 seeds 1 and 2"
+    ]
+  },
+  "withinAgentAfterFirstEndorsement": {
+    "agents": 80,
+    "directionCounts": {
+      "higher": 25,
+      "lower": 3,
+      "same": 52
+    },
+    "finalStanceCounts": {
+      "endorse": 78,
+      "uncertain": 2
+    },
+    "meanConfidenceAtFinalResponse": 0.7365,
+    "meanConfidenceAtFirstEndorsement": 0.739125,
+    "meanPairedChange": -0.002625,
+    "medianPairedChange": 0.0
+  }
+}

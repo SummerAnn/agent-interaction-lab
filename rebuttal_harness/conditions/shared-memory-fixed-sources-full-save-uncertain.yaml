@@ -1,0 +1,21 @@
+{
+  "id": "shared_memory_fixed_sources_full_save_uncertain",
+  "title": "Shared memory with complete history and uncertain judgments saved",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 36,
+    "writeUncertainAnswers": true
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

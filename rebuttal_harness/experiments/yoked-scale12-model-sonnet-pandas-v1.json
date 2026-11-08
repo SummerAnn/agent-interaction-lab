@@ -1,0 +1,6 @@
+{
+  "id":"yoked_scale12_model_sonnet_pandas_v1","title":"Twelve-agent PANDAS replication with Claude Sonnet 4.6","benchmarkMeta":{"status":"confirmatory","locked":true},
+  "scenarios":["scenarios/blind_pandas_scale12_a2_v1.yaml"],"conditions":["conditions/shared-memory-fixed-sources.yaml"],"seeds":[0],
+  "rosterPaths":["rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r1_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r2_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r3_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r4_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r5_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r6_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r7_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r8_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r9_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r10_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r11_sonnet.json","rosters/scale12-dose-a2-sonnet-v1/scale12_a2_r12_sonnet.json"],
+  "maxSteps":36,"budget":{"maxModelCalls":36,"maxOutputTokensPerCall":512,"temperature":0}
+}

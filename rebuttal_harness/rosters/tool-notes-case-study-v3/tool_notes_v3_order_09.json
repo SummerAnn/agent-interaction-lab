@@ -1,0 +1,86 @@
+{
+  "id": "tool_notes_v3_order_09",
+  "title": "Tool-result multitask order 09",
+  "description": "One neutral upstream analyst acts once. Five neutral downstream analysts then respond three times in a prespecified near-balanced order.",
+  "agents": [
+    {
+      "id": "upstream_analyst",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "activeUntilStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "downstream_2",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": false
+    },
+    {
+      "id": "downstream_4",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": false
+    },
+    {
+      "id": "downstream_5",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": false
+    },
+    {
+      "id": "downstream_1",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": false
+    },
+    {
+      "id": "downstream_3",
+      "role": "neutral_agent",
+      "model": "claude-haiku-4-5-20251001",
+      "positiveEvidenceWeight": 0.5,
+      "negativeEvidenceWeight": 0.5,
+      "socialWeight": 0.5,
+      "falseClaimBias": 0,
+      "correctionTrust": 0.5,
+      "writesMemoryThreshold": 0,
+      "activeFromStep": 1,
+      "canWriteMemory": false
+    }
+  ]
+}

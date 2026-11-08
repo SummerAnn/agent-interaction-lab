@@ -1,0 +1,23 @@
+{
+  "id": "prompt_frame_crossover_v2_causal_explanation__shared_memory__live_discussion",
+  "title": "causal explanation, shared memory, live discussion",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "memory",
+    "promptFrame": "live_discussion",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

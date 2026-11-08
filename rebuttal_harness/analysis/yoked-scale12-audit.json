@@ -1,0 +1,2020 @@
+{
+  "generatedAt": "2026-10-05T23:08:55.126Z",
+  "fixedSourceText": "I continue to endorse this claim. I consider the underlying effect real, and the objections raised so far do not overturn it.",
+  "design": {
+    "agentsPerRun": 12,
+    "persistentSourcesPerRun": 2,
+    "neutralAgentsPerRun": 10,
+    "rotations": 12,
+    "callsPerAgent": 3,
+    "callsPerRun": 36,
+    "temperature": 0,
+    "model": "claude-haiku-4-5-20251001",
+    "task": "ego depletion"
+  },
+  "checks": {
+    "runCount": 24,
+    "uniqueRunIds": 24,
+    "eachConditionHasTwelveRuns": true,
+    "completeRotationCoverage": true,
+    "allRunsHaveTwelveAgents": true,
+    "allRunsHaveThirtySixCalls": true,
+    "allAgentsHaveThreeCalls": true,
+    "allSourceStatementsFixed": true,
+    "allSourcesEndorseFinally": true
+  },
+  "byCondition": {
+    "shared_memory_fixed_sources": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "neutralFinals": {
+        "endorse": 31,
+        "reject": 50,
+        "uncertain": 39
+      },
+      "sourceFinals": {
+        "endorse": 24,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "runsWithAnyNeutralEndorsement": 7,
+      "runsWithAllNeutralEndorsement": 1,
+      "neutralEndorsementsByRotation": [
+        {
+          "rotation": 1,
+          "endorsements": 1
+        },
+        {
+          "rotation": 2,
+          "endorsements": 0
+        },
+        {
+          "rotation": 3,
+          "endorsements": 0
+        },
+        {
+          "rotation": 4,
+          "endorsements": 0
+        },
+        {
+          "rotation": 5,
+          "endorsements": 8
+        },
+        {
+          "rotation": 6,
+          "endorsements": 9
+        },
+        {
+          "rotation": 7,
+          "endorsements": 10
+        },
+        {
+          "rotation": 8,
+          "endorsements": 0
+        },
+        {
+          "rotation": 9,
+          "endorsements": 0
+        },
+        {
+          "rotation": 10,
+          "endorsements": 1
+        },
+        {
+          "rotation": 11,
+          "endorsements": 1
+        },
+        {
+          "rotation": 12,
+          "endorsements": 1
+        }
+      ]
+    },
+    "live_debate_fixed_sources": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 120,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 24,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "runsWithAnyNeutralEndorsement": 0,
+      "runsWithAllNeutralEndorsement": 0,
+      "neutralEndorsementsByRotation": [
+        {
+          "rotation": 1,
+          "endorsements": 0
+        },
+        {
+          "rotation": 2,
+          "endorsements": 0
+        },
+        {
+          "rotation": 3,
+          "endorsements": 0
+        },
+        {
+          "rotation": 4,
+          "endorsements": 0
+        },
+        {
+          "rotation": 5,
+          "endorsements": 0
+        },
+        {
+          "rotation": 6,
+          "endorsements": 0
+        },
+        {
+          "rotation": 7,
+          "endorsements": 0
+        },
+        {
+          "rotation": 8,
+          "endorsements": 0
+        },
+        {
+          "rotation": 9,
+          "endorsements": 0
+        },
+        {
+          "rotation": 10,
+          "endorsements": 0
+        },
+        {
+          "rotation": 11,
+          "endorsements": 0
+        },
+        {
+          "rotation": 12,
+          "endorsements": 0
+        }
+      ]
+    }
+  },
+  "pairedOrderComparison": {
+    "memoryHigher": 7,
+    "debateHigher": 0,
+    "ties": 5,
+    "twoSidedSignTestP": 0.015625,
+    "pairs": [
+      {
+        "rotation": 1,
+        "sharedMemoryEndorsements": 1,
+        "liveDebateEndorsements": 0,
+        "difference": 1
+      },
+      {
+        "rotation": 2,
+        "sharedMemoryEndorsements": 0,
+        "liveDebateEndorsements": 0,
+        "difference": 0
+      },
+      {
+        "rotation": 3,
+        "sharedMemoryEndorsements": 0,
+        "liveDebateEndorsements": 0,
+        "difference": 0
+      },
+      {
+        "rotation": 4,
+        "sharedMemoryEndorsements": 0,
+        "liveDebateEndorsements": 0,
+        "difference": 0
+      },
+      {
+        "rotation": 5,
+        "sharedMemoryEndorsements": 8,
+        "liveDebateEndorsements": 0,
+        "difference": 8
+      },
+      {
+        "rotation": 6,
+        "sharedMemoryEndorsements": 9,
+        "liveDebateEndorsements": 0,
+        "difference": 9
+      },
+      {
+        "rotation": 7,
+        "sharedMemoryEndorsements": 10,
+        "liveDebateEndorsements": 0,
+        "difference": 10
+      },
+      {
+        "rotation": 8,
+        "sharedMemoryEndorsements": 0,
+        "liveDebateEndorsements": 0,
+        "difference": 0
+      },
+      {
+        "rotation": 9,
+        "sharedMemoryEndorsements": 0,
+        "liveDebateEndorsements": 0,
+        "difference": 0
+      },
+      {
+        "rotation": 10,
+        "sharedMemoryEndorsements": 1,
+        "liveDebateEndorsements": 0,
+        "difference": 1
+      },
+      {
+        "rotation": 11,
+        "sharedMemoryEndorsements": 1,
+        "liveDebateEndorsements": 0,
+        "difference": 1
+      },
+      {
+        "rotation": 12,
+        "sharedMemoryEndorsements": 1,
+        "liveDebateEndorsements": 0,
+        "difference": 1
+      }
+    ]
+  },
+  "runs": [
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r1_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 1,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r1_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r1_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r2_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 2,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r2_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r2_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r3_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 3,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r3_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r3_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r4_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 4,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r4_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r4_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r5_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 5,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r5_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r5_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r6_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 6,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r6_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r6_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r7_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 7,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r7_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r7_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r8_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 8,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r8_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r8_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r9_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 9,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r9_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r9_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r10_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 10,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r10_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r10_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r11_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 11,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r11_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r11_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r12_haiku-live_debate_fixed_sources-seed0",
+      "conditionId": "live_debate_fixed_sources",
+      "rotation": 12,
+      "agentCount": 12,
+      "completedSteps": 1,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 0,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r12_haiku-live_debate_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_debate_continuation_v2_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_sources_scale12_a2_r12_haiku-live_debate_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r1_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 1,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 9
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r1_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r1_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r2_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 2,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r2_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r2_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r3_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 3,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r3_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r3_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r4_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 4,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r4_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r4_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r5_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 5,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 8,
+        "reject": 0,
+        "uncertain": 2
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r5_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r5_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r6_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 6,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 9,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r6_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r6_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r7_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 7,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 10,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r7_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r7_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r8_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 8,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r8_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r8_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r9_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 9,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r9_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r9_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r10_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 10,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 9
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r10_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r10_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r11_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 11,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 9
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r11_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r11_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    },
+    {
+      "runId": "yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r12_haiku-shared_memory_fixed_sources-seed0",
+      "conditionId": "shared_memory_fixed_sources",
+      "rotation": 12,
+      "agentCount": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 1,
+        "reject": 0,
+        "uncertain": 9
+      },
+      "sourceFinals": {
+        "endorse": 2,
+        "reject": 0,
+        "uncertain": 0
+      },
+      "sourcePublicEntryCount": 6,
+      "fixedEventCount": 6,
+      "allSourcePublicEntriesFixed": true,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r12_haiku-shared_memory_fixed_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_fixed_sources_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_sources_scale12_a2_r12_haiku-shared_memory_fixed_sources-seed0/trace.db"
+    }
+  ]
+}

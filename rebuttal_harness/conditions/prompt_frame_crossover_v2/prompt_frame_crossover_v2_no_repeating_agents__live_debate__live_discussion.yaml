@@ -1,0 +1,22 @@
+{
+  "id": "prompt_frame_crossover_v2_no_repeating_agents__live_debate__live_discussion",
+  "title": "no repeating agents, live debate, live discussion",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "chat",
+    "promptFrame": "live_discussion",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "prompted",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

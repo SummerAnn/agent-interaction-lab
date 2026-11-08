@@ -1,0 +1,57 @@
+{
+  "id": "frontier_gpt61_scitat_a_recording_rule_v1",
+  "title": "SciTaT-A fixed explanation under two recording rules in GPT-6.1 Sol",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Frozen before inspecting outcomes.",
+      "This is the prespecified current-frontier-model check.",
+      "The same exact task-specific source message and 24 position-balanced speaking orders are used under both recording rules."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_scitat_a_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/crossmodel-recording-rule-v1/scitat_a_fixed_explanation_omit_uncertain.yaml",
+    "conditions/crossmodel-recording-rule-v1/scitat_a_fixed_explanation_save_uncertain.yaml"
+  ],
+  "seeds": [
+    709
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1-gpt61/content_order_01_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_02_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_03_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_04_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_05_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_06_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_07_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_08_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_09_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_10_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_11_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_12_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_13_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_14_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_15_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_16_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_17_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_18_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_19_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_20_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_21_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_22_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_23_gpt61.json",
+    "rosters/content-factorial-v1-gpt61/content_order_24_gpt61.json"
+  ],
+  "cellOrderSeed": 20261731,
+  "concurrency": 4,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

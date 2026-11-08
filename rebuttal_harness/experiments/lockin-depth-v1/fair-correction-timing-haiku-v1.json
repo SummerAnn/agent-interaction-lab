@@ -1,0 +1,57 @@
+{
+  "id": "fair_correction_timing_haiku_v1",
+  "title": "Early and late corrections with equal follow-up exposure",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Frozen before inspecting outcomes.",
+      "Both conditions use the same fixed causal explanation, model, 24 balanced orders, and 24 correction-visible response turns.",
+      "The early correction appears on turn 12 and ends on turn 35. The late correction appears on turn 30 and ends on turn 53."
+    ]
+  },
+  "scenarios": [
+    "scenarios/lockin-depth-v1/ego-depletion-early-correction-step12.yaml",
+    "scenarios/lockin-depth-v1/ego-depletion-late-correction-step30.yaml"
+  ],
+  "conditions": [
+    "conditions/lockin-depth-v1/shared-memory-fixed-mechanism-equal-correction-followup.yaml"
+  ],
+  "seeds": [
+    731
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_01.json",
+    "rosters/content-factorial-v1/content_order_02.json",
+    "rosters/content-factorial-v1/content_order_03.json",
+    "rosters/content-factorial-v1/content_order_04.json",
+    "rosters/content-factorial-v1/content_order_05.json",
+    "rosters/content-factorial-v1/content_order_06.json",
+    "rosters/content-factorial-v1/content_order_07.json",
+    "rosters/content-factorial-v1/content_order_08.json",
+    "rosters/content-factorial-v1/content_order_09.json",
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json",
+    "rosters/content-factorial-v1/content_order_13.json",
+    "rosters/content-factorial-v1/content_order_14.json",
+    "rosters/content-factorial-v1/content_order_15.json",
+    "rosters/content-factorial-v1/content_order_16.json",
+    "rosters/content-factorial-v1/content_order_17.json",
+    "rosters/content-factorial-v1/content_order_18.json",
+    "rosters/content-factorial-v1/content_order_19.json",
+    "rosters/content-factorial-v1/content_order_20.json",
+    "rosters/content-factorial-v1/content_order_21.json",
+    "rosters/content-factorial-v1/content_order_22.json",
+    "rosters/content-factorial-v1/content_order_23.json",
+    "rosters/content-factorial-v1/content_order_24.json"
+  ],
+  "cellOrderSeed": 2026103101,
+  "concurrency": 4,
+  "maxSteps": 54,
+  "budget": {
+    "maxModelCalls": 54,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

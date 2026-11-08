@@ -1,0 +1,23 @@
+{
+  "id": "shared_memory_fixed_mechanism_equal_correction_followup",
+  "title": "Fixed explanation under shared memory with equal correction follow-up",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 5,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "default",
+    "correctionStrength": "default",
+    "stopAfterCorrectionTurns": 24
+  }
+}

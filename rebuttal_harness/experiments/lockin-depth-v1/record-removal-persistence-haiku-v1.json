@@ -1,0 +1,57 @@
+{
+  "id": "record_removal_persistence_haiku_v1",
+  "title": "Persistence after removing the shared record",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Frozen before inspecting outcomes.",
+      "All conditions share the same first 36 shared-memory turns and fixed causal explanation.",
+      "At turn 37 the two sources leave. Neutral agents then receive three turns each with personal memory or with no prior history."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/lockin-depth-v1/shared-to-personal-after-three-rounds.yaml",
+    "conditions/lockin-depth-v1/shared-to-no-history-after-three-rounds.yaml"
+  ],
+  "seeds": [
+    732
+  ],
+  "rosterPaths": [
+    "rosters/lockin-depth-v1/lockin_depth_order_01.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_02.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_03.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_04.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_05.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_06.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_07.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_08.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_09.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_10.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_11.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_12.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_13.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_14.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_15.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_16.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_17.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_18.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_19.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_20.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_21.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_22.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_23.json",
+    "rosters/lockin-depth-v1/lockin_depth_order_24.json"
+  ],
+  "cellOrderSeed": 2026103102,
+  "concurrency": 6,
+  "maxSteps": 66,
+  "budget": {
+    "maxModelCalls": 66,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

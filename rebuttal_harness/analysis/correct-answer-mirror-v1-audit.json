@@ -1,0 +1,3146 @@
+{
+  "generatedAt": "2026-10-22T01:35:42.324Z",
+  "auditScope": "Earlier 12-order correct-answer mirror comparing shared memory with live debate",
+  "design": {
+    "model": "claude-haiku-4-5-20251001",
+    "task": "ego depletion",
+    "agentsPerRun": 12,
+    "fixedCorrectSourcesPerRun": 2,
+    "neutralAgentsPerRun": 10,
+    "rotationsPerCondition": 12,
+    "rounds": 3,
+    "callsPerRun": 36,
+    "fixedSourceText": "I reject this claim. The evidence does not support a strong, reliable ego-depletion effect.",
+    "initializationNote": "The inherited scenario initializes the two source-role states as endorsements at step 0. This initialization is not a public response. The audit requires rejection on every public source turn and in both final source states."
+  },
+  "checks": {
+    "runCount": 24,
+    "uniqueRunIds": 24,
+    "expectedConditionsOnly": true,
+    "eachConditionHasTwelveRuns": true,
+    "completeUniqueRotationCoverage": true,
+    "allRunsHaveThirtySixCalls": true,
+    "allAgentsHaveThreeCalls": true,
+    "allRunsHaveThirtySixLogicalPublicTurns": true,
+    "allFinalStatesPresent": true,
+    "allSourcePublicTurnsExactRejections": true,
+    "allSharedMemoryFixedEventsExact": true,
+    "allSourcesRejectAfterFirstPublicTurn": true,
+    "allSourcesRejectFinally": true,
+    "noParserFallbacks": true,
+    "allTracesComplete": true,
+    "neutralTotalsComplete": true
+  },
+  "byCondition": {
+    "shared_memory_fixed_correct_sources": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "modelCalls": 432,
+      "logicalPublicTurns": 432,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 120,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 24,
+        "uncertain": 0
+      },
+      "parserFallbacks": 0
+    },
+    "live_debate_fixed_correct_sources": {
+      "runs": 12,
+      "rotations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "modelCalls": 432,
+      "logicalPublicTurns": 432,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 120,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 24,
+        "uncertain": 0
+      },
+      "parserFallbacks": 0
+    }
+  },
+  "runs": [
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r1_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 1,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r1_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r1_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 266240,
+      "traceDbSha256": "573e02829f5f7de3f2b3aad6f340a4cc804dac4fd2f314b761e4f648ad18cf60",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.92
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.95
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r2_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 2,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r2_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r2_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 303104,
+      "traceDbSha256": "6bf46f60b0144873f0de911da26dd23d5c5eac6cf1a8594ddae8d03495b33869",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.92
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r3_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 3,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r3_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r3_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 274432,
+      "traceDbSha256": "1fe29d3278cf5b0dd3f4aaf8d09080fe63616ffcd2852ce27a21d0693a5d5412",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r4_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 4,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r4_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r4_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 282624,
+      "traceDbSha256": "d350020b94f6e267a8cbe90f91c02956f776316d56a9feac3616d694c65497ce",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.95
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.95
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r5_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 5,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r5_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r5_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 282624,
+      "traceDbSha256": "6e3bd29931811dc9a17503c9ca23bcfabf0c9137019db94cd1a6126e60319754",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r6_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 6,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r6_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r6_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 274432,
+      "traceDbSha256": "84670e9e3232ad11dadcc9591effbd42acea3178a704613f743654327dd05f27",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r7_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 7,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r7_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r7_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 249856,
+      "traceDbSha256": "c457a952c9c634fd46b9e91cab7310062e2622b25a36a44b45e38bcc25a451fc",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r8_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 8,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r8_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r8_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 278528,
+      "traceDbSha256": "f039b7bf374056ee3e2d5db28472a4fc0d0f7d18f903315a94430340e4d655ce",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.92
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r9_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 9,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r9_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r9_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 278528,
+      "traceDbSha256": "439bfe34b76c23af67220e6c9f1b292007ff28fc81c25d9bbb0ed81e76c85a52",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r10_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 10,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r10_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r10_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 274432,
+      "traceDbSha256": "1ba0ac90a8cf205a654fed6c5584c664a68498135d66a9e9b78b269c85ee3a7f",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r11_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 11,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r11_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r11_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 299008,
+      "traceDbSha256": "12d81f56b9b50b01f255c779b29aae20cb23969d604df6656a6afd9fd883ed5b",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.92
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r12_haiku-live_debate_fixed_correct_sources-seed0",
+      "conditionId": "live_debate_fixed_correct_sources",
+      "rotation": 12,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r12_haiku-live_debate_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_live_debate_fixed_correct_sources_scale12_a2_r12_haiku-live_debate_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 282624,
+      "traceDbSha256": "63aa5ad8606b9281327ffbdf47bffef785c98eecc71c6969f5cbb4a30728f520",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 0,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 0,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r1_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 1,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r1_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r1_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1445888,
+      "traceDbSha256": "65ceba1492846d356da18d5a951cc324cbd56f6ecb024547ef4564c649cabc5f",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 7,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 13,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 19,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 25,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 31,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r2_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 2,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r2_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r2_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1421312,
+      "traceDbSha256": "55cacf608275080e6ccdda08f03f0ea12cf0909ff5e510db8e098425b91e459e",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 6,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 12,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 18,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 24,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 30,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 36,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r3_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 3,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r3_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r3_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1421312,
+      "traceDbSha256": "e8fbdaf9ed401aeefaa1ad51a903a754a9b0d4093fe0b6265e84757e11ce2900",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 5,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 11,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 17,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 23,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 29,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 35,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r4_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 4,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r4_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r4_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1429504,
+      "traceDbSha256": "bdc82455da2e48bcd32ab65a05405828f0b3e0cfe6b8d5df90b80836a7902569",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 4,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 10,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 16,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 22,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 28,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 34,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r5_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 5,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r5_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r5_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1437696,
+      "traceDbSha256": "89d4512482e6412f3915d7aff4a822950498607486569665cc26d83555184182",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 3,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 9,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 15,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 21,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 27,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 33,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r6_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 6,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r6_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r6_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1437696,
+      "traceDbSha256": "3095ae553eb2f40252f12af696a74666acd14278c23157f1839c4cf98a17531d",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 2,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 8,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 14,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 20,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 26,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 32,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r7_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 7,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r7_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r7_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1445888,
+      "traceDbSha256": "54e539dd43fa07d58acd6f0daf88c4243eab4cd7d3c64ef08666d8d37d9c73d2",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 1,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 7,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 13,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 19,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 25,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 31,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r8_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 8,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r8_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r8_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1421312,
+      "traceDbSha256": "957f99c03f8db4af7cf96680e46c718da5d83d9e40ecfba9410b632adff7828c",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 6,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 12,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 18,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 24,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 30,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 36,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r9_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 9,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r9_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r9_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1421312,
+      "traceDbSha256": "9c41744549d1b47519655ab5e98feaa3de5a040ecd480fada3e5778400becdc0",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 5,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 11,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 17,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 23,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 29,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 35,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r10_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 10,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r10_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r10_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1429504,
+      "traceDbSha256": "d02cc8adfe3a3a3a2b596f713adf575b262961045a0ce371178bedad4a50b887",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 4,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 10,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 16,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 22,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 28,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 34,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r11_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 11,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r11_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r11_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1437696,
+      "traceDbSha256": "78d66c7714fd8014f391842237de84515d10a7712775958a7be55165ab71f21e",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 3,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 9,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 15,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 21,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 27,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 33,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    },
+    {
+      "runId": "yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r12_haiku-shared_memory_fixed_correct_sources-seed0",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "rotation": 12,
+      "summaryPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r12_haiku-shared_memory_fixed_correct_sources-seed0/summary.json",
+      "dbPath": "rebuttal_harness/output/yoked_scale12_correct_source_control_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_scale12_a2_r12_haiku-shared_memory_fixed_correct_sources-seed0/trace.db",
+      "traceDbBytes": 1437696,
+      "traceDbSha256": "a404c41c1f75283889c5481655c02fddddba723fd41f71cfb669ea47148d1c43",
+      "sourceIds": [
+        "analyst_1",
+        "analyst_7"
+      ],
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        }
+      ],
+      "logicalPublicTurns": 36,
+      "finalStateCount": 12,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "sourceInitialStates": [
+        {
+          "agentId": "analyst_1",
+          "stance": "endorse",
+          "confidence": 0.9
+        },
+        {
+          "agentId": "analyst_7",
+          "stance": "endorse",
+          "confidence": 0.85
+        }
+      ],
+      "sourceStatesAfterStart": [
+        {
+          "stepIndex": 2,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 8,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 14,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 20,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 26,
+          "agentId": "analyst_1",
+          "stance": "reject",
+          "confidence": 0.9
+        },
+        {
+          "stepIndex": 32,
+          "agentId": "analyst_7",
+          "stance": "reject",
+          "confidence": 0.9
+        }
+      ],
+      "sourcePublicTurnCount": 6,
+      "allSourcePublicTurnsExactRejections": true,
+      "fixedEventCount": 6,
+      "fixedEventsExact": true,
+      "parserFallbacks": {
+        "memoryEntries": 0,
+        "chatMessages": 0,
+        "events": 0,
+        "total": 0
+      },
+      "retrievalTraceCount": 36,
+      "completedRunRows": 1,
+      "traceComplete": true
+    }
+  ]
+}

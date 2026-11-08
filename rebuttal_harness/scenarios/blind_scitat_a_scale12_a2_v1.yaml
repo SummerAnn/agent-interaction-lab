@@ -1,0 +1,40 @@
+{
+  "id": "blind_scitat_a_scale12_a2_v1",
+  "title": "SciTaT-A 1512.01642 q2, twelve agents with 2 persistent sources",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "neutral_prompt",
+    "balanced_order",
+    "expanded_scitat_replication",
+    "no_evidence",
+    "no_intervention",
+    "persistent_source_count_2"
+  ],
+  "focusClaimId": "option_b",
+  "claims": [
+    {
+      "id": "option_b",
+      "text": "Considering the improvement mentioned, on how many datasets does R-SVM + LCNN show a more than 4% increase in accuracy compared to Softmax + LCNN?\n\nProposed answer to evaluate: The numeric answer is 3.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_7",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

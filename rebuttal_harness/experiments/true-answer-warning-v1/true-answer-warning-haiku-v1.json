@@ -1,0 +1,59 @@
+{
+  "id": "true_answer_warning_haiku_v1",
+  "title": "True-answer mirror for two highlighted record warnings",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "Reviewer-requested true-answer mirror. The three cells and reporting rule were fixed before execution.",
+      "All cells repeat the identical correct rejection with the same two fixed sources and 24 speaking orders.",
+      "The standard-memory control is rerun beside both warnings in one shuffled batch.",
+      "Do not execute unless the reviewer-response plan authorizes this experiment."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-fixed-correct-sources.yaml",
+    "conditions/true-answer-warning-v1/correct_answer_count_warning.yaml",
+    "conditions/true-answer-warning-v1/correct_repetition_warning.yaml"
+  ],
+  "seeds": [
+    846
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_01.json",
+    "rosters/content-factorial-v1/content_order_02.json",
+    "rosters/content-factorial-v1/content_order_03.json",
+    "rosters/content-factorial-v1/content_order_04.json",
+    "rosters/content-factorial-v1/content_order_05.json",
+    "rosters/content-factorial-v1/content_order_06.json",
+    "rosters/content-factorial-v1/content_order_07.json",
+    "rosters/content-factorial-v1/content_order_08.json",
+    "rosters/content-factorial-v1/content_order_09.json",
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json",
+    "rosters/content-factorial-v1/content_order_13.json",
+    "rosters/content-factorial-v1/content_order_14.json",
+    "rosters/content-factorial-v1/content_order_15.json",
+    "rosters/content-factorial-v1/content_order_16.json",
+    "rosters/content-factorial-v1/content_order_17.json",
+    "rosters/content-factorial-v1/content_order_18.json",
+    "rosters/content-factorial-v1/content_order_19.json",
+    "rosters/content-factorial-v1/content_order_20.json",
+    "rosters/content-factorial-v1/content_order_21.json",
+    "rosters/content-factorial-v1/content_order_22.json",
+    "rosters/content-factorial-v1/content_order_23.json",
+    "rosters/content-factorial-v1/content_order_24.json"
+  ],
+  "cellOrderSeed": 2026110601,
+  "concurrency": 6,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

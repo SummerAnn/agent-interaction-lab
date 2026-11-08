@@ -1,0 +1,36 @@
+{
+  "id": "yoked_scale12_fixed_sources_debate_continuation_v1",
+  "title": "Continuation of twelve-agent fixed-source live-debate arm",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Continuation after a provider call stalled during rotation 5.",
+      "Rotations 1 through 4 completed in the original grid.",
+      "This manifest runs only rotations 5 through 12 under the unchanged fixed-source live-debate condition."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/live-debate-fixed-sources.yaml"
+  ],
+  "seeds": [0],
+  "rosterPaths": [
+    "rosters/scale12-dose-a2-v1/scale12_a2_r5_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r6_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r7_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r8_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r9_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r10_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r11_haiku.json",
+    "rosters/scale12-dose-a2-v1/scale12_a2_r12_haiku.json"
+  ],
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 512,
+    "temperature": 0
+  }
+}

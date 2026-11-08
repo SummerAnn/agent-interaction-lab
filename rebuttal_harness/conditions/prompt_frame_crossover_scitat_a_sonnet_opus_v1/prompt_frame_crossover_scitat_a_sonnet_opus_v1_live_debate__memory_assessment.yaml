@@ -1,0 +1,24 @@
+{
+  "id": "prompt_frame_crossover_scitat_a_sonnet_opus_v1_live_debate__memory_assessment",
+  "title": "SciTaT-A fixed explanation, live debate, memory assessment",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "chat",
+    "promptFrame": "memory_assessment",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceStance": "endorse",
+    "fixedSourceMessage": "I endorse the proposed answer 3. R-SVM + LCNN improves by more than four percentage points over Softmax + LCNN on CAD120, OA1, and OA2, while the remaining datasets do not exceed that threshold, so the count is 3.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

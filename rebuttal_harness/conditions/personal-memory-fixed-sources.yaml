@@ -1,0 +1,6 @@
+{
+  "id":"personal_memory_fixed_sources","title":"Personal memory with two fixed persistent sources",
+  "memory":{"mode":"personal","record":"agent_judgment","maxRetrievedEntries":6},
+  "interaction":{"mode":"memory","chatRounds":3,"adaptiveStopping":false,"adversaryCommitment":"enforced","topology":"fully-connected"},
+  "interventions":{"correctionVisibility":"global","correctionTiming":"none"}
+}

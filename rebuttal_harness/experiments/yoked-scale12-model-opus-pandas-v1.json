@@ -1,0 +1,6 @@
+{
+  "id":"yoked_scale12_model_opus_pandas_v1","title":"Twelve-agent PANDAS replication with Claude Opus 4.6","benchmarkMeta":{"status":"confirmatory","locked":true},
+  "scenarios":["scenarios/blind_pandas_scale12_a2_v1.yaml"],"conditions":["conditions/shared-memory-fixed-sources.yaml"],"seeds":[0],
+  "rosterPaths":["rosters/scale12-dose-a2-opus-v1/scale12_a2_r1_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r2_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r3_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r4_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r5_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r6_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r7_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r8_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r9_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r10_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r11_opus.json","rosters/scale12-dose-a2-opus-v1/scale12_a2_r12_opus.json"],
+  "maxSteps":36,"budget":{"maxModelCalls":36,"maxOutputTokensPerCall":512,"temperature":0}
+}

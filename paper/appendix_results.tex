@@ -1667,13 +1667,13 @@ The manifests, not filesystem totals, define the paper's evidence. \path{paper/r
 
 \path{paper/large_group_run_manifest.json} indexes the earlier 48 twelve-agent runs and 16 hundred-agent runs in Appendix~\ref{app:larger_groups}. \path{paper/scale12_ratio_sweep_audit.json} indexes and checks the 48 new twelve-agent runs in Table~\ref{tab:scale12_dose}. \path{paper/scale100_transition_audit.json} rechecks the 16 earlier hundred-agent runs and indexes and checks the 24 additional runs in Table~\ref{tab:scale100_dose}. \path{paper/scale6_ratio0_audit.json} indexes and checks the 36 zero-liar shared-memory runs in Table~\ref{tab:adversary_ratio}. These files contain 6,686 runs.
 
-Appendix~\ref{app:record_content} adds 696 runs. These include 24 runs with the same short explanation, 576 runs comparing four messages, 24 that save uncertain judgments, 24 that repeat the correct answer, and 48 that compare whether uncertain judgments are saved when that answer is correct. The saved traces and audit summaries in \path{followup_experiments/yoked_scale12_v1} check these runs. The total after these runs is 7,382. The two comparisons that repeat the correct answer are checked by \path{correct-answer-mirror-v1-audit.json} and \path{correct-source-recording-rule-v1-audit.json}.
+Appendix~\ref{app:record_content} adds 696 runs. These include 24 runs with the same short explanation, 576 runs comparing four messages, 24 that save uncertain judgments, 24 that repeat the correct answer, and 48 that compare whether uncertain judgments are saved when that answer is correct. Audit files in the anonymous repository check these runs. The total after these runs is 7,382. The two comparisons that repeat the correct answer are checked by \path{correct-answer-mirror-v1-audit.json} and \path{correct-source-recording-rule-v1-audit.json}.
 
 Appendix~\ref{app:confirmatory_followups} adds 428 audited runs and 15,008 model calls. Of these, 96 use Haiku, 192 use Sonnet or Opus, 48 use GPT-6.1 Sol, 72 allow agents to answer earlier entries, and 20 begin with a tool result. This brings the total to 7,810 runs. We exclude two preliminary GPT runs and an earlier test of replies. Markdown counterparts provide readable indexes. Entries give run IDs, paths, checksums where available, call-count checks, and rates recomputed from saved outputs. These checks keep overwritten summaries or duplicate records from changing a denominator.
 
-Appendix~\ref{app:lockin_followups} adds 744 audited runs and 28,608 model calls. These comprise 120 runs changing what debate shows, 144 shared-memory and debate runs executed together, 192 Haiku runs matching the instructions across both methods, 192 Sonnet and Opus runs repeating that comparison on SciTaT-A, 48 correction-timing runs, and 48 record-removal runs. The matched-instructions comparisons are checked by \path{followup_experiments/yoked_scale12_v1/harness/analysis/prompt-frame-crossover-v2-audit.json} and \path{followup_experiments/yoked_scale12_v1/harness/analysis/prompt-frame-crossover-scitat-a-sonnet-opus-v1-audit.json}. This brings the total to 8,554 runs.
+Appendix~\ref{app:lockin_followups} adds 840 audited runs and 34,944 model calls. These comprise 120 runs changing what debate shows, 144 shared-memory and debate runs executed together, 192 Haiku runs matching the instructions across both methods, 192 Sonnet and Opus runs repeating that comparison on SciTaT-A, 48 correction-timing runs, 48 record-removal runs, and 96 runs separating the two parts of personal history. Audit files in the anonymous repository check both matched-instructions comparisons and the four-version personal-history comparison. This brings the total to 8,650 runs.
 
-Appendix~\ref{app:true_answer_warning} adds 72 audited runs and 2,592 model calls. The comparison uses 24 matched speaking orders for standard shared memory and for each of the two warning versions. Every planned run completed. The audit checks the fixed correct messages, warning delivery, earlier-statement links, call counts, and final judgments. A portable manifest lists every run and gives checksums for its saved files. Appendix~\ref{app:confidence_display_ablation} adds 48 audited runs and 1,728 model calls. Appendix~\ref{app:tool_notes_multitask} adds 96 audited runs and 1,536 model calls. The paper therefore reports 8,770 runs. Appendices~\ref{app:same_context_replay} and~\ref{app:temporal_replay} each add 48 audited one-turn replay calls. These are not multi-agent runs and are not included in that total.
+Appendix~\ref{app:true_answer_warning} adds 72 audited runs and 2,592 model calls. The comparison uses 24 matched speaking orders for standard shared memory and for each of the two warning versions. Every planned run completed. The audit checks the fixed correct messages, warning delivery, earlier-statement links, call counts, and final judgments. A portable manifest lists every run and gives checksums for its saved files. Appendix~\ref{app:confidence_display_ablation} adds 96 audited runs and 3,456 model calls. Appendix~\ref{app:tool_notes_multitask} adds 96 audited runs and 1,536 model calls. The paper therefore reports 8,914 runs. Appendices~\ref{app:same_context_replay} and~\ref{app:temporal_replay} each add 48 audited one-turn replay calls. These are not multi-agent runs and are not included in that total.
 
 % ============================================================
 \section{Additional Experiments}
@@ -1742,9 +1742,9 @@ Answers to earlier entries, links shown & 0 & 227 & 13 & 2/24 \\
 
 Allowing agents to answer an earlier entry produces some correct rejections, but only in 7 of 24 orders when links are hidden and 2 of 24 when they are shown. No version produces false endorsement. These results do not explain why live debate differs from shared memory.
 
-\subsection{A saved judgment based on a false tool result notes}
+\subsection{A saved judgment based on a false tool result}
 
-A final test uses no liar agents. The experiment gives one neutral agent either a correct or false result presented as tool output, and the agent writes one note. Five later neutral agents never see the original result. They either see the shared note or only their own responses. A fourth version shows them a correct second calculation after their first responses. Each version contains five matched orders. The task asks whether four failed requests out of 100 exceed a 5\% rollback threshold, so the correct answer is no.
+A final test uses no liar agents. The experiment gives one neutral agent either a correct or false result presented as tool output, and the agent writes one note. Five later neutral agents never see the original result. They either see the shared note or only their own responses. A fourth version shows them a correct second calculation after their first responses. Each version contains five matched orders. The hidden fixture has four failed requests out of 100, below the 5\% threshold, so the claim that a rollback is required is false.
 
 \begin{table}[H]
 \caption{Tool result given to one agent, whose judgment is saved in shared or personal memory. Each row contains five runs and 25 judgments from the later agents. Counts are E/U/R on their first and final responses.}
@@ -1772,7 +1772,7 @@ All 25 later agents follow the false shared note. With personal notes, all 25 re
 \label{app:lockin_followups}
 % ============================================================
 
-The first five comparisons use Claude Haiku 4.5 on ego depletion and the same 24 balanced speaking orders. A sixth repeats the matched-instruction comparison with Sonnet 4.6 and Opus 4.6 on SciTaT-A. Together they add 744 runs and 28,608 model calls. Every planned version is represented by a complete run, and the audits pair versions by the speaking order the agents actually receive.
+The first five comparisons use Claude Haiku 4.5 on ego depletion and the same 24 balanced speaking orders. A sixth repeats the matched-instruction comparison with Sonnet 4.6 and Opus 4.6 on SciTaT-A. A seventh separates the two parts of personal history. Together they add 840 runs and 34,944 model calls. Every planned version is represented by a complete run, and the audits pair versions by the speaking order the agents actually receive.
 
 \subsection{Making debate more like shared memory}
 
@@ -1923,7 +1923,7 @@ All 24 order pairs tie at zero false endorsement. The early correction produces 
 All agents first complete three rounds under standard shared memory. The two liar agents then leave, and each neutral agent answers three more times. In the personal-history version, agents see only their own earlier entries and receive a reminder of their last judgment and confidence score. In the no-history version, they receive neither the entries nor the reminder. Each stage below contains 240 judgments from ten neutral agents over 24 speaking orders.
 
 \begin{table}[H]
-\caption{Judgments after the shared record and liar agents are removed. Each cell gives E/R/U.}
+\caption{Judgments in an earlier batch with two versions after the shared record and liar agents are removed. Each cell gives E/R/U.}
 \label{tab:record_removal_persistence}
 \begin{center}
 \small
@@ -1942,6 +1942,35 @@ No history & 188/0/52 & 0/0/240 & 0/0/240 & 0/0/240 \\
 The two versions are similar at removal. Twenty-two of 24 paired orders have the same number of endorsements, and the other two differ by five endorsements in total (two-sided exact sign test $p=0.5$). After removal, personal history produces more endorsements than no history in 11, 18, and 16 of 24 paired orders on turns one, two, and three, and never fewer. The corresponding exact $p$ values are $0.0009766$, $7.63\times10^{-6}$, and $3.05\times10^{-5}$.
 
 All 188 endorsers in the no-history runs become uncertain on the first turn and remain so. In the personal-history version, 203 of the 205 agents with at most one self-authored entry become uncertain on the first turn. These uncertain judgments are not saved. Of the 219 uncertain agents, 87 endorse on the next turn; each still has one or two older self-authored endorsements from the shared phase. The pattern is consistent with an older entry bringing the answer back, but the comparison does not separate the entry from the reminder of the agent's last judgment and confidence score or show a belief that survives without a record.
+
+\subsection{Separating the two parts of personal history}
+
+We repeat the removal experiment in one shuffled batch with four versions. After the shared record and liar agents are removed, neutral agents receive both their own earlier entries and a reminder of their last judgment and confidence score, the entries only, the reminder only, or neither. The four versions use the same 24 speaking orders and have exactly matching neutral-agent judgments and confidence scores through the removal point. Each version contains 24 runs, 1,584 model calls, and 240 neutral-agent judgments at every stage.
+
+\begin{table}[H]
+\caption{Judgments when the two parts of personal history are separated. Each cell gives E/R/U.}
+\label{tab:record_removal_components}
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+Version & At removal & Turn 1 & Turn 2 & Turn 3 \\
+\midrule
+Personal history & 185/0/55 & 25/0/215 & 111/0/129 & 93/0/147 \\
+Earlier entries only & 185/0/55 & 32/0/208 & 29/0/211 & 29/0/211 \\
+Reminder only & 185/0/55 & 0/0/240 & 0/0/240 & 0/0/240 \\
+No history & 185/0/55 & 0/0/240 & 0/0/240 & 0/0/240 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Earlier entries alone produce more endorsements than no history in 14, 13, and 13 of the 24 paired orders on the three later turns, with no reversals. Two-sided exact sign tests give $p=0.000122$, $p=0.000244$, and $p=0.000244$. The reminder-only and no-history versions tie in every order. Personal history and entries only do not differ reliably on the first later turn, where entries only produces 32 endorsements and personal history produces 25. On turns two and three, personal history produces 111 rather than 29 endorsements and 93 rather than 29. It is higher in 18 and 16 paired orders, with no reversals ($p=7.63\times10^{-6}$ and $p=3.05\times10^{-5}$).
+
+In one speaking order, standard shared memory saves no neutral-agent entry because every neutral agent remains uncertain through removal. The entries-only version correctly has no entry to retrieve in that order. The audit otherwise requires every retrieved entry to be self-authored and older than the current turn, confirms that the reminder is absent from the entries-only prompts, and confirms that the reminder-only and no-history versions retrieve nothing.
+
+Earlier entries are therefore necessary for any endorsements after removal and sufficient to preserve a small residue. The reminder does not bring the false answer back by itself, but with the entries it produces the later rebound.
 
 % ============================================================
 \section{Analyses of Completed Traces}
@@ -2090,28 +2119,33 @@ Both warning versions match standard shared memory in every speaking order. The 
 \label{app:confidence_display_ablation}
 % ============================================================
 
-We test whether explicit numeric confidence scores on saved judgments contribute to false endorsement. The comparison uses the same 12-agent Haiku ego-depletion setup and fixed explanation as the message-content experiment. Two liar agents repeat the explanation, and ten neutral agents judge the claim across 24 position-balanced speaking orders. Both versions are run together in random order. In the changed version, later agents see each saved judgment's author, stance, and explanation, but not its numeric confidence score. Agents still report confidence, receive the reminder of their own prior stance and confidence, and may express certainty in words.
+We test whether explicit numeric confidence scores on saved judgments contribute to false endorsement in two 12-agent comparisons. One uses Haiku on ego depletion and the fixed explanation from the message-content experiment. The other uses Sonnet on SciTaT-A and the fixed explanation from the matched-instructions experiment. In each comparison, two liar agents repeat the explanation and ten neutral agents judge the claim across 24 position-balanced speaking orders. Both versions are run together in random order. In the changed version, later agents see each saved judgment's author, stance, and explanation, but not its numeric confidence score. Agents still report confidence, receive the reminder of their own prior stance and confidence, and may express certainty in words.
 
 \begin{table}[H]
 \caption{Final neutral-agent judgments with numeric confidence scores shown or hidden on saved judgments. Each row contains 24 speaking orders and 240 final judgments. The last two columns count orders with any false endorsement and orders in which all ten neutral agents endorse.}
 \label{tab:confidence_display_ablation}
 \begin{center}
-\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrrrrr}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrr}
 \toprule
-Confidence on saved judgments & E & R & U & Any E & All E \\
+Model and task & Confidence & E & R & U & Any E & All E \\
 \midrule
-Shown & 182 & 0 & 58 & 23/24 & 14/24 \\
-Hidden & 14 & 0 & 226 & 5/24 & 0/24 \\
+Haiku 4.5, ego depletion & Shown & 182 & 0 & 58 & 23/24 & 14/24 \\
+& Hidden & 14 & 0 & 226 & 5/24 & 0/24 \\
+\midrule
+Sonnet 4.6, SciTaT-A & Shown & 240 & 0 & 0 & 24/24 & 24/24 \\
+& Hidden & 240 & 0 & 0 & 24/24 & 24/24 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Hiding the scores reduces false endorsement by 70 percentage points. The false-endorsement rate is lower in 23 of 24 paired speaking orders, with one tie and none in the opposite direction (two-sided exact sign test $p=2.38\times10^{-7}$). Resampling the 24 paired orders gives a middle 95\% range of 56.3 to 82.9 percentage points for the reduction. The changed judgments become uncertain rather than rejecting the claim.
+For Haiku on ego depletion, hiding the scores reduces false endorsement by 70 percentage points. The false-endorsement rate is lower in 23 of 24 paired speaking orders, with one tie and none in the opposite direction (two-sided exact sign test $p=2.38\times10^{-7}$). Resampling the 24 paired orders gives a middle 95\% range of 56.3 to 82.9 percentage points for the reduction. The changed judgments become uncertain rather than rejecting the claim.
 
-All 48 planned runs completed, comprising 1,728 model calls. The audit verifies the randomized execution order, the speaker order in every run, the fixed repeated message, call counts, and final judgments. It finds no parser fallbacks. Across 780 prompts that contain saved judgments in each version, every standard prompt displays the scores and no changed prompt does. This experiment isolates displayed numeric scores on saved judgments. It does not remove an agent's private prior-confidence reminder or verbal expressions of certainty, and it tests only Haiku on ego depletion.
+For Sonnet on SciTaT-A, all 240 neutral judgments endorse under both versions. The false-endorsement rate is tied in all 24 paired speaking orders (two-sided exact sign test $p=1$), and resampling gives a middle 95\% range of 0 to 0 percentage points for the shown-minus-hidden difference. Hiding the scores therefore does not change the outcome in this model and task.
+
+All 96 planned runs completed, comprising 3,456 model calls. The audits verify the randomized execution order within each batch, the speaker order in every run, the fixed repeated messages, call counts, and final judgments. They find no parser fallbacks. In each comparison, every shown-version prompt that contains saved judgments displays the scores and no hidden-version prompt does. These experiments isolate displayed numeric scores on saved judgments. They do not remove an agent's private prior-confidence reminder or verbal expressions of certainty.
 
 % ============================================================
 \section{Additional Replay and Tool-Result Tests}
@@ -2177,10 +2211,10 @@ All 48 judgments and confidence scores match their saved values. The complete re
 \label{app:tool_notes_multitask}
 % ============================================================
 
-This comparison uses no liar agents. One neutral agent first sees a simulated false tool result, responds once, and saves its judgment. Five later neutral agents never see the original tool result. They judge the same claim three times and cannot add entries to memory. Under shared memory they can see the first agent's saved judgment. Under personal memory they see only their own earlier judgments. We test rollback, ego depletion, SciTaT-A, and one GSM8K question with 12 matched speaking orders for each method and question.
+This comparison uses no liar agents. One neutral agent first sees a simulated false tool result, responds once, and saves its judgment. Five later neutral agents never see the original tool result. They judge the same claim three times and cannot add entries to memory. Under shared memory they can see the first agent's saved judgment. Under personal memory they see only their own earlier judgments. We test a checkout-failure threshold, ego depletion, SciTaT-A, and one GSM8K question with 12 matched speaking orders for each method and question. On the threshold question, the later agents do not see the hidden fixture of four failures out of 100.
 
 \begin{table}[H]
-\caption{Final judgments after one neutral agent saves a judgment based on a false tool result. Each memory version contains 12 runs and 60 final judgments from five later agents. The last column counts paired speaking orders in which shared memory produces more endorsements.}
+\caption{Final judgments after one neutral agent saves a judgment based on a false tool result. Each memory version contains 12 runs and 60 final judgments from five later agents. The last column counts paired speaking orders in which shared memory produces more endorsements. We report the GSM8K row separately because the first agent's stance endorses the false result but its explanation computes the correct answer.}
 \label{tab:tool_notes_multitask}
 \begin{center}
 \small
@@ -2189,15 +2223,15 @@ This comparison uses no liar agents. One neutral agent first sees a simulated fa
 \toprule
 Question & Shared E/R/U & Personal E/R/U & Shared higher \\
 \midrule
-Rollback threshold & 60/0/0 & 0/0/60 & 12/12 \\
+Checkout-failure threshold & 60/0/0 & 0/0/60 & 12/12 \\
 Ego depletion & 60/0/0 & 0/3/57 & 12/12 \\
 SciTaT-A & 60/0/0 & 0/0/60 & 12/12 \\
-GSM8K & 0/60/0 & 0/60/0 & 0/12 \\
+GSM8K (reported separately) & 0/60/0 & 0/60/0 & 0/12 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-All 96 first agents endorse after seeing the false tool result and save their judgment. On rollback, ego depletion, and SciTaT-A, every later agent endorses through shared memory and none endorses through personal memory. Shared memory produces more endorsements in all 12 paired orders for each question (two-sided exact sign test $p=0.000488$). On GSM8K, every later agent rejects the bad arithmetic under both methods.
+Across the three questions where the first agent's stance and explanation agree, all 72 first-agent responses give structured endorsements whose explanations support the false claim. Every later agent then endorses through shared memory (180 of 180 final judgments), and none endorses through personal memory (0 of 180). Shared memory produces more endorsements in all 12 paired orders for each question (two-sided exact sign test $p=0.000488$). In the 24 GSM8K runs, every first agent instead returns an internally inconsistent response: the structured stance is endorse, but the explanation computes \$18 and says that the proposed \$30 answer is incorrect. The saved entry therefore combines an endorsement label with rejecting text, and every later agent rejects under both methods. We report this mixed-evidence question separately.
 
-The first agent's saved wording matches exactly across the two methods in 43 of 48 paired runs. The five differences are all on ego depletion. Among the seven ego-depletion pairs with exactly matching saved text, shared memory still produces more endorsement in all seven. The experiment tests transmission of saved judgments induced by simulated false tool results on four selected questions. It does not estimate how often tools produce such errors in deployment.
+Across the three questions, the first agent's saved wording matches exactly across the two methods in 31 of 36 paired runs. The five differences are all on ego depletion. Among the seven ego-depletion pairs with exactly matching saved text, shared memory still produces more endorsement in all seven. The experiment tests transmission of saved judgments induced by simulated false tool results on three selected questions. It does not estimate how often tools produce such errors in deployment.

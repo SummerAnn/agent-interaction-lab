@@ -1,0 +1,21 @@
+{
+  "id": "blind_arithmetic_scale12_a2_v1",
+  "title": "Simple arithmetic, twelve agents with 2 persistent sources",
+  "scenarioType": "claim_benchmark",
+  "domain": "arithmetic",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["neutral_prompt", "balanced_order", "no_evidence", "no_intervention", "persistent_source_count_2"],
+  "focusClaimId": "option_a",
+  "claims": [{
+    "id": "option_a",
+    "text": "Compute 6 divided by 3. Proposed answer to evaluate: The numeric answer is 4.",
+    "truthLabel": "false"
+  }],
+  "evidence": [],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {"agentId":"analyst_1","claimId":"option_a","stance":"endorse","confidence":0.9},
+    {"agentId":"analyst_7","claimId":"option_a","stance":"endorse","confidence":0.85}
+  ],
+  "initialMemoryEntries": []
+}

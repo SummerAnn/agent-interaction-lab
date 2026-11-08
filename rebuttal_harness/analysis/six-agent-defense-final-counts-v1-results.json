@@ -1,0 +1,947 @@
+{
+  "status": "pass",
+  "scope": "Final E/R/U among the two neutral agents in the exact 84 archived runs selected for Main Table 2.",
+  "manifest": "output/iclr2027_submission_bundle/run_manifest.json",
+  "manifest_table_label": "tab:neutral_defenses_main",
+  "checks": {
+    "seven_expected_rows": true,
+    "twelve_runs_per_row": true,
+    "two_neutral_agents_per_run": true,
+    "all_trace_checksums_match_manifest": true,
+    "endorsement_counts_match_main_table_2": true,
+    "model_or_api_calls_made": 0
+  },
+  "rows": [
+    {
+      "label": "Standard shared memory",
+      "condition_id": "shared_memory_no_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 23,
+        "reject": 0,
+        "uncertain": 1
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r1_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r1_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "b9b9ff1d258b340415a350f64ade7fb1734408f0feca844c97f4d70d5a16140d",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r2_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r2_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "bfabb00577389efe27790e37e6eeb7941410ddbbfcf7c8c9ec3422ac66297df5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r3_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r3_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "3cc4829a8899a33c7fded826758ff463dd09b0383a1f48f2f36a53bfab649a78",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r4_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r4_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "8b6af35203341ca0bc03ed2a4e9f037310af9dd8f8cd0c59b92a9327c91010df",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r5_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r5_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "5c38869e1995e762dd6767be7dee5b5bbc81e7eebc236e39173ee1ad18b6c22c",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r6_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_clustered_r6_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "9631f3800f78371c446dcd1854913ee4431184d351419c77c57842eb93f8d5f2",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "de2c6554642997f2104dda10b4273663fed084d67f1fbe52ad45c6a3e6143dee",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "c2a7bf0b0526522a541b0243ae106e7a08b6e7d131f96af986dda1ac7cdf366e",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "3141be6706202bd869c209b72534ddae0687c9173d243f4998d383c57e966199",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "b5f2464af8dde08e26677af651ffe11a8c5bc4dc2e5fe86aa88165b5f143f9ad",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "9b2c737b4e8794fb08f281b49e1f3012154a55acad7786ef9a08827fc2265d7f",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_no_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_no_correction-seed0/trace.db",
+          "trace_sha256": "28aab1ca99b54a7594d7a815a6ee9fe6eb563d61f6d3830abb82ae60d77b6adf",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Correct external verification",
+      "condition_id": "shared_memory_gt_verification_no_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 0,
+        "reject": 24,
+        "uncertain": 0
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r1_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r1_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "a8a8c634392b172fc26ee9234279d2b31d994a69f1e7cb6a8c07a07775a91819",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r2_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r2_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "5acb0b4f5c0daff203f373ff260336482ae3354e912205bdaaaf8e1818763cef",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r3_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r3_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "72cb4477bac52a929ba7db017d56ae3c7d1014805207f9be4d174d001b07f50e",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r4_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r4_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "c02647de0f510e3ad7eee0077be57a960af8e73509743fce2b53d4f6b7e3842a",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r5_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r5_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "fcee0a1c404f155d98ef1f0ebd16eec76edd12a1ef84a20ca2f65e0fa9a67d41",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r6_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_clustered_r6_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "19d74e57dc8009362cd8e1e957330f0b08d9e5eb9d644e107a194ad7ac5fa748",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "fddbe6e2dc5b08ffc4167020ad0009e73c9f14bda280624eec6cd1f64a57271a",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "aa4bd2617f972757cae64b42585d19faf121da2b1e5c8d0043b003bd82677315",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "f6f00ae9470d8d3e4af02f180fa48268c673f4a3a0308ff5d1787cd9b3d70d54",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "e68be23b97804a8db4701207e86290764ef541aa5913a2133ba6b0c87e27a9da",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "2cb66457eca6fc218fe0ae3a2803bc242c027cec25c40f8e9bb5d6494ce2df56",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_gt_verification_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_gt_verification_no_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_gt_verification_no_correction-seed0/trace.db",
+          "trace_sha256": "86873fdab2e1c6bc4748272d77d092119f6efe3f954e10ccedb00ba623844d80",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Early correction",
+      "condition_id": "shared_memory_early_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 0,
+        "reject": 9,
+        "uncertain": 15
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r1_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r1_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "eaad283a796e21d7d32c0612ebf2d332ab668fd5b9d6a9f95006ba8d19a58224",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r2_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r2_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "f6c2591991ff3f533a79ac58fb83476f93d05a0378b2b20a15c2496ae1be02cb",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r3_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r3_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "24ecfbc020755ca5cad0f2853b101f0f33e6b9e9545891c3c51d20f93c0bc50a",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r4_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r4_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "485db5ebb0ff3a1668786df78cf531a896dc2df26389fe4606c78ecc867da1ae",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r5_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r5_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "4df0023b83161e63b45bdf61acba3bf8ef292f5ffb02db5fbcb919a2c47dfa0d",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r6_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_clustered_r6_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "190f858cff2b3c5ef1bc24d19c3253a8d58008c859df9db3c5d3a37596704b09",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "10983b3540a585053b9f50cac3f02eeb2deff840237b46a512175a0f1224771f",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "6e4dc82594373877e53a9018bff0b0a608b3ba707c09b41b2b9a68f6b846bf79",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "63fc9ad441502a41e949e4964ffd97a7c5cbd08ed9568bd44a08e186a2688774",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "8b55ca676a838f43662946f72dee7b023d4a90ccaaaf5b165fd3c97e3760a8da",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "a021b9911be0f3dab525ad35b00d2399f452494e931cc3f97e297fd9635f6896",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_early_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_early_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_early_correction-seed0/trace.db",
+          "trace_sha256": "e4eab70b5b8a661d456bebf227e6c7c3a64698fcfee23f91b584e83026aa4188",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "reject"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Late correction",
+      "condition_id": "shared_memory_late_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 7,
+        "reject": 2,
+        "uncertain": 15
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r1_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r1_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "1e1835d8b375e854f818942e0478eb978d0bdb7f0be661098b9407806f01b777",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r2_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r2_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "e929ac01f29608f6fc11a3a1370a256af251420b936d2d223087f07b1847821b",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r3_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r3_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "fab1e0615f401ae296f343fcd9fd1b2bcfd7b7bae9103be88b3cd934d131312d",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r4_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r4_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "d5fddaeb8dfe9a2abd0d3962a14bc0bbce3f04c25e1a10fc05f73dd4888d16c7",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r5_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r5_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "9ccc2164697d9c04a7991c1e291f53dccc861b952da8db14dd1b4190a388aeaf",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r6_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_clustered_r6_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "7d2171e3e24f96306574b5918ba24ab9678c6b2435e3f827b4f009e4bb3455b9",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "1ff76b19efc6c7344c2bdf52dbc1592eadf7ccca10f14a8c24f98b3ad149de04",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "f5a1151afb7543756025ea5abde91cef93155512af340417ecd18799742362e3",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "003d74778f9ae521306b51afae217009c2d210fc5bc1142f7e317069b9109f4e",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "d7855dfd6ed039048c18d7af6f668a57b6d3294c5f70e7f4a3f809c750efc7a4",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "55cde87f2711780044aea014d7b464c7274419bd26c3ea2580973ce5dee00b8b",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_late_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_late_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_late_correction-seed0/trace.db",
+          "trace_sha256": "52623b5a18d0dc496193478c3dd7124bd87be1ff3ac4ac9251e89f8951d12eef",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Fading old entries",
+      "condition_id": "shared_memory_decay_no_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 17,
+        "reject": 1,
+        "uncertain": 6
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r1_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r1_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "6172d430d39032841168a775fd40bc481f31bbb66ce85c5a55b21df1ad27ddad",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r2_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r2_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "c7d523ea60bb70095300f79bdb2906beb356b4927232444c70e920cf584253dd",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "reject"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r3_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r3_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "3ec3e7f83349c8ac32039ce84ae3c1de14451888aa6b14c46a6c93380623c656",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r4_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r4_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "446ad131192dc4931b710fa12b59ffc446a2eabffab8371307eef848b583f3cd",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r5_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r5_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "9444571c50be0806777ee0dadbc919eaca213efc67deb9d12c561760253c24e7",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r6_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_clustered_r6_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "c345c1ee87f158ccff366c6d6e4d3e7fa720c504df9b629467e796ad980e01d2",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r1_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "98561d5d0bddb90a2073b42247ed63599cfc58e4a44116a27d031fd9321f16d5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r2_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "cffdb26dfc7198f53ca2294550edf676202a073fbf74110cb92259af1b0f4eea",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r3_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "aba56152cf2f0bebe78f3d620869e05944b5c849503430e35e9ad940f93ccf70",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r4_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "2ec54220fe39f45416eae3229749d71cf2542f3ecdcc1dadf846fc8645dc735e",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r5_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "04bb527286b02ef76becb5f5ec65ff8f05dcdb40ffca4e657739eaf006f21ae5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_decay_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_memory_decay_no_correction_neutral_fairness_interleaved_r6_haiku-shared_memory_decay_no_correction-seed0/trace.db",
+          "trace_sha256": "e3ab30e67d1e264bfb3c4f0ca05e96d4ecc6d9d0420010e2bca106f809fae3c9",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "endorse",
+            "analyst_6": "endorse"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Current answer counts with warning",
+      "condition_id": "shared_independence_aware_no_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 0,
+        "reject": 1,
+        "uncertain": 23
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r1_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r1_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "2c9c03accde0ddda83e4e8fcb2236947ff3c488cfcb7f532f5afac43fe1196cb",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r2_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r2_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "728410a4dbe6f50d4ce49de967d494095919574c810010ae6f23a99be3231c51",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "reject",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r3_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r3_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "5f50477e60198ea581ece8225ae3053b9d595e2ea5a44f63ebcf869932c61631",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r4_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r4_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "608b359552782b19509a117b70c42263c82b40ec46e03627523319d12f09e7b8",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r5_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r5_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "7c9f25f0cd60e7d00bb689fbabc46cf7d055372a7f471331f4c32d07d936f186",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r6_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_clustered_r6_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "882aaba82100e04f1d01cedd32d97f4cc062343f2a8471e8f57d0aa20d8aa21c",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r1_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r1_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "65a6a1c3abb32621001605bd695ce03a9887f0c8bed242246b1a0a2d4ec75cb5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r2_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r2_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "ca1cffcf0510a0f4dfaec260b6e60dab602a816ec0b46c9f457de220af7970ed",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r3_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r3_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "4b83ed95ca186019275053f60234dd59ea4909e68486d60a086cc686cba93e07",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r4_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r4_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "6eb72d805702077331f4eef7cf7084b4fd36c65ed5a32670ccba6e4f675b1602",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r5_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r5_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "1e175d018bc5aa731ec771e1426f87f8afb2ffe594b2d4e8197cf62502e6c415",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r6_haiku-shared_independence_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_independence_aware_no_correction_neutral_fairness_interleaved_r6_haiku-shared_independence_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "7a308a0dd1711793d8b04c41538bf767bb3ff64227716e22d0889ba5dbd533ee",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Earlier statement shown with warning",
+      "condition_id": "shared_provenance_aware_no_correction",
+      "runs": 12,
+      "neutral_final_judgments": 24,
+      "final_counts": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 24
+      },
+      "run_audit": [
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r1_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r1_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "e90dec064d910d71f886656a136385ba0cf6042c4760aa36506f9b0ad49b352a",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r2_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r2_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "ca44f33355b33e4ae5902eeab4a9fa4c5d6c16f785850841e05c848ad06096b5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r3_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r3_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "87f13c7210b610105fd2c9e89ea3e78a7ad8321d53885ab41bc344de5a4863fa",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r4_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r4_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "de9d908e1e63da7b69b004bc3591d5a8a6afb08675aa82be059e86fc1bb521d4",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r5_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r5_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "9476af5ba024363607b0094d27a69d7c7653efd6db866d83ee4e918c2e257844",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r6_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_clustered_r6_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "09926285a222e6b4b6d722901448500c8d0f485c63cc0257e321dd3813e27134",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_clustered_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r1_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r1_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "ab67d1e13789e394e5a635a96deffab52489b4c10becc16375b81e29fcc0f055",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r1_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r2_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r2_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "9baae00851ee5013b4c6c87708faf8646e6d507ee7e3b5611bcc3defe7acebb5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r2_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r3_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r3_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "a8326abef4c8fd135c34cb508a4681ef576ef93167e58fd269bbe7307c57abe9",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r3_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r4_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r4_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "ae949c12ac5a1f24d5efd84e7848c4c7a23cfb2a374452d3934a085e22567dc5",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r4_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r5_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r5_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "a27204c3923339bc1fee8073af02191b97c9c973ebb0fa7c4dbb3130730355ec",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r5_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        },
+        {
+          "run_id": "part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r6_haiku-shared_provenance_aware_no_correction-seed0",
+          "trace_path": "agent-interaction-lab-update-2026-10-21/output/part2_neutral_defense_suite_v2_blind_ego_depletion_focus_only_v1_shared_provenance_aware_no_correction_neutral_fairness_interleaved_r6_haiku-shared_provenance_aware_no_correction-seed0/trace.db",
+          "trace_sha256": "6e7c9c00a13779b8ea31e0b61696e130e3746f42c31e96df8a99074dd75310b6",
+          "roster_path": "agent-interaction-lab-update-2026-10-21/rosters/neutral-fairness-v1/neutral_fairness_interleaved_r6_haiku.json",
+          "neutral_final_stances": {
+            "analyst_5": "uncertain",
+            "analyst_6": "uncertain"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "pandas_fixed_explanation_save_uncertain",
+  "title": "pandas fixed explanation, uncertainty saved",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": true
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceStance": "endorse",
+    "fixedSourceMessage": "I endorse the claim. The abrupt onset of OCD and motor tics after group A streptococcal pharyngitis indicates an autoimmune response affecting the basal ganglia, so PANDAS is the best diagnosis and supports antibiotic prophylaxis and IVIG.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "content_factorial_ego_haiku_v1",
+  "title": "Matched source-message content by communication method",
+  "benchmarkMeta": {
+    "status": "confirmatory",
+    "locked": true,
+    "notes": [
+      "Message conditions were fixed before observing results.",
+      "The same exact source statement is replayed under shared memory and live debate.",
+      "Twenty-four position-balanced orders are repeated in three independently shuffled execution batches.",
+      "The primary test is the message-content by communication-method interaction in neutral final judgments."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_ego_depletion_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/content-factorial-v1/content_bare_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_bare_live_debate.yaml",
+    "conditions/content-factorial-v1/content_generic_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_generic_live_debate.yaml",
+    "conditions/content-factorial-v1/content_mechanism_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_mechanism_live_debate.yaml",
+    "conditions/content-factorial-v1/content_selective_evidence_shared_memory.yaml",
+    "conditions/content-factorial-v1/content_selective_evidence_live_debate.yaml"
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1/content_order_01.json",
+    "rosters/content-factorial-v1/content_order_02.json",
+    "rosters/content-factorial-v1/content_order_03.json",
+    "rosters/content-factorial-v1/content_order_04.json",
+    "rosters/content-factorial-v1/content_order_05.json",
+    "rosters/content-factorial-v1/content_order_06.json",
+    "rosters/content-factorial-v1/content_order_07.json",
+    "rosters/content-factorial-v1/content_order_08.json",
+    "rosters/content-factorial-v1/content_order_09.json",
+    "rosters/content-factorial-v1/content_order_10.json",
+    "rosters/content-factorial-v1/content_order_11.json",
+    "rosters/content-factorial-v1/content_order_12.json",
+    "rosters/content-factorial-v1/content_order_13.json",
+    "rosters/content-factorial-v1/content_order_14.json",
+    "rosters/content-factorial-v1/content_order_15.json",
+    "rosters/content-factorial-v1/content_order_16.json",
+    "rosters/content-factorial-v1/content_order_17.json",
+    "rosters/content-factorial-v1/content_order_18.json",
+    "rosters/content-factorial-v1/content_order_19.json",
+    "rosters/content-factorial-v1/content_order_20.json",
+    "rosters/content-factorial-v1/content_order_21.json",
+    "rosters/content-factorial-v1/content_order_22.json",
+    "rosters/content-factorial-v1/content_order_23.json",
+    "rosters/content-factorial-v1/content_order_24.json"
+  ],
+  "cellOrderSeed": 20261021,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

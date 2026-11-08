@@ -1,0 +1,3762 @@
+{
+  "generatedAt": "2026-10-22T01:35:41.242Z",
+  "design": {
+    "model": "claude-haiku-4-5-20251001",
+    "task": "ego depletion",
+    "agentsPerRun": 12,
+    "fixedCorrectSourcesPerRun": 2,
+    "neutralAgentsPerRun": 10,
+    "orders": 24,
+    "callsPerRun": 36,
+    "fixedSourceText": "I reject this claim. The evidence does not support a strong, reliable ego-depletion effect."
+  },
+  "checks": {
+    "runCount": 48,
+    "uniqueRunIds": 48,
+    "eachConditionHasTwentyFourRuns": true,
+    "completeOrderCoverage": true,
+    "allRunsHaveThirtySixSteps": true,
+    "allRunsHaveThirtySixCalls": true,
+    "allAgentsHaveThreeCalls": true,
+    "allFixedMessagesExact": true,
+    "allSourcesRejectFinally": true,
+    "noParserFallbacks": true,
+    "recordingRulesApplied": true,
+    "sourceEntriesRetrievedByNeutralAgents": true,
+    "neutralTotalsComplete": true
+  },
+  "byCondition": {
+    "shared_memory_fixed_correct_sources": {
+      "runs": 24,
+      "orders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 240,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 48,
+        "uncertain": 0
+      },
+      "uncertainSteps": 60,
+      "uncertainEntries": 0
+    },
+    "shared_memory_fixed_correct_sources_save_uncertain": {
+      "runs": 24,
+      "orders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 180,
+        "uncertain": 60
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 48,
+        "uncertain": 0
+      },
+      "uncertainSteps": 255,
+      "uncertainEntries": 255
+    }
+  },
+  "runs": [
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_01-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 1,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 5,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_01-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_01-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_02-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 2,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 4,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_02-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_02-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_03-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 3,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 3,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_03-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_03-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_04-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 4,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 2,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_04-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_04-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_05-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 5,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_05-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_05-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_06-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 6,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_06-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_06-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_07-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 7,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 5,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_07-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_07-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_08-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 8,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 4,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_08-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_08-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_09-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 9,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 3,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_09-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_09-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_10-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 10,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 2,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_10-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_10-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_11-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 11,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_11-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_11-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_12-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_12-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_12-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_13-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 13,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 5,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_13-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_13-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_14-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 14,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 4,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_14-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_14-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_15-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 15,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 3,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_15-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_15-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_16-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 16,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 2,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_16-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_16-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_17-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 17,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_17-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_17-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_18-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 18,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_18-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_18-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_19-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 19,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 5,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_19-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_19-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_20-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 20,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 4,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_20-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_20-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_21-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 21,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 3,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_21-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_21-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_22-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 22,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 2,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_22-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_22-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_23-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 23,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_23-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_23-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_24-shared_memory_fixed_correct_sources-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "order": 24,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_24-shared_memory_fixed_correct_sources-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_24-shared_memory_fixed_correct_sources-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_01-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 1,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 10
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 30,
+      "uncertainEntryCount": 30,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_01-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_01-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_02-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 2,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 10
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 30,
+      "uncertainEntryCount": 30,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_02-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_02-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_03-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 3,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 7,
+      "uncertainEntryCount": 7,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_03-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_03-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_04-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 4,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 8,
+      "uncertainEntryCount": 8,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_04-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_04-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_05-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 5,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 1,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_05-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_05-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_06-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 6,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_06-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_06-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_07-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 7,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 8,
+      "uncertainEntryCount": 8,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_07-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_07-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_08-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 8,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 14,
+      "uncertainEntryCount": 14,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_08-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_08-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_09-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 9,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 6,
+      "uncertainEntryCount": 6,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_09-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_09-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_10-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 10,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 3,
+      "uncertainEntryCount": 3,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_10-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_10-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_11-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 11,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 1,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_11-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_11-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_12-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 12,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_12-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_12-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_13-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 13,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 10
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 30,
+      "uncertainEntryCount": 30,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_13-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_13-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_14-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 14,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 7,
+      "uncertainEntryCount": 7,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_14-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_14-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_15-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 15,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 10
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 30,
+      "uncertainEntryCount": 30,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_15-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_15-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_16-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 16,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 10
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 30,
+      "uncertainEntryCount": 30,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_16-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_16-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_17-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 17,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 1,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_17-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_17-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_18-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 18,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_18-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_18-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_19-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 19,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 8,
+      "uncertainEntryCount": 8,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 25,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_19-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_19-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_20-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 20,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 0,
+        "uncertain": 10
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 30,
+      "uncertainEntryCount": 30,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 26,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_20-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_20-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_21-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 21,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 7,
+      "uncertainEntryCount": 7,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 27,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_21-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_21-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_22-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 22,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 3,
+      "uncertainEntryCount": 3,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 28,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_22-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_22-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_23-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 23,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 1,
+      "uncertainEntryCount": 1,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 29,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_23-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_23-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    },
+    {
+      "runId": "correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_24-shared_memory_fixed_correct_sources_save_uncertain-seed505",
+      "conditionId": "shared_memory_fixed_correct_sources_save_uncertain",
+      "order": 24,
+      "completedSteps": 36,
+      "totalCalls": 36,
+      "perAgentCalls": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "fixedEventCount": 6,
+      "fixedMessagesExact": true,
+      "uncertainStepCount": 0,
+      "uncertainEntryCount": 0,
+      "uncertaintyRulePassed": true,
+      "neutralRetrievalsOfSource": 30,
+      "parserFallbackEntries": 0,
+      "summaryPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_24-shared_memory_fixed_correct_sources_save_uncertain-seed505/summary.json",
+      "dbPath": "rebuttal_harness/output/correct_source_recording_rule_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_save_uncertain_content_order_24-shared_memory_fixed_correct_sources_save_uncertain-seed505/trace.db"
+    }
+  ]
+}

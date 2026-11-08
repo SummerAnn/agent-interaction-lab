@@ -1,0 +1,22 @@
+{
+  "id": "true_answer_warning_v1_answer_counts",
+  "title": "Correct repeated answer with answer counts and dependence warning",
+  "memory": {
+    "mode": "shared",
+    "record": "independence_aware",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceStance": "reject",
+    "fixedSourceMessage": "I reject this claim. The evidence does not support a strong, reliable ego-depletion effect.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

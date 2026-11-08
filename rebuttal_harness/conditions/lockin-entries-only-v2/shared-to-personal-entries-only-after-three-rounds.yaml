@@ -1,0 +1,23 @@
+{
+  "id": "shared_to_personal_entries_only_after_three_rounds",
+  "title": "Shared memory followed by personal entries without a prior-stance reminder",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "personalFromStep": 37,
+    "omitPriorBeliefFromStep": 37
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 6,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

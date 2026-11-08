@@ -1,0 +1,21 @@
+{
+  "id": "tool_notes_personal_agent_judgments_v1",
+  "title": "Personal notes with no cross-agent sharing",
+  "memory": {
+    "mode": "personal",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": false
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "prompted",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "default"
+  }
+}

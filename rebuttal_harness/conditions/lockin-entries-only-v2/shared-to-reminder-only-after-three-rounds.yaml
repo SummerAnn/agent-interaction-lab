@@ -1,0 +1,22 @@
+{
+  "id": "shared_to_reminder_only_after_three_rounds",
+  "title": "Shared memory followed by prior-judgment reminders without stored entries",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "reminderOnlyFromStep": 37
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 6,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceMessage": "I endorse the claim. Performing self-control consumes a limited mental resource, so exerting self-control once impairs performance on the next task.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

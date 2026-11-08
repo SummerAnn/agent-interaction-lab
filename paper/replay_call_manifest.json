@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-08T23:32:01.007318+00:00",
+  "included_in_paper_run_total": false,
+  "total_one_turn_calls": 96,
+  "studies": [
+    {
+      "study_id": "identical_context_replay_v1",
+      "paper_location": "Table 67",
+      "one_turn_calls": 48,
+      "manifest_path": "rebuttal_harness/analysis/identical-context-replay-v1-manifest.json",
+      "results_path": "rebuttal_harness/analysis/identical-context-replay-v1-results.json"
+    },
+    {
+      "study_id": "first_neutral_temporal_replay_v1",
+      "paper_location": "Table 68",
+      "one_turn_calls": 48,
+      "manifest_path": "rebuttal_harness/analysis/first-neutral-temporal-replay-v1-manifest.json",
+      "audit_path": "rebuttal_harness/analysis/first-neutral-temporal-replay-v1-audit.json"
+    }
+  ]
+}

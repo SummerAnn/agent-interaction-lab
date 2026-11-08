@@ -1,0 +1,22 @@
+{
+  "id": "blind_ego_depletion_scale12_a2_correction_v1",
+  "title": "Ego depletion, twelve agents, 2 persistent sources, and a correction",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["private_evidence", "balanced_speaker_order", "persistent_source_count_2", "trusted_correction"],
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [{
+    "id": "claim_ego_depletion",
+    "text": "Willpower operates like a depletable resource, so performing one self-control task significantly impairs the next task.",
+    "truthLabel": "false"
+  }],
+  "evidence": [],
+  "scheduledInterventions": [{
+    "id":"corr_ego_1","step":6,"type":"correction","claimId":"claim_ego_depletion",
+    "text":"A preregistered multi-lab replication and later bias analyses do not support a strong ego depletion effect.","effect":-0.9
+  }],
+  "initialBeliefStates": [
+    {"agentId":"analyst_1","claimId":"claim_ego_depletion","stance":"endorse","confidence":0.9},
+    {"agentId":"analyst_7","claimId":"claim_ego_depletion","stance":"endorse","confidence":0.85}
+  ],
+  "initialMemoryEntries": []
+}

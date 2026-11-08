@@ -1,0 +1,30 @@
+{
+  "id": "frontier_gpt61_scitat_a_smoke_v1",
+  "title": "GPT-6.1 Sol SciTaT-A recording-rule compatibility smoke test",
+  "benchmarkMeta": {
+    "status": "pilot",
+    "locked": true,
+    "notes": [
+      "Compatibility and parser smoke test only.",
+      "This run is excluded from confirmatory denominators."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_scitat_a_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/crossmodel-recording-rule-v1/scitat_a_fixed_explanation_omit_uncertain.yaml",
+    "conditions/crossmodel-recording-rule-v1/scitat_a_fixed_explanation_save_uncertain.yaml"
+  ],
+  "seeds": [710],
+  "rosterPaths": [
+    "rosters/content-factorial-v1-gpt61/content_order_01_gpt61.json"
+  ],
+  "cellOrderSeed": 20261732,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

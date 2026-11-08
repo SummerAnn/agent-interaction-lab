@@ -1,0 +1,5383 @@
+{
+  "passed": true,
+  "gridPath": "rebuttal_harness/output/true_answer_warning_haiku_v1-grid-results.json",
+  "design": {
+    "task": "ego depletion",
+    "model": "claude-haiku-4-5-20251001",
+    "fixedCorrectSources": 2,
+    "neutralAgents": 10,
+    "speakingOrders": 24,
+    "plannedRuns": 72,
+    "plannedModelCalls": 2592
+  },
+  "checks": {
+    "sameBatchShuffleSeed": true,
+    "matchedSpeakingOrders": true,
+    "fixedCorrectMessageExact": true,
+    "warningsReachedRetrievedPrompts": true,
+    "provenanceMarkersDisplayed": true,
+    "completeFinalOutcomes": true
+  },
+  "conditions": {
+    "shared_memory_fixed_correct_sources": {
+      "record": "agent_judgment",
+      "runs": 24,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 240,
+        "uncertain": 0
+      },
+      "ordersWithAnyLossOfCorrectRejection": 0
+    },
+    "true_answer_warning_v1_answer_counts": {
+      "record": "independence_aware",
+      "runs": 24,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 240,
+        "uncertain": 0
+      },
+      "ordersWithAnyLossOfCorrectRejection": 0
+    },
+    "true_answer_warning_v1_repetition_links": {
+      "record": "provenance_aware",
+      "runs": 24,
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 240,
+        "uncertain": 0
+      },
+      "ordersWithAnyLossOfCorrectRejection": 0
+    }
+  },
+  "comparisons": [
+    {
+      "id": "true_answer_warning_v1_answer_counts",
+      "pairedOrders": 24,
+      "correctRejectionDifferences": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 24,
+      "exactTwoSidedSignTestP": 1,
+      "holmAdjustedP": 1
+    },
+    {
+      "id": "true_answer_warning_v1_repetition_links",
+      "pairedOrders": 24,
+      "correctRejectionDifferences": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "positive": 0,
+      "negative": 0,
+      "ties": 24,
+      "exactTwoSidedSignTestP": 1,
+      "holmAdjustedP": 1
+    }
+  ],
+  "runs": [
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_03",
+      "order": 3,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_03-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_03-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_19",
+      "order": 19,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_19-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_19-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 30,
+      "derivedMarkerPromptCount": 30
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_16",
+      "order": 16,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_16-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_16-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 27,
+      "derivedMarkerPromptCount": 27
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_01",
+      "order": 1,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_01-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_01-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_22",
+      "order": 22,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_22-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_22-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_21",
+      "order": 21,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_21-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_21-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_17",
+      "order": 17,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_17-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_17-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_17",
+      "order": 17,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_17-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_17-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 28,
+      "derivedMarkerPromptCount": 28
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_24",
+      "order": 24,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_24-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_24-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 29,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_02",
+      "order": 2,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_02-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_02-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_24",
+      "order": 24,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_24-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_24-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 29,
+      "derivedMarkerPromptCount": 29
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_18",
+      "order": 18,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_18-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_18-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_05",
+      "order": 5,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_05-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_05-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 28,
+      "derivedMarkerPromptCount": 28
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_11",
+      "order": 11,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_11-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_11-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 28,
+      "derivedMarkerPromptCount": 28
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_01",
+      "order": 1,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_01-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_01-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 30,
+      "derivedMarkerPromptCount": 30
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_08",
+      "order": 8,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_08-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_08-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_16",
+      "order": 16,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_16-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_16-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_14",
+      "order": 14,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_14-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_14-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 25,
+      "derivedMarkerPromptCount": 25
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_13",
+      "order": 13,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_13-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_13-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_15",
+      "order": 15,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_15-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_15-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 26,
+      "derivedMarkerPromptCount": 26
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_06",
+      "order": 6,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_06-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_06-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 29,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_22",
+      "order": 22,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_22-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_22-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 27,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_05",
+      "order": 5,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_05-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_05-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 28,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_12",
+      "order": 12,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_12-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_12-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 29,
+      "derivedMarkerPromptCount": 29
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_23",
+      "order": 23,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_23-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_23-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 28,
+      "derivedMarkerPromptCount": 28
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_03",
+      "order": 3,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_03-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_03-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 26,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_15",
+      "order": 15,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_15-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_15-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 26,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_09",
+      "order": 9,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_09-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_09-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 26,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_10",
+      "order": 10,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_10-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_10-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 27,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_12",
+      "order": 12,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_12-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_12-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 29,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_05",
+      "order": 5,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_05-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_05-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_17",
+      "order": 17,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_17-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_17-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 28,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_04",
+      "order": 4,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_04-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_04-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 27,
+      "derivedMarkerPromptCount": 27
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_09",
+      "order": 9,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_09-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_09-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 26,
+      "derivedMarkerPromptCount": 26
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_13",
+      "order": 13,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_13-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_13-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 30,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_07",
+      "order": 7,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_07-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_07-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 30,
+      "derivedMarkerPromptCount": 30
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_04",
+      "order": 4,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_04-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_04-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 27,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_20",
+      "order": 20,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_20-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_20-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 25,
+      "derivedMarkerPromptCount": 25
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_02",
+      "order": 2,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_02-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_02-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 25,
+      "derivedMarkerPromptCount": 25
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_09",
+      "order": 9,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_09-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_09-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_21",
+      "order": 21,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_21-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_21-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 26,
+      "derivedMarkerPromptCount": 26
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_23",
+      "order": 23,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_23-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_23-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 28,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_06",
+      "order": 6,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_06-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_06-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_16",
+      "order": 16,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_16-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_16-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 27,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_01",
+      "order": 1,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_01-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_01-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 30,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_18",
+      "order": 18,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_18-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_18-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 29,
+      "derivedMarkerPromptCount": 29
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_08",
+      "order": 8,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_08-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_08-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 25,
+      "derivedMarkerPromptCount": 25
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_19",
+      "order": 19,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_19-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_19-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_15",
+      "order": 15,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_15-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_15-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_20",
+      "order": 20,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_20-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_20-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 25,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_07",
+      "order": 7,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_07-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_07-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_03",
+      "order": 3,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_03-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_03-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 26,
+      "derivedMarkerPromptCount": 26
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_10",
+      "order": 10,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_10-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_10-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_11",
+      "order": 11,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_11-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_11-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_14",
+      "order": 14,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_14-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_14-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 25,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_21",
+      "order": 21,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_21-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_21-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 26,
+      "independencePromptCount": 26,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_02",
+      "order": 2,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_02-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_02-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 25,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_18",
+      "order": 18,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_18-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_18-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 29,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_20",
+      "order": 20,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_20-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_20-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_12",
+      "order": 12,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_12-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_12-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_11",
+      "order": 11,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_11-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_11-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 28,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_06",
+      "order": 6,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_06-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_06-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 29,
+      "derivedMarkerPromptCount": 29
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_24",
+      "order": 24,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_24-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_24-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 29,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_14",
+      "order": 14,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_14-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_14-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_19",
+      "order": 19,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_19-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_19-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 30,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_10",
+      "order": 10,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_10-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_10-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 27,
+      "derivedMarkerPromptCount": 27
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_13",
+      "order": 13,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_13-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_13-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 30,
+      "derivedMarkerPromptCount": 30
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_08",
+      "order": 8,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_08-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_08-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 25,
+      "independencePromptCount": 25,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_04",
+      "order": 4,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_04-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_04-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "true_answer_warning_v1_repetition_links",
+      "record": "provenance_aware",
+      "rosterId": "content_order_22",
+      "order": 22,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_22-true_answer_warning_v1_repetition_links-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_repetition_links_content_order_22-true_answer_warning_v1_repetition_links-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 27,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 27,
+      "derivedMarkerPromptCount": 27
+    },
+    {
+      "conditionId": "true_answer_warning_v1_answer_counts",
+      "record": "independence_aware",
+      "rosterId": "content_order_07",
+      "order": 7,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_07-true_answer_warning_v1_answer_counts-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_true_answer_warning_v1_answer_counts_content_order_07-true_answer_warning_v1_answer_counts-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 30,
+      "independencePromptCount": 30,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    },
+    {
+      "conditionId": "shared_memory_fixed_correct_sources",
+      "record": "agent_judgment",
+      "rosterId": "content_order_23",
+      "order": 23,
+      "runId": "true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_23-shared_memory_fixed_correct_sources-seed846",
+      "dbPath": "rebuttal_harness/output/true_answer_warning_haiku_v1_blind_ego_depletion_scale12_a2_v1_shared_memory_fixed_correct_sources_content_order_23-shared_memory_fixed_correct_sources-seed846/trace.db",
+      "modelCalls": 36,
+      "callsByAgent": [
+        {
+          "agentId": "analyst_1",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_10",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_11",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_12",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_2",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_3",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_4",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_5",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_6",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_7",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_8",
+          "calls": 3
+        },
+        {
+          "agentId": "analyst_9",
+          "calls": 3
+        }
+      ],
+      "neutralFinals": {
+        "endorse": 0,
+        "reject": 10,
+        "uncertain": 0
+      },
+      "sourceFinals": {
+        "endorse": 0,
+        "reject": 2,
+        "uncertain": 0
+      },
+      "neutralPromptsWithEntries": 28,
+      "independencePromptCount": 0,
+      "provenancePromptCount": 0,
+      "derivedMarkerPromptCount": 0
+    }
+  ]
+}

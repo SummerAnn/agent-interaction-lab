@@ -1,0 +1,58 @@
+{
+  "id": "confidence_display_ablation_sonnet_scitat_a_v1",
+  "title": "SciTaT-A confidence-display ablation in Claude Sonnet 4.6",
+  "benchmarkMeta": {
+    "status": "supporting",
+    "locked": true,
+    "notes": [
+      "Frozen before launching any study calls.",
+      "Both versions are rerun together in one randomized batch.",
+      "The two versions differ only in whether retrieved shared judgments display numeric confidence.",
+      "Speaking order is the statistical unit."
+    ]
+  },
+  "scenarios": [
+    "scenarios/blind_scitat_a_scale12_a2_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/crossmodel-recording-rule-v1/scitat_a_fixed_explanation_omit_uncertain.yaml",
+    "conditions/crossmodel-recording-rule-v1/scitat_a_fixed_explanation_omit_uncertain_confidence_hidden.yaml"
+  ],
+  "seeds": [
+    720
+  ],
+  "rosterPaths": [
+    "rosters/content-factorial-v1-sonnet/content_order_01_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_02_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_03_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_04_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_05_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_06_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_07_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_08_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_09_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_10_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_11_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_12_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_13_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_14_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_15_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_16_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_17_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_18_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_19_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_20_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_21_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_22_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_23_sonnet.json",
+    "rosters/content-factorial-v1-sonnet/content_order_24_sonnet.json"
+  ],
+  "cellOrderSeed": 20261107,
+  "concurrency": 4,
+  "maxSteps": 36,
+  "budget": {
+    "maxModelCalls": 36,
+    "maxOutputTokensPerCall": 384,
+    "temperature": 0
+  }
+}

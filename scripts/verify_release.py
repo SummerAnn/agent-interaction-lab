@@ -23,7 +23,8 @@ EXPECTED_COUNTS = {
     "open": 216,
     "single": 180,
     "extension": 172,
-    "total": 6686,
+    "followup": 2228,
+    "total": 8914,
 }
 SUPPLEMENTARY_CONFIGS = {
     "mixed_model_capability_pilot_v1": "experiments/mixed-model-capability-pilot-v1.json",
@@ -194,9 +195,16 @@ def collect_extension(repo: Path, errors: list[str]) -> dict[str, dict]:
     return result
 
 
+def collect_followup(manifest: dict) -> dict[str, dict]:
+    result = {}
+    for run in manifest["runs"]:
+        result[run["run_id"]] = {**run, "manifest": "followup"}
+    return result
+
+
 def artifact_path(repo: Path, value: str) -> Path:
     path = Path(value)
-    if path.parts and path.parts[0] == "output":
+    if path.parts and path.parts[0] in {"output", "rebuttal_harness"}:
         return repo / path
     return repo / "output" / path
 
@@ -385,6 +393,8 @@ def write_report(repo: Path, report: dict) -> None:
         f"- Open-model replication runs: **{counts['open']}**",
         f"- Single-entry comparison runs: **{counts['single']}**",
         f"- Final large-group and zero-liar extension runs: **{counts['extension']}**",
+        f"- Post-submission follow-up runs: **{counts['followup']}**",
+        f"- One-turn replay calls (excluded from the run total): **{counts['replay_calls_excluded']}**",
         f"- Missing summaries: **{counts['missing_summaries']}**",
         f"- Missing traces: **{counts['missing_traces']}**",
         f"- Verified SHA-256 pairs: **{counts['hash_pairs_checked']}**",
@@ -392,7 +402,7 @@ def write_report(repo: Path, report: dict) -> None:
         f"- Config dependencies checked: **{counts['config_dependencies_checked']}**",
         f"- Base table calculation issues: **{counts['base_calculation_issues']}**",
         "",
-        "The base manifest is rebuilt from the trace databases. Supplementary table counts are independently recomputed from released summaries, and full mode checks every released checksum and SQLite database.",
+        "The frozen base manifest and the follow-up manifest define the paper evidence. Supplementary table counts are independently recomputed from released summaries, and full mode checks every released checksum and SQLite database.",
         "",
     ]
     if report["errors"]:
@@ -408,27 +418,22 @@ def main() -> int:
     repo = args.repo.resolve()
     errors: list[str] = []
 
-    with tempfile.TemporaryDirectory(prefix="agent-lab-base-audit-") as temporary:
-        result = subprocess.run(
-            [sys.executable, str(repo / "scripts/build_iclr_run_manifest.py"), "--repo", str(repo), "--output-dir", temporary, "--tex-dir", str(repo / "paper")],
-            text=True,
-            capture_output=True,
-        )
-        if result.returncode:
-            errors.append(f"base manifest builder failed: {result.stderr.strip() or result.stdout.strip()}")
-            base_manifest = {"quality_summary": {"issue_count": -1}, "tables": []}
-        else:
-            base_manifest = read_json(Path(temporary) / "run_manifest.json")
+    # The original table manifest is frozen because the final appendix adds
+    # new tables that are indexed by rebuttal_run_manifest.json instead.
+    base_manifest = read_json(repo / "paper/run_manifest.json")
 
     late_manifest = read_json(repo / "paper/new_appendix_run_manifest.json")
     open_manifest = read_json(repo / "paper/open_model_visibility_manifest.json")
     single_manifest = read_json(repo / "paper/single_peer_influence_manifest.json")
+    followup_manifest = read_json(repo / "paper/rebuttal_run_manifest.json")
+    replay_manifest = read_json(repo / "paper/replay_call_manifest.json")
     groups = {
         "base": collect_base(base_manifest),
         "late": collect_supplementary(late_manifest, "late"),
         "open": collect_supplementary(open_manifest, "open"),
         "single": collect_supplementary(single_manifest, "single"),
         "extension": collect_extension(repo, errors),
+        "followup": collect_followup(followup_manifest),
     }
     for name, expected in EXPECTED_COUNTS.items():
         actual = sum(len(group) for group in groups.values()) if name == "total" else len(groups[name])
@@ -442,8 +447,11 @@ def main() -> int:
         all_ids.update(group)
 
     paper_text = (repo / "paper/paper.tex").read_text(encoding="utf-8") + (repo / "paper/appendix_results.tex").read_text(encoding="utf-8")
-    if "6,686" not in paper_text:
-        errors.append("paper no longer states the audited 6,686-run total")
+    if "8,914" not in paper_text:
+        errors.append("paper does not state the audited 8,914-run total")
+    replay_calls = int(replay_manifest.get("total_one_turn_calls", -1))
+    if replay_calls != 96 or replay_manifest.get("included_in_paper_run_total") is not False:
+        errors.append("replay manifest must contain 96 calls excluded from the run total")
 
     dependency_count = check_config_dependencies(repo, errors)
     missing_summaries = 0
@@ -504,6 +512,8 @@ def main() -> int:
             "open": len(groups["open"]),
             "single": len(groups["single"]),
             "extension": len(groups["extension"]),
+            "followup": len(groups["followup"]),
+            "replay_calls_excluded": replay_calls,
             "missing_summaries": missing_summaries,
             "missing_traces": missing_traces,
             "hash_pairs_checked": hash_pairs_checked,

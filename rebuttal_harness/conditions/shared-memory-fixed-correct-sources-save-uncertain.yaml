@@ -1,0 +1,23 @@
+{
+  "id": "shared_memory_fixed_correct_sources_save_uncertain",
+  "title": "Shared memory with fixed correct rejections and uncertain judgments saved",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "writeUncertainAnswers": true
+  },
+  "interaction": {
+    "mode": "memory",
+    "chatRounds": 3,
+    "adaptiveStopping": false,
+    "adversaryCommitment": "enforced",
+    "fixedSourceStance": "reject",
+    "fixedSourceMessage": "I reject this claim. The evidence does not support a strong, reliable ego-depletion effect.",
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

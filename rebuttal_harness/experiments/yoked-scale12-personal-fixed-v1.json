@@ -1,0 +1,6 @@
+{
+  "id":"yoked_scale12_personal_fixed_v1","title":"Twelve-agent fixed-source personal-memory control","benchmarkMeta":{"status":"confirmatory","locked":true},
+  "scenarios":["scenarios/blind_ego_depletion_scale12_a2_v1.yaml"],"conditions":["conditions/personal-memory-fixed-sources.yaml"],"seeds":[0],
+  "rosterPaths":["rosters/scale12-dose-a2-v1/scale12_a2_r1_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r2_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r3_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r4_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r5_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r6_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r7_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r8_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r9_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r10_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r11_haiku.json","rosters/scale12-dose-a2-v1/scale12_a2_r12_haiku.json"],
+  "maxSteps":36,"budget":{"maxModelCalls":36,"maxOutputTokensPerCall":512,"temperature":0}
+}
